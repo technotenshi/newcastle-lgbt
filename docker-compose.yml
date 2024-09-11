@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: newcastle-lgbt-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
