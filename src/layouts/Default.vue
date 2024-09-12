@@ -18,7 +18,7 @@
               <li class="nav-item">
                 <g-link class="nav-link link text-black text-primary display-4" to="/news">News</g-link>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" @mouseover="toggleDropdown($event, true)" @mouseout="toggleDropdown($event, false)">
                 <g-link
                     class="nav-link link text-black text-primary dropdown-toggle display-4"
                     data-toggle="dropdown-submenu"
@@ -88,7 +88,19 @@
 
 <script>
 export default {
-  name: 'DefaultLayout'
+  name: 'DefaultLayout',
+  methods: {
+    toggleDropdown(event, isOpen) {
+      const dropdown = event.currentTarget;
+      if (window.innerWidth > 991) { // Optional: Limit to desktop screens
+        if (isOpen) {
+          dropdown.classList.add('open');
+        } else {
+          dropdown.classList.remove('open');
+        }
+      }
+    }
+  }
 }
 </script>
 
