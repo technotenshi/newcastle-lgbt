@@ -114,12 +114,9 @@ export default {
           content: 'Welcome to Newcastle LGBTQ Voice! This is your go-to platform for amplifying LGBTQ voices, advocating for equality, and promoting community events in Newcastle, WA.'
         }
       ]
-    };
-  },
-  components: {
-    FeatureItem
+    }
   }
-};
+}
 </script>
 
 <style scoped>
