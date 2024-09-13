@@ -6,7 +6,6 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const path = require('path');
-const data = require("./src/data/features.json");
 
 module.exports = function (api) {
   // api.loadSource(({ addCollection }) => {
@@ -37,7 +36,7 @@ module.exports = function (api) {
 
   });
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
+  // api.createPages(({ createPage }) => {
+  //   // Use the Pages API here: https://gridsome.org/docs/pages-api/
+  // })
 }

@@ -1,6 +1,6 @@
 FROM node:current-slim
 
-LABEL authors="miguelibarra"
+LABEL authors="Angel Ibarra"
 
 RUN apt-get -y update && apt-get install -y  \
     git  \
@@ -9,9 +9,10 @@ RUN apt-get -y update && apt-get install -y  \
 
 RUN corepack enable
 
+RUN npm install -g npm@10.8.3
+
 RUN yarn global add @gridsome/cli
 
 WORKDIR /app
 
-#ENTRYPOINT ["top", "-b"]
 CMD ["gridsome", "develop"]

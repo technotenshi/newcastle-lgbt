@@ -1,0 +1,43 @@
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import pluginVue from "eslint-plugin-vue";
+
+
+export default [
+    {
+        files: [
+            "**/*.{js,mjs,cjs,vue}"
+        ],
+    },
+    {
+        ignores: [
+            ".cache/*",
+            "dist/*",
+            "src/assets/*",
+            "src/.tmp/*",
+        ]
+    },
+    {
+        languageOptions: {
+            globals: globals.node
+        },
+        plugins: {
+            vue: pluginVue,  // Register the Vue plugin
+        },
+        rules: {
+            // Add or modify rules as necessary
+            "vue/no-unused-components": "warn",
+            "vue/no-deprecated-slot-attribute": "error",
+            "no-unused-vars": "warn",
+            "semi": ["error", "always"], // Example JS rule to enforce semicolons
+            "vue/multi-word-component-names": ["warn",{
+                "ignores": [
+                    "Index",
+                    "Layout",
+                ]
+            }],
+        },
+    },
+    pluginJs.configs.recommended,
+    ...pluginVue.configs["flat/recommended"],
+];
