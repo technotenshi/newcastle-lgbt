@@ -66,135 +66,31 @@
 
 
       <div class="container">
-
-        <div class="row mt-4">
-          <div class="item features-image сol-12 col-md-6 col-lg-4 active">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <g-link to="/critical-analysis" target="_blank"><g-image src="~/assets/images/council-debate.webp"
-                                                                      alt="QA analysis" data-slide-to="0"
-                                                                      data-bs-slide-to="0" /></g-link>
-              </div>
-              <div class="item-content">
-                <h5 class="item-title mbr-fonts-style display-7"><strong>Analyzing Mayor Robert Clark’s
-                  Controversial Speech: A Detailed Q&amp;A Breakdown</strong></h5>
-
-                <p class="mbr-text mbr-fonts-style mt-3 display-7">This article offers a critical examination of
-                  Mayor Robert Clark’s recent speech, dissecting his arguments and controversial statements
-                  through a comprehensive Q&amp;A format, highlighting the concerns and reactions it has
-                  sparked within the Newcastle community.</p>
-              </div>
-              <div class="mbr-section-btn item-footer mt-2"><g-link to="/critical-analysis"
-                                                               class="btn btn-primary item-btn display-7"
-                                                               target="_blank">Learn More
-                &gt;</g-link></div>
-            </div>
-          </div>
-          <div class="item features-image сol-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <g-link to="/news"><g-image src="~/assets/images/news-crowd.webp" alt="News" data-slide-to="1"
-                                         data-bs-slide-to="1" /></g-link>
-              </div>
-              <div class="item-content">
-                <h5 class="item-title mbr-fonts-style display-7"><strong>News</strong></h5>
-
-                <p class="mbr-text mbr-fonts-style mt-3 display-7">Find the latest relevant news around the
-                  LGBTQ+ community in our city.</p>
-              </div>
-              <div class="mbr-section-btn item-footer mt-2"><g-link to="/news"
-                                                               class="btn btn-primary item-btn display-7">Learn
-                More
-                &gt;</g-link></div>
-            </div>
-          </div>
-          <div class="item features-image сol-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <g-link to="/letter"><g-image
-                    src="~/assets/images/technotenshi-an-photorealistic-envelop-featuring-an-image-of-a-fe535289-3fc2-449e-86ce-eef316c77166.webp"
-                    alt="Letter to the council" data-slide-to="2" data-bs-slide-to="1" /></g-link>
-              </div>
-              <div class="item-content">
-                <h5 class="item-title mbr-fonts-style display-7"><strong>Letter to the city council</strong>
-                </h5>
-
-                <p class="mbr-text mbr-fonts-style mt-3 display-7">Read our open letter denouncing the city
-                  council's intolerant decision against raising the Pride flag</p>
-              </div>
-              <div class="mbr-section-btn item-footer mt-2"><g-link to="/letter"
-                                                               class="btn btn-primary item-btn display-7">Learn
-                More
-                &gt;</g-link></div>
-            </div>
-          </div>
-          <div class="item features-image сol-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <g-link to="/events"><g-image
-                    src="~/assets/images/technotenshi-a-photorealistic-image-of-people-marching-peaceful-ba88edf3-ef6f-4fe0-8e3b-d996ebd9080b.webp"
-                    alt="Events" data-slide-to="3" data-bs-slide-to="3" /></g-link>
-              </div>
-              <div class="item-content">
-                <h5 class="item-title mbr-fonts-style display-7"><strong>Events</strong></h5>
-
-                <p class="mbr-text mbr-fonts-style mt-3 display-7">Stand with us for LGBTQ+ inclusivity and
-                  community solidarity</p>
-              </div>
-              <div class="mbr-section-btn item-footer mt-2"><g-link to="/events"
-                                                               class="btn btn-primary item-btn display-7">Learn
-                More
-                &gt;</g-link></div>
-            </div>
-          </div>
-          <div class="item features-image сol-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <g-link to="/councilmembers"><g-image
-                    src="~/assets/images/technotenshi-a-photorealistic-image-of-7-people-gathered-in-a-r-ce71ed76-8cd1-4497-98e9-b23f415530e2.webp"
-                    alt="Meet the council members" data-slide-to="4" data-bs-slide-to="4" /></g-link>
-              </div>
-              <div class="item-content">
-                <h5 class="item-title mbr-fonts-style display-7"><strong>Meet your council members</strong></h5>
-
-                <p class="mbr-text mbr-fonts-style mt-3 display-7">Visit our council members' bio page to find
-                  their names, email addresses, and see who is an LGBTQ+ ally.</p>
-              </div>
-              <div class="mbr-section-btn item-footer mt-2"><g-link to="/councilmembers"
-                                                               class="btn btn-primary item-btn display-7">Learn
-                More
-                &gt;</g-link></div>
-            </div>
-          </div>
-          <div class="item features-image сol-12 col-md-6 col-lg-4">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <g-link to="/organizations"><g-image
-                    src="~/assets/images/technotenshi-an-image-symbolizing-the-partnership-among-lgbtq-o-d70cd1a2-6f4f-4a43-8cea-6cdcedb8bd04.webp"
-                    alt="Organizations" data-slide-to="5" data-bs-slide-to="5" /></g-link>
-              </div>
-              <div class="item-content">
-                <h5 class="item-title mbr-fonts-style display-7"><strong>Organizations</strong></h5>
-
-                <p class="mbr-text mbr-fonts-style mt-3 display-7">Discover featured organizations dedicated to
-                  promoting inclusivity and support for the LGBTQ+ community, and find out how you can get
-                  involved.</p>
-              </div>
-              <div class="mbr-section-btn item-footer mt-2"><g-link to="/organizations"
-                                                               class="btn btn-primary item-btn display-7">Learn
-                More
-                &gt;</g-link></div>
-            </div>
-          </div>
-
-        </div>
+      <div class="row mt-4">
+        <FeatureItem
+          v-for="edge in $page.allFeatureItem.edges"
+          :key="edge.node.id"
+          :imageSrc="edge.node.imageSrc"
+          :imageAlt="edge.node.imageAlt"
+          :title="edge.node.title"
+          :description="edge.node.description"
+          :link="edge.node.link"
+          :target="edge.node.target"
+        />
       </div>
+    </div>
     </section>
   </div>
   </Layout>
 </template>
 
+<page-query>
+query { allFeatureItem(sortBy: "order", order: ASC) { edges { node { id order imageSrc imageAlt title description link target } } } }
+</page-query>
+
 <script>
+import FeatureItem from '@/components/FeatureItem.vue';
+
 export default {
   name: 'Index',
   metaInfo() {
@@ -207,8 +103,11 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    FeatureItem
   }
-}
+};
 </script>
 
 <style scoped>

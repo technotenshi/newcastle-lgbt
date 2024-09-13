@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "council-debate.webp",
+    "imageAlt": "QA analysis",
+    "title": "Analyzing Mayor Robert Clark’s Controversial Speech: A Detailed Q&A Breakdown",
+    "description": "This article offers a critical examination of Mayor Robert Clark’s recent speech, dissecting his arguments and controversial statements through a comprehensive Q&A format, highlighting the concerns and reactions it has sparked within the Newcastle community.",
+    "link": "/critical-analysis",
+    "target": "_blank"
+  },
+  {
+    "id": 2,
+    "imageSrc": "news-crowd.webp",
+    "imageAlt": "News",
+    "title": "News",
+    "description": "Find the latest relevant news around the LGBTQ+ community in our city.",
+    "link": "/news",
+    "target": "_self"
+  },
+  {
+    "id": 3,
+    "imageSrc": "technotenshi-an-photorealistic-envelop-featuring-an-image-of-a-fe535289-3fc2-449e-86ce-eef316c77166.webp",
+    "imageAlt": "Letter to the council",
+    "title": "Letter to the city council",
+    "description": "Read our open letter denouncing the city council's intolerant decision against raising the Pride flag.",
+    "link": "/letter",
+    "target": "_self"
+  },
+  {
+    "id": 4,
+    "imageSrc": "technotenshi-a-photorealistic-image-of-people-marching-peaceful-ba88edf3-ef6f-4fe0-8e3b-d996ebd9080b.webp",
+    "imageAlt": "Events",
+    "title": "Events",
+    "description": "Stand with us for LGBTQ+ inclusivity and community solidarity.",
+    "link": "/events",
+    "target": "_self"
+  },
+  {
+    "id": 5,
+    "imageSrc": "technotenshi-a-photorealistic-image-of-7-people-gathered-in-a-r-ce71ed76-8cd1-4497-98e9-b23f415530e2.webp",
+    "imageAlt": "Meet the council members",
+    "title": "Meet your council members",
+    "description": "Visit our council members' bio page to find their names, email addresses, and see who is an LGBTQ+ ally.",
+    "link": "/councilmembers",
+    "target": "_self"
+  },
+  {
+    "id": 6,
+    "imageSrc": "technotenshi-an-image-symbolizing-the-partnership-among-lgbtq-o-d70cd1a2-6f4f-4a43-8cea-6cdcedb8bd04.webp",
+    "imageAlt": "Organizations",
+    "title": "Organizations",
+    "description": "Discover featured organizations dedicated to promoting inclusivity and support for the LGBTQ+ community, and find out how you can get involved.",
+    "link": "/organizations",
+    "target": "_self"
+  }
+]
