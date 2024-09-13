@@ -7,4 +7,4 @@
 module.exports = {
   siteName: 'Newcastle LGBT',
   plugins: []
-}
+};

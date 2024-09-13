@@ -5,7 +5,8 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "lint": "npx eslint"
+    "lint": "npx eslint",
+    "lint-fix": "npx eslint --fix"
   },
   "dependencies": {
     "gridsome": "^0.7.0"
