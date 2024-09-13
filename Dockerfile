@@ -13,6 +13,8 @@ RUN npm install -g npm@10.8.3
 
 RUN yarn global add @gridsome/cli
 
+RUN yarn install --check-files --non-interactive --audit
+
 WORKDIR /app
 
 CMD ["gridsome", "develop"]
