@@ -115,6 +115,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    FeatureItem
   }
 }
 </script>

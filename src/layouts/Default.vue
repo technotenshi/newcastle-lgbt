@@ -147,7 +147,19 @@
 
 <script>
 export default {
-  name: 'DefaultLayout'
+  name: 'DefaultLayout',
+  methods: {
+    toggleDropdown(event, isOpen) {
+      const dropdown = event.currentTarget;
+      if (window.innerWidth > 991) { // Optional: Limit to desktop screens
+        if (isOpen) {
+          dropdown.classList.add('open');
+        } else {
+          dropdown.classList.remove('open');
+        }
+      }
+    }
+  }
 }
 </script>
 
