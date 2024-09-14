@@ -11,7 +11,7 @@
           <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-6 image-wrapper">
               <g-image
-                src="~/assets/images/dalle-2024-06-07-12.01.07-a-circular-minimalistic-and-modern-logo-on-a-white-background.-the-logo-features-elements-of-the-progressive-pride-flag-as-a-base-with-a-simple-sil.webp"
+                src="~/assets/images/K59bqmorPm9qeV7qbg4Dozml.webp"
                 alt="Newcastle LGBTQ Voice"
               />
             </div>
@@ -42,7 +42,7 @@
           <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-6 image-wrapper">
               <g-image
-                src="~/assets/images/screenshot-2024-06-07-at-11.57.43am.webp"
+                src="~/assets/images/djEYRr8qMXjV5vygnVyYG6J7n.webp"
                 alt="No Hate"
               />
             </div>
