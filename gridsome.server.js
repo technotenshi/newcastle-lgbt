@@ -5,35 +5,51 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const path = require('path');
+const dataUtils = (()=>{
 
-module.exports = function (api) {
+  const path = require('path');
+
+  const getDataPath = (basePath, filename) => path.resolve(__dirname, basePath, filename);
+
+  const createCollection = (actions, typeName, data) => {
+    const collection = actions.addCollection({ typeName });
+
+    data.forEach((item, index) => {
+      const nodeData = {
+        order: item.order || index, // Default to index if order is not provided
+      };
+
+      // Iterate over item properties
+      for (const key in item) {
+        // If the property is an image path, resolve it
+        if (key.endsWith('Src')) {
+          nodeData[key] = getDataPath('./src/assets/images/', item[key]);
+        } else {
+          nodeData[key] = item[key];
+        }
+      }
+
+      collection.addNode(nodeData);
+    });
+  };
+
+  return {
+    createCollection,
+  };
+
+})();
+
+module.exports = api => {
   // api.loadSource(({ addCollection }) => {
   //   // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
   // })
 
   api.loadSource(async actions => {
-    const data = require('./src/data/features.json');
+    const featuresData = require('./src/data/features.json');
+    const featuredNews = require('./src/data/news.json');
 
-    const collection = actions.addCollection({
-      typeName: 'FeatureItem'
-    });
-
-    data.forEach((item, index) => {
-      const imagePath = path.resolve(__dirname, './src/assets/images/', item.imageSrc);
-
-      collection.addNode({
-        id: item.id,
-        order: item.order || index, // Use item.order if available, else index
-        imageSrc: imagePath,
-        imageAlt: item.imageAlt,
-        title: item.title,
-        description: item.description,
-        link: item.link,
-        target: item.target
-      });
-    });
-
+    dataUtils.createCollection(actions, 'FeatureItem', featuresData);
+    dataUtils.createCollection(actions, 'News', featuredNews);
   });
 
   // api.createPages(({ createPage }) => {

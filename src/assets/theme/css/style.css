@@ -173,7 +173,7 @@ section .mbr-background-video-preview {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 .media-container-row .media-size-item {
   width: 400px;
