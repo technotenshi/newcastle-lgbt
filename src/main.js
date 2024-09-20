@@ -23,6 +23,10 @@ export default function (Vue, { head }) {
     content: ''
   });
 
+  head.link.push({
+    rel: 'stylesheet',
+    href: require('~/assets/web/assets/mobirise-icons2/mobirise2.css')
+  });
 
     // Add Bootstrap CSS files globally
   head.link.push({

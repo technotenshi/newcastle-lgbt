@@ -5,7 +5,7 @@
     "imageAlt": "QA analysis",
     "title": "Analyzing Mayor Robert Clark’s Controversial Speech: A Detailed Q&A Breakdown",
     "description": "This article offers a critical examination of Mayor Robert Clark’s recent speech, dissecting his arguments and controversial statements through a comprehensive Q&A format, highlighting the concerns and reactions it has sparked within the Newcastle community.",
-    "link": "/critical-analysis",
+    "link": "/critical-analysis/",
     "target": "_blank"
   },
   {
@@ -14,7 +14,7 @@
     "imageAlt": "News",
     "title": "News",
     "description": "Find the latest relevant news around the LGBTQ+ community in our city.",
-    "link": "/news",
+    "link": "/news/",
     "target": "_self"
   },
   {
@@ -23,7 +23,7 @@
     "imageAlt": "Letter to the council",
     "title": "Letter to the city council",
     "description": "Read our open letter denouncing the city council's intolerant decision against raising the Pride flag.",
-    "link": "/letter",
+    "link": "/letter/",
     "target": "_self"
   },
   {
@@ -32,7 +32,7 @@
     "imageAlt": "Events",
     "title": "Events",
     "description": "Stand with us for LGBTQ+ inclusivity and community solidarity.",
-    "link": "/events",
+    "link": "/events/",
     "target": "_self"
   },
   {
@@ -41,7 +41,7 @@
     "imageAlt": "Meet the council members",
     "title": "Meet your council members",
     "description": "Visit our council members' bio page to find their names, email addresses, and see who is an LGBTQ+ ally.",
-    "link": "/councilmembers",
+    "link": "/council-members/",
     "target": "_self"
   },
   {
@@ -50,7 +50,7 @@
     "imageAlt": "Organizations",
     "title": "Organizations",
     "description": "Discover featured organizations dedicated to promoting inclusivity and support for the LGBTQ+ community, and find out how you can get involved.",
-    "link": "/organizations",
+    "link": "/organizations/",
     "target": "_self"
   }
 ]
