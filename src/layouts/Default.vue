@@ -148,6 +148,13 @@
 <script>
 export default {
   name: 'DefaultLayout',
+  mounted() {
+    window.bootstrap = require('~/assets/bootstrap/js/bootstrap.bundle.min.js');
+    // window.dropdown = require('~/assets/dropdown/js/navbar-dropdown.js');
+    // window.smoothscroll = require('~/assets/smoothscroll/smooth-scroll.js');
+    // window.ytplayer = require('~/assets/ytplayer/index.js');
+    // window.theme = require('~/assets/theme/js/script.js');
+  },
   methods: {
     toggleDropdown(event, isOpen) {
       const dropdown = event.currentTarget;
