@@ -51,7 +51,7 @@ export default {
   name: 'FeaturedNews',
   props: {
     imageSrc: {
-      type: String,
+      type: Object,
       required: true
     },
     imageAlt: {

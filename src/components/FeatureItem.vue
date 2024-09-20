@@ -38,7 +38,7 @@ export default {
   name: 'FeatureItem',
   props: {
     imageSrc: {
-      type: String,
+      type: Object,
       required: true
     },
     imageAlt: {

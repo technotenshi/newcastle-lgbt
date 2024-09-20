@@ -86,30 +86,30 @@ export default function (Vue, { head }) {
 
 
   // Add Bootstrap JavaScript file at the end of the body
-  head.script.push({
-    src: require('~/assets/bootstrap/js/bootstrap.bundle.min.js'),
-    body: true
-  });
+  // head.script.push({
+  //   src: require('~/assets/bootstrap/js/bootstrap.bundle.min.js'),
+  //   body: true
+  // });
 
   // Add Dropdown JavaScript file at the end of the body
-  head.script.push({
-    src: require('~/assets/dropdown/js/navbar-dropdown.js'),
-    body: true
-  });
+  // head.script.push({
+  //   src: require('~/assets/dropdown/js/navbar-dropdown.js'),
+  //   body: true
+  // });
 
   // Add Additional JavaScript files at the end of the body
-  head.script.push({
-    src: require('~/assets/smoothscroll/smooth-scroll.js'),
-    body: true
-  });
-  head.script.push({
-    src: require('~/assets/ytplayer/index.js'),
-    body: true
-  });
-  head.script.push({
-    src: require('~/assets/theme/js/script.js'),
-    body: true
-  });
+  // head.script.push({
+  //   src: require('~/assets/smoothscroll/smooth-scroll.js'),
+  //   body: true
+  // });
+  // head.script.push({
+  //   src: require('~/assets/ytplayer/index.js'),
+  //   body: true
+  // });
+  // head.script.push({
+  //   src: require('~/assets/theme/js/script.js'),
+  //   body: true
+  // });
 
   // Add Simple Analytics script at the end of the body
   head.script.push({
