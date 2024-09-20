@@ -37,7 +37,7 @@
               <li class="nav-item">
                 <g-link
                   class="nav-link link text-black text-primary display-4"
-                  to="/news"
+                  to="/news/"
                 >
                   News
                 </g-link>
@@ -62,13 +62,13 @@
                 >
                   <g-link
                     class="text-black text-primary dropdown-item display-4"
-                    to="/letter"
+                    to="/letter/"
                   >
                     Open letter to the city council
                   </g-link>
                   <g-link
                     class="text-black text-primary dropdown-item display-4"
-                    to="/replyToLetter"
+                    to="/reply-to-letter/"
                   >
                     Reply from Mayor Clark
                   </g-link>
@@ -77,7 +77,7 @@
               <li class="nav-item">
                 <g-link
                   class="nav-link link text-black text-primary display-4"
-                  to="/councilmembers"
+                  to="/council-members/"
                 >
                   Newcastle Council members
                 </g-link>
@@ -85,7 +85,7 @@
               <li class="nav-item">
                 <g-link
                   class="nav-link link text-black text-primary display-4"
-                  to="/events"
+                  to="/events/"
                 >
                   Events
                 </g-link>
@@ -93,7 +93,7 @@
               <li class="nav-item">
                 <g-link
                   class="nav-link link text-black text-primary display-4"
-                  to="/organizations"
+                  to="/organizations/"
                 >
                   Organizations
                 </g-link>
