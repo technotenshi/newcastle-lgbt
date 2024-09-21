@@ -16,3 +16,8 @@ build: lint-fix
     docker compose run -it --rm app yarn build
 prod: build
     docker compose up prod
+sync:
+    ./sync.sh
+invalidate:
+    ./invalidate.sh
+deploy: sync invalidate

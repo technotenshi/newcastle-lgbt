@@ -19,6 +19,24 @@
                 >Newcastle LGBTQ Voice</g-link>
               </span>
             </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-bs-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <div class="hamburger">
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
+            </button>
             <div
               id="navbarSupportedContent"
               class="collapse navbar-collapse"
