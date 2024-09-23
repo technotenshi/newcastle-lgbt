@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "5yMoDkb8xPgevP428lRkM57gy.webp",
+    "imageAlt": "QA analysis",
+    "title": "Analyzing Mayor Robert Clark’s Controversial Speech: A Detailed Q&A Breakdown",
+    "description": "This article offers a critical examination of Mayor Robert Clark’s recent speech, dissecting his arguments and controversial statements through a comprehensive Q&A format, highlighting the concerns and reactions it has sparked within the Newcastle community.",
+    "link": "/critical-analysis/",
+    "target": "_blank"
+  },
+  {
+    "id": 2,
+    "imageSrc": "dQ1mVBZ9PEVBxDlnYRbDzxJJN.webp",
+    "imageAlt": "News",
+    "title": "News",
+    "description": "Find the latest relevant news around the LGBTQ+ community in our city.",
+    "link": "/news/",
+    "target": "_self"
+  },
+  {
+    "id": 3,
+    "imageSrc": "J5Yv6J60eGKd15ympeQrNMY8.webp",
+    "imageAlt": "Letter to the council",
+    "title": "Letter to the city council",
+    "description": "Read our open letter denouncing the city council's intolerant decision against raising the Pride flag.",
+    "link": "/letter/",
+    "target": "_self"
+  },
+  {
+    "id": 4,
+    "imageSrc": "eQjAkj6w5R658oKrKez4lVP8j.webp",
+    "imageAlt": "Events",
+    "title": "Events",
+    "description": "Stand with us for LGBTQ+ inclusivity and community solidarity.",
+    "link": "/events/",
+    "target": "_self"
+  },
+  {
+    "id": 5,
+    "imageSrc": "dQoPQWN8ymXXZ5JMwNPwR68JX.webp",
+    "imageAlt": "Meet the council members",
+    "title": "Meet your council members",
+    "description": "Visit our council members' bio page to find their names, email addresses, and see who is an LGBTQ+ ally.",
+    "link": "/council-members/",
+    "target": "_self"
+  },
+  {
+    "id": 6,
+    "imageSrc": "dQbbWJNqWgDwbxxpz1nXgxy9N.webp",
+    "imageAlt": "Organizations",
+    "title": "Organizations",
+    "description": "Discover featured organizations dedicated to promoting inclusivity and support for the LGBTQ+ community, and find out how you can get involved.",
+    "link": "/organizations/",
+    "target": "_self"
+  }
+]
