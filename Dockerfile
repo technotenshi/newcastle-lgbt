@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get install -y  \
 
 RUN corepack enable
 
-RUN npm install -g npm@10.8.3
+RUN npm install -g npm@latest
 
 RUN yarn global add @gridsome/cli
 

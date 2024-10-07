@@ -6,5 +6,23 @@
 
 module.exports = {
   siteName: 'Newcastle LGBT',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'CouncilMembersMd',
+        path: './content/council/**/*.md'
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'NewsMd',
+        path: './content/news/**/*.md'
+      }
+    }
+  ],
+  templates: {
+    NewsMd: '/news/:year/:month/:day/:slug'
+  }
 };

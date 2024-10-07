@@ -12,9 +12,9 @@ lint:
     docker compose run -it --rm app yarn lint
 lint-fix:
     docker compose run -it --rm app yarn lint-fix
-build: lint-fix
+build:
     docker compose run -it --rm app yarn build
-prod: build
+prod:
     docker compose up prod
 sync:
     ./sync.sh

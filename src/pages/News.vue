@@ -15,15 +15,15 @@
         <div class="container">
           <div class="row mt-4">
             <FeaturedNews
-              v-for="edge in $page.allNews.edges"
+              v-for="edge in $page.allNewsMd.edges"
               :key="edge.node.id"
-              :image-src="edge.node.imageSrc"
-              :image-alt="edge.node.imageAlt"
+              :image-src="edge.node.image.path"
+              :image-alt="edge.node.image.alt"
               :title="edge.node.title"
-              :author="edge.node.author"
+              :author="'author'"
               :date="edge.node.date"
-              :summary="edge.node.summary"
-              :link="edge.node.link"
+              :summary="edge.node.content"
+              :link="`/news/${edge.node.dateForLink}/${edge.node.slug}`"
               :target="edge.node.target"
             />
           </div>
@@ -34,7 +34,29 @@
 </template>
 
 <page-query>
-query { allNews(sortBy: "order", order: DESC) { edges { node { id order imageSrc imageAlt title author date summary link target } } } }
+{
+allNewsMd(sort: [{by: "date", order: DESC}, {by: "order", order: DESC}]) {
+edges {
+node {
+id
+title
+date(format: "MMMM D, Y")
+dateForLink: date(format: "YYYY/MM/DD")
+slug
+image {
+path
+alt
+}
+imageHeader {
+path
+alt
+}
+content: excerpt
+}
+}
+}
+}
+
 </page-query>
 
 <script>
