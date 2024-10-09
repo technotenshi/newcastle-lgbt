@@ -24,12 +24,17 @@ export default [
         plugins: {
             vue: pluginVue,  // Register the Vue plugin
         },
+    },
+    pluginJs.configs.recommended,
+    ...pluginVue.configs["flat/recommended"],
+    {
         rules: {
             // Add or modify rules as necessary
             "vue/no-unused-components": "warn",
             "vue/no-deprecated-slot-attribute": "error",
             "no-unused-vars": "warn",
             "semi": ["error", "always"], // Example JS rule to enforce semicolons
+            "vue/no-v-html": "off",
             "vue/multi-word-component-names": ["warn",{
                 "ignores": [
                     "Index",
@@ -38,6 +43,4 @@ export default [
             }],
         },
     },
-    pluginJs.configs.recommended,
-    ...pluginVue.configs["flat/recommended"],
 ];

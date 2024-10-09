@@ -45,8 +45,8 @@ module.exports = api => {
   // })
 
   api.loadSource(async actions => {
-    const featuresData = require('./src/data/features.json');
-    const featuredNews = require('./src/data/news.json');
+    const featuresData = require('./data/features.json');
+    const featuredNews = require('./data/news.json');
 
     dataUtils.createCollection(actions, 'FeatureItem', featuresData);
     dataUtils.createCollection(actions, 'News', featuredNews);
@@ -55,4 +55,4 @@ module.exports = api => {
   // api.createPages(({ createPage }) => {
   //   // Use the Pages API here: https://gridsome.org/docs/pages-api/
   // })
-};
+}

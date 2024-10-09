@@ -7,7 +7,7 @@
           :target="target"
         >
           <g-image
-            :src="imageSrc"
+            :src="require(`@/${imageSrc}`)"
             :alt="imageAlt"
             title=""
             data-slide-to="1"
@@ -26,10 +26,10 @@
           </g-link>
         </h5>
         <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-          <strong>{{ author }} </strong><em>{{ date }}</em>
+          <em>{{ date }}</em>
         </h6>
         <p class="mbr-text mbr-fonts-style mt-3 display-7">
-          {{ summary }}
+          {{ summary }}...
         </p>
       </div>
       <div class="mbr-section-btn item-footer mt-2">
@@ -51,7 +51,7 @@ export default {
   name: 'FeaturedNews',
   props: {
     imageSrc: {
-      type: Object,
+      type: String,
       required: true
     },
     imageAlt: {
@@ -59,10 +59,6 @@ export default {
       required: true
     },
     title: {
-      type: String,
-      required: true
-    },
-    author: {
       type: String,
       required: true
     },
