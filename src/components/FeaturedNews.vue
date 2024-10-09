@@ -29,7 +29,7 @@
           <em>{{ date }}</em>
         </h6>
         <p class="mbr-text mbr-fonts-style mt-3 display-7">
-          {{ summary }}
+          {{ summary }}...
         </p>
       </div>
       <div class="mbr-section-btn item-footer mt-2">
