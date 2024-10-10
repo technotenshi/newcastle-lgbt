@@ -1,6 +1,15 @@
 [
   {
     "id": 1,
+    "imageSrc": "newcastle-city-council-inclusivity-ethical-leadership-analysis.png",
+    "imageAlt": "A group of council members, dressed in formal attire, sits confidently at a meeting table, with a focus on a woman at the center. The atmosphere is professional, with a large city emblem visible in the background, symbolizing leadership and governance.",
+    "title": "An Analysis of Newcastle City Council's Debate on Inclusivity and Ethical Leadership",
+    "description": "At the October 1st, 2024 Newcastle City Council meeting, debates over inclusivity, political agendas, and ethical leadership arose from discussions on \"Hindu Heritage Month,\" the censure of a councilmember, and racial discrimination in the city’s Comprehensive Plan.",
+    "link": "/news/2024/10/01/newcastle-city-council-inclusivity-ethical-leadership-analysis/",
+    "target": "_blank"
+  },
+  {
+    "id": 2,
     "imageSrc": "5yMoDkb8xPgevP428lRkM57gy.webp",
     "imageAlt": "QA analysis",
     "title": "Analyzing Mayor Robert Clark’s Controversial Speech: A Detailed Q&A Breakdown",
@@ -9,21 +18,12 @@
     "target": "_blank"
   },
   {
-    "id": 2,
+    "id": 3,
     "imageSrc": "dQ1mVBZ9PEVBxDlnYRbDzxJJN.webp",
     "imageAlt": "News",
     "title": "News",
     "description": "Find the latest relevant news around the LGBTQ+ community in our city.",
     "link": "/news/",
-    "target": "_self"
-  },
-  {
-    "id": 3,
-    "imageSrc": "J5Yv6J60eGKd15ympeQrNMY8.webp",
-    "imageAlt": "Letter to the council",
-    "title": "Letter to the city council",
-    "description": "Read our open letter denouncing the city council's intolerant decision against raising the Pride flag.",
-    "link": "/letter/",
     "target": "_self"
   },
   {
@@ -37,15 +37,6 @@
   },
   {
     "id": 5,
-    "imageSrc": "dQoPQWN8ymXXZ5JMwNPwR68JX.webp",
-    "imageAlt": "Meet the council members",
-    "title": "Meet your council members",
-    "description": "Visit our council members' bio page to find their names, email addresses, and see who is an LGBTQ+ ally.",
-    "link": "/council-members/",
-    "target": "_self"
-  },
-  {
-    "id": 6,
     "imageSrc": "dQbbWJNqWgDwbxxpz1nXgxy9N.webp",
     "imageAlt": "Organizations",
     "title": "Organizations",
