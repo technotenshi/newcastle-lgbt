@@ -20,6 +20,13 @@ module.exports = {
         typeName: 'NewsMd',
         path: './content/news/**/*.md'
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'EventsMd',
+        path: './content/events/**/*.md'
+      }
     }
   ],
   templates: {

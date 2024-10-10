@@ -42,29 +42,19 @@
           <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-6 image-wrapper">
               <g-image
-                src="~/assets/images/djEYRr8qMXjV5vygnVyYG6J7n.webp"
-                alt="No Hate"
+                src="~/assets/images/register-to-vote.png"
+                alt="Diverse group of people standing in line at a voting event, holding papers and looking forward."
               />
             </div>
             <div class="col-12 col-md">
               <div class="text-wrapper">
                 <p class="mbr-text mbr-fonts-style display-7">
-                  A recent vote by Newcastle's city council saw a
-                  majority (4-3) against raising the Pride flag at city hall for Pride Month, highlighting
-                  underlying intolerance and privilege within the council. Mayor Robert Clark and council members
-                  Pratima Lakhotia, Steve Tallman, and Tom Griffin voted against the motion. Clark argued that
-                  raising the Pride flag could necessitate flying other divisive symbols, drawing an offensive
-                  comparison between the Pride flag and hate symbols such as the Hamas flag and MAGA flag. He
-                  claimed that the American flag is the only unifying symbol needed, a statement reflecting his
-                  cisgender, heterosexual, white male privilege, which does not account for the experiences of
-                  LGBTQ+ and other minoritized communities.<br><br>Councilmembers Paul Charbonneau, Sun Burford,
-                  and Ariana Sherlock, who supported the motion, emphasized the importance of inclusivity and the
-                  positive impact of the Pride flag on the local LGBTQ+ community. They highlighted that flying
-                  the flag shows support and invites engagement from underrepresented groups. The real harm and
-                  violence are experienced by LGBTQ+ individuals, not by those opposing the Pride flag. Burford
-                  criticized the intolerant and outdated views of some council members, urging for leaders who
-                  embrace diversity and acceptance. The decision underscores the disconnect between the privileged
-                  perspectives of some leaders and the actual struggles faced by minoritized communities.<br>
+                  The deadline to register to vote for the November 5th, 2024 election is fast approaching! Be sure to register or update your address by <strong>Monday, October 28, 2024</strong>, to ensure your voice is heard. Voting directly impacts key issues like healthcare, racial justice, climate policy, and housing, giving us the chance to choose leaders who truly represent our communities.
+                  <br><br>
+                  When voter turnout is low, <strong>it harms democracy</strong> by creating unrepresentative governments, often favoring wealthier, privileged groups—<i>just as we've seen locally</i>. By voting, we can challenge this imbalance and shape a more inclusive future. Register online, by mail, or in person—don’t wait! Register today on <a
+                    href="https://vote.gov/register/washington"
+                    target="_blank"
+                  >Washington’s election website</a>, and <strong>make a plan to vote early!</strong>
                 </p>
               </div>
             </div>
@@ -114,12 +104,12 @@ export default {
           content: 'Welcome to Newcastle LGBTQ Voice! This is your go-to platform for amplifying LGBTQ voices, advocating for equality, and promoting community events in Newcastle, WA.'
         }
       ]
-    }
+    };
   },
   components: {
     FeatureItem
   }
-}
+};
 </script>
 
 <style scoped>
