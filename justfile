@@ -4,8 +4,6 @@ develop:
     docker compose up app --build
 down:
     docker compose down
-up-d:
-    docker compose up app --build -d
 logs:
     docker compose logs -f
 lint:
