@@ -13,6 +13,7 @@ export default [
         ignores: [
             ".cache/*",
             "dist/*",
+            "cms/*",
             "src/assets/*",
             "src/.temp/*",
         ]

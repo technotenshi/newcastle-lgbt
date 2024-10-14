@@ -16,3 +16,7 @@ services:
     working_dir: /usr/share/nginx/html
     volumes:
       - ./dist:/usr/share/nginx/html
+
+networks:
+  default:
+    name: newcastle-lgbt
