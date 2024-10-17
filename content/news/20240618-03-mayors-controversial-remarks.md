@@ -11,7 +11,7 @@ imageHeader:
   alt: "The Mayor Robert Clark, while giving his controversial speech at the Newcastle City Council session."
 ---
 
-On the day before Juneteenth, Newcastle Mayor Robert Clark ignited a firestorm of controversy with remarks disparaging both reparations for Black Americans and the city's LGBTQ+ community. During a debate over flying the pride flag, Clark's 15-minute speech drew sharp criticism from local leaders and residents alike.
+**Newcastle, WA** – On the day before Juneteenth, Newcastle Mayor Robert Clark ignited a firestorm of controversy with remarks disparaging both reparations for Black Americans and the city's LGBTQ+ community. During a debate over flying the pride flag, Clark's 15-minute speech drew sharp criticism from local leaders and residents alike.
 
 Clark's speech came amidst a backdrop of mounting tensions in the Eastside community following a city council vote that initially rejected flying the pride flag. His comments, perceived by many as divisive, were delivered under the pretense of rejecting hate and division.
 

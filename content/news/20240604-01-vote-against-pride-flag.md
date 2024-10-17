@@ -8,7 +8,7 @@ image:
   alt: "Newcastle City Council Votes Against Raising Pride Flag"
 ---
 
-On June 4th, 2024, the Newcastle City Council voted against raising the Pride flag at city hall for Pride Month, with a close majority of 4-3. This decision has sparked considerable controversy and highlighted underlying issues of intolerance and privilege within the council.
+**Newcastle, WA** – On June 4th, 2024, the Newcastle City Council voted against raising the Pride flag at city hall for Pride Month, with a close majority of 4-3. This decision has sparked considerable controversy and highlighted underlying issues of intolerance and privilege within the council.
 
 **The Vote and Arguments**
 
