@@ -48,6 +48,7 @@
         :email="edge.node.email"
         :flag="edge.node.flag"
         :bio="edge.node.content"
+        :image="edge.node.image"
       />
     </div>
   </Layout>
@@ -65,6 +66,7 @@ name
 email
 flag
 content
+image
 }
 }
 }
