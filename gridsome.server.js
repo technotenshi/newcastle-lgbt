@@ -46,10 +46,8 @@ module.exports = api => {
 
   api.loadSource(async actions => {
     const featuresData = require('./data/features.json');
-    const featuredNews = require('./data/news.json');
 
     dataUtils.createCollection(actions, 'FeatureItem', featuresData);
-    dataUtils.createCollection(actions, 'News', featuredNews);
   });
 
   // api.createPages(({ createPage }) => {

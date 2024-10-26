@@ -1,24 +1,42 @@
 [
   {
     "id": 1,
+    "imageSrc": "news/20241025-01-election-guide.png",
+    "imageAlt": "A 2024 election guide sits on a wooden table alongside pamphlets, reading glasses, a pen, and a coffee cup, creating a scene of thoughtful voter preparation.",
+    "title": "2024 Election Guide: Key Initiatives and Candidate Endorsements",
+    "description": "As the 2024 election approaches, voters in the area face several key initiatives and candidate choices that will shape local policies on issues like education, public health, environmental sustainability, and community resources.",
+    "link": "/news/2024/10/25/2024-election-guide-endorsements",
+    "target": "_self"
+  },
+  {
+    "id": 2,
+    "imageSrc": "20241021-01-why-electing-trump-in-2024-would-threaten-democracy.png",
+    "imageAlt": "An ominous sky looms over the U.S. Capitol with torn American flags and shadowy figures representing authoritarianism, symbolizing the threat to democracy and civil rights.",
+    "title": "The 2024 Election: A Pivotal Moment for Democracy",
+    "description": "Discover why the 2024 election is a turning point for democracy. Explore the dangers of Trump’s re-election and the hope for a future rooted in justice, civil rights, and the rule of law. Your vote could shape the nation’s path—don’t miss this critical analysis.",
+    "link": "/news/2024/10/21/why-electing-trump-in-2024-would-threaten-democracy/",
+    "target": "_self"
+  },
+  {
+    "id": 3,
     "imageSrc": "newcastle-city-council-inclusivity-ethical-leadership-analysis.png",
     "imageAlt": "A group of council members, dressed in formal attire, sits confidently at a meeting table, with a focus on a woman at the center. The atmosphere is professional, with a large city emblem visible in the background, symbolizing leadership and governance.",
     "title": "An Analysis of Newcastle City Council's Debate on Inclusivity and Ethical Leadership",
     "description": "At the October 1st, 2024 Newcastle City Council meeting, debates over inclusivity, political agendas, and ethical leadership arose from discussions on \"Hindu Heritage Month,\" the censure of a councilmember, and racial discrimination in the city’s Comprehensive Plan.",
     "link": "/news/2024/10/01/newcastle-city-council-inclusivity-ethical-leadership-analysis/",
-    "target": "_blank"
+    "target": "_self"
   },
   {
-    "id": 2,
+    "id": 4,
     "imageSrc": "5yMoDkb8xPgevP428lRkM57gy.webp",
     "imageAlt": "QA analysis",
     "title": "Analyzing Mayor Robert Clark’s Controversial Speech: A Detailed Q&A Breakdown",
     "description": "This article offers a critical examination of Mayor Robert Clark’s recent speech, dissecting his arguments and controversial statements through a comprehensive Q&A format, highlighting the concerns and reactions it has sparked within the Newcastle community.",
     "link": "/critical-analysis/",
-    "target": "_blank"
+    "target": "_self"
   },
   {
-    "id": 3,
+    "id": 5,
     "imageSrc": "dQ1mVBZ9PEVBxDlnYRbDzxJJN.webp",
     "imageAlt": "News",
     "title": "News",
@@ -27,7 +45,7 @@
     "target": "_self"
   },
   {
-    "id": 4,
+    "id": 6,
     "imageSrc": "eQjAkj6w5R658oKrKez4lVP8j.webp",
     "imageAlt": "Events",
     "title": "Events",
@@ -36,7 +54,7 @@
     "target": "_self"
   },
   {
-    "id": 5,
+    "id": 7,
     "imageSrc": "dQbbWJNqWgDwbxxpz1nXgxy9N.webp",
     "imageAlt": "Organizations",
     "title": "Organizations",

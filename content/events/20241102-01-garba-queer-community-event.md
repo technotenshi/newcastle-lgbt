@@ -7,10 +7,8 @@ image:
   path: "assets/images/20241102-01-garba-queer-community-event.png"
   alt: "Group of people joyfully dancing in colorful traditional attire at an outdoor celebration, surrounded by lanterns and vibrant decorations."
 link:
-  text: "More info to come..."
-  target: "#"
+  text: "More info here"
+  target: "https://www.facebook.com/eastsidepridepnw/posts/pfbid02K4Z8icEZyan1BQEWmXi7RZzGLnUUTVUUaqzLxGf1VTaFkAFvPgUDbBhQgSobBxY2l"
 ---
 
-Celebrate the beauty of Garba at the **Queer Community Event**, hosted by KCLS Bellevue! This exciting evening of dance and culture will bring together LGBTQIA+ community members for a fun and inclusive celebration. Come dressed in your traditional Indian attire or something that makes you feel fabulous!
-
-The event will take place on Saturday, November 2, from 5 pm to 9 pm. More details to come, so mark your calendars and get ready for a night of dancing, culture, and joy.
+Get ready for an evening of dance and community at a vibrant and inclusive Garba celebration on **November 2nd, 5 to 9 p.m.** at the **North Bellevue Community Center**, hosted by **Desi Rainbow**, **KCLS Foundation**, and other community collaborators! Garba is a traditional community dance from **Gujarat, India**, performed during the harvest season to honor the **divine feminine** within everyone. This event will celebrate **love, diversity, South Asian cultural heritage**, and the **intergenerational LGBTQIA2S+ community**. Wear your most vibrant, expressive, and **gender expansive outfits**, and come ready for an evening of fun, dancing, and connection. **Eastside Pride PNW** will be tabling at the event.
