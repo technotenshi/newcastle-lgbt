@@ -55,7 +55,10 @@
 
 <page-query>
 {
-allEventsMd (sort: [{by: "date", order: DESC}, {by: "order", order: DESC}]) {
+allEventsMd (
+sort: [{by: "date", order: ASC}, {by: "order", order: DESC}]
+filter: {date: {gte: "2024-10-25"}}
+) {
 edges {
 node {
 id
