@@ -33,34 +33,34 @@
         </div>
       </section>
 
-      <section
-        id="header14-1j"
-        data-bs-version="5.1"
-        class="header14 cid-sFzz5E692j"
-      >
-        <div class="container">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-6 image-wrapper">
-              <g-image
-                src="~/assets/images/register-to-vote.png"
-                alt="Diverse group of people standing in line at a voting event, holding papers and looking forward."
-              />
-            </div>
-            <div class="col-12 col-md">
-              <div class="text-wrapper">
-                <p class="mbr-text mbr-fonts-style display-7">
-                  The deadline to register to vote for the November 5th, 2024 election is fast approaching! Be sure to register or update your address by <strong>Monday, October 28, 2024</strong>, to ensure your voice is heard. Voting directly impacts key issues like healthcare, racial justice, climate policy, and housing, giving us the chance to choose leaders who truly represent our communities.
-                  <br><br>
-                  When voter turnout is low, <strong>it harms democracy</strong> by creating unrepresentative governments, often favoring wealthier, privileged groups—<i>just as we've seen locally</i>. By voting, we can challenge this imbalance and shape a more inclusive future. Register online, by mail, or in person—don’t wait! Register today on <a
-                    href="https://vote.gov/register/washington"
-                    target="_blank"
-                  >Washington’s election website</a>, and <strong>make a plan to vote early!</strong>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<!--      <section-->
+<!--        id="header14-1j"-->
+<!--        data-bs-version="5.1"-->
+<!--        class="header14 cid-sFzz5E692j"-->
+<!--      >-->
+<!--        <div class="container">-->
+<!--          <div class="row justify-content-center align-items-center">-->
+<!--            <div class="col-12 col-md-6 image-wrapper">-->
+<!--              <g-image-->
+<!--                src="~/assets/images/register-to-vote.png"-->
+<!--                alt="Diverse group of people standing in line at a voting event, holding papers and looking forward."-->
+<!--              />-->
+<!--            </div>-->
+<!--            <div class="col-12 col-md">-->
+<!--              <div class="text-wrapper">-->
+<!--                <p class="mbr-text mbr-fonts-style display-7">-->
+<!--                  The deadline to register to vote for the November 5th, 2024 election is fast approaching! Be sure to register or update your address by <strong>Monday, October 28, 2024</strong>, to ensure your voice is heard. Voting directly impacts key issues like healthcare, racial justice, climate policy, and housing, giving us the chance to choose leaders who truly represent our communities.-->
+<!--                  <br><br>-->
+<!--                  When voter turnout is low, <strong>it harms democracy</strong> by creating unrepresentative governments, often favoring wealthier, privileged groups—<i>just as we've seen locally</i>. By voting, we can challenge this imbalance and shape a more inclusive future. Register online, by mail, or in person—don’t wait! Register today on <a-->
+<!--                    href="https://vote.gov/register/washington"-->
+<!--                    target="_blank"-->
+<!--                  >Washington’s election website</a>, and <strong>make a plan to vote early!</strong>-->
+<!--                </p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
 
       <section
         id="features3-9"
