@@ -6,6 +6,7 @@
     "title": "2024 Election Results for Newcastle, WA: A Post-Election Analysis",
     "description": "Explore the 2024 election results for Newcastle, WA, and Washington State, comparing outcomes with our voting guide’s endorsements. This article delves into the potential impacts on LGBTQ+ rights and local policies under the new federal administration, highlighting both challenges and areas for community resilience.",
     "link": "/news/2024/11/06/2024-newcastle-election-results-analysis-lgbtq-implications",
+    "order": 3,
     "target": "_self"
   },
   {
@@ -15,6 +16,7 @@
     "title": "The 2024 Election: A Pivotal Moment for Democracy",
     "description": "Discover why the 2024 election is a turning point for democracy. Explore the dangers of Trump’s re-election and the hope for a future rooted in justice, civil rights, and the rule of law. Your vote could shape the nation’s path—don’t miss this critical analysis.",
     "link": "/news/2024/10/21/why-electing-trump-in-2024-would-threaten-democracy/",
+    "order": 4,
     "target": "_self"
   },
   {
@@ -24,6 +26,7 @@
     "title": "An Analysis of Newcastle City Council's Debate on Inclusivity and Ethical Leadership",
     "description": "At the October 1st, 2024 Newcastle City Council meeting, debates over inclusivity, political agendas, and ethical leadership arose from discussions on \"Hindu Heritage Month,\" the censure of a councilmember, and racial discrimination in the city’s Comprehensive Plan.",
     "link": "/news/2024/10/01/newcastle-city-council-inclusivity-ethical-leadership-analysis/",
+    "order": 5,
     "target": "_self"
   },
   {
@@ -33,6 +36,7 @@
     "title": "Analyzing Mayor Robert Clark’s Controversial Speech: A Detailed Q&A Breakdown",
     "description": "This article offers a critical examination of Mayor Robert Clark’s recent speech, dissecting his arguments and controversial statements through a comprehensive Q&A format, highlighting the concerns and reactions it has sparked within the Newcastle community.",
     "link": "/critical-analysis/",
+    "order": 6,
     "target": "_self"
   },
   {
@@ -42,6 +46,7 @@
     "title": "News",
     "description": "Find the latest relevant news around the LGBTQ+ community in our city.",
     "link": "/news/",
+    "order": 1,
     "target": "_self"
   },
   {
@@ -51,6 +56,7 @@
     "title": "Events",
     "description": "Stand with us for LGBTQ+ inclusivity and community solidarity.",
     "link": "/events/",
+    "order": 2,
     "target": "_self"
   },
   {
@@ -60,6 +66,7 @@
     "title": "Organizations",
     "description": "Discover featured organizations dedicated to promoting inclusivity and support for the LGBTQ+ community, and find out how you can get involved.",
     "link": "/organizations/",
+    "order": 7,
     "target": "_self"
   }
 ]
