@@ -12,7 +12,7 @@
             <div class="col-md-4 col-lg-3">
               <div v-if="image">
                 <g-image
-                  :src="require(`@/assets/images/council/${image}`)"
+                  :src="require(`@/${image}`)"
                   alt="Image"
                   class="img-fluid"
                 />

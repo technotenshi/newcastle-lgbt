@@ -1,11 +1,11 @@
 ---
 title: "Position 6"
-date: "2024-09-24"
+date: "2025-01-01"
 name: "Paul Charbonneau"
 email: "paulc@newcastlewa.gov"
 flag: ️‍🌈
 position: 6
-image: position-6.png
+image: assets/images/council-members/20250101-05-paul-charbonneau-portrait.png
 ---
 
 Paul Charbonneau, elected to the Newcastle City Council in 2021, is the youngest-ever councilmember and the first to have grown up in the city. A graduate of Hazen High School, Paul has been actively involved in the community as an Assistant Coach for the Boys & Girls Wrestling team since 2017 and helps referee local wrestling meets. He holds a B.A. in Political Science and Public Health from Occidental College, where he served as Student Body President and competed in NCAA Football and Track & Field.
