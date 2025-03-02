@@ -57,7 +57,7 @@
 {
 allEventsMd (
 sort: [{by: "date", order: ASC}, {by: "order", order: DESC}]
-filter: {date: {gte: "2025-02-17"}}
+filter: {date: {gte: "2025-03-01"}}
 ) {
 edges {
 node {
