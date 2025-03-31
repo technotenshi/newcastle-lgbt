@@ -4,10 +4,10 @@ date: "2025-03-31"
 order: 1
 slug: "transgender-day-of-visibility-2025"
 image:
-  path: "assets/images/news/20250301-01-lgbtq-eastside-community-survey.png"
+  path: "assets/images/news/20250331-01-transgender-day-of-visibility-2025.png"
   alt: "Your voice matters! Take a moment to complete the Eastside Pride PNW community survey and help build a more inclusive and supportive future for LGBTQIA2+ individuals on the Eastside."
 imageHeader:
-  path: "assets/images/news/20250301-01-lgbtq-eastside-community-survey-header.png"
+  path: "assets/images/news/20250331-01-transgender-day-of-visibility-2025-header.png"
   alt: "Make your voice count! Take the Eastside Pride PNW community survey today and help shape the future of LGBTQIA2+ advocacy and support on the Eastside."
 ---
 
