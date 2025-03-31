@@ -5,10 +5,10 @@ order: 1
 slug: "transgender-day-of-visibility-2025"
 image:
   path: "assets/images/news/20250331-01-transgender-day-of-visibility-2025.png"
-  alt: "Your voice matters! Take a moment to complete the Eastside Pride PNW community survey and help build a more inclusive and supportive future for LGBTQIA2+ individuals on the Eastside."
+  alt: "A welcoming community center lobby decorated with trans flags and posters hosts volunteers and attendees engaging in a daytime celebration."
 imageHeader:
   path: "assets/images/news/20250331-01-transgender-day-of-visibility-2025-header.png"
-  alt: "Make your voice count! Take the Eastside Pride PNW community survey today and help shape the future of LGBTQIA2+ advocacy and support on the Eastside."
+  alt: A diverse crowd celebrates Transgender Day of Visibility in a sunny park with flags, signs, cherry blossoms, and joyful community booths."
 ---
 
 **Newcastle, WA** – March 31 marks International Transgender Day of Visibility (TDOV), an annual celebration of the lives, contributions, and resilience of transgender and non-binary people. Founded in 2009 by transgender activist Rachel Crandall-Crocker, TDOV stands as a joyful counterpart to Transgender Day of Remembrance, shifting focus from mourning the lives lost to honoring those who are living, thriving, and fighting for equity.
