@@ -5,10 +5,10 @@ order: 1
 slug: "transgender-day-of-visibility-2025"
 image:
   path: "assets/images/news/20250331-01-transgender-day-of-visibility-2025.png"
-  alt: "A deep dive into Newcastle’s Pride flag debate, exploring flawed opposition arguments and the significance of LGBTQ+ visibility."
+  alt: "A diverse crowd celebrates Transgender Day of Visibility in a sunny park with flags, signs, cherry blossoms, and joyful community booths."
 imageHeader:
   path: "assets/images/news/20250331-01-transgender-day-of-visibility-2025-header.png"
-  alt: "A deep dive into Newcastle’s Pride flag debate, exploring flawed opposition arguments and the significance of LGBTQ+ visibility."
+  alt: "A welcoming community center lobby decorated with trans flags and posters hosts volunteers and attendees engaging in a daytime celebration."
 ---
 
 **Newcastle, WA** – March 31 marks International Transgender Day of Visibility (TDOV), an annual celebration of the lives, contributions, and resilience of transgender and non-binary people. Founded in 2009 by transgender activist Rachel Crandall-Crocker, TDOV stands as a joyful counterpart to Transgender Day of Remembrance, shifting focus from mourning the lives lost to honoring those who are living, thriving, and fighting for equity.
