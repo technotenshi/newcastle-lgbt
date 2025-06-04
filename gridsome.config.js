@@ -31,5 +31,12 @@ module.exports = {
   ],
   templates: {
     NewsMd: '/news/:year/:month/:day/:slug'
+  },
+  transformers: {
+    remark: {
+      plugins: [
+        ['remark-html', { sanitize: true }]
+      ]
+    }
   }
 };
