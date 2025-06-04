@@ -33,7 +33,11 @@
         </div>
       </section>
 
-      <LatestNews />
+      <section class="latest-news" v-if="newsItems && newsItems.length > 0">
+        <div class="container">
+          <LatestNews :newsItems="newsItems" />
+        </div>
+      </section>
 
 <!--      <section-->
 <!--        id="header14-1j"-->
@@ -89,7 +93,41 @@
 </template>
 
 <page-query>
-query { allFeatureItem(sortBy: "order", order: ASC) { edges { node { id order imageSrc imageAlt title description link target } } } }
+query {
+  allFeatureItem(sortBy: "order", order: ASC) {
+    edges {
+      node {
+        id
+        order
+        imageSrc
+        imageAlt
+        title
+        description
+        link
+        target
+      }
+    }
+  }
+  latestNews: allNewsMd(
+    filter: { path: { regex: "^/news/" } }
+    sortBy: "date"
+    order: DESC
+    limit: 10
+  ) {
+    edges {
+      node {
+        id
+        title
+        path
+        date
+        image {
+          path
+          alt
+        }
+      }
+    }
+  }
+}
 </page-query>
 
 <script>
@@ -109,6 +147,11 @@ export default {
       ]
     };
   },
+  computed: {
+    newsItems() {
+      return this.$page.latestNews ? this.$page.latestNews.edges : [];
+    }
+  },
   components: {
     FeatureItem,
     LatestNews
@@ -118,4 +161,8 @@ export default {
 
 <style scoped>
 /* Add any custom component-specific styles here */
+.latest-news {
+  padding: 2rem 0;
+  background-color: #f8f9fa; /* Optional: background color for the section */
+}
 </style>
