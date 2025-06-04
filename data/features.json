@@ -19,35 +19,35 @@
     "order": 20,
     "target": "_self"
   },
-  {
+{
     "id": 3,
+    "imageSrc": "news/20250604-01-newcastle-lgbt-first-anniversary.png",
+    "imageAlt": "Newcastle.LGBT: One Year of Advocacy and Community Empowerment",
+    "title": "One Year of Newcastle.LGBT: A Chronicle of Courage, Community, and Change",
+    "description": "On June 4th, 2025, Newcastle.LGBT celebrates its first anniversary as a platform dedicated to amplifying LGBTQIA2S+ voices and documenting our community’s triumphs and challenges. Learn how this past year’s stories have shaped Newcastle’s ongoing journey towards inclusivity and equality.",
+    "link": "/news/2025/06/04/newcastle-lgbt-first-anniversary/",
+    "order": 30,
+    "target": "_self"
+},
+  {
+    "id": 4,
     "imageSrc": "news/202500520-01-newcastle-pride-flag-debate-victory-amidst-missed-opportunities.png",
     "imageAlt": "A deep dive into Newcastle’s Pride flag debate, exploring flawed opposition arguments and the significance of LGBTQ+ visibility.",
     "title": "Newcastle Pride Flag Debate: A Victory Amidst Missed Opportunities.",
     "description": "Newcastle’s recent debate over raising the Pride flag revealed deep divisions on the city council and highlighted flawed arguments that undermined LGBTQ+ representation and community inclusivity. Read on to learn why symbolism matters and how local leadership shapes the lives of marginalized residents.",
     "link": "/news/2025/05/20/newcastle-pride-flag-debate-victory-amidst-missed-opportunities/",
-    "order": 30,
+    "order": 40,
     "target": "_self"
   },
   {
-      "id": 4,
+      "id": 5,
       "imageSrc": "news/20250228-01-newcastle-mayor-climate-equity-attack.png",
       "imageAlt": "As Newcastle city officials review controversial edits to their Comprehensive Plan, concerns grow over the removal of climate and equity policies, highlighting the urgent need for science-based leadership over ideological manipulation.",
       "title": "Newcastle Mayor’s Attack on Climate and Equity Policies Undermines Facts and Public Interest",
       "description": "Newcastle Mayor Robert Clark is leading an effort to strip climate and equity policies from the city's Comprehensive Plan, using misinformation, right-wing rhetoric, and historical erasure—making it critical for residents to elect science-driven, socially responsible leaders in 2025.",
       "link": "/news/2025/02/28/newcastle-mayor-climate-equity-attack/",
-      "order": 40,
+      "order": 50,
       "target": "_self"
-  },
-  {
-    "id": 5,
-    "imageSrc": "news/20250126-01-proposed-legislation-threatens-gender-affirming-care-wa-feature.png",
-    "imageAlt": "A young person stands resolutely in front of the Washington State Capitol, draped in a vibrant pride flag, their gaze uplifted against an overcast sky.",
-    "title": "Proposed Legislation Threatens Gender-Affirming Care for Minors in Washington State",
-    "description": "A newly proposed bill in Washington State aims to ban gender-affirming medical care for minors, sparking widespread concern over its potential impact on transgender youth and the broader fight for LGBTQ+ rights.",
-    "link": "/news/2025/01/26/proposed-legislation-threatens-gender-affirming-care-wa/",
-    "order": 50,
-    "target": "_self"
   },
   {
     "id": 6,
