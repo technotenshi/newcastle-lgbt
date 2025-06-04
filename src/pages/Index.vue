@@ -109,9 +109,7 @@ query {
     }
   }
   latestNews: allNewsMd(
-    filter: { path: { regex: "^/news/" } }
-    sortBy: "date"
-    order: DESC
+    sort: [{by: "date", order: DESC}, {by: "order", order: DESC}] # Changed sorting
     limit: 10
   ) {
     edges {
@@ -119,7 +117,8 @@ query {
         id
         title
         path
-        date
+        date # Keep simple date for now, formatting can be done in template if needed
+        slug # Added slug
         image {
           path
           alt
