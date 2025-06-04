@@ -16,7 +16,7 @@
 
 <static-query>
 query {
-  latestNews: allMarkdownPage(
+  latestNews: allNewsMd(  # Corrected from allMarkdownPage to allNewsMd
     filter: { path: { regex: "^/news/" } }
     sortBy: "date"
     order: DESC
@@ -43,7 +43,8 @@ export default {
   name: 'LatestNews',
   computed: {
     newsItems() {
-      return this.$static.latestNews.edges;
+      // Ensure this path matches the query structure
+      return this.$static.latestNews ? this.$static.latestNews.edges : [];
     }
   }
 };
