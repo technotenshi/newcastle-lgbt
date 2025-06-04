@@ -33,6 +33,8 @@
         </div>
       </section>
 
+      <LatestNews />
+
 <!--      <section-->
 <!--        id="header14-1j"-->
 <!--        data-bs-version="5.1"-->
@@ -92,6 +94,7 @@ query { allFeatureItem(sortBy: "order", order: ASC) { edges { node { id order im
 
 <script>
 import FeatureItem from '@/components/FeatureItem.vue';
+import LatestNews from '@/components/LatestNews.vue';
 
 export default {
   name: 'Index',
@@ -107,7 +110,8 @@ export default {
     };
   },
   components: {
-    FeatureItem
+    FeatureItem,
+    LatestNews
   }
 };
 </script>
