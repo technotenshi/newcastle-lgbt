@@ -33,9 +33,21 @@
         </div>
       </section>
 
-      <section class="latest-news" v-if="newsItems && newsItems.length > 0">
+      <section class="latest-news" v-if="$page.latestNews && $page.latestNews.edges && $page.latestNews.edges.length > 0">
         <div class="container">
-          <LatestNews :newsItems="newsItems" />
+          <h2 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+            <strong>Latest News</strong>
+          </h2>
+          <div class="row mt-4">
+            <LatestNews
+              v-for="edge in $page.latestNews.edges"
+              :key="edge.node.id"
+              :title="edge.node.title"
+              :path="edge.node.path"
+              :date="edge.node.date"
+              :image="edge.node.image"
+            />
+          </div>
         </div>
       </section>
 
@@ -146,11 +158,6 @@ export default {
       ]
     };
   },
-  computed: {
-    newsItems() {
-      return this.$page.latestNews ? this.$page.latestNews.edges : [];
-    }
-  },
   components: {
     FeatureItem,
     LatestNews
@@ -161,7 +168,14 @@ export default {
 <style scoped>
 /* Add any custom component-specific styles here */
 .latest-news {
-  padding: 2rem 0;
-  background-color: #f8f9fa; /* Optional: background color for the section */
+  padding: 3rem 0; /* Increased padding slightly */
+  background-color: #f8f9fa;
+}
+
+/* Styling for the section title, similar to other sections if applicable */
+.latest-news .mbr-section-title {
+  /* Ensure it matches other section titles, e.g. from features3-9 */
+  /* text-align: center; already applied by align-center */
+  /* margin-bottom: 1.5rem; or mb-4 as used */
 }
 </style>

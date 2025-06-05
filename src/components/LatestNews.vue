@@ -1,56 +1,65 @@
 <template>
-  <section class="latest-news-component" v-if="newsItems && newsItems.length > 0">
-    <h2>Latest News</h2>
-    <div class="row mt-4"> <!-- Added row for grid system -->
-      <div v-for="item in newsItems" :key="item.node.id" class="item features-image col-12 col-md-6 col-lg-4 news-grid-item"> <!-- Added grid column classes -->
-        <div class="item-wrapper"> <!-- Added item-wrapper, similar to FeatureItem -->
-          <g-link :to="item.node.path" class="news-item-link">
-            <div class="item-img"> <!-- Added item-img for image consistency -->
-              <g-image v-if="item.node.image && item.node.image.path" :src="require(`!!assets-loader!@/../${item.node.image.path}`)" :alt="item.node.image.alt || item.node.title" class="news-thumbnail" />
-            </div>
-            <div class="item-content"> <!-- Added item-content for text consistency -->
-              <h5 class="item-title mbr-fonts-style display-7 news-title"><strong>{{ item.node.title }}</strong></h5>
-            </div>
-          </g-link>
+  <div class="item features-image col-12 col-md-6 col-lg-4 news-grid-item">
+    <div class="item-wrapper">
+      <g-link :to="path" class="news-item-link">
+        <div class="item-img">
+          <g-image v-if="image && image.path" :src="require(`!!assets-loader!@/../${image.path}`)" :alt="image.alt || title" class="news-thumbnail" />
         </div>
-      </div>
+        <div class="item-content">
+          <h5 class="item-title mbr-fonts-style display-7 news-title"><strong>{{ title }}</strong></h5>
+          <!-- Optional: Display date if desired -->
+          <!-- <p class="news-date mbr-fonts-style display-7">{{ formattedDate }}</p> -->
+        </div>
+      </g-link>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'LatestNews',
   props: {
-    newsItems: {
-      type: Array,
-      default: () => []
+    title: {
+      type: String,
+      required: true
+    },
+    path: {
+      type: String,
+      required: true
+    },
+    date: { // Raw date string, formatting can be done if needed
+      type: String,
+      required: true
+    },
+    image: { // Expects an object like { path: '...', alt: '...' }
+      type: Object,
+      default: null // Or default: () => ({ path: '', alt: '' }) if image is optional but object structure is preferred
     }
   }
+  // Optional: Add computed property for date formatting if needed
+  // computed: {
+  //   formattedDate() {
+  //     if (!this.date) return '';
+  //     const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  //     return new Date(this.date).toLocaleDateString(undefined, options);
+  //   }
+  // }
 };
 </script>
 
 <style scoped>
-/* Adjusted styles to work with the new grid structure and item-wrapper */
-.latest-news-component h2 {
-  text-align: center;
-  margin-bottom: 1.5rem; /* Matches style of FeatureItem section titles if any */
-  /* Or use existing mbr-section-title mbr-fonts-style display-2 if that's the standard */
-}
-
-/* news-grid-item is the col-12 col-md-6 col-lg-4 element */
+/* Styles are largely the same as the previous grid item styling */
+/* news-grid-item is the root element of this component now. */
 .news-grid-item {
   margin-bottom: 1.5rem; /* Space below items if they wrap */
 }
 
 .item-wrapper {
-  /* Replicates styling from FeatureItem's item-wrapper if necessary */
-  /* e.g., borders, shadows, background, padding, text-align */
   border: 1px solid #eee;
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
-  height: 100%; /* Ensure wrappers in a row are same height if content varies */
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -64,33 +73,38 @@ export default {
   color: inherit;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Allows link to fill wrapper */
+  flex-grow: 1;
 }
 
 .item-img {
   width: 100%;
-  /* height: 180px; /* Or make it aspect ratio based */
-  /* object-fit: cover; /* Handled by g-image */
 }
 
 .news-thumbnail {
   width: 100%;
-  height: 180px; /* Fixed height for thumbnails */
+  height: 180px;
   object-fit: cover;
-  display: block; /* Remove extra space below image */
+  display: block;
 }
 
 .item-content {
-  padding: 1rem; /* Standard padding within content area */
-  text-align: center; /* Center title */
-  flex-grow: 1; /* Allows content to push footer down if any */
+  padding: 1rem;
+  text-align: center;
+  flex-grow: 1;
 }
 
-.news-title { /* This is an h5 now */
-  font-size: 1.1rem; /* Adjust as needed for h5 */
-  font-weight: bold; /* Handled by <strong> */
-  margin: 0; /* Reset margin for h5 */
+.news-title { /* This is an h5 */
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
 }
 
-/* Remove old .news-list and .news-item styles as they are replaced by grid classes and .item-wrapper */
+/* Optional: Styles for date if uncommented */
+/*
+.news-date {
+  font-size: 0.9rem;
+  color: #6c757d; /* Muted color for date */
+  margin-top: 0.5rem;
+}
+*/
 </style>
