@@ -98,13 +98,4 @@ export default {
   font-weight: bold;
   margin: 0;
 }
-
-/* Optional: Styles for date if uncommented */
-/*
-.news-date {
-  font-size: 0.9rem;
-  color: #6c757d; /* Muted color for date */
-  margin-top: 0.5rem;
-}
-*/
 </style>
