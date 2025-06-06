@@ -3,7 +3,7 @@
     <div class="item-wrapper">
       <g-link :to="path" class="news-item-link">
         <div class="item-img">
-          <g-image v-if="image && image.path" :src="require(`!!assets-loader!@/../${image.path}`)" :alt="image.alt || title" class="news-thumbnail" />
+      <g-image v-if="image && image.path" :src="require(`~/${image.path}`)" :alt="image.alt || title" class="news-thumbnail" />
         </div>
         <div class="item-content">
           <h5 class="item-title mbr-fonts-style display-7 news-title"><strong>{{ title }}</strong></h5>
