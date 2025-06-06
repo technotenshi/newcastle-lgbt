@@ -4,10 +4,10 @@ date: "2025-05-20"
 order: 1
 slug: "newcastle-pride-flag-debate-victory-amidst-missed-opportunities"
 image:
-  path: "assets/images/news/202500520-01-newcastle-pride-flag-debate-victory-amidst-missed-opportunities.png"
+  path: "assets/images/news/20250520-01-newcastle-pride-flag-debate-victory-amidst-missed-opportunities.png"
   alt: "A deep dive into Newcastle’s Pride flag debate, exploring flawed opposition arguments and the significance of LGBTQ+ visibility."
 imageHeader:
-  path: "assets/images/news/202500520-01-newcastle-pride-flag-debate-victory-amidst-missed-opportunities-header.png"
+  path: "assets/images/news/20250520-01-newcastle-pride-flag-debate-victory-amidst-missed-opportunities-header.png"
   alt: "A deep dive into Newcastle’s Pride flag debate, exploring flawed opposition arguments and the significance of LGBTQ+ visibility."
 ---
 
