@@ -7,7 +7,7 @@ image:
   path: "assets/images/news/20250228-01-newcastle-mayor-climate-equity-attack.png"
   alt: "As Newcastle city officials review controversial edits to their Comprehensive Plan, concerns grow over the removal of climate and equity policies, highlighting the urgent need for science-based leadership over ideological manipulation."
 imageHeader:
-  path: "assets/images/news/202500228-01-newcastle-mayor-climate-equity-attack-header.png"
+  path: "assets/images/news/20250228-01-newcastle-mayor-climate-equity-attack-header.png"
   alt: "Newcastle Mayor Robert Clark is leading an effort to strip climate and equity policies from the city's Comprehensive Plan, using misinformation, right-wing rhetoric, and historical erasure—making it critical for residents to elect science-driven, socially responsible leaders in 2025."
 ---
 
