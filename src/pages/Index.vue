@@ -82,16 +82,70 @@
           </div>
         </div>
       </section>
+
+      
+      <section class="latest-news" v-if="$page.latestNews && $page.latestNews.edges && $page.latestNews.edges.length > 0">
+        <div class="container">
+          <h2 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+            <strong>Latest News</strong>
+          </h2>
+          <div class="row mt-4">
+            <LatestNews
+              v-for="edge in $page.latestNews.edges"
+              :key="edge.node.id"
+              :title="edge.node.title"
+              :path="edge.node.path"
+              :date="edge.node.date"
+              :image="edge.node.image"
+            />
+          </div>
+        </div>
+      </section>
+      
     </div>
   </Layout>
 </template>
 
 <page-query>
-query { allFeatureItem(sortBy: "order", order: ASC) { edges { node { id order imageSrc imageAlt title description link target } } } }
+query {
+  allFeatureItem(sortBy: "order", order: ASC) {
+    edges {
+      node {
+        id
+        order
+        imageSrc
+        imageAlt
+        title
+        description
+        link
+        target
+      }
+    }
+  }
+  latestNews: allNewsMd(
+    sort: [{by: "date", order: DESC}, {by: "order", order: DESC}] # Changed sorting
+    limit: 6
+  ) {
+    edges {
+      node {
+        id
+        title
+        path
+        date # Keep simple date for now, formatting can be done in template if needed
+        slug # Added slug
+        image {
+          path
+          alt
+        }
+      }
+    }
+  }
+}
 </page-query>
 
 <script>
 import FeatureItem from '@/components/FeatureItem.vue';
+import LatestNews from '@/components/LatestNews.vue';
 
 export default {
   name: 'Index',
@@ -107,11 +161,23 @@ export default {
     };
   },
   components: {
-    FeatureItem
+    FeatureItem,
+    LatestNews
   }
 };
 </script>
 
 <style scoped>
 /* Add any custom component-specific styles here */
+.latest-news {
+  padding: 3rem 0; /* Increased padding slightly */
+  background-color: #f8f9fa;
+}
+
+/* Styling for the section title, similar to other sections if applicable */
+.latest-news .mbr-section-title {
+  /* Ensure it matches other section titles, e.g. from features3-9 */
+  /* text-align: center; already applied by align-center */
+  /* margin-bottom: 1.5rem; or mb-4 as used */
+}
 </style>
