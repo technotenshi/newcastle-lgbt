@@ -33,24 +33,6 @@
         </div>
       </section>
 
-      <section class="latest-news" v-if="$page.latestNews && $page.latestNews.edges && $page.latestNews.edges.length > 0">
-        <div class="container">
-          <h2 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
-            <strong>Latest News</strong>
-          </h2>
-          <div class="row mt-4">
-            <LatestNews
-              v-for="edge in $page.latestNews.edges"
-              :key="edge.node.id"
-              :title="edge.node.title"
-              :path="edge.node.path"
-              :date="edge.node.date"
-              :image="edge.node.image"
-            />
-          </div>
-        </div>
-      </section>
-
 <!--      <section-->
 <!--        id="header14-1j"-->
 <!--        data-bs-version="5.1"-->
@@ -100,6 +82,26 @@
           </div>
         </div>
       </section>
+
+      
+      <section class="latest-news" v-if="$page.latestNews && $page.latestNews.edges && $page.latestNews.edges.length > 0">
+        <div class="container">
+          <h2 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+            <strong>Latest News</strong>
+          </h2>
+          <div class="row mt-4">
+            <LatestNews
+              v-for="edge in $page.latestNews.edges"
+              :key="edge.node.id"
+              :title="edge.node.title"
+              :path="edge.node.path"
+              :date="edge.node.date"
+              :image="edge.node.image"
+            />
+          </div>
+        </div>
+      </section>
+      
     </div>
   </Layout>
 </template>
@@ -122,7 +124,7 @@ query {
   }
   latestNews: allNewsMd(
     sort: [{by: "date", order: DESC}, {by: "order", order: DESC}] # Changed sorting
-    limit: 10
+    limit: 6
   ) {
     edges {
       node {
