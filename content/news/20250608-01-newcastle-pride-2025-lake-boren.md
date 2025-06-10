@@ -34,7 +34,7 @@ In addition to those figures, this website would like to also recognize the rema
 
 These trailblazers exemplify the spirit of perseverance and innovation that Chien highlighted, reminding the crowd of the profound impact LGBTQ+ individuals have had on the world—even in the face of adversity.  
 
-Attendees also had the opportunity to engage directly with Newcastle City Council members Ariana Sherlock, Sun Burford, and Paul Charbonneau. Community members shared their concerns, voiced their proposals, and discussed actions to keep Newcastle a safe and welcoming city for all. This interaction was particularly meaningful given the backdrop of last year’s Pride rally, when the Newcastle City Council declined to raise the Pride flag—a decision that left many in the community feeling overlooked. This year’s event, by contrast, felt like a powerful affirmation of the community’s commitment to fostering dialogue and inclusion.  
+Attendees also had the opportunity to engage directly with Newcastle City Council members **Ariana Sherlock, Sun Burford, and Paul Charbonneau.** Community members shared their concerns, voiced their proposals, and discussed actions to keep Newcastle a safe and welcoming city for all. This interaction was particularly meaningful given the backdrop of last year’s Pride rally, when the Newcastle City Council declined to raise the Pride flag—a decision that left many in the community feeling overlooked. This year’s event, by contrast, felt like a powerful affirmation of the community’s commitment to fostering dialogue and inclusion.  
 
 The atmosphere throughout the day was one of warmth, support, and resilience. Attendees connected with one another and with local organizations, building networks of solidarity and understanding. Volunteers and community partners worked tirelessly to ensure that every guest felt welcome and celebrated.  
 
@@ -44,17 +44,17 @@ Newcastle’s Pride celebration at Lake Boren was more than just an event—it w
 We reached out to the Newcastle City Councilmembers who attended the event—Ariana Sherlock, Sun Burford, and Paul Charbonneau—to share their thoughts on the Pride celebration and the community’s ongoing commitment to inclusivity.  
 
 - **Ariana Sherlock’s Comments:**  
-  _[Placeholder for Ariana Sherlock’s comments]_  
+  >_[Placeholder for Ariana Sherlock’s comments]_  
 
 - **Sun Burford’s Comments:**  
-  _[Placeholder for Sun Burford’s comments]_  
+  >_[Placeholder for Sun Burford’s comments]_  
 
 - **Paul Charbonneau’s Comments:**  
-  _[Placeholder for Paul Charbonneau’s comments]_  
+  >_[Placeholder for Paul Charbonneau’s comments]_  
 
 **Resources and Acknowledgments:**  
-- **PFLAG Bellevue/Eastside**  
-- **Youth Eastside Services**  
-- **Eastside Pride PNW**  
+- [**PFLAG Bellevue/Eastside**](https://pflagbellevue.org/)  
+- [**Youth Eastside Services**](https://www.youtheastsideservices.org/)  
+- [**Eastside Pride PNW**](https://www.eastsidepridepnw.com/)  
 
 A heartfelt thank you to all the organizations, volunteers, and community members who made this celebration possible. Your dedication to creating an inclusive and welcoming Newcastle is appreciated more than words can express.  
