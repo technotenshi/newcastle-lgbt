@@ -16,11 +16,9 @@ carousel:
       alt: "A colorful Pride banner displayed at the event"
 ---
 
-**Newcastle, WA – June 8, 2025**  
+**Newcastle, WA** – On Sunday, June 8th, Lake Boren transformed into a vibrant celebration of diversity and inclusion as Newcastle residents and community organizations came together for the annual Pride celebration. The event brought together community members, families, and allies for a peaceful and joyful gathering that underscored the community’s commitment to supporting LGBTQ+ individuals.  
 
-On Sunday, June 8th, Lake Boren transformed into a vibrant celebration of diversity and inclusion as Newcastle residents and community organizations came together for the annual Pride celebration. The event brought together community members, families, and allies for a peaceful and joyful gathering that underscored the community’s commitment to supporting LGBTQ+ individuals.  
-
-This year’s celebration featured the collaboration and support of several local organizations, including Youth Eastside Services, Eastside Pride PNW, and the Newcastle Arts Council. These groups provided valuable resources and support to attendees, reinforcing the importance of community partnerships in fostering a more inclusive Newcastle.  
+This year’s celebration featured the collaboration and support of several local organizations, including **Youth Eastside Services, Eastside Pride PNW, and the Newcastle Arts Council.** These groups provided valuable resources and support to attendees, reinforcing the importance of community partnerships in fostering a more inclusive Newcastle.  
 
 A highlight of the event was an emotional and motivational speech delivered by Ginger Chien from PFLAG Bellevue/Eastside. In her address, Chien honored the resilience and groundbreaking contributions of LGBTQ+ figures who have shaped technology and society:  
 
@@ -55,6 +53,7 @@ We reached out to the Newcastle City Councilmembers who attended the event—Ari
 **Resources and Acknowledgments:**  
 - [**PFLAG Bellevue/Eastside**](https://pflagbellevue.org/)  
 - [**Youth Eastside Services**](https://www.youtheastsideservices.org/)  
-- [**Eastside Pride PNW**](https://www.eastsidepridepnw.com/)  
+- [**Eastside Pride PNW**](https://www.eastsidepridepnw.com/)
+- [**Newcastle Arts Council**](https://www.newcastlewaarts.org/)
 
 A heartfelt thank you to all the organizations, volunteers, and community members who made this celebration possible. Your dedication to creating an inclusive and welcoming Newcastle is appreciated more than words can express.  
