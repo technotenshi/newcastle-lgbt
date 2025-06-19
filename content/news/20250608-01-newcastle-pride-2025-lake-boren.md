@@ -4,15 +4,19 @@ date: "2025-06-08"
 order: 1
 slug: "newcastle-pride-2025-lake-boren"
 image:
-  path: "assets/images/news/20990101-01-placeholder.png"
+  path: "assets/images/news/20250608-01-newcastle-pride-2025-lake-boren.jpg"
   alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
 carousel:
   images:
-    - src: "assets/images/news/20990101-01-placeholder.png"
+    - src: "assets/images/news/20250608-01-newcastle-pride-2025-lake-boren.jpg"
       alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
-    - src: "assets/images/news/20990101-01-placeholder.png"
+    - src: "assets/images/news/20250608-01-newcastle-pride-2025-lake-boren-01.jpg"
       alt: "Community groups at their information booths"
-    - src: "assets/images/news/20990101-01-placeholder.png"
+    - src: "assets/images/news/20250608-01-newcastle-pride-2025-lake-boren-02.jpg"
+      alt: "A colorful Pride banner displayed at the event"
+    - src: "assets/images/news/20250608-01-newcastle-pride-2025-lake-boren-03.jpg"
+      alt: "A colorful Pride banner displayed at the event"
+    - src: "assets/images/news/20250608-01-newcastle-pride-2025-lake-boren-04.jpg"
       alt: "A colorful Pride banner displayed at the event"
 ---
 
@@ -39,16 +43,10 @@ The atmosphere throughout the day was one of warmth, support, and resilience. At
 Newcastle’s Pride celebration at Lake Boren was more than just an event—it was a testament to the strength and unity of a community that continues to stand tall in the face of challenges. As the sun set over Lake Boren, the message was clear: Newcastle’s LGBTQ+ community is here to stay, and the community’s path forward must be one of respect, compassion, and unwavering support.  
 
 **Councilmembers’ Reflections**  
-We reached out to the Newcastle City Councilmembers who attended the event—Ariana Sherlock, Sun Burford, and Paul Charbonneau—to share their thoughts on the Pride celebration and the community’s ongoing commitment to inclusivity.  
+We reached out to the Newcastle City Councilmembers who attended the event to share their thoughts on the Pride celebration and the community’s ongoing commitment to inclusivity.  
 
 - **Ariana Sherlock’s Comments:**  
-  >_[Placeholder for Ariana Sherlock’s comments]_  
-
-- **Sun Burford’s Comments:**  
-  >_[Placeholder for Sun Burford’s comments]_  
-
-- **Paul Charbonneau’s Comments:**  
-  >_[Placeholder for Paul Charbonneau’s comments]_  
+  >“I’m grateful for the opportunity to celebrate Pride with our Newcastle community! It was extremely meaningful for my family to feel the support from our neighbors for our child who is a member of the LGBTQ+ community. We had a wonderful time and appreciate the effort by the organizers to make it an annual event.”  
 
 **Resources and Acknowledgments:**  
 - [**PFLAG Bellevue/Eastside**](https://pflagbellevue.org/)  

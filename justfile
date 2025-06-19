@@ -1,9 +1,11 @@
 default:
     echo 'Hello, world!'
-install-dependencies:
+install:
+    COMPOSE_BAKE=true docker compose build
+install-dependencies: install
     docker compose run -it --rm app yarn install --check-files --non-interactive --audit
 develop:
-    docker compose up app --build
+    COMPOSE_BAKE=true docker compose up app --build
 down:
     docker compose down
 logs:
@@ -16,8 +18,4 @@ build:
     docker compose run -it --rm app yarn build
 prod:
     docker compose up prod
-sync:
-    ./sync.sh
-invalidate:
-    ./invalidate.sh
-deploy: sync invalidate
+
