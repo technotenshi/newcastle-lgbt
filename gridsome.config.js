@@ -82,6 +82,7 @@ module.exports = {
         .end();
     } catch (err) {
       console.error('Failed to configure image compression:', err);
+      throw err;
     }
   }
 };
