@@ -37,7 +37,8 @@ module.exports = {
   transformers: {
     remark: {
       plugins: [
-        ['remark-html', { sanitize: true }]
+        ['remark-html', { sanitize: true }],
+        require('./remark-g-image')
       ]
     }
   },
