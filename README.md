@@ -1,14 +1,47 @@
-# Default starter for Gridsome
+# Newcastle LGBT Website
 
-This is the project you get when you run `gridsome create new-project`.
+This repository contains the source for the **Newcastle LGBT** site. It is built with [Gridsome](https://gridsome.org/) and Vue.js, with most content written in Markdown under the `content/` directory.
 
-### 1. Install Gridsome CLI tool if you don't have
+## Requirements
+- Node.js 22
+- Yarn v1
 
-`npm install --global @gridsome/cli`
+Install dependencies with:
 
-### 2. Create a Gridsome project
+```bash
+yarn install
+```
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+## Local development
+Run a development server at `http://localhost:8080`:
+
+```bash
+yarn develop
+```
+
+## Production build
+Generate a static site in the `dist` folder:
+
+```bash
+yarn build
+```
+
+## Linting
+Run the linter before committing changes:
+
+```bash
+yarn lint
+```
+
+## Docker workflow
+The project includes a `Dockerfile` and `docker-compose.yml` for containerised development. Use `docker compose up app` to run the Gridsome dev server or `just develop` if you have [just](https://just.systems) installed.
+
+## Content sources
+- `content/news` – Markdown files for news posts
+- `content/events` – Upcoming events
+- `content/council` – Council information
+
+Additional homepage features are defined in `data/features.json`.
+
+## License
+This project is released under the MIT License. See [LICENSE](LICENSE) for details.
