@@ -5,6 +5,27 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const path = require('path');
+const fs = require('fs');
+const glob = require('glob');
+
+function validateImages() {
+  const files = glob.sync(path.join(__dirname, 'src/assets/images/**/*.*'));
+  const supported = /\.(jpe?g|png|gif|svg)$/i;
+  for (const file of files) {
+    if (!supported.test(file)) {
+      console.warn(`Unsupported image format: ${file}`);
+    }
+    try {
+      const stat = fs.statSync(file);
+      if (stat.size === 0) {
+        throw new Error(`Image file is empty: ${file}`);
+      }
+    } catch (err) {
+      console.error('Image validation failed', err);
+      throw err;
+    }
+  }
+}
 
 module.exports = {
   siteName: 'Newcastle LGBT',
@@ -43,18 +64,24 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    const imagesRule = config.module.rule('images');
-    imagesRule
-      .include.add(path.resolve(__dirname, 'src/assets/images')).end()
-      .use('image-webpack-loader')
-        .loader('image-webpack-loader')
-        .before('url-loader')
-        .options({
-          mozjpeg: { progressive: true, quality: 70 },
-          optipng: { enabled: false },
-          pngquant: { quality: [0.65, 0.9], speed: 4 },
-          gifsicle: { interlaced: false },
-          webp: { quality: 75 }
-        });
+    try {
+      validateImages();
+      const imagesRule = config.module.rule('images');
+      imagesRule
+        .include.add(path.resolve(__dirname, 'src/assets/images')).end()
+        .use('image-webpack-loader')
+          .loader('image-webpack-loader')
+          .before('url-loader')
+          .options({
+            mozjpeg: { progressive: true, quality: 70 },
+            optipng: { enabled: false },
+            pngquant: { quality: [0.65, 0.9], speed: 4 },
+            gifsicle: { interlaced: false },
+            webp: { quality: 75 }
+          })
+        .end();
+    } catch (err) {
+      console.error('Failed to configure image compression:', err);
+    }
   }
 };
