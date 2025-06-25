@@ -10,7 +10,7 @@ const glob = require('glob');
 
 function validateImages() {
   const files = glob.sync(path.join(__dirname, 'src/assets/images/**/*.*'));
-  const supported = /\.(jpe?g|png|gif|svg)$/i;
+  const supported = /\.(jpe?g|png|gif|svg|webp)$/i;
   for (const file of files) {
     if (!supported.test(file)) {
       console.warn(`Unsupported image format: ${file}`);
