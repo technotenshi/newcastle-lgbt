@@ -28,7 +28,7 @@
                 disagreement on the decision reached by the city council to not raise the pride flag on the city
                 hall.<br><br>Since the reply comes from an official Newcastle City's email address, and it directly
                 expresses that "This email is a public record and may be subject to public disclosure.", I will
-                reproduce such message bellow:
+                reproduce such message below:
               </p>
             </div>
           </div>
