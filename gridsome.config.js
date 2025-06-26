@@ -16,7 +16,7 @@ function validateImages() {
   );
   for (const file of files) {
     if (!supported.test(path.extname(file))) {
-      console.warn(`Unsupported image format: ${file}`);
+      throw new Error(`Unsupported image format detected: ${file}`);
     }
     try {
       const stat = fs.statSync(file);
