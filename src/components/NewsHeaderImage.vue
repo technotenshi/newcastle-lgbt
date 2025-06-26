@@ -30,6 +30,7 @@
               :alt="imageHeader.alt"
               :src="require(`~/${imageHeader.path}`)"
               width="511"
+              immediate="false"
             />
             <p
               class="mbr-description mbr-fonts-style mt-2 align-center display-4"

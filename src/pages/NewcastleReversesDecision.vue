@@ -32,6 +32,7 @@
                 <g-image
                   src="~/assets/images/20240619-152512.webp"
                   alt="The American flag, Washington  flag, and the Pride flag together"
+                  immediate="false"
                 />
                 <p class="mbr-description mbr-fonts-style mt-2 align-center display-4">
                   The American flag, Washington flag, and the Pride flag together

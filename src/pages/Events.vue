@@ -22,6 +22,7 @@
                   <g-image
                     :src="require(`~/${edge.node.image.path}`)"
                     :alt="`${edge.node.image.alt}`"
+                    immediate="false"
                   />
                 </div>
               </div>

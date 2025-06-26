@@ -9,6 +9,7 @@
           <g-image
             :src="imageSrc"
             :alt="imageAlt"
+            immediate="false"
           />
         </g-link>
       </div>

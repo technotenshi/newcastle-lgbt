@@ -36,6 +36,7 @@
                     :src="require(`@/${image.src}`)"
                     :alt="image.alt"
                     class="d-block w-100"
+                    immediate="false"
                     :data-slide-to="index"
                     :data-bs-slide-to="index"
                   />

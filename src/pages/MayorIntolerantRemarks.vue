@@ -32,6 +32,7 @@
                 <g-image
                   src="~/assets/images/newcstle-city-council.webp"
                   alt="The Mayor Robert Clark, while giving his controversial speech at the Newcastle City Council session"
+                  immediate="false"
                 />
                 <p class="mbr-description mbr-fonts-style mt-2 align-center display-4">
                   The Mayor Robert Clark, while giving his controversial speech at the Newcastle City Council
