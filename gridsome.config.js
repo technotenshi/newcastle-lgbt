@@ -4,6 +4,32 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const path = require('path');
+const fs = require('fs');
+const glob = require('glob');
+
+function validateImages() {
+  const supported = /\.(jpe?g|png|gif|svg|webp)$/i;
+  const files = glob.sync(
+    path.join(__dirname, 'src/assets/images/**/*.{jpg,jpeg,png,gif,svg,webp}'),
+    { nocase: true }
+  );
+  for (const file of files) {
+    if (!supported.test(path.extname(file))) {
+      throw new Error(`Unsupported image format detected: ${file}`);
+    }
+    try {
+      const stat = fs.statSync(file);
+      if (stat.size === 0) {
+        throw new Error(`Image file is empty: ${file}`);
+      }
+    } catch (err) {
+      console.error('Image validation failed', err);
+      throw err;
+    }
+  }
+}
+
 module.exports = {
   siteName: 'Newcastle LGBT',
   plugins: [
@@ -35,8 +61,31 @@ module.exports = {
   transformers: {
     remark: {
       plugins: [
-        ['remark-html', { sanitize: true }]
+        ['remark-html', { sanitize: true }],
+        require('./remark-g-image')
       ]
+    }
+  },
+  chainWebpack: config => {
+    try {
+      validateImages();
+      const imagesRule = config.module.rule('images');
+      imagesRule
+        .include.add(path.resolve(__dirname, 'src/assets/images')).end()
+        .use('image-webpack-loader')
+          .loader('image-webpack-loader')
+          .before('url-loader')
+          .options({
+            mozjpeg: { progressive: true, quality: 70 },
+            optipng: { enabled: false },
+            pngquant: { quality: [0.65, 0.9], speed: 4 },
+            gifsicle: { interlaced: false },
+            webp: { quality: 75 }
+          })
+        .end();
+    } catch (err) {
+      console.error('Failed to configure image compression:', err);
+      throw err;
     }
   }
 };
