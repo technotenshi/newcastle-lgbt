@@ -39,6 +39,12 @@ Run the linter before committing changes:
 yarn lint
 ```
 
+To automatically fix lint issues when possible:
+
+```bash
+yarn lint:fix
+```
+
 ## Docker workflow
 The project includes a `Dockerfile` and `docker-compose.yml` for containerised development. Use `docker compose up app` to run the Gridsome dev server or `just develop` if you have [just](https://just.systems) installed.
 

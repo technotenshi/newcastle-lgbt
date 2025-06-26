@@ -5,8 +5,9 @@
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
-    "lint": "npx eslint",
-    "lint-fix": "npx eslint --fix"
+    "lint": "npx eslint .",
+    "lint-fix": "npx eslint --fix",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
