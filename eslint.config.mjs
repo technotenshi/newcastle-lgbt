@@ -1,6 +1,7 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginVue from "eslint-plugin-vue";
+import vueParser from "vue-eslint-parser";
 
 
 export default [
@@ -20,10 +21,18 @@ export default [
     },
     {
         languageOptions: {
-            globals: globals.node
+            parser: vueParser,
+            parserOptions: {
+                ecmaVersion: "latest",
+                sourceType: "module",
+            },
+            globals: {
+                ...globals.node,
+                ...globals.browser,
+            },
         },
         plugins: {
-            vue: pluginVue,  // Register the Vue plugin
+            vue: pluginVue, // Register the Vue plugin
         },
     },
     pluginJs.configs.recommended,
