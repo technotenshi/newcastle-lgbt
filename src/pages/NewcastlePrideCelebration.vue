@@ -69,6 +69,7 @@
                         alt=""
                         data-slide-to="0"
                         data-bs-slide-to="0"
+                        immediate="false"
                       />
                     </div>
                   </div>
@@ -80,6 +81,7 @@
                         alt=""
                         data-slide-to="1"
                         data-bs-slide-to="1"
+                        immediate="false"
                       />
                     </div>
                   </div>
@@ -91,6 +93,7 @@
                         alt=""
                         data-slide-to="2"
                         data-bs-slide-to="2"
+                        immediate="false"
                       />
                     </div>
                   </div>
@@ -102,6 +105,7 @@
                         alt=""
                         data-slide-to="4"
                         data-bs-slide-to="4"
+                        immediate="false"
                       />
                     </div>
                   </div>

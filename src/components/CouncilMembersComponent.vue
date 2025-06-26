@@ -15,6 +15,7 @@
                   :src="require(`@/${image}`)"
                   alt="Image"
                   class="img-fluid"
+                  immediate="false"
                 />
               </div>
               <div

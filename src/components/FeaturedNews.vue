@@ -12,6 +12,7 @@
             title=""
             data-slide-to="1"
             data-bs-slide-to="2"
+            immediate="false"
           />
         </g-link>
       </div>

@@ -26,6 +26,7 @@
                       alt="Pflag Bellevue"
                       data-slide-to="0"
                       data-bs-slide-to="0"
+                      immediate="false"
                     /></a>
                   </div>
                 </div>
@@ -68,6 +69,7 @@
                       alt="Eastside Pride PNW"
                       data-slide-to="1"
                       data-bs-slide-to="1"
+                      immediate="false"
                     /></a>
                   </div>
                 </div>
@@ -111,6 +113,7 @@
                       alt="GenPride"
                       data-slide-to="2"
                       data-bs-slide-to="2"
+                      immediate="false"
                     /></a>
                   </div>
                 </div>
@@ -151,6 +154,7 @@
                       alt="Pride Across the Bridge"
                       data-slide-to="3"
                       data-bs-slide-to="3"
+                      immediate="false"
                     /></a>
                   </div>
                 </div>
@@ -192,6 +196,7 @@
                       alt="Lambert House"
                       data-slide-to="4"
                       data-bs-slide-to="4"
+                      immediate="false"
                     /></a>
                   </div>
                 </div>

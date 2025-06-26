@@ -13,6 +13,7 @@
               <g-image
                 src="~/assets/images/K59bqmorPm9qeV7qbg4Dozml.webp"
                 alt="Newcastle LGBTQ Voice"
+                immediate="false"
               />
             </div>
             <div class="col-12 col-md">
