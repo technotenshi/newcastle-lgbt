@@ -21,7 +21,7 @@ Deputy Mayor Pratima Lakhotia explained that the decision was part of a broader 
 
 **Public Outcry and Reversal**
 
-The initial vote sparked a significant backlash. LGBTQ+ advocates and allies organized a rally at Lake Boren Park, marching to City Hall to voice their dissent. The rally saw passionate speeches from community leaders, including Corrinalyn Guyette, president of Eastside Pride Pacific Northwest, who emphasized the importance of visibility and support for the LGBTQ+ community. "We will continue to come back, and we will fight the good fight to ensure that we are seen, heard, loved, and supported," Gyette declared.
+The initial vote sparked a significant backlash. LGBTQ+ advocates and allies organized a rally at Lake Boren Park, marching to City Hall to voice their dissent. The rally saw passionate speeches from community leaders, including Corrinalyn Guyette, president of Eastside Pride Pacific Northwest, who emphasized the importance of visibility and support for the LGBTQ+ community. "We will continue to come back, and we will fight the good fight to ensure that we are seen, heard, loved, and supported," Guyette declared.
 
 The public outcry reached its peak during the June 18 council meeting, where an unprecedented number of residents attended to express their views. The meeting, which lasted over two hours, featured a wide array of opinions. Some residents, like Owen G., echoed the mayor's concerns about potential chaos from raising multiple flags. Others, however, strongly supported the Pride flag, viewing it as a necessary symbol of love and acceptance.
 
