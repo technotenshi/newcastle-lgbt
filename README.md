@@ -39,6 +39,8 @@ Run the linter before committing changes:
 yarn lint
 ```
 
+ESLint is configured with `vue-eslint-parser` and modern parser options. Browser and Node globals are available by default.
+
 To automatically fix lint issues when possible:
 
 ```bash
