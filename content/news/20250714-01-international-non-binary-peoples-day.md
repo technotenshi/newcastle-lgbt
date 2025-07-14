@@ -4,10 +4,10 @@ date: "2025-07-14"
 order: 1
 slug: "international-non-binary-peoples-day"
 image:
-  path: "assets/images/news/20250714-international-non-binary-peoples-day.jpg"
+  path: "assets/images/news/20250714-01-international-non-binary-peoples-day.jpg"
   alt: "Non-binary pride flag with horizontal stripes of yellow, white, purple, and black"
 imageHeader:
-  path: "assets/images/news/20250714-international-non-binary-peoples-day.jpg"
+  path: "assets/images/news/20250714-01-international-non-binary-peoples-day.jpg"
   alt: "Non-binary pride flag with horizontal stripes of yellow, white, purple, and black"
 ---
 
