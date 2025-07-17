@@ -2,6 +2,8 @@
 
 This repository contains the source for the **Newcastle LGBT** site. It is built with [Gridsome](https://gridsome.org/) and Vue.js, with most content written in Markdown under the `content/` directory.
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/458c411819a6488fb55ce082d7cc5d3b)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
 ## Requirements
 - Node.js 22
 - Yarn v1
