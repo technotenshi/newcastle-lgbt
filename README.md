@@ -34,11 +34,12 @@ Project images under `src/assets/images` are compressed during `yarn build` usin
 validation step detects unsupported or empty images, the build will fail with a
 descriptive error.
 
-## Linting
-Run the linter before committing changes:
+## Checks
+Run these commands before committing changes:
 
 ```bash
 yarn lint
+yarn build
 ```
 
 ESLint is configured with `vue-eslint-parser` and modern parser options. Browser and Node globals are available by default.

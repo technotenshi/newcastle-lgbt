@@ -4,7 +4,7 @@ This project is a Gridsome-powered website built with Vue.js and Yarn. Most cont
 
 ## Running checks
 - Use **Node 22** with Yarn v1.
-- After making changes, run `yarn lint` at the repository root and ensure it succeeds. If linting fails, fix the issues before committing.
+- After making changes, run `yarn lint` and `yarn build` at the repository root and ensure they both succeed. If either fails, fix the issues before committing.
 
 ## Coding style
 - Follow the existing Vue and JavaScript style. ESLint rules are defined in `eslint.config.mjs`.
