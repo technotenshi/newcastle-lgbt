@@ -30,21 +30,6 @@ jobs:
 
       - name: System deps
         run: |
-          apt-get -y update
-          apt-get install -y webp python3 build-essential
-
-      - name: Enable Corepack and pin Yarn 1
-        run: |
-          corepack enable
-          corepack prepare yarn@1.22.22 --activate
-          yarn --version
-
-      - name: Install Gridsome CLI globally
-        run: yarn global add @gridsome/cli
-
-      - name: Install deps
-        run: yarn install --frozen-lockfile
-
-      - name: Build
-        run: yarn build
+          sudo apt-get -y update
+          sudo apt-get install -y webp python3 build-essential
 
