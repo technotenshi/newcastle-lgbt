@@ -37,4 +37,7 @@ jobs:
 
       - name: Install deps
         run: yarn install --frozen-lockfile
+        
+      - name: Build
+        run: yarn build
 
