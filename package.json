@@ -24,6 +24,7 @@
     "eslint-plugin-vue": "^9.28.0",
     "globals": "^15.9.0",
     "image-webpack-loader": "^8.1.0",
-    "glob": "^10.3.10"
+    "glob": "^10.3.10",
+    "webpack": "^4"
   }
 }
