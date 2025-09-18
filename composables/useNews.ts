@@ -1,4 +1,4 @@
-import { queryContent } from "#content";
+import { queryCollection } from "#imports";
 
 /**
  * Represents a single news article pulled from the `content/news` directory.
@@ -79,14 +79,64 @@ export function useNews(options: UseNewsOptions = {}) {
   const key = `news-${includeDrafts ? "with-drafts" : "published"}-${limit ?? "all"}`;
 
   return useAsyncData(key, async () => {
-    const items = (await queryContent<NewsItem>("news")
-      .sort({ date: -1, order: -1 })
-      .find()) as NewsItem[];
+    const rows = (await queryCollection("content")
+      .select("id", "path", "title", "meta")
+      .where("path", "LIKE", "/news/%")
+      .all()) as Array<Record<string, unknown>>;
 
-    const filtered = includeDrafts
-      ? items
-      : items.filter(entry => entry.draft !== true && entry._draft !== true);
+    const parseDate = (value?: string) => {
+      if (!value) {
+        return 0;
+      }
 
-    return typeof limit === "number" ? filtered.slice(0, limit) : filtered;
+      const timestamp = Date.parse(value);
+      return Number.isNaN(timestamp) ? 0 : timestamp;
+    };
+
+    const normalized = rows.map((row) => {
+      const rawMeta = row.meta;
+      const meta = typeof rawMeta === "string"
+        ? (() => {
+          try {
+            return JSON.parse(rawMeta) as Record<string, unknown>;
+          } catch {
+            return {} as Record<string, unknown>;
+          }
+        })()
+        : (rawMeta as Record<string, unknown> | undefined) ?? {};
+
+      return {
+        _id: typeof row.id === "string" ? row.id : String(row.id ?? ""),
+        _path: typeof row.path === "string" ? row.path : String(row.path ?? ""),
+        title: typeof row.title === "string" ? row.title : (meta.title as string | undefined),
+        date: typeof meta.date === "string" ? meta.date : undefined,
+        order: typeof meta.order === "number" ? meta.order : typeof meta.order === "string" ? Number(meta.order) : undefined,
+        slug: typeof meta.slug === "string" ? meta.slug : undefined,
+        image: typeof meta.image === "object" ? (meta.image as NewsItem["image"]) : undefined,
+        imageHeader: typeof meta.imageHeader === "object" ? (meta.imageHeader as NewsItem["imageHeader"]) : undefined,
+        body: undefined,
+        draft: meta.draft === true,
+        _draft: meta._draft === true,
+      } as NewsItem;
+    });
+
+    const sorted = normalized.sort((first, second) => {
+      const dateDifference = parseDate(second.date) - parseDate(first.date);
+
+      if (dateDifference !== 0) {
+        return dateDifference;
+      }
+
+      const firstOrder = typeof first.order === "number" ? first.order : 0;
+      const secondOrder = typeof second.order === "number" ? second.order : 0;
+
+      return secondOrder - firstOrder;
+    });
+
+    const published = includeDrafts
+      ? sorted
+      : sorted.filter(entry => entry.draft !== true && entry._draft !== true);
+
+    return typeof limit === "number" ? published.slice(0, limit) : published;
   });
 }

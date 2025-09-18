@@ -25,7 +25,6 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useAsset } from '#imports';
 
 const props = defineProps({
   title: {
@@ -55,25 +54,44 @@ const resolveImagePath = (path) => {
     return path;
   }
 
-  let normalized = path.replace(/^@\//, '~/');
+  let normalized = path.replace(/^@\//, '~/').trim();
 
   if (normalized.startsWith('/')) {
     return normalized;
   }
 
   if (normalized.startsWith('~/')) {
-    return useAsset(normalized);
+    normalized = normalized.slice(2);
   }
 
-  if (normalized.startsWith('assets/')) {
-    return useAsset(`~/${normalized}`);
+  if (normalized.startsWith('./')) {
+    normalized = normalized.slice(2);
   }
 
-  if (normalized.startsWith('images/')) {
-    return useAsset(`~/assets/${normalized}`);
+  const stripped = normalized.replace(/^assets\//, '');
+  const candidates = [];
+
+  if (stripped) {
+    candidates.push(stripped);
   }
 
-  return useAsset(`~/assets/images/${normalized}`);
+  if (!stripped.startsWith('images/')) {
+    candidates.push(`images/${stripped}`);
+  }
+
+  for (const candidate of candidates) {
+    if (!candidate) {
+      continue;
+    }
+
+    try {
+      return new URL(`../assets/${candidate}`, import.meta.url).href;
+    } catch {
+      // Ignore resolution errors and try the next option.
+    }
+  }
+
+  return '';
 };
 
 const thumbnailSrc = computed(() => {
