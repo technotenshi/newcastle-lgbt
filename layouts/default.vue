@@ -172,7 +172,7 @@ const toggleDropdown = (event, isOpen) => {
 </script>
 
 <style scoped>
-/* Add any global styles here */
+/* Scoped styles for the default layout */
 </style>
 
 
