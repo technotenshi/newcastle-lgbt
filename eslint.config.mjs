@@ -15,7 +15,7 @@ export default [
             ".cache/*",
             "dist/*",
             "cms/*",
-            "src/assets/*",
+            "assets/*",
             "src/.temp/*",
         ]
     },

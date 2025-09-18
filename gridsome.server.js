@@ -23,7 +23,7 @@ const dataUtils = (()=>{
       for (const key in item) {
         // If the property is an image path, resolve it
         if (key.endsWith('Src')) {
-          nodeData[key] = getDataPath('./src/assets/images/', item[key]);
+          nodeData[key] = getDataPath('./assets/images/', item[key]);
         } else {
           nodeData[key] = item[key];
         }

@@ -11,7 +11,7 @@ const glob = require('glob');
 function validateImages() {
   const supported = /\.(jpe?g|png|gif|svg|webp)$/i;
   const files = glob.sync(
-    path.join(__dirname, 'src/assets/images/**/*.{jpg,jpeg,png,gif,svg,webp}'),
+    path.join(__dirname, 'assets/images/**/*.{jpg,jpeg,png,gif,svg,webp}'),
     { nocase: true }
   );
   for (const file of files) {
@@ -71,7 +71,7 @@ module.exports = {
       validateImages();
       const imagesRule = config.module.rule('images');
       imagesRule
-        .include.add(path.resolve(__dirname, 'src/assets/images')).end()
+        .include.add(path.resolve(__dirname, 'assets/images')).end()
         .use('image-webpack-loader')
           .loader('image-webpack-loader')
           .before('url-loader')
