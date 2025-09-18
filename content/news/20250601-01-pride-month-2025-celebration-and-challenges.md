@@ -1,6 +1,5 @@
 ---
-title: "
-Pride Month 2025: Celebrating Resilience, Joy, and Visibility Amidst Challenges."
+title: "Pride Month 2025: Celebrating Resilience, Joy, and Visibility Amidst Challenges."
 date: "2025-06-01"
 order: 1
 slug: "pride-month-2025-celebration-and-challenges"

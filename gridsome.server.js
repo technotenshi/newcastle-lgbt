@@ -45,9 +45,9 @@ module.exports = api => {
   // })
 
   api.loadSource(async actions => {
-    const featuresData = require('./data/features.json');
+    const featuresData = require('./content/features.json');
 
-    dataUtils.createCollection(actions, 'FeatureItem', featuresData);
+    dataUtils.createCollection(actions, 'FeatureItem', featuresData.items || []);
   });
 
   // api.createPages(({ createPage }) => {

@@ -6,6 +6,7 @@ node_modules
 dist
 .nuxt/
 .output/
+.data/
 .env
 .env.*
 .idea

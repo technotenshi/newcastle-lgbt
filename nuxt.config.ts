@@ -5,7 +5,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-09-18",
   nitro: {
     preset: "static",
+    prerender: {
+      crawlLinks: false,
+      routes: ["/"],
+    },
   },
+  modules: ["@nuxt/content"],
   css: [
     "~/assets/web/assets/mobirise-icons2/mobirise2.css",
     "~/assets/bootstrap/css/bootstrap.min.css",

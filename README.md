@@ -61,8 +61,7 @@ The project includes a `Dockerfile` and `docker-compose.yml` for containerised d
 - `content/news` – Markdown files for news posts
 - `content/events` – Upcoming events
 - `content/council` – Council information
-
-Additional homepage features are defined in `data/features.json`.
+- `content/features.json` – Homepage feature cards consumed by Nuxt Content
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.
