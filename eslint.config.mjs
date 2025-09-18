@@ -17,6 +17,9 @@ export default [
             "cms/*",
             "assets/*",
             "src/.temp/*",
+            ".nuxt/*",
+            ".output/*",
+            "node_modules/*",
         ]
     },
     {
@@ -49,6 +52,7 @@ export default [
                 "ignores": [
                     "Index",
                     "Layout",
+                    "default",
                 ]
             }],
         },
