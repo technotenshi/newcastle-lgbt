@@ -60,8 +60,8 @@ content: excerpt
 </page-query>
 
 <script>
-import FeaturedNews from '@/components/FeaturedNews.vue';
-import SectionHeader from '@/components/SectionHeader.vue';
+import FeaturedNews from '~/components/FeaturedNews.vue';
+import SectionHeader from '~/components/SectionHeader.vue';
 
 export default {
   name: 'NewsMain',

@@ -74,8 +74,8 @@ image
 </page-query>
 
 <script>
-import SectionHeader from '@/components/SectionHeader.vue';
-import CouncilMembersComponent from '@/components/CouncilMembersComponent.vue';
+import SectionHeader from '~/components/SectionHeader.vue';
+import CouncilMembersComponent from '~/components/CouncilMembersComponent.vue';
 
 export default {
   name: 'CouncilMembers',

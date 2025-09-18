@@ -124,7 +124,7 @@
 </page-query>
 
 <script>
-import SectionHeader from '@/components/SectionHeader.vue';
+import SectionHeader from '~/components/SectionHeader.vue';
 
 export default {
   name: 'ReplyFromMayor',

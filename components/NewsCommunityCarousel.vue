@@ -15,8 +15,8 @@
           >
             <ol class="carousel-indicators">
               <li
-                v-for="(image, index) in images"
-                :key="index"
+                v-for="(image, index) in resolvedImages"
+                :key="`indicator-${index}`"
                 :data-slide-to="index"
                 :data-bs-slide-to="index"
                 :class="{ active: index === 0 }"
@@ -26,20 +26,20 @@
             </ol>
             <div class="carousel-inner">
               <div
-                v-for="(image, index) in images"
-                :key="index"
+                v-for="(image, index) in resolvedImages"
+                :key="`slide-${index}`"
                 class="carousel-item slider-image item"
                 :class="{ active: index === 0 }"
               >
                 <div class="item-wrapper">
-                  <g-image
-                    :src="require(`@/${image.src}`)"
-                    :alt="image.alt"
+                  <img
+                    v-if="image.resolvedSrc"
+                    :src="image.resolvedSrc"
+                    :alt="image.alt || ''"
                     class="d-block w-100"
-                    immediate="false"
                     :data-slide-to="index"
                     :data-bs-slide-to="index"
-                  />
+                  >
                 </div>
               </div>
             </div>
@@ -76,16 +76,64 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'NewsCommunityCarousel',
-  props: {
-    images: {
-      type: Array,
-      required: true
-    }
+<script setup>
+import { computed } from 'vue';
+import { useAsset } from '#imports';
+
+const props = defineProps({
+  images: {
+    type: Array,
+    required: true,
+  },
+});
+
+const resolveImagePath = (path) => {
+  if (!path || typeof path !== 'string') {
+    return '';
   }
+
+  if (/^https?:\/\//i.test(path) || path.startsWith('//')) {
+    return path;
+  }
+
+  let normalized = path.replace(/^@\//, '~/');
+
+  if (normalized.startsWith('/')) {
+    return normalized;
+  }
+
+  if (normalized.startsWith('~/')) {
+    return useAsset(normalized);
+  }
+
+  if (normalized.startsWith('assets/')) {
+    return useAsset(`~/${normalized}`);
+  }
+
+  if (normalized.startsWith('images/')) {
+    return useAsset(`~/assets/${normalized}`);
+  }
+
+  return useAsset(`~/assets/images/${normalized}`);
 };
+
+const resolvedImages = computed(() =>
+  props.images.map((image) => {
+    const source =
+      (typeof image === 'object' && (image.src || image.path)) ||
+      (typeof image === 'string' ? image : '');
+
+    const base =
+      typeof image === 'object' && image !== null
+        ? image
+        : { alt: '', src: source };
+
+    return {
+      ...base,
+      resolvedSrc: resolveImagePath(source),
+    };
+  })
+);
 </script>
 
 <style scoped>

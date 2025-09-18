@@ -10,13 +10,12 @@
           <div class="row align-items-start">
             <!-- Image Section -->
             <div class="col-md-4 col-lg-3">
-              <div v-if="image">
-                <g-image
-                  :src="require(`@/${image}`)"
-                  alt="Image"
+              <div v-if="imageUrl">
+                <img
+                  :src="imageUrl"
+                  :alt="imageAlt"
                   class="img-fluid"
-                  immediate="false"
-                />
+                >
               </div>
               <div
                 v-else
@@ -45,7 +44,7 @@
                 class="mbr-fonts-style mb-4 display-5"
               >
                 <a
-                  :href="'mailto:' + email"
+                  :href="`mailto:${email}`"
                   class="text-primary"
                 >{{ email }}</a>
               </p>
@@ -63,37 +62,72 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'CouncilMembers',
-  props: {
-    position: {
-      type: String,
-      required: true
-    },
-    name: {
-      type: String,
-      required: true
-    },
-    email: {
-      type: String,
-      required: true
-    },
-    flag: {
-      type: String,
-      required: false,
-      default: null
-    },
-    bio: {
-      type: String,
-      required: true
-    },
-    image: {
-      type: String,
-      required: true
-    }
+<script setup>
+import { computed } from 'vue';
+import { useAsset } from '#imports';
+
+const props = defineProps({
+  position: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  flag: {
+    type: String,
+    default: null,
+  },
+  bio: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  imageAlt: {
+    type: String,
+    default: 'Council member portrait',
+  },
+});
+
+const resolveImagePath = (path) => {
+  if (!path || typeof path !== 'string') {
+    return '';
   }
+
+  if (/^https?:\/\//i.test(path) || path.startsWith('//')) {
+    return path;
+  }
+
+  let normalized = path.replace(/^@\//, '~/');
+
+  if (normalized.startsWith('/')) {
+    return normalized;
+  }
+
+  if (normalized.startsWith('~/')) {
+    return useAsset(normalized);
+  }
+
+  if (normalized.startsWith('assets/')) {
+    return useAsset(`~/${normalized}`);
+  }
+
+  if (normalized.startsWith('images/')) {
+    return useAsset(`~/assets/${normalized}`);
+  }
+
+  return useAsset(`~/assets/images/${normalized}`);
 };
+
+const imageUrl = computed(() => resolveImagePath(props.image));
 </script>
 
 <style scoped>

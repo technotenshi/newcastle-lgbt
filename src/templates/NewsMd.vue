@@ -64,8 +64,8 @@ imageHeader {path alt}
 </page-query>
 
 <script>
-import NewsCommunityCarousel from "@/components/NewsCommunityCarousel.vue";
-import NewsHeaderImage from "@/components/NewsHeaderImage.vue";
+import NewsCommunityCarousel from "~/components/NewsCommunityCarousel.vue";
+import NewsHeaderImage from "~/components/NewsHeaderImage.vue";
 
 export default {
   components: {
