@@ -29,7 +29,7 @@ yarn build
 ```
 
 ### Image compression
-Project images under `src/assets/images` are compressed during `yarn build` using
+Project images under `assets/images` are compressed during `yarn build` using
 `image-webpack-loader`. Configuration lives in `gridsome.config.js`. If the
 validation step detects unsupported or empty images, the build will fail with a
 descriptive error.
