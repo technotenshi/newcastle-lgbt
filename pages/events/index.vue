@@ -86,6 +86,7 @@ import { useSeoMeta } from '#imports';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useAsset } from '~/composables/useAsset';
 import { useEvents } from '~/composables/useEvents';
+import { normaliseString } from '~/utils/content';
 
 defineOptions({
   name: 'EventsIndexPage',
@@ -176,15 +177,13 @@ const formatEventDate = (value) => {
   return defaultDateFormatter.format(parsed);
 };
 
-const normaliseString = (value) => (typeof value === 'string' ? value.trim() : '');
-
 const events = computed(() => {
   const list = Array.isArray(eventsData.value) ? eventsData.value : [];
 
   return list.map((event) => {
-    const title = normaliseString(event.title) || 'Untitled Event';
+    const title = normaliseString(event.title) ?? 'Untitled Event';
     const imagePath = normaliseString(event.image?.path);
-    const imageAlt = normaliseString(event.image?.alt) || title;
+    const imageAlt = normaliseString(event.image?.alt) ?? title;
     const linkTarget = normaliseString(event.link?.target);
     const linkText = normaliseString(event.link?.text);
 
