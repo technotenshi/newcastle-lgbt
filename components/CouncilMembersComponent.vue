@@ -98,7 +98,7 @@ const props = defineProps({
     default: '',
   },
   bio: {
-    type: [Object, Array, String],
+    type: [Object, String],
     default: null,
   },
   image: {
@@ -111,10 +111,43 @@ const props = defineProps({
   },
 });
 
-const imageUrl = computed(() => {
-  const path = typeof props.image === 'string' ? props.image.trim() : '';
-  return path ? useAsset(path) : '';
-});
+const resolveImagePath = (path) => {
+  if (typeof path !== 'string') {
+    return '';
+  }
+
+  const trimmed = path.trim();
+
+  if (!trimmed) {
+    return '';
+  }
+
+  if (/^https?:\/\//i.test(trimmed) || trimmed.startsWith('//')) {
+    return trimmed;
+  }
+
+  let normalized = trimmed.replace(/^@\//, '~/');
+
+  if (normalized.startsWith('/')) {
+    return normalized;
+  }
+
+  if (normalized.startsWith('~/')) {
+    return useAsset(normalized);
+  }
+
+  if (normalized.startsWith('assets/')) {
+    return useAsset(`~/${normalized}`);
+  }
+
+  if (normalized.startsWith('images/')) {
+    return useAsset(`~/assets/${normalized}`);
+  }
+
+  return useAsset(`~/assets/images/${normalized}`);
+};
+
+const imageUrl = computed(() => resolveImagePath(props.image));
 
 const resolvedImageAlt = computed(() => {
   const alt = typeof props.imageAlt === 'string' ? props.imageAlt.trim() : '';
@@ -131,14 +164,26 @@ const resolvedImageAlt = computed(() => {
 });
 
 const bioDocument = computed(() => {
-  if (props.bio && typeof props.bio === 'object') {
+  if (props.bio && typeof props.bio === 'object' && !Array.isArray(props.bio)) {
     return { body: props.bio };
   }
 
   return null;
 });
 
-const bioHtml = computed(() => (typeof props.bio === 'string' ? props.bio : ''));
+const bioHtml = computed(() => {
+  if (typeof props.bio === 'string') {
+    return props.bio;
+  }
+
+  if (Array.isArray(props.bio)) {
+    return props.bio
+      .filter((segment) => typeof segment === 'string' && segment.trim().length > 0)
+      .join(' ');
+  }
+
+  return '';
+});
 
 const hasEmail = computed(() => typeof props.email === 'string' && props.email.trim().length > 0);
 
