@@ -109,22 +109,71 @@ useSeoMeta({
 
 const { data: eventsData } = await useEvents();
 
+const calendarDateFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
+const defaultDateFormatter = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const parseCalendarDate = (value) => {
+  const match = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(value);
+
+  if (!match) {
+    return null;
+  }
+
+  const year = Number.parseInt(match[1], 10);
+  const month = Number.parseInt(match[2], 10);
+  const day = Number.parseInt(match[3], 10);
+
+  if (Number.isNaN(year) || Number.isNaN(month) || Number.isNaN(day)) {
+    return null;
+  }
+
+  const date = new Date(Date.UTC(year, month - 1, day));
+
+  if (
+    date.getUTCFullYear() !== year
+    || date.getUTCMonth() !== month - 1
+    || date.getUTCDate() !== day
+  ) {
+    return null;
+  }
+
+  return date;
+};
+
 const formatEventDate = (value) => {
-  if (typeof value !== 'string' || !value.trim()) {
+  if (typeof value !== 'string') {
     return '';
   }
 
-  const parsed = new Date(value);
+  const trimmed = value.trim();
 
-  if (Number.isNaN(parsed.getTime())) {
-    return value;
+  if (!trimmed) {
+    return '';
   }
 
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(parsed);
+  const calendarDate = parseCalendarDate(trimmed);
+
+  if (calendarDate) {
+    return calendarDateFormatter.format(calendarDate);
+  }
+
+  const parsed = new Date(trimmed);
+
+  if (Number.isNaN(parsed.getTime())) {
+    return trimmed;
+  }
+
+  return defaultDateFormatter.format(parsed);
 };
 
 const normaliseString = (value) => (typeof value === 'string' ? value.trim() : '');
