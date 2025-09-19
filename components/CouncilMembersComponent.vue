@@ -13,8 +13,10 @@
               <div v-if="imageUrl">
                 <img
                   :src="imageUrl"
-                  :alt="imageAlt"
+                  :alt="resolvedImageAlt"
                   class="img-fluid"
+                  loading="lazy"
+                  decoding="async"
                 >
               </div>
               <div
@@ -26,12 +28,18 @@
             <!-- Bio Section -->
             <div class="col-md-8 col-lg-9">
               <!-- Position -->
-              <h4 class="mbr-section-subtitle mbr-fonts-style mb-2 display-6">
+              <h4
+                v-if="position"
+                class="mbr-section-subtitle mbr-fonts-style mb-2 display-6"
+              >
                 {{ position }}
               </h4>
 
               <!-- Name and Flag (if applicable) -->
-              <p class="mbr-fonts-style mb-2 display-5">
+              <p
+                v-if="name"
+                class="mbr-fonts-style mb-2 display-5"
+              >
                 <strong>{{ name }}</strong>
                 <template v-if="flag">
                   &nbsp;<span>{{ flag }}</span>
@@ -40,19 +48,25 @@
 
               <!-- Email -->
               <p
-                v-if="email"
+                v-if="hasEmail"
                 class="mbr-fonts-style mb-4 display-5"
               >
                 <a
-                  :href="`mailto:${email}`"
+                  :href="mailtoHref"
                   class="text-primary"
                 >{{ email }}</a>
               </p>
 
               <!-- Bio Content -->
-              <span
+              <ContentRenderer
+                v-if="bioDocument"
+                :value="bioDocument"
                 class="mbr-text mbr-fonts-style display-7"
-                v-html="bio"
+              />
+              <span
+                v-else-if="bioHtml"
+                class="mbr-text mbr-fonts-style display-7"
+                v-html="bioHtml"
               />
             </div>
           </div>
@@ -69,65 +83,66 @@ import { useAsset } from '#imports';
 const props = defineProps({
   position: {
     type: String,
-    required: true,
+    default: '',
   },
   name: {
     type: String,
-    required: true,
+    default: '',
   },
   email: {
     type: String,
-    required: true,
+    default: '',
   },
   flag: {
     type: String,
-    default: null,
+    default: '',
   },
   bio: {
-    type: String,
-    required: true,
+    type: [Object, Array, String],
+    default: null,
   },
   image: {
     type: String,
-    required: true,
+    default: '',
   },
   imageAlt: {
     type: String,
-    default: 'Council member portrait',
+    default: '',
   },
 });
 
-const resolveImagePath = (path) => {
-  if (!path || typeof path !== 'string') {
-    return '';
+const imageUrl = computed(() => {
+  const path = typeof props.image === 'string' ? props.image.trim() : '';
+  return path ? useAsset(path) : '';
+});
+
+const resolvedImageAlt = computed(() => {
+  const alt = typeof props.imageAlt === 'string' ? props.imageAlt.trim() : '';
+
+  if (alt) {
+    return alt;
   }
 
-  if (/^https?:\/\//i.test(path) || path.startsWith('//')) {
-    return path;
+  if (props.name) {
+    return `${props.name} portrait`;
   }
 
-  let normalized = path.replace(/^@\//, '~/');
+  return 'Council member portrait';
+});
 
-  if (normalized.startsWith('/')) {
-    return normalized;
+const bioDocument = computed(() => {
+  if (props.bio && typeof props.bio === 'object') {
+    return { body: props.bio };
   }
 
-  if (normalized.startsWith('~/')) {
-    return useAsset(normalized);
-  }
+  return null;
+});
 
-  if (normalized.startsWith('assets/')) {
-    return useAsset(`~/${normalized}`);
-  }
+const bioHtml = computed(() => (typeof props.bio === 'string' ? props.bio : ''));
 
-  if (normalized.startsWith('images/')) {
-    return useAsset(`~/assets/${normalized}`);
-  }
+const hasEmail = computed(() => typeof props.email === 'string' && props.email.trim().length > 0);
 
-  return useAsset(`~/assets/images/${normalized}`);
-};
-
-const imageUrl = computed(() => resolveImagePath(props.image));
+const mailtoHref = computed(() => (hasEmail.value ? `mailto:${props.email}` : ''));
 </script>
 
 <style scoped>

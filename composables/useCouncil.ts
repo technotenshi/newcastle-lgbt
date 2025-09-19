@@ -9,6 +9,8 @@ export interface CouncilMember {
   _path: string;
   /** Position number assigned to the council seat. */
   position?: number;
+  /** Formatted title describing the council seat. */
+  title?: string;
   /** Human readable name drawn from front matter. */
   name?: string;
   /** Contact email when provided. */
@@ -19,7 +21,8 @@ export interface CouncilMember {
   image?: string;
   /** ISO 8601 date used for sorting or metadata. */
   date?: string;
-  body?: unknown;
+  /** Rich text biography sourced from the Markdown body. */
+  bio?: unknown;
 }
 
 /**
@@ -47,12 +50,13 @@ export function useCouncil() {
           ? `/council/${id}`
           : "/council";
       const position = normaliseNumber(meta.position);
+      const title = normaliseString(meta.title);
       const name = normaliseString(meta.name);
       const email = normaliseString(meta.email);
       const flag = normaliseString(meta.flag);
       const image = normaliseString(meta.image);
       const date = normaliseString(meta.date);
-      const body = normaliseBody(row.body);
+      const bio = normaliseBody(row.body);
 
       const identifier = id || name || canonicalPath || "council-member";
 
@@ -60,12 +64,13 @@ export function useCouncil() {
         _id: identifier,
         _path: canonicalPath,
         position,
+        title,
         name,
         email,
         flag,
         image,
         date,
-        body,
+        bio,
       } as CouncilMember;
     });
 
