@@ -1,4 +1,4 @@
-import { queryContent } from "#content";
+import { queryCollection } from "#imports";
 
 /**
  * Representation of a city council profile stored under `content/council`.
@@ -24,12 +24,130 @@ export interface CouncilMember {
 /**
  * Fetches the council roster ordered by the numerical `position` field.
  */
+const normaliseString = (value: unknown): string | undefined => {
+  if (typeof value !== "string") {
+    return undefined;
+  }
+
+  const trimmed = value.trim();
+  return trimmed ? trimmed : undefined;
+};
+
+const normaliseNumber = (value: unknown): number | undefined => {
+  if (typeof value === "number") {
+    return Number.isNaN(value) ? undefined : value;
+  }
+
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+
+    if (!trimmed) {
+      return undefined;
+    }
+
+    const parsed = Number(trimmed);
+    return Number.isNaN(parsed) ? undefined : parsed;
+  }
+
+  return undefined;
+};
+
+const normaliseBody = (value: unknown): unknown => {
+  if (!value) {
+    return undefined;
+  }
+
+  if (typeof value === "string") {
+    try {
+      return JSON.parse(value);
+    } catch {
+      return undefined;
+    }
+  }
+
+  if (typeof value === "object") {
+    return value;
+  }
+
+  return undefined;
+};
+
+const parseMeta = (value: unknown): Record<string, unknown> => {
+  if (!value) {
+    return {};
+  }
+
+  if (typeof value === "string") {
+    try {
+      return JSON.parse(value) as Record<string, unknown>;
+    } catch {
+      return {};
+    }
+  }
+
+  if (typeof value === "object") {
+    return value as Record<string, unknown>;
+  }
+
+  return {};
+};
+
 export function useCouncil() {
   return useAsyncData("council-members", async () => {
-    const members = (await queryContent<CouncilMember>("council")
-      .sort({ position: 1, name: 1 })
-      .find()) as CouncilMember[];
+    const rows = (await queryCollection("content")
+      .select("id", "path", "meta", "body")
+      .where("path", "LIKE", "/council/%")
+      .all()) as Array<Record<string, unknown>>;
 
-    return members;
+    const members = rows.map((row) => {
+      const meta = parseMeta(row.meta);
+      const rawId = row.id as string | number | undefined;
+      const id = typeof rawId === "string"
+        ? rawId
+        : typeof rawId === "number"
+          ? String(rawId)
+          : normaliseString(rawId) ?? "";
+      const rawPath = row.path as string | undefined;
+      const canonicalPath = typeof rawPath === "string" && rawPath.trim()
+        ? rawPath
+        : id
+          ? `/council/${id}`
+          : "/council";
+      const position = normaliseNumber(meta.position);
+      const name = normaliseString(meta.name);
+      const email = normaliseString(meta.email);
+      const flag = normaliseString(meta.flag);
+      const image = normaliseString(meta.image);
+      const date = normaliseString(meta.date);
+      const body = normaliseBody(row.body);
+
+      const identifier = id || name || canonicalPath || "council-member";
+
+      return {
+        _id: identifier,
+        _path: canonicalPath,
+        position,
+        name,
+        email,
+        flag,
+        image,
+        date,
+        body,
+      } as CouncilMember;
+    });
+
+    return members.slice().sort((first, second) => {
+      const firstPosition = typeof first.position === "number" ? first.position : Number.POSITIVE_INFINITY;
+      const secondPosition = typeof second.position === "number" ? second.position : Number.POSITIVE_INFINITY;
+
+      if (firstPosition !== secondPosition) {
+        return firstPosition - secondPosition;
+      }
+
+      const firstName = first.name ?? "";
+      const secondName = second.name ?? "";
+
+      return firstName.localeCompare(secondName);
+    });
   });
 }
