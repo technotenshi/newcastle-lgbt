@@ -3,14 +3,6 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: "2025-09-18",
-  imports: {
-    presets: [
-      {
-        from: "nuxt/app",
-        imports: ["useAsset"],
-      },
-    ],
-  },
   nitro: {
     preset: "static",
     prerender: {

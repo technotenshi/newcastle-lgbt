@@ -13,6 +13,10 @@ export interface NewsItem {
    */
   _path: string;
   /**
+   * Raw path reported by Nuxt Content before normalisation.
+   */
+  sourcePath?: string;
+  /**
    * Optional ISO 8601 date string used for chronological sorting.
    */
   date?: string;
@@ -51,6 +55,32 @@ export interface NewsItem {
    */
   draft?: boolean;
   _draft?: boolean;
+}
+
+/**
+ * Builds the canonical route path for a news article using the date segments and slug.
+ */
+function buildArticlePath(date?: string, slug?: string): string | undefined {
+  if (typeof date !== "string" || typeof slug !== "string") {
+    return undefined;
+  }
+
+  const [year, month, day] = date.split("-");
+
+  if (!year || year.length !== 4 || !month || !day) {
+    return undefined;
+  }
+
+  const trimmedSlug = slug.trim();
+
+  if (!trimmedSlug) {
+    return undefined;
+  }
+
+  const normalizedMonth = month.padStart(2, "0").slice(-2);
+  const normalizedDay = day.padStart(2, "0").slice(-2);
+
+  return `/news/${year}/${normalizedMonth}/${normalizedDay}/${trimmedSlug}`;
 }
 
 /**
@@ -105,13 +135,19 @@ export function useNews(options: UseNewsOptions = {}) {
         })()
         : (rawMeta as Record<string, unknown> | undefined) ?? {};
 
+      const defaultPath = typeof row.path === "string" ? row.path : String(row.path ?? "");
+      const dateValue = typeof meta.date === "string" ? meta.date : undefined;
+      const slugValue = typeof meta.slug === "string" ? meta.slug : undefined;
+      const canonicalPath = buildArticlePath(dateValue, slugValue) ?? (defaultPath || "/");
+
       return {
         _id: typeof row.id === "string" ? row.id : String(row.id ?? ""),
-        _path: typeof row.path === "string" ? row.path : String(row.path ?? ""),
+        _path: canonicalPath,
+        sourcePath: defaultPath || undefined,
         title: typeof row.title === "string" ? row.title : (meta.title as string | undefined),
-        date: typeof meta.date === "string" ? meta.date : undefined,
+        date: dateValue,
         order: typeof meta.order === "number" ? meta.order : typeof meta.order === "string" ? Number(meta.order) : undefined,
-        slug: typeof meta.slug === "string" ? meta.slug : undefined,
+        slug: slugValue,
         image: typeof meta.image === "object" ? (meta.image as NewsItem["image"]) : undefined,
         imageHeader: typeof meta.imageHeader === "object" ? (meta.imageHeader as NewsItem["imageHeader"]) : undefined,
         body: undefined,
