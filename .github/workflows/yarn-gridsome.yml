@@ -31,9 +31,6 @@ jobs:
       - name: System deps
         run: |
           sudo apt-get install -y webp
-          
-      - name: Install Gridsome CLI globally
-        run: yarn global add @gridsome/cli
 
       - name: Install deps
         run: yarn install --frozen-lockfile
