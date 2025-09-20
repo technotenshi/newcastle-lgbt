@@ -13,10 +13,7 @@ export default [
     {
         ignores: [
             ".cache/*",
-            "dist/*",
-            "cms/*",
             "assets/*",
-            "src/.temp/*",
             ".nuxt/*",
             ".output/*",
             "node_modules/*",
