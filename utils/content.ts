@@ -65,3 +65,54 @@ export const parseMeta = (value: unknown): Record<string, unknown> => {
 
   return {};
 };
+
+type PortableTextObject = {
+  value?: unknown;
+  children?: unknown;
+};
+
+const isPortableTextObject = (candidate: unknown): candidate is PortableTextObject =>
+  typeof candidate === "object" && candidate !== null && !Array.isArray(candidate);
+
+export const toPlainText = (node: unknown): string => {
+  if (node == null) {
+    return "";
+  }
+
+  if (typeof node === "string" || typeof node === "number" || typeof node === "boolean") {
+    return String(node);
+  }
+
+  if (Array.isArray(node)) {
+    return node.map((child) => toPlainText(child)).join(" ");
+  }
+
+  if (isPortableTextObject(node)) {
+    const { value, children } = node;
+
+    if (typeof value === "string") {
+      return value;
+    }
+
+    if (Array.isArray(children)) {
+      return children.map((child) => toPlainText(child)).join(" ");
+    }
+  }
+
+  return "";
+};
+
+export const truncateSummary = (input: string, length = 160): string => {
+  if (input.length <= length) {
+    return input;
+  }
+
+  const truncated = input.slice(0, length);
+  const lastSpace = truncated.lastIndexOf(" ");
+
+  if (lastSpace > 0) {
+    return truncated.slice(0, lastSpace).trim();
+  }
+
+  return truncated.trim();
+};

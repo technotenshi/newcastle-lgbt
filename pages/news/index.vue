@@ -49,6 +49,14 @@ import { queryCollection, useAsyncData, useSeoMeta } from '#imports';
 import FeaturedNews from '~/components/FeaturedNews.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useNews } from '~/composables/useNews';
+import { resolveAssetUrl } from '~/utils/assets';
+import {
+  normaliseBody,
+  normaliseString,
+  parseMeta,
+  toPlainText,
+  truncateSummary,
+} from '~/utils/content';
 
 defineOptions({
   name: 'NewsIndexPage',
@@ -77,52 +85,19 @@ const { data: documentsData } = await useAsyncData('news-index-documents', async
     .where('path', 'LIKE', '/news/%')
     .all();
 
-  const parseMeta = (input) => {
-    if (!input) {
-      return {};
-    }
+  const safeRows = Array.isArray(rows) ? rows : [];
 
-    if (typeof input === 'string') {
-      try {
-        return JSON.parse(input);
-      } catch {
-        return {};
-      }
-    }
+  return safeRows.map((row) => {
+    const record = row && typeof row === 'object' ? row : {};
+    const idValue = record.id;
 
-    if (typeof input === 'object') {
-      return input;
-    }
-
-    return {};
-  };
-
-  const parseBody = (input) => {
-    if (!input) {
-      return undefined;
-    }
-
-    if (typeof input === 'string') {
-      try {
-        return JSON.parse(input);
-      } catch {
-        return undefined;
-      }
-    }
-
-    if (typeof input === 'object') {
-      return input;
-    }
-
-    return undefined;
-  };
-
-  return (Array.isArray(rows) ? rows : []).map((row) => ({
-    _id: typeof row.id === 'string' ? row.id : String(row.id ?? ''),
-    meta: parseMeta(row.meta),
-    description: typeof row.description === 'string' ? row.description : undefined,
-    body: parseBody(row.body),
-  }));
+    return {
+      _id: typeof idValue === 'string' ? idValue : String(idValue ?? ''),
+      meta: parseMeta(record.meta),
+      description: normaliseString(record.description),
+      body: normaliseBody(record.body),
+    };
+  });
 });
 
 const documentsById = computed(() => {
@@ -140,56 +115,19 @@ const documentsById = computed(() => {
   return map;
 });
 
-const toPlainText = (node) => {
-  if (!node) {
-    return '';
-  }
-
-  if (typeof node === 'string' || typeof node === 'number') {
-    return String(node);
-  }
-
-  if (Array.isArray(node)) {
-    return node.map(toPlainText).join(' ');
-  }
-
-  if (typeof node === 'object') {
-    if (typeof node.value === 'string') {
-      return node.value;
-    }
-
-    if (Array.isArray(node.children)) {
-      return node.children.map(toPlainText).join(' ');
-    }
-  }
-
-  return '';
-};
-
-const truncateSummary = (input, length = 160) => {
-  if (input.length <= length) {
-    return input;
-  }
-
-  const truncated = input.slice(0, length);
-  const lastSpace = truncated.lastIndexOf(' ');
-
-  if (lastSpace > 0) {
-    return truncated.slice(0, lastSpace).trim();
-  }
-
-  return truncated.trim();
-};
-
+/**
+ * Derives the summary text for a news article by preferring curated metadata fields
+ * and falling back to a truncated excerpt of the document body when necessary.
+ */
 const extractSummary = (document) => {
   if (!document || typeof document !== 'object') {
     return '';
   }
 
-  const meta = document.meta && typeof document.meta === 'object' ? document.meta : {};
+  const meta = parseMeta(document.meta);
   const excerptText = toPlainText(meta.excerpt);
   const metaDescription = toPlainText(meta.description);
-  const documentDescription = typeof document.description === 'string' ? document.description : '';
+  const documentDescription = normaliseString(document.description) ?? '';
   const bodyText = toPlainText(document.body);
 
   const cleanedSource = [excerptText, metaDescription, documentDescription, bodyText]
@@ -221,30 +159,32 @@ const formatPublishDate = (value) => {
   });
 };
 
+/**
+ * Normalises fetched news entries into the card-friendly shape consumed by the template.
+ */
 const articles = computed(() => {
   const entries = Array.isArray(newsData.value) ? newsData.value : [];
+  const documentMap = documentsById.value;
 
   return entries.map((entry) => {
-    const document = documentsById.value.get(entry._id) ?? null;
-    const title = typeof entry.title === 'string' && entry.title.trim() ? entry.title.trim() : 'Untitled Article';
+    const document = documentMap.get(entry._id) ?? null;
+    const title = normaliseString(entry.title) ?? 'Untitled Article';
     const summary = extractSummary(document) || 'Read the full story';
     const formattedDate = formatPublishDate(entry.date) || '';
-    const imagePath = entry.image && typeof entry.image.path === 'string' ? entry.image.path : '';
-    const imageAlt = entry.image && typeof entry.image.alt === 'string' && entry.image.alt.trim()
-      ? entry.image.alt.trim()
-      : `${title} image`;
-    const link = typeof entry._path === 'string' && entry._path.trim()
-      ? entry._path.trim()
-      : typeof entry.sourcePath === 'string' && entry.sourcePath.trim()
-        ? entry.sourcePath.trim()
-        : '/';
+    const imageObj = entry.image && typeof entry.image === 'object' ? entry.image : null;
+    const imagePath = imageObj?.path;
+    const imageSrc = resolveAssetUrl(imagePath) || '';
+    const imageAlt = normaliseString(imageObj?.alt) ?? `${title} image`;
+    const link = normaliseString(entry._path)
+      ?? normaliseString(entry.sourcePath)
+      ?? '/';
 
     return {
       id: entry._id,
       title,
       summary,
       date: formattedDate,
-      imageSrc: imagePath,
+      imageSrc,
       imageAlt,
       link,
       target: '_self',
