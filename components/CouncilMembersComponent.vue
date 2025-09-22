@@ -78,7 +78,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useAsset } from '#imports';
+import { resolveAssetUrl } from '~/utils/assets';
 
 const props = defineProps({
   position: {
@@ -111,43 +111,7 @@ const props = defineProps({
   },
 });
 
-const resolveImagePath = (path) => {
-  if (typeof path !== 'string') {
-    return '';
-  }
-
-  const trimmed = path.trim();
-
-  if (!trimmed) {
-    return '';
-  }
-
-  if (/^https?:\/\//i.test(trimmed) || trimmed.startsWith('//')) {
-    return trimmed;
-  }
-
-  let normalized = trimmed.replace(/^@\//, '~/');
-
-  if (normalized.startsWith('/')) {
-    return normalized;
-  }
-
-  if (normalized.startsWith('~/')) {
-    return useAsset(normalized);
-  }
-
-  if (normalized.startsWith('assets/')) {
-    return useAsset(`~/${normalized}`);
-  }
-
-  if (normalized.startsWith('images/')) {
-    return useAsset(`~/assets/${normalized}`);
-  }
-
-  return useAsset(`~/assets/images/${normalized}`);
-};
-
-const imageUrl = computed(() => resolveImagePath(props.image));
+const imageUrl = computed(() => resolveAssetUrl(props.image));
 
 const resolvedImageAlt = computed(() => {
   const alt = typeof props.imageAlt === 'string' ? props.imageAlt.trim() : '';

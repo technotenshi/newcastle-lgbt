@@ -39,7 +39,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useAsset } from '#imports';
+import { resolveAssetUrl } from '~/utils/assets';
 
 const props = defineProps({
   imageSrc: {
@@ -68,42 +68,6 @@ const props = defineProps({
   },
 });
 
-const resolveImagePath = (path) => {
-  if (typeof path !== 'string') {
-    return '';
-  }
-
-  const trimmed = path.trim();
-
-  if (!trimmed) {
-    return '';
-  }
-
-  if (/^https?:\/\//i.test(trimmed) || trimmed.startsWith('//')) {
-    return trimmed;
-  }
-
-  let normalized = trimmed.replace(/^@\//, '~/');
-
-  if (normalized.startsWith('/')) {
-    return normalized;
-  }
-
-  if (normalized.startsWith('~/')) {
-    return useAsset(normalized);
-  }
-
-  if (normalized.startsWith('assets/')) {
-    return useAsset(`~/${normalized}`);
-  }
-
-  if (normalized.startsWith('images/')) {
-    return useAsset(`~/assets/${normalized}`);
-  }
-
-  return useAsset(`~/assets/images/${normalized}`);
-};
-
 const extractImagePath = (value) => {
   if (!value) {
     return '';
@@ -120,7 +84,7 @@ const extractImagePath = (value) => {
   return '';
 };
 
-const imageUrl = computed(() => resolveImagePath(extractImagePath(props.imageSrc)));
+const imageUrl = computed(() => resolveAssetUrl(extractImagePath(props.imageSrc)));
 const linkRel = computed(() => (props.target === '_blank' ? 'noopener noreferrer' : null));
 </script>
 

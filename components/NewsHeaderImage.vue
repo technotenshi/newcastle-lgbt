@@ -46,7 +46,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useAsset } from '#imports';
+import { resolveAssetUrl } from '~/utils/assets';
 
 const props = defineProps({
   imageHeader: {
@@ -55,37 +55,7 @@ const props = defineProps({
   },
 });
 
-const resolveImagePath = (path) => {
-  if (!path || typeof path !== 'string') {
-    return '';
-  }
-
-  if (/^https?:\/\//i.test(path) || path.startsWith('//')) {
-    return path;
-  }
-
-  let normalized = path.replace(/^@\//, '~/');
-
-  if (normalized.startsWith('/')) {
-    return normalized;
-  }
-
-  if (normalized.startsWith('~/')) {
-    return useAsset(normalized);
-  }
-
-  if (normalized.startsWith('assets/')) {
-    return useAsset(`~/${normalized}`);
-  }
-
-  if (normalized.startsWith('images/')) {
-    return useAsset(`~/assets/${normalized}`);
-  }
-
-  return useAsset(`~/assets/images/${normalized}`);
-};
-
-const imageSrc = computed(() => resolveImagePath(props.imageHeader?.path || props.imageHeader?.src || ''));
+const imageSrc = computed(() => resolveAssetUrl(props.imageHeader?.path || props.imageHeader?.src || ''));
 </script>
 
 <style scoped>

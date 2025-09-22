@@ -25,7 +25,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useAsset } from '#imports';
+import { resolveAssetUrl } from '~/utils/assets';
 
 const props = defineProps({
   title: {
@@ -46,45 +46,9 @@ const props = defineProps({
   },
 });
 
-const resolveImagePath = (path) => {
-  if (typeof path !== 'string') {
-    return '';
-  }
-
-  const trimmed = path.trim();
-
-  if (!trimmed) {
-    return '';
-  }
-
-  if (/^https?:\/\//i.test(trimmed) || trimmed.startsWith('//')) {
-    return trimmed;
-  }
-
-  let normalized = trimmed.replace(/^@\//, '~/');
-
-  if (normalized.startsWith('/')) {
-    return normalized;
-  }
-
-  if (normalized.startsWith('~/')) {
-    return useAsset(normalized);
-  }
-
-  if (normalized.startsWith('assets/')) {
-    return useAsset(`~/${normalized}`);
-  }
-
-  if (normalized.startsWith('images/')) {
-    return useAsset(`~/assets/${normalized}`);
-  }
-
-  return useAsset(`~/assets/images/${normalized}`);
-};
-
 const thumbnailSrc = computed(() => {
   const path = props.image?.path || props.image?.src || '';
-  return resolveImagePath(path);
+  return resolveAssetUrl(path);
 });
 
 const imageAltText = computed(() => props.image?.alt || props.title);
