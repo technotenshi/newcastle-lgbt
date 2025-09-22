@@ -65,3 +65,46 @@ export const parseMeta = (value: unknown): Record<string, unknown> => {
 
   return {};
 };
+
+export const toPlainText = (node: unknown): string => {
+  if (node == null) {
+    return "";
+  }
+
+  if (typeof node === "string" || typeof node === "number" || typeof node === "boolean") {
+    return String(node);
+  }
+
+  if (Array.isArray(node)) {
+    return node.map((child) => toPlainText(child)).join(" ");
+  }
+
+  if (typeof node === "object") {
+    const { value, children } = node as { value?: unknown; children?: unknown };
+
+    if (typeof value === "string") {
+      return value;
+    }
+
+    if (Array.isArray(children)) {
+      return children.map((child) => toPlainText(child)).join(" ");
+    }
+  }
+
+  return "";
+};
+
+export const truncateSummary = (input: string, length = 160): string => {
+  if (input.length <= length) {
+    return input;
+  }
+
+  const truncated = input.slice(0, length);
+  const lastSpace = truncated.lastIndexOf(" ");
+
+  if (lastSpace > 0) {
+    return truncated.slice(0, lastSpace).trim();
+  }
+
+  return truncated.trim();
+};
