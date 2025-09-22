@@ -30,6 +30,7 @@ export function resolveAssetUrl(input?: unknown): string {
   }
 
   if (SCHEME_REGEX.test(value)) {
+    console.warn(`[resolveAssetUrl] Rejected asset URL due to unsupported or unsafe scheme: "${value}"`);
     return '';
   }
 
