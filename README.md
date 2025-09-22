@@ -1,12 +1,12 @@
 # Newcastle LGBT Website
 
-This repository contains the source for the **Newcastle LGBT** site. It is built with [Gridsome](https://gridsome.org/) and Vue.js, with most content written in Markdown under the `content/` directory.
+This repository contains the source for the **Newcastle LGBT** site. It is built with [Nuxt](https://nuxt.com/) and Vue 3, with most content written in Markdown under the `content/` directory and served through Nuxt Content.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/458c411819a6488fb55ce082d7cc5d3b)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Requirements
 - Node.js 22
-- Yarn v1
+- Yarn v1 (Corepack recommended)
 
 Install dependencies with:
 
@@ -14,25 +14,40 @@ Install dependencies with:
 yarn install
 ```
 
+## Nuxt commands
+- `yarn dev` – start the development server at `http://localhost:3000`
+- `yarn build` – generate the static site into `.output/public`
+- `yarn preview` – serve the latest build from `.output/public`
+
 ## Local development
-Run a development server at `http://localhost:8080`:
+Run the dev server locally:
 
 ```bash
-yarn develop
+yarn dev
 ```
 
-## Production build
-Generate a static site in the `dist` folder:
+If you are developing inside Docker or a remote environment, expose the server by setting the host:
+
+```bash
+HOST=0.0.0.0 yarn dev
+```
+
+## Static build & deployment
+Create a production build and serve it locally:
 
 ```bash
 yarn build
+yarn preview
 ```
 
-### Image compression
-Project images under `src/assets/images` are compressed during `yarn build` using
-`image-webpack-loader`. Configuration lives in `gridsome.config.js`. If the
-validation step detects unsupported or empty images, the build will fail with a
-descriptive error.
+After `yarn build`, all deployable assets live under `.output/public`. Deploy by copying that directory to your hosting provider. For example, to publish over SSH:
+
+```bash
+yarn build
+rsync -avz .output/public/ user@server:/var/www/newcastle-lgbt
+```
+
+`yarn preview` runs the same Nitro server used in production so you can verify the build before publishing.
 
 ## Validation
 Run linting and a production build before committing changes:
@@ -42,27 +57,25 @@ yarn lint
 yarn build
 ```
 
-`yarn lint` enforces code style, while `yarn build` verifies the site builds
-successfully for deployment.
-
-ESLint is configured with `vue-eslint-parser` and modern parser options. Browser
-and Node globals are available by default.
-
-To automatically fix lint issues when possible:
+`yarn lint` enforces code style, while `yarn build` verifies the site builds successfully for deployment. To automatically fix lint issues when possible:
 
 ```bash
 yarn lint:fix
 ```
 
 ## Docker workflow
-The project includes a `Dockerfile` and `docker-compose.yml` for containerised development. Use `docker compose up app` to run the Gridsome dev server or `just develop` if you have [just](https://just.systems) installed.
+The project includes a `Dockerfile`, `docker-compose.yml`, and [just](https://just.systems) recipes for containerised development:
+
+- `docker compose up app` or `just develop` – run `yarn dev` on port `3000`
+- `docker compose up preview` or `just preview` – serve the static build after running `yarn build`
+
+Use `just install-dependencies` to install packages inside the container and `just build` to run `yarn build` in the same environment.
 
 ## Content sources
 - `content/news` – Markdown files for news posts
 - `content/events` – Upcoming events
 - `content/council` – Council information
-
-Additional homepage features are defined in `data/features.json`.
+- `content/features.json` – Homepage feature cards consumed by Nuxt Content
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.

@@ -13,9 +13,11 @@ export default [
     {
         ignores: [
             ".cache/*",
+            "assets/*",
             "dist/*",
-            "cms/*",
-            "src/assets/*",
+            ".nuxt/*",
+            ".output/*",
+            "node_modules/*",
             "src/.temp/*",
         ]
     },
@@ -49,6 +51,7 @@ export default [
                 "ignores": [
                     "Index",
                     "Layout",
+                    "default",
                 ]
             }],
         },

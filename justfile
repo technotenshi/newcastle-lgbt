@@ -13,9 +13,11 @@ logs:
 lint:
     docker compose run -it --rm app yarn lint
 lint-fix:
-    docker compose run -it --rm app yarn lint-fix
+    docker compose run -it --rm app yarn lint:fix
 build:
     docker compose run -it --rm app yarn build
-prod:
-    docker compose up prod
+preview:
+    docker compose up preview
+
+prod: preview
 
