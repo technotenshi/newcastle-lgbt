@@ -171,10 +171,10 @@ const articles = computed(() => {
     const title = normaliseString(entry.title) ?? 'Untitled Article';
     const summary = extractSummary(document) || 'Read the full story';
     const formattedDate = formatPublishDate(entry.date) || '';
-    const imagePath = entry.image && typeof entry.image === 'object' ? entry.image.path : undefined;
+    const imageObj = entry.image && typeof entry.image === 'object' ? entry.image : null;
+    const imagePath = imageObj?.path;
     const imageSrc = resolveAssetUrl(imagePath) || '';
-    const imageAlt = normaliseString(entry.image && typeof entry.image === 'object' ? entry.image.alt : undefined)
-      ?? `${title} image`;
+    const imageAlt = normaliseString(imageObj?.alt) ?? `${title} image`;
     const link = normaliseString(entry._path)
       ?? normaliseString(entry.sourcePath)
       ?? '/';

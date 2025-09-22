@@ -66,6 +66,14 @@ export const parseMeta = (value: unknown): Record<string, unknown> => {
   return {};
 };
 
+type PortableTextObject = {
+  value?: unknown;
+  children?: unknown;
+};
+
+const isPortableTextObject = (candidate: unknown): candidate is PortableTextObject =>
+  typeof candidate === "object" && candidate !== null && !Array.isArray(candidate);
+
 export const toPlainText = (node: unknown): string => {
   if (node == null) {
     return "";
@@ -79,8 +87,8 @@ export const toPlainText = (node: unknown): string => {
     return node.map((child) => toPlainText(child)).join(" ");
   }
 
-  if (typeof node === "object") {
-    const { value, children } = node as { value?: unknown; children?: unknown };
+  if (isPortableTextObject(node)) {
+    const { value, children } = node;
 
     if (typeof value === "string") {
       return value;
