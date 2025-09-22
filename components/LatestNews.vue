@@ -25,6 +25,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useAsset } from '#imports';
 
 const props = defineProps({
   title: {
@@ -46,52 +47,39 @@ const props = defineProps({
 });
 
 const resolveImagePath = (path) => {
-  if (!path || typeof path !== 'string') {
+  if (typeof path !== 'string') {
     return '';
   }
 
-  if (/^https?:\/\//i.test(path) || path.startsWith('//')) {
-    return path;
+  const trimmed = path.trim();
+
+  if (!trimmed) {
+    return '';
   }
 
-  let normalized = path.replace(/^@\//, '~/').trim();
+  if (/^https?:\/\//i.test(trimmed) || trimmed.startsWith('//')) {
+    return trimmed;
+  }
+
+  let normalized = trimmed.replace(/^@\//, '~/');
 
   if (normalized.startsWith('/')) {
     return normalized;
   }
 
   if (normalized.startsWith('~/')) {
-    normalized = normalized.slice(2);
+    return useAsset(normalized);
   }
 
-  if (normalized.startsWith('./')) {
-    normalized = normalized.slice(2);
+  if (normalized.startsWith('assets/')) {
+    return useAsset(`~/${normalized}`);
   }
 
-  const stripped = normalized.replace(/^assets\//, '');
-  const candidates = [];
-
-  if (stripped) {
-    candidates.push(stripped);
+  if (normalized.startsWith('images/')) {
+    return useAsset(`~/assets/${normalized}`);
   }
 
-  if (!stripped.startsWith('images/')) {
-    candidates.push(`images/${stripped}`);
-  }
-
-  for (const candidate of candidates) {
-    if (!candidate) {
-      continue;
-    }
-
-    try {
-      return new URL(`../assets/${candidate}`, import.meta.url).href;
-    } catch {
-      // Ignore resolution errors and try the next option.
-    }
-  }
-
-  return '';
+  return useAsset(`~/assets/images/${normalized}`);
 };
 
 const thumbnailSrc = computed(() => {
