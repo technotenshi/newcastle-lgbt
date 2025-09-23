@@ -29,7 +29,7 @@ lint-fix:
 build:
 	docker compose run -it --rm app yarn build
 
-preview:
+preview: build
 	docker compose up preview
 
 prod: preview
