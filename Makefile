@@ -32,4 +32,5 @@ build:
 preview: build
 	docker compose up preview
 
+# The 'prod' target intentionally depends on 'preview' and has no commands of its own.
 prod: preview
