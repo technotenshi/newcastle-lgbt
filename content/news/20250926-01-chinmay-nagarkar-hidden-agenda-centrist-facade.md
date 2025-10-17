@@ -75,28 +75,26 @@ Voters have a choice. We urge you to choose inclusion, integrity, and truth over
 
 **Sources:**
 
-- 41st Legislative District Republicans. (n.d.). *41st Leadership Team*. Retrieved from https://www.41gop.org/
+- Home | 41st Legislative District Republicans. (n.d.). 41st Legislative Dis. https://www.41gop.org/
 
-- Americans4Hindus. (2025). *Endorsements for 2025 elections*. Retrieved from https://www.votechinmay.org/faq
+- AFAQ | Chinmay Nagarkar Campaign. (n.d.). Chinmay Nagarkar Campaign. https://www.votechinmay.org/faq
 
-- BoardDocs. (2023). *Policy 3211P: Gender Inclusive Schools – Procedures*. Issaquah School District. Retrieved from https://go.boarddocs.com/wa/nsd/Board.nsf/files/D9HNT6616C42
+- Northshore School District ADMINISTRATIVE PROCEDURE No. 3211P. (n.d.). boarddocs.com. Retrieved October 17, 2025, from https://go.boarddocs.com/wa/nsd/Board.nsf/c4cf1644198dfd9986257503000d636f/5f190d740038422585258ba500616c42/$FILE/3211P_Gender%20Inclusive%20Schools_Final%20(1).pdf
 
-- Fuiten, J. (2025). *Pastor Joe’s Picks – Primary 2025*. Cedar Park Church. Retrieved from https://fliphtml5.com/vlmhl/doyw/Pastors_Picks_primary_2025
+- Bnoble. (2024, July 1). Pastors Pics primary 2025 10172025. FlipHTML5. https://fliphtml5.com/vlmhl/doyw/Pastors_Picks_primary_2025
 
-- Issaquah School District. (2023). *Policy 3211: Gender-Inclusive Schools*. Retrieved from https://www.isd411.org/about-us/regulations/3000-series/3211
+- 3211 - Gender - Inclusive Schools - Issaquah School District 411. (n.d.). https://www.isd411.org/about-us/regulations/3000-series/3211
 
-- Issaquah School District. (n.d.). *Library Media Centers Policy 2020/2021*. Retrieved from https://www.isd411.org/about-us/regulations/2000-series/2021
+- 2021 - Library Media Centers - Issaquah School District 411. (n.d.). https://www.isd411.org/about-us/regulations/2000-series/2021
 
-- King County Elections. (2025). *Candidate information and voter pamphlets*. Retrieved from https://info.kingcounty.gov/kcelections/Vote/contests/candidates.aspx?cid=162800&candidateid=1632681
+- King County Elections home page. (n.d.). https://info.kingcounty.gov/kcelections/Vote/contests/candidates.aspx?cid=162800&candidateid=1632681
 
-- King County Elections. (2025). *August 2025 Primary Results*. Retrieved from https://election-results-01.kingcounty.gov/results.pdf
+- Election results. (n.d.). King County. Retrieved October 17, 2025, from https://election-results-01.kingcounty.gov/results.pdf
 
-- Nagarkar, C. (2025). *VoteChinmay Campaign Website*. Retrieved from https://www.votechinmay.org
+- Issaquah School District | No talent left behind. (n.d.). Chinmay Nagarkar Campaign. https://www.votechinmay.org/
 
-- Sammamish Independent. (2025, August). *Candidates vie for LWSD and ISD school board seats*. Retrieved from https://sammamishindependent.com/2025/08/candidates-vie-for-lwsd-and-isd-school-board-seats
+- Huang, R., Huang, R., & Huang, R. (2025, August 12). Candidates vie for LWSD and ISD school board seats. Sammamish Independent. https://sammamishindependent.com/2025/08/candidates-vie-for-lwsd-and-isd-school-board-seats
 
-- Take Back the Classroom. (n.d.). *Homepage*. Retrieved from https://therealchinmay.com/
+- The real Chinmay. (n.d.). The Real Chinmay. Retrieved October 17, 2025, from https://therealchinmay.com/
 
-- Washington Public Disclosure Commission. (2025). *Candidate Campaign Finance Filings*. Retrieved from https://pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/candidates/3322151
-
-- Washington Parents' Rights in Education. (n.d.). *Facebook Group Posts & Membership*. Accessed via https://therealchinmay.com
+- Candidate Finance Report | Washington State Public Disclosure Commission (PDC). (n.d.). https://pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/candidates/3322151
