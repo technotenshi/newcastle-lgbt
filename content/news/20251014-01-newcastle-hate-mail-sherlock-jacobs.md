@@ -1,6 +1,6 @@
 ---
 title: "Hate Mail in Newcastle: What Happened, Why It Matters, and How We Respond"
-date: "2025-10-14"
+date: "2025-10-1415"
 order: 1
 slug: "newcastle-hate-mail-sherlock-jacobs"
 image:
