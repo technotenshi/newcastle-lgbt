@@ -27,7 +27,7 @@ Districtwide turnout: **21.10%**.
 
 ## Council lineup at the time of this election
 **Seats on the ballot**  
-- **Position 4:** Jim Quigg (incumbent)  
+- **Position 4:** Jim Quigg (incumbent, member of the anti-LGBT slate)  
 - **Position 5:** Pratima Lakhotia (Deputy Mayor)  
 - **Position 6:** Paul Charbonneau (incumbent)  
 - **Position 7:** Robert Clark (Mayor, member of the anti-LGBT slate)
