@@ -9,6 +9,22 @@ image:
 imageHeader:
   path: "assets/images/news/20251120-01-flock-alpr-washington.png"
   alt: "A detailed investigation into how Flock Safety’s ALPR network in Washington has exposed residents, including marginalized communities, to federal overreach, privacy risks, and widespread surveillance misuse."
+carousel:
+  images:
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-01.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-02.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-03.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-04.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-05.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-06.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
+    - src: "assets/images/news/20251120-01-flock-alpr-washington-07.jpg"
+      alt: "Pride attendees smiling and waving rainbow flags at Lake Boren"
 ---
 
 **Newcastle, WA** — For years, cities across Washington have installed Flock Safety’s Automated License Plate Reader (ALPR) cameras under the promise of safer streets, modern policing, and faster crime solving. These cameras watch every car that passes, analyze license plates, record vehicle details, and store that data in a centralized cloud system.
