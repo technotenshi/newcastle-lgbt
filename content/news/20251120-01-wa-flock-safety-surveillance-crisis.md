@@ -1,4 +1,4 @@
-
+---
 title: "How Flock Safety Turned Washington’s Streets Into a Surveillance Network: What Newcastle Residents Need To Know"
 date: "2025-11-20"
 order: 1
@@ -9,7 +9,7 @@ image:
 imageHeader:
   path: "assets/images/news/20251120-01-flock-alpr-washington.png"
   alt: "A detailed investigation into how Flock Safety’s ALPR network in Washington has exposed residents, including marginalized communities, to federal overreach, privacy risks, and widespread surveillance misuse."
-
+---
 
 **Newcastle, WA** — For years, cities across Washington have installed Flock Safety’s Automated License Plate Reader (ALPR) cameras under the promise of safer streets, modern policing, and faster crime solving. These cameras watch every car that passes, analyze license plates, record vehicle details, and store that data in a centralized cloud system.
 
