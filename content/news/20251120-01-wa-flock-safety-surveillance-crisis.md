@@ -38,7 +38,7 @@ And in November 2025, a Washington judge ruled that all Flock camera images and 
 This article explains how we reached this crisis, how ALPR surveillance is being misused across the country, how it threatens marginalized communities (including LGBTQIA+ people, immigrants, and abortion seekers), and what residents in Newcastle should know about the system operating in their own backyard.
 
 
-# How Flock’s ALPR Network Works and Why It Became a Massive Surveillance System
+## How Flock’s ALPR Network Works and Why It Became a Massive Surveillance System
 
 Flock cameras are solar powered devices that capture every vehicle passing through their field of view. They store:
 
@@ -52,7 +52,7 @@ Flock then uploads everything to a centralized, nationwide database searchable b
 
 This is not a local tool. This is a national surveillance network.
 
-## Pattern of Life Tracking
+### Pattern of Life Tracking
 
 The system allows officers to:
 
@@ -63,14 +63,14 @@ The system allows officers to:
 
 The technology does not target individual suspects. It captures everybody.
 
-# The Three Doors of Access: How Federal Agencies Got Washington Data
+## The Three Doors of Access: How Federal Agencies Got Washington Data
 
 The **University of Washington Center for Human Rights (UWCHR)** uncovered three ways federal agencies accessed Washington data.
 
-### Front Door Access
+#### Front Door Access
 Local agencies explicitly enabled data sharing with **U.S. Border Patrol** or **Homeland Security** Investigations. At least eight Washington police departments did this in 2025.
 
-### Back Door Access
+#### Back Door Access
 Flock allowed agencies like Border Patrol to run searches without the local agency’s knowledge. This happened through:
 
 - An undisclosed federal pilot program  
@@ -78,15 +78,15 @@ Flock allowed agencies like Border Patrol to run searches without the local agen
 
 At least ten Washington departments had thousands of federal searches performed on their data this way.
 
-### Side Door Access
+#### Side Door Access
 Local officers ran searches on behalf of federal agencies.
 
 Example:  
 A Yakima County Sheriff’s Office user searched 89 networks with the reason listed as “ICE.”
 
-# ALPR Data Used to Target Immigration, Abortion, and LGBTQIA+ Communities
+## ALPR Data Used to Target Immigration, Abortion, and LGBTQIA+ Communities
 
-### Immigration Enforcement Violations
+#### Immigration Enforcement Violations
 Washington’s **Keep Washington Working Act** forbids local agencies from assisting with federal civil immigration enforcement.
 
 But the audits showed:
@@ -96,7 +96,7 @@ But the audits showed:
 
 Federal agencies gained effective access even when cities believed they had disabled sharing.
 
-### Abortion Related Searches
+#### Abortion Related Searches
 After Texas banned abortion, a Texas sheriff used Flock’s national network to locate a woman who had self managed an abortion.
 
 He searched ALPR systems in Prosser, Yakima, and the King County Housing Authority.
@@ -104,7 +104,7 @@ He searched ALPR systems in Prosser, Yakima, and the King County Housing Authori
 Washington’s shield law was designed to prevent exactly this.  
 ALPR data made that protection meaningless.
 
-### Impacts on LGBTQIA+ Communities
+#### Impacts on LGBTQIA+ Communities
 ALPR data can expose:
 
 - Travel to gender affirming healthcare  
@@ -114,7 +114,7 @@ ALPR data can expose:
 
 For communities already targeted politically and legally, mass location tracking is a direct threat to safety.
 
-# Case Study: The Redmond Wrongful Arrest
+## Case Study: The Redmond Wrongful Arrest
 
 In August 2025, Redmond police surrounded the home of **Thor Andrews Sr.** and handcuffed him in his driveway. A Flock alert flagged his car as “associated” with his son, who had a felony warrant.
 
@@ -126,7 +126,7 @@ Mr. Andrews later said:
 
 This incident is not an anomaly. It is the predictable outcome of automated suspicion.
 
-# The Court Ruling That Changed Everything
+## The Court Ruling That Changed Everything
 
 On November 6, 2025, a Washington judge ruled that:
 
@@ -142,24 +142,24 @@ Multiple cities shut their systems off within days, including Skamania County, S
 
 Officials warned this ruling created a mechanism for stalking, harassment, and surveillance of private citizens by private citizens.
 
-# How Newcastle’s ALPR System Works and Why Residents Should Be Concerned
+## How Newcastle’s ALPR System Works and Why Residents Should Be Concerned
 
 Newcastle contracts its police services through the **King County Sheriff’s Office.** KCSO sets the rules, administrators, and access controls for Newcastle’s six Flock cameras.
 
-### Data Control
+#### Data Control
 
 - Stored by Flock, not the city
 - Retained 30 days unless tagged as evidence  
 - “Owned by Newcastle” but contract language gives Flock broad rights  
 - Evidence data may be kept indefinitely  
 
-### Local Personnel Control
+#### Local Personnel Control
 
 - A KCSO contract city chief designates ALPR Administrators  
 - Operators must complete training  
 - Access is logged  
 
-### Official Restrictions
+#### Official Restrictions
 
 Newcastle’s policy says the cameras:
 
@@ -168,13 +168,13 @@ Newcastle’s policy says the cameras:
 - May not be used for immigration enforcement or harassment  
 - Require human verification before acting on alerts  
 
-### The Real Problem
+#### The Real Problem
 
 Even with local protections, Flock’s national design lets data flow to thousands of agencies unless features like National Lookup are deliberately disabled.
 
 Many cities did not know the feature was active.
 
-### Cost to Newcastle
+#### Cost to Newcastle
 
 Exact numbers are not published, but typical pricing:
 
@@ -187,7 +187,7 @@ Newcastle has six cameras. Annual estimate:
 
 Since Newcastle contracts through KCSO, these costs are folded into a larger multi million dollar contract budget and rarely itemized.
 
-### Data Volume
+#### Data Volume
 
 Last 30 days:
 
@@ -197,7 +197,7 @@ Last 30 days:
 
 For drivers who use Coal Creek Parkway, that often means multiple scans every day.
 
-### Local Concern
+#### Local Concern
 
 At a March 2025 council meeting, resident Steven Vimes warned:
 
@@ -205,37 +205,37 @@ At a March 2025 council meeting, resident Steven Vimes warned:
 
 Now, with the statewide court ruling, every image these cameras capture may be subject to release.
 
-# Common Myths About ALPRs and the Reality Behind Them
+## Common Myths About ALPRs and the Reality Behind Them
 
 Surveillance vendors and police agencies repeat the same talking points when promoting ALPR systems. Research shows these claims rarely hold up.
 
 Below is the debunked list, curated from academic research, investigative journalism, civil rights groups, and nationwide data.
 
-## Myth 1: ALPRs prevent crime and make communities safer  
+### Myth 1: ALPRs prevent crime and make communities safer  
 **Reality:** Crime has fallen nationwide for decades independent of ALPR use. A 16 year study in Piedmont, CA found no statistical evidence that ALPRs reduce stolen vehicle rates.
 
-## Myth 2: ALPRs are extremely effective at generating investigative leads  
+### Myth 2: ALPRs are extremely effective at generating investigative leads  
 **Reality:** Less than 0.3 percent of ALPR “hits” produce useful leads, even in well studied cities.
 
-## Myth 3: If you aren’t doing anything wrong, you shouldn’t care  
+### Myth 3: If you aren’t doing anything wrong, you shouldn’t care  
 **Reality:** ALPRs collect data on everyone. This includes where you go, who you visit, which doctors you see, which protests you attend, and which organizations you support.
 
-## Myth 4: License plates are public, so ALPR surveillance is fine  
+### Myth 4: License plates are public, so ALPR surveillance is fine  
 **Reality:** A fleeting glance is not the same as a permanent, searchable, nationwide recording.
 
-## Myth 5: Cities control their data  
+### Myth 5: Cities control their data  
 **Reality:** Standard Flock contracts give the company a broad license to use data as it wishes. And data is accessible to any authorized agency in the nationwide network unless manually restricted.
 
-## Myth 6: The cameras capture only license plates  
+### Myth 6: The cameras capture only license plates  
 **Reality:** Flock uses AI to capture far more, including bumper stickers, occupants, unique features, and contextual details that reveal sensitive information.
 
-## Myth 7: Local leaders vet these systems carefully  
+### Myth 7: Local leaders vet these systems carefully  
 **Reality:** Many contracts are signed without council oversight. Cities often misunderstand the technical features.
 
-## Myth 8: ALPR data is only used for serious crimes  
+### Myth 8: ALPR data is only used for serious crimes  
 **Reality:** It has been used to track immigrants, abortion seekers, estranged partners, and people traveling for protected healthcare.
 
-# Timeline of the Crisis
+## Timeline of the Crisis
 
 A condensed timeline of major WA events:
 
@@ -249,7 +249,7 @@ A condensed timeline of major WA events:
 
 This timeline shows how rapidly the situation escalated once federal access became public.
 
-# Why This Matters for Newcastle
+## Why This Matters for Newcastle
 
 Newcastle’s cameras are part of the same statewide and national network.
 
@@ -263,26 +263,26 @@ Given what we now know, residents should insist on answers to these questions:
 
 The system impacts everyone, not just suspects. It affects immigrants, LGBTQIA+ residents, people seeking reproductive or gender affirming care, survivors of domestic violence, and anyone who values privacy and safety.
 
-# Call To Action: What Newcastle Should Do Now
+## Call To Action: What Newcastle Should Do Now
 
 Newcastle now faces a choice:
 
-### A. Suspend the ALPR program pending investigation  
+#### A. Suspend the ALPR program pending investigation  
 As Redmond, Lynnwood, Skamania County, Sedro-Woolley, and others have done.
 
-### B. Conduct a full public audit  
+#### B. Conduct a full public audit  
 Including an accounting of all past data sharing.
 
-### C. Require transparent public oversight  
+#### C. Require transparent public oversight  
 Audit logs should be published monthly.
 
-### D. Ban all immigration related use  
+#### D. Ban all immigration related use  
 Consistent with state law.
 
-### E. Hold a public forum  
+#### E. Hold a public forum  
 Residents must be heard, especially those from marginalized groups who face the greatest harm.
 
-# A Technology Sold as Safety Has Become a Risk
+## A Technology Sold as Safety Has Become a Risk
 
 Flock cameras were marketed as modern crime fighting tools. But they have created a sprawling surveillance network that undermines Washington’s laws, exposes residents to federal overreach, risks public disclosure of sensitive travel data, and has directly harmed residents here in our state.
 
