@@ -289,3 +289,15 @@ Flock cameras were marketed as modern crime fighting tools. But they have create
 Newcastle deserves the truth and the right to decide whether this system should remain in place.
 
 Now that the full picture is clear, it is time for residents, advocates, and city leaders to have a real conversation about the future of surveillance in our community.
+
+--
+
+## Sources
+
+- Ingalls, C. (2025, November 9). Judge orders police to release surveillance camera data, raising privacy questions. king5.com. https://www.king5.com/article/news/investigations/investigators/judge-orders-washington-police-release-surveillance-camera-data-privacy-questions/281-c2037d52-6afb-4bf7-95ad-0eceaf477864 
+- Koebler, J. (2025, May 27). ICE Taps into Nationwide AI-Enabled Camera Network, Data Shows. 404 Media. https://www.404media.co/ice-taps-into-nationwide-ai-enabled-camera-network-data-shows/ 
+- Leaving the door wide open: Flock surveillance systems expose Washington data to immigration enforcement. (2025, October 21). Center for Human Rights University of Washington. Retrieved November 20, 2025, from https://jsis.washington.edu/humanrights/2025/10/21/leaving-the-door-wide-open/ 
+- Marlow, C., & Stanley, J. (2023, June 13). How to pump the brakes on your police Department’s use of Flock’s mass surveillance license plate Readers | ACLU. American Civil Liberties Union. https://www.aclu.org/news/privacy-technology/how-to-pump-the-brakes-on-your-police-departments-use-of-flocks-mass-surveillance-license-plate-readers
+- Shepherd, C. (2025, August 26). U.S. Customs and Border Protection accesses Illinois license plate data. Axios Chicago. Retrieved November 20, 2025, from https://www.axios.com/local/chicago/2025/08/26/illinois-flock-safety-cbp-license-plate-data-violations 
+- Sundberg, A., & Sundberg, A. (2025, June 19). License Plate Readers Proliferate in Washington, Bringing Concerns over ICE Overreach » The Urbanist. The Urbanist » Advocacy journalism for better cities. https://www.theurbanist.org/2025/06/19/license-plate-readers-proliferate-in-washington-ice-overreach/ 
+- Wikipedia contributors. (2025, November 17). Flock Safety. Wikipedia. https://en.wikipedia.org/wiki/Flock_Safety
