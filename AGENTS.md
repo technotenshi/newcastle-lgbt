@@ -3,8 +3,9 @@
 This project is a Nuxt-powered static website built with Vue 3 and Yarn. Most content lives in the `pages/` and `content/` directories.
 
 ## Running checks
-- Use **Node 22** with Yarn v1.
+- Use **Node 24** with Yarn v1.
 - After making changes, run `yarn lint` at the repository root and ensure it succeeds.
+- Run `yarn audit` (or `make audit` in Docker workflows) to surface dependency vulnerabilities.
 - Run `yarn build` and ensure it succeeds to confirm the project can be deployed.
 - Use `yarn preview` to smoke-test the static build when you touch rendering logic.
 
