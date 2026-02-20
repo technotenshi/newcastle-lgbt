@@ -134,7 +134,7 @@
         <div class="media-container-row align-center mbr-white">
           <div class="col-12">
             <p class="mbr-text mb-0 mbr-fonts-style display-7">
-              © Copyright 2025 - All Rights Reserved
+              © Copyright 2026 - All Rights Reserved
             </p>
           </div>
         </div>
@@ -174,5 +174,4 @@ const toggleDropdown = (event, isOpen) => {
 <style scoped>
 /* Scoped styles for the default layout */
 </style>
-
 
