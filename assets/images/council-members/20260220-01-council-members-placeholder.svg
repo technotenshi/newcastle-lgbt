@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 430" width="750" height="430" role="img" aria-labelledby="title desc">
+  <title id="title">Council image placeholder</title>
+  <desc id="desc">Placeholder graphic for a future Newcastle City Council photo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2f6fa" />
+      <stop offset="100%" stop-color="#dce6f2" />
+    </linearGradient>
+  </defs>
+  <rect width="750" height="430" fill="url(#bg)" />
+  <rect x="26" y="26" width="698" height="378" fill="none" stroke="#7a8ca3" stroke-width="2" stroke-dasharray="10 8" rx="12" />
+  <circle cx="375" cy="178" r="64" fill="#9bb0c9" />
+  <path d="M260 316c20-58 72-92 115-92s95 34 115 92" fill="#9bb0c9" />
+  <text x="375" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#3f4d60">Council Photo Placeholder</text>
+  <text x="375" y="389" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5f738c">750 x 430</text>
+</svg>

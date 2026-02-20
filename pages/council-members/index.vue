@@ -3,6 +3,30 @@
     <SectionHeader title="Newcastle Council Members" />
 
     <section
+      id="image3-council"
+      data-bs-version="5.1"
+      class="image3 cid-uhK9q2n4fC mt-4"
+    >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <div class="image-wrapper">
+              <img
+                :src="councilPhoto"
+                alt="Newcastle City Council placeholder image"
+                width="750"
+                height="430"
+                class="img-fluid rounded-3"
+                decoding="async"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
       id="content7-m"
       data-bs-version="5.1"
       class="content7 cid-ufk8Tj1y0q"
@@ -74,6 +98,7 @@ import { useSeoMeta } from '#imports';
 import CouncilMembersComponent from '~/components/CouncilMembersComponent.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useCouncil } from '~/composables/useCouncil';
+import councilPhoto from '~/assets/images/council-members/20260101-council-members.png';
 import { normaliseString } from '~/utils/content';
 
 defineOptions({
