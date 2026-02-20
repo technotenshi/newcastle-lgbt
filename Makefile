@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := default
 
-.PHONY: default install install-dependencies develop down logs lint lint-fix build preview prod
+.PHONY: default install install-dependencies develop down logs lint lint-fix audit build preview prod
 
 default:
 	@echo 'Hello, world!'
@@ -25,6 +25,9 @@ lint:
 
 lint-fix:
 	docker compose run -it --rm app yarn lint:fix
+
+audit:
+	docker compose run -it --rm app yarn audit
 
 build:
 	docker compose run -it --rm app yarn build
