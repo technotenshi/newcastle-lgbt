@@ -60,38 +60,6 @@
                   News
                 </NuxtLink>
               </li>
-              <li
-                class="nav-item dropdown"
-                @mouseover="toggleDropdown($event, true)"
-                @mouseout="toggleDropdown($event, false)"
-              >
-                <NuxtLink
-                  class="nav-link link text-black text-primary dropdown-toggle display-4"
-                  data-toggle="dropdown-submenu"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-expanded="false"
-                >
-                  Letters to and from City Council
-                </NuxtLink>
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="dropdown-848"
-                >
-                  <NuxtLink
-                    class="text-black text-primary dropdown-item display-4"
-                    to="/letter/"
-                  >
-                    Open letter to the city council
-                  </NuxtLink>
-                  <NuxtLink
-                    class="text-black text-primary dropdown-item display-4"
-                    to="/reply-to-letter/"
-                  >
-                    Reply from Mayor Clark
-                  </NuxtLink>
-                </div>
-              </li>
               <li class="nav-item">
                 <NuxtLink
                   class="nav-link link text-black text-primary display-4"
@@ -134,7 +102,7 @@
         <div class="media-container-row align-center mbr-white">
           <div class="col-12">
             <p class="mbr-text mb-0 mbr-fonts-style display-7">
-              © Copyright 2025 - All Rights Reserved
+              © Copyright 2026 - All Rights Reserved
             </p>
           </div>
         </div>
@@ -143,36 +111,6 @@
   </div>
 </template>
 
-<script setup>
-import { onMounted } from "vue";
-
-onMounted(() => {
-  // Bootstrap resources are provided via the dedicated Nuxt plugin.
-});
-
-const toggleDropdown = (event, isOpen) => {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const dropdown = event.currentTarget;
-
-  if (!dropdown || !dropdown.classList) {
-    return;
-  }
-
-  if (window.innerWidth > 991) {
-    if (isOpen) {
-      dropdown.classList.add("open");
-    } else {
-      dropdown.classList.remove("open");
-    }
-  }
-};
-</script>
-
 <style scoped>
 /* Scoped styles for the default layout */
 </style>
-
-

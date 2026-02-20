@@ -5,8 +5,8 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "preview": "nuxt preview",
-    "lint": "npx eslint .",
-    "lint:fix": "npx eslint . --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/content": "^3.7.1",
@@ -17,6 +17,8 @@
     "@eslint/js": "^10.0.0",
     "eslint": "^10.0.0",
     "eslint-plugin-vue": "^10.0.0",
+    "serve": "^14.2.5",
+    "vue-eslint-parser": "^10.0.0",
     "glob": "^13.0.0",
     "globals": "^17.0.0",
     "image-webpack-loader": "^8.1.0",

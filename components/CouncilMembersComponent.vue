@@ -10,19 +10,14 @@
           <div class="row align-items-start">
             <!-- Image Section -->
             <div class="col-md-4 col-lg-3">
-              <div v-if="imageUrl">
-                <img
-                  :src="imageUrl"
-                  :alt="resolvedImageAlt"
-                  class="img-fluid"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </div>
-              <div
-                v-else
-                class="placeholder-image"
-              />
+              <img
+                :src="imageUrl"
+                :alt="resolvedImageAlt"
+                class="img-fluid rounded-3"
+                loading="lazy"
+                decoding="async"
+                @error="onImageError"
+              >
             </div>
 
             <!-- Bio Section -->
@@ -77,8 +72,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { resolveAssetUrl } from '~/utils/assets';
+import portraitPlaceholder from '~/assets/images/council-members/20260220-02-council-member-portrait-placeholder.svg';
 
 const props = defineProps({
   position: {
@@ -111,7 +107,24 @@ const props = defineProps({
   },
 });
 
-const imageUrl = computed(() => resolveAssetUrl(props.image));
+const imageHasError = ref(false);
+const providedImageUrl = computed(() => resolveAssetUrl(props.image));
+
+const imageUrl = computed(() => {
+  if (!imageHasError.value && providedImageUrl.value) {
+    return providedImageUrl.value;
+  }
+
+  return portraitPlaceholder;
+});
+
+watch(() => props.image, () => {
+  imageHasError.value = false;
+});
+
+const onImageError = () => {
+  imageHasError.value = true;
+};
 
 const resolvedImageAlt = computed(() => {
   const alt = typeof props.imageAlt === 'string' ? props.imageAlt.trim() : '';

@@ -5,8 +5,9 @@ This repository contains the source for the **Newcastle LGBT** site. It is built
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/458c411819a6488fb55ce082d7cc5d3b)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Requirements
-- Node.js 22
-- Yarn v1 (Corepack recommended)
+- Node.js 24 (for local, non-Docker development)
+- Yarn v1 (`1.22.22`, Corepack recommended)
+- Docker + Docker Compose (optional, for containerized workflow)
 
 Install dependencies with:
 
@@ -64,12 +65,17 @@ yarn lint:fix
 ```
 
 ## Docker workflow
-The project includes a `Dockerfile`, `docker-compose.yml`, and [just](https://just.systems) recipes for containerised development:
+The project includes a `Dockerfile`, `docker-compose.yml`, and `Makefile` targets for containerized development:
 
-- `docker compose up app` or `just develop` – run `yarn dev` on port `3000`
-- `docker compose up preview` or `just preview` – serve the static build after running `yarn build`
-
-Use `just install-dependencies` to install packages inside the container and `just build` to run `yarn build` in the same environment.
+- `make install` – build container images
+- `make install-dependencies` – install dependencies in the app container
+- `make develop` – start the dev server on `http://localhost:3000`
+- `make lint` / `make lint-fix` – run linting in the container
+- `make audit` – run dependency vulnerability audit in the container
+- `make build` – run production build in the container
+- `make preview` – build and serve preview at `http://localhost:3001`
+- `make logs` – follow container logs
+- `make down` – stop and remove running containers
 
 ## Content sources
 - `content/news` – Markdown files for news posts
