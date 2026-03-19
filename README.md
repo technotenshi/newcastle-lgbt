@@ -65,23 +65,63 @@ yarn lint:fix
 ```
 
 ## Docker workflow
-The project includes a `Dockerfile`, `docker-compose.yml`, and `Makefile` targets for containerized development:
 
-- `make install` – build container images
-- `make install-dependencies` – install dependencies in the app container
-- `make develop` – start the dev server on `http://localhost:3000`
-- `make lint` / `make lint-fix` – run linting in the container
-- `make audit` – run dependency vulnerability audit in the container
-- `make build` – run production build in the container
-- `make preview` – build and serve preview at `http://localhost:3001`
-- `make logs` – follow container logs
-- `make down` – stop and remove running containers
+The project includes a `Dockerfile`, `docker-compose.yml`, and `Makefile` for containerized development. Prefer `make` targets over raw `yarn` commands.
 
-## Content sources
-- `content/news` – Markdown files for news posts
-- `content/events` – Upcoming events
-- `content/council` – Council information
-- `content/features.json` – Homepage feature cards consumed by Nuxt Content
+| Command | What it does |
+|---|---|
+| `make install` | Build Docker images |
+| `make install-dependencies` | Install npm dependencies inside the container |
+| `make develop` | Start dev server at `http://localhost:3000` |
+| `make lint` | Run ESLint checks |
+| `make lint-fix` | Auto-fix ESLint issues |
+| `make build` | Generate static site into `.output/public` |
+| `make preview` | Build then serve preview at `http://localhost:3001` |
+| `make prod` | Alias for `make preview` |
+| `make audit` | Dependency vulnerability audit |
+| `make down` | Stop and remove containers |
+| `make logs` | Follow container logs |
+
+## Project structure
+
+```
+pages/          # File-based routing (news uses /news/[year]/[month]/[day]/[slug].vue)
+components/     # Shared Vue components (PascalCase filenames)
+composables/    # Data-fetching layer: useNews, useEvents, useCouncil, useFeatures, useAsset
+layouts/        # default.vue — global header, nav, and footer
+utils/
+  content.ts    # Normalization helpers: normaliseString, normaliseNumber, parseMeta
+  assets.ts     # Centralized image/asset URL resolution
+content/
+  news/         # Markdown news articles
+  events/       # Markdown event listings
+  council/      # Council member profiles (position-N-*.md)
+  features.json # Homepage feature cards
+assets/         # Static styles and images (Bootstrap 5 + custom Mobirise-derived theme)
+plugins/
+  bootstrap.client.ts  # Bootstrap JS initialization (client-only)
+```
+
+## Content conventions
+
+**News articles** live in `content/news/` as Markdown files with YAML frontmatter. The URL path is date-based: `/news/YYYY/MM/DD/slug`. Set `draft: true` in frontmatter to hide an article from listings.
+
+**Events** in `content/events/` are sorted by date ascending; past events are filtered out by default.
+
+**Council members** in `content/council/` use the filename prefix `position-N-` to control display order.
+
+**Features** are defined in `content/features.json` as an array of objects consumed by `useFeatures`.
+
+**Images** should use `.png` format and always include descriptive alt text. Asset URLs are resolved through `useAsset` / `utils/assets.ts`, which handles `~/assets` paths, relative paths, and external URLs.
+
+## Coding conventions
+
+- **Naming:** PascalCase for component files (`LatestNews.vue`), camelCase for composables (`useNews.ts`)
+- **Style:** Semicolons required; no unused variables or components (enforced by ESLint in `eslint.config.mjs`)
+- **Types:** Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem` from their respective composables
+- **Sorting:** News by date DESC then `order` field; events by date ASC; council by `position` number
+- **SEO:** All major pages set title, description, and OG/Twitter meta via `useSeoMeta`
+- **Images:** Use `lazy` attribute and `decoding="async"` on `<img>` tags
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.
