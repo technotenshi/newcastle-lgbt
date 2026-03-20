@@ -1,7 +1,7 @@
 ---
 title: "Position 6"
 date: "2025-01-01"
-name: "Paul Charbonneau"
+name: "Paul Charbonneau (Deputy Mayor)"
 email: "paulc@newcastlewa.gov"
 flag: ️‍🌈
 position: 6
