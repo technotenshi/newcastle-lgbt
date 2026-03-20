@@ -11,7 +11,7 @@ imageHeader:
   alt: "Celebrating Pride Month 2025: Unity, Joy, and Advocacy in Every Color."
 ---
 
-**Newcastle, WA** – June 2025 marks the 55th anniversary of Pride Month, commemorating the Stonewall Uprising of 1969, a pivotal moment in the LGBTQ+ rights movement.
+:Dateline June 2025 marks the 55th anniversary of Pride Month, commemorating the Stonewall Uprising of 1969, a pivotal moment in the LGBTQ+ rights movement.
 This year, celebrations across the United States and globally are infused with both jubilation and reflection, as communities navigate a complex socio-political landscape.
 
 ## Seattle: Amplifying Queer Voices

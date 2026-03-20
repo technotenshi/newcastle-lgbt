@@ -52,6 +52,7 @@ export default [
                     "Index",
                     "Layout",
                     "default",
+                    "Dateline",
                 ]
             }],
         },

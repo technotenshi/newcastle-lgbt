@@ -11,7 +11,7 @@ imageHeader:
   alt: "Mayor Clark's June 18 speech drew sharp criticism for logical fallacies, historical inaccuracies, and an apparent misuse of public office."
 ---
 
-**Newcastle, WA**: This is an in-depth analysis of Mayor Clark's June 18, 2024 speech regarding the Pride flag and its implications for the LGBTQ+ community in Newcastle. Using a Q&A format, we scrutinize the mayor's arguments, highlighting logical fallacies, historical inaccuracies, biases, and the use of propaganda principles. Each question addresses a specific statement from the mayor, followed by a counter-argument to help readers navigate the complexities of the discourse.
+:Dateline This is an in-depth analysis of Mayor Clark's June 18, 2024 speech regarding the Pride flag and its implications for the LGBTQ+ community in Newcastle. Using a Q&A format, we scrutinize the mayor's arguments, highlighting logical fallacies, historical inaccuracies, biases, and the use of propaganda principles. Each question addresses a specific statement from the mayor, followed by a counter-argument to help readers navigate the complexities of the discourse.
 
 Watch the speech: [Newcastle City Council meeting, June 18, 2024](https://www.youtube.com/live/rCzZrkhkklw?si=LQoufkMlk0Jss1ee&t=11710)
 

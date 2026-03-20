@@ -20,7 +20,7 @@ carousel:
       alt: "A colorful Pride banner displayed at the event"
 ---
 
-**Newcastle, WA** – On Sunday, June 8th, Lake Boren transformed into a vibrant celebration of diversity and inclusion as Newcastle residents and community organizations came together for the annual Pride celebration. The event brought together community members, families, and allies for a peaceful and joyful gathering that underscored the community’s commitment to supporting LGBTQ+ individuals.  
+:Dateline On Sunday, June 8th, Lake Boren transformed into a vibrant celebration of diversity and inclusion as Newcastle residents and community organizations came together for the annual Pride celebration. The event brought together community members, families, and allies for a peaceful and joyful gathering that underscored the community’s commitment to supporting LGBTQ+ individuals.  
 
 This year’s celebration featured the collaboration and support of several local organizations, including **Youth Eastside Services, Eastside Pride PNW, and the Newcastle Arts Council.** These groups provided valuable resources and support to attendees, reinforcing the importance of community partnerships in fostering a more inclusive Newcastle.  
 

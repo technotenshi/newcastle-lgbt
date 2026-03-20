@@ -11,7 +11,7 @@ imageHeader:
   alt: "Pride All Year Round: Building Inclusive Communities"
 ---
 
-**Newcastle, WA** – Pride is more than a month; it’s a commitment to building inclusive communities every day of the year. Across Washington and beyond, cities, organizations, and residents are embracing strategies to foster safety, respect, and visibility for LGBTQIA+ individuals, making sure no one is left behind.
+:Dateline Pride is more than a month; it’s a commitment to building inclusive communities every day of the year. Across Washington and beyond, cities, organizations, and residents are embracing strategies to foster safety, respect, and visibility for LGBTQIA+ individuals, making sure no one is left behind.
 
 ## Understanding LGBTQIA+ Terms
 ---

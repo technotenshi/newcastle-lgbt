@@ -11,7 +11,7 @@ imageHeader:
   alt: "Police linked hateful mail sent to Councilmember Ariana Sherlock and candidate Andy Jacobs to an alleged single source, prompting protection orders and a community push for safety, accountability, and inclusion."
 ---
 
-**Newcastle, WA** – Two local leaders were targeted by hateful mail this year, and police later told them both mailings were traced to the same source. The episodes have shaken trust, raised urgent safety questions, and forced a sober look at how our institutions respond to bias and intimidation.
+:Dateline Two local leaders were targeted by hateful mail this year, and police later told them both mailings were traced to the same source. The episodes have shaken trust, raised urgent safety questions, and forced a sober look at how our institutions respond to bias and intimidation.
 
 ## What happened
 

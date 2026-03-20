@@ -11,7 +11,7 @@ imageHeader:
   alt: "‘I Voted’ sticker on a ballot envelope"
 ---
 
-**Newcastle, WA**: With just **20.95% turnout** (1,793 ballots of 8,559 registered), Newcastle voters delivered a clean sweep against candidates identified as anti-LGBTQ and MAGA-aligned. All four lost their races. In the Issaquah School District, where Newcastle families send their kids, voters likewise rejected a “parents’ rights” challenger and opted for continuity.
+:Dateline With just **20.95% turnout** (1,793 ballots of 8,559 registered), Newcastle voters delivered a clean sweep against candidates identified as anti-LGBTQ and MAGA-aligned. All four lost their races. In the Issaquah School District, where Newcastle families send their kids, voters likewise rejected a “parents’ rights” challenger and opted for continuity.
 
 ### Newcastle City Council results
 - **Position 4:** **Chris Villaseñor – 64.12% (1,108)** defeats **Kevin Kirkaldie – 35.65% (616)**; write-ins 0.23% (4)  

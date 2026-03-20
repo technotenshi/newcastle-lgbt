@@ -55,6 +55,8 @@ Bootstrap 5 + a Mobirise-derived custom theme in `assets/theme/css/style.css`. U
 ### Prose component overrides
 Custom MDC prose components live in `components/content/`. A file there automatically overrides the default `@nuxtjs/mdc` component of the same name for all `<ContentRenderer>` output. Example: `components/content/ProseA.vue` overrides link rendering site-wide.
 
+- `components/content/Dateline.vue` — inline MDC component rendering `**Newcastle, WA** –`; used at the start of every news article body as `:Dateline [first sentence]`
+
 ### Coding style
 - Semicolons required; no unused variables or components (enforced by ESLint)
 - PascalCase for component files, camelCase for composables

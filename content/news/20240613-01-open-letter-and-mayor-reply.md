@@ -11,7 +11,7 @@ imageHeader:
   alt: "This site's author wrote to the council demanding the Pride flag be raised, and Mayor Clark replied with a form letter that dodged every concern."
 ---
 
-**Newcastle, WA**: Following the Newcastle City Council's June 4 vote to not raise the Pride flag at City Hall during Pride Month, this site's author, a Newcastle resident and member of the queer community, sent an open letter to Mayor Clark and council members. On June 13, Mayor Clark replied. Both the letter and the mayor's response, a public record, reproduced with his consent as stated in the email itself, appear below, along with commentary.
+:Dateline Following the Newcastle City Council's June 4 vote to not raise the Pride flag at City Hall during Pride Month, this site's author, a Newcastle resident and member of the queer community, sent an open letter to Mayor Clark and council members. On June 13, Mayor Clark replied. Both the letter and the mayor's response, a public record, reproduced with his consent as stated in the email itself, appear below, along with commentary.
 
 ---
 

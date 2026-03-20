@@ -11,7 +11,7 @@ imageHeader:
   alt: "Supreme Court declines Kim Davis appeal, leaving Obergefell and marriage equality intact nationwide."
 ---
 
-**Newcastle, WA**: In a short order released today, the Court declined to take up *Kim Davis v. Ermold*, a case that asked the justices to roll back the 2015 ruling that made same-sex marriage legal nationwide. The Court did not add any comment, which means *Obergefell v. Hodges* stays in place.
+:Dateline In a short order released today, the Court declined to take up *Kim Davis v. Ermold*, a case that asked the justices to roll back the 2015 ruling that made same-sex marriage legal nationwide. The Court did not add any comment, which means *Obergefell v. Hodges* stays in place.
 
 Today’s action was simple: the justices denied Kim Davis’s petition, and no justice publicly noted a disagreement. When the Supreme Court denies review, the decisions from the lower courts remain in effect. Here, that leaves in place the rulings and money judgments against Davis.
 

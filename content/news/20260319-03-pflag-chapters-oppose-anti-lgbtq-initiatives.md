@@ -11,7 +11,7 @@ imageHeader:
   alt: "Two ballot initiatives funded by an out-of-state millionaire would force schools to out LGBTQ+ youth and subject girls as young as 11 to invasive exams, and Washington families are pushing back."
 ---
 
-**Newcastle, WA**: Six Washington PFLAG chapters have joined a growing coalition of more than 80 distinguished state organizations in opposition to two anti-LGBTQ ballot initiatives scheduled to appear on the November 2026 ballot. The initiatives, funded by an out-of-state millionaire, target LGBTQ+ students in Washington's public schools.
+:Dateline Six Washington PFLAG chapters have joined a growing coalition of more than 80 distinguished state organizations in opposition to two anti-LGBTQ ballot initiatives scheduled to appear on the November 2026 ballot. The initiatives, funded by an out-of-state millionaire, target LGBTQ+ students in Washington's public schools.
 
 ---
 

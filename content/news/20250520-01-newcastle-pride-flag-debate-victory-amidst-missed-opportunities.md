@@ -11,7 +11,7 @@ imageHeader:
   alt: "A deep dive into Newcastle’s Pride flag debate, exploring flawed opposition arguments and the significance of LGBTQ+ visibility."
 ---
 
-**Newcastle, WA** – The recent Newcastle City Council debate over raising the Pride flag exposed deep-seated tensions in the community regarding LGBTQ+ representation, inclusion, and government responsibility. Though the resolution passed by a narrow margin, the contentious discussion revealed not only a misunderstanding of statistical representation but also a reluctance to fully embrace the significance of LGBTQ+ visibility in fostering a safer, more welcoming community.
+:Dateline The recent Newcastle City Council debate over raising the Pride flag exposed deep-seated tensions in the community regarding LGBTQ+ representation, inclusion, and government responsibility. Though the resolution passed by a narrow margin, the contentious discussion revealed not only a misunderstanding of statistical representation but also a reluctance to fully embrace the significance of LGBTQ+ visibility in fostering a safer, more welcoming community.
 
 ## Background
 

@@ -11,7 +11,7 @@ imageHeader:
   alt: "Newcastle City Council members are seated at the Newcastle City Council meeting, with Mayor Robert Clark at the center."
 ---
 
-**Newcastle, WA** – At the October 1st, 2024 Newcastle City Council meeting, several key issues came to light that revealed deeper tensions within the city’s leadership. The discussions centered around a proposal to declare "Hindu Heritage Month", an attempt to censure Councilmember Paul Charbonneau, and a debate on whether the city’s Comprehensive Plan should address racial discrimination. These topics stirred emotional responses, highlighting not only the city’s struggle with inclusivity but also the use of rhetorical manipulation, selective enforcement of ethical standards, and personal political agendas. As the council wrestled with these debates, questions about ethical leadership and the future of inclusivity in Newcastle took center stage.
+:Dateline At the October 1st, 2024 Newcastle City Council meeting, several key issues came to light that revealed deeper tensions within the city’s leadership. The discussions centered around a proposal to declare "Hindu Heritage Month", an attempt to censure Councilmember Paul Charbonneau, and a debate on whether the city’s Comprehensive Plan should address racial discrimination. These topics stirred emotional responses, highlighting not only the city’s struggle with inclusivity but also the use of rhetorical manipulation, selective enforcement of ethical standards, and personal political agendas. As the council wrestled with these debates, questions about ethical leadership and the future of inclusivity in Newcastle took center stage.
 
 ---
 

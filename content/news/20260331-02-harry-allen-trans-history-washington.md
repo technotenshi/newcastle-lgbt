@@ -11,7 +11,7 @@ imageHeader:
   alt: "Harry Allen was arrested, jailed, and humiliated in print more times than anyone counted, and he never stopped being himself."
 ---
 
-**Newcastle, WA**: Harry Allen was arrested, jailed, humiliated in print, and forced before judges more times than anyone bothered to count, and he never stopped being himself. Born Nell Pickerell in Indiana in **1882**, Allen lived openly as a man in early twentieth-century Seattle, working masculine jobs, wearing tailored suits, and declaring to a newspaper interviewer in 1908:
+:Dateline Harry Allen was arrested, jailed, humiliated in print, and forced before judges more times than anyone bothered to count, and he never stopped being himself. Born Nell Pickerell in Indiana in **1882**, Allen lived openly as a man in early twentieth-century Seattle, working masculine jobs, wearing tailored suits, and declaring to a newspaper interviewer in 1908:
 
 > "I did not like to be a girl; did not feel like a girl, and never did look like a girl. So it seemed impossible to make myself a girl and, sick at heart over the thought that I would be an outcast of the feminine gender, I conceived the idea of making myself a man."
 

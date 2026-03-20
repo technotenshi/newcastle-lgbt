@@ -11,7 +11,7 @@ imageHeader:
   alt: "Newcastle.LGBT: One Year of Advocacy and Community Empowerment"
 ---
 
-**Newcastle, WA** – June 4, 2025, marks the first anniversary of **Newcastle.LGBT**, a platform born out of a pivotal moment in our city's history. On this day in 2024, the Newcastle City Council voted 4-3 against raising the Pride flag at City Hall during Pride Month, a decision that ignited both controversy and a renewed commitment to LGBTQIA2S+ visibility and rights in our community. 
+:Dateline June 4, 2025, marks the first anniversary of **Newcastle.LGBT**, a platform born out of a pivotal moment in our city's history. On this day in 2024, the Newcastle City Council voted 4-3 against raising the Pride flag at City Hall during Pride Month, a decision that ignited both controversy and a renewed commitment to LGBTQIA2S+ visibility and rights in our community. 
 
 ## A Catalyst for Change
 ---

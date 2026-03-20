@@ -11,7 +11,7 @@ imageHeader:
   alt: "A deep dive into the political affiliations and policy threats behind Chinmay Nagarkar’s school board campaign."
 ---
 
-**Newcastle, WA** – The race for the Issaquah School Board has taken on national overtones. At the center of this political pivot is candidate **Chinmay Nagarkar**, who brands himself as a pragmatic technocrat, using phrases like *"No Talent Left Behind"* and promising *"common-sense governance."* But beneath that polished exterior lies a campaign deeply embedded in the national *"parents' rights"* movement, a conservative backlash against inclusive education, LGBTQ+ protections, and racial equity policies.
+:Dateline The race for the Issaquah School Board has taken on national overtones. At the center of this political pivot is candidate **Chinmay Nagarkar**, who brands himself as a pragmatic technocrat, using phrases like *"No Talent Left Behind"* and promising *"common-sense governance."* But beneath that polished exterior lies a campaign deeply embedded in the national *"parents' rights"* movement, a conservative backlash against inclusive education, LGBTQ+ protections, and racial equity policies.
 
 ## A Partisan in Nonpartisan Clothing
 

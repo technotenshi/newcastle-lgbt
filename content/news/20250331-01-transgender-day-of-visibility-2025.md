@@ -11,7 +11,7 @@ imageHeader:
   alt: "A welcoming community center lobby decorated with trans flags and posters hosts volunteers and attendees engaging in a daytime celebration."
 ---
 
-**Newcastle, WA** – March 31 marks International Transgender Day of Visibility (TDOV), an annual celebration of the lives, contributions, and resilience of transgender and non-binary people. Founded in 2009 by transgender activist Rachel Crandall-Crocker, TDOV stands as a joyful counterpart to Transgender Day of Remembrance, shifting focus from mourning the lives lost to honoring those who are living, thriving, and fighting for equity.
+:Dateline March 31 marks International Transgender Day of Visibility (TDOV), an annual celebration of the lives, contributions, and resilience of transgender and non-binary people. Founded in 2009 by transgender activist Rachel Crandall-Crocker, TDOV stands as a joyful counterpart to Transgender Day of Remembrance, shifting focus from mourning the lives lost to honoring those who are living, thriving, and fighting for equity.
 
 ## The Dual Purpose of TDOV
 

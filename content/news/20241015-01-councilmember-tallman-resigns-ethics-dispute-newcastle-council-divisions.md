@@ -11,7 +11,7 @@ imageHeader:
   alt: "Steve Tallman standing up to leave, while other council members and Mayor Clark remain seated."
 ---
 
-**Newcastle, WA** – Tensions within the Newcastle City Council escalated during Tuesday’s meeting as **Councilmember Steve Tallman** abruptly resigned, following a clash over an ethics complaint involving fellow Councilmember **Paul Charbonneau**. This dispute not only exposed internal divisions but also raised questions about **Mayor Robert Clark’s leadership** and his handling of council conflicts.
+:Dateline Tensions within the Newcastle City Council escalated during Tuesday’s meeting as **Councilmember Steve Tallman** abruptly resigned, following a clash over an ethics complaint involving fellow Councilmember **Paul Charbonneau**. This dispute not only exposed internal divisions but also raised questions about **Mayor Robert Clark’s leadership** and his handling of council conflicts.
 
 Tallman’s resignation followed Mayor Clark’s decision to halt Tallman’s attempt to raise an ethics violation against Charbonneau. The complaint stemmed from Charbonneau’s remarks during an earlier discussion about a [**Hindu Heritage Month proclamation**](/news/2024/10/01/newcastle-council-debate-inclusivity-ethical-governance), where he warned against politicians whose actions do not align with their words. Tallman interpreted this as a personal attack, citing his support for the Hindu community despite voting against the proclamation out of a commitment to neutrality.
 

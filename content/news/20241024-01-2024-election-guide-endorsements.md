@@ -11,7 +11,7 @@ imageHeader:
   alt: "Make your voice heard this election, vote on key initiatives and candidates that will shape our community’s future in education, health, and sustainability!"
 ---
 
-**Newcastle, WA** – The following guide summarizes key ballot items and candidate endorsements that align with the priorities of our city and its residents.
+:Dateline The following guide summarizes key ballot items and candidate endorsements that align with the priorities of our city and its residents.
 
 ### Key Initiatives
 

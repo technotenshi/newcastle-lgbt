@@ -11,7 +11,7 @@ imageHeader:
   alt: "Newcastle’s council has become a partisan battleground where fights over Pride flags and climate, equity, and renter protections now hinge on the next election."
 ---
 
-**Newcastle, WA** – Our city is an affluent suburban community of about 13,000 people. Despite over 70% of local voters choosing Biden in 2020, the City Council has seen the rise of undercover conservative candidates winning in low-turnout, off-year elections.
+:Dateline Our city is an affluent suburban community of about 13,000 people. Despite over 70% of local voters choosing Biden in 2020, the City Council has seen the rise of undercover conservative candidates winning in low-turnout, off-year elections.
 
 Recent controversies have turned this typically quiet city into an unlikely partisan battleground. In 2024, **Mayor Robert Clark** led a conservative bloc that initially [blocked the Pride flag from being flown](/news/2024/06/04/newcastle-votes-against-flag) at City Hall for Pride Month. This move ([later reversed after public outcry](/news/2024/06/18/newcastle-flips-decision)) garnered national attention and foreshadowed a broader agenda at odds with Newcastle's traditionally inclusive values. Clark's public comments during that episode were telling: he railed not only against the LGBTQ+ community but even against reparations for Black Americans, dismissing them as *"creating victim groups."* Such incidents have galvanized local activists, who note that while Newcastle's elections are officially non-partisan, a clear ideological divide has emerged in City Hall.
 

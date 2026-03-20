@@ -11,7 +11,7 @@ imageHeader:
   alt: "Washington State is offering 2SLGBTQIA+ youth ages 14–25 a rare chance to sit at the table and directly shape the policies that affect their lives, applications close March 31."
 ---
 
-**Newcastle, WA**: The **Washington State LGBTQ Commission** is accepting applications for its **Youth Council** through **March 31, 2026 at 11:59 PM**. Youth ages 14–25 who identify as 2SLGBTQIA+ are invited to apply for a meaningful opportunity to influence public policy and advocate for their community at the state level.
+:Dateline The **Washington State LGBTQ Commission** is accepting applications for its **Youth Council** through **March 31, 2026 at 11:59 PM**. Youth ages 14–25 who identify as 2SLGBTQIA+ are invited to apply for a meaningful opportunity to influence public policy and advocate for their community at the state level.
 
 ---
 

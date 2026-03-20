@@ -11,7 +11,7 @@ imageHeader:
   alt: "Washington's 2026 legislative session closed March 12 with four pro-LGBTQ bills signed into law, and every major anti-LGBTQ bill blocked before it ever got a hearing."
 ---
 
-**Newcastle, WA**: The 2026 Washington State legislative session ended on **March 12**. Four bills with direct LGBTQ impact were signed into law; two more await the governor's signature; and several others remain in motion through the legislature. Every major anti-LGBTQ bill introduced this session, including a ban on gender-affirming care for minors and multiple bills targeting transgender student athletes, died without a hearing in the Democratic-controlled legislature. The **Washington State LGBTQ Commission** tracked 18 priority bills and 8 anti-LGBTQ bills throughout the session. Here is where things stand.
+:Dateline The 2026 Washington State legislative session ended on **March 12**. Four bills with direct LGBTQ impact were signed into law; two more await the governor's signature; and several others remain in motion through the legislature. Every major anti-LGBTQ bill introduced this session, including a ban on gender-affirming care for minors and multiple bills targeting transgender student athletes, died without a hearing in the Democratic-controlled legislature. The **Washington State LGBTQ Commission** tracked 18 priority bills and 8 anti-LGBTQ bills throughout the session. Here is where things stand.
 
 ---
 

@@ -86,8 +86,8 @@ carousel:
 The frontmatter `title` renders as the page H1. **Do not use a `#` heading in the body.**
 
 ```markdown
-Opening paragraph establishing location, date context, and the core news fact.
-Newcastle, WA is the location; open with the most important information (2–3 sentences).
+:Dateline Opening paragraph with the core news fact. Newcastle, WA is the location;
+open with the most important information (2–3 sentences).
 
 ## Section Heading
 
@@ -121,6 +121,7 @@ the article has deep nested structure.
 - **Horizontal rule** (`---`): optional section divider between major content blocks
 - **Sources section:** Required for articles citing external material; use H2 `## Sources`, list links as `**Outlet**: [Title](URL)` or plain `[Title](URL)`
 - **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation
+- **Dateline:** Open the article body with `:Dateline` (the MDC inline component) followed by the first sentence. Do not write `**Newcastle, WA** –` or `**Newcastle, WA**:` directly — the component renders the standardized format.
 - **Em dashes:** Do not use em dashes (`—`) anywhere in article text or frontmatter. Use a comma, colon, or rephrase the sentence instead. En-dashes (`–`) remain correct for numeric ranges (e.g. time ranges, page ranges).
 
 ---

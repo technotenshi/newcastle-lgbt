@@ -27,7 +27,7 @@ carousel:
       alt: "Flock ALPR camera mounted at the Coal Creek PArkway and Newcastle Way intersection"
 ---
 
-**Newcastle, WA**: For years, cities across Washington have installed Flock Safety’s Automated License Plate Reader (ALPR) cameras under the promise of safer streets, modern policing, and faster crime solving. These cameras watch every car that passes, analyze license plates, record vehicle details, and store that data in a centralized cloud system.
+:Dateline For years, cities across Washington have installed Flock Safety’s Automated License Plate Reader (ALPR) cameras under the promise of safer streets, modern policing, and faster crime solving. These cameras watch every car that passes, analyze license plates, record vehicle details, and store that data in a centralized cloud system.
 
 What most people did not know is how far that data travels.
 

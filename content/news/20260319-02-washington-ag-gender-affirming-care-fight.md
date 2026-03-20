@@ -11,7 +11,7 @@ imageHeader:
   alt: "Washington State is fighting back, and its Attorney General is taking the battle for gender-affirming care all the way to the federal courts."
 ---
 
-**Newcastle, WA**: While federal executive orders have targeted gender-affirming care, one state has refused to yield. Washington's Attorney General **Nick Brown** has assembled a sustained legal campaign, emergency injunctions, 22-state coalitions, and federal appellate arguments, that has kept gender-affirming care legal, funded, and accessible in Washington through more than a year of coordinated federal assault.
+:Dateline While federal executive orders have targeted gender-affirming care, one state has refused to yield. Washington's Attorney General **Nick Brown** has assembled a sustained legal campaign, emergency injunctions, 22-state coalitions, and federal appellate arguments, that has kept gender-affirming care legal, funded, and accessible in Washington through more than a year of coordinated federal assault.
 
 ---
 

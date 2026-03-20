@@ -11,7 +11,7 @@ imageHeader:
   alt: "The most aggressive assault on trans rights in U.S. history, met by the strongest counter-movement of legal victories, electoral wins, and community resilience ever seen."
 ---
 
-**Newcastle, WA**: As Transgender Day of Visibility approaches on March 31, 2026, the transgender community confronts a defining paradox: the most aggressive governmental assault on trans rights in modern American history, matched, point for point, by the most resilient counter-movement of legal victories, electoral wins, cultural breakthroughs, and community solidarity the country has ever seen. This is a moment of profound harm and profound strength, and it demands both clear eyes and honest celebration.
+:Dateline As Transgender Day of Visibility approaches on March 31, 2026, the transgender community confronts a defining paradox: the most aggressive governmental assault on trans rights in modern American history, matched, point for point, by the most resilient counter-movement of legal victories, electoral wins, cultural breakthroughs, and community solidarity the country has ever seen. This is a moment of profound harm and profound strength, and it demands both clear eyes and honest celebration.
 
 ---
 
