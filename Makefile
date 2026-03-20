@@ -7,15 +7,15 @@ default:
 
 # Build Docker images
 install:
-	COMPOSE_BAKE=true docker compose build
+	docker compose build
 
 # Install npm dependencies inside the container
 install-dependencies: install
-	docker compose run -it --rm app yarn install --check-files --non-interactive --audit
+	docker compose run -it --rm app yarn install
 
 # Start the dev server at http://localhost:3000
 develop:
-	COMPOSE_BAKE=true docker compose up app --build
+	docker compose up app --build
 
 # Stop and remove containers
 down:
@@ -35,7 +35,7 @@ lint-fix:
 
 # Run dependency vulnerability audit
 audit:
-	docker compose run -it --rm app yarn audit
+	docker compose run -it --rm app yarn npm audit
 
 # Generate static site into .output/public
 build:
