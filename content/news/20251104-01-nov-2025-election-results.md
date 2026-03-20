@@ -11,7 +11,7 @@ imageHeader:
   alt: "‘I Voted’ sticker on a ballot envelope"
 ---
 
-**Newcastle, WA** — With just **20.95% turnout** (1,793 ballots of 8,559 registered), Newcastle voters delivered a clean sweep against candidates identified as anti-LGBTQ and MAGA-aligned. All four lost their races. In the Issaquah School District—where Newcastle families send their kids—voters likewise rejected a “parents’ rights” challenger and opted for continuity.
+**Newcastle, WA**: With just **20.95% turnout** (1,793 ballots of 8,559 registered), Newcastle voters delivered a clean sweep against candidates identified as anti-LGBTQ and MAGA-aligned. All four lost their races. In the Issaquah School District, where Newcastle families send their kids, voters likewise rejected a “parents’ rights” challenger and opted for continuity.
 
 ### Newcastle City Council results
 - **Position 4:** **Chris Villaseñor – 64.12% (1,108)** defeats **Kevin Kirkaldie – 35.65% (616)**; write-ins 0.23% (4)  
@@ -21,7 +21,7 @@ imageHeader:
 
 Citywide turnout: **20.95%**.
 
-### Issaquah School District No. 411 — Director District 2
+### Issaquah School District No. 411, Director District 2
 - **Natalie Anderson – 55.92% (8,288)** defeats **Chinmay Nagarkar – 43.57% (6,457)**; write-ins 0.51% (76)  
 Districtwide turnout: **21.10%**.
 
@@ -49,4 +49,4 @@ Voters plainly rejected an anti-LGBTQ slate and the church-aligned influence it 
 Frost Blakley centers a welcoming, inclusive Newcastle. Villaseñor emphasizes communication, public safety, and fiscal stability without culture-war theatrics. Charbonneau brings continuity with pragmatic governance as a returning incumbent. Jacobs campaigned for a more welcoming, safe, and connected community for all residents.
 
 ## What to watch next
-First, watch council organization: committee assignments, proclamation and flag policies, and whether inclusive practices get codified to avoid replaying last year’s drama. Next, see whether the new majority moves from a defensive crouch to proactive renter support, affordability work, and youth/health programming. Finally, in schools, this outcome should be read as a mandate to keep gender-inclusive protections intact and routine—letting educators focus on learning rather than manufactured culture-war fights.
+First, watch council organization: committee assignments, proclamation and flag policies, and whether inclusive practices get codified to avoid replaying last year’s drama. Next, see whether the new majority moves from a defensive crouch to proactive renter support, affordability work, and youth/health programming. Finally, in schools, this outcome should be read as a mandate to keep gender-inclusive protections intact and routine, letting educators focus on learning rather than manufactured culture-war fights.

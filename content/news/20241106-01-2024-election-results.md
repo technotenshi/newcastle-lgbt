@@ -11,7 +11,7 @@ imageHeader:
   alt: "An analysis of the 2024 election results and what they mean for LGBTQ+ rights in Newcastle and Washington State amid a shifting national landscape."
 ---
 
-**Newcastle, WA** — The 2024 election brought significant decisions to the forefront for Washington State, from pivotal federal races to crucial state ballot measures. With the results now in, we take a closer look at how the outcomes align with the recommendations in our pre-election voting guide and what these results may mean for Newcastle and beyond.
+**Newcastle, WA**: The 2024 election brought significant decisions to the forefront for Washington State, from pivotal federal races to crucial state ballot measures. With the results now in, we take a closer look at how the outcomes align with the recommendations in our pre-election voting guide and what these results may mean for Newcastle and beyond.
 
 This article breaks down the final results of each key race and initiative, comparing the actual outcomes with our voting guide’s endorsements. Let’s dive into the highlights from the federal, state, and local elections.
 

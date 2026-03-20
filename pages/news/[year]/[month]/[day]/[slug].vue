@@ -289,7 +289,11 @@ const formattedPublishDate = computed(() => {
     return '';
   }
 
-  const parsed = new Date(rawDate);
+  const match = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(rawDate);
+  if (!match) {
+    return '';
+  }
+  const parsed = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
 
   if (Number.isNaN(parsed.getTime())) {
     return '';
@@ -299,6 +303,7 @@ const formattedPublishDate = computed(() => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 });
 

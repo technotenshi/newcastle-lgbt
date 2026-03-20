@@ -8,7 +8,7 @@ image:
   alt: "A 2024 election guide sits on a wooden table alongside pamphlets, reading glasses, a pen, and a coffee cup, creating a scene of thoughtful voter preparation."
 imageHeader: 
   path: "assets/images/news/20241025-01-election-guide-header.png"
-  alt: "Make your voice heard this election—vote on key initiatives and candidates that will shape our community’s future in education, health, and sustainability!"
+  alt: "Make your voice heard this election, vote on key initiatives and candidates that will shape our community’s future in education, health, and sustainability!"
 ---
 
 **Newcastle, WA** – The following guide summarizes key ballot items and candidate endorsements that align with the priorities of our city and its residents.

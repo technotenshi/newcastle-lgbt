@@ -30,7 +30,7 @@ The vote has drawn sharp criticism from LGBTQ+ advocates and allies who see the 
 
 Newcastle had joined many other Washington cities in raising a Pride flag for the month of June over the past few years. However, that newfound tradition ends here. In comparison, Seattle has been raising the Pride flag over its city hall for the last 12 years, illustrating a commitment to inclusivity and support for the LGBTQ+ community. “This is something our entire city takes pride in,” Seattle Mayor Bruce Harrell said. “When we talk about pride, it’s a pride in the pain we overcome as a community.” This year also marks the 50th anniversary of Seattle Pride, further underscoring the importance of these symbols of solidarity.
 
-The debate over raising the Pride flag is not new, but it is particularly poignant in the current social climate. With increasing visibility of LGBTQ+ issues and rights, symbols like the Pride flag have become more than just decorations—they are statements of solidarity and commitment to the ongoing fight for equality. The refusal to raise the flag in Newcastle is a stark reminder that despite progress, there is still significant resistance rooted in privilege and intolerance.
+The debate over raising the Pride flag is not new, but it is particularly poignant in the current social climate. With increasing visibility of LGBTQ+ issues and rights, symbols like the Pride flag have become more than just decorations, they are statements of solidarity and commitment to the ongoing fight for equality. The refusal to raise the flag in Newcastle is a stark reminder that despite progress, there is still significant resistance rooted in privilege and intolerance.
 
 **Moving Forward**
 

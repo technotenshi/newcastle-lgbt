@@ -43,7 +43,7 @@ Over the past year, Newcastle.LGBT has been a vital platform for documenting and
 
 - **Community Pride Celebration**: Celebrated Newcastle’s Pride event, which brought together residents, advocacy groups, and allies to stand in solidarity and celebrate the LGBTQIA2S+ community.
 
-Through these stories and more, Newcastle.LGBT has remained dedicated to informing, uplifting, and uniting our community—ensuring that all voices are heard and represented.
+Through these stories and more, Newcastle.LGBT has remained dedicated to informing, uplifting, and uniting our community, ensuring that all voices are heard and represented.
 
 
 ## Looking Ahead

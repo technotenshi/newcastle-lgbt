@@ -11,7 +11,7 @@ imageHeader:
   alt: "Newcastle City Council members are seated at the Newcastle City Council meeting, with Mayor Robert Clark at the center."
 ---
 
-**Newcastle, WA** – At the October 1st, 2024 Newcastle City Council meeting, several issues exposed deep divisions among city leaders. The most contentious topics included a proposal to recognize Hindu Heritage Month, an attempt to censure Councilmember Paul Charbonneau, and a debate on whether the city’s Comprehensive Plan should address racial discrimination. These discussions not only highlighted the challenges of fostering inclusivity but also raised concerns about ethical governance and the use of rhetoric and selective standards—particularly by Mayor Robert Clark.
+**Newcastle, WA** – At the October 1st, 2024 Newcastle City Council meeting, several issues exposed deep divisions among city leaders. The most contentious topics included a proposal to recognize Hindu Heritage Month, an attempt to censure Councilmember Paul Charbonneau, and a debate on whether the city’s Comprehensive Plan should address racial discrimination. These discussions not only highlighted the challenges of fostering inclusivity but also raised concerns about ethical governance and the use of rhetoric and selective standards, particularly by Mayor Robert Clark.
 
 Deputy Mayor Pratima Lakhotia proposed recognizing October as Hindu Heritage Month to celebrate the contributions of Newcastle’s Hindu community. Councilmembers Ariana Sherlock and Paul Charbonneau supported the idea, arguing that it would promote inclusivity and honor the city’s cultural diversity.
 
