@@ -11,7 +11,7 @@ imageHeader:
   alt: "Police linked hateful mail sent to Councilmember Ariana Sherlock and candidate Andy Jacobs to an alleged single source, prompting protection orders and a community push for safety, accountability, and inclusion."
 ---
 
-**Newcastle, WA** – Two local leaders were targeted by hateful mail this year, and police later told them both mailings were traced to the same source. The episodes have shaken trust, raised urgent safety questions, and forced a sober look at how our institutions respond to bias and intimidation.
+:Dateline Two local leaders were targeted by hateful mail this year, and police later told them both mailings were traced to the same source. The episodes have shaken trust, raised urgent safety questions, and forced a sober look at how our institutions respond to bias and intimidation.
 
 ## What happened
 
@@ -31,11 +31,11 @@ As of October 15, no public charging decision had been announced. The **King Cou
 
 ## Patterns and concerns
 
-This is not happening in a vacuum. Newcastle has experienced a series of highly visible political and cultural disputes in recent years, particularly around LGBTQ+ inclusion. Incidents like these have a chilling effect—not only on the individuals involved, but on anyone in the community who sees what happens when public service is met with intimidation. The legal documents in this case reflect both the seriousness of the conduct and the current limits of the criminal code when threats are not explicit.
+This is not happening in a vacuum. Newcastle has experienced a series of highly visible political and cultural disputes in recent years, particularly around LGBTQ+ inclusion. Incidents like these have a chilling effect, not only on the individuals involved, but on anyone in the community who sees what happens when public service is met with intimidation. The legal documents in this case reflect both the seriousness of the conduct and the current limits of the criminal code when threats are not explicit.
 
 ## Community implications
 
-Safety goes beyond what courts can order. It includes how neighbors respond to harassment, and whether institutions show consistency in upholding standards of inclusion and accountability. In this case, the record shows that Sherlock and Jacobs took action through formal channels—and those actions were affirmed by the court. But civil protections are only part of the solution. Sustained community response, transparency in public records, and visible solidarity remain crucial to countering fear and disinformation.
+Safety goes beyond what courts can order. It includes how neighbors respond to harassment, and whether institutions show consistency in upholding standards of inclusion and accountability. In this case, the record shows that Sherlock and Jacobs took action through formal channels, and those actions were affirmed by the court. But civil protections are only part of the solution. Sustained community response, transparency in public records, and visible solidarity remain crucial to countering fear and disinformation.
 
 ## What solidarity looks like right now
 

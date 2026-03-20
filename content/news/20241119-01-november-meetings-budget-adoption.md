@@ -11,7 +11,7 @@ imageHeader:
   alt: "Newcastle City Council meeting discussed the adoption of the 2025 budget, including public safety funding, admissions tax revenue, and property tax decisions."
 ---
 
-**Newcastle, WA** – The Newcastle City Council has provided a summary of its November meetings, during which the primary focus was the adoption of the city’s 2025 budget. The council unanimously approved the budget on November 19, following extensive preparation by City Manager Scott Pingel and Finance Director Lindsay Chambers.
+:Dateline The Newcastle City Council has provided a summary of its November meetings, during which the primary focus was the adoption of the city’s 2025 budget. The council unanimously approved the budget on November 19, following extensive preparation by City Manager Scott Pingel and Finance Director Lindsay Chambers.
 
 ### Key Highlights of the 2025 Adopted Budget
 - **Public Safety Funding:** $695,927 from the American Rescue Plan Act (ARPA) will be transferred from the Cumulative Reserve Fund to the General Fund, with most of these funds allocated for police contracts.

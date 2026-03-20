@@ -146,7 +146,11 @@ const formatPublishDate = (value) => {
     return '';
   }
 
-  const parsed = new Date(value);
+  const match = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(value);
+  if (!match) {
+    return '';
+  }
+  const parsed = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])));
 
   if (Number.isNaN(parsed.getTime())) {
     return '';
@@ -156,6 +160,7 @@ const formatPublishDate = (value) => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 };
 

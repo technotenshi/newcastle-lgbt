@@ -18,7 +18,7 @@ carousel:
       alt: "A group of people gathered outside Newcastle City Hall, with some holding Pride flags and others holding American flags and signs reading \"We stand united under the USA flag.\""
 ---
 
-**Newcastle, WA** – In an extraordinary demonstration of solidarity and support, Newcastle residents, alongside Eastside Pride PNW, PFLAG Bellevue/Eastside, and numerous other advocates, gathered for a historic event on June 18th. The occasion marked a pivotal moment in the community's commitment to LGBTQ+ visibility and inclusion.
+:Dateline In an extraordinary demonstration of solidarity and support, Newcastle residents, alongside Eastside Pride PNW, PFLAG Bellevue/Eastside, and numerous other advocates, gathered for a historic event on June 18th. The occasion marked a pivotal moment in the community's commitment to LGBTQ+ visibility and inclusion.
 
 **A Peaceful and Celebratory Gathering**
 

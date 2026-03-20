@@ -11,13 +11,13 @@ imageHeader:
   alt: "An investigative look at TPUSA's expansion into high schools and its arrival at Liberty High School in Issaquah."
 ---
 
-**Newcastle, WA** — To most people, Turning Point USA (TPUSA) still looks like a familiar kind of campus club: a table with free stickers, a “free speech” stunt, or a controversial guest speaker whose presence triggers lively arguments. That image is not accidental. It is a carefully crafted brand designed to make TPUSA seem like one more participant in the so-called “marketplace of ideas,” a phrase that in mainstream civic language refers to open debate, but in modern far-right usage has become a coded rhetorical shield. Within that rhetorical frame, the “marketplace of ideas” is invoked not to foster genuine dialogue, but to justify platforming extreme views while dismissing criticism as censorship. This dog whistle is used to reframe harm as mere disagreement and to paint any pushback as intolerance.
+:Dateline To most people, Turning Point USA (TPUSA) still looks like a familiar kind of campus club: a table with free stickers, a “free speech” stunt, or a controversial guest speaker whose presence triggers lively arguments. That image is not accidental. It is a carefully crafted brand designed to make TPUSA seem like one more participant in the so-called “marketplace of ideas,” a phrase that in mainstream civic language refers to open debate, but in modern far-right usage has become a coded rhetorical shield. Within that rhetorical frame, the “marketplace of ideas” is invoked not to foster genuine dialogue, but to justify platforming extreme views while dismissing criticism as censorship. This dog whistle is used to reframe harm as mere disagreement and to paint any pushback as intolerance.
 
 Behind this familiar veneer sits something radically different: a highly structured, heavily financed national political machine now reaching deep into high schools as well as colleges, and increasingly into churches, pastor networks, and K-12 curriculum activism. TPUSA is closely aligned with the MAGA movement, deeply associated with Christian nationalist politics, and funded by some of the wealthiest conservative families in the United States. Its arrival at Liberty High School (LHS) in the Issaquah School District is not a neutral expression of “diverse viewpoints.” It is a node in a much larger, coordinated national strategy.
 
-Understanding that strategy — what it is, how it works, and what it has already produced — is a basic requirement for any community deciding how to protect students, uphold academic freedom, and maintain a safe learning environment.
+Understanding that strategy, what it is, how it works, and what it has already produced, is a basic requirement for any community deciding how to protect students, uphold academic freedom, and maintain a safe learning environment.
 
-## What Turning Point USA says it is — and what the record actually shows
+## What Turning Point USA says it is, and what the record actually shows
 
 Turning Point USA describes itself as a “student movement for freedom,” focusing on free markets, limited government, and economic civics. Founded in 2012 by **Charlie Kirk** and Tea Party activist **Bill Montgomery**, TPUSA went from a shoestring operation to a multimillion-dollar empire within a few years. By the early 2020s, it reported tens of millions in annual revenue and claimed chapters on thousands of campuses.
 
@@ -48,7 +48,7 @@ This is the ideology behind Turning Point Faith, TPUSA’s national church-mobil
 
 Alongside this religious project, Kirk’s rhetoric on race, civil rights, and LGBTQ+ issues grew increasingly extreme. He attacked the **Civil Rights Act** as a *“huge mistake,”* described **Martin Luther King Jr.** as *“awful,”* and repeated demographic “replacement” narratives usually associated with white nationalist discourse. On LGBTQ+ issues, he called queer activists the “alphabet mafia,” described transgender identity as *“a throbbing middle finger to God,”* and demanded criminal prosecution of doctors who provide gender-affirming care.
 
-None of this is hidden. It is part of TPUSA’s own public programming, echoed across national conferences and student events. When a TPUSA chapter arrives in a school district, **this is the ideology that enters the building** — even if local student members do not initially present themselves as aligned with these beliefs.
+None of this is hidden. It is part of TPUSA’s own public programming, echoed across national conferences and student events. When a TPUSA chapter arrives in a school district, **this is the ideology that enters the building**, even if local student members do not initially present themselves as aligned with these beliefs.
 
 ## From campus theatrics to coordinated K-12 organizing
 
@@ -61,7 +61,7 @@ TPUSA’s public presence is built on a very specific form of activism: provocat
 
 These spectacles are not designed to educate. They are designed to trigger reactions, create content, and reinforce a narrative of conservative victimhood.
 
-Less visible — but more consequential — is TPUSA’s documented covert involvement in student government elections. Investigations have revealed that TPUSA has funded student campaigns, supplied professional staff, and instructed candidates to hide this assistance. These operations, described internally as “rather undercover” and “on the DL,” have triggered scandals at multiple universities where TPUSA-backed candidates were caught violating campaign rules.
+Less visible, but more consequential, is TPUSA’s documented covert involvement in student government elections. Investigations have revealed that TPUSA has funded student campaigns, supplied professional staff, and instructed candidates to hide this assistance. These operations, described internally as “rather undercover” and “on the DL,” have triggered scandals at multiple universities where TPUSA-backed candidates were caught violating campaign rules.
 
 What began as a college-level strategy has now expanded aggressively into high schools. State officials sympathetic to Christian nationalist politics have encouraged TPUSA’s K-12 growth. Oklahoma State Superintendent Ryan Walters publicly vowed to establish TPUSA chapters in every high school in his state. TPUSA now offers high school-specific materials, branding kits, adult field representatives, and even alternative schooling options through Turning Point Academy.
 
@@ -163,7 +163,7 @@ Public schools cannot and should not shield students from every political idea. 
 
 TPUSA’s push into Liberty High School, and into high schools across the country, is part of a national strategy backed by significant money, Christian nationalist ideology, coordinated intimidation tactics, and a track record of spreading harmful disinformation. Recognizing this reality is not alarmism. It is responsible stewardship.
 
-For Issaquah students and families who care about inclusive, evidence-based education — and for educators who deserve safe working conditions — the task is straightforward:
+For Issaquah students and families who care about inclusive, evidence-based education, and for educators who deserve safe working conditions, the task is straightforward:
 
 * Insist on honesty about what outside organizations really are  
 * Protect students most likely to be harmed  

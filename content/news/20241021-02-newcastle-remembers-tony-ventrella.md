@@ -11,7 +11,7 @@ imageHeader:
   alt: "Tony Ventrella."
 ---
 
-**Newcastle, WA** – City of Newcastle staff were saddened to learn of the passing of longtime former resident **Tony Ventrella** over the weekend. Known to many as the face of **Seattle sports** and the voice of the Seahawks, Tony was also a dedicated **volunteer, neighbor, and friend** to the Newcastle community.
+:Dateline City of Newcastle staff were saddened to learn of the passing of longtime former resident **Tony Ventrella** over the weekend. Known to many as the face of **Seattle sports** and the voice of the Seahawks, Tony was also a dedicated **volunteer, neighbor, and friend** to the Newcastle community.
 
 Tony, who lived in Newcastle’s Highlands neighborhood for 18 years, served on the **Community Activities Commission** and later the **City Council**, where he was chosen as **Deputy Mayor** in 2020. Beyond his notable television career, including his time as a sportscaster at **KING 5** and a media host for the **Seattle Seahawks**, Tony was passionate about **community engagement**, supporting local businesses, and fostering a sense of unity through events like **Newcastle Days**.
 

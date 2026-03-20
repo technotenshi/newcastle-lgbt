@@ -11,7 +11,7 @@ imageHeader:
   alt: "Make your voice count! Take the Eastside Pride PNW community survey today and help shape the future of LGBTQIA2+ advocacy and support on the Eastside."
 ---
 
-**Newcastle, WA** – Eastside Pride PNW is working to foster unity, celebrate diversity, and build bridges across communities. To ensure their work reflects the needs of the local LGBTQIA2+ community, they are gathering input from community members like you.
+:Dateline Eastside Pride PNW is working to foster unity, celebrate diversity, and build bridges across communities. To ensure their work reflects the needs of the local LGBTQIA2+ community, they are gathering input from community members like you.
 
 I’m encouraging you to take a few minutes to complete their **anonymous community survey**. This is your opportunity to share what matters most to you, what challenges you face, and how Eastside Pride PNW can better serve and support our LGBTQIA2+ community. 
 

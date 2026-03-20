@@ -11,7 +11,7 @@ imageHeader:
   alt: "The American flag, Washington flag, and the Pride flag together"
 ---
 
-**Newcastle, WA** – In a significant reversal, the Newcastle City Council has voted to raise the LGBTQ+ Pride flag at City Hall, following extensive public outcry and debate. The council's initial decision on June 4 to not fly the Pride flag was met with strong opposition from the community, culminating in a new vote on June 18 where the motion passed 4-3.
+:Dateline In a significant reversal, the Newcastle City Council has voted to raise the LGBTQ+ Pride flag at City Hall, following extensive public outcry and debate. The council's initial decision on June 4 to not fly the Pride flag was met with strong opposition from the community, culminating in a new vote on June 18 where the motion passed 4-3.
 
 **Background and Initial Decision**
 

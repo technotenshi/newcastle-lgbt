@@ -11,11 +11,11 @@ imageHeader:
   alt: "A deep dive into the political affiliations and policy threats behind Chinmay Nagarkar’s school board campaign."
 ---
 
-**Newcastle, WA** – The race for the Issaquah School Board has taken on national overtones. At the center of this political pivot is candidate **Chinmay Nagarkar**, who brands himself as a pragmatic technocrat, using phrases like *"No Talent Left Behind"* and promising *"common-sense governance."* But beneath that polished exterior lies a campaign deeply embedded in the national *"parents' rights"* movement, a conservative backlash against inclusive education, LGBTQ+ protections, and racial equity policies.
+:Dateline The race for the Issaquah School Board has taken on national overtones. At the center of this political pivot is candidate **Chinmay Nagarkar**, who brands himself as a pragmatic technocrat, using phrases like *"No Talent Left Behind"* and promising *"common-sense governance."* But beneath that polished exterior lies a campaign deeply embedded in the national *"parents' rights"* movement, a conservative backlash against inclusive education, LGBTQ+ protections, and racial equity policies.
 
 ## A Partisan in Nonpartisan Clothing
 
-Though running in a technically nonpartisan race, Nagarkar is not a neutral actor. He holds a **formal Republican Party leadership position** as the **Vice Chair of the 41st Legislative District Republicans**, a fact conspicuously absent from his campaign website. This is not a minor detail—the 41st LD GOP's platform emphasizes traditionalist views on education, and Nagarkar's policy proposals align consistently with that ideology.
+Though running in a technically nonpartisan race, Nagarkar is not a neutral actor. He holds a **formal Republican Party leadership position** as the **Vice Chair of the 41st Legislative District Republicans**, a fact conspicuously absent from his campaign website. This is not a minor detail, the 41st LD GOP's platform emphasizes traditionalist views on education, and Nagarkar's policy proposals align consistently with that ideology.
 
 Far from the centrist he claims to be, Nagarkar’s affiliations connect him to a network of **religious conservatives, partisan tech executives, and ideological PACs**. He has not sought the Republican Party's official endorsement, likely to preserve the illusion of independence, but his endorsements and messaging prove otherwise.
 
@@ -24,7 +24,7 @@ Far from the centrist he claims to be, Nagarkar’s affiliations connect him to 
 
 Nagarkar’s campaign is heavily influenced by right-wing education activists. He is an active member of **Washington Parents’ Rights in Education (PRIE)**, a group affiliated with the national PRIE organization that campaigns aggressively against comprehensive sex education, social-emotional learning, and LGBTQ+ inclusion.
 
-He has also **endorsed content from TakeBackTheClassroom.com**, a site that provides booklists of so-called "pornographic" materials—lists which overwhelmingly target **LGBTQ+-themed literature** and books addressing racial identity. He heart-reacted to posts advocating the removal of such books from school libraries, referring to them as "smut" unfit for children.
+He has also **endorsed content from TakeBackTheClassroom.com**, a site that provides booklists of so-called "pornographic" materials, lists which overwhelmingly target **LGBTQ+-themed literature** and books addressing racial identity. He heart-reacted to posts advocating the removal of such books from school libraries, referring to them as "smut" unfit for children.
 
 Nagarkar also appears in the **"Pastor Joe’s Picks"** voter guide, curated by evangelical leader **Pastor Joe Fuiten**, which promotes Christian nationalist candidates. His inclusion in this guide provides insight into his ideological proximity to anti-DEI, anti-trans, and pro-censorship agendas.
 

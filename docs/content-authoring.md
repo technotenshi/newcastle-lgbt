@@ -86,8 +86,8 @@ carousel:
 The frontmatter `title` renders as the page H1. **Do not use a `#` heading in the body.**
 
 ```markdown
-Opening paragraph establishing location, date context, and the core news fact.
-Newcastle, WA is the location; open with the most important information (2–3 sentences).
+:Dateline Opening paragraph with the core news fact. Newcastle, WA is the location;
+open with the most important information (2–3 sentences).
 
 ## Section Heading
 
@@ -121,6 +121,8 @@ the article has deep nested structure.
 - **Horizontal rule** (`---`): optional section divider between major content blocks
 - **Sources section:** Required for articles citing external material; use H2 `## Sources`, list links as `**Outlet**: [Title](URL)` or plain `[Title](URL)`
 - **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation
+- **Dateline:** Open the article body with `:Dateline` (the MDC inline component) followed by the first sentence. Do not write `**Newcastle, WA** –` or `**Newcastle, WA**:` directly — the component renders the standardized format.
+- **Em dashes:** Do not use em dashes (`—`) anywhere in article text or frontmatter. Use a comma, colon, or rephrase the sentence instead. En-dashes (`–`) remain correct for numeric ranges (e.g. time ranges, page ranges).
 
 ---
 
@@ -176,11 +178,13 @@ To attend or for more information, [contact method matching the link.target fiel
 
 **Conventions:**
 
-- **Date/time format:** Full prose — `Saturday, March 8, 2025, from 7:00–8:30 PM`; use an en-dash (`–`) for time ranges, not a hyphen
+- **Date/time format:** Full prose, e.g. `Saturday, March 8, 2025, from 7:00–8:30 PM`; use an en-dash (`–`) for time ranges, not a hyphen
 - **Location:** Write in prose, not as a structured field
 - **Age/access requirements:** Include when applicable (e.g., `"ages 11–22"`)
 - **CTA:** End with a sentence that matches the `link.target` (e.g., "Email us at …" for a `mailto:` link, or "Register at [site]" for a URL)
 - **No sources section** for events
+- **Event length:** 2–4 short sentences total. State what the event is, date/time, location, cost, and how to register or get more info. Do not include bullet lists, sub-sections, or extended descriptions; keep it scannable.
+- **Em dashes:** Do not use em dashes (`—`). Use a comma or rephrase instead. En-dashes (`–`) are correct for numeric ranges.
 
 ---
 
@@ -369,6 +373,8 @@ Always generate AI image prompts based on the article content and the style refe
 ---
 
 ## Step-by-step: Creating an event from raw text
+
+> **⚠ Date check first:** If the event date is today or in the past, **stop and warn the user** before creating anything. Do not create events for dates that have already occurred.
 
 1. **Determine the event date** → derive the `YYYYMMDD` prefix
 2. **Check `content/events/`** for files with that date prefix → pick the next `##` sequence number

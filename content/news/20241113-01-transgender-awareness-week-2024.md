@@ -11,7 +11,7 @@ imageHeader:
   alt: "A hand gently holds a lit candle at dusk, symbolizing remembrance and hope, with soft hues of the transgender pride flag draped in the background."
 ---
 
-**Newcastle, WA** — Transgender Awareness Week, observed annually from November 13 to 19, is a vital time dedicated to raising visibility for transgender individuals and addressing the challenges they face. The week culminates in the Transgender Day of Remembrance (TDOR) on November 20, a day set aside to honor the memory of transgender people whose lives were tragically cut short due to anti-transgender violence.
+:Dateline Transgender Awareness Week, observed annually from November 13 to 19, is a vital time dedicated to raising visibility for transgender individuals and addressing the challenges they face. The week culminates in the Transgender Day of Remembrance (TDOR) on November 20, a day set aside to honor the memory of transgender people whose lives were tragically cut short due to anti-transgender violence.
 
 ## Origins and Significance
 Transgender Awareness Week is closely tied to the founding of TDOR. In 1999, transgender advocate Gwendolyn Ann Smith established TDOR as a vigil to honor the life of Rita Hester, a transgender woman who was murdered in 1998. This vigil not only commemorated Hester's life but also brought attention to the broader epidemic of violence faced by the transgender community.

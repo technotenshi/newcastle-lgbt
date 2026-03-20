@@ -11,11 +11,11 @@ imageHeader:
   alt: "Pride All Year Round: Building Inclusive Communities"
 ---
 
-**Newcastle, WA** – Pride is more than a month; it’s a commitment to building inclusive communities every day of the year. Across Washington and beyond, cities, organizations, and residents are embracing strategies to foster safety, respect, and visibility for LGBTQIA+ individuals—making sure no one is left behind.
+:Dateline Pride is more than a month; it’s a commitment to building inclusive communities every day of the year. Across Washington and beyond, cities, organizations, and residents are embracing strategies to foster safety, respect, and visibility for LGBTQIA+ individuals, making sure no one is left behind.
 
 ## Understanding LGBTQIA+ Terms
 ---
-Language shapes our understanding of identity. Key terms include lesbian, gay, bisexual, transgender, queer, intersex, asexual, aromantic, and the inclusive “+” to represent other identities. Respectful language—and an openness to learning—builds bridges and strengthens community bonds.
+Language shapes our understanding of identity. Key terms include lesbian, gay, bisexual, transgender, queer, intersex, asexual, aromantic, and the inclusive “+” to represent other identities. Respectful language, and an openness to learning, builds bridges and strengthens community bonds.
 
 ## Understanding Gender
 ---
@@ -23,7 +23,7 @@ Gender is a spectrum that encompasses gender identity, gender expression, sex as
 
 ## The Importance of Pronouns
 ---
-Personal pronouns are a cornerstone of inclusive communication. Using someone’s correct pronouns validates their identity and fosters respect. Mistakes happen—what matters is a quick, sincere correction and a commitment to do better.
+Personal pronouns are a cornerstone of inclusive communication. Using someone’s correct pronouns validates their identity and fosters respect. Mistakes happen, what matters is a quick, sincere correction and a commitment to do better.
 
 ## Bathroom Safety
 ---
@@ -64,4 +64,4 @@ Parks and recreation spaces should reflect and celebrate all community members. 
 
 ## Conclusion
 ---
-Pride is not just a moment—it’s a promise to create communities where everyone feels safe, respected, and celebrated. Through inclusive language, safe facilities, visible support, and year-round commitment, cities and organizations can build spaces that honor the dignity and diversity of every individual. Let’s work together to make Pride a reality, every day, for everyone.
+Pride is not just a moment, it’s a promise to create communities where everyone feels safe, respected, and celebrated. Through inclusive language, safe facilities, visible support, and year-round commitment, cities and organizations can build spaces that honor the dignity and diversity of every individual. Let’s work together to make Pride a reality, every day, for everyone.
