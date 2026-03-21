@@ -1,12 +1,12 @@
 # Newcastle LGBT Website
 
-This repository contains the source for the **Newcastle LGBT** site. It is built with [Nuxt](https://nuxt.com/) and Vue 3, with most content written in Markdown under the `content/` directory and served through Nuxt Content.
+This repository contains the source for the **Newcastle LGBT** site. It is built with [Nuxt 4](https://nuxt.com/) and Vue 3, with most content written in Markdown under the `content/` directory and served through Nuxt Content.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/458c411819a6488fb55ce082d7cc5d3b)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Requirements
 - Node.js 24 (for local, non-Docker development)
-- Yarn v1 (`1.22.22`, Corepack recommended)
+- Yarn 4 (managed via Corepack / `packageManager` field in `package.json`)
 - Docker + Docker Compose (optional, for containerized workflow)
 
 Install dependencies with:
@@ -122,6 +122,10 @@ plugins/
 - **Sorting:** News by date DESC then `order` field; events by date ASC; council by `position` number
 - **SEO:** All major pages set title, description, and OG/Twitter meta via `useSeoMeta`
 - **Images:** Use `lazy` attribute and `decoding="async"` on `<img>` tags
+
+## CI/CD
+
+A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn lint` and `yarn build` automatically on every push and pull request targeting `main`. Dependabot (`.github/dependabot.yml`) opens weekly PRs for npm dependency updates.
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.

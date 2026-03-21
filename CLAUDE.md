@@ -38,6 +38,8 @@ This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. T
 - `composables/` — Data fetching layer (`useNews`, `useEvents`, `useCouncil`, `useFeatures`, `useAsset`)
 - `pages/` — File-based routing; news uses dynamic route `/news/[year]/[month]/[day]/[slug].vue`
 - `components/` — Shared Vue components
+- `layouts/default.vue` — Global header, nav, and footer rendered on every page
+- `plugins/bootstrap.client.ts` — Bootstrap JS initialization (client-only)
 - `utils/content.ts` — Normalization helpers (`normaliseString`, `normaliseNumber`, `parseMeta`)
 - `utils/assets.ts` — Asset URL resolution (handles `~/assets`, relative paths, external URLs)
 
@@ -48,6 +50,15 @@ This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. T
 - Images: prefer `.png` for news/events; always include alt text
 - Sorting: news by date DESC then `order` field; events by date ASC
 - Full authoring guide (frontmatter fields, filename format, body structure, image conventions, step-by-step instructions): [`docs/content-authoring.md`](docs/content-authoring.md)
+
+### Modules & integrations
+- **`@nuxt/image`** — serves assets from `assets/` as WebP at quality 80 via the IPX endpoint (`/_ipx/...`). Use `<NuxtImg>` instead of plain `<img>` for all local images.
+- **`@nuxtjs/sitemap`** — auto-generates `/sitemap.xml` at build time by crawling prerendered routes. Reads the canonical URL from `site.url` in `nuxt.config.ts`.
+- **Simple Analytics** — privacy-friendly, cookie-free analytics injected via `nuxt.config.ts`. No user configuration required.
+
+### CI/CD
+- `.github/workflows/yarn-nuxt.yml` — runs `yarn lint` and `yarn build` on every push / PR to `main`
+- `.github/dependabot.yml` — weekly automated PRs for npm dependency updates
 
 ### Styling
 Bootstrap 5 + a Mobirise-derived custom theme in `assets/theme/css/style.css`. Use Bootstrap's responsive grid classes (`col-12`, `col-md-*`, `col-lg-*`).
