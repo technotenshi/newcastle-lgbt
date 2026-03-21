@@ -14,6 +14,7 @@
               format="webp"
               sizes="100vw md:50vw"
               loading="eager"
+              fetchpriority="high"
               class="img-fluid"
             />
           </div>

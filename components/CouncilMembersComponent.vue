@@ -15,6 +15,7 @@
                 :src="normalizedImage"
                 :alt="resolvedImageAlt"
                 width="200"
+                height="267"
                 format="webp"
                 loading="lazy"
                 class="img-fluid rounded-3"

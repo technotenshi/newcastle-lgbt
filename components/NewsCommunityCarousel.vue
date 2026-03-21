@@ -108,5 +108,8 @@ const resolvedImages = computed(() =>
 </script>
 
 <style scoped>
-/* Add any necessary CSS styles here */
+.item-wrapper {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
 </style>

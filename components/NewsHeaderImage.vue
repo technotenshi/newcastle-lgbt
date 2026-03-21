@@ -62,5 +62,8 @@ const imageSrc = computed(() => normalizeAssetPath(props.imageHeader?.path || pr
 </script>
 
 <style scoped>
-/* Add any necessary CSS styles here */
+.image-wrapper {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
 </style>
