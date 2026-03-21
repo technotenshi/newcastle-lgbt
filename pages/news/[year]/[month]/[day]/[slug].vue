@@ -33,10 +33,11 @@
 
 <script setup>
 import { computed } from 'vue';
-import { createError, queryCollection, useAsyncData, useRoute, useSeoMeta } from '#imports';
+import { createError, queryCollection, useAsyncData, useHead, useRoute, useSeoMeta } from '#imports';
 import NewsCommunityCarousel from '~/components/NewsCommunityCarousel.vue';
 import NewsHeaderImage from '~/components/NewsHeaderImage.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
+import { normalizeAssetPath } from '~/utils/assets';
 
 defineOptions({
   name: 'NewsArticlePage',
@@ -203,6 +204,7 @@ const articleTitle = computed(() => {
   return typeof title === 'string' && title.trim() ? title.trim() : 'News Article';
 });
 
+const siteUrl = 'https://newcastle.lgbt';
 const siteName = 'Newcastle LGBTQ Voice';
 const fallbackDescription = 'Stay informed with the latest updates from Newcastle LGBTQ Voice.';
 
@@ -273,13 +275,45 @@ const pageDescription = computed(() => {
 
 const pageTitle = computed(() => `${articleTitle.value} | ${siteName}`);
 
+const ogImageUrl = computed(() => {
+  const imagePath = normalizeAssetPath(articleData.value?.image?.path || '');
+  return imagePath ? `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/${imagePath}` : '';
+});
+
 useSeoMeta({
   title: () => pageTitle.value,
   description: () => pageDescription.value,
   ogTitle: () => pageTitle.value,
   ogDescription: () => pageDescription.value,
+  ogType: 'article',
+  articlePublishedTime: () => articleData.value?.date ?? '',
+  ogUrl: () => `${siteUrl}${canonicalPath}`,
+  ogImage: () => ogImageUrl.value || undefined,
   twitterTitle: () => pageTitle.value,
   twitterDescription: () => pageDescription.value,
+  twitterCard: 'summary_large_image',
+  twitterImage: () => ogImageUrl.value || undefined,
+});
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}${canonicalPath}` }],
+  script: [{
+    type: 'application/ld+json',
+    children: () => JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: articleTitle.value,
+      datePublished: articleData.value?.date ?? '',
+      image: ogImageUrl.value || undefined,
+      description: pageDescription.value,
+      url: `${siteUrl}${canonicalPath}`,
+      publisher: {
+        '@type': 'Organization',
+        name: siteName,
+        url: siteUrl,
+      },
+    }),
+  }],
 });
 
 const formattedPublishDate = computed(() => {

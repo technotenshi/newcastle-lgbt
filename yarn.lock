@@ -1196,7 +1196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-kit@npm:3.2.4":
+"@nuxt/devtools-kit@npm:3.2.4, @nuxt/devtools-kit@npm:^3.1.1, @nuxt/devtools-kit@npm:^3.2.1":
   version: 3.2.4
   resolution: "@nuxt/devtools-kit@npm:3.2.4"
   dependencies:
@@ -1296,7 +1296,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:4.4.2, @nuxt/kit@npm:^4.2.2, @nuxt/kit@npm:^4.3.1, @nuxt/kit@npm:^4.4.2":
+"@nuxt/kit@npm:4.4.2, @nuxt/kit@npm:^4.2.2, @nuxt/kit@npm:^4.3.0, @nuxt/kit@npm:^4.3.1, @nuxt/kit@npm:^4.4.2":
   version: 4.4.2
   resolution: "@nuxt/kit@npm:4.4.2"
   dependencies:
@@ -1529,6 +1529,34 @@ __metadata:
     unwasm: "npm:^0.5.3"
     vfile: "npm:^6.0.3"
   checksum: 10c0/7c3b0e68051a179f79c63d0d33a75bb32e97ce2726b8c344a32c644e274bb4036485b9b5a7431b9f22c6be1936c4f2b477842024ec0774fb70339b63ec6a0e10
+  languageName: node
+  linkType: hard
+
+"@nuxtjs/sitemap@npm:^7.6.0":
+  version: 7.6.0
+  resolution: "@nuxtjs/sitemap@npm:7.6.0"
+  dependencies:
+    "@nuxt/devtools-kit": "npm:^3.1.1"
+    "@nuxt/kit": "npm:^4.3.0"
+    chalk: "npm:^5.6.2"
+    defu: "npm:^6.1.4"
+    fast-xml-parser: "npm:^5.3.3"
+    nuxt-site-config: "npm:^3.2.18"
+    ofetch: "npm:^1.5.1"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.0"
+    radix3: "npm:^1.1.2"
+    semver: "npm:^7.7.3"
+    sirv: "npm:^3.0.2"
+    std-env: "npm:^3.10.0"
+    ufo: "npm:^1.6.3"
+    ultrahtml: "npm:^1.6.0"
+  peerDependencies:
+    zod: ">=3"
+  peerDependenciesMeta:
+    zod:
+      optional: true
+  checksum: 10c0/1d3159111828a9f63181228eaecc1deff4563258822160ec4b7a37e5c3b75d23edc2596315f203f88c72aeb0e28e00019fb8295c2521a421ad0736e1a09cc7e2
   languageName: node
   linkType: hard
 
@@ -3821,7 +3849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.0.1":
+"chalk@npm:^5.0.1, chalk@npm:^5.6.2":
   version: 5.6.2
   resolution: "chalk@npm:5.6.2"
   checksum: 10c0/99a4b0f0e7991796b1e7e3f52dceb9137cae2a9dfc8fc0784a550dc4c558e15ab32ed70b14b21b52beb2679b4892b41a0aa44249bcb996f01e125d58477c6976
@@ -5202,6 +5230,28 @@ __metadata:
   version: 3.1.0
   resolution: "fast-uri@npm:3.1.0"
   checksum: 10c0/44364adca566f70f40d1e9b772c923138d47efeac2ae9732a872baafd77061f26b097ba2f68f0892885ad177becd065520412b8ffeec34b16c99433c5b9e2de7
+  languageName: node
+  linkType: hard
+
+"fast-xml-builder@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "fast-xml-builder@npm:1.1.4"
+  dependencies:
+    path-expression-matcher: "npm:^1.1.3"
+  checksum: 10c0/d5dfc0660f7f886b9f42747e6aa1d5e16c090c804b322652f65a5d7ffb93aa00153c3e1276cd053629f9f4c4f625131dc6886677394f7048e827e63b97b18927
+  languageName: node
+  linkType: hard
+
+"fast-xml-parser@npm:^5.3.3":
+  version: 5.5.8
+  resolution: "fast-xml-parser@npm:5.5.8"
+  dependencies:
+    fast-xml-builder: "npm:^1.1.4"
+    path-expression-matcher: "npm:^1.2.0"
+    strnum: "npm:^2.2.0"
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: 10c0/b0eb5b5b4b02bb2dfac2fac4c19ce834017553e1f74499929a196b67bfe0741389a89dca4662c97bff138646d7c5fd985af59c7a216c433717e854de3355638c
   languageName: node
   linkType: hard
 
@@ -7630,6 +7680,7 @@ __metadata:
     "@eslint/js": "npm:^10.0.0"
     "@nuxt/content": "npm:^3.7.1"
     "@nuxt/image": "npm:^1.0.0"
+    "@nuxtjs/sitemap": "npm:^7.6.0"
     better-sqlite3: "npm:^12.2.0"
     eslint: "npm:^10.0.0"
     eslint-plugin-vue: "npm:^10.0.0"
@@ -7921,6 +7972,36 @@ __metadata:
   bin:
     nuxt-component-meta: bin/nuxt-component-meta.mjs
   checksum: 10c0/41691723b2028e8d831a4aa0165013ecf90786dd74016467a655a276e8fc766433ccfba834291f6c6d2295bb712e6d3a2099c6fc607b8b0006873c97ddf22047
+  languageName: node
+  linkType: hard
+
+"nuxt-site-config-kit@npm:3.2.21":
+  version: 3.2.21
+  resolution: "nuxt-site-config-kit@npm:3.2.21"
+  dependencies:
+    "@nuxt/kit": "npm:^4.3.1"
+    pkg-types: "npm:^2.3.0"
+    site-config-stack: "npm:3.2.21"
+    std-env: "npm:^3.10.0"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/c701799a000985a48b044d7f7b71fc0b394f227d148baac0dcc30b1b459d7b80c0d412493bfbb0291176029ed51767975d964dc72ec45eae71ac4c24656b5287
+  languageName: node
+  linkType: hard
+
+"nuxt-site-config@npm:^3.2.18":
+  version: 3.2.21
+  resolution: "nuxt-site-config@npm:3.2.21"
+  dependencies:
+    "@nuxt/devtools-kit": "npm:^3.2.1"
+    "@nuxt/kit": "npm:^4.3.1"
+    h3: "npm:^1.15.5"
+    nuxt-site-config-kit: "npm:3.2.21"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.0"
+    sirv: "npm:^3.0.2"
+    site-config-stack: "npm:3.2.21"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/46c2f24047f05cdad09f27c8f76273ec49772bb4b8cdbb08192de1b862017ca7dc126759730400c5edb1b52bc5cae61cbffeff96098da943ec134022c0b22b67
   languageName: node
   linkType: hard
 
@@ -8480,6 +8561,13 @@ __metadata:
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
   checksum: 10c0/8c0bd3f5238188197dc78dced15207a4716c51cc4e3624c44fc97acf69558f5ebb9a2afff486fe1b4ee148e0c133e96c5e11a9aa5c48a3006e3467da070e5e1b
+  languageName: node
+  linkType: hard
+
+"path-expression-matcher@npm:^1.1.3, path-expression-matcher@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "path-expression-matcher@npm:1.2.0"
+  checksum: 10c0/86c661dfb265ed5dd1ddd9188f0dfbecf4ec4dc3ea6cabab081d3a2ba285054d9767a641a233bd6fd694fd89f7d0ef94913032feddf5365252700b02db4bf4e1
   languageName: node
   linkType: hard
 
@@ -9652,7 +9740,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.3, semver@npm:^7.7.4":
+"semver@npm:^7.3.5, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.3, semver@npm:^7.7.3, semver@npm:^7.7.4":
   version: 7.7.4
   resolution: "semver@npm:7.7.4"
   bin:
@@ -9996,6 +10084,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"site-config-stack@npm:3.2.21":
+  version: 3.2.21
+  resolution: "site-config-stack@npm:3.2.21"
+  dependencies:
+    ufo: "npm:^1.6.3"
+  peerDependencies:
+    vue: ^3
+  checksum: 10c0/f2391dacbb21487da9e3d1e08222619668e46ece6423598948f1a404f69de08febe513d421467fea055bf7e64c6a91acd529b26491d7c06dc6d76d15b46a6ef4
+  languageName: node
+  linkType: hard
+
 "skin-tone@npm:^2.0.0":
   version: 2.0.0
   resolution: "skin-tone@npm:2.0.0"
@@ -10277,6 +10376,13 @@ __metadata:
   dependencies:
     js-tokens: "npm:^9.0.1"
   checksum: 10c0/50918f669915d9ad0fe4b7599902b735f853f2201c97791ead00104a654259c0c61bc2bc8fa3db05109339b61f4cf09e47b94ecc874ffbd0e013965223893af8
+  languageName: node
+  linkType: hard
+
+"strnum@npm:^2.2.0":
+  version: 2.2.1
+  resolution: "strnum@npm:2.2.1"
+  checksum: 10c0/2773632d58f71ef35a3e9111da6533ba5f7da10edcb86ff5c19e0194c017d22509bc6c5cad4902535de384462170f830dc67e2cbd8060d3375f52466a22fb169
   languageName: node
   linkType: hard
 

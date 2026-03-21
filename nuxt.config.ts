@@ -1,6 +1,9 @@
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
+  site: {
+    url: "https://newcastle.lgbt",
+  },
   ssr: true,
   compatibilityDate: "2025-09-18",
   nitro: {
@@ -10,7 +13,7 @@ export default defineNuxtConfig({
       routes: ["/"],
     },
   },
-  modules: ["@nuxt/content", "@nuxt/image"],
+  modules: ["@nuxt/content", "@nuxt/image", "@nuxtjs/sitemap"],
   image: {
     dir: "assets",
     format: ["webp"],

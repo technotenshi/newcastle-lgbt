@@ -45,7 +45,7 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { queryCollection, useAsyncData, useSeoMeta } from '#imports';
+import { queryCollection, useAsyncData, useHead, useSeoMeta } from '#imports';
 import FeaturedNews from '~/components/FeaturedNews.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useNews } from '~/composables/useNews';
@@ -65,6 +65,9 @@ defineOptions({
 const pageTitle = 'News | Newcastle LGBTQ Voice';
 const pageDescription = "Welcome to Newcastle LGBTQ Voice! This is your go-to platform for amplifying LGBTQ voices, advocating for equality, and promoting community events in Newcastle, WA.";
 
+const siteUrl = 'https://newcastle.lgbt';
+const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+
 definePageMeta({
   title: 'News',
 });
@@ -74,8 +77,15 @@ useSeoMeta({
   description: pageDescription,
   ogTitle: pageTitle,
   ogDescription: pageDescription,
+  ogImage: defaultOgImage,
   twitterTitle: pageTitle,
   twitterDescription: pageDescription,
+  twitterCard: 'summary_large_image',
+  twitterImage: defaultOgImage,
+});
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/news` }],
 });
 
 const { data: newsData } = await useNews();
