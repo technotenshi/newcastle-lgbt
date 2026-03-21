@@ -7,12 +7,15 @@
           :target="target"
           :rel="linkRel"
         >
-          <img
+          <NuxtImg
             v-if="imageUrl"
             :src="imageUrl"
             :alt="imageAlt"
+            format="webp"
+            sizes="100vw md:50vw lg:33vw"
+            loading="lazy"
             class="img-fluid"
-          >
+          />
         </NuxtLink>
       </div>
       <div class="item-content">
@@ -39,7 +42,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { resolveAssetUrl } from '~/utils/assets';
+import { normalizeAssetPath } from '~/utils/assets';
 
 const props = defineProps({
   imageSrc: {
@@ -84,7 +87,7 @@ const extractImagePath = (value) => {
   return '';
 };
 
-const imageUrl = computed(() => resolveAssetUrl(extractImagePath(props.imageSrc)));
+const imageUrl = computed(() => normalizeAssetPath(extractImagePath(props.imageSrc)));
 const linkRel = computed(() => (props.target === '_blank' ? 'noopener noreferrer' : null));
 </script>
 

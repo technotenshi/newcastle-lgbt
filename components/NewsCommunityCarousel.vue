@@ -32,14 +32,15 @@
                 :class="{ active: index === 0 }"
               >
                 <div class="item-wrapper">
-                  <img
-                    v-if="image.resolvedSrc"
-                    :src="image.resolvedSrc"
+                  <NuxtImg
+                    v-if="image.normalizedSrc"
+                    :src="image.normalizedSrc"
                     :alt="image.alt || ''"
+                    format="webp"
+                    sizes="100vw md:83vw"
+                    loading="lazy"
                     class="d-block w-100"
-                    :data-slide-to="index"
-                    :data-bs-slide-to="index"
-                  >
+                  />
                 </div>
               </div>
             </div>
@@ -78,7 +79,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { resolveAssetUrl } from '~/utils/assets';
+import { normalizeAssetPath } from '~/utils/assets';
 
 const props = defineProps({
   images: {
@@ -100,7 +101,7 @@ const resolvedImages = computed(() =>
 
     return {
       ...base,
-      resolvedSrc: resolveAssetUrl(source),
+      normalizedSrc: normalizeAssetPath(source),
     };
   })
 );

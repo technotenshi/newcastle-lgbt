@@ -49,7 +49,7 @@ import { queryCollection, useAsyncData, useSeoMeta } from '#imports';
 import FeaturedNews from '~/components/FeaturedNews.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useNews } from '~/composables/useNews';
-import { resolveAssetUrl } from '~/utils/assets';
+import { normalizeAssetPath } from '~/utils/assets';
 import {
   normaliseBody,
   normaliseString,
@@ -178,7 +178,7 @@ const articles = computed(() => {
     const formattedDate = formatPublishDate(entry.date) || '';
     const imageObj = entry.image && typeof entry.image === 'object' ? entry.image : null;
     const imagePath = imageObj?.path;
-    const imageSrc = resolveAssetUrl(imagePath) || '';
+    const imageSrc = normalizeAssetPath(imagePath) || '';
     const imageAlt = normaliseString(imageObj?.alt) ?? `${title} image`;
     const link = normaliseString(entry._path)
       ?? normaliseString(entry.sourcePath)

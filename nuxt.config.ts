@@ -10,7 +10,12 @@ export default defineNuxtConfig({
       routes: ["/"],
     },
   },
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@nuxt/image"],
+  image: {
+    dir: "assets",
+    format: ["webp"],
+    quality: 80,
+  },
   css: [
     "~/assets/web/assets/mobirise-icons2/mobirise2.css",
     "~/assets/bootstrap/css/bootstrap.min.css",
