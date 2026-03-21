@@ -10,13 +10,23 @@
           <div class="row align-items-start">
             <!-- Image Section -->
             <div class="col-md-4 col-lg-3">
+              <NuxtImg
+                v-if="!imageHasError && normalizedImage"
+                :src="normalizedImage"
+                :alt="resolvedImageAlt"
+                width="200"
+                format="webp"
+                loading="lazy"
+                class="img-fluid rounded-3"
+                @error="onImageError"
+              />
               <img
-                :src="imageUrl"
+                v-else
+                :src="portraitPlaceholder"
                 :alt="resolvedImageAlt"
                 class="img-fluid rounded-3"
                 loading="lazy"
                 decoding="async"
-                @error="onImageError"
               >
             </div>
 
@@ -73,7 +83,7 @@
 
 <script setup>
 import { computed, ref, watch } from 'vue';
-import { resolveAssetUrl } from '~/utils/assets';
+import { normalizeAssetPath } from '~/utils/assets';
 import portraitPlaceholder from '~/assets/images/council-members/20260220-02-council-member-portrait-placeholder.svg';
 
 const props = defineProps({
@@ -108,15 +118,7 @@ const props = defineProps({
 });
 
 const imageHasError = ref(false);
-const providedImageUrl = computed(() => resolveAssetUrl(props.image));
-
-const imageUrl = computed(() => {
-  if (!imageHasError.value && providedImageUrl.value) {
-    return providedImageUrl.value;
-  }
-
-  return portraitPlaceholder;
-});
+const normalizedImage = computed(() => normalizeAssetPath(props.image));
 
 watch(() => props.image, () => {
   imageHasError.value = false;

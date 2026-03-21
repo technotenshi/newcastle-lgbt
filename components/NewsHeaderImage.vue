@@ -26,12 +26,15 @@
             data-v-6ac3a620=""
             class="image-wrapper"
           >
-            <img
+            <NuxtImg
               v-if="imageSrc"
-              :alt="imageHeader.alt"
               :src="imageSrc"
+              :alt="imageHeader.alt"
               width="511"
-            >
+              format="webp"
+              sizes="100vw md:50vw lg:42vw"
+              loading="lazy"
+            />
             <p
               class="mbr-description mbr-fonts-style mt-2 align-center display-4"
             >
@@ -46,7 +49,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { resolveAssetUrl } from '~/utils/assets';
+import { normalizeAssetPath } from '~/utils/assets';
 
 const props = defineProps({
   imageHeader: {
@@ -55,7 +58,7 @@ const props = defineProps({
   },
 });
 
-const imageSrc = computed(() => resolveAssetUrl(props.imageHeader?.path || props.imageHeader?.src || ''));
+const imageSrc = computed(() => normalizeAssetPath(props.imageHeader?.path || props.imageHeader?.src || ''));
 </script>
 
 <style scoped>

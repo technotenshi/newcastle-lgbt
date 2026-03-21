@@ -8,14 +8,14 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-12 col-md-6 image-wrapper">
-            <img
-              v-if="heroImage"
-              :src="heroImage"
+            <NuxtImg
+              src="images/K59bqmorPm9qeV7qbg4Dozml.webp"
               alt="Newcastle LGBTQ Voice"
+              format="webp"
+              sizes="100vw md:50vw"
+              loading="eager"
               class="img-fluid"
-              loading="lazy"
-              decoding="async"
-            >
+            />
           </div>
           <div class="col-12 col-md">
             <div class="text-wrapper">
@@ -84,7 +84,6 @@ import { computed } from 'vue';
 import { useSeoMeta } from '#imports';
 import { useFeatures } from '~/composables/useFeatures';
 import { useNews } from '~/composables/useNews';
-import heroImageUrl from '~/assets/images/K59bqmorPm9qeV7qbg4Dozml.webp';
 
 definePageMeta({
   title: 'Home',
@@ -101,8 +100,6 @@ useSeoMeta({
   twitterDescription:
     "Welcome to Newcastle LGBTQ Voice! Amplifying LGBTQ voices, sharing news, and supporting community events across Newcastle, Washington.",
 });
-
-const heroImage = heroImageUrl;
 
 const { data: featuresData } = await useFeatures();
 const { data: latestNewsData } = await useNews({ limit: 6 });

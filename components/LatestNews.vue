@@ -6,12 +6,17 @@
         class="news-item-link"
       >
         <div class="item-img">
-          <img
+          <NuxtImg
             v-if="thumbnailSrc"
             :src="thumbnailSrc"
             :alt="imageAltText"
+            width="400"
+            height="180"
+            format="webp"
+            fit="cover"
+            loading="lazy"
             class="news-thumbnail"
-          >
+          />
         </div>
         <div class="item-content">
           <h5 class="item-title mbr-fonts-style display-7 news-title">
@@ -25,7 +30,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { resolveAssetUrl } from '~/utils/assets';
+import { normalizeAssetPath } from '~/utils/assets';
 
 const props = defineProps({
   title: {
@@ -48,7 +53,7 @@ const props = defineProps({
 
 const thumbnailSrc = computed(() => {
   const path = props.image?.path || props.image?.src || '';
-  return resolveAssetUrl(path);
+  return normalizeAssetPath(path);
 });
 
 const imageAltText = computed(() => props.image?.alt || props.title);

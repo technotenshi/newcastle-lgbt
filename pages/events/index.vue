@@ -18,13 +18,14 @@
                   v-if="event.imageSrc"
                   class="image-wrapper"
                 >
-                  <img
+                  <NuxtImg
                     :src="event.imageSrc"
                     :alt="event.imageAlt"
-                    class="img-fluid"
+                    format="webp"
+                    sizes="100vw lg:50vw"
                     loading="lazy"
-                    decoding="async"
-                  >
+                    class="img-fluid"
+                  />
                 </div>
               </div>
               <div class="col-12 col-lg">
@@ -84,8 +85,8 @@
 import { computed } from 'vue';
 import { useSeoMeta } from '#imports';
 import SectionHeader from '~/components/SectionHeader.vue';
-import { useAsset } from '~/composables/useAsset';
 import { useEvents } from '~/composables/useEvents';
+import { normalizeAssetPath } from '~/utils/assets';
 import { normaliseString } from '~/utils/content';
 
 defineOptions({
@@ -191,7 +192,7 @@ const events = computed(() => {
       ...event,
       title,
       displayDate: formatEventDate(event.date),
-      imageSrc: imagePath ? useAsset(imagePath) : '',
+      imageSrc: normalizeAssetPath(imagePath) || '',
       imageAlt,
       linkTarget,
       linkText,
