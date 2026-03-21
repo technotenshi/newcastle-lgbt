@@ -623,9 +623,6 @@ nav .mbr-section-btn {
   display: -webkit-flex;
 }
 
-.form-group:focus {
-  outline: none;
-}
 
 .jq-selectbox__select {
   padding: 7px 0;
@@ -842,8 +839,13 @@ form .btn {
   box-shadow: none;
 }
 
-:focus {
+:focus:not(:focus-visible) {
   outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .mbr-overlay {

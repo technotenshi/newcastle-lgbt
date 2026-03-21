@@ -1,5 +1,9 @@
 <template>
   <div>
+    <a
+      href="#main"
+      class="skip-link"
+    >Skip to main content</a>
     <!-- Common Header Section -->
     <section
       id="menu1-5"
@@ -29,7 +33,10 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <div class="hamburger">
+            <div
+              class="hamburger"
+              aria-hidden="true"
+            >
               <span />
               <span />
               <span />
@@ -90,13 +97,14 @@
       </nav>
     </section>
     <!-- Slot for Page Content -->
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
 
-    <section
+    <footer
       id="footer7-6"
       data-bs-version="5.1"
       class="footer7 cid-uf3PMfXKLP"
-      once="footers"
     >
       <div class="container">
         <div class="media-container-row align-center mbr-white">
@@ -107,10 +115,24 @@
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   </div>
 </template>
 
 <style scoped>
-/* Scoped styles for the default layout */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
 </style>

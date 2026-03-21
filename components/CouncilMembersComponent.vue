@@ -15,6 +15,7 @@
                 :src="normalizedImage"
                 :alt="resolvedImageAlt"
                 width="200"
+                height="267"
                 format="webp"
                 loading="lazy"
                 class="img-fluid rounded-3"
@@ -47,7 +48,7 @@
               >
                 <strong>{{ name }}</strong>
                 <template v-if="flag">
-                  &nbsp;<span>{{ flag }}</span>
+                  &nbsp;<span aria-label="Pride flag">{{ flag }}</span>
                 </template>
               </p>
 

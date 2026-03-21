@@ -92,5 +92,8 @@ const linkRel = computed(() => (props.target === '_blank' ? 'noopener noreferrer
 </script>
 
 <style scoped>
-/* Add any component-specific styles here */
+.item-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
 </style>

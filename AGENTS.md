@@ -59,5 +59,14 @@ assets/         # Static styles and images (Bootstrap 5 + Mobirise-derived theme
 ## Prose component overrides
 Custom MDC prose components in `components/content/` override the default `@nuxtjs/mdc` rendering for all `<ContentRenderer>` output. Example: `ProseA.vue` overrides link rendering site-wide (external links open in a new tab).
 
+## Modules & integrations
+- **`@nuxt/image`** — serves `assets/` images as WebP via IPX (`/_ipx/...`). Use `<NuxtImg>` for all local images.
+- **`@nuxtjs/sitemap`** — generates `/sitemap.xml` at build time from prerendered routes; reads `site.url` in `nuxt.config.ts`.
+- **Simple Analytics** — privacy-friendly analytics injected in `nuxt.config.ts`; no configuration needed.
+
+## CI/CD
+- `.github/workflows/yarn-nuxt.yml` — lint + build checks run on every push/PR to `main`
+- `.github/dependabot.yml` — weekly npm dependency update PRs
+
 ## Commit messages
 - Write clear, concise commit messages describing what changed and why.

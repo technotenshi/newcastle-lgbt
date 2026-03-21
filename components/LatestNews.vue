@@ -94,7 +94,7 @@ const imageAltText = computed(() => props.image?.alt || props.title);
 
 .news-thumbnail {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }

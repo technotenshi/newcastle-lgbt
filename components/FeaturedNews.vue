@@ -1,5 +1,5 @@
 <template>
-  <div class="item features-image сol-12 col-md-6 col-lg-4">
+  <div class="item features-image col-12 col-md-6 col-lg-4">
     <div class="item-wrapper">
       <div class="item-img">
         <NuxtLink
@@ -91,5 +91,26 @@ const linkRel = computed(() => (props.target === '_blank' ? 'noopener noreferrer
 </script>
 
 <style scoped>
-/* Add any component-specific styles here */
+.item-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.item-wrapper {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.item-content {
+  padding: 1rem 1rem 0;
+}
+
+.item-title {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
 </style>

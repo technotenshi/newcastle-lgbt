@@ -71,7 +71,7 @@
 
 <script setup>
 /* global definePageMeta */
-import { useSeoMeta } from '#imports';
+import { useHead, useSeoMeta } from '#imports';
 import SectionHeader from '~/components/SectionHeader.vue';
 import pflagBellevueImage from '~/assets/images/GXwZyRMXemPZnNJrZZop2ev8g.webp';
 import eastsidePrideImage from '~/assets/images/mJ12ldj01ZjqVeqjm6Avnp2mX.webp';
@@ -86,6 +86,9 @@ defineOptions({
 const pageTitle = 'Organizations | Newcastle LGBTQ Voice';
 const pageDescription = 'Discover LGBTQ+ organizations supporting inclusion, advocacy, and resources across the Eastside community.';
 
+const siteUrl = 'https://newcastle.lgbt';
+const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+
 definePageMeta({
   title: 'Organizations',
   description: pageDescription,
@@ -96,8 +99,15 @@ useSeoMeta({
   description: pageDescription,
   ogTitle: pageTitle,
   ogDescription: pageDescription,
+  ogImage: defaultOgImage,
   twitterTitle: pageTitle,
   twitterDescription: pageDescription,
+  twitterCard: 'summary_large_image',
+  twitterImage: defaultOgImage,
+});
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/organizations` }],
 });
 
 const organizations = [
