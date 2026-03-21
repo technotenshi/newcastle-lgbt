@@ -9,7 +9,7 @@
       class="content2 cid-uggfofTuig"
     >
       <div class="container">
-        <div class="row mt-4">
+        <div class="row g-4 mt-2">
           <FeaturedNews
             v-for="article in articles"
             :key="article.id"
