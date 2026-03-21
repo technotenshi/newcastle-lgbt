@@ -48,7 +48,7 @@
               >
                 <strong>{{ name }}</strong>
                 <template v-if="flag">
-                  &nbsp;<span>{{ flag }}</span>
+                  &nbsp;<span aria-label="Pride flag">{{ flag }}</span>
                 </template>
               </p>
 
