@@ -112,6 +112,15 @@
             <p class="mbr-text mb-0 mbr-fonts-style display-7">
               © Copyright 2026 - All Rights Reserved
             </p>
+            <p class="mbr-text mb-0 mbr-fonts-style display-7">
+              <a
+                href="/feed.xml"
+                class="text-white"
+              ><span
+                class="socicon-rss"
+                aria-hidden="true"
+              /> RSS Feed</a>
+            </p>
           </div>
         </div>
       </div>

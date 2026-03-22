@@ -30,6 +30,9 @@ pages/          # File-based routing; news uses /news/[year]/[month]/[day]/[slug
 components/     # Shared Vue components (PascalCase filenames)
 composables/    # Data-fetching layer: useNews, useEvents, useCouncil, useFeatures, useAsset
 layouts/        # default.vue — global header, nav, and footer
+server/
+  routes/
+    feed.xml.ts # RSS 2.0 feed — pre-rendered to /feed.xml at build time
 utils/
   content.ts    # Normalization helpers: normaliseString, normaliseNumber, parseMeta
   assets.ts     # Centralized image/asset URL resolution
@@ -68,6 +71,7 @@ Custom MDC prose components in `components/content/` override the default `@nuxt
 - **`nuxt-link-checker`** — runs during `make develop` and warns about broken or malformed links. Warnings are treated as errors: fix them. Common rules: no trailing slashes on internal links, no absolute `https://newcastle.lgbt/...` URLs (use relative paths instead).
 - **`nuxt-seo-utils`** — auto-generates `og:title`, `og:description`, `og:url`, `og:site_name`, `twitter:*`, and `<link rel="canonical">` from `useSeoMeta({ title, description })`. Do **not** set these manually. Also appends ` | Newcastle LGBTQ Voice` to every page `<title>` — use short-form titles only (e.g. `'News'`, not `'News | Newcastle LGBTQ Voice'`).
 - **Simple Analytics** — privacy-friendly analytics injected in `nuxt.config.ts`; no configuration needed.
+- **`feed`** — generates the RSS 2.0 feed at `/feed.xml` via `server/routes/feed.xml.ts`. Pre-rendered at build time via `nitro.prerender.routes`. Autodiscovery `<link rel="alternate">` is injected via `app.head` in `nuxt.config.ts`. Do not use `@nuxtjs/feed` — it has unclear Nuxt 4 compatibility. In server routes, query content with `queryCollection(event, "collection")` from `"@nuxt/content/server"` (not the client composable auto-import).
 
 ## SEO conventions
 Every page must call `useSeoMeta({ title, description })` at minimum — `nuxt-seo-utils` derives everything else automatically.

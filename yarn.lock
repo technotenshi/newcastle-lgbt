@@ -5617,6 +5617,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"feed@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "feed@npm:4.2.2"
+  dependencies:
+    xml-js: "npm:^1.6.11"
+  checksum: 10c0/c0849bde569da94493224525db00614fd1855a5d7c2e990f6e8637bd0298e85c3d329efe476cba77e711e438c3fb48af60cd5ef0c409da5bcd1f479790b0a372
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^8.0.0":
   version: 8.0.0
   resolution: "file-entry-cache@npm:8.0.0"
@@ -8159,6 +8168,7 @@ __metadata:
     better-sqlite3: "npm:^12.2.0"
     eslint: "npm:^10.0.0"
     eslint-plugin-vue: "npm:^10.0.0"
+    feed: "npm:^4.2.2"
     glob: "npm:^13.0.0"
     globals: "npm:^17.0.0"
     nuxt: "npm:^4.1.2"
@@ -10405,7 +10415,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sax@npm:^1.5.0":
+"sax@npm:^1.2.4, sax@npm:^1.5.0":
   version: 1.6.0
   resolution: "sax@npm:1.6.0"
   checksum: 10c0/e5593f4a91eb25761a688c4d96902e4e95a0dd6017bc65146b6f21236e3d715cf893333b76bc758923c9574c2fb5a7a76c3a81e96ea15432f2624f906c027c1e
@@ -12289,6 +12299,17 @@ __metadata:
     is-wsl: "npm:^3.1.0"
     powershell-utils: "npm:^0.1.0"
   checksum: 10c0/b3ba99cc6b71f66457eef598d529beeb8cb57a72646877fe25993894b808c60b82f6d47df5463f0b6e54632272f62f5eaea105c12784fd09b06f500f3f53aa2e
+  languageName: node
+  linkType: hard
+
+"xml-js@npm:^1.6.11":
+  version: 1.6.11
+  resolution: "xml-js@npm:1.6.11"
+  dependencies:
+    sax: "npm:^1.2.4"
+  bin:
+    xml-js: ./bin/cli.js
+  checksum: 10c0/c83631057f10bf90ea785cee434a8a1a0030c7314fe737ad9bf568a281083b565b28b14c9e9ba82f11fc9dc582a3a907904956af60beb725be1c9ad4b030bc5a
   languageName: node
   linkType: hard
 

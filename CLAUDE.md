@@ -61,6 +61,7 @@ This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. T
 - **`nuxt-link-checker`** — runs during `make develop` and warns about broken or malformed links. Warnings are treated as errors: fix them. Common rules: no trailing slashes on internal links, no absolute `https://newcastle.lgbt/...` URLs (use relative paths instead).
 - **`nuxt-seo-utils`** — auto-generates `og:title`, `og:description`, `og:url`, `og:site_name`, `twitter:*`, and `<link rel="canonical">` from `useSeoMeta({ title, description })`. Do **not** set these manually. Also appends ` | Newcastle LGBTQ Voice` to every page `<title>` — page titles must be the short form only (e.g. `'News'`, not `'News | Newcastle LGBTQ Voice'`).
 - **Simple Analytics** — privacy-friendly, cookie-free analytics injected via `nuxt.config.ts`. No user configuration required.
+- **`feed`** — generates the RSS 2.0 feed at `/feed.xml` via `server/routes/feed.xml.ts`. Pre-rendered at build time via `nitro.prerender.routes`. Autodiscovery `<link rel="alternate">` is injected via `app.head` in `nuxt.config.ts`. Do **not** use `@nuxtjs/feed` — it has unclear Nuxt 4 compatibility. In server routes, content must be queried with `queryCollection(event, "collection")` imported from `"@nuxt/content/server"` (not the client composable auto-import).
 
 ### SEO conventions
 Every page must call `useSeoMeta({ title, description })` at minimum — `nuxt-seo-utils` derives everything else automatically.
