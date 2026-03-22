@@ -90,6 +90,9 @@ pages/          # File-based routing (news uses /news/[year]/[month]/[day]/[slug
 components/     # Shared Vue components (PascalCase filenames)
 composables/    # Data-fetching layer: useNews, useEvents, useCouncil, useFeatures, useAsset
 layouts/        # default.vue — global header, nav, and footer
+server/
+  routes/
+    feed.xml.ts # RSS 2.0 feed — pre-rendered to /feed.xml at build time
 utils/
   content.ts    # Normalization helpers: normaliseString, normaliseNumber, parseMeta
   assets.ts     # Centralized image/asset URL resolution
@@ -122,6 +125,7 @@ plugins/
 - **Types:** Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem` from their respective composables
 - **Sorting:** News by date DESC then `order` field; events by date ASC; council by `position` number
 - **SEO:** Every page calls `useSeoMeta({ title, description })` — `nuxt-seo-utils` auto-generates OG, Twitter, and canonical tags from those two fields. Do not set `og:title`, `og:description`, `og:url`, `twitter:*`, or `<link rel="canonical">` manually. Page titles must be the short form only (e.g. `'News'`) — the site name suffix is appended automatically.
+- **RSS feed:** `/feed.xml` is pre-rendered at build time from `server/routes/feed.xml.ts`. It contains the 20 most recent non-draft news articles. RSS autodiscovery `<link>` is injected via `app.head` in `nuxt.config.ts`. A visible "RSS Feed" link appears in the footer.
 - **OG images:** Constructed via `useSiteConfig().url` + IPX URL pattern and passed to `useSeoMeta({ ogImage, twitterImage })`.
 - **Schema.org:** Use `useSchemaOrg([defineOrganization(...)])` / `useSchemaOrg([defineArticle(...)])` — helpers must be wrapped in `useSchemaOrg([...])`.
 - **Links:** No trailing slashes on internal links; no absolute `https://newcastle.lgbt/...` URLs in content (use relative paths). `nuxt-link-checker` enforces this during `make develop` and warnings are treated as errors.
@@ -143,6 +147,7 @@ A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn lint` a
 | `nuxt-schema-org` | Schema.org JSON-LD via `useSchemaOrg([defineOrganization(...)])` etc. |
 | `nuxt-link-checker` | Checks for broken/malformed links during dev; warnings are treated as errors |
 | `nuxt-seo-utils` | Auto-generates OG, Twitter, canonical tags and appends site name to page titles |
+| `feed` | Generates the RSS 2.0 feed at `/feed.xml` via `server/routes/feed.xml.ts` (pre-rendered at build time) |
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.
