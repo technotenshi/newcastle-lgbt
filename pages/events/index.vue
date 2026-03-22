@@ -24,7 +24,7 @@
                     format="webp"
                     sizes="100vw lg:50vw"
                     loading="lazy"
-                    class="img-fluid"
+                    class="img-fluid rounded-3"
                   />
                 </div>
               </div>
@@ -220,5 +220,14 @@ const hasEvents = computed(() => events.value.length > 0);
 
 :deep(.event-body p) {
   margin-bottom: 1rem;
+}
+
+.content-wrapper {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 </style>
