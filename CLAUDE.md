@@ -73,3 +73,8 @@ Custom MDC prose components live in `components/content/`. A file there automati
 - PascalCase for component files, camelCase for composables
 - Type-safe interfaces for `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem`
 - Vue composables (`computed`, `ref`, `watch`, etc.) must be explicitly imported — they are **not** auto-imported by ESLint config
+
+<!-- skilld -->
+Before modifying code, evaluate each installed skill against the current task.
+For each skill, determine YES/NO relevance and invoke all YES skills before proceeding.
+<!-- /skilld -->
