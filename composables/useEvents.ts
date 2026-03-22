@@ -187,6 +187,5 @@ export function useEvents(options: UseEventsOptions = {}) {
  * timezone offset ensures comparisons against date strings stored in content files behave as expected.
  */
 export function currentDateIso(reference: Date = new Date()): string {
-  const timezoneOffsetMs = reference.getTimezoneOffset() * 60000;
-  return new Date(reference.getTime() - timezoneOffsetMs).toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(reference);
 }
