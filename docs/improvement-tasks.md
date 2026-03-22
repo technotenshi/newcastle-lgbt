@@ -36,4 +36,4 @@ Backlog of identified improvements, grouped by area. Items within each section a
 ## Developer / Maintenance
 
 - **TypeScript prop and composable types** — `nuxt.config.ts` and `utils/` use TypeScript, but most pages and components use untyped `<script setup>`. Adding `defineProps<{...}>()` types and return types to composables would catch bugs earlier.
-- **Dependency vulnerability audit** — run `make audit` and address any high/critical findings.
+

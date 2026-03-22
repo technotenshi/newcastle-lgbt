@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     preset: "static",
     prerender: {
       crawlLinks: true,
-      routes: ["/"],
+      routes: ["/", "/feed.xml"],
     },
   },
   modules: [
@@ -64,6 +64,12 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          title: "Newcastle LGBTQ Voice - RSS Feed",
+          href: "/feed.xml",
+        },
         {
           rel: "preconnect",
           href: "https://fonts.googleapis.com",
