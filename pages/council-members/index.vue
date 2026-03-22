@@ -94,7 +94,7 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { useHead, useSeoMeta } from '#imports';
+import { useSeoMeta, useSiteConfig } from '#imports';
 import CouncilMembersComponent from '~/components/CouncilMembersComponent.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useCouncil } from '~/composables/useCouncil';
@@ -105,31 +105,23 @@ defineOptions({
   name: 'CouncilMembersIndexPage',
 });
 
-const pageTitle = 'Council Members | Newcastle LGBTQ Voice';
+const pageTitle = 'Council Members';
 const pageDescription = 'Meet the Newcastle City Council members and learn about their commitment to an inclusive community.';
-
-const siteUrl = 'https://newcastle.lgbt';
-const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
 
 definePageMeta({
   title: 'Council Members',
   description: pageDescription,
 });
 
+const { url: siteUrl } = useSiteConfig();
+const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+
 useSeoMeta({
   title: pageTitle,
   description: pageDescription,
-  ogTitle: pageTitle,
-  ogDescription: pageDescription,
   ogImage: defaultOgImage,
-  twitterTitle: pageTitle,
-  twitterDescription: pageDescription,
   twitterCard: 'summary_large_image',
   twitterImage: defaultOgImage,
-});
-
-useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/council-members` }],
 });
 
 const { data: councilData } = await useCouncil();

@@ -16,14 +16,22 @@
   "packageManager": "yarn@4.13.0",
   "devDependencies": {
     "@eslint/js": "^10.0.0",
+    "@nuxtjs/robots": "^5.7.1",
     "@nuxtjs/sitemap": "^7.6.0",
+    "@unhead/vue": "^2.1.12",
     "eslint": "^10.0.0",
     "eslint-plugin-vue": "^10.0.0",
     "glob": "^13.0.0",
     "globals": "^17.0.0",
     "nuxt": "^4.1.2",
+    "nuxt-link-checker": "^4.3.9",
+    "nuxt-og-image": "^6.1.0",
+    "nuxt-schema-org": "^5.0.10",
+    "nuxt-seo-utils": "^7.0.19",
     "serve": "^14.2.5",
-    "sharp": "^0.33.0",
+    "sharp": "^0.34.0",
+    "unstorage": "^1.17.4",
+    "vue": "^3.5.30",
     "vue-eslint-parser": "^10.0.0"
   }
 }

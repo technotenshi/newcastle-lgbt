@@ -62,7 +62,7 @@
               <li class="nav-item">
                 <NuxtLink
                   class="nav-link link text-black text-primary display-4"
-                  to="/news/"
+                  to="/news"
                 >
                   News
                 </NuxtLink>
@@ -70,7 +70,7 @@
               <li class="nav-item">
                 <NuxtLink
                   class="nav-link link text-black text-primary display-4"
-                  to="/council-members/"
+                  to="/council-members"
                 >
                   Newcastle Council members
                 </NuxtLink>
@@ -78,7 +78,7 @@
               <li class="nav-item">
                 <NuxtLink
                   class="nav-link link text-black text-primary display-4"
-                  to="/events/"
+                  to="/events"
                 >
                   Events
                 </NuxtLink>
@@ -86,7 +86,7 @@
               <li class="nav-item">
                 <NuxtLink
                   class="nav-link link text-black text-primary display-4"
-                  to="/organizations/"
+                  to="/organizations"
                 >
                   Organizations
                 </NuxtLink>

@@ -82,7 +82,7 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { useHead, useSeoMeta } from '#imports';
+import { defineOrganization, useSeoMeta, useSiteConfig, useSchemaOrg } from '#imports';
 import { useFeatures } from '~/composables/useFeatures';
 import { useNews } from '~/composables/useNews';
 
@@ -90,37 +90,25 @@ definePageMeta({
   title: 'Home',
 });
 
-const siteUrl = 'https://newcastle.lgbt';
+const { url: siteUrl } = useSiteConfig();
 const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
 
 useSeoMeta({
-  title: 'Home | Newcastle LGBTQ Voice',
+  title: 'Home',
   description:
     "Welcome to Newcastle LGBTQ Voice! Amplifying LGBTQ voices, sharing news, and supporting community events across Newcastle, Washington.",
-  ogTitle: 'Home | Newcastle LGBTQ Voice',
-  ogDescription:
-    "Welcome to Newcastle LGBTQ Voice! Amplifying LGBTQ voices, sharing news, and supporting community events across Newcastle, Washington.",
   ogImage: defaultOgImage,
-  twitterTitle: 'Home | Newcastle LGBTQ Voice',
-  twitterDescription:
-    "Welcome to Newcastle LGBTQ Voice! Amplifying LGBTQ voices, sharing news, and supporting community events across Newcastle, Washington.",
   twitterCard: 'summary_large_image',
   twitterImage: defaultOgImage,
 });
 
-useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/` }],
-  script: [{
-    type: 'application/ld+json',
-    children: JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'Newcastle LGBTQ Voice',
-      url: siteUrl,
-      description: 'Amplifying LGBTQ voices, sharing news, and supporting community events across Newcastle, Washington.',
-    }),
-  }],
-});
+useSchemaOrg([
+  defineOrganization({
+    name: 'Newcastle LGBTQ Voice',
+    url: 'https://newcastle.lgbt',
+    description: 'Amplifying LGBTQ voices, sharing news, and supporting community events across Newcastle, Washington.',
+  }),
+]);
 
 const { data: featuresData } = await useFeatures();
 const { data: latestNewsData } = await useNews({ limit: 6 });

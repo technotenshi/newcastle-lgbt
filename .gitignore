@@ -12,3 +12,6 @@ dist/
 .idea
 .temp/
 .vscode/
+
+# Skilld references (recreated by `skilld install`)
+.skilld

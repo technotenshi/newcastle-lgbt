@@ -17,6 +17,7 @@ The project runs in Docker via `make`. Prefer `make` targets over raw `yarn` com
 | `make preview` | Build then serve preview at `http://localhost:3001` |
 | `make prod` | Alias for `make preview` |
 | `make audit` | Dependency vulnerability audit |
+| `make peer-requirements` | Explain yarn peer dependency requirements |
 | `make down` | Stop and remove containers |
 | `make logs` | Follow container logs |
 
@@ -52,17 +53,42 @@ assets/         # Static styles and images (Bootstrap 5 + Mobirise-derived theme
 - Use semicolons and avoid unused variables or components.
 - PascalCase for component filenames, camelCase for composables.
 - Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem` from their composables.
-- All major pages set SEO metadata via `useSeoMeta` (title, description, OG/Twitter tags).
-- Use `lazy` attribute and `decoding="async"` on `<img>` tags.
 - Vue composables (`computed`, `ref`, `watch`, etc.) must be explicitly imported — not auto-imported.
+- Use `lazy` attribute and `decoding="async"` on `<img>` tags; prefer `<NuxtImg>` for local images.
 
 ## Prose component overrides
 Custom MDC prose components in `components/content/` override the default `@nuxtjs/mdc` rendering for all `<ContentRenderer>` output. Example: `ProseA.vue` overrides link rendering site-wide (external links open in a new tab).
 
 ## Modules & integrations
 - **`@nuxt/image`** — serves `assets/` images as WebP via IPX (`/_ipx/...`). Use `<NuxtImg>` for all local images.
-- **`@nuxtjs/sitemap`** — generates `/sitemap.xml` at build time from prerendered routes; reads `site.url` in `nuxt.config.ts`.
+- **`@nuxtjs/sitemap`** — generates `/sitemap.xml` at build time from prerendered routes; reads `site.url` in `nuxt.config.ts`. `zeroRuntime: true` is set because all content is static.
+- **`@nuxtjs/robots`** — generates `robots.txt` at build time. Do not create `public/robots.txt` manually.
+- **`nuxt-og-image`** — currently **disabled** (`ogImage: { enabled: false }`) because no Satori renderer is configured and its interactive prompt breaks non-TTY Docker. OG images are set via `useSeoMeta({ ogImage, twitterImage })` using IPX URLs constructed with `useSiteConfig().url`.
+- **`nuxt-schema-org`** — provides `useSchemaOrg([...])` with factory helpers (`defineOrganization`, `defineArticle`). Always wrap helpers in `useSchemaOrg([...])` — they are not self-registering composables.
+- **`nuxt-link-checker`** — runs during `make develop` and warns about broken or malformed links. Warnings are treated as errors: fix them. Common rules: no trailing slashes on internal links, no absolute `https://newcastle.lgbt/...` URLs (use relative paths instead).
+- **`nuxt-seo-utils`** — auto-generates `og:title`, `og:description`, `og:url`, `og:site_name`, `twitter:*`, and `<link rel="canonical">` from `useSeoMeta({ title, description })`. Do **not** set these manually. Also appends ` | Newcastle LGBTQ Voice` to every page `<title>` — use short-form titles only (e.g. `'News'`, not `'News | Newcastle LGBTQ Voice'`).
 - **Simple Analytics** — privacy-friendly analytics injected in `nuxt.config.ts`; no configuration needed.
+
+## SEO conventions
+Every page must call `useSeoMeta({ title, description })` at minimum — `nuxt-seo-utils` derives everything else automatically.
+
+OG image pattern:
+```js
+const { url: siteUrl } = useSiteConfig();
+const ogImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/<filename>`;
+useSeoMeta({ title, description, ogImage, twitterCard: 'summary_large_image', twitterImage: ogImage });
+```
+
+Schema.org pattern:
+```js
+import { defineOrganization, useSchemaOrg } from '#imports';
+useSchemaOrg([defineOrganization({ name: '...', url: '...' })]);
+```
+
+Do **not** add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description`, `<link rel="canonical">`.
+
+## TypeScript / IDE setup
+`tsconfig.json` at the project root extends `.nuxt/tsconfig.json` (generated at dev/build time). Run `make develop` or `make build` once to generate `.nuxt/` before opening in an IDE.
 
 ## CI/CD
 - `.github/workflows/yarn-nuxt.yml` — lint + build checks run on every push/PR to `main`

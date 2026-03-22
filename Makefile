@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := default
 
-.PHONY: default install install-dependencies develop down logs lint lint-fix audit build preview prod
+.PHONY: default install install-dependencies develop down logs lint lint-fix audit build preview prod peer-requirements
 
 default:
 	@echo 'Hello, world!'
@@ -36,6 +36,10 @@ lint-fix:
 # Run dependency vulnerability audit
 audit:
 	docker compose run -it --rm app yarn npm audit
+
+# Explain peer dependency requirements
+peer-requirements:
+	docker compose run -it --rm app yarn explain peer-requirements
 
 # Generate static site into .output/public
 build:

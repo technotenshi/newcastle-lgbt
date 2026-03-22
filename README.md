@@ -79,6 +79,7 @@ The project includes a `Dockerfile`, `docker-compose.yml`, and `Makefile` for co
 | `make preview` | Build then serve preview at `http://localhost:3001` |
 | `make prod` | Alias for `make preview` |
 | `make audit` | Dependency vulnerability audit |
+| `make peer-requirements` | Explain yarn peer dependency requirements |
 | `make down` | Stop and remove containers |
 | `make logs` | Follow container logs |
 
@@ -120,12 +121,28 @@ plugins/
 - **Style:** Semicolons required; no unused variables or components (enforced by ESLint in `eslint.config.mjs`)
 - **Types:** Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem` from their respective composables
 - **Sorting:** News by date DESC then `order` field; events by date ASC; council by `position` number
-- **SEO:** All major pages set title, description, and OG/Twitter meta via `useSeoMeta`
-- **Images:** Use `lazy` attribute and `decoding="async"` on `<img>` tags
+- **SEO:** Every page calls `useSeoMeta({ title, description })` — `nuxt-seo-utils` auto-generates OG, Twitter, and canonical tags from those two fields. Do not set `og:title`, `og:description`, `og:url`, `twitter:*`, or `<link rel="canonical">` manually. Page titles must be the short form only (e.g. `'News'`) — the site name suffix is appended automatically.
+- **OG images:** Constructed via `useSiteConfig().url` + IPX URL pattern and passed to `useSeoMeta({ ogImage, twitterImage })`.
+- **Schema.org:** Use `useSchemaOrg([defineOrganization(...)])` / `useSchemaOrg([defineArticle(...)])` — helpers must be wrapped in `useSchemaOrg([...])`.
+- **Links:** No trailing slashes on internal links; no absolute `https://newcastle.lgbt/...` URLs in content (use relative paths). `nuxt-link-checker` enforces this during `make develop` and warnings are treated as errors.
+- **Images:** Use `<NuxtImg>` for local images (served via IPX as WebP). Use `loading="lazy"` and `decoding="async"` on plain `<img>` tags.
 
 ## CI/CD
 
 A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn lint` and `yarn build` automatically on every push and pull request targeting `main`. Dependabot (`.github/dependabot.yml`) opens weekly PRs for npm dependency updates.
+
+## Modules
+
+| Module | Purpose |
+|---|---|
+| `@nuxt/content` | Parses Markdown/JSON from `content/` into a SQLite-backed queryable collection |
+| `@nuxt/image` | Serves `assets/` images as WebP via IPX (`/_ipx/...`). Use `<NuxtImg>` for local images. |
+| `@nuxtjs/sitemap` | Generates `/sitemap.xml` at build time (`zeroRuntime: true`) |
+| `@nuxtjs/robots` | Generates `robots.txt` at build time — do not create `public/robots.txt` manually |
+| `nuxt-og-image` | Disabled (`enabled: false`) — no Satori renderer configured; OG images set via `useSeoMeta` |
+| `nuxt-schema-org` | Schema.org JSON-LD via `useSchemaOrg([defineOrganization(...)])` etc. |
+| `nuxt-link-checker` | Checks for broken/malformed links during dev; warnings are treated as errors |
+| `nuxt-seo-utils` | Auto-generates OG, Twitter, canonical tags and appends site name to page titles |
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.

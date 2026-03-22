@@ -3,6 +3,7 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
   site: {
     url: "https://newcastle.lgbt",
+    name: "Newcastle LGBTQ Voice",
   },
   ssr: true,
   compatibilityDate: "2025-09-18",
@@ -13,7 +14,28 @@ export default defineNuxtConfig({
       routes: ["/"],
     },
   },
-  modules: ["@nuxt/content", "@nuxt/image", "@nuxtjs/sitemap"],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+    "nuxt-og-image",
+    "nuxt-schema-org",
+    "nuxt-link-checker",
+    "nuxt-seo-utils",
+  ],
+  ogImage: {
+    // Disabled until a Satori renderer is configured (nuxt-og-image prompts
+    // interactively when no renderer is installed, which breaks non-TTY Docker).
+    // OG images are currently set via useSeoMeta({ ogImage }) using IPX URLs.
+    enabled: false,
+  },
+  robots: {
+    disallow: [],
+  },
+  sitemap: {
+    zeroRuntime: true,
+  },
   image: {
     dir: "assets",
     format: ["webp"],
@@ -69,20 +91,25 @@ export default defineNuxtConfig({
           src: "https://scripts.simpleanalyticscdn.com/latest.js",
           async: true,
           defer: true,
-          body: true,
+          tagPosition: "bodyClose",
         },
       ],
       noscript: [
         {
-          children:
+          innerHTML:
             '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" />',
         },
         {
-          children:
+          innerHTML:
             '<img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />',
-          body: true,
+          tagPosition: "bodyClose",
         },
       ],
+    },
+  },
+  vite: {
+    optimizeDeps: {
+      include: ["@unhead/schema-org/vue"],
     },
   },
   devtools: { enabled: false },

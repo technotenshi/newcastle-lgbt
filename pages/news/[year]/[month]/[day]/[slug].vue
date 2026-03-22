@@ -33,7 +33,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { createError, queryCollection, useAsyncData, useHead, useRoute, useSeoMeta } from '#imports';
+import { createError, defineArticle, queryCollection, useAsyncData, useRoute, useSeoMeta, useSiteConfig, useSchemaOrg } from '#imports';
 import NewsCommunityCarousel from '~/components/NewsCommunityCarousel.vue';
 import NewsHeaderImage from '~/components/NewsHeaderImage.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
@@ -204,8 +204,6 @@ const articleTitle = computed(() => {
   return typeof title === 'string' && title.trim() ? title.trim() : 'News Article';
 });
 
-const siteUrl = 'https://newcastle.lgbt';
-const siteName = 'Newcastle LGBTQ Voice';
 const fallbackDescription = 'Stay informed with the latest updates from Newcastle LGBTQ Voice.';
 
 const toPlainText = (node) => {
@@ -273,48 +271,35 @@ const pageDescription = computed(() => {
   return fallbackDescription;
 });
 
-const pageTitle = computed(() => `${articleTitle.value} | ${siteName}`);
+const pageTitle = computed(() => articleTitle.value);
+
+const { url: siteUrl } = useSiteConfig();
 
 const ogImageUrl = computed(() => {
   const imagePath = normalizeAssetPath(articleData.value?.image?.path || '');
-  return imagePath ? `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/${imagePath}` : '';
+  return imagePath
+    ? `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/${imagePath}`
+    : `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
 });
 
 useSeoMeta({
   title: () => pageTitle.value,
   description: () => pageDescription.value,
-  ogTitle: () => pageTitle.value,
-  ogDescription: () => pageDescription.value,
   ogType: 'article',
   articlePublishedTime: () => articleData.value?.date ?? '',
-  ogUrl: () => `${siteUrl}${canonicalPath}`,
-  ogImage: () => ogImageUrl.value || undefined,
-  twitterTitle: () => pageTitle.value,
-  twitterDescription: () => pageDescription.value,
+  ogImage: () => ogImageUrl.value,
   twitterCard: 'summary_large_image',
-  twitterImage: () => ogImageUrl.value || undefined,
+  twitterImage: () => ogImageUrl.value,
 });
 
-useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}${canonicalPath}` }],
-  script: [{
-    type: 'application/ld+json',
-    children: () => JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
-      headline: articleTitle.value,
-      datePublished: articleData.value?.date ?? '',
-      image: ogImageUrl.value || undefined,
-      description: pageDescription.value,
-      url: `${siteUrl}${canonicalPath}`,
-      publisher: {
-        '@type': 'Organization',
-        name: siteName,
-        url: siteUrl,
-      },
-    }),
-  }],
-});
+useSchemaOrg([
+  defineArticle({
+    headline: () => articleTitle.value,
+    datePublished: () => articleData.value?.date ?? '',
+    image: () => ogImageUrl.value,
+    description: () => pageDescription.value,
+  }),
+]);
 
 const formattedPublishDate = computed(() => {
   const rawDate = articleData.value?.date;

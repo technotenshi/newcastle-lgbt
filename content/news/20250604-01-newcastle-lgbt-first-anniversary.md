@@ -54,7 +54,7 @@ As we celebrate this milestone, Newcastle.LGBT remains committed to its mission 
 
 We invite you to:
 
-- **Stay Informed**: Visit [newcastle.lgbt](https://newcastle.lgbt) for the latest news and updates.
+- **Stay Informed**: Visit [newcastle.lgbt](/) for the latest news and updates.
 
 - **Get Involved**: Participate in community events and discussions.
 
