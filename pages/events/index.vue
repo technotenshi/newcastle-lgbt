@@ -83,7 +83,7 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { useHead, useSeoMeta } from '#imports';
+import { useSeoMeta, useSiteConfig } from '#imports';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useEvents } from '~/composables/useEvents';
 import { normalizeAssetPath } from '~/utils/assets';
@@ -93,30 +93,22 @@ defineOptions({
   name: 'EventsIndexPage',
 });
 
-const pageTitle = 'Events | Newcastle LGBTQ Voice';
+const pageTitle = 'Events';
 const pageDescription = "Welcome to Newcastle LGBTQ Voice! This is your go-to platform for amplifying LGBTQ voices, advocating for equality, and promoting community events in Newcastle, WA.";
-
-const siteUrl = 'https://newcastle.lgbt';
-const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
 
 definePageMeta({
   title: 'Events',
 });
 
+const { url: siteUrl } = useSiteConfig();
+const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+
 useSeoMeta({
   title: pageTitle,
   description: pageDescription,
-  ogTitle: pageTitle,
-  ogDescription: pageDescription,
   ogImage: defaultOgImage,
-  twitterTitle: pageTitle,
-  twitterDescription: pageDescription,
   twitterCard: 'summary_large_image',
   twitterImage: defaultOgImage,
-});
-
-useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/events` }],
 });
 
 const { data: eventsData } = await useEvents();

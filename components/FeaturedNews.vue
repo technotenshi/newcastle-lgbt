@@ -6,6 +6,7 @@
           :to="link"
           :target="target"
           :rel="linkRel"
+          :aria-label="title"
         >
           <NuxtImg
             v-if="imageUrl"

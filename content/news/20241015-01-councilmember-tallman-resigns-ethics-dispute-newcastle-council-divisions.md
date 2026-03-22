@@ -35,7 +35,7 @@ At the heart of the council’s discord lie broader questions about **inclusivit
 
 [Mayor Clark’s past remarks](/news/2024/06/18/clark-speech-critical-analysis), including his statement that the **American flag** should be the only symbol of unity, underscore a larger resistance to recognizing marginalized groups. This view, shared by members like **Tom Griffin** and the now-resigned **Steve Tallman**, contrasts sharply with councilmembers like **Paul Charbonneau** and **Ariana Sherlock**, who advocate for a more inclusive approach that addresses the needs and rights of historically underrepresented communities, including LGBTQ+ residents.
 
-These ideological divides have contributed to an ongoing dysfunction, as Clark’s leadership continues to prioritize maintaining control over fostering inclusive dialogue. His resistance to **LGBTQ+ inclusivity measures** and [his reluctance to tackle **racial discrimination**](/news/2024/10/01/newcastle-city-council-inclusivity-ethical-leadership-analysis/) within the city’s policies have polarized the council further, making productive discussions around diversity difficult to achieve.
+These ideological divides have contributed to an ongoing dysfunction, as Clark’s leadership continues to prioritize maintaining control over fostering inclusive dialogue. His resistance to **LGBTQ+ inclusivity measures** and [his reluctance to tackle **racial discrimination**](/news/2024/10/01/newcastle-city-council-inclusivity-ethical-leadership-analysis) within the city’s policies have polarized the council further, making productive discussions around diversity difficult to achieve.
 
 ## What’s Next for Newcastle City Council?
 
