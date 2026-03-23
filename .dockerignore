@@ -1,0 +1,43 @@
+# Dependencies — installed fresh inside the container
+node_modules/
+
+# Build and generated outputs — produced inside the container
+.output/
+.nuxt/
+.data/
+.cache/
+
+# Yarn install state — container uses corepack, not needed
+.yarn/
+
+# Git history
+.git/
+.github/
+
+# IDE and local tooling
+.vscode/
+.idea/
+.claude/
+
+# Host-only tooling
+Makefile
+Dockerfile
+docker-compose.yml
+wrangler.toml
+renovate.json
+.nvmrc
+
+# Documentation
+docs/
+README.md
+CLAUDE.md
+AGENTS.md
+
+# Empty directory
+src/
+
+# OS noise and secrets
+.DS_Store
+*.log
+.env
+.env.*

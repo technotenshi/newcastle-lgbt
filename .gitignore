@@ -1,17 +1,20 @@
 *.log
-.cache
+.cache/
 .yarn/install-state.gz
 .DS_Store
-node_modules
+node_modules/
 .nuxt/
-dist/
+dist
 .output/
 .data/
 .env
 .env.*
-.idea
+.idea/
 .temp/
 .vscode/
+
+# Local config (machine-specific, not for version control)
+settings.local.json
 
 # Skilld references (recreated by `skilld install`)
 .skilld
