@@ -12,7 +12,7 @@
     "@nuxt/content": "^3.7.1",
     "@nuxt/image": "^2.0.0",
     "better-sqlite3": "^12.2.0",
-    "feed": "^4.2.2"
+    "feed": "^5.2.0"
   },
   "packageManager": "yarn@4.13.0",
   "devDependencies": {
