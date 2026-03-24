@@ -21,6 +21,7 @@
     "@nuxtjs/robots": "^5.7.1",
     "@nuxtjs/sitemap": "^7.6.0",
     "@unhead/vue": "^2.1.12",
+    "bootstrap": "^5.0.1",
     "eslint": "^10.0.0",
     "eslint-plugin-vue": "^10.0.0",
     "glob": "^13.0.0",
