@@ -9896,8 +9896,8 @@ __metadata:
   linkType: hard
 
 "nuxt-og-image@npm:^6.1.1":
-  version: 6.1.2
-  resolution: "nuxt-og-image@npm:6.1.2"
+  version: 6.2.0
+  resolution: "nuxt-og-image@npm:6.2.0"
   dependencies:
     "@clack/prompts": "npm:^1.1.0"
     "@nuxt/devtools-kit": "npm:^3.2.4"
@@ -9913,7 +9913,9 @@ __metadata:
     magic-string: "npm:^0.30.21"
     magicast: "npm:^0.5.2"
     mocked-exports: "npm:^0.1.1"
-    nuxt-site-config: "npm:^3.2.21"
+    nuxt-site-config: "npm:^4.0.0"
+    nuxtseo-layer-devtools: "npm:^0.3.0"
+    nuxtseo-shared: "npm:^0.7.0"
     nypm: "npm:^0.6.5"
     ofetch: "npm:^1.5.1"
     ohash: "npm:^2.0.11"
@@ -9966,7 +9968,7 @@ __metadata:
       optional: true
   bin:
     nuxt-og-image: bin/cli.mjs
-  checksum: 10c0/30a2487552218c88221a5b4e5f75b468025a3a5cddd9ed69b8d1b72acf3ddc28347a2d96c0a77d2b012a1854178d3c6ee9fcb5a60948207542b0f18a467bdd0c
+  checksum: 10c0/b67abd6cc6cd4bb9b10c7ee0c64fbe176492d4dab00acbd7af3daf4890a8cdb244c0b3868290c23839e2ab2448a74fd48be41f3a7e29d5b9354768ff93eccef7
   languageName: node
   linkType: hard
 
@@ -10041,7 +10043,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-site-config@npm:^3.2.11, nuxt-site-config@npm:^3.2.21":
+"nuxt-site-config@npm:^3.2.11":
   version: 3.2.21
   resolution: "nuxt-site-config@npm:3.2.21"
   dependencies:
