@@ -1434,7 +1434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-kit@npm:3.2.4, @nuxt/devtools-kit@npm:^3.1.1, @nuxt/devtools-kit@npm:^3.2.1, @nuxt/devtools-kit@npm:^3.2.2, @nuxt/devtools-kit@npm:^3.2.4":
+"@nuxt/devtools-kit@npm:3.2.4, @nuxt/devtools-kit@npm:^3.1.1, @nuxt/devtools-kit@npm:^3.2.1, @nuxt/devtools-kit@npm:^3.2.4":
   version: 3.2.4
   resolution: "@nuxt/devtools-kit@npm:3.2.4"
   dependencies:
@@ -1942,28 +1942,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/robots@npm:^5.7.1":
-  version: 5.7.1
-  resolution: "@nuxtjs/robots@npm:5.7.1"
+"@nuxtjs/robots@npm:^6.0.0":
+  version: 6.0.1
+  resolution: "@nuxtjs/robots@npm:6.0.1"
   dependencies:
     "@fingerprintjs/botd": "npm:^2.0.0"
-    "@nuxt/devtools-kit": "npm:^3.2.2"
-    "@nuxt/kit": "npm:^4.3.1"
+    "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
+    "@nuxt/kit": "npm:^4.4.2"
     consola: "npm:^3.4.2"
     defu: "npm:^6.1.4"
-    h3: "npm:^1.15.5"
-    nuxt-site-config: "npm:^3.2.21"
+    h3: "npm:^1.15.10"
+    nuxt-site-config: "npm:^4.0.0"
+    nuxtseo-layer-devtools: "npm:^0.3.0"
+    nuxtseo-shared: "npm:^0.7.0"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.0"
     sirv: "npm:^3.0.2"
-    std-env: "npm:^3.10.0"
+    std-env: "npm:^4.0.0"
     ufo: "npm:^1.6.3"
   peerDependencies:
     zod: ">=3"
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/e9206fe64ba60e6a8d2295ad0607c633cf76dbf1a1322cd7bf41277df20b1c1295140e31ad83e0c204b47123d1ff5a6e956d7a951ecb72982746dafd2c21980c
+  checksum: 10c0/ae7b4f60b99dc72046b50891bfa82fde5271dd7dd10c74b72f590abd11746608a5a3c8a1649b28b9046dab1e1b706b5d723b1f827ab766bb894d1d8e25f01ec1
   languageName: node
   linkType: hard
 
@@ -9571,7 +9573,7 @@ __metadata:
     "@fullhuman/postcss-purgecss": "npm:^8.0.0"
     "@nuxt/content": "npm:^3.7.1"
     "@nuxt/image": "npm:^2.0.0"
-    "@nuxtjs/robots": "npm:^5.7.1"
+    "@nuxtjs/robots": "npm:^6.0.0"
     "@nuxtjs/sitemap": "npm:^8.0.0"
     "@unhead/vue": "npm:^2.1.12"
     better-sqlite3: "npm:^12.2.0"
