@@ -4116,7 +4116,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unhead/schema-org@npm:^2.0.19":
+"@unhead/schema-org@npm:^2.1.12":
   version: 2.1.12
   resolution: "@unhead/schema-org@npm:2.1.12"
   dependencies:
@@ -9586,7 +9586,7 @@ __metadata:
     nuxt: "npm:^4.1.2"
     nuxt-link-checker: "npm:^4.3.9"
     nuxt-og-image: "npm:^6.1.1"
-    nuxt-schema-org: "npm:^5.0.10"
+    nuxt-schema-org: "npm:^6.0.0"
     nuxt-seo-utils: "npm:^7.0.19"
     postcss: "npm:^8.0.0"
     serve: "npm:^14.2.5"
@@ -9972,17 +9972,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-schema-org@npm:^5.0.10":
-  version: 5.0.10
-  resolution: "nuxt-schema-org@npm:5.0.10"
+"nuxt-schema-org@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "nuxt-schema-org@npm:6.0.0"
   dependencies:
-    "@nuxt/kit": "npm:^4.2.2"
-    "@unhead/schema-org": "npm:^2.0.19"
+    "@nuxt/kit": "npm:^4.4.2"
+    "@unhead/schema-org": "npm:^2.1.12"
     defu: "npm:^6.1.4"
-    nuxt-site-config: "npm:^3.2.11"
-    pathe: "npm:^2.0.3"
+    nuxt-site-config: "npm:^4.0.0"
+    nuxtseo-layer-devtools: "npm:^0.3.0"
+    nuxtseo-shared: "npm:^0.7.0"
     pkg-types: "npm:^2.3.0"
-    sirv: "npm:^3.0.2"
   peerDependencies:
     "@unhead/vue": ^2.0.7
     unhead: ^2.0.7
@@ -9994,7 +9994,7 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/4fea05e4698b4908e52e1d9030afc2c3a4b0603bf512ef059f518d94e3c6946b027db7e58a004e3ede3947ff833a07ee97d1a3884d25c10ba43d27a9e9ac2e87
+  checksum: 10c0/07dc14485485433b7ac9b615ea1bf725c1f606fe2f28f66451e8b388408e9e916c1722af28531f224ba89f6860a3e86f1125906c9bbb6dcc9abda825a146354a
   languageName: node
   linkType: hard
 
