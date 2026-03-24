@@ -720,6 +720,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fullhuman/postcss-purgecss@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@fullhuman/postcss-purgecss@npm:8.0.0"
+  dependencies:
+    purgecss: "npm:^8.0.0"
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 10c0/b690ae00b909440e9db644e73b6dcc870e30bfdb2b9911c5e2e7e4e1070f6a4b5e124a91e32f27e20aeea6246b027b5ba40a0cacc4f011212f1cc7c3c9a2524f
+  languageName: node
+  linkType: hard
+
 "@gar/promise-retry@npm:^1.0.0":
   version: 1.0.3
   resolution: "@gar/promise-retry@npm:1.0.3"
@@ -3940,6 +3951,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bootstrap@npm:^5.0.1":
+  version: 5.3.8
+  resolution: "bootstrap@npm:5.3.8"
+  peerDependencies:
+    "@popperjs/core": ^2.11.8
+  checksum: 10c0/0039a9df2c3e7bfa04f1abca199c299ff3b75869d578c0cb1721c6f1f203c91531788a5631ecbee01513481979314d0e4ba0d90c2011e6ce18fc2e0bc93e18d9
+  languageName: node
+  linkType: hard
+
 "boxen@npm:7.0.0":
   version: 7.0.0
   resolution: "boxen@npm:7.0.0"
@@ -4398,6 +4418,13 @@ __metadata:
   version: 11.1.0
   resolution: "commander@npm:11.1.0"
   checksum: 10c0/13cc6ac875e48780250f723fb81c1c1178d35c5decb1abb1b628b3177af08a8554e76b2c0f29de72d69eef7c864d12613272a71fabef8047922bc622ab75a179
+  languageName: node
+  linkType: hard
+
+"commander@npm:^12.1.0":
+  version: 12.1.0
+  resolution: "commander@npm:12.1.0"
+  checksum: 10c0/6e1996680c083b3b897bfc1cfe1c58dfbcd9842fd43e1aaf8a795fbc237f65efcc860a3ef457b318e73f29a4f4a28f6403c3d653d021d960e4632dd45bde54a9
   languageName: node
   linkType: hard
 
@@ -5531,7 +5558,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.3":
+"fast-glob@npm:^3.3.2, fast-glob@npm:^3.3.3":
   version: 3.3.3
   resolution: "fast-glob@npm:3.3.3"
   dependencies:
@@ -8160,12 +8187,14 @@ __metadata:
   resolution: "newcastle-lgbt-site@workspace:."
   dependencies:
     "@eslint/js": "npm:^10.0.0"
+    "@fullhuman/postcss-purgecss": "npm:^8.0.0"
     "@nuxt/content": "npm:^3.7.1"
     "@nuxt/image": "npm:^2.0.0"
     "@nuxtjs/robots": "npm:^5.7.1"
     "@nuxtjs/sitemap": "npm:^7.6.0"
     "@unhead/vue": "npm:^2.1.12"
     better-sqlite3: "npm:^12.2.0"
+    bootstrap: "npm:^5.0.1"
     eslint: "npm:^10.0.0"
     eslint-plugin-vue: "npm:^10.0.0"
     feed: "npm:^5.2.0"
@@ -8176,6 +8205,7 @@ __metadata:
     nuxt-og-image: "npm:^6.1.1"
     nuxt-schema-org: "npm:^5.0.10"
     nuxt-seo-utils: "npm:^7.0.19"
+    postcss: "npm:^8.0.0"
     serve: "npm:^14.2.5"
     sharp: "npm:^0.34.0"
     unstorage: "npm:^1.17.4"
@@ -9726,7 +9756,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.6, postcss@npm:^8.5.8":
+"postcss@npm:^8.0.0, postcss@npm:^8.4.47, postcss@npm:^8.5.6, postcss@npm:^8.5.8":
   version: 8.5.8
   resolution: "postcss@npm:8.5.8"
   dependencies:
@@ -9838,6 +9868,20 @@ __metadata:
   version: 2.3.1
   resolution: "punycode@npm:2.3.1"
   checksum: 10c0/14f76a8206bc3464f794fb2e3d3cc665ae416c01893ad7a02b23766eb07159144ee612ad67af5e84fa4479ccfe67678c4feb126b0485651b302babf66f04f9e9
+  languageName: node
+  linkType: hard
+
+"purgecss@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "purgecss@npm:8.0.0"
+  dependencies:
+    commander: "npm:^12.1.0"
+    fast-glob: "npm:^3.3.2"
+    postcss: "npm:^8.4.47"
+    postcss-selector-parser: "npm:^7.0.0"
+  bin:
+    purgecss: bin/purgecss.js
+  checksum: 10c0/b1f720462da416ee22fe4899d28944eb9e8660a50c8d1e6881ddd762e3c376a5b7e1fb07501528e48964e7fb478c4345db58fe48f7e934eadd9acde233de9bad
   languageName: node
   linkType: hard
 

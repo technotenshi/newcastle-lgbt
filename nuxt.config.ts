@@ -82,12 +82,12 @@ export default defineNuxtConfig({
         {
           rel: "preload",
           as: "style",
-          href: "https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap",
+          href: "https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700&display=swap",
           onload: "this.onload=null;this.rel='stylesheet'",
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap",
+          href: "https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700&display=swap",
           media: "print",
           onload: "this.media='all'",
         },
@@ -103,7 +103,7 @@ export default defineNuxtConfig({
       noscript: [
         {
           innerHTML:
-            '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" />',
+            '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700&display=swap" />',
         },
         {
           innerHTML:
@@ -115,7 +115,66 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      include: ["@unhead/schema-org/vue"],
+      include: [
+        "@unhead/schema-org/vue",
+        "bootstrap/js/dist/collapse.js",
+        "bootstrap/js/dist/carousel.js",
+      ],
+    },
+  },
+  postcss: {
+    plugins: {
+      "@fullhuman/postcss-purgecss": process.env.NODE_ENV === "production"
+        ? {
+            content: [
+              "./pages/**/*.vue",
+              "./components/**/*.vue",
+              "./layouts/**/*.vue",
+              "./app.vue",
+              "./content/**/*.md",
+              "./content/**/*.json",
+            ],
+            safelist: {
+              standard: [
+                "show",
+                "fade",
+                "in",
+                "active",
+                "disabled",
+                "open",
+                "collapse",
+                "collapsing",
+                "collapsed",
+                "visually-hidden",
+                /^col-/,
+                /^offset-/,
+                /^order-/,
+                /^g-/,
+                /^d-/,
+                /^flex-/,
+                /^justify-content-/,
+                /^align-/,
+                /^m[tblrsexy]?-/,
+                /^p[tblrsexy]?-/,
+                /^text-/,
+                /^fw-/,
+                /^bg-/,
+                /^border/,
+                /^btn/,
+                /^nav/,
+                /^navbar/,
+                /^dropdown/,
+                /^modal/,
+                /^carousel/,
+                /^mbr-/,
+                /^cid-/,
+                /^display-/,
+              ],
+            },
+            defaultExtractor: (content: string) =>
+              content.match(/[\w-/:]+(?<!:)/g) ?? [],
+          }
+        : false,
     },
   },
   devtools: { enabled: false },

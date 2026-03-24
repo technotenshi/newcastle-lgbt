@@ -11,6 +11,8 @@
             <NuxtImg
               src="images/K59bqmorPm9qeV7qbg4Dozml.webp"
               alt="Newcastle LGBTQ Voice"
+              width="1024"
+              height="1024"
               format="webp"
               sizes="100vw md:50vw"
               loading="eager"
