@@ -34,7 +34,7 @@ The bundled CSS includes Bootstrap classes that are never used in the rendered p
 
 ---
 
-### 2. Unused JavaScript — 49 KiB savings (all pages)
+### 2. Unused JavaScript — 49 KiB savings (all pages) ✅ Resolved
 
 **File:** `_nuxt/e12K7xZ4.js`
 
@@ -42,9 +42,11 @@ A Nuxt chunk (~49 KiB wasted) contains code that is loaded but not executed on i
 
 **Fix:** Audit `plugins/bootstrap.client.ts` — Bootstrap JS is only needed for interactive components (dropdowns, modals). If no interactive Bootstrap components are used on a given page, lazy-load or conditionally import it.
 
+**Status: Resolved 2026-03-23** — replaced `bootstrap.bundle.min.js` with individual imports (`collapse.js` + `carousel.js`). Popper.js and all unused Bootstrap components (Modal, Dropdown, Tooltip, etc.) eliminated. Estimated reduction: ~65 KB minified / ~21 KB gzip.
+
 ---
 
-### 3. Image without explicit `width` and `height` — CLS risk (home page)
+### 3. Image without explicit `width` and `height` — CLS risk (home page) ✅ Resolved
 
 **Element:** The hero `<NuxtImg>` in `pages/index.vue`
 
@@ -55,6 +57,8 @@ A Nuxt chunk (~49 KiB wasted) contains code that is loaded but not executed on i
 No explicit `width` and `height` attributes are set. Browsers cannot reserve layout space before the image loads, which can cause Cumulative Layout Shift. The CLS score is currently 0.05 (passes), but this is fragile.
 
 **Fix:** Add `width` and `height` to the `<NuxtImg>` matching the source image's intrinsic dimensions. `@nuxt/image` uses these for aspect-ratio reservation.
+
+**Status: Resolved 2026-03-23** — added `width="1024" height="1024"` to the hero `<NuxtImg>` in `pages/index.vue`. Browsers now reserve the correct 1:1 aspect-ratio space before the image loads. CLS hardened.
 
 ---
 
@@ -74,9 +78,9 @@ Lighthouse reported "Internal error. Not actionable" for back/forward cache rest
 
 The site is in excellent shape. No Core Web Vitals failures. The two actionable improvements are:
 
-| Priority | Task | Effort | Impact |
-|---|---|---|---|
-| High | Prune Jost font weights | Low | -50–60% font payload |
-| Medium | Add `width`/`height` to hero `<NuxtImg>` | Very low | CLS hardening |
-| Low | Investigate Bootstrap JS lazy-load | Medium | -49 KiB JS |
-| Low | PurgeCSS for Bootstrap | Medium | -37 KiB CSS |
+| Priority | Task | Effort | Impact | Status |
+|---|---|---|---|---|
+| High | Prune Jost font weights | Low | -50–60% font payload | Open |
+| Medium | Add `width`/`height` to hero `<NuxtImg>` | Very low | CLS hardening | ✅ Done 2026-03-23 |
+| Low | Bootstrap JS lazy-load | Medium | -49 KiB JS | ✅ Done 2026-03-23 |
+| Low | PurgeCSS for Bootstrap | Medium | -37 KiB CSS | Open |
