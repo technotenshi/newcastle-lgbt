@@ -7,7 +7,7 @@ Backlog of identified improvements, grouped by area. Items within each section a
 ## Performance
 
 - **Prune Jost font weights** — all 9 weights (100–900) are loaded but only 3–4 are used in CSS. Remove unused weights from the `nuxt.config.ts` preload list to cut ~50–60% of the font payload.
-- **Core Web Vitals audit** — run Lighthouse against the built site (`.output/public`) to surface LCP, CLS, and INP issues and prioritize fixes.
+- ~~**Core Web Vitals audit**~~ — ✅ Done 2026-03-23. See `docs/lighthouse/audit-results.md`. All pages score 98–100; remaining open items tracked there.
 
 ---
 
@@ -28,7 +28,7 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 ## Content Features
 
-- **RSS feed** — community news sites are a natural fit for RSS. `@nuxt/feed` can auto-generate a feed from the `content/news/` collection, making it easy for readers to subscribe.
+- ~~**RSS feed**~~ — ✅ Done. RSS 2.0 feed live at `/feed.xml` via `server/routes/feed.xml.ts`; autodiscovery link in `<head>`; footer link in `layouts/default.vue`.
 - **"Add to calendar" link on events** — add an iCal (`.ics`) download link or "Add to Google Calendar" URL to each event entry on the events page.
 
 ---

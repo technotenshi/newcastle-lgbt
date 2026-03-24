@@ -103,7 +103,7 @@ content/
   features.json # Homepage feature cards
 assets/         # Static styles and images (Bootstrap 5 + custom Mobirise-derived theme)
 plugins/
-  bootstrap.client.ts  # Bootstrap JS initialization (client-only)
+  bootstrap.client.ts  # Bootstrap JS (client-only) — collapse.js + carousel.js only; Popper.js excluded
 ```
 
 ## Content conventions
