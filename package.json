@@ -17,6 +17,7 @@
   "packageManager": "yarn@4.13.0",
   "devDependencies": {
     "@eslint/js": "^10.0.0",
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "@nuxtjs/robots": "^5.7.1",
     "@nuxtjs/sitemap": "^7.6.0",
     "@unhead/vue": "^2.1.12",
@@ -29,6 +30,7 @@
     "nuxt-og-image": "^6.1.1",
     "nuxt-schema-org": "^5.0.10",
     "nuxt-seo-utils": "^7.0.19",
+    "postcss": "^8.0.0",
     "serve": "^14.2.5",
     "sharp": "^0.34.0",
     "unstorage": "^1.17.4",
