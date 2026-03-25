@@ -220,6 +220,7 @@ Use these guidelines to produce DALL-E or Midjourney prompts for every image slo
 - **Inclusive representation** — depict LGBTQ+ community members with diversity in age, race, body type, and gender expression. Avoid stereotypes.
 - **Match the content style** — civic/political articles call for photorealistic documentary photography; social/party events call for graphic-design promotional artwork (see style guide below).
 - **No real people** — do not reference specific named individuals or public figures.
+- **Avoid near-duplicate article images** — if a news article uses both `image` and `imageHeader`, they should support the same story from clearly different visual angles. Do not use the same scene with only a tighter crop. Change at least one of: scene type, primary subject, vantage point, or narrative angle. A good default is one institutional or contextual image and one operational or street-level image.
 
 ### Aspect ratio reference
 
@@ -228,7 +229,7 @@ Each image slot renders at a specific size on the site. Use the matching aspect 
 | Image slot | Where it renders | Recommended AR | DALL-E size | Midjourney flag |
 |---|---|---|---|---|
 | `image` (news feature) | 180px-tall thumbnail in 3-col grid | 16:9 | `1792x1024` | `--ar 16:9` |
-| `imageHeader` (news) | 511px wide, centered column, tall | 4:5 | `1024x1280` | `--ar 4:5` |
+| `imageHeader` (news) | 511px wide, centered column, cropped to landscape | 16:9 | `1792x1024` | `--ar 16:9` |
 | `carousel` images | Full-width responsive carousel | 16:9 | `1792x1024` | `--ar 16:9` |
 | `image` (events) | `img-fluid` in 2-col layout | 4:3 | `1792x1024` | `--ar 4:3` |
 
@@ -245,6 +246,13 @@ Each image slot renders at a specific size on the site. Use the matching aspect 
 ### Photo-style prompts
 
 Use for news articles and events that depict real-world scenes.
+
+When writing both `image` and `imageHeader` prompts for the same article, separate them intentionally:
+
+- `image` usually works best as the broader contextual or institutional view
+- `imageHeader` usually works best as the more immediate, specific, or visually striking angle
+- If the first prompt is outdoors, consider making the second indoors or document-focused when the article supports it
+- If both must stay outdoors, change the main subject and vantage point, not just the crop
 
 **DALL-E formula:**
 ```
@@ -278,11 +286,11 @@ wide angle, candid photojournalism, inclusive ages and ethnicities
 --ar 16:9 --style raw --v 7
 ```
 
-**Midjourney example — news header (portrait crop):**
+**Midjourney example — news header (landscape crop):**
 ```
-close-up portrait of community members at LGBTQ+ pride rally, rainbow flags in
-background, shallow depth of field, warm sunlight, photojournalism style
---ar 4:5 --style raw --v 7
+community members at LGBTQ+ pride rally, rainbow flags in background, wide
+framing, shallow depth of field, warm sunlight, photojournalism style
+--ar 16:9 --style raw --v 7
 ```
 
 ---
@@ -331,13 +339,14 @@ playful geometric shapes, energetic mood, flat graphic design, no text
 2. **Look up the aspect ratio** from the table above and note the Midjourney flag or DALL-E size
 3. **Read the article/event body** — extract: location, main topic, key visual elements (people, objects, setting), and emotional tone
 4. **Choose photo vs. graphic-design style** using the style guide table above
-5. **Fill in the template** — replace bracketed placeholders with content-specific details
-6. **Append the required suffix:**
+5. **Plan distinct coverage across slots** — if both `image` and `imageHeader` are present, decide how they differ before writing prompts. Do this by changing scene type, primary subject, vantage point, or narrative angle, not just image distance
+6. **Fill in the template** — replace bracketed placeholders with content-specific details
+7. **Append the required suffix:**
    - DALL-E photo: end with `photorealistic, no text or logos`
    - DALL-E graphic: end with `no text`
    - Midjourney photo: append `--ar [ratio] --style raw --v 7`
    - Midjourney graphic: append `--ar [ratio] --v 7`
-7. **Save the image** using the filename convention: `YYYYMMDD-##-descriptive-name.png` in the appropriate subfolder (`assets/images/news/` or `assets/images/events/`)
+8. **Save the image** using the filename convention: `YYYYMMDD-##-descriptive-name.png` in the appropriate subfolder (`assets/images/news/` or `assets/images/events/`)
 
 ---
 

@@ -13,6 +13,7 @@ Reference for generating images with **Midjourney v7** and **DALL-E 3** for use 
 - **Specificity beats vagueness** — concrete scene details produce better results than generic adjectives.
 - **Always name a lighting condition** — lighting determines mood (see Lighting Reference below).
 - **No named real people** — do not reference specific individuals or public figures by name.
+- **Paired article images should be related, not redundant** — when an article uses both `image` and `imageHeader`, keep them on the same topic but make them meaningfully different. Do not rely on minor crop or distance changes alone. Change at least one of: scene type, primary subject, vantage point, or narrative angle. A strong default is to pair an institutional or contextual scene with an operational or street-level scene, or to pair a wide establishing view with a clearly different close subject.
 
 ---
 
@@ -21,7 +22,7 @@ Reference for generating images with **Midjourney v7** and **DALL-E 3** for use 
 | Image slot | Recommended AR | DALL-E size | Midjourney |
 |---|---|---|---|
 | `image` (news feature) | 16:9 | `1792x1024` | `--ar 16:9` |
-| `imageHeader` (news) | 4:5 | `1024x1792` | `--ar 4:5` |
+| `imageHeader` (news) | 16:9 | `1792x1024` | `--ar 16:9` |
 | `carousel` images | 16:9 | `1792x1024` | `--ar 16:9` |
 | `image` (events) | 4:3 | `1792x1024` | `--ar 4:3` |
 
