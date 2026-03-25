@@ -30,7 +30,7 @@
     "nuxt-link-checker": "^4.3.9",
     "nuxt-og-image": "^6.1.1",
     "nuxt-schema-org": "^6.0.0",
-    "nuxt-seo-utils": "^7.0.19",
+    "nuxt-seo-utils": "^8.0.0",
     "postcss": "^8.0.0",
     "serve": "^14.2.5",
     "sharp": "^0.34.0",
