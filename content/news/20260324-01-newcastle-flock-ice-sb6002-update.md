@@ -11,31 +11,27 @@ imageHeader:
   alt: "An ICE detention was logged this morning at Coal Creek Parkway and Newcastle Way, directly under a Newcastle Flock camera that has never been independently audited for federal access."
 ---
 
-:Dateline This morning, March 24, 2026, an ICE detention was logged at **Coal Creek Parkway and Newcastle Way in Newcastle** — the exact intersection monitored by one of the city's **Flock Safety ALPR cameras**. The incident came as **King County is voting today to prohibit ICE from staging operations on county property** and as **SB 6002**, Washington's new Driver Privacy Act, awaits the governor's signature. Newcastle's cameras remain online. The city council has taken no independent action.
+:Dateline This morning, March 24, 2026, an ICE detention was logged at **Coal Creek Parkway and Newcastle Way in Newcastle** — directly under one of the city's **Flock Safety ALPR cameras**. Newcastle's cameras remain online and the city council has taken no independent action, even as **SB 6002**, Washington's new Driver Privacy Act, awaits the governor's signature and at least ten jurisdictions across the state have already shut their cameras down.
 
-What had been an abstract surveillance debate is now a same-day Newcastle incident. This article updates our [November 2025 investigation into Flock Safety and surveillance in Washington and Newcastle](/news/2025/11/20/wa-flock-safety-surveillance-crisis) through the most immediate fact available to residents: an ICE detention was reported this morning under one of the cameras the city still operates without an independent audit of federal access.
+This article updates our [November 2025 investigation into Flock Safety and surveillance in Washington and Newcastle](/news/2025/11/20/wa-flock-safety-surveillance-crisis). Readers unfamiliar with the background are encouraged to read that piece first.
 
 ## An ICE Detention This Morning, Under a Newcastle Flock Camera
 
-This morning, **DFRoster**, a community-driven ICE activity reporting platform, logged an ICE detention at **Coal Creek Parkway and Newcastle Way**. That location matters because, as documented in our original report, it is one of the intersections where Newcastle operates a **Flock Safety ALPR camera**.
+**DFRoster**, a community-driven ICE activity reporting platform, logged the stop at Coal Creek Parkway and Newcastle Way. According to the report, a Newcastle police officer operating under the **King County Sheriff's Office** contract was present in the area and drove past without intervening.
 
-According to the report, a Newcastle police officer operating under the **King County Sheriff's Office** contract was present in the area and drove past the scene without intervening.
+No independent news coverage of the incident was available at time of publication, which is consistent with how quickly street-level immigration enforcement actions occur. That is one reason tools like **DFRoster**, **ICEBlock**, and **ICE Tea Tools** emerged in 2025: individual ICE encounters often never become formal local news stories, even when they happen in heavily surveilled public space.
 
-No independent news coverage of this specific incident was available at time of publication, which is consistent with how quickly street-level immigration enforcement actions occur. That is one reason tools like **DFRoster**, **ICEBlock**, and **ICE Tea Tools** emerged in 2025: many individual ICE encounters never become formal local news stories, even when they happen in heavily surveilled public space.
-
-The significance here is not only that an ICE detention was reported in Newcastle. It is that the detention was reported at the exact intersection watched by one of Newcastle's cameras, in a city that has never publicly released an independent audit showing whether its Flock data has been queried through National Lookup, the CBP pilot program, or any other federal pathway.
-
-King County recorded **1,030 ICE arrests in 2025**, the most of any Washington county, representing a 300-plus percent increase from January to December. Today's incident places Newcastle directly inside that countywide pattern rather than outside it.
+King County recorded **1,030 ICE arrests in 2025**, the most of any Washington county, representing a 300-plus percent increase from January to December. Today's detention places Newcastle directly inside that countywide pattern.
 
 ## Why a Flock-Covered Intersection Matters
 
 As documented in our original report, federal agencies access local ALPR networks through three pathways: direct "front door" sharing, "back door" access through national lookup tools and undisclosed federal pilot programs, and "side door" searches in which local officers run queries on behalf of federal agencies. None of those pathways requires a warrant.
 
-That is why the location of this morning's detention matters. A **March 11, 2026 University of Washington Center for Human Rights data release** documented how federal agents used license plate reader data to conduct what researchers called **"non-custodial arrests"**: stops in which agents determined a person's "deportability" and made an arrest within as little as 10 minutes, without a warrant and without any individualized probable cause assessment of escape risk.
+That is why the location of today's detention matters. A **March 11, 2026 University of Washington Center for Human Rights data release** documented how federal agents used license plate reader data to conduct what researchers called **"non-custodial arrests"**: stops in which agents determined a person's "deportability" and made an arrest within as little as 10 minutes, without a warrant and without any individualized probable cause assessment of escape risk.
 
 New national evidence shows how widespread that architecture has become. In **San Francisco**, SFPD allowed out-of-state agencies to make **1.6 million searches** of its Flock database in violation of California law. At least 19 were ICE-related. In **Syracuse, New York**, the city council unanimously revoked Flock's permission to operate after discovering its data had been searched **4.4 million times** by agencies nationwide. In **Johnson County, Texas**, a sheriff's deputy used Flock to search 83,345 cameras across 6,809 networks to track a woman suspected of self-administering an abortion.
 
-The officer's reported inaction this morning is consistent with **KCSO's published policy** under the **Keep Washington Working Act**: deputies do not participate in federal immigration enforcement and respond only to events that jeopardize public safety. But that policy does not answer the most important local questions raised by today's incident. It does not say whether KCSO audits Newcastle's camera access logs for federal use, whether federal agencies have ever searched Newcastle data in connection with immigration enforcement, or whether the Flock camera at Coal Creek Parkway and Newcastle Way logged today's stop.
+The officer's reported inaction is consistent with **KCSO's published policy** under the **Keep Washington Working Act**: deputies do not participate in federal immigration enforcement and respond only to events that jeopardize public safety. But that policy does not answer the most important questions raised by today's detention. It does not say whether KCSO audits Newcastle's camera access logs for federal use, whether federal agencies have ever searched Newcastle data in connection with immigration enforcement, or whether the camera at that intersection logged the stop.
 
 ## What SB 6002 Would Change
 
@@ -50,7 +46,7 @@ If signed, the bill would impose new obligations on Newcastle, KCSO, and every F
 - Mandatory two-year audit trails
 - An emergency clause making the law effective immediately upon signing
 
-Those changes matter directly to Newcastle because today's detention occurred before any independent local review of federal access to the city's camera network. If signed, SB 6002 would not erase what happened this morning, but it would create a clearer legal standard against which Newcastle's continued operation of Flock cameras could be judged.
+Those changes matter because today's detention occurred before any independent local review of federal access to Newcastle's camera network. If signed, SB 6002 would not undo that, but it would create a clearer legal standard against which Newcastle's continued operation of Flock cameras could be judged.
 
 The bill has also drawn criticism. The **ACLU of Washington** said it "does not go far enough," objecting to the 21-day retention window after earlier proposals were shorter. **People Power WA** and **Seattle Indivisible** opposed the final version on the grounds that it still leaves immigrant communities vulnerable. Civil liberties groups have also warned that vendor access and architectural workarounds remain unresolved.
 
@@ -60,9 +56,11 @@ When our original report was published in November 2025, **Redmond**, **Skamania
 
 **Olympia** deactivated all 15 of its cameras on December 3, 2025, citing sanctuary-city concerns and the risks of federal data access. **Lynnwood** voted unanimously to terminate its contract on February 22, 2026 after discovering out-of-state agencies had searched its data with the stated reason "ICE." **Everett** shut down its system on February 25, 2026 after a **Snohomish County Superior Court** ruling that Flock footage constitutes a public record threatened to force mass disclosure of images. **Edmonds** paused its cameras, and **Mountlake Terrace** terminated its contract before installation.
 
-The courts are still split. A **Pierce County Superior Court** judge later ruled the opposite way, meaning Washington now has conflicting superior court decisions on one of the central legal questions surrounding ALPR surveillance. SB 6002's public-records exemption may settle that question first, but until then, multiple cities have already decided the risk is too high.
+The courts are still split. A **Pierce County Superior Court** judge later ruled the opposite way, meaning Washington now has conflicting superior court decisions on one of the central legal questions surrounding ALPR surveillance. SB 6002's public-records exemption may settle that question first, but multiple cities have already decided the risk is too high.
 
-Some jurisdictions chose to narrow rather than end their systems. **Renton**, **Auburn**, **Mukilteo**, and **Lakewood** disabled National Lookup or restricted out-of-state access after the UW report. **Mill Creek** progressively narrowed sharing from Washington-only agencies to Snohomish County only. Newcastle has taken neither path. No Newcastle City Council resolution, ordinance, or agenda item addressing Flock Safety, ALPR policy, or immigration enforcement appears in public records.
+Some jurisdictions chose to narrow rather than end their systems. **Renton**, **Auburn**, **Mukilteo**, and **Lakewood** disabled National Lookup or restricted out-of-state access after the UW report. **Mill Creek** progressively narrowed sharing from Washington-only agencies to Snohomish County only.
+
+Newcastle has taken neither path. No city council resolution, ordinance, or agenda item addressing Flock Safety, ALPR policy, or immigration enforcement appears in public records.
 
 ## Newcastle Is Becoming an Outlier in King County
 
@@ -70,17 +68,17 @@ Newcastle operates Flock cameras through KCSO with a stated prohibition on immig
 
 The only immigration-related document on Newcastle's city website is a **KCSO Statement on Immigration Enforcement**, dated February 4, 2026: a county-level document, not a Newcastle policy. Newcastle is not a sanctuary city and has no standalone sanctuary protections beyond what Washington State and King County provide.
 
-Meanwhile, King County has moved in the opposite direction. A **March 3, 2026 moratorium** passed on new detention facilities in unincorporated areas. Today, the **King County Council is voting to prohibit ICE from staging operations on county property**. **Seattle is voting today to extend CCTV privacy protections to ALPR data**, a move that could set precedent across the region.
+Meanwhile, King County has moved in the opposite direction. A **March 3, 2026 moratorium** passed on new detention facilities in unincorporated areas. Today, the **King County Council is voting to prohibit ICE from staging operations on county property**. **Seattle is also voting today to extend CCTV privacy protections to ALPR data**, a move that could set precedent across the region.
 
-The UW report examined only 31 of the 80-plus Washington Flock-operating agencies. Newcastle was not among them. That means no independent audit has ever been conducted of whether Newcastle's Flock data has been accessed by federal agencies through National Lookup, the CBP pilot program, or any other pathway, even though the UW documented that those vulnerabilities affected participating agencies broadly.
+The UW report examined only 31 of the 80-plus Washington Flock-operating agencies. Newcastle was not among them, meaning no independent audit has ever been conducted of whether Newcastle's Flock data has been accessed by federal agencies through National Lookup, the CBP pilot program, or any other pathway, even though the UW documented that those vulnerabilities affected participating agencies broadly.
 
-Newcastle's cameras captured **160,528 scans** in a recent 30-day window, with **156 officer searches** logged. For residents who use Coal Creek Parkway regularly, that can mean multiple daily captures. An ICE detention was logged this morning under one of those cameras. The city council has not met to discuss it. No policy exists to require that it ever would.
+Newcastle's cameras captured **160,528 scans** in a recent 30-day window, with **156 officer searches** logged. For residents who use Coal Creek Parkway regularly, that can mean multiple daily captures. The city council has not met to discuss today's detention. No policy exists to require that it ever would.
 
 And before concluding that the cameras should remain in place, it is worth noting that the research base does not support the broad crime-deterrence promises surveillance vendors make. Studies have found little evidence of meaningful violent-crime reduction, low rates of useful investigative hits, and substantial misuse, bias, and error. The strongest evidence for ALPR systems is narrow: stolen-vehicle recovery and some post-facto investigative assistance. That is a much smaller claim than the public-safety case typically used to justify routine, population-wide scanning.
 
 ## What Newcastle Residents Should Ask Now
 
-Our original report ended with five questions for Newcastle residents to bring to their council. After an ICE detention was logged this morning under one of Newcastle's cameras, those questions are no longer theoretical. They are the immediate accountability questions raised by a same-day incident:
+Our original report ended with five questions for Newcastle residents to bring to their council. After today's incident, those questions are no longer theoretical:
 
 1. Has Newcastle's Flock data been accessed by any federal agency, including through National Lookup or the CBP pilot program? KCSO and Newcastle should release an independent audit of all access logs.
 2. Will Newcastle adopt its own ordinance, separate from KCSO policy, explicitly prohibiting immigration enforcement use of city-contracted Flock data?
