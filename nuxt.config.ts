@@ -177,5 +177,12 @@ export default defineNuxtConfig({
         : false,
     },
   },
+  seo: {
+    // Disabled: every page calls useSeoMeta({ title }) explicitly, so the fallback
+    // is never needed. Also works around a bug in nuxt-seo-utils@8 where the
+    // fallbackTitle plugin unconditionally depends on nuxt-site-config:i18n even
+    // when no i18n module is present. Remove once the upstream bug is fixed.
+    fallbackTitle: false,
+  },
   devtools: { enabled: false },
 });
