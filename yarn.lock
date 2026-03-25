@@ -1970,17 +1970,17 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/sitemap@npm:^8.0.0":
-  version: 8.0.1
-  resolution: "@nuxtjs/sitemap@npm:8.0.1"
+  version: 8.0.3
+  resolution: "@nuxtjs/sitemap@npm:8.0.3"
   dependencies:
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
     "@nuxt/kit": "npm:^4.4.2"
     consola: "npm:^3.4.2"
     defu: "npm:^6.1.4"
     fast-xml-parser: "npm:^5.5.9"
-    nuxt-site-config: "npm:^4.0.0"
-    nuxtseo-layer-devtools: "npm:^0.3.0"
-    nuxtseo-shared: "npm:^0.7.0"
+    nuxt-site-config: "npm:^4.0.6"
+    nuxtseo-layer-devtools: "npm:^0.3.8"
+    nuxtseo-shared: "npm:^0.7.1"
     ofetch: "npm:^1.5.1"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.0"
@@ -1995,7 +1995,7 @@ __metadata:
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/c35e385f61cffe841282caed1d605007a8916876915ac3d305f61b3430c5f5977701672b0250ebbad519af1a9a2d38b2290291fda0291fa709c508faed3d34d6
+  checksum: 10c0/ac9e58aee59c32b77ceb06904811117c96bede42e8371c99507b903eb4b0930aaf893483e02acebb52e8e093609354e7317951074dfb8275fbd7c123150eb885
   languageName: node
   linkType: hard
 
