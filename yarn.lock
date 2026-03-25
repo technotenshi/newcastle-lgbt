@@ -4337,7 +4337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.5.31":
+"@vue/compiler-sfc@npm:3.5.31, @vue/compiler-sfc@npm:^3.5.31":
   version: 3.5.31
   resolution: "@vue/compiler-sfc@npm:3.5.31"
   dependencies:
@@ -4354,7 +4354,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:^3.5.22, @vue/compiler-sfc@npm:^3.5.30":
+"@vue/compiler-sfc@npm:^3.5.22":
   version: 3.5.30
   resolution: "@vue/compiler-sfc@npm:3.5.30"
   dependencies:
@@ -9963,13 +9963,13 @@ __metadata:
   linkType: hard
 
 "nuxt-og-image@npm:^6.1.1":
-  version: 6.2.0
-  resolution: "nuxt-og-image@npm:6.2.0"
+  version: 6.2.2
+  resolution: "nuxt-og-image@npm:6.2.2"
   dependencies:
     "@clack/prompts": "npm:^1.1.0"
     "@nuxt/devtools-kit": "npm:^3.2.4"
     "@nuxt/kit": "npm:^4.4.2"
-    "@vue/compiler-sfc": "npm:^3.5.30"
+    "@vue/compiler-sfc": "npm:^3.5.31"
     chrome-launcher: "npm:^1.2.1"
     consola: "npm:^3.4.2"
     culori: "npm:^4.0.2"
@@ -9980,9 +9980,9 @@ __metadata:
     magic-string: "npm:^0.30.21"
     magicast: "npm:^0.5.2"
     mocked-exports: "npm:^0.1.1"
-    nuxt-site-config: "npm:^4.0.0"
-    nuxtseo-layer-devtools: "npm:^0.3.0"
-    nuxtseo-shared: "npm:^0.7.0"
+    nuxt-site-config: "npm:^4.0.6"
+    nuxtseo-layer-devtools: "npm:^0.3.8"
+    nuxtseo-shared: "npm:^0.7.1"
     nypm: "npm:^0.6.5"
     ofetch: "npm:^1.5.1"
     ohash: "npm:^2.0.11"
@@ -10035,7 +10035,7 @@ __metadata:
       optional: true
   bin:
     nuxt-og-image: bin/cli.mjs
-  checksum: 10c0/b67abd6cc6cd4bb9b10c7ee0c64fbe176492d4dab00acbd7af3daf4890a8cdb244c0b3868290c23839e2ab2448a74fd48be41f3a7e29d5b9354768ff93eccef7
+  checksum: 10c0/d49375dfcd6d17274b45dcedea3783d077f88f33f3b03a52f67d0703a514c370a9040ac66ef2b9a87a39cd6fe19cf59f3ac4cd2f674fe4c623d36616a3a3b794
   languageName: node
   linkType: hard
 
