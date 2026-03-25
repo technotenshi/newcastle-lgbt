@@ -154,6 +154,13 @@ const { data: article } = await useAsyncData(asyncKey, async () => {
       continue;
     }
 
+    const todayPacific = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'America/Los_Angeles',
+    }).format(new Date());
+    if (typeof metaDate === 'string' && metaDate > todayPacific) {
+      throw createError({ statusCode: 404, statusMessage: 'Article not found' });
+    }
+
     const defaultPath = typeof row.path === 'string' ? row.path : '';
     const titleFromRow = typeof row.title === 'string' ? row.title : undefined;
     const descriptionFromRow = typeof row.description === 'string' ? row.description : undefined;

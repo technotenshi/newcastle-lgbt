@@ -169,9 +169,17 @@ export function useNews(options: UseNewsOptions = {}) {
       return secondOrder - firstOrder;
     });
 
+    const todayPacific = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Los_Angeles",
+    }).format(new Date());
+
     const published = includeDrafts
       ? sorted
-      : sorted.filter(entry => entry.draft !== true && entry._draft !== true);
+      : sorted.filter((entry) => {
+        if (entry.draft === true || entry._draft === true) return false;
+        if (typeof entry.date === "string" && entry.date > todayPacific) return false;
+        return true;
+      });
 
     return typeof limit === "number" ? published.slice(0, limit) : published;
   });

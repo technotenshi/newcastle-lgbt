@@ -12,12 +12,20 @@ export default defineEventHandler(async (event) => {
     .where("path", "LIKE", "/news/%")
     .all()) as Array<Record<string, unknown>>;
 
+  const todayPacific = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+  }).format(new Date());
+
   const articles = rows
     .map((row) => {
       const meta = parseMeta(row.meta);
       return { row, meta };
     })
-    .filter(({ meta }) => meta.draft !== true)
+    .filter(({ meta }) => {
+      if (meta.draft === true) return false;
+      if (typeof meta.date === "string" && meta.date > todayPacific) return false;
+      return true;
+    })
     .sort((a, b) => {
       const dateA = typeof a.meta.date === "string" ? a.meta.date : "";
       const dateB = typeof b.meta.date === "string" ? b.meta.date : "";
