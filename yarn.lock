@@ -1970,17 +1970,17 @@ __metadata:
   linkType: hard
 
 "@nuxtjs/sitemap@npm:^8.0.0":
-  version: 8.0.3
-  resolution: "@nuxtjs/sitemap@npm:8.0.3"
+  version: 8.0.6
+  resolution: "@nuxtjs/sitemap@npm:8.0.6"
   dependencies:
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
     "@nuxt/kit": "npm:^4.4.2"
     consola: "npm:^3.4.2"
     defu: "npm:^6.1.4"
     fast-xml-parser: "npm:^5.5.9"
-    nuxt-site-config: "npm:^4.0.6"
-    nuxtseo-layer-devtools: "npm:^0.3.8"
-    nuxtseo-shared: "npm:^0.7.1"
+    nuxt-site-config: "npm:^4.0.7"
+    nuxtseo-layer-devtools: "npm:^5.0.1"
+    nuxtseo-shared: "npm:^5.0.1"
     ofetch: "npm:^1.5.1"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.0"
@@ -1995,7 +1995,7 @@ __metadata:
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/ac9e58aee59c32b77ceb06904811117c96bede42e8371c99507b903eb4b0930aaf893483e02acebb52e8e093609354e7317951074dfb8275fbd7c123150eb885
+  checksum: 10c0/2aef3ad761a51f5df1fff9799fd2139c5be2ddfa8ad1e23267f8af19344ed74e28336ea440a58f471a760beeb24218d51c0c00c98019967cdb9f7155651edcdd
   languageName: node
   linkType: hard
 
@@ -10120,6 +10120,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nuxt-site-config-kit@npm:4.0.7":
+  version: 4.0.7
+  resolution: "nuxt-site-config-kit@npm:4.0.7"
+  dependencies:
+    "@nuxt/kit": "npm:^4.4.2"
+    site-config-stack: "npm:4.0.7"
+    std-env: "npm:^4.0.0"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/bb29185cb23849b6fde1f3c5d018ac75648959ddb4fd18c798998bbe2f69c2b7d08dca94c3f4a291b92b0e422201222dbb68e568210b037f600614fea81eda67
+  languageName: node
+  linkType: hard
+
 "nuxt-site-config@npm:^4.0.6":
   version: 4.0.6
   resolution: "nuxt-site-config@npm:4.0.6"
@@ -10133,6 +10145,22 @@ __metadata:
     site-config-stack: "npm:4.0.6"
     ufo: "npm:^1.6.3"
   checksum: 10c0/342b938e3b4612f18e218e23914aaa83c3d01954b3b9060094ffae76a11b90d7deac21e003bd05080393476837b12cb5888c91a2d3c898d67223f348b2029166
+  languageName: node
+  linkType: hard
+
+"nuxt-site-config@npm:^4.0.7":
+  version: 4.0.7
+  resolution: "nuxt-site-config@npm:4.0.7"
+  dependencies:
+    "@nuxt/kit": "npm:^4.4.2"
+    h3: "npm:^1.15.10"
+    nuxt-site-config-kit: "npm:4.0.7"
+    nuxtseo-shared: "npm:^0.9.0"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.0"
+    site-config-stack: "npm:4.0.7"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/bc291298039801bbe8d2b7d633736828795ec3fd0dfc7a88cc12b5e78af18c1c5aff665d2ca0bd5e0829edc08414cfbcfef83d78a972bf241302a815d0022afa
   languageName: node
   linkType: hard
 
@@ -10232,6 +10260,9 @@ __metadata:
 "nuxtseo-layer-devtools@npm:^0.5.1":
   version: 0.5.1
   resolution: "nuxtseo-layer-devtools@npm:0.5.1"
+"nuxtseo-layer-devtools@npm:^5.0.1":
+  version: 5.0.2
+  resolution: "nuxtseo-layer-devtools@npm:5.0.2"
   dependencies:
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
     "@nuxt/kit": "npm:^4.4.2"
@@ -10250,6 +10281,17 @@ __metadata:
 "nuxtseo-shared@npm:0.9.0, nuxtseo-shared@npm:^0.9.0":
   version: 0.9.0
   resolution: "nuxtseo-shared@npm:0.9.0"
+    nuxtseo-shared: "npm:5.0.2"
+    ofetch: "npm:^1.5.1"
+    shiki: "npm:^4.0.2"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/1597a568a1e2b8f426138455c3156c075e9b851fc7914fe927dd95e886cb299c7c74c31ff92050a435836a6885f05fa57caa7623f0bbb6cb77ac11ccf649a51c
+  languageName: node
+  linkType: hard
+
+"nuxtseo-shared@npm:5.0.2, nuxtseo-shared@npm:^5.0.1":
+  version: 5.0.2
+  resolution: "nuxtseo-shared@npm:5.0.2"
   dependencies:
     "@clack/prompts": "npm:^1.1.0"
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
@@ -10276,6 +10318,7 @@ __metadata:
     zod:
       optional: true
   checksum: 10c0/e2308a99b568480dc3d972105d2ead15cba752369568e7cf134a2af441bea32ba504b42d4f3aaed84518cc243faa662f3c5f42f73c3e35ebb6dc5895deb82657
+  checksum: 10c0/9c262d7595016b2b9dcdeb382dfcbb2bb014015e5e05661a73139b6dc66a1c7bd0375ba322e7cced2aba016ed2000fda718f28fc7b4dd36f9a140c0688bb5934
   languageName: node
   linkType: hard
 
@@ -12670,6 +12713,17 @@ __metadata:
   peerDependencies:
     vue: ^3.5.30
   checksum: 10c0/69e8b562c5a10d940fff5ab7316bba5083270861ce2d2cac16e24f041714cff824afbe2489e4dd4477f245e3ad8067d9156dc92f9dcad51559ac005c18394b86
+  languageName: node
+  linkType: hard
+
+"site-config-stack@npm:4.0.7":
+  version: 4.0.7
+  resolution: "site-config-stack@npm:4.0.7"
+  dependencies:
+    ufo: "npm:^1.6.3"
+  peerDependencies:
+    vue: ^3.5.30
+  checksum: 10c0/2530380e0b616f1532b19e0a309e84abdbfef313b45448a7445d58ceed68fbd954b6f69b25ad1b4c3a4c93dd1576ec495691cda9b83a87f5581fb722cbb134e8
   languageName: node
   linkType: hard
 
