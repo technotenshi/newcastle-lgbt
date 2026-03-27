@@ -35,12 +35,12 @@
               sizes="100vw md:50vw lg:42vw"
               loading="lazy"
             />
-            <p
-              class="mbr-description mbr-fonts-style mt-2 align-center display-4"
-            >
-              {{ imageHeader.alt }}
-            </p>
           </div>
+          <p
+            class="mbr-description mbr-fonts-style mt-2 align-center display-4"
+          >
+            {{ imageHeader.alt }}
+          </p>
         </div>
       </div>
     </div>
@@ -65,5 +65,6 @@ const imageSrc = computed(() => normalizeAssetPath(props.imageHeader?.path || pr
 .image-wrapper {
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  border-radius: 0.5rem;
 }
 </style>
