@@ -34,5 +34,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add any component-specific styles here */
+.mbr-section-title {
+  font-size: 2.75rem;
+}
 </style>

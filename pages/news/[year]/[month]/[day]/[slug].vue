@@ -385,4 +385,28 @@ const hasCarousel = computed(() => carouselImages.value.length > 0);
   color: #6c757d;
   margin-bottom: 2rem;
 }
+
+.news-article-section :deep(p) {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+.news-article-section :deep(h2) {
+  margin-top: 3rem;
+  margin-bottom: 0.6rem;
+}
+
+.news-article-section :deep(h3) {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-article-section :deep(blockquote) {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
 </style>

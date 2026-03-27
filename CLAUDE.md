@@ -23,6 +23,8 @@ The project runs in Docker via `make`. Prefer `make` targets over raw `yarn` com
 
 After making changes: run `make lint`, then `make build` to confirm the site deploys correctly.
 
+> **Non-TTY environments** (CI, scripts): Most `make` targets pass `-it` to `docker compose run`, which fails without a TTY. Run the underlying yarn command directly instead: `docker compose run --rm app yarn <cmd>` (e.g. `yarn build`, `yarn lint`).
+
 ## Architecture
 
 This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. There is no backend — all data comes from Markdown/JSON files in `content/`, which Nuxt Content parses into a SQLite-backed database at build time.
@@ -34,6 +36,8 @@ This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. T
 - `content/events/` — Event listings
 - `content/council/` — Council member profiles (position-N-*.md)
 - `content/features.json` — Homepage feature cards
+
+All content files are registered under a single `content` collection (`content.config.ts`). Composables filter by path: `.where("path", "LIKE", "/news/%")`. The organizations page (`pages/organizations/index.vue`) is an exception — its data is hardcoded directly in the component, not in `content/`.
 
 ### Key source directories
 - `composables/` — Data fetching layer (`useNews`, `useEvents`, `useCouncil`, `useFeatures`, `useAsset`)
@@ -61,7 +65,8 @@ This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. T
 - **`nuxt-link-checker`** — runs during `make develop` and warns about broken or malformed links. Warnings are treated as errors: fix them. Common rules: no trailing slashes on internal links, no absolute `https://newcastle.lgbt/...` URLs (use relative paths instead).
 - **`nuxt-seo-utils`** — auto-generates `og:title`, `og:description`, `og:url`, `og:site_name`, `twitter:*`, and `<link rel="canonical">` from `useSeoMeta({ title, description })`. Do **not** set these manually. Also appends ` | Newcastle LGBTQ Voice` to every page `<title>` — page titles must be the short form only (e.g. `'News'`, not `'News | Newcastle LGBTQ Voice'`).
 - **Simple Analytics** — privacy-friendly, cookie-free analytics injected via `nuxt.config.ts`. No user configuration required.
-- **Vite `optimizeDeps.include`** — `bootstrap/js/dist/collapse.js` and `bootstrap/js/dist/carousel.js` are pre-bundled to prevent Vite dev-server CJS discovery warnings. Add any new CJS Bootstrap modules here if imported in `plugins/bootstrap.client.ts`.
+- **`seo.fallbackTitle: false`** — disabled to work around a `nuxt-seo-utils@8` bug where the fallback title plugin unconditionally requires `nuxt-site-config:i18n` even when no i18n module is installed.
+- **Vite `optimizeDeps.include`** — `@unhead/schema-org/vue`, `bootstrap/js/dist/collapse.js`, and `bootstrap/js/dist/carousel.js` are pre-bundled to prevent Vite dev-server CJS discovery warnings. Add any new CJS Bootstrap modules here if imported in `plugins/bootstrap.client.ts`.
 - **`feed`** — generates the RSS 2.0 feed at `/feed.xml` via `server/routes/feed.xml.ts`. Pre-rendered at build time via `nitro.prerender.routes`. Autodiscovery `<link rel="alternate">` is injected via `app.head` in `nuxt.config.ts`. Do **not** use `@nuxtjs/feed` — it has unclear Nuxt 4 compatibility. In server routes, content must be queried with `queryCollection(event, "collection")` imported from `"@nuxt/content/server"` (not the client composable auto-import).
 
 ### SEO conventions
@@ -83,11 +88,13 @@ useSchemaOrg([defineOrganization({ name: '...', url: '...' })]);
 Do **not** add: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description`, `<link rel="canonical">` — these are all auto-generated.
 
 ### CI/CD
-- `.github/workflows/yarn-nuxt.yml` — runs `yarn lint` and `yarn build` on every push / PR to `main`
+- `.github/workflows/yarn-nuxt.yml` — runs `yarn build` (only) on every push / PR to `main`. Lint is **not** in CI; run `make lint` locally before pushing.
 - `.github/dependabot.yml` — weekly automated PRs for npm dependency updates
 
 ### Styling
 Bootstrap 5 + a Mobirise-derived custom theme in `assets/theme/css/style.css`. Use Bootstrap's responsive grid classes (`col-12`, `col-md-*`, `col-lg-*`).
+
+**PurgeCSS runs in production builds.** Any Bootstrap class not statically present in `pages/`, `components/`, `layouts/`, `app.vue`, or `content/` files will be stripped. If you add dynamically-bound class names (e.g., `:class="foo"`), add them to the `safelist` in `nuxt.config.ts` → `postcss.plugins["@fullhuman/postcss-purgecss"].safelist`.
 
 ### Prose component overrides
 Custom MDC prose components live in `components/content/`. A file there automatically overrides the default `@nuxtjs/mdc` component of the same name for all `<ContentRenderer>` output. Example: `components/content/ProseA.vue` overrides link rendering site-wide.
