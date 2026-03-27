@@ -10066,8 +10066,8 @@ __metadata:
   linkType: hard
 
 "nuxt-seo-utils@npm:^8.0.0":
-  version: 8.1.2
-  resolution: "nuxt-seo-utils@npm:8.1.2"
+  version: 8.1.3
+  resolution: "nuxt-seo-utils@npm:8.1.3"
   dependencies:
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
     "@nuxt/kit": "npm:^4.4.2"
@@ -10104,7 +10104,7 @@ __metadata:
       optional: true
   bin:
     nuxt-seo-utils: bin/nuxt-seo-utils.mjs
-  checksum: 10c0/6824a713e4e5b2a813deea8a5b34b38d1c71f2ed48585ecd94cb456e875806421bd285e5e619c5296d69b8584404cc052ba9640ae588c3df794f8e7412d7e03c
+  checksum: 10c0/207b65dadc478dc81f192971c259450747cff1fe043c73eaa45c4063951a4d44d02c113a9a4b026c5f8ccacca9ad31dc7a9df03515dc98b5aaaa04c8690564ee
   languageName: node
   linkType: hard
 
