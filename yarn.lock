@@ -10357,7 +10357,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxtseo-shared@npm:5.1.0, nuxtseo-shared@npm:^5.1.0":
+"nuxtseo-shared@npm:5.1.0, nuxtseo-shared@npm:^5.0.2, nuxtseo-shared@npm:^5.1.0":
   version: 5.1.0
   resolution: "nuxtseo-shared@npm:5.1.0"
   dependencies:
