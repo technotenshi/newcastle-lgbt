@@ -9963,8 +9963,8 @@ __metadata:
   linkType: hard
 
 "nuxt-og-image@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "nuxt-og-image@npm:6.3.0"
+  version: 6.3.1
+  resolution: "nuxt-og-image@npm:6.3.1"
   dependencies:
     "@clack/prompts": "npm:^1.1.0"
     "@nuxt/devtools-kit": "npm:^3.2.4"
@@ -9981,8 +9981,8 @@ __metadata:
     magicast: "npm:^0.5.2"
     mocked-exports: "npm:^0.1.1"
     nuxt-site-config: "npm:^4.0.7"
-    nuxtseo-layer-devtools: "npm:^5.0.1"
-    nuxtseo-shared: "npm:^5.0.1"
+    nuxtseo-layer-devtools: "npm:^5.0.2"
+    nuxtseo-shared: "npm:^5.0.2"
     nypm: "npm:^0.6.5"
     ofetch: "npm:^1.5.1"
     ohash: "npm:^2.0.11"
@@ -10035,7 +10035,7 @@ __metadata:
       optional: true
   bin:
     nuxt-og-image: bin/cli.mjs
-  checksum: 10c0/e0c976624899c165b8f62eccd51bb48a1f17650a5a825aa6a5c37286d20f7959e4fc945eff5ff11b977769083208e2619ed080b62f7c3a9c95e0772ebe145970
+  checksum: 10c0/4e5cdb1566421782d157fdf1e84cea3ca9a63b7c1bcde28714e9c47e10a319377fa615a564099658a84da34b2f3d2c904a6c0877de68cb2dfdf763821f0fe3c8
   languageName: node
   linkType: hard
 
@@ -10257,7 +10257,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxtseo-layer-devtools@npm:^5.0.1, nuxtseo-layer-devtools@npm:^5.0.2":
+"nuxtseo-layer-devtools@npm:^5.0.2":
   version: 5.0.2
   resolution: "nuxtseo-layer-devtools@npm:5.0.2"
   dependencies:
@@ -10325,7 +10325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxtseo-shared@npm:5.0.2, nuxtseo-shared@npm:^5.0.1, nuxtseo-shared@npm:^5.0.2":
+"nuxtseo-shared@npm:5.0.2, nuxtseo-shared@npm:^5.0.2":
   version: 5.0.2
   resolution: "nuxtseo-shared@npm:5.0.2"
   dependencies:
