@@ -88,8 +88,11 @@ useSchemaOrg([defineOrganization({ name: '...', url: '...' })]);
 Do **not** add: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description`, `<link rel="canonical">` — these are all auto-generated.
 
 ### CI/CD
-- `.github/workflows/yarn-nuxt.yml` — runs `yarn build` (only) on every push / PR to `main`. Lint is **not** in CI; run `make lint` locally before pushing.
-- `.github/dependabot.yml` — weekly automated PRs for npm dependency updates
+- **GitHub repo:** `technotenshi/newcastle-lgbt`
+- `.github/workflows/yarn-nuxt.yml` — runs `yarn install --immutable` then `yarn build` on every push / PR to `main`. Lint is **not** in CI; run `make lint` locally before pushing.
+- `.github/dependabot.yml` — weekly automated PRs for npm dependency updates. **Renovate** also runs and may open duplicate/overlapping PRs; the later one is typically superseded and auto-closed.
+- **`yarn.lock` drift:** CI uses `--immutable`, so if a dependency merge introduces new transitive deps the lockfile breaks. Fix by running `docker compose run --rm app yarn install` locally and committing the updated `yarn.lock`.
+- There are **no automated tests** in this project.
 
 ### Styling
 Bootstrap 5 + a Mobirise-derived custom theme in `assets/theme/css/style.css`. Use Bootstrap's responsive grid classes (`col-12`, `col-md-*`, `col-lg-*`).
