@@ -9935,8 +9935,8 @@ __metadata:
   linkType: hard
 
 "nuxt-link-checker@npm:^5.0.0":
-  version: 5.0.5
-  resolution: "nuxt-link-checker@npm:5.0.5"
+  version: 5.0.6
+  resolution: "nuxt-link-checker@npm:5.0.6"
   dependencies:
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
     "@nuxt/kit": "npm:^4.4.2"
@@ -9945,8 +9945,8 @@ __metadata:
     diff: "npm:^8.0.4"
     fuse.js: "npm:^7.1.0"
     magic-string: "npm:^0.30.21"
-    nuxt-site-config: "npm:^4.0.6"
-    nuxtseo-shared: "npm:^0.9.0"
+    nuxt-site-config: "npm:^4.0.7"
+    nuxtseo-shared: "npm:^5.0.2"
     ofetch: "npm:^1.5.1"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.0"
@@ -9955,10 +9955,10 @@ __metadata:
     std-env: "npm:^4.0.0"
     ufo: "npm:^1.6.3"
     ultrahtml: "npm:^1.6.0"
-    unstorage: "npm:^1.17.4"
+    unstorage: "npm:^1.17.5"
   peerDependencies:
     nuxt: ^3.9.0 || ^4.0.0
-  checksum: 10c0/8fdb31d43e53349809c71b5fd02f8efbf90b2b75858ece3305dfb63219f57eb0437f4441e329ae5b7ac0cf04383017ea949779cb678b5cffe56e8df2f36653dd
+  checksum: 10c0/0fd85166e81a65c9f5e908893bdbe220e44994ee035823851bfc242d6a458cf9dbeefe0bb32c019f289aa525d94346a60804ddb74a5e9740a484db4d3a0562e4
   languageName: node
   linkType: hard
 
@@ -13746,7 +13746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unstorage@npm:^1.16.1, unstorage@npm:^1.17.1, unstorage@npm:^1.17.4":
+"unstorage@npm:^1.16.1, unstorage@npm:^1.17.1, unstorage@npm:^1.17.4, unstorage@npm:^1.17.5":
   version: 1.17.5
   resolution: "unstorage@npm:1.17.5"
   dependencies:
