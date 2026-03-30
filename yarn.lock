@@ -9649,7 +9649,7 @@ __metadata:
     globals: "npm:^17.0.0"
     nuxt: "npm:^4.1.2"
     nuxt-link-checker: "npm:^5.0.0"
-    nuxt-og-image: "npm:^6.1.1"
+    nuxt-og-image: "npm:^6.3.0"
     nuxt-schema-org: "npm:^6.0.0"
     nuxt-seo-utils: "npm:^8.0.0"
     postcss: "npm:^8.0.0"
@@ -9962,9 +9962,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-og-image@npm:^6.1.1":
-  version: 6.2.6
-  resolution: "nuxt-og-image@npm:6.2.6"
+"nuxt-og-image@npm:^6.3.0":
+  version: 6.3.0
+  resolution: "nuxt-og-image@npm:6.3.0"
   dependencies:
     "@clack/prompts": "npm:^1.1.0"
     "@nuxt/devtools-kit": "npm:^3.2.4"
@@ -10035,7 +10035,7 @@ __metadata:
       optional: true
   bin:
     nuxt-og-image: bin/cli.mjs
-  checksum: 10c0/336381711588f4d1701f155672e04b8a8c0a93a5faaf3fd2a60acbb6bb9ecc6c5429b2a60283bfaf9bd9a608ceabb832482b27d219ff8ad1b370ed24b26bfb81
+  checksum: 10c0/e0c976624899c165b8f62eccd51bb48a1f17650a5a825aa6a5c37286d20f7959e4fc945eff5ff11b977769083208e2619ed080b62f7c3a9c95e0772ebe145970
   languageName: node
   linkType: hard
 
