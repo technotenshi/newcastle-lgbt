@@ -11,7 +11,7 @@ imageHeader:
   alt: "An ICE detention was logged this morning at Coal Creek Parkway and Newcastle Way, directly under a Newcastle Flock camera that has never been independently audited for federal access."
 ---
 
-> **Editor's note, March 27, 2026:** Two Newcastle City Council members have since responded to the questions raised in this article. Their replies include a significant correction: the city's Flock cameras were placed in hibernation on December 3, 2025, and were not active at the time of the March 24 detention. [Read the full update.](/news/2026/03/27/council-responds-cameras-inactive)
+> **Editor's note, March 27, 2026:** Three Newcastle City Council members have since responded to the questions raised in this article. Their replies include a significant correction: the city's Flock cameras were placed in hibernation on December 3, 2025, and were not active at the time of the March 24 detention. [Read the full update.](/news/2026/03/27/council-responds-cameras-inactive)
 
 :Dateline This morning, March 24, 2026, an ICE detention was logged at **Coal Creek Parkway and Newcastle Way in Newcastle** — directly under one of the city's **Flock Safety ALPR cameras**. Newcastle's cameras remain online and the city council has taken no independent action, even as **SB 6002**, Washington's new Driver Privacy Act, awaits the governor's signature and at least ten jurisdictions across the state have already shut their cameras down.
 
