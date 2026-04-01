@@ -9963,8 +9963,8 @@ __metadata:
   linkType: hard
 
 "nuxt-og-image@npm:^6.3.0":
-  version: 6.3.1
-  resolution: "nuxt-og-image@npm:6.3.1"
+  version: 6.3.2
+  resolution: "nuxt-og-image@npm:6.3.2"
   dependencies:
     "@clack/prompts": "npm:^1.1.0"
     "@nuxt/devtools-kit": "npm:^3.2.4"
@@ -10035,7 +10035,7 @@ __metadata:
       optional: true
   bin:
     nuxt-og-image: bin/cli.mjs
-  checksum: 10c0/4e5cdb1566421782d157fdf1e84cea3ca9a63b7c1bcde28714e9c47e10a319377fa615a564099658a84da34b2f3d2c904a6c0877de68cb2dfdf763821f0fe3c8
+  checksum: 10c0/5eb19fa4966a9803f653ebdb2afd897cd40e4ef18ac6b43a9d18432859370587e523ddfbf543a1ed967a9276027f109054da1d261bad4459cb2fe96f2cfcc3cb
   languageName: node
   linkType: hard
 
