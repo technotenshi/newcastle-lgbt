@@ -9935,8 +9935,8 @@ __metadata:
   linkType: hard
 
 "nuxt-link-checker@npm:^5.0.0":
-  version: 5.0.6
-  resolution: "nuxt-link-checker@npm:5.0.6"
+  version: 5.0.7
+  resolution: "nuxt-link-checker@npm:5.0.7"
   dependencies:
     "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
     "@nuxt/kit": "npm:^4.4.2"
@@ -9958,7 +9958,7 @@ __metadata:
     unstorage: "npm:^1.17.5"
   peerDependencies:
     nuxt: ^3.9.0 || ^4.0.0
-  checksum: 10c0/0fd85166e81a65c9f5e908893bdbe220e44994ee035823851bfc242d6a458cf9dbeefe0bb32c019f289aa525d94346a60804ddb74a5e9740a484db4d3a0562e4
+  checksum: 10c0/11f25229a0b70275ff049fcfb633537413cfdfa9085b83fe0bb5a9af90614302e0859c007806ce4bb903990a7cf6fc578ff065366012947649da54f0be59021e
   languageName: node
   linkType: hard
 
