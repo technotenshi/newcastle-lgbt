@@ -56,6 +56,12 @@ All content files are registered under a single `content` collection (`content.c
 - Sorting: news by date DESC then `order` field; events by date ASC
 - Full authoring guide (frontmatter fields, filename format, body structure, image conventions, step-by-step instructions): [`docs/content-authoring.md`](docs/content-authoring.md)
 
+#### Image generation prompt rules
+These apply to every DALL-E or Midjourney prompt produced for any image slot on the site:
+
+- **Explicit racial diversity:** Do not use "diverse" alone — AI generators default to predominantly white subjects. Always write: *"racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented."*
+- **LGBTQ+ motifs:** Every image should include at least one subtle LGBTQ+ visual cue regardless of event type — e.g. a rainbow pride wristband, small pride pin on clothing, or pride-color accessories. Keep motifs natural and personal (accessories, not large flags). Avoid relying on accurate flag rendering — AI misrenders flag stripe order and colors; describe color palettes instead (e.g. *"light blue, pink, and white accessories"*).
+
 ### Modules & integrations
 - **`@nuxt/image`** — serves assets from `assets/` as WebP at quality 80 via the IPX endpoint (`/_ipx/...`). Use `<NuxtImg>` instead of plain `<img>` for all local images.
 - **`@nuxtjs/sitemap`** — auto-generates `/sitemap.xml` at build time by crawling prerendered routes. Reads the canonical URL from `site.url` in `nuxt.config.ts`. `zeroRuntime: true` is set because all content is static.

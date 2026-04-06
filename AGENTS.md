@@ -50,6 +50,27 @@ assets/         # Static styles and images (Bootstrap 5 + Mobirise-derived theme
 - **Images:** prefer `.png` format; always include alt text; resolve URLs through `useAsset` / `utils/assets.ts`
 - **Sorting:** news by date DESC then `order` field; events by date ASC
 - **Full authoring guide** (frontmatter fields, filename format, body conventions, image rules, step-by-step instructions for creating articles and events): [`docs/content-authoring.md`](docs/content-authoring.md)
+- **Image prompting reference:** use [`docs/image-generation-guide.md`](docs/image-generation-guide.md) alongside the authoring guide whenever generating new raster assets
+
+## Image generation workflow
+- Follow both [`docs/content-authoring.md`](docs/content-authoring.md) and [`docs/image-generation-guide.md`](docs/image-generation-guide.md) before writing prompts or saving generated assets.
+- Generate news and event art as `.png` files in `assets/images/news/` or `assets/images/events/` using the `YYYYMMDD-##-descriptive-name.png` naming convention.
+- Write alt text that describes what is actually visible in the image, not just the article topic; target 50 to 250 characters.
+- Do not generate text or logos into AI images. If an event graphic needs typography, add it later in a design tool.
+- Do not rely on AI to render Pride or transgender flags accurately. Use palette descriptions instead, or source a real photo when exact flag imagery matters.
+- Make LGBTQ+ representation explicit and inclusive in prompts. Avoid stereotypes and do not reference named real people.
+- When the user attaches a reference image, treat it as style/composition/background guidance unless they explicitly ask for a true edit. State clearly in the prompt which elements to borrow from the reference and which elements should remain newly generated.
+- If a reference image includes signage, logos, branded UI, or readable text, use only its visual characteristics and explicitly exclude readable text/logos in the generation prompt.
+- Match the visual style to the content: documentary-style photorealistic images for civic/news coverage, graphic-design or poster-style images for social events.
+- If a news article uses both `image` and `imageHeader`, keep them on the same story but make them clearly different in scene, subject, vantage point, or narrative angle.
+- Match the site slot ratios when generating or cropping assets: `16:9` for news feature images, news headers, and carousels; `4:3` for event images.
+- Practical event-image workflow: generate at `1536x1024`, then crop to the site-ready `1365x1024` `4:3` deliverable.
+- For phone, tablet, or computer scenes, explicitly prohibit readable screen text and branded UI in the prompt.
+- For small LGBTQ+ visual cues in accessories or clothing, prefer describing a `rainbow-colored` pin or palette accent instead of requesting an exact flag reproduction.
+- When editing an existing generated image, restate invariants aggressively, for example `change only the background` or `keep the foreground people and activity unchanged`, because the edit model will drift otherwise.
+- When using the image-generation CLI, do not install Python packages into the host environment. Create a repo-local `.venv`, install dependencies there, and run the generator from that virtual environment.
+- The CLI requires `OPENAI_API_KEY` to already be available in the shell environment. Do not paste secrets into chat logs; if persistence is needed, edit shell startup files manually rather than appending secrets through shell history.
+- The repo-local `.venv/` is ignored by git and can be used for image-generation tooling without affecting tracked project files.
 
 ## Coding style
 - Follow the existing Vue and JavaScript style. ESLint rules are defined in `eslint.config.mjs`.
