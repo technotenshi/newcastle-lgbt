@@ -18,6 +18,9 @@ node_modules/
 .vscode/
 .idea/
 .claude/
+.venv/
+__pycache__/
+*.py[cod]
 
 # Host-only tooling
 Makefile

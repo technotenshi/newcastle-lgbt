@@ -12,6 +12,9 @@ dist
 .idea/
 .temp/
 .vscode/
+.venv/
+__pycache__/
+*.py[cod]
 
 # Local config (machine-specific, not for version control)
 settings.local.json
