@@ -4152,6 +4152,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@unhead/vue@npm:^2.1.13":
+  version: 2.1.13
+  resolution: "@unhead/vue@npm:2.1.13"
+  dependencies:
+    hookable: "npm:^6.0.1"
+    unhead: "npm:2.1.13"
+  peerDependencies:
+    vue: ">=3.5.18"
+  checksum: 10c0/a1d24d3e1740313eccac21f880ca57f50e58657ec9690e50b8d420e201261ea1b2a055388c9d1732867f497bf913503a77d9da595fde8b4386ed449e1e8cd603
+  languageName: node
+  linkType: hard
+
 "@vercel/nft@npm:^1.4.0":
   version: 1.5.0
   resolution: "@vercel/nft@npm:1.5.0"
@@ -9696,7 +9708,7 @@ __metadata:
     "@nuxt/image": "npm:^2.0.0"
     "@nuxtjs/robots": "npm:^6.0.0"
     "@nuxtjs/sitemap": "npm:^8.0.0"
-    "@unhead/vue": "npm:^2.1.12"
+    "@unhead/vue": "npm:^2.1.13"
     better-sqlite3: "npm:^12.2.0"
     bootstrap: "npm:^5.0.1"
     eslint: "npm:^10.0.0"
