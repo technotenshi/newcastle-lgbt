@@ -10325,24 +10325,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxtseo-layer-devtools@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "nuxtseo-layer-devtools@npm:5.1.0"
-  dependencies:
-    "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
-    "@nuxt/kit": "npm:^4.4.2"
-    "@nuxt/ui": "npm:^4.6.0"
-    "@shikijs/langs": "npm:^4.0.2"
-    "@shikijs/themes": "npm:^4.0.2"
-    "@vueuse/nuxt": "npm:^14.2.1"
-    nuxtseo-shared: "npm:5.1.0"
-    ofetch: "npm:^1.5.1"
-    shiki: "npm:^4.0.2"
-    ufo: "npm:^1.6.3"
-  checksum: 10c0/233363cc32d766c09db6393a05761fcf67d56f44f9b3edb0cfa2d0fe9ac2fe8bf31a10759482c89f17d7d38c4d4f11a88bc2aad948a4966153a0831745d03ee4
-  languageName: node
-  linkType: hard
-
 "nuxtseo-shared@npm:0.9.0, nuxtseo-shared@npm:^0.9.0":
   version: 0.9.0
   resolution: "nuxtseo-shared@npm:0.9.0"
@@ -10375,38 +10357,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxtseo-shared@npm:5.1.0, nuxtseo-shared@npm:^5.0.2, nuxtseo-shared@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "nuxtseo-shared@npm:5.1.0"
-  dependencies:
-    "@clack/prompts": "npm:^1.1.0"
-    "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
-    "@nuxt/kit": "npm:^4.4.2"
-    birpc: "npm:^4.0.0"
-    consola: "npm:^3.4.2"
-    defu: "npm:^6.1.4"
-    ofetch: "npm:^1.5.1"
-    pathe: "npm:^2.0.3"
-    pkg-types: "npm:^2.3.0"
-    radix3: "npm:^1.1.2"
-    sirv: "npm:^3.0.2"
-    std-env: "npm:^4.0.0"
-    ufo: "npm:^1.6.3"
-  peerDependencies:
-    "@nuxt/schema": ^3.16.0 || ^4.0.0
-    nuxt: ^3.16.0 || ^4.0.0
-    nuxt-site-config: ^3.2.0 || ^4.0.0
-    vue: ^3.5.0
-    zod: ^3.23.0 || ^4.0.0
-  peerDependenciesMeta:
-    nuxt-site-config:
-      optional: true
-    zod:
-      optional: true
-  checksum: 10c0/22130aec059c20c4351f9297eff2361fdf80a2a1e8cbf3c2014628a38aed3ede57116011f2e24148dba2783a038a316b8fb2c40e9e26d7975d746db97de3b44f
-  languageName: node
-  linkType: hard
-
 "nuxtseo-shared@npm:^0.7.1":
   version: 0.7.1
   resolution: "nuxtseo-shared@npm:0.7.1"
@@ -10436,6 +10386,38 @@ __metadata:
     zod:
       optional: true
   checksum: 10c0/2d3fb344a9c9d5cd67d62969709927916b5c6ed3024807cd386818ca8bd8696c1e86bd8c704c632cca01fba70dafd964e9013daa420005ef7bed78e904eb65d4
+  languageName: node
+  linkType: hard
+
+"nuxtseo-shared@npm:^5.0.2":
+  version: 5.1.0
+  resolution: "nuxtseo-shared@npm:5.1.0"
+  dependencies:
+    "@clack/prompts": "npm:^1.1.0"
+    "@nuxt/devtools-kit": "npm:4.0.0-alpha.3"
+    "@nuxt/kit": "npm:^4.4.2"
+    birpc: "npm:^4.0.0"
+    consola: "npm:^3.4.2"
+    defu: "npm:^6.1.4"
+    ofetch: "npm:^1.5.1"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.0"
+    radix3: "npm:^1.1.2"
+    sirv: "npm:^3.0.2"
+    std-env: "npm:^4.0.0"
+    ufo: "npm:^1.6.3"
+  peerDependencies:
+    "@nuxt/schema": ^3.16.0 || ^4.0.0
+    nuxt: ^3.16.0 || ^4.0.0
+    nuxt-site-config: ^3.2.0 || ^4.0.0
+    vue: ^3.5.0
+    zod: ^3.23.0 || ^4.0.0
+  peerDependenciesMeta:
+    nuxt-site-config:
+      optional: true
+    zod:
+      optional: true
+  checksum: 10c0/22130aec059c20c4351f9297eff2361fdf80a2a1e8cbf3c2014628a38aed3ede57116011f2e24148dba2783a038a316b8fb2c40e9e26d7975d746db97de3b44f
   languageName: node
   linkType: hard
 
