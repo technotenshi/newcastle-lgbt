@@ -27,7 +27,7 @@
     "@fullhuman/postcss-purgecss": "^8.0.0",
     "@nuxtjs/robots": "^6.0.0",
     "@nuxtjs/sitemap": "^8.0.0",
-    "@unhead/vue": "^2.1.13",
+    "@unhead/vue": "^3.0.0",
     "bootstrap": "^5.0.1",
     "eslint": "^10.2.0",
     "eslint-plugin-vue": "^10.0.0",

@@ -5,9 +5,8 @@ This repository contains the source for the **Newcastle LGBT** site. It is built
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/458c411819a6488fb55ce082d7cc5d3b)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 ## Requirements
-- Node.js 24 (for local, non-Docker development)
-- Yarn 4 (managed via Corepack / `packageManager` field in `package.json`)
-- Docker + Docker Compose (optional, for containerized workflow)
+- Docker + Docker Compose (primary workflow — all `make` targets run inside the container)
+- Node.js 24 + Yarn 4 (for local, non-Docker development only; Yarn managed via Corepack)
 
 Install dependencies with:
 
@@ -80,6 +79,7 @@ The project includes a `Dockerfile`, `docker-compose.yml`, and `Makefile` for co
 | `make prod` | Alias for `make preview` |
 | `make audit` | Dependency vulnerability audit |
 | `make peer-requirements` | Explain yarn peer dependency requirements |
+| `make git-maintenance` | Prune stale remote refs + run git gc |
 | `make down` | Stop and remove containers |
 | `make logs` | Follow container logs |
 
@@ -133,7 +133,7 @@ plugins/
 
 ## CI/CD
 
-A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn lint` and `yarn build` automatically on every push and pull request targeting `main`. Dependabot (`.github/dependabot.yml`) opens weekly PRs for npm dependency updates.
+A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn build` automatically on every push and pull request targeting `main`. **Lint is not in CI** — run `make lint` locally before pushing. Dependabot (`.github/dependabot.yml`) and Renovate both open automated PRs for npm dependency updates; when both are active, the later PR is typically superseded and auto-closed.
 
 ## Modules
 
