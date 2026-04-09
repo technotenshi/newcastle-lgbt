@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := default
 
-.PHONY: default install install-dependencies develop down logs lint lint-fix audit build preview prod peer-requirements
+.PHONY: default install install-dependencies develop down logs lint lint-fix audit build preview prod peer-requirements git-maintenance
 
 default:
 	@echo 'Hello, world!'
@@ -40,6 +40,10 @@ audit:
 # Explain peer dependency requirements
 peer-requirements:
 	docker compose run -it --rm app yarn explain peer-requirements
+
+# Prune stale remote refs and run Git garbage collection
+git-maintenance:
+	git remote prune origin && git gc --prune=1.month.ago --no-quiet
 
 # Generate static site into .output/public
 build:

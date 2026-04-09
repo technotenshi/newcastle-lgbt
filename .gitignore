@@ -15,6 +15,7 @@ dist
 .venv/
 __pycache__/
 *.py[cod]
+.remember/
 
 # Local config (machine-specific, not for version control)
 settings.local.json

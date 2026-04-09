@@ -18,12 +18,15 @@ The project runs in Docker via `make`. Prefer `make` targets over raw `yarn` com
 | `make prod` | Alias for `make preview` |
 | `make audit` | Run dependency vulnerability audit |
 | `make peer-requirements` | Explain yarn peer dependency requirements |
+| `make git-maintenance` | Prune stale remote refs + run git gc |
 | `make down` | Stop and remove containers |
 | `make logs` | Follow container logs |
 
 After making changes: run `make lint`, then `make build` to confirm the site deploys correctly.
 
 > **Non-TTY environments** (CI, scripts): Most `make` targets pass `-it` to `docker compose run`, which fails without a TTY. Run the underlying yarn command directly instead: `docker compose run --rm app yarn <cmd>` (e.g. `yarn build`, `yarn lint`).
+>
+> **Foreground stall:** In some shell environments `docker compose run --rm app yarn <cmd>` creates the container but produces no output when run synchronously. If this happens, run it as a background task and read the output file when done.
 
 ## Architecture
 
@@ -72,7 +75,7 @@ These apply to every DALL-E or Midjourney prompt produced for any image slot on 
 - **`nuxt-seo-utils`** — auto-generates `og:title`, `og:description`, `og:url`, `og:site_name`, `twitter:*`, and `<link rel="canonical">` from `useSeoMeta({ title, description })`. Do **not** set these manually. Also appends ` | Newcastle LGBTQ Voice` to every page `<title>` — page titles must be the short form only (e.g. `'News'`, not `'News | Newcastle LGBTQ Voice'`).
 - **Simple Analytics** — privacy-friendly, cookie-free analytics injected via `nuxt.config.ts`. No user configuration required.
 - **`seo.fallbackTitle: false`** — disabled to work around a `nuxt-seo-utils@8` bug where the fallback title plugin unconditionally requires `nuxt-site-config:i18n` even when no i18n module is installed.
-- **Vite `optimizeDeps.include`** — `@unhead/schema-org/vue`, `bootstrap/js/dist/collapse.js`, and `bootstrap/js/dist/carousel.js` are pre-bundled to prevent Vite dev-server CJS discovery warnings. Add any new CJS Bootstrap modules here if imported in `plugins/bootstrap.client.ts`.
+- **Vite `optimizeDeps.include`** — `@unhead/schema-org/vue` (`@unhead/vue` v3), `bootstrap/js/dist/collapse.js`, and `bootstrap/js/dist/carousel.js` are pre-bundled to prevent Vite dev-server CJS discovery warnings. Add any new CJS Bootstrap modules here if imported in `plugins/bootstrap.client.ts`.
 - **`feed`** — generates the RSS 2.0 feed at `/feed.xml` via `server/routes/feed.xml.ts`. Pre-rendered at build time via `nitro.prerender.routes`. Autodiscovery `<link rel="alternate">` is injected via `app.head` in `nuxt.config.ts`. Do **not** use `@nuxtjs/feed` — it has unclear Nuxt 4 compatibility. In server routes, content must be queried with `queryCollection(event, "collection")` imported from `"@nuxt/content/server"` (not the client composable auto-import).
 
 ### SEO conventions
