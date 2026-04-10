@@ -4145,9 +4145,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unhead/bundler@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@unhead/bundler@npm:3.0.0"
+"@unhead/bundler@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@unhead/bundler@npm:3.0.2"
   dependencies:
     "@vitejs/devtools-kit": "npm:^0.1.13"
     magic-string: "npm:^0.30.21"
@@ -4159,7 +4159,7 @@ __metadata:
     esbuild: ">=0.17.0"
     lightningcss: ">=1.20.0"
     rolldown: ">=1.0.0-beta.0"
-    unhead: ^3.0.0
+    unhead: ^3.0.2
   peerDependenciesMeta:
     esbuild:
       optional: true
@@ -4167,7 +4167,7 @@ __metadata:
       optional: true
     rolldown:
       optional: true
-  checksum: 10c0/fdb4677d0129a5a0a9a8e705ecd9fa1f7b3f23089961454b39df551e2cacd5038f844b861da79ecd97628300b642a0ae1c5439fba90a60410a4a575b203a8e46
+  checksum: 10c0/c525136a4a687496a82dc014eba3ce6e7c8953f0cfeb27ddc01e26957853186aaa3377556944e058279c98090c71c93813053371f1dd3c3042eb08aaa91a7d38
   languageName: node
   linkType: hard
 
@@ -4208,22 +4208,22 @@ __metadata:
   linkType: hard
 
 "@unhead/vue@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@unhead/vue@npm:3.0.0"
+  version: 3.0.2
+  resolution: "@unhead/vue@npm:3.0.2"
   dependencies:
-    "@unhead/bundler": "npm:3.0.0"
+    "@unhead/bundler": "npm:3.0.2"
     hookable: "npm:^6.1.0"
     magic-string: "npm:^0.30.21"
     oxc-parser: "npm:^0.124.0"
     oxc-walker: "npm:^0.7.0"
-    unhead: "npm:3.0.0"
+    unhead: "npm:3.0.2"
   peerDependencies:
     vite: ">=6.4.2"
     vue: ">=3.5.18"
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 10c0/62c5ac9dcf4603021bd486e57cc10600f4901e8ed7dc89ba89af858613064951a92e9926f86e12a32c8b634b1e1050484b182930d862b38c63224aa2867fa869
+  checksum: 10c0/ae4167d12f286f8b4b30ef3d66c5cd3b98ea17a54f5bc9168949bb1b03deea725861772aa9bd0cbb8c2745f89b73fe5612b61571f29e434139c8a3f8e826f953
   languageName: node
   linkType: hard
 
@@ -13599,9 +13599,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unhead@npm:3.0.0":
-  version: 3.0.0
-  resolution: "unhead@npm:3.0.0"
+"unhead@npm:3.0.2":
+  version: 3.0.2
+  resolution: "unhead@npm:3.0.2"
   dependencies:
     hookable: "npm:^6.1.0"
     magic-string: "npm:^0.30.21"
@@ -13610,7 +13610,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 10c0/57a0d727e4f67e76f2c3abb86a4c5e3fae1467966d59785697b4e0a656efacd774d2dd0fe2e3895d5a01db25efc543d16f4e8cb3a5b65abd9b64638a17ab4d48
+  checksum: 10c0/d3841d36a3010aa44131c0e1be01147cfd94b4e720d5430d57540d4210fbaf2bc3b1a0768a702baf382ecab7b3b9ed1634d98d9e8c405baf51450462221e0eaa
   languageName: node
   linkType: hard
 
