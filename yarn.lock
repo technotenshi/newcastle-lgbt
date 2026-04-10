@@ -5812,6 +5812,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie-es@npm:^1.2.3":
+  version: 1.2.3
+  resolution: "cookie-es@npm:1.2.3"
+  checksum: 10c0/429eae6f5130a7380ea024d787d7e1ecc644ca84f9c43dfb70f18761a831d2ba591d28f837ce350892cfff0857d711f3a4ad93a082637bceb478823c339c1a97
+  languageName: node
+  linkType: hard
+
 "cookie-es@npm:^2.0.0":
   version: 2.0.0
   resolution: "cookie-es@npm:2.0.0"
@@ -6157,7 +6164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defu@npm:^6.1.7":
+"defu@npm:^6.1.6, defu@npm:^6.1.7":
   version: 6.1.7
   resolution: "defu@npm:6.1.7"
   checksum: 10c0/e6635388103c8be3c574ac31302f6930e5e6eeedba32cb1b30cf993c7d9fb571aec2485446dfa23bfa63e55e66156fe109027a9695db82a50f931e91e8d4bedb
@@ -6213,10 +6220,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devalue@npm:^5.7.0":
-  version: 5.7.0
-  resolution: "devalue@npm:5.7.0"
-  checksum: 10c0/2ce70fb452812dd7239da37451890779fec31828b078a43d14a575d458d20eb80c2d1eb945502e784dd39a7635a7a5236914f6f054aa28732a2230a0cba52c00
+"devalue@npm:^5.7.1":
+  version: 5.7.1
+  resolution: "devalue@npm:5.7.1"
+  checksum: 10c0/55870801e7bf4b7e8cf7feca1feae4f20bc8c361cf715a1fc5d8f595f099afa65094ce718a3cf3b149b79c78d24a0c92cf9d72125c8a10e563ebb18b23869b8a
   languageName: node
   linkType: hard
 
@@ -7573,6 +7580,23 @@ __metadata:
     ufo: "npm:^1.6.3"
     uncrypto: "npm:^0.1.3"
   checksum: 10c0/5eec10ea46905e36fdc645b359367f159a316e3e5cc00d0fd13e63db9c5b9793e6c0b65b77daa27339a95ad5837b35920533a4e4556349d256faa04a749ba1b0
+  languageName: node
+  linkType: hard
+
+"h3@npm:^1.15.11":
+  version: 1.15.11
+  resolution: "h3@npm:1.15.11"
+  dependencies:
+    cookie-es: "npm:^1.2.3"
+    crossws: "npm:^0.3.5"
+    defu: "npm:^6.1.6"
+    destr: "npm:^2.0.5"
+    iron-webcrypto: "npm:^1.2.1"
+    node-mock-http: "npm:^1.0.4"
+    radix3: "npm:^1.1.2"
+    ufo: "npm:^1.6.3"
+    uncrypto: "npm:^0.1.3"
+  checksum: 10c0/6ccb421b9f92e02e6330c2b6697b18ef18e9550e4a1708f224ca517c40ecd201cd00967d0feb26e718595e86e985edec1755933cf8792d34fb8504f1c7cc261d
   languageName: node
   linkType: hard
 
@@ -10119,8 +10143,8 @@ __metadata:
   linkType: hard
 
 "nuxt-og-image@npm:^6.3.0":
-  version: 6.3.3
-  resolution: "nuxt-og-image@npm:6.3.3"
+  version: 6.3.7
+  resolution: "nuxt-og-image@npm:6.3.7"
   dependencies:
     "@clack/prompts": "npm:^1.2.0"
     "@nuxt/kit": "npm:^4.4.2"
@@ -10129,14 +10153,14 @@ __metadata:
     consola: "npm:^3.4.2"
     culori: "npm:^4.0.2"
     defu: "npm:^6.1.7"
-    devalue: "npm:^5.7.0"
+    devalue: "npm:^5.7.1"
     exsolve: "npm:^1.0.8"
     lightningcss: "npm:^1.32.0"
     magic-string: "npm:^0.30.21"
     magicast: "npm:^0.5.2"
     mocked-exports: "npm:^0.1.1"
-    nuxt-site-config: "npm:^4.0.7"
-    nuxtseo-shared: "npm:^5.1.1"
+    nuxt-site-config: "npm:^4.0.8"
+    nuxtseo-shared: "npm:^5.1.2"
     nypm: "npm:^0.6.5"
     ofetch: "npm:^1.5.1"
     ohash: "npm:^2.0.11"
@@ -10148,7 +10172,7 @@ __metadata:
     std-env: "npm:^4.0.0"
     strip-literal: "npm:^3.1.0"
     tinyexec: "npm:^1.1.1"
-    tinyglobby: "npm:^0.2.15"
+    tinyglobby: "npm:^0.2.16"
     ufo: "npm:^1.6.3"
     ultrahtml: "npm:^1.6.0"
     unplugin: "npm:^3.0.0"
@@ -10188,7 +10212,7 @@ __metadata:
       optional: true
   bin:
     nuxt-og-image: bin/cli.mjs
-  checksum: 10c0/f8c8a15edc5e61d19638200b78c44dad64a34aa389b0bc2c0655111d15d663a64ec98a42739ba4bd0ce63c94fe46b6d3a51b5915b8b8283a77975a67eb3143bb
+  checksum: 10c0/899fd3cd7e8b7e71184a80420f3cdd614d7c035f9239e32e068b18d8ba5edb5b8cfbb955bbf2d4aabf7f8abb330f09f05ccbf5c71d832832b8d1ecc9d4f227e9
   languageName: node
   linkType: hard
 
@@ -10281,6 +10305,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nuxt-site-config-kit@npm:4.0.8":
+  version: 4.0.8
+  resolution: "nuxt-site-config-kit@npm:4.0.8"
+  dependencies:
+    "@nuxt/kit": "npm:^4.4.2"
+    site-config-stack: "npm:4.0.8"
+    std-env: "npm:^4.0.0"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/31c1158efe1726017ad1ced03d5792f0ee7d8417ded9d5bb398289ce6e953f1c78dcac9f667513a94ada43056e60b984446a8682a04074d0ace7d6e5bb63ca1d
+  languageName: node
+  linkType: hard
+
 "nuxt-site-config@npm:^4.0.6":
   version: 4.0.6
   resolution: "nuxt-site-config@npm:4.0.6"
@@ -10310,6 +10346,22 @@ __metadata:
     site-config-stack: "npm:4.0.7"
     ufo: "npm:^1.6.3"
   checksum: 10c0/bc291298039801bbe8d2b7d633736828795ec3fd0dfc7a88cc12b5e78af18c1c5aff665d2ca0bd5e0829edc08414cfbcfef83d78a972bf241302a815d0022afa
+  languageName: node
+  linkType: hard
+
+"nuxt-site-config@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "nuxt-site-config@npm:4.0.8"
+  dependencies:
+    "@nuxt/kit": "npm:^4.4.2"
+    h3: "npm:^1.15.11"
+    nuxt-site-config-kit: "npm:4.0.8"
+    nuxtseo-shared: "npm:^5.1.2"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.0"
+    site-config-stack: "npm:4.0.8"
+    ufo: "npm:^1.6.3"
+  checksum: 10c0/2937cd5062f2df865be73313220b4725ed2f7123c42f3649ecb5351dab2669cd94b8c4c1f5fded0950026661ac5701a99503302f42b5f974c683e22c68b49894
   languageName: node
   linkType: hard
 
@@ -11176,7 +11228,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picomatch@npm:4.0.4":
+"picomatch@npm:4.0.4, picomatch@npm:^4.0.4":
   version: 4.0.4
   resolution: "picomatch@npm:4.0.4"
   checksum: 10c0/e2c6023372cc7b5764719a5ffb9da0f8e781212fa7ca4bd0562db929df8e117460f00dff3cb7509dacfc06b86de924b247f504d0ce1806a37fac4633081466b0
@@ -12859,6 +12911,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"site-config-stack@npm:4.0.8":
+  version: 4.0.8
+  resolution: "site-config-stack@npm:4.0.8"
+  dependencies:
+    ufo: "npm:^1.6.3"
+  peerDependencies:
+    vue: ^3.5.30
+  checksum: 10c0/b48ec1e5639bb943a2b3dcce045575a1ee3cb70c6389237600cffb8b524c6a613b55164bca3d86ac2ffbeb819b4a48c3e16615d343ea99a8ddc50ba2b2ba8e4e
+  languageName: node
+  linkType: hard
+
 "skin-tone@npm:^2.0.0":
   version: 2.0.0
   resolution: "skin-tone@npm:2.0.0"
@@ -13381,6 +13444,16 @@ __metadata:
     fdir: "npm:^6.5.0"
     picomatch: "npm:^4.0.3"
   checksum: 10c0/869c31490d0d88eedb8305d178d4c75e7463e820df5a9b9d388291daf93e8b1eb5de1dad1c1e139767e4269fe75f3b10d5009b2cc14db96ff98986920a186844
+  languageName: node
+  linkType: hard
+
+"tinyglobby@npm:^0.2.16":
+  version: 0.2.16
+  resolution: "tinyglobby@npm:0.2.16"
+  dependencies:
+    fdir: "npm:^6.5.0"
+    picomatch: "npm:^4.0.4"
+  checksum: 10c0/f2e09fd93dd95c41e522113b686ff6f7c13020962f8698a864a257f3d7737599afc47722b7ab726e12f8a813f779906187911ff8ee6701ede65072671a7e934b
   languageName: node
   linkType: hard
 
