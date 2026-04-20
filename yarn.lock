@@ -87,20 +87,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:^8.0.0-beta.4":
-  version: 8.0.0-rc.3
-  resolution: "@babel/generator@npm:8.0.0-rc.3"
-  dependencies:
-    "@babel/parser": "npm:^8.0.0-rc.3"
-    "@babel/types": "npm:^8.0.0-rc.3"
-    "@jridgewell/gen-mapping": "npm:^0.3.12"
-    "@jridgewell/trace-mapping": "npm:^0.3.28"
-    "@types/jsesc": "npm:^2.5.0"
-    jsesc: "npm:^3.0.2"
-  checksum: 10c0/43363ccd8c5e18ea4c1c198f17158acabb4074f12ae64c5772f97fe58b9a377de445d9fd0b403812bc10dadff44fe356a07f6017f25732b021bba3654241a78e
-  languageName: node
-  linkType: hard
-
 "@babel/helper-annotate-as-pure@npm:^7.27.3":
   version: 7.27.3
   resolution: "@babel/helper-annotate-as-pure@npm:7.27.3"
@@ -226,24 +212,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-string-parser@npm:^8.0.0-rc.3":
-  version: 8.0.0-rc.3
-  resolution: "@babel/helper-string-parser@npm:8.0.0-rc.3"
-  checksum: 10c0/204a59f279c9fb3ea7ea5a817712f3e9099a67711ecf7f314c98d700037ea50920c2a311f94529aa3fd163517068283db0e0e14c08832b29ae45e7c1969b3ff7
-  languageName: node
-  linkType: hard
-
 "@babel/helper-validator-identifier@npm:^7.28.5":
   version: 7.28.5
   resolution: "@babel/helper-validator-identifier@npm:7.28.5"
   checksum: 10c0/42aaebed91f739a41f3d80b72752d1f95fd7c72394e8e4bd7cdd88817e0774d80a432451bcba17c2c642c257c483bf1d409dd4548883429ea9493a3bc4ab0847
-  languageName: node
-  linkType: hard
-
-"@babel/helper-validator-identifier@npm:^8.0.0-rc.3":
-  version: 8.0.0-rc.3
-  resolution: "@babel/helper-validator-identifier@npm:8.0.0-rc.3"
-  checksum: 10c0/03236675006da83b8530ef95896042d5246989e2fdc8283a60882a14c7ce86dc18db6a6b12f18b638d6722adc5f1e721142889a331e12a6f7c0fba3e307fdc7f
   languageName: node
   linkType: hard
 
@@ -272,17 +244,6 @@ __metadata:
   bin:
     parser: ./bin/babel-parser.js
   checksum: 10c0/e5a4e69e3ac7acdde995f37cf299a68458cfe7009dff66bd0962fd04920bef287201169006af365af479c08ff216bfefbb595e331f87f6ae7283858aebbc3317
-  languageName: node
-  linkType: hard
-
-"@babel/parser@npm:^8.0.0-beta.4, @babel/parser@npm:^8.0.0-rc.3":
-  version: 8.0.0-rc.3
-  resolution: "@babel/parser@npm:8.0.0-rc.3"
-  dependencies:
-    "@babel/types": "npm:^8.0.0-rc.3"
-  bin:
-    parser: ./bin/babel-parser.js
-  checksum: 10c0/666f954d5744261e4fbfa32170ca0034bb96d624d1c0936eb6a5a76e196773e93b480a99c87621cc35bee00015fd27318a5bd0542efd747cb0499ad5d3e58b75
   languageName: node
   linkType: hard
 
@@ -356,16 +317,6 @@ __metadata:
     "@babel/helper-string-parser": "npm:^7.27.1"
     "@babel/helper-validator-identifier": "npm:^7.28.5"
   checksum: 10c0/23cc3466e83bcbfab8b9bd0edaafdb5d4efdb88b82b3be6728bbade5ba2f0996f84f63b1c5f7a8c0d67efded28300898a5f930b171bb40b311bca2029c4e9b4f
-  languageName: node
-  linkType: hard
-
-"@babel/types@npm:^8.0.0-beta.4, @babel/types@npm:^8.0.0-rc.3":
-  version: 8.0.0-rc.3
-  resolution: "@babel/types@npm:8.0.0-rc.3"
-  dependencies:
-    "@babel/helper-string-parser": "npm:^8.0.0-rc.3"
-    "@babel/helper-validator-identifier": "npm:^8.0.0-rc.3"
-  checksum: 10c0/ffc29e2453bb3c25defbc49b243e09e10374bad571c7f27d9fed09a92f43a25624c55edfed5c8d4e45cac0b39efa040e9b6b2aef7cd7076f04311c31a2a2c8bf
   languageName: node
   linkType: hard
 
@@ -3125,7 +3076,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.1.0, @rollup/pluginutils@npm:^5.1.3, @rollup/pluginutils@npm:^5.3.0":
+"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.1.0, @rollup/pluginutils@npm:^5.1.3":
   version: 5.3.0
   resolution: "@rollup/pluginutils@npm:5.3.0"
   dependencies:
@@ -4196,13 +4147,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsesc@npm:^2.5.0":
-  version: 2.5.1
-  resolution: "@types/jsesc@npm:2.5.1"
-  checksum: 10c0/12ba7bf5968aeeb36408269f4b5a39718efc6411fa197cf0f5e967ba36ad7b7d555b78787fc480db43ce63ebe6ab0ffe5fd9f64b1ea3b0d073877f0747491b30
-  languageName: node
-  linkType: hard
-
 "@types/json-schema@npm:^7.0.15":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
@@ -4315,20 +4259,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unhead/addons@npm:^2.1.13":
-  version: 2.1.13
-  resolution: "@unhead/addons@npm:2.1.13"
-  dependencies:
-    "@rollup/pluginutils": "npm:^5.3.0"
-    estree-walker: "npm:^3.0.3"
-    magic-string: "npm:^0.30.21"
-    mlly: "npm:^1.8.0"
-    ufo: "npm:^1.6.3"
-    unplugin: "npm:^3.0.0"
-    unplugin-ast: "npm:^0.16.0"
+"@unhead/addons@npm:^2.1.13 || ^3.0.0":
+  version: 3.0.4
+  resolution: "@unhead/addons@npm:3.0.4"
   peerDependencies:
-    unhead: ^2.1.13
-  checksum: 10c0/04b4ad57079984e6d84de73f86f83572d1dd8598f0166e9490c879076a34caa701c34fefaca30b75b0c6d3a4ca2da4fc17d57590a191a7785ca6fd78d0421810
+    "@unhead/bundler": 3.0.4
+  checksum: 10c0/d85bf30561934ffdfdefa0fbb6149b0ba78be9f6437e0721d9258cf3a187adfa00cda82a6f640d8e4356524c8610c1527b72b9f6433631637f5d777a67c77f0f
   languageName: node
   linkType: hard
 
@@ -5142,17 +5078,6 @@ __metadata:
     "@babel/parser": "npm:^7.28.5"
     pathe: "npm:^2.0.3"
   checksum: 10c0/d885f3a4e9837e730451a667d26936eef34773d6e5ecacd771a3e9d1f82fdc45d38958ab35e18880e0cf667896604a599497c5186f2578cf73c0d802ed7fc697
-  languageName: node
-  linkType: hard
-
-"ast-kit@npm:^3.0.0-beta.1":
-  version: 3.0.0-beta.1
-  resolution: "ast-kit@npm:3.0.0-beta.1"
-  dependencies:
-    "@babel/parser": "npm:^8.0.0-beta.4"
-    estree-walker: "npm:^3.0.3"
-    pathe: "npm:^2.0.3"
-  checksum: 10c0/27a0309d495100e088c6aa6449e2bb79fdf6321c42bb73c196d646935ff788c2202d8dfc19e04499c623f0676cbe5d6baaeb645ede4b349fac2bd5c276419d5a
   languageName: node
   linkType: hard
 
@@ -9035,7 +8960,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string-ast@npm:^1.0.2, magic-string-ast@npm:^1.0.3":
+"magic-string-ast@npm:^1.0.2":
   version: 1.0.3
   resolution: "magic-string-ast@npm:1.0.3"
   dependencies:
@@ -10430,22 +10355,22 @@ __metadata:
   linkType: hard
 
 "nuxt-seo-utils@npm:^8.0.0":
-  version: 8.1.7
-  resolution: "nuxt-seo-utils@npm:8.1.7"
+  version: 8.1.9
+  resolution: "nuxt-seo-utils@npm:8.1.9"
   dependencies:
     "@nuxt/kit": "npm:^4.4.2"
-    "@unhead/addons": "npm:^2.1.13"
+    "@unhead/addons": "npm:^2.1.13 || ^3.0.0"
     citty: "npm:^0.2.2"
     defu: "npm:^6.1.7"
     escape-string-regexp: "npm:^5.0.0"
     image-size: "npm:^2.0.2"
-    nuxt-site-config: "npm:^4.0.7"
-    nuxtseo-shared: "npm:^5.1.1"
+    nuxt-site-config: "npm:^4.0.8"
+    nuxtseo-shared: "npm:^5.1.3"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.0"
     scule: "npm:^1.3.0"
     sharp: "npm:^0.34.5"
-    tinyglobby: "npm:^0.2.15"
+    tinyglobby: "npm:^0.2.16"
     ufo: "npm:^1.6.3"
   peerDependencies:
     esbuild: ">=0.17.0"
@@ -10464,7 +10389,7 @@ __metadata:
       optional: true
   bin:
     nuxt-seo-utils: bin/nuxt-seo-utils.mjs
-  checksum: 10c0/37c15afc0f44481cfca97df3c7081b57fd86d318a806c7ee70b410ef31fe5bd0f3b89a42c70927f3ca9f51d7dc532adb23b748cc5aa094e1c45dc7a11c93b71c
+  checksum: 10c0/61dee4ed00bdadde1891b7b73eac7b8e2a4555a5f7473205f90d82091daa28c13ba275837909c7cd000db5220d584642ca9cafb165728fc30710777045299616
   languageName: node
   linkType: hard
 
@@ -14138,20 +14063,6 @@ __metadata:
     unist-util-is: "npm:^6.0.0"
     unist-util-visit-parents: "npm:^6.0.0"
   checksum: 10c0/a56e1bbbf63fcb55abe379e660b9a3367787e8be1e2473bdb7e86cfa6f32b6c1fa0092432d7040b8a30b2fc674bbbe024ffe6d03c3d6bf4839b064f584463a4e
-  languageName: node
-  linkType: hard
-
-"unplugin-ast@npm:^0.16.0":
-  version: 0.16.0
-  resolution: "unplugin-ast@npm:0.16.0"
-  dependencies:
-    "@babel/generator": "npm:^8.0.0-beta.4"
-    "@babel/parser": "npm:^8.0.0-beta.4"
-    "@babel/types": "npm:^8.0.0-beta.4"
-    ast-kit: "npm:^3.0.0-beta.1"
-    magic-string-ast: "npm:^1.0.3"
-    unplugin: "npm:^3.0.0"
-  checksum: 10c0/34116a1a3d1dbb834db546fd627fecf6f9c065db27beb24904c6efc83769322191c3ea969a230e71906c9f2e558ece7329836a2e6a49ec67a23b0d21bcae7476
   languageName: node
   linkType: hard
 
