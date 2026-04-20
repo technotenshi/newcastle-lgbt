@@ -9827,7 +9827,7 @@ __metadata:
     glob: "npm:^13.0.0"
     globals: "npm:^17.0.0"
     nuxt: "npm:^4.1.2"
-    nuxt-link-checker: "npm:^5.0.0"
+    nuxt-link-checker: "npm:^5.0.9"
     nuxt-og-image: "npm:^6.3.0"
     nuxt-schema-org: "npm:^6.0.0"
     nuxt-seo-utils: "npm:^8.0.0"
@@ -10113,9 +10113,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-link-checker@npm:^5.0.0":
-  version: 5.0.8
-  resolution: "nuxt-link-checker@npm:5.0.8"
+"nuxt-link-checker@npm:^5.0.9":
+  version: 5.0.9
+  resolution: "nuxt-link-checker@npm:5.0.9"
   dependencies:
     "@nuxt/kit": "npm:^4.4.2"
     "@vueuse/core": "npm:^14.2.1"
@@ -10123,8 +10123,8 @@ __metadata:
     diff: "npm:^8.0.4"
     fuse.js: "npm:^7.3.0"
     magic-string: "npm:^0.30.21"
-    nuxt-site-config: "npm:^4.0.7"
-    nuxtseo-shared: "npm:^5.1.2"
+    nuxt-site-config: "npm:^4.0.8"
+    nuxtseo-shared: "npm:^5.1.3"
     ofetch: "npm:^1.5.1"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.0"
@@ -10134,7 +10134,7 @@ __metadata:
     unstorage: "npm:^1.17.5"
   peerDependencies:
     nuxt: ^3.9.0 || ^4.0.0
-  checksum: 10c0/cbde251e91de355e28c88f495eb3a44f1251a2cc1e249d4d77ab76d41d6d1214b45df186d4ac8a1b5f91adb409fb847378078757bb0fc24e1d68e865ce239b9e
+  checksum: 10c0/e9eb6b6b7495959b70dd833fd3089cb9e081bfc80137feb5cf4ff942dd79c0ca85facba983a585755e54201cc5cc6025f9559dbc8a663a21eeb036681b30bec1
   languageName: node
   linkType: hard
 

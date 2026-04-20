@@ -34,7 +34,7 @@
     "glob": "^13.0.0",
     "globals": "^17.0.0",
     "nuxt": "^4.1.2",
-    "nuxt-link-checker": "^5.0.0",
+    "nuxt-link-checker": "^5.0.9",
     "nuxt-og-image": "^6.3.0",
     "nuxt-schema-org": "^6.0.0",
     "nuxt-seo-utils": "^8.0.0",
