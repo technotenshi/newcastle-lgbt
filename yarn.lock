@@ -10320,18 +10320,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-site-config-kit@npm:4.0.7":
-  version: 4.0.7
-  resolution: "nuxt-site-config-kit@npm:4.0.7"
-  dependencies:
-    "@nuxt/kit": "npm:^4.4.2"
-    site-config-stack: "npm:4.0.7"
-    std-env: "npm:^4.0.0"
-    ufo: "npm:^1.6.3"
-  checksum: 10c0/bb29185cb23849b6fde1f3c5d018ac75648959ddb4fd18c798998bbe2f69c2b7d08dca94c3f4a291b92b0e422201222dbb68e568210b037f600614fea81eda67
-  languageName: node
-  linkType: hard
-
 "nuxt-site-config-kit@npm:4.0.8":
   version: 4.0.8
   resolution: "nuxt-site-config-kit@npm:4.0.8"
@@ -10357,22 +10345,6 @@ __metadata:
     site-config-stack: "npm:4.0.6"
     ufo: "npm:^1.6.3"
   checksum: 10c0/342b938e3b4612f18e218e23914aaa83c3d01954b3b9060094ffae76a11b90d7deac21e003bd05080393476837b12cb5888c91a2d3c898d67223f348b2029166
-  languageName: node
-  linkType: hard
-
-"nuxt-site-config@npm:^4.0.7":
-  version: 4.0.7
-  resolution: "nuxt-site-config@npm:4.0.7"
-  dependencies:
-    "@nuxt/kit": "npm:^4.4.2"
-    h3: "npm:^1.15.10"
-    nuxt-site-config-kit: "npm:4.0.7"
-    nuxtseo-shared: "npm:^0.9.0"
-    pathe: "npm:^2.0.3"
-    pkg-types: "npm:^2.3.0"
-    site-config-stack: "npm:4.0.7"
-    ufo: "npm:^1.6.3"
-  checksum: 10c0/bc291298039801bbe8d2b7d633736828795ec3fd0dfc7a88cc12b5e78af18c1c5aff665d2ca0bd5e0829edc08414cfbcfef83d78a972bf241302a815d0022afa
   languageName: node
   linkType: hard
 
@@ -10549,7 +10521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxtseo-shared@npm:^5.1.1, nuxtseo-shared@npm:^5.1.2":
+"nuxtseo-shared@npm:^5.1.2":
   version: 5.1.2
   resolution: "nuxtseo-shared@npm:5.1.2"
   dependencies:
@@ -13012,17 +12984,6 @@ __metadata:
   peerDependencies:
     vue: ^3.5.30
   checksum: 10c0/69e8b562c5a10d940fff5ab7316bba5083270861ce2d2cac16e24f041714cff824afbe2489e4dd4477f245e3ad8067d9156dc92f9dcad51559ac005c18394b86
-  languageName: node
-  linkType: hard
-
-"site-config-stack@npm:4.0.7":
-  version: 4.0.7
-  resolution: "site-config-stack@npm:4.0.7"
-  dependencies:
-    ufo: "npm:^1.6.3"
-  peerDependencies:
-    vue: ^3.5.30
-  checksum: 10c0/2530380e0b616f1532b19e0a309e84abdbfef313b45448a7445d58ceed68fbd954b6f69b25ad1b4c3a4c93dd1576ec495691cda9b83a87f5581fb722cbb134e8
   languageName: node
   linkType: hard
 
