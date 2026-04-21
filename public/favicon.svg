@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Newcastle LGBTQ Voice favicon">
+  <defs>
+    <clipPath id="ring-clip">
+      <path d="M32 6C17.641 6 6 17.641 6 32s11.641 26 26 26 26-11.641 26-26S46.359 6 32 6zm0 8c9.941 0 18 8.059 18 18s-8.059 18-18 18-18-8.059-18-18 8.059-18 18-18z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#ring-clip)">
+    <path d="M32 32 32 0A32 32 0 0 1 59.713 16z" fill="#4fb2e5"/>
+    <path d="M32 32 59.713 16A32 32 0 0 1 57.941 48z" fill="#35495e"/>
+    <path d="M32 32 57.941 48A32 32 0 0 1 43.084 61.564z" fill="#7a5ea7"/>
+    <path d="M32 32 43.084 61.564A32 32 0 0 1 20.916 61.564z" fill="#eb5757"/>
+    <path d="M32 32 20.916 61.564A32 32 0 0 1 6.059 48z" fill="#ff8a4c"/>
+    <path d="M32 32 6.059 48A32 32 0 0 1 4.287 16z" fill="#f4c35a"/>
+    <path d="M32 32 4.287 16A32 32 0 0 1 32 0z" fill="#46c1b8"/>
+  </g>
+  <path d="M32 10c12.15 0 22 9.85 22 22S44.15 54 32 54 10 44.15 10 32 19.85 10 32 10z" fill="#fff"/>
+</svg>
