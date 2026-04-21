@@ -17,8 +17,20 @@ __pycache__/
 *.py[cod]
 .remember/
 
+# Claude Code
+.claude/worktrees/
+
+# Editor swap/backup files
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+
 # Local config (machine-specific, not for version control)
 settings.local.json
 
 # Skilld references (recreated by `skilld install`)
 .skilld
+docs/superpowers/
