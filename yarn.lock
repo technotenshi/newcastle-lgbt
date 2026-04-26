@@ -6285,10 +6285,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:^8.0.4":
-  version: 8.0.4
-  resolution: "diff@npm:8.0.4"
-  checksum: 10c0/7ee5d03926db4039be7252ac3b0abaae1bd122a2ca971e5ca7270e444e36ff83dd906fad1a719740ca347e97ed5dc8f458a76a8391dbcd7aff363bdafb348a00
+"diff@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "diff@npm:9.0.0"
+  checksum: 10c0/a971cc88f66071a33bd3942db2f51b57d484e9856265ae45cf44fb28ab2fde91f132d9c26d8be0fb6082d2be94d29e1295c1adb251b7461935d6a2dd304cd161
   languageName: node
   linkType: hard
 
@@ -10145,13 +10145,13 @@ __metadata:
   linkType: hard
 
 "nuxt-link-checker@npm:^5.0.9":
-  version: 5.0.9
-  resolution: "nuxt-link-checker@npm:5.0.9"
+  version: 5.0.10
+  resolution: "nuxt-link-checker@npm:5.0.10"
   dependencies:
     "@nuxt/kit": "npm:^4.4.2"
     "@vueuse/core": "npm:^14.2.1"
     consola: "npm:^3.4.2"
-    diff: "npm:^8.0.4"
+    diff: "npm:^9.0.0"
     fuse.js: "npm:^7.3.0"
     magic-string: "npm:^0.30.21"
     nuxt-site-config: "npm:^4.0.8"
@@ -10165,7 +10165,7 @@ __metadata:
     unstorage: "npm:^1.17.5"
   peerDependencies:
     nuxt: ^3.9.0 || ^4.0.0
-  checksum: 10c0/e9eb6b6b7495959b70dd833fd3089cb9e081bfc80137feb5cf4ff942dd79c0ca85facba983a585755e54201cc5cc6025f9559dbc8a663a21eeb036681b30bec1
+  checksum: 10c0/d86f8f02f82c33c9f271d36f8b83a7a01bcc074befa8278a7bc3294c1063a9e0f16081e3cec7cb49ba8d3418c57da9f6996e11f7a460ecc0ba9feb0e8cce77e6
   languageName: node
   linkType: hard
 
