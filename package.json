@@ -38,7 +38,7 @@
     "nuxt-og-image": "6.5.0",
     "nuxt-schema-org": "^6.0.0",
     "nuxt-seo-utils": "8.1.11",
-    "postcss": "8.5.14",
+    "postcss": "8.5.15",
     "serve": "^14.2.5",
     "sharp": "^0.34.0",
     "unstorage": "^1.17.4",
