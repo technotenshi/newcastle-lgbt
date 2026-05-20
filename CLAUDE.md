@@ -60,10 +60,7 @@ All content files are registered under a single `content` collection (`content.c
 - Full authoring guide (frontmatter fields, filename format, body structure, image conventions, step-by-step instructions): [`docs/content-authoring.md`](docs/content-authoring.md)
 
 #### Image generation prompt rules
-These apply to every DALL-E or Midjourney prompt produced for any image slot on the site:
-
-- **Explicit racial diversity:** Do not use "diverse" alone — AI generators default to predominantly white subjects. Always write: *"racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented."*
-- **LGBTQ+ motifs:** Every image should include at least one subtle LGBTQ+ visual cue regardless of event type — e.g. a rainbow pride wristband, small pride pin on clothing, or pride-color accessories. Keep motifs natural and personal (accessories, not large flags). Avoid relying on accurate flag rendering — AI misrenders flag stripe order and colors; describe color palettes instead (e.g. *"light blue, pink, and white accessories"*).
+Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide.md`](docs/image-generation-guide.md). Use `/image-prompt` to generate prompts automatically. Key non-negotiables: explicit racial diversity language (not just "diverse"), at least one LGBTQ+ motif per image, no overcast lighting, no text in AI images.
 
 ### Modules & integrations
 - **`@nuxt/image`** — serves assets from `assets/` as WebP at quality 80 via the IPX endpoint (`/_ipx/...`). Use `<NuxtImg>` instead of plain `<img>` for all local images.
@@ -121,6 +118,36 @@ Custom MDC prose components live in `components/content/`. A file there automati
 - PascalCase for component files, camelCase for composables
 - Type-safe interfaces for `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem`
 - Vue composables (`computed`, `ref`, `watch`, etc.) must be explicitly imported — they are **not** auto-imported by ESLint config
+
+## Claude Code Automations
+
+Skills, a subagent, and hooks are configured in `.claude/`. Always check whether a skill applies before writing custom content or code.
+
+### Skills (invoke with `/skill-name`)
+
+| Skill | What it does |
+|---|---|
+| `/new-article` | Scaffold a news article or event: correct filename (`YYYYMMDD-##-slug.md`), frontmatter, body structure, date-past warning for events |
+| `/content-check` | Pre-publish validator: em dashes, absolute internal URLs, missing frontmatter fields, lingering `draft: true`, image alt text rules |
+| `/image-prompt` | Generate DALL-E 3 + Midjourney v7 prompts for all image slots per `docs/image-generation-guide.md` rules |
+| `/ics-event` | Generate iCal file + Google Calendar URL from an event frontmatter + body |
+| `/seo-check` | Audit a page's `useSeoMeta`, OG image IPX pattern, Schema.org, and no-manual-tags rule |
+| `/backlog` | Read `docs/improvement-tasks.md` and recommend highest-impact / lowest-effort items |
+
+### Subagent
+`content-reviewer` — enforces content conventions (em dashes, racial diversity language, LGBTQ+ motifs, lighting, absolute URLs). Invoked automatically on content review or on demand.
+
+### Hooks (automatic, configured in `.claude/settings.json`)
+- **Auto-lint** — runs `./node_modules/.bin/eslint --fix` on every edited `.vue`/`.ts`/`.js` file
+- **Em dash warning** — flags `—` in `content/*.md` files immediately after write
+- **Absolute URL warning** — flags `https://newcastle.lgbt/` in any written file
+- **PurgeCSS reminder** — notes `:class=` bindings in `.vue` edits that may need safelist entries
+- **Stop reminder** — shows lint+build reminder when source files have unstaged changes
+
+### Reference docs in `docs/`
+- [`docs/content-authoring.md`](docs/content-authoring.md) — filename format, frontmatter fields, body structure, step-by-step for news and events
+- [`docs/image-generation-guide.md`](docs/image-generation-guide.md) — DALL-E 3 and Midjourney v7 parameters, lighting reference, prompt templates
+- [`docs/improvement-tasks.md`](docs/improvement-tasks.md) — open site improvement backlog (use `/backlog` to prioritize)
 
 <!-- skilld -->
 Before modifying code, evaluate each installed skill against the current task.
