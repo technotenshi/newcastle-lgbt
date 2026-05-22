@@ -1,7 +1,6 @@
 ---
 name: image-prompt
 description: Generate DALL-E 3 and Midjourney v7 prompts for every image slot in a news article or event, following all Newcastle LGBTQ+ site image rules
-disable-model-invocation: true
 ---
 
 Generate AI image prompts for a news article or event on the Newcastle LGBTQ+ site. Read the content file provided (or the most recently created/edited one) and output ready-to-use prompts for every image slot.
@@ -13,7 +12,7 @@ Generate AI image prompts for a news article or event on the Newcastle LGBTQ+ si
 3. **Determine style** — civic/political/outdoor/commemorative → photorealistic; social events/parties/workshops → graphic-design/poster
 4. **Check aspect ratio** per slot:
    - `image` (news), `imageHeader`, `carousel` → 16:9 (`1792x1024` for DALL-E, `--ar 16:9` for MJ)
-   - `image` (events) → 4:3 (`1792x1024` for DALL-E, `--ar 4:3` for MJ)
+   - `image` (events) → 4:3 landscape (`1792x1024` for DALL-E, `--ar 4:3` for MJ)
 5. **Write distinct prompts** for each slot — if both `image` and `imageHeader` are present, they must differ meaningfully: different scene type, subject, vantage point, or narrative angle. Never just a tighter crop of the same scene.
 6. **Output both DALL-E and Midjourney versions** for each slot.
 

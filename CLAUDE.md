@@ -57,10 +57,13 @@ All content files are registered under a single `content` collection (`content.c
 - Council members are ordered by `position-N` prefix in filename
 - Images: prefer `.png` for news/events; always include alt text
 - Sorting: news by date DESC then `order` field; events by date ASC
+- **Em dash ban includes blockquote attributions:** `> — Attribution` lines are also banned. Use `> *Attribution Name*` instead.
+- `imageHeader.alt` is **not** an image description — it is a one-liner engagement teaser displayed as a caption below the header image. Write it as a sentence that entices the reader, not a description of what is in the photo.
+- **Event `link.target` fallback:** If no registration/ticketing URL is available, link to the primary organizer's website with `link.text: "More Information"`.
 - Full authoring guide (frontmatter fields, filename format, body structure, image conventions, step-by-step instructions): [`docs/content-authoring.md`](docs/content-authoring.md)
 
 #### Image generation prompt rules
-Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide.md`](docs/image-generation-guide.md). Use `/image-prompt` to generate prompts automatically. Key non-negotiables: explicit racial diversity language (not just "diverse"), at least one LGBTQ+ motif per image, no overcast lighting, no text in AI images.
+Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide.md`](docs/image-generation-guide.md). Use `/image-prompt` to generate prompts automatically. Key non-negotiables: explicit racial diversity language (not just "diverse"), at least one LGBTQ+ motif per image, no overcast lighting, no text in AI images, aspect ratio embedded inside the prompt text (e.g. `16:9 wide landscape, 1792x1024` for DALL-E; `--ar 16:9` appended for Midjourney).
 
 ### Modules & integrations
 - **`@nuxt/image`** — serves assets from `assets/` as WebP at quality 80 via the IPX endpoint (`/_ipx/...`). Use `<NuxtImg>` instead of plain `<img>` for all local images.

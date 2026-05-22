@@ -1,7 +1,6 @@
 ---
 name: backlog
 description: Read docs/improvement-tasks.md and recommend the highest-impact, lowest-effort tasks to tackle next
-disable-model-invocation: true
 ---
 
 Read `docs/improvement-tasks.md` and suggest what to work on next.
