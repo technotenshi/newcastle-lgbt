@@ -1,7 +1,6 @@
 ---
 name: new-article
 description: Scaffold a new news article or event in content/ with correct filename, frontmatter, and body structure per docs/content-authoring.md
-disable-model-invocation: true
 ---
 
 Create a new content file (news article or event) for the Newcastle LGBTQ+ site.
@@ -62,7 +61,7 @@ After creating the file, generate DALL-E and Midjourney prompts for each image s
 - **LGBTQ+ motifs:** Include at least one subtle LGBTQ+ visual cue (pride wristband, rainbow pin, pride-color accessories) regardless of event type
 - **Lighting:** Bright or golden-hour. Never overcast or grey.
 - **No text in AI images**
-- **Aspect ratios:** news feature/header = 16:9, events = 4:3
+- **Aspect ratios:** news feature/header = 16:9, events = 4:3 landscape (`1792x1024` DALL-E, `--ar 4:3` MJ)
 
 ### Also check
 - Alt text: 50–250 characters; describe what's in the image, not the article topic

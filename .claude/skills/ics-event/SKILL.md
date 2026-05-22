@@ -1,7 +1,6 @@
 ---
 name: ics-event
 description: Generate an iCal (.ics) file content and Google Calendar URL for an event from content/events/
-disable-model-invocation: true
 ---
 
 Generate calendar integration for a Newcastle LGBTQ+ site event. Read the specified event file (or the most recently created/edited event file) and output:
