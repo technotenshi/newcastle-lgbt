@@ -2341,26 +2341,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/robots@npm:6.0.8":
-  version: 6.0.8
-  resolution: "@nuxtjs/robots@npm:6.0.8"
+"@nuxtjs/robots@npm:6.0.9":
+  version: 6.0.9
+  resolution: "@nuxtjs/robots@npm:6.0.9"
   dependencies:
     "@fingerprintjs/botd": "npm:^2.0.0"
-    "@nuxt/kit": "npm:^4.4.2"
+    "@nuxt/kit": "npm:^4.4.6"
     consola: "npm:^3.4.2"
     defu: "npm:^6.1.7"
     h3: "npm:^1.15.11"
     nuxt-site-config: "npm:^4.0.8"
     nuxtseo-shared: "npm:^5.1.3"
     pathe: "npm:^2.0.3"
-    pkg-types: "npm:^2.3.0"
-    ufo: "npm:^1.6.3"
+    pkg-types: "npm:^2.3.1"
+    ufo: "npm:^1.6.4"
   peerDependencies:
     zod: ">=3"
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/56edaa4e8568ac65e0e2e150e56ef5d303db23c8a7a17f6dd60cdc6aee73eeda5be9f39f90ff13439cdd2bb2a9fa2a208dcfb3d450cbd1e0037f8511b3cf4f85
+  checksum: 10c0/09e801ad93e8523cea541cef8803154f554f1bd60805d20af026230f8dae88d2f21cf42914c09d08a468e8babc7bcfb377544c07bf40447dc5ab686be8c7071d
   languageName: node
   linkType: hard
 
@@ -11105,7 +11105,7 @@ __metadata:
     "@fullhuman/postcss-purgecss": "npm:^8.0.0"
     "@nuxt/content": "npm:^3.14.0"
     "@nuxt/image": "npm:^2.0.0"
-    "@nuxtjs/robots": "npm:6.0.8"
+    "@nuxtjs/robots": "npm:6.0.9"
     "@nuxtjs/sitemap": "npm:8.0.15"
     "@unhead/vue": "npm:3.1.0"
     better-sqlite3: "npm:^12.10.0"

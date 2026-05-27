@@ -26,7 +26,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.0",
     "@fullhuman/postcss-purgecss": "^8.0.0",
-    "@nuxtjs/robots": "6.0.8",
+    "@nuxtjs/robots": "6.0.9",
     "@nuxtjs/sitemap": "8.0.15",
     "@unhead/vue": "3.1.0",
     "bootstrap": "^5.0.1",
