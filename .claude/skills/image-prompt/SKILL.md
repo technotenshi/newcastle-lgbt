@@ -8,8 +8,9 @@ Generate AI image prompts for a news article or event on the Newcastle LGBTQ+ si
 ## Step-by-step
 
 1. **Read the content file** — extract: topic, date, location, key visual elements, emotional tone, any explicit visual details mentioned
-2. **Identify image slots** present in frontmatter: `image`, `imageHeader` (news only), `carousel` (news only)
-3. **Determine style** — civic/political/outdoor/commemorative → photorealistic; social events/parties/workshops → graphic-design/poster
+2. **Check for attached images** — if the user has attached a flyer, photo, or any reference image, study its visual style, color palette, composition, and mood. Use that vibe as the primary creative direction for the prompts. Describe what you observed (e.g. "flat illustration style, bold rainbow flowers, cream textured background") before writing the prompts.
+3. **Identify image slots** present in frontmatter: `image`, `imageHeader` (news only), `carousel` (news only)
+4. **Determine style** — if an attached image provides a style reference, use it. Otherwise: civic/political/outdoor/commemorative → photorealistic; social events/parties/workshops → graphic-design/poster
 4. **Check aspect ratio** per slot:
    - `image` (news), `imageHeader`, `carousel` → 16:9 (`1792x1024` for DALL-E, `--ar 16:9` for MJ)
    - `image` (events) → 4:3 landscape (`1792x1024` for DALL-E, `--ar 4:3` for MJ)
