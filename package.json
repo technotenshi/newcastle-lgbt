@@ -36,7 +36,7 @@
     "globals": "^17.0.0",
     "nuxt": "4.4.6",
     "nuxt-link-checker": "5.0.10",
-    "nuxt-og-image": "6.5.1",
+    "nuxt-og-image": "6.5.2",
     "nuxt-schema-org": "^6.0.0",
     "nuxt-seo-utils": "8.1.11",
     "postcss": "8.5.15",
