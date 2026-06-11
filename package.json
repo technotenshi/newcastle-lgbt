@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "10.9.1",
     "glob": "^13.0.0",
     "globals": "^17.0.0",
-    "nuxt": "4.4.6",
+    "nuxt": "4.4.8",
     "nuxt-link-checker": "5.0.10",
     "nuxt-og-image": "6.5.1",
     "nuxt-schema-org": "^6.0.0",
