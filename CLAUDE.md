@@ -27,6 +27,8 @@ After making changes: run `make lint`, then `make build` to confirm the site dep
 > **Non-TTY environments** (CI, scripts): Most `make` targets pass `-it` to `docker compose run`, which fails without a TTY. Run the underlying yarn command directly instead: `docker compose run --rm app yarn <cmd>` (e.g. `yarn build`, `yarn lint`).
 >
 > **Foreground stall:** In some shell environments `docker compose run --rm app yarn <cmd>` creates the container but produces no output when run synchronously. If this happens, run it as a background task and read the output file when done.
+>
+> **`NUXT_B2005` dev warning is a known false positive:** `check-if-page-unused.js has no default export` comes from Nuxt's regex-based export scanner (via `mlly`) missing the `export { x as default }` pattern used in that internal file. Harmless (only disables one dev diagnostic), no fix available yet — tracked upstream at [nuxt/nuxt#35664](https://github.com/nuxt/nuxt/issues/35664).
 
 ## Architecture
 
@@ -55,15 +57,19 @@ All content files are registered under a single `content` collection (`content.c
 - News slugs follow date-based paths: `/news/YYYY/MM/DD/slug`
 - Articles support a `draft: true` frontmatter field to hide them
 - Council members are ordered by `position-N` prefix in filename
+- Council member portraits are real official photos sourced from `newcastlewa.gov` (not AI-generated, unlike news/event images)
 - Images: prefer `.png` for news/events; always include alt text
-- Sorting: news by date DESC then `order` field; events by date ASC
+- Sorting: news by date DESC then `order` field; events by date ASC, then by `order` **descending** within the same date (highest `order` displays first — use to group related same-day events, e.g. a festival and its sub-event)
 - **Em dash ban includes blockquote attributions:** `> — Attribution` lines are also banned. Use `> *Attribution Name*` instead.
 - `imageHeader.alt` is **not** an image description — it is a one-liner engagement teaser displayed as a caption below the header image. Write it as a sentence that entices the reader, not a description of what is in the photo.
 - **Event `link.target` fallback:** If no registration/ticketing URL is available, link to the primary organizer's website with `link.text: "More Information"`.
+- **Event CTA position:** the `link` button always renders *after* the body text (`pages/events/index.vue`) — event body copy should say "link below," never "link above."
+- **Event photo credit:** optional `image.credit` field (events only) renders as a small "Photo: {name}" line under the image (`composables/useEvents.ts`, `pages/events/index.vue`). Name only, never phone numbers/contact info.
 - Full authoring guide (frontmatter fields, filename format, body structure, image conventions, step-by-step instructions): [`docs/content-authoring.md`](docs/content-authoring.md)
+- **Advocacy-forward writing:** News articles on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability) must follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) — avoid deficit framing ("nothing left to lose"), don't conflate trans/drag/sex-worker/unhoused identities, attribute right-wing coded language rather than narrating it as neutral, name specific institutions instead of blaming whole identity groups, and limit absolute claims.
 
 #### Image generation prompt rules
-Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide.md`](docs/image-generation-guide.md). Use `/image-prompt` to generate prompts automatically. Key non-negotiables: explicit racial diversity language (not just "diverse"), at least one LGBTQ+ motif per image, no overcast lighting, no text in AI images, aspect ratio embedded inside the prompt text (e.g. `16:9 wide landscape, 1792x1024` for DALL-E; `--ar 16:9` appended for Midjourney).
+Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide.md`](docs/image-generation-guide.md). Use `/image-prompt` to generate prompts automatically. Key non-negotiables: explicit racial diversity language (not just "diverse"), at least one LGBTQ+ motif per image, no overcast lighting, no text in AI images, aspect ratio embedded inside the prompt text (e.g. `16:9 wide landscape, 1792x1024` for DALL-E; `--ar 16:9` appended for Midjourney). Note: DALL-E 3 has no true 4:3 fixed size — the events slot uses `1024x768` via `gpt-image-1`/`gpt-image-2` instead.
 
 ### Modules & integrations
 - **`@nuxt/image`** — serves assets from `assets/` as WebP at quality 80 via the IPX endpoint (`/_ipx/...`). Use `<NuxtImg>` instead of plain `<img>` for all local images.
@@ -143,12 +149,14 @@ Skills, a subagent, and hooks are configured in `.claude/`. Always check whether
 ### Hooks (automatic, configured in `.claude/settings.json`)
 - **Auto-lint** — runs `./node_modules/.bin/eslint --fix` on every edited `.vue`/`.ts`/`.js` file
 - **Em dash warning** — flags `—` in `content/*.md` files immediately after write
+- **Editorial-checklist reminder** — flags red-flag phrases (`nothing left to lose`, `quietly removed`, `militancy`, `legally armed`, etc.) in `content/news/*.md` files, pointing to `docs/editorial-checklist.md`. Grep-based, so it can false-positive on a phrase used inside a quote that's being debunked, treat it as a nudge to double-check, not a verdict.
 - **Absolute URL warning** — flags `https://newcastle.lgbt/` in any written file
 - **PurgeCSS reminder** — notes `:class=` bindings in `.vue` edits that may need safelist entries
 - **Stop reminder** — shows lint+build reminder when source files have unstaged changes
 
 ### Reference docs in `docs/`
 - [`docs/content-authoring.md`](docs/content-authoring.md) — filename format, frontmatter fields, body structure, step-by-step for news and events
+- [`docs/editorial-checklist.md`](docs/editorial-checklist.md) — 20-point advocacy-forward writing checklist for sensitive historical/political news articles
 - [`docs/image-generation-guide.md`](docs/image-generation-guide.md) — DALL-E 3 and Midjourney v7 parameters, lighting reference, prompt templates
 - [`docs/improvement-tasks.md`](docs/improvement-tasks.md) — open site improvement backlog (use `/backlog` to prioritize)
 

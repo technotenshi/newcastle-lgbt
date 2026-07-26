@@ -14,6 +14,10 @@
           },
           {
             "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in */content/news/*.md) matches=$(grep -niE 'nothing left to lose|least to lose|lot to lose|quietly (removed|deleted)|militancy|legally armed|outlandish|masquerading as|threw the first (punch|brick)|first punches|discarded entirely|criminal indifference' \"$file\" 2>/dev/null) && [ -n \"$matches\" ] && echo \"REMINDER: possible editorial-checklist issue(s) in $file, see docs/editorial-checklist.md:\\n$matches\" ;; esac; exit 0"
+          },
+          {
+            "type": "command",
             "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); [ -f \"$file\" ] && matches=$(grep -n 'https://newcastle\\.lgbt/' \"$file\" 2>/dev/null) && [ -n \"$matches\" ] && echo \"WARNING: absolute internal URL(s) in $file — use relative paths instead:\\n$matches\"; exit 0"
           },
           {

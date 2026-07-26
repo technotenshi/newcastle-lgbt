@@ -5,7 +5,7 @@ name: "Ariana Sherlock (Mayor)"
 email: "arianas@newcastlewa.gov"
 flag: ️‍🌈
 position: 2
-image: assets/images/council-members/20250101-02-ariana-sherlock-portrait.jpeg
+image: assets/images/council-members/20260725-02-ariana-sherlock-portrait.jpg
 ---
 
 Ariana Sherlock lives in the Hazelwood neighborhood with her husband Ryan, their children Adelai and Liam, and their rescue dog Fid. Since relocating from Portland, Oregon, to Newcastle in 2013, they have embraced the community and its many amenities, finding a perfect home near Donegal Park and the public library. Ariana has served on the Newcastle City Council since 2020 and was re-elected in 2023 to a second four-year term running from 2024 through 2028. In 2026, her Council colleagues elected her to serve as Mayor for a two-year term.

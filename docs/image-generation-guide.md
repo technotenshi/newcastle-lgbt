@@ -24,7 +24,7 @@ Reference for generating images with **Midjourney v7** and **DALL-E 3** for use 
 | `image` (news feature) | 16:9 | `1792x1024` | `--ar 16:9` |
 | `imageHeader` (news) | 16:9 | `1792x1024` | `--ar 16:9` |
 | `carousel` images | 16:9 | `1792x1024` | `--ar 16:9` |
-| `image` (events) | 4:3 | `1792x1024` | `--ar 4:3` |
+| `image` (events) | 4:3 | `1024x768` (gpt-image-1/2 only; dall-e-3 has no true 4:3 size) | `--ar 4:3` |
 
 ---
 

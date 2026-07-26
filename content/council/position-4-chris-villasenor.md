@@ -5,6 +5,7 @@ name: "Chris Villaseñor"
 email: "chrisv@newcastlewa.gov"
 flag: "🏳️‍🌈"
 position: 4
+image: assets/images/council-members/20260725-04-chris-villasenor-portrait.jpg
 ---
 
 Chris Villaseñor has been active in the Newcastle community for years, beginning his public service as a volunteer on the Planning Commission before being appointed to City Council in 2022. In 2025, residents elected him to continue serving the city. A technology industry professional, Chris brings broad experience helping organizations navigate complex challenges and change by considering multiple perspectives and building practical solutions.

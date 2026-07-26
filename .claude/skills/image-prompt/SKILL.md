@@ -13,7 +13,7 @@ Generate AI image prompts for a news article or event on the Newcastle LGBTQ+ si
 4. **Determine style** — if an attached image provides a style reference, use it. Otherwise: civic/political/outdoor/commemorative → photorealistic; social events/parties/workshops → graphic-design/poster
 4. **Check aspect ratio** per slot:
    - `image` (news), `imageHeader`, `carousel` → 16:9 (`1792x1024` for DALL-E, `--ar 16:9` for MJ)
-   - `image` (events) → 4:3 landscape (`1792x1024` for DALL-E, `--ar 4:3` for MJ)
+   - `image` (events) → 4:3 landscape (`1024x768` for DALL-E, gpt-image-1/2 only, since dall-e-3 has no true 4:3 fixed size; `--ar 4:3` for MJ)
 5. **Write distinct prompts** for each slot — if both `image` and `imageHeader` are present, they must differ meaningfully: different scene type, subject, vantage point, or narrative angle. Never just a tighter crop of the same scene.
 6. **Output both DALL-E and Midjourney versions** for each slot.
 
@@ -50,24 +50,26 @@ Do not reference specific individuals or public figures by name.
 
 ## Prompt templates
 
+Every prompt (both DALL-E and Midjourney, every slot) must end with the save path for that slot's image, taken directly from the frontmatter `path` field: `assets/images/news/YYYYMMDD-##-descriptive-name.png` (news) or `assets/images/events/YYYYMMDD-##-descriptive-name.png` (events). This goes inside the prompt string itself, not just in surrounding commentary.
+
 ### Photorealistic (DALL-E)
 ```
-[Scene description specific to article topic], [mood], [lighting condition], candid documentary photography style, racially diverse group including people of various ethnicities and skin tones with people of color prominently represented, [LGBTQ+ motif], photorealistic, no text or logos.
+[Scene description specific to article topic], [mood], [lighting condition], candid documentary photography style, racially diverse group including people of various ethnicities and skin tones with people of color prominently represented, [LGBTQ+ motif], photorealistic, no text or logos. Save as: [image path from frontmatter]
 ```
 
 ### Photorealistic (Midjourney)
 ```
-IMG_4358.CR2, [scene], [lighting], candid photojournalism, [diversity cue], [LGBTQ+ motif] --style raw --s 150 --q 2 --ar [ratio] --v 7 --no text --no logos
+IMG_4358.CR2, [scene], [lighting], candid photojournalism, [diversity cue], [LGBTQ+ motif] --style raw --s 150 --q 2 --ar [ratio] --v 7 --no text --no logos // Save as: [image path from frontmatter]
 ```
 
 ### Graphic design / poster (DALL-E)
 ```
-A vibrant promotional graphic for an LGBTQ+ [event type]. [Color palette], [mood] design aesthetic, clean geometric shapes, [LGBTQ+ motif as design element], flat design with subtle gradients, no text.
+A vibrant promotional graphic for an LGBTQ+ [event type]. [Color palette], [mood] design aesthetic, clean geometric shapes, [LGBTQ+ motif as design element], flat design with subtle gradients, no text. Save as: [image path from frontmatter]
 ```
 
 ### Graphic design / poster (Midjourney)
 ```
-LGBTQ+ [event type] promotional poster, [color palette], [mood], geometric shapes, [LGBTQ+ motif], flat graphic design --s 250 --q 2 --ar [ratio] --v 7 --no text
+LGBTQ+ [event type] promotional poster, [color palette], [mood], geometric shapes, [LGBTQ+ motif], flat graphic design --s 250 --q 2 --ar [ratio] --v 7 --no text // Save as: [image path from frontmatter]
 ```
 
 ## Output format
@@ -77,14 +79,12 @@ For each slot, output:
 ```
 ### image (16:9)
 **DALL-E 3:**
-[prompt]
+[prompt, including the "Save as:" path at the end]
 
 **Midjourney v7:**
-[prompt]
-
-**Save as:** assets/images/news/YYYYMMDD-##-descriptive-name.png
+[prompt, including the "// Save as:" path at the end]
 ```
 
 After all prompts, remind the user:
-- Generate images and save to `assets/images/news/` or `assets/images/events/` using the filename convention
-- Update the `image.path` (and `imageHeader.path` / `carousel` srcs) in the frontmatter once files are saved
+- Generate images and save to the path already embedded in each prompt
+- Update the `image.path` (and `imageHeader.path` / `carousel` srcs) in the frontmatter only if the saved filename ends up differing from what was prompted

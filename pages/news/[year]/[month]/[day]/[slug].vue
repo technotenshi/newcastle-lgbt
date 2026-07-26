@@ -393,11 +393,17 @@ const hasCarousel = computed(() => carouselImages.value.length > 0);
 }
 
 .news-article-section :deep(h2) {
+  font-family: 'Jost', sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
   margin-top: 3rem;
   margin-bottom: 0.6rem;
 }
 
 .news-article-section :deep(h3) {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
 }

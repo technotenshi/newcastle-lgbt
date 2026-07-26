@@ -28,6 +28,20 @@ This site serves the Newcastle, WA LGBTQ+ community. Content should be affirming
 - News articles must open with `:Dateline`, not `**Newcastle, WA** –` written directly.
 - External citations need a `## Sources` section.
 
+## Advocacy-forward language (news articles on sensitive historical/political topics)
+For news articles covering movement history, government policy, discrimination, or corporate accountability, also check against [`docs/editorial-checklist.md`](../../docs/editorial-checklist.md). For each paragraph, flag if it:
+
+1. Reduces a person to trauma, poverty, or "nothing left to lose" framing instead of preserving their agency
+2. Measures resistance/contribution mainly by violence or confrontation ("threw the first punch/brick")
+3. Confuses transgender identity with drag, sex work, or housing status by listing them as interchangeable
+4. Makes an absolute claim ("every," "first," "only," "all," "quietly," "deliberately") without clear evidentiary support
+5. Assigns blame to an entire identity group ("the movement," "gay men," "lesbians") instead of a named organization or leader
+6. Adopts police or right-wing coded terminology ("gender ideology," "cross-dressing," "gender-appropriate") as neutral narration instead of a quoted, attributed term
+7. Uses a stereotyped adjective for a marginalized person or group ("loud," "outlandish," "militant") instead of describing conduct concretely
+8. Conceals the responsible institution through passive voice ("were made to feel unwelcome" instead of naming who)
+9. Retains outdated historical terminology (e.g. an organization's real period name) without a brief contextualizing note
+10. States a disputed historical claim as settled fact instead of flagging "accounts differ"
+
 ## Image generation prompts
 When reviewing AI image prompts (DALL-E or Midjourney), enforce:
 
