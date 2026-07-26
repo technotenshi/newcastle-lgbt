@@ -4,6 +4,7 @@ date: "2026-01-01"
 name: "Andy Jacobs"
 email: "andyj@newcastlewa.gov"
 position: 7
+image: assets/images/council-members/20260725-07-andy-jacobs-portrait.jpg
 ---
 
 Andy Jacobs was elected to the Newcastle City Council in 2025. He and his wife have called Newcastle home since 1995, where they raised their three children and now enjoy life as grandparents. Andy holds a Bachelor of Arts from the University of Denver and brings 45 years of business and leadership experience, including 20 years in management at Costco. During his tenure, he helped lead well-known initiatives such as the $4.99 rotisserie chicken program and the $1.50 hot dog offering.
