@@ -28,7 +28,7 @@
     "js-yaml@npm:^4.1.0": "npm:js-yaml@5.2.2",
     "svgo@npm:^4.0.0": "npm:svgo@4.0.2",
     "svgo@npm:^4.0.1": "npm:svgo@4.0.2",
-    "@babel/core@npm:^7.29.0": "npm:@babel/core@7.29.6",
+    "@babel/core@npm:^7.29.0": "npm:@babel/core@7.29.7",
     "launch-editor@npm:^2.13.1": "npm:launch-editor@2.14.1",
     "esbuild@npm:^0.28.0": "npm:esbuild@0.28.1",
     "postcss@npm:^8.4.47": "npm:postcss@8.5.23",
