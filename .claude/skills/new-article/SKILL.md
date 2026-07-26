@@ -51,8 +51,17 @@ Body rules:
 - 2–4 short sentences only: what it is, date/time (full prose, en-dash for ranges), location, how to register
 - No bullet lists, subsections, or extended descriptions
 - Do NOT use em dashes (`—`)
+- **When referring readers to the CTA button, say "link below," never "link above."** The button (`link.text`/`link.target`) always renders after the body text in `pages/events/index.vue` (`ContentRenderer` comes first, the `<a class="btn">` comes after) — it is never above the body.
 
 Image paths: `assets/images/events/YYYYMMDD-##-descriptive-name.png`
+
+### Real event photos and photo credit
+
+When the user provides a real photo (a URL or file) instead of asking for an AI-generated image, download it directly to `assets/images/events/YYYYMMDD-##-descriptive-name.<ext>` rather than generating prompts for that slot. Check the downloaded file for a photographer credit before finalizing:
+- Inspect EXIF metadata (`file <path>` surfaces an embedded `copyright`/`artist` tag if present; `exiftool` if available gives a fuller read)
+- If a credit is present, add it as `image.credit: "Name"` in frontmatter — name only, never phone numbers or other contact info
+- If no credit metadata exists, omit the `credit` field entirely — it's optional and only renders when set
+- `image.credit` is currently supported for **events only** (`composables/useEvents.ts` `EventItem.image.credit`, rendered as a small "Photo: {credit}" line under the image in `pages/events/index.vue`). News articles have no equivalent field or rendering yet.
 
 ### Image prompts
 
@@ -61,7 +70,8 @@ After creating the file, generate DALL-E and Midjourney prompts for each image s
 - **LGBTQ+ motifs:** Include at least one subtle LGBTQ+ visual cue (pride wristband, rainbow pin, pride-color accessories) regardless of event type
 - **Lighting:** Bright or golden-hour. Never overcast or grey.
 - **No text in AI images.** Flags are allowed and encouraged — do not include "no signs, no logos" language that causes DALL-E to suppress flags.
-- **Aspect ratios:** news feature/header = 16:9, events = 4:3 landscape (`1792x1024` DALL-E, `--ar 4:3` MJ)
+- **Aspect ratios:** news feature/header = 16:9 (`1792x1024` DALL-E, `--ar 16:9` MJ); events = 4:3 landscape (`1024x768` DALL-E, gpt-image-1/2 only since dall-e-3 has no true 4:3 fixed size, `--ar 4:3` MJ)
+- **Save path in the prompt itself:** every generated prompt (DALL-E and Midjourney, every slot) must end with `Save as: [image path from frontmatter]` (DALL-E) or `// Save as: [image path from frontmatter]` (Midjourney), not just as a note outside the prompt
 
 ### Also check
 - Alt text: 50–250 characters; describe what's in the image, not the article topic

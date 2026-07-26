@@ -126,6 +126,22 @@ the article has deep nested structure.
 
 ---
 
+### Advocacy-forward writing conventions (sensitive historical/political news)
+
+For articles covering movement history, government policy, discrimination, or corporate accountability, follow the full checklist at [`docs/editorial-checklist.md`](editorial-checklist.md). It was written after an editorial pass on a Pride-history investigation surfaced the same handful of problems repeatedly. Highest-signal rules:
+
+- **No deficit framing.** Don't define marginalized people primarily through trauma, poverty, or "nothing left to lose" language. Describe the conditions they faced, but preserve their agency, relationships, and goals.
+- **Don't romanticize violence or deprivation as the measure of contribution.** Avoid "threw the first punch/brick" framing; prefer "resisted," "sustained," "organized," "built."
+- **Don't conflate overlapping identities.** Transgender people, drag performers, sex workers, and unhoused people are not interchangeable categories, list them as what they are, and never retroactively assign a modern identity label to a historical figure without direct support.
+- **Attribute hostile or coded language, never narrate it as neutral.** Quote terms like "gender ideology" or "biological truth" and name who used them.
+- **Contextualize outdated terminology.** Keep it when it's a real historical name, direct quote, or archival record; add a short note that it's outdated as a general modern label. Don't silently modernize proper nouns.
+- **Name institutions and decision-makers, not identity groups.** Avoid "the movement," "gay men," or "lesbians" as an undifferentiated actor; identify the specific organization, leader, or agency responsible.
+- **Avoid stereotyped adjectives** ("loud," "outlandish," "militant") for marginalized people, describe conduct concretely instead.
+- **Limit absolute claims** ("every," "first," "only," "quietly," "deliberately") unless independently verifiable; prefer "among the earliest," "helped influence."
+- **Run the final 20-item language check** in `docs/editorial-checklist.md` before publishing any article in this category.
+
+---
+
 ## Events (`content/events/`)
 
 ### Frontmatter
