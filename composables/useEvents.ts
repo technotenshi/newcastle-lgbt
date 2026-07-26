@@ -28,6 +28,8 @@ export interface EventItem {
   image?: {
     path?: string;
     alt?: string;
+    /** Optional photo credit displayed under the image. */
+    credit?: string;
   };
   body?: unknown;
 }
@@ -76,12 +78,13 @@ const normaliseImage = (value: unknown): EventItem["image"] | undefined => {
   const input = value as Record<string, unknown>;
   const path = normaliseString(input.path);
   const alt = normaliseString(input.alt);
+  const credit = normaliseString(input.credit);
 
   if (!path && !alt) {
     return undefined;
   }
 
-  return { path, alt };
+  return { path, alt, credit };
 };
 
 const compareDates = (first?: string, second?: string): number => {

@@ -26,6 +26,12 @@
                     loading="lazy"
                     class="img-fluid rounded-3"
                   />
+                  <p
+                    v-if="event.imageCredit"
+                    class="image-credit mbr-fonts-style display-7 text-muted mt-1 mb-0"
+                  >
+                    Photo: {{ event.imageCredit }}
+                  </p>
                 </div>
               </div>
               <div class="col-12 col-lg">
@@ -187,6 +193,7 @@ const events = computed(() => {
     const title = normaliseString(event.title) ?? 'Untitled Event';
     const imagePath = normaliseString(event.image?.path);
     const imageAlt = normaliseString(event.image?.alt) ?? title;
+    const imageCredit = normaliseString(event.image?.credit);
     const linkTarget = normaliseString(event.link?.target);
     const linkText = normaliseString(event.link?.text);
 
@@ -196,6 +203,7 @@ const events = computed(() => {
       displayDate: formatEventDate(event.date),
       imageSrc: normalizeAssetPath(imagePath) || '',
       imageAlt,
+      imageCredit,
       linkTarget,
       linkText,
     };
