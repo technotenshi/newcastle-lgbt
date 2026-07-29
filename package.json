@@ -37,7 +37,7 @@
     "ws@npm:^8.19.0": "npm:ws@8.21.1",
     "ws@npm:~8.18.3": "npm:ws@8.21.1"
   },
-  "packageManager": "yarn@4.17.1",
+  "packageManager": "yarn@4.18.0",
   "devDependencies": {
     "@eslint/js": "^10.0.0",
     "@fullhuman/postcss-purgecss": "^8.0.0",
