@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in */.env|*/.env.*|*/yarn.lock) echo \"Blocked: $file must not be edited by Claude. Edit manually if needed.\"; exit 2 ;; esac"
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in */.env|*/.env.*|*/yarn.lock) echo \"Blocked: $file must not be edited by an AI agent. Edit manually if needed.\"; exit 2 ;; esac"
           }
         ]
       }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in *.vue|*.ts|*.js|*.mjs) cd /Users/angelibarra/code/newcastle-lgbt && ./node_modules/.bin/eslint --fix \"$file\" 2>&1 | tail -20 ;; esac; exit 0"
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in *.vue|*.ts|*.js|*.mjs) root=$(git rev-parse --show-toplevel 2>/dev/null || pwd) && \"$root\"/node_modules/.bin/eslint --fix \"$file\" 2>&1 | tail -20 ;; esac; exit 0"
           },
           {
             "type": "command",
@@ -43,7 +43,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd /Users/angelibarra/code/newcastle-lgbt && changed=$(git diff --name-only 2>/dev/null | grep -E '\\.(vue|ts|js|mjs)$'); [ -n \"$changed\" ] && echo \"Reminder: source files changed — run 'make lint' then 'make build' to verify.\"; exit 0"
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null || pwd) && changed=$(git -C \"$root\" diff --name-only 2>/dev/null | grep -E '\\.(vue|ts|js|mjs)$'); [ -n \"$changed\" ] && echo \"Reminder: source files changed — run 'make lint' then 'make build' to verify.\"; exit 0"
           }
         ]
       }
