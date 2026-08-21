@@ -31,3 +31,48 @@ artifact, not something to diff/merge by hand.
   router (Tier 2, well-scoped dependency work); Hermes did the planning,
   dispatch, and independent verification.
 - Once #342 merges, close the 11 originals as superseded.
+
+## 2026-08-21 — Reverted @nuxt/image 2.1.0 (broken static image generation)
+Production (newcastle.lgbt) started serving CSS correctly but every image
+404'd after PR #326 (`chore(deps): update dependency @nuxt/image to
+v2.1.0`) landed. `git bisect` against a real `make prod` build (not `make
+develop` — the dev server never exercises the static prerender path, so it
+cannot reproduce this class of bug) identified d0d263b (PR #326) as the
+first bad commit: `.output/public/_ipx` has 0 files at that commit and
+every commit after it, vs. 558 files before it.
+
+Fix: reverted `@nuxt/image` to 2.0.0 via PR #344, verified with a real
+static build (`docker compose run --rm app yarn build`) served statically
+(`npx serve .output/public`, matching how Cloudflare Pages serves the
+site) — confirmed `200 OK` on real `/_ipx/...` URLs before merging.
+
+Root cause (not fully resolved, upgrade parked): `@nuxt/image` 2.1.0
+rewrote its `/_ipx/**` server route handler
+(`src/runtime/server/routes/_ipx.ts`) from `createIPXH3Handler` + `useBase`
+to `createIPXNodeHandler` with a custom `parseURL`. The module's own
+prerender-registration mechanism (`prerenderStaticImages()`, unchanged
+between versions) still correctly queues every `/_ipx/...` URL via the
+`x-nitro-prerender` response header, and nitro's crawler still picks up
+those routes — but the actual image bytes are never written to
+`.output/public`. Not yet traced to the exact failing line in the new
+handler. Re-attempt the 2.1.0 upgrade as its own PR once this is
+understood, rather than leaving `@nuxt/image` pinned indefinitely.
+
+### Pitfall: regenerating yarn.lock during a rebase can silently
+### reintroduce a reverted version
+While rebasing PR #342 (dependency consolidation) onto main after #344
+merged, `rm yarn.lock && yarn install` silently re-resolved `@nuxt/image`
+back to 2.1.0 — the exact version just reverted for breaking production —
+because `package.json` still specifies the caret range `^2.0.0`, which
+2.1.0 satisfies. Yarn only respects a pinned resolution when the lockfile
+entry for that package already exists; deleting the lockfile removes that
+guardrail and lets yarn freely pick the newest version in range again.
+
+**Rule going forward: never delete `yarn.lock`.** To rebase/merge cleanly
+across branches with independent lockfile changes, resolve `package.json`
+first (it merges/rebases as normal text), then restore `yarn.lock` from
+the correct base ref with `git checkout <ref> -- yarn.lock` (not a
+delete), then run `yarn install` — this lets yarn layer in only the new
+`package.json` changes on top of the already-correct pinned resolutions,
+instead of a wholesale unconstrained re-resolution.
+

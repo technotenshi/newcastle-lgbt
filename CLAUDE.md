@@ -29,6 +29,11 @@ After making changes: run `make lint`, then `make build` to confirm the site dep
 > **Foreground stall:** In some shell environments `docker compose run --rm app yarn <cmd>` creates the container but produces no output when run synchronously. If this happens, run it as a background task and read the output file when done.
 >
 > **`NUXT_B2005` dev warning is a known false positive:** `check-if-page-unused.js has no default export` comes from Nuxt's regex-based export scanner (via `mlly`) missing the `export { x as default }` pattern used in that internal file. Harmless (only disables one dev diagnostic), no fix available yet — tracked upstream at [nuxt/nuxt#35664](https://github.com/nuxt/nuxt/issues/35664).
+>
+> **Static/prerender regressions are invisible in `make develop`:** dependency bumps touching `@nuxt/image`, IPX, or the prerender pipeline must be verified with a real static build (`make build`/`make prod`), never dev mode alone — `nuxt dev` doesn't run Nitro's prerender crawler, so image-generation bugs in the static output only surface after deploy. Verify by confirming `.output/public/_ipx` is non-empty and serving it statically (`npx serve .output/public`) returns `200` on real `/_ipx/...` URLs, matching how Cloudflare Pages actually serves the site. (Learned 2026-08-21: `@nuxt/image` 2.1.0 broke this silently — see `docs/DECISIONS.md`.)
+>
+> **Never delete `yarn.lock`** when resolving a merge/rebase conflict — it removes yarn's pinned-resolution guardrail and lets a package silently re-resolve to the newest version satisfying its `package.json` range, even one just reverted for breaking production. Resolve `package.json` first, restore `yarn.lock` from the correct ref with `git checkout <ref> -- yarn.lock`, then run `yarn install` to layer in only the new changes.
+
 
 ## Architecture
 

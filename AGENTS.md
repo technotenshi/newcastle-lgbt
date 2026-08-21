@@ -26,6 +26,10 @@ After making changes: run `make lint`, then `make build`.
 
 Non-TTY caveat: most `make` targets use `docker compose run -it`, which fails in CI or other non-interactive shells. In those cases, run the underlying command directly, for example `docker compose run --rm app yarn build`.
 
+**Dependency bumps touching `@nuxt/image`, IPX, or the static/prerender pipeline require verification with a real static build (`make build`/`make prod`, not `make develop`).** The dev server (`nuxt dev`) never exercises Nitro's prerender crawler, so image-generation regressions in the static output are invisible in dev and only surface after deploy. Verify by checking `.output/public/_ipx` is non-empty and serving it statically (`npx serve .output/public`) to confirm `/_ipx/...` URLs return 200, matching how Cloudflare Pages actually serves the site.
+
+**Never delete `yarn.lock`** to resolve a merge/rebase conflict or "start fresh" — deleting it removes yarn's pinned-resolution guardrail and lets it silently re-resolve any package to the newest version satisfying its `package.json` range, which can reintroduce an already-reverted broken version. To reconcile `yarn.lock` across branches: resolve `package.json` first, restore `yarn.lock` from the correct base ref with `git checkout <ref> -- yarn.lock`, then run `yarn install` to layer in only the new changes.
+
 ## Architecture
 
 This is a static Nuxt site with no application backend. Content is sourced from Markdown and JSON files, loaded through Nuxt Content, normalized in composables and utilities, then prerendered to static output.
