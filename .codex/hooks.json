@@ -1,0 +1,52 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in */.env|*/.env.*|*/yarn.lock) echo \"Blocked: $file must not be edited by an AI agent. Edit manually if needed.\"; exit 2 ;; esac"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in *.vue|*.ts|*.js|*.mjs) root=$(git rev-parse --show-toplevel 2>/dev/null || pwd) && \"$root\"/node_modules/.bin/eslint --fix \"$file\" 2>&1 | tail -20 ;; esac; exit 0"
+          },
+          {
+            "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in */content/*.md) count=$(grep -c '—' \"$file\" 2>/dev/null || echo 0); [ \"$count\" -gt 0 ] && echo \"WARNING: $count em dash(es) in $file — replace with commas or colons\" ;; esac; exit 0"
+          },
+          {
+            "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in */content/news/*.md) matches=$(grep -niE 'nothing left to lose|least to lose|lot to lose|quietly (removed|deleted)|militancy|legally armed|outlandish|masquerading as|threw the first (punch|brick)|first punches|discarded entirely|criminal indifference' \"$file\" 2>/dev/null) && [ -n \"$matches\" ] && echo \"REMINDER: possible editorial-checklist issue(s) in $file, see docs/editorial-checklist.md:\\n$matches\" ;; esac; exit 0"
+          },
+          {
+            "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); [ -f \"$file\" ] && matches=$(grep -n 'https://newcastle\\.lgbt/' \"$file\" 2>/dev/null) && [ -n \"$matches\" ] && echo \"WARNING: absolute internal URL(s) in $file — use relative paths instead:\\n$matches\"; exit 0"
+          },
+          {
+            "type": "command",
+            "command": "file=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); case \"$file\" in *.vue) matches=$(grep -n ':class=' \"$file\" 2>/dev/null) && [ -n \"$matches\" ] && echo \"REMINDER: dynamic :class binding(s) in $file may need adding to PurgeCSS safelist in nuxt.config.ts:\\n$matches\" ;; esac; exit 0"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=$(git rev-parse --show-toplevel 2>/dev/null || pwd) && changed=$(git -C \"$root\" diff --name-only 2>/dev/null | grep -E '\\.(vue|ts|js|mjs)$'); [ -n \"$changed\" ] && echo \"Reminder: source files changed — run 'make lint' then 'make build' to verify.\"; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

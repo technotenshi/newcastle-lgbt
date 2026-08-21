@@ -164,3 +164,10 @@ Skills, a subagent, and hooks are configured in `.claude/`. Always check whether
 Before modifying code, evaluate each installed skill against the current task.
 For each skill, determine YES/NO relevance and invoke all YES skills before proceeding.
 <!-- /skilld -->
+
+## Cross-tool working agreements (added 2026-08-05)
+
+`~/HARNESS.md` is the canonical agreement for all AI tools (Hermes, Claude Code, ChatGPT/Codex).
+- `docs/DECISIONS.md` is this repo's decision log — read before planning, append when a decision is made or reversed.
+- Infra-mutating actions need explicit approval in the current session.
+- Never claim success without real verification.
