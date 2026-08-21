@@ -9868,13 +9868,13 @@ __metadata:
   linkType: hard
 
 "nuxt-schema-org@npm:^6.1.0":
-  version: 6.2.7
-  resolution: "nuxt-schema-org@npm:6.2.7"
+  version: 6.3.0
+  resolution: "nuxt-schema-org@npm:6.3.0"
   dependencies:
-    "@nuxt/kit": "npm:^4.5.0"
+    "@nuxt/kit": "npm:^4.5.2"
     defu: "npm:^6.1.7"
-    nuxt-site-config: "npm:^4.1.1"
-    nuxtseo-shared: "npm:^5.3.2"
+    nuxt-site-config: "npm:^4.2.3"
+    nuxtseo-shared: "npm:^5.3.14"
     pkg-types: "npm:^2.3.1"
     ufo: "npm:^1.6.4"
   peerDependencies:
@@ -9888,7 +9888,7 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/6b824100e2778d7b2b47446e12dca2cb95f6d5d2453b84438af7b5c172ac97e650e8985209ed948c8445f6ad086d91a3e23f3739c22f14c4c10cb45399768f1e
+  checksum: 10c0/cb06518b92c73bdbcf394b6887a49155140d1a8e7562579ba8a73fbe2b2770d0fc4b5957cf8eae2f05cf33b7e253442415f5172000b0f27a0927780b57d6b343
   languageName: node
   linkType: hard
 
