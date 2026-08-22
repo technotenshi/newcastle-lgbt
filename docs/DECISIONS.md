@@ -141,3 +141,13 @@ for project commands, but the image bootstrap should state the same version.
 
 The remaining `better-sqlite3` and Sharp peer-range warnings are intentionally
 deferred; they require separate compatibility decisions.
+
+## 2026-08-21 — Align better-sqlite3 with Nuxt Content's supported range
+
+Nuxt Content 3.15.2 declares an optional `better-sqlite3` peer of `^12.5.0`,
+but the site declared `^13.0.0`. Align the site's direct dependency to
+`^12.5.0`, resolving to 12.11.1, so the SQLite content connector is within
+Nuxt Content's supported contract. The static build, lint, and Yarn peer
+validation passed; the static output contains 558 generated IPX files.
+
+The separate Sharp peer-range warning remains for a later, explicit decision.
