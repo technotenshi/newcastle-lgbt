@@ -76,3 +76,56 @@ delete), then run `yarn install` — this lets yarn layer in only the new
 `package.json` changes on top of the already-correct pinned resolutions,
 instead of a wholesale unconstrained re-resolution.
 
+## 2026-08-21 — Public-repository security audit findings retained for later remediation
+
+After the repository was made public and `main` was protected with active
+GitHub rulesets, a read-only audit found the following items to remediate in
+a future, separately approved change:
+
+- The `main` rulesets correctly require pull requests, current successful
+  checks, linear history, and resolved review threads; they prevent branch
+  deletion and non-fast-forward updates. However, they require zero approvals,
+  do not dismiss stale approvals, do not require CODEOWNERS review, and allow
+  an always-bypass repository role.
+- GitHub Actions is configured to allow all actions and does not require SHA
+  pinning. `.github/workflows/yarn-nuxt.yml` has no explicit least-privilege
+  `permissions:` block (also reported by CodeQL).
+- Five Dependabot alerts remain open: three high-severity transitive issues
+  (`nanoid`, `ip-address`, `socket.io-parser`) and two medium-severity
+  `ip-address` issues. Secret scanning and push protection are enabled; no
+  secret-scanning alerts were open.
+- Gitleaks found no secrets in the working tree or the full 231-commit Git
+  history. Semgrep 1.173.0 ran successfully after initialization and reported
+  11 findings, including mutable GitHub Actions tags, missing Dependabot and
+  Yarn package-age gates, a root-running Dockerfile, bundled JavaScript
+  patterns requiring triage, and a `v-html` use.
+
+These findings are recorded only; no remediation was applied in this audit.
+
+## 2026-08-21 — Solo-maintainer merge policy: no extra approval for unattributed pushes
+
+The `main-2` repository ruleset had
+`require_extra_approval_for_unattributed_changes` enabled even though the
+repository has a single maintainer and automated dependency PRs are authored
+by Renovate. The setting was disabled through the GitHub ruleset API so an
+unattributed automated push cannot require an unavailable second reviewer.
+
+This policy change made no Git commit. At the time of the change, PR #345
+still reported GitHub's non-specific `BLOCKED` merge state despite being
+mergeable, current with `main`, having no review threads, and passing its two
+required checks. The cause requires the merge-box message or further GitHub
+support-level investigation; it is not an active review requirement in the
+repository configuration.
+
+## 2026-08-21 — Replaced `main` rulesets with classic branch protection
+
+The rulesets were removed and replaced with classic protection on `main`.
+The protection requires the `Cloudflare Pages` and `build (24.x)` checks,
+requires branches to be current, disallows force pushes and deletion, requires
+linear history, and requires pull requests while requiring zero approvals.
+It does not enforce protection for administrators.
+
+This immediately cleared PR #345's otherwise unexplained ruleset block:
+GitHub reports it as `CLEAN` and `MERGEABLE`. Use squash or rebase merging to
+preserve the required linear history. No commit was made as part of this
+configuration change or its verification.
