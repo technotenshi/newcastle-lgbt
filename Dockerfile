@@ -9,7 +9,7 @@ RUN apt-get -y update && apt-get install -y  \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-RUN corepack enable && corepack prepare yarn@4.13.0 --activate
+RUN corepack enable && corepack prepare yarn@4.18.0 --activate
 
 WORKDIR /app
 

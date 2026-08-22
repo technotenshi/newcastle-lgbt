@@ -129,3 +129,42 @@ This immediately cleared PR #345's otherwise unexplained ruleset block:
 GitHub reports it as `CLEAN` and `MERGEABLE`. Use squash or rebase merging to
 preserve the required linear history. No commit was made as part of this
 configuration change or its verification.
+
+## 2026-08-21 — Align Nuxt's Rolldown peer and Docker's Yarn version
+
+Nuxt 4.5.2 declares `rolldown` `~1.2.1` as a peer dependency, and
+`nuxt-seo-utils` also accepts that version. Add it as a direct development
+dependency so Yarn's post-resolution validation has a complete build-tool
+contract. Align the Dockerfile's Corepack activation with the existing
+`packageManager: yarn@4.18.0` declaration; Corepack uses that manifest field
+for project commands, but the image bootstrap should state the same version.
+
+The remaining `better-sqlite3` and Sharp peer-range warnings are intentionally
+deferred; they require separate compatibility decisions.
+
+## 2026-08-21 — Align better-sqlite3 with Nuxt Content's supported range
+
+Nuxt Content 3.15.2 declares an optional `better-sqlite3` peer of `^12.5.0`,
+but the site declared `^13.0.0`. Align the site's direct dependency to
+`^12.5.0`, resolving to 12.11.1, so the SQLite content connector is within
+Nuxt Content's supported contract. The static build, lint, and Yarn peer
+validation passed; the static output contains 558 generated IPX files.
+
+The separate Sharp peer-range warning remains for a later, explicit decision.
+
+## 2026-08-21 — Park Nuxt OG Image enablement pending renderer setup
+
+An isolated production-build experiment enabled `nuxt-og-image` 6.7.8. In the
+non-interactive Docker environment, the module selected its Takumi renderer,
+then failed because `@takumi-rs/core` is not installed. It also warned that
+the `static` Nitro preset needs explicit `ogImage.compatibility.runtime`
+configuration. No `components/OgImage/` renderer component exists, and the
+failed build produced no `.output/public` or generated OG-image artifacts.
+
+Keep the module disabled for now and continue using each page's prerendered
+IPX URL through `useSeoMeta({ ogImage, twitterImage })`. Revisit as a separate
+change: choose a renderer (Takumi is the module's current recommendation; the
+existing comment previously mentioned Satori), install/configure it, add an
+explicit renderer component if appropriate, set static compatibility, and
+verify a full Docker static build with generated OG artifacts and intact IPX
+output. Do not treat the Sharp peer warning as resolved by this decision.
