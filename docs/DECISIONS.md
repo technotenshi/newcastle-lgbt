@@ -129,3 +129,15 @@ This immediately cleared PR #345's otherwise unexplained ruleset block:
 GitHub reports it as `CLEAN` and `MERGEABLE`. Use squash or rebase merging to
 preserve the required linear history. No commit was made as part of this
 configuration change or its verification.
+
+## 2026-08-21 — Align Nuxt's Rolldown peer and Docker's Yarn version
+
+Nuxt 4.5.2 declares `rolldown` `~1.2.1` as a peer dependency, and
+`nuxt-seo-utils` also accepts that version. Add it as a direct development
+dependency so Yarn's post-resolution validation has a complete build-tool
+contract. Align the Dockerfile's Corepack activation with the existing
+`packageManager: yarn@4.18.0` declaration; Corepack uses that manifest field
+for project commands, but the image bootstrap should state the same version.
+
+The remaining `better-sqlite3` and Sharp peer-range warnings are intentionally
+deferred; they require separate compatibility decisions.

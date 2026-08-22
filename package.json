@@ -55,6 +55,7 @@
     "nuxt-schema-org": "^6.1.0",
     "nuxt-seo-utils": "8.4.2",
     "postcss": "8.5.26",
+    "rolldown": "~1.2.1",
     "serve": "^14.2.5",
     "sharp": "^0.35.0",
     "unstorage": "^1.17.4",

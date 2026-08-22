@@ -8908,6 +8908,7 @@ __metadata:
     nuxt-schema-org: "npm:^6.1.0"
     nuxt-seo-utils: "npm:8.4.2"
     postcss: "npm:8.5.26"
+    rolldown: "npm:~1.2.1"
     serve: "npm:^14.2.5"
     sharp: "npm:^0.35.0"
     unstorage: "npm:^1.17.4"
@@ -11111,7 +11112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rolldown@npm:~1.2.4":
+"rolldown@npm:~1.2.1, rolldown@npm:~1.2.4":
   version: 1.2.5
   resolution: "rolldown@npm:1.2.5"
   dependencies:
