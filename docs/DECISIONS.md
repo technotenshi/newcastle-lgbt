@@ -151,3 +151,20 @@ Nuxt Content's supported contract. The static build, lint, and Yarn peer
 validation passed; the static output contains 558 generated IPX files.
 
 The separate Sharp peer-range warning remains for a later, explicit decision.
+
+## 2026-08-21 — Park Nuxt OG Image enablement pending renderer setup
+
+An isolated production-build experiment enabled `nuxt-og-image` 6.7.8. In the
+non-interactive Docker environment, the module selected its Takumi renderer,
+then failed because `@takumi-rs/core` is not installed. It also warned that
+the `static` Nitro preset needs explicit `ogImage.compatibility.runtime`
+configuration. No `components/OgImage/` renderer component exists, and the
+failed build produced no `.output/public` or generated OG-image artifacts.
+
+Keep the module disabled for now and continue using each page's prerendered
+IPX URL through `useSeoMeta({ ogImage, twitterImage })`. Revisit as a separate
+change: choose a renderer (Takumi is the module's current recommendation; the
+existing comment previously mentioned Satori), install/configure it, add an
+explicit renderer component if appropriate, set static compatibility, and
+verify a full Docker static build with generated OG artifacts and intact IPX
+output. Do not treat the Sharp peer warning as resolved by this decision.
