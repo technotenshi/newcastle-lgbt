@@ -34,8 +34,8 @@
     "postcss@npm:^8.4.47": "npm:postcss@8.5.26",
     "postcss@npm:^8.5.8": "npm:postcss@8.5.26",
     "sharp@npm:^0.34.3": "npm:sharp@0.35.3",
-    "ws@npm:^8.19.0": "npm:ws@8.21.1",
-    "ws@npm:~8.18.3": "npm:ws@8.21.1"
+    "ws@npm:^8.19.0": "npm:ws@8.21.3",
+    "ws@npm:~8.18.3": "npm:ws@8.21.3"
   },
   "packageManager": "yarn@4.18.0",
   "devDependencies": {
