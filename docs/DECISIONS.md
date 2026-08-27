@@ -168,3 +168,24 @@ existing comment previously mentioned Satori), install/configure it, add an
 explicit renderer component if appropriate, set static compatibility, and
 verify a full Docker static build with generated OG artifacts and intact IPX
 output. Do not treat the Sharp peer warning as resolved by this decision.
+
+## 2026-08-27 — Closed two Renovate PRs that re-proposed already-reverted/pinned versions
+
+Routine open-PR review found Renovate had re-opened both previously-decided
+version bumps as draft PRs, both green on CI (`build (24.x)`, CodeQL,
+Cloudflare Pages preview, GitGuardian all passing) because none of those
+checks exercise the failure modes involved:
+
+- PR #348, `@nuxt/image` to 2.1.0 — the exact upgrade reverted in PR #344 for
+  breaking static image generation (see the 2026-08-21 entry above). CI's
+  build check doesn't serve `.output/public` statically, so it can't catch
+  the missing `_ipx` output.
+- PR #355, `better-sqlite3` to v13 — outside Nuxt Content 3.15.2's supported
+  `^12.5.0` optional peer range (see the 2026-08-21 entry above). A peer
+  range mismatch isn't a CI failure either.
+
+Both PRs were closed with comments pointing back to the relevant decision
+entries. Added `packageRules` to `renovate.json` constraining
+`@nuxt/image` to `<2.1.0` and `better-sqlite3` to `^12.5.0` so Renovate stops
+re-proposing these until the underlying blockers (the IPX regression, Nuxt
+Content's peer range) are deliberately resolved.
