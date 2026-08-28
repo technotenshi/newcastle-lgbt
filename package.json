@@ -6,7 +6,8 @@
     "build": "nuxt build",
     "preview": "nuxt preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nuxt/content": "^3.15.2",
@@ -49,6 +50,7 @@
     "eslint-plugin-vue": "10.10.0",
     "glob": "^13.0.0",
     "globals": "^17.0.0",
+    "husky": "^9.1.7",
     "nuxt": "4.5.2",
     "nuxt-link-checker": "5.3.0",
     "nuxt-og-image": "6.7.8",
