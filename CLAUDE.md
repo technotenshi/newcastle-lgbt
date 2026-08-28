@@ -176,3 +176,17 @@ For each skill, determine YES/NO relevance and invoke all YES skills before proc
 - `docs/DECISIONS.md` is this repo's decision log — read before planning, append when a decision is made or reversed.
 - Infra-mutating actions need explicit approval in the current session.
 - Never claim success without real verification.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), no repo-specific renames. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context (one `CONTEXT.md` + `docs/adr/` at the repo root, once created). See `docs/agents/domain.md`.
