@@ -184,8 +184,7 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 
 ## CI/CD
 
-- `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable` and `yarn build` on pushes and pull requests to `main`
-- CI currently does not run lint
+- `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable`, `yarn lint`, and `yarn build` on pushes and pull requests to `main`
 - There are no automated tests in this repository
 - `.github/dependabot.yml` manages weekly npm dependency update PRs
 

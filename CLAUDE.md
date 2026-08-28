@@ -109,7 +109,7 @@ Do **not** add: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitte
 
 ### CI/CD
 - **GitHub repo:** `technotenshi/newcastle-lgbt`
-- `.github/workflows/yarn-nuxt.yml` — runs `yarn install --immutable` then `yarn build` on every push / PR to `main`. Lint is **not** in CI; run `make lint` locally before pushing.
+- `.github/workflows/yarn-nuxt.yml` — runs `yarn install --immutable`, `yarn lint`, then `yarn build` on every push / PR to `main`.
 - `.github/dependabot.yml` — weekly automated PRs for npm dependency updates. **Renovate** also runs and may open duplicate/overlapping PRs; the later one is typically superseded and auto-closed.
 - **`yarn.lock` drift:** CI uses `--immutable`, so if a dependency merge introduces new transitive deps the lockfile breaks. Fix by running `docker compose run --rm app yarn install` locally and committing the updated `yarn.lock`.
 - There are **no automated tests** in this project.
