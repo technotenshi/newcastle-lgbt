@@ -33,7 +33,7 @@
     "esbuild@npm:^0.28.0": "npm:esbuild@0.28.2",
     "postcss@npm:^8.4.47": "npm:postcss@8.5.26",
     "postcss@npm:^8.5.8": "npm:postcss@8.5.26",
-    "sharp@npm:^0.34.3": "npm:sharp@0.35.3",
+    "sharp@npm:^0.34.3": "npm:sharp@0.35.4",
     "ws@npm:^8.19.0": "npm:ws@8.21.3",
     "ws@npm:~8.18.3": "npm:ws@8.21.3"
   },
