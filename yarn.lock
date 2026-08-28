@@ -5777,8 +5777,8 @@ __metadata:
   linkType: hard
 
 "eslint@npm:^10.4.1":
-  version: 10.9.0
-  resolution: "eslint@npm:10.9.0"
+  version: 10.9.1
+  resolution: "eslint@npm:10.9.1"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.2"
@@ -5817,7 +5817,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/bc6c9f4a5c0b97e37ab1aa1753ae30ad5b0cf43a25ca3dcfff937f2b47243654c3ca34e37f71006474a3c1b95d6d4e046149facc6d66af4af6e993a619c23509
+  checksum: 10c0/11cfd118dced911d506dc752086a641b45c95996af1f7b2a1914f992bbcdca78bb56cd4dd281595c7a792e1562a49047aa65ce763e3ed809cbde84fe4a08924f
   languageName: node
   linkType: hard
 
@@ -6054,10 +6054,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-uri@npm:fast-uri@4.1.2":
-  version: 4.1.2
-  resolution: "fast-uri@npm:4.1.2"
-  checksum: 10c0/539fda19fbc7ada89ac8c5beca3c7ab57d643789485ca25f2b88f94edaea3fc90d553ecd55d85b95d5c819ab2bf57f6ff7880aa0a92d0883e25bd35f30860e6a
+"fast-uri@npm:fast-uri@4.1.3":
+  version: 4.1.3
+  resolution: "fast-uri@npm:4.1.3"
+  checksum: 10c0/6fc13d8731757ab6ba419a38044dece1b0757f086c57e75627218d66a0085ae3cff501aaa9840fffb4c83ecccd9806e7f8ebce985cd6e3fb589cffec3d86b9b1
   languageName: node
   linkType: hard
 
@@ -8979,7 +8979,7 @@ __metadata:
     nuxt-link-checker: "npm:5.3.0"
     nuxt-og-image: "npm:6.7.8"
     nuxt-schema-org: "npm:^6.1.0"
-    nuxt-seo-utils: "npm:8.4.2"
+    nuxt-seo-utils: "npm:8.4.3"
     postcss: "npm:8.5.26"
     rolldown: "npm:~1.2.1"
     serve: "npm:^14.2.5"
@@ -9406,8 +9406,8 @@ __metadata:
   linkType: hard
 
 "nuxt-schema-org@npm:^6.1.0":
-  version: 6.3.0
-  resolution: "nuxt-schema-org@npm:6.3.0"
+  version: 6.3.1
+  resolution: "nuxt-schema-org@npm:6.3.1"
   dependencies:
     "@nuxt/kit": "npm:^4.5.2"
     defu: "npm:^6.1.7"
@@ -9426,13 +9426,13 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/cb06518b92c73bdbcf394b6887a49155140d1a8e7562579ba8a73fbe2b2770d0fc4b5957cf8eae2f05cf33b7e253442415f5172000b0f27a0927780b57d6b343
+  checksum: 10c0/2c6e563d5b81db0cb88adf96b50dcd4773f5c18a974cd38afebb1467b9f28d9eb71e71b60fab31ef1a5ee83022543eda2f3973a8cd26ea306f8c0267a32fc887
   languageName: node
   linkType: hard
 
-"nuxt-seo-utils@npm:8.4.2":
-  version: 8.4.2
-  resolution: "nuxt-seo-utils@npm:8.4.2"
+"nuxt-seo-utils@npm:8.4.3":
+  version: 8.4.3
+  resolution: "nuxt-seo-utils@npm:8.4.3"
   dependencies:
     "@nuxt/kit": "npm:^4.5.2"
     citty: "npm:^0.2.2"
@@ -9471,7 +9471,7 @@ __metadata:
       optional: true
   bin:
     nuxt-seo-utils: ./bin/nuxt-seo-utils.mjs
-  checksum: 10c0/21f0a81a9133232f44f743bf4aac0c44f8de014445b70fd4f25eb40b1724b06101f9dd3d7c6e1a8bd3e68f4e06c5bcf12e0622fbaf92c11d61005e2e72cfaa6c
+  checksum: 10c0/c08958cd9f684a230406c20cd718710c0edf7f14407c05461c701c950e9f290bf054a20e4959a0b68c3e62e6b575a33ce695dc2580eb6b12bb5e9aa291d7574a
   languageName: node
   linkType: hard
 
@@ -10189,10 +10189,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picomatch@npm:^4.0.5, picomatch@npm:picomatch@4.0.5":
+"picomatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "picomatch@npm:4.0.5"
   checksum: 10c0/947bc6b6e1ff1e6c5aaf95b107a0839d12802f4f7b867663f67d47accba939ca1cb582cf99dfc30438efa1c4648ac5990967e783e8929c36b03e8440704ef1bd
+  languageName: node
+  linkType: hard
+
+"picomatch@npm:picomatch@4.0.7":
+  version: 4.0.7
+  resolution: "picomatch@npm:4.0.7"
+  checksum: 10c0/beb6ae02c43ae44e84883b90830196d9046b1726ead292adcf7f57945e0bb0d992d68563d87e03b484b6f3c9a5c6defda7523477f047d7f0e663f126cc01787f
   languageName: node
   linkType: hard
 
