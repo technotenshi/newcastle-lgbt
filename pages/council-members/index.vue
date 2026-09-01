@@ -13,7 +13,7 @@
             <div class="image-wrapper">
               <img
                 :src="councilPhoto"
-                alt="Newcastle City Council placeholder image"
+                alt="Newcastle City Council members standing together for a group portrait"
                 width="750"
                 height="430"
                 class="img-fluid rounded-3"
@@ -98,7 +98,7 @@ import { useSeoMeta, useSiteConfig } from '#imports';
 import CouncilMembersComponent from '~/components/CouncilMembersComponent.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useCouncil } from '~/composables/useCouncil';
-import councilPhoto from '~/assets/images/council-members/20260101-council-members.png';
+import councilPhoto from '~/assets/images/council-members/20260831-council-members.jpg';
 import { normaliseString } from '~/utils/content';
 
 defineOptions({
