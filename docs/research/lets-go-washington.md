@@ -189,7 +189,8 @@ IL26-001 seeks to repeal the 2025 "Safety Act" (formally Engrossed Substitute Ho
 - **Family rejection risk:** LGBTQ+ students, particularly transgender youth, risk involuntary outing to parents who may respond with rejection, abuse, or homelessness. Per Washington State PTA and ACLU: 40% of youth experiencing homelessness identify as LGBTQIA2S+; 26% were forced out over sexual orientation or gender identity.
 - **Chilling effect on counselor relationships:** Students cannot trust school counselors' confidentiality, reducing their willingness to seek mental health support
 - **Mental health risk:** Disclosure without consent can worsen depression, anxiety, and suicide risk among LGBTQ+ youth
-- **Nondiscrimination rollback:** Removes explicit protections against discrimination based on sexual orientation or gender identity in school settings
+
+(A "nondiscrimination rollback" bullet previously appeared here in early drafts of this file. It has been removed: as the correction above documents, RCW 28A.605.005(2)(g)'s nondiscrimination clause is unchanged between the 2024 and 2025 versions of the law, so IL26-001 does not roll it back. Do not re-add this claim without new primary-source evidence.)
 
 **Expert opposition:**
 - Washington State PTA opposes as violating student privacy and endangering LGBTQ+ youth

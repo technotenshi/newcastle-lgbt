@@ -6,7 +6,7 @@ Apply this checklist to any news article that covers sensitive historical, polit
 
 This site exists to advocate for the Newcastle, WA LGBTQ+ community. When a policy, initiative, bill, or public figure works against that community's interests, articles should say so plainly and support the conclusion with evidence, not present it as one equally weighted "side" of a debate. Treating a documented harm and a campaign's denial of that harm as symmetrical is a failure of this checklist, not neutrality.
 
-This does not license inaccuracy, it raises the bar for it. To be usefully critical:
+This does not license inaccuracy; it raises the bar for it. To be usefully critical:
 
 - **Verify before characterizing.** Read the actual bill, initiative, or policy text before describing its effect, and quote it directly where possible. A critique built on a claim that doesn't survive contact with the source text hands opponents an easy way to dismiss the whole article.
 - **Fact-check supporters with the same rigor as opponents.** If a policy's supporters make a specific, checkable claim (a statistic, a legal argument, a cited authority, a named expert), verify it. Report when it doesn't hold up and show the evidence, rather than only relaying the opposing campaign's rebuttal.

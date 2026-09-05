@@ -30,7 +30,7 @@ Run through every rule below and report any violations with file path and line n
 - [ ] **Image paths:** should be `assets/images/news/...` or `assets/images/events/...` (not `public/`, not absolute)
 
 ### Advocacy-forward language (news articles on sensitive historical/political topics)
-For articles covering movement history, government policy, discrimination, or corporate accountability, check against [`docs/editorial-checklist.md`](../../docs/editorial-checklist.md). Flag any paragraph that:
+For articles covering movement history, government policy, discrimination, or corporate accountability, check against [`docs/editorial-checklist.md`](../../../docs/editorial-checklist.md). Flag any paragraph that:
 - [ ] **Deficit framing:** reduces a person to trauma/poverty or uses "nothing left to lose" language instead of preserving agency
 - [ ] **Violence-as-contribution:** measures resistance mainly by who "threw the first punch/brick" rather than who organized, sustained, or built
 - [ ] **Identity conflation:** lists transgender people, drag performers, sex workers, and unhoused people as interchangeable rather than distinct, overlapping categories
