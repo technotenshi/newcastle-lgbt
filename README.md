@@ -133,7 +133,7 @@ plugins/
 
 ## CI/CD
 
-A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn build` automatically on every push and pull request targeting `main`. **Lint is not in CI** — run `make lint` locally before pushing. Dependabot (`.github/dependabot.yml`) and Renovate both open automated PRs for npm dependency updates; when both are active, the later PR is typically superseded and auto-closed.
+A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install --immutable`, `yarn lint`, and `yarn build` on every push and pull request targeting `main`. Run the same checks locally before pushing. Dependabot (`.github/dependabot.yml`) and Renovate both open automated PRs for npm dependency updates; when both are active, the later PR is typically superseded and auto-closed.
 
 ## Modules
 

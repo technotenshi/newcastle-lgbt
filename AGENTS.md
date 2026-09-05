@@ -89,6 +89,7 @@ Special case: `pages/organizations/index.vue` is hardcoded in the component and 
 - Use [`docs/image-generation-guide.md`](docs/image-generation-guide.md) alongside the authoring guide whenever generating raster assets
 - This is an activism site, not neutral journalism: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them must reach a critical, evidence-backed conclusion rather than a neutral "both sides" summary, and must fact-check claims from supporters and opponents alike. The site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it, rather than retreating to the institution's name alone. Follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) for any article on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability)
 - Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. `docs/research/lets-go-washington.md`). When an article names a subject with one of these files, pull relevant context from it so unfamiliar readers get real background, not just a bare name. See `docs/content-authoring.md` for the full convention
+- When covering a Washington bill or initiative, verify its primary text rather than relying on a secondary summary. Ballot-initiative PDFs on `sos.wa.gov` may reject automated retrieval, while enacted-bill PDFs on `lawfilesext.leg.wa.gov` are usually accessible. Inspect the retrieved PDF's visual strikeout/underline markup to determine exactly what changes from current law.
 
 ## Image generation workflow
 
@@ -193,6 +194,12 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 ## Commit messages
 
 - Write clear, concise commit messages describing what changed and why
+
+## Project agent skills
+
+- Project skill files are mirrored in `.claude/skills/<name>/SKILL.md` and `.agents/skills/<name>/SKILL.md`. When changing one, update the other and confirm they match with `diff`.
+- Those files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
+- Quote a skill frontmatter `description:` that contains a colon followed by a space; otherwise strict YAML parsers can interpret it as a nested mapping.
 
 ## Cross-tool working agreements (added 2026-08-05)
 

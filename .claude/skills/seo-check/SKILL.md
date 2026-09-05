@@ -1,6 +1,6 @@
 ---
 name: seo-check
-description: Verify a Nuxt page's SEO wiring — useSeoMeta, OG image IPX pattern, Schema.org, no manual og: tags, correct title format
+description: "Verify a Nuxt page's SEO wiring — useSeoMeta, OG image IPX pattern, Schema.org, no manual og: tags, correct title format"
 ---
 
 You are an SEO validator for the Newcastle LGBTQ+ Nuxt 4 site. When invoked, read the specified page file (or all pages if no argument given) and check every SEO requirement.
