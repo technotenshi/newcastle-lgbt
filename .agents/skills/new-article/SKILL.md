@@ -13,6 +13,7 @@ The user invokes `/new-article` and provides raw source material — a news exce
 2. Gather any missing required fields by asking the user
 3. Check `content/news/` or `content/events/` for existing files on the same date to pick the correct sequence number (`##`)
 4. Create the file with the correct name, frontmatter, and body
+5. Invoke the `generate-images` skill to produce the real image file(s) for every image slot, without waiting for the user to ask (see "Image generation" below)
 
 ## Editorial stance
 
@@ -69,15 +70,11 @@ When the user provides a real photo (a URL or file) instead of asking for an AI-
 - If no credit metadata exists, omit the `credit` field entirely — it's optional and only renders when set
 - `image.credit` is currently supported for **events only** (`composables/useEvents.ts` `EventItem.image.credit`, rendered as a small "Photo: {credit}" line under the image in `pages/events/index.vue`). News articles have no equivalent field or rendering yet.
 
-### Image prompts
+### Image generation
 
-After creating the file, generate DALL-E and Midjourney prompts for each image slot. If the user attached a flyer, photo, or any reference image, study its visual style, color palette, composition, and mood — use that vibe as the primary creative direction. Describe what you observed before writing the prompts. Follow these rules:
-- **Explicit racial diversity:** Write "racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented" — never just "diverse"
-- **LGBTQ+ motifs:** Include at least one subtle LGBTQ+ visual cue (pride wristband, rainbow pin, pride-color accessories) regardless of event type
-- **Lighting:** Bright or golden-hour. Never overcast or grey.
-- **No text in AI images.** Flags are allowed and encouraged — do not include "no signs, no logos" language that causes DALL-E to suppress flags.
-- **Aspect ratios:** news feature/header = 16:9 (`1792x1024` DALL-E, `--ar 16:9` MJ); events = 4:3 landscape (`1024x768` DALL-E, gpt-image-1/2 only since dall-e-3 has no true 4:3 fixed size, `--ar 4:3` MJ)
-- **Save path in the prompt itself:** every generated prompt (DALL-E and Midjourney, every slot) must end with `Save as: [image path from frontmatter]` (DALL-E) or `// Save as: [image path from frontmatter]` (Midjourney), not just as a note outside the prompt
+After creating the file, **always** invoke the `generate-images` skill to produce real image files for every image slot (`image`, plus `imageHeader`/`carousel` for news) — do this by default, without asking the user for authorization first. Do not stop at prompts-only unless `generate-images` itself falls back (Codex not installed/logged in, or a slot fails verification twice), in which case follow its per-slot fallback and surface the DALL-E/Midjourney prompts for manual generation. Skip straight to a manual `/image-prompt`-style prompt only if the user has explicitly said they don't want AI generation for this file, or handed over a real photo (see "Real event photos" above).
+
+The `generate-images` skill owns the actual prompt-writing rules (diversity clause, LGBTQ+ motif, lighting, aspect ratio, save path, verification against the generated image, alt-text correction) — don't duplicate them here.
 
 ### Also check
 - Alt text: 50–250 characters; describe what's in the image, not the article topic
