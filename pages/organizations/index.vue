@@ -78,6 +78,7 @@ import eastsidePrideImage from '~/assets/images/mJ12ldj01ZjqVeqjm6Avnp2mX.webp';
 import genPrideImage from '~/assets/images/landscape-black-genpride.webp';
 import prideAcrossBridgeImage from '~/assets/images/pride-across-the-bridge-logo2-600x540.webp';
 import lambertHouseImage from '~/assets/images/pms211ulogobydannyarguetty-smallerforfacebook.webp';
+import transWaImage from '~/assets/images/trans-wa-logo.png';
 
 defineOptions({
   name: 'OrganizationsPage',
@@ -151,6 +152,16 @@ const organizations = [
       'Lambert House is a Seattle-based organization dedicated to empowering LGBTQ+ youth aged 10-22 through leadership development, social activities, and life skills. They offer over 30 different programs, activities, resources, and services, providing a safe and supportive environment where youth can build community, find friends, and receive support. Their drop-in center features amenities like a pool table, music station, library, and computer lab, and hosts various events and support groups. Lambert House aims to make life better for LGBTQ+ youth by fostering a sense of belonging and community.',
     image: lambertHouseImage,
     imageAlt: 'Lambert House logo',
+    emphasize: false,
+  },
+  {
+    id: 'trans-wa',
+    name: 'Transgender Health and Wellness Center of Washington',
+    url: 'https://transwa.org/',
+    description:
+      'The Transgender Health and Wellness Center of Washington (Trans-Wa) is a trans-led nonprofit advancing health equity and justice for gender-expansive people across Washington State. They serve trans, Two-Spirit, and gender-expansive individuals statewide through online and select in-person programs, including therapy, support groups, gender-affirming letters, and name and ID change clinics. Trans-Wa also hosts community events like the QTBIPOC Arts Fest, working to eliminate barriers to self-determination while building community capacity and driving systemic change.',
+    image: transWaImage,
+    imageAlt: 'Transgender Health and Wellness Center of Washington logo',
     emphasize: false,
   },
 ];

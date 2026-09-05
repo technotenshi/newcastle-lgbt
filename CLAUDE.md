@@ -143,9 +143,10 @@ Skills, a subagent, and hooks are configured in `.claude/`. Always check whether
 
 | Skill | What it does |
 |---|---|
-| `/new-article` | Scaffold a news article or event: correct filename (`YYYYMMDD-##-slug.md`), frontmatter, body structure, date-past warning for events |
+| `/new-article` | Scaffold a news article or event: correct filename (`YYYYMMDD-##-slug.md`), frontmatter, body structure, date-past warning for events — automatically invokes `/generate-images` for every image slot afterward |
 | `/content-check` | Pre-publish validator: em dashes, absolute internal URLs, missing frontmatter fields, lingering `draft: true`, image alt text rules |
 | `/image-prompt` | Generate DALL-E 3 + Midjourney v7 prompts for all image slots per `docs/image-generation-guide.md` rules |
+| `/generate-images` | Delegate actual image file generation to the local Codex CLI (`codex exec`) for every image slot, instead of only producing prompts for manual generation |
 | `/ics-event` | Generate iCal file + Google Calendar URL from an event frontmatter + body |
 | `/seo-check` | Audit a page's `useSeoMeta`, OG image IPX pattern, Schema.org, and no-manual-tags rule |
 | `/backlog` | Read `docs/improvement-tasks.md` (and `docs/lighthouse/audit-results.md` for open performance items) and recommend highest-impact / lowest-effort items |
