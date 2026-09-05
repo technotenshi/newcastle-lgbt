@@ -189,3 +189,61 @@ entries. Added `packageRules` to `renovate.json` constraining
 `@nuxt/image` to `<2.1.0` and `better-sqlite3` to `^12.5.0` so Renovate stops
 re-proposing these until the underlying blockers (the IPX regression, Nuxt
 Content's peer range) are deliberately resolved.
+
+## 2026-09-04 — Codified an explicit advocacy stance for anti-LGBTQ+ policy coverage
+
+A first draft of a news article on two anti-LGBTQ+ Washington ballot
+initiatives (IL26-001, IL26-638) was too neutrally descriptive ("this is
+what each measure would do") instead of critical and evidence-based. The
+site's existing `docs/editorial-checklist.md` covered precision and fairness
+(don't overstate, attribute disputed claims correctly, name institutions
+instead of blaming groups) but never stated that neutral "both sides"
+coverage is itself a failure mode for this site.
+
+Added an explicit "Editorial stance" section to `docs/editorial-checklist.md`
+(this site advocates for the LGBTQ+ community; documented harms and a
+campaign's denial of them are not symmetrical; verify bill/policy text
+before characterizing it; fact-check supporters' specific claims with the
+same rigor as opponents'; every article must reach a synthesized conclusion,
+not just list "arguments for/against"). Propagated pointers to the same
+stance into `docs/content-authoring.md`, `CLAUDE.md`, `AGENTS.md`, the
+`content-reviewer` subagent (`.claude/agents/content-reviewer.md`), and the
+`new-article` and `content-check` skills in both `.claude/skills/` and the
+Codex-mirrored `.agents/skills/`, so the stance is enforced consistently
+across tools rather than living only in one checklist file.
+
+This does not relax the existing precision rules: being critical of a policy
+and its supporters is explicitly framed as compatible with never overstating
+what a bill's text requires, never fabricating a quote/statistic, and never
+assigning blame to an entire identity group instead of the specific
+organization or official responsible.
+
+Follow-up the same day: made explicit that this site names specific
+individuals (donors, legislators, spokespeople, executives, candidates) by
+name when a source (a filing, a quote, a roll-call vote) ties them directly
+to a claim, rather than retreating to the institution's name alone. Added to
+the same set of files touched above (`docs/editorial-checklist.md` items 7
+and the "Editorial stance" section, `docs/content-authoring.md`, `CLAUDE.md`,
+`AGENTS.md`, `content-reviewer.md`, and the `new-article`/`content-check`
+skills in both `.claude/skills/` and `.agents/skills/`). The evidentiary bar
+is unchanged: naming a person is not itself the risk, naming one without a
+credible source is.
+
+Second follow-up the same day: created `docs/research/` as a place for
+standing background dossiers on recurring subjects (an organization, a
+political committee, a specific individual), starting with
+`docs/research/lets-go-washington.md` (researched via a background agent,
+then hand-corrected after direct primary-source review of ESHB 1296 found
+one of its claims, that IL26-001 repeals nondiscrimination protections for
+sexual orientation/gender identity, did not survive contact with the bill's
+own strikeout/underline markup; that clause is unchanged between the 2024
+and 2025 versions of the law). Codified the convention that an article
+naming a subject with a `docs/research/` file should fold in relevant
+background for readers unfamiliar with them, not just drop the name in bare.
+Added to the same set of files: `docs/content-authoring.md` (new
+"Background research files" subsection), `CLAUDE.md`, `AGENTS.md`,
+`content-reviewer.md`, and the `new-article`/`content-check` skills in both
+`.claude/skills/` and `.agents/skills/`. Applied immediately to
+`content/news/20260904-01-anti-lgbtq-ballot-initiatives-documented-risks.md`,
+which now gives readers Let's Go Washington's founding, funding pattern,
+2024 initiative track record, and PDC compliance history on first mention.

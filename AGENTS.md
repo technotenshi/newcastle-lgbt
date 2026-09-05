@@ -87,6 +87,8 @@ Special case: `pages/organizations/index.vue` is hardcoded in the component and 
 - Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, and `FeatureItem`
 - Use [`docs/content-authoring.md`](docs/content-authoring.md) for filename format, frontmatter fields, body structure, and authoring workflow
 - Use [`docs/image-generation-guide.md`](docs/image-generation-guide.md) alongside the authoring guide whenever generating raster assets
+- This is an activism site, not neutral journalism: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them must reach a critical, evidence-backed conclusion rather than a neutral "both sides" summary, and must fact-check claims from supporters and opponents alike. The site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it, rather than retreating to the institution's name alone. Follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) for any article on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability)
+- Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. `docs/research/lets-go-washington.md`). When an article names a subject with one of these files, pull relevant context from it so unfamiliar readers get real background, not just a bare name. See `docs/content-authoring.md` for the full convention
 
 ## Image generation workflow
 
