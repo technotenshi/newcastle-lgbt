@@ -2,7 +2,7 @@
 title: "Arts in the Park"
 date: "2026-09-12"
 order: 1
-slug: "arts-in-the-park"
+slug: "arts-in-the-park-0912"
 image:
   path: "assets/images/events/20260912-01-arts-in-the-park.png"
   alt: "A racially diverse crowd enjoys live music and art activities at a sunny outdoor park festival, with one visitor wearing a rainbow pride wristband."

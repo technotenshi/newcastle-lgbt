@@ -2,7 +2,7 @@
 title: "Arts in the Park"
 date: "2026-09-19"
 order: 4
-slug: "arts-in-the-park"
+slug: "arts-in-the-park-0919"
 image:
   path: "assets/images/events/20260919-04-arts-in-the-park.png"
   alt: "A racially diverse crowd dances near an outdoor stage as a live band performs at a sunny park festival, with one visitor wearing a rainbow-striped outfit."
