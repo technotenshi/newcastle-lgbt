@@ -4,7 +4,7 @@ date: "2026-09-18"
 order: 1
 slug: "genx-queer-coworking"
 image:
-  path: "assets/images/events/20260918-01-genx-queer-coworking.png"
+  path: "assets/images/events/20260918-02-genx-queer-coworking.png"
   alt: "Five adults work side by side with laptops and notebooks at a long table in a sunlit library, one wearing a rainbow wristband."
 link:
   text: "More Information"
