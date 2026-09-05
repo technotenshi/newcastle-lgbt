@@ -46,7 +46,7 @@ For each slot, invoke `codex exec` non-interactively with a self-contained promp
 
 Example invocation:
 ```
-codex exec "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to <absolute path>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all."
+codex exec "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all."
 ```
 
 When there are multiple slots (or multiple events/articles at once), run each `codex exec` call as a separate background Bash command (`run_in_background: true`) so they generate in parallel, then wait for the task-completion notifications rather than polling.

@@ -5,7 +5,7 @@ order: 1
 slug: "trans-and-nonbinary-swim"
 image:
   path: "assets/images/events/20260926-01-trans-and-nonbinary-swim.png"
-  alt: "Swimmers relax and chat together in an indoor pool during a private community swim night, one wearing a trans-flag colored swim cap."
+  alt: "Swimmers relax and chat together in an indoor pool during a private community swim night, one wearing a light blue, pink, and white swim cap."
 link:
   text: "More Information"
   target: "https://prideacrossthebridge.org/trans-nonbinary-swim-meet-description/"
