@@ -71,7 +71,9 @@ All content files are registered under a single `content` collection (`content.c
 - **Event CTA position:** the `link` button always renders *after* the body text (`pages/events/index.vue`) — event body copy should say "link below," never "link above."
 - **Event photo credit:** optional `image.credit` field (events only) renders as a small "Photo: {name}" line under the image (`composables/useEvents.ts`, `pages/events/index.vue`). Name only, never phone numbers/contact info.
 - Full authoring guide (frontmatter fields, filename format, body structure, image conventions, step-by-step instructions): [`docs/content-authoring.md`](docs/content-authoring.md)
-- **Advocacy-forward writing:** News articles on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability) must follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) — avoid deficit framing ("nothing left to lose"), don't conflate trans/drag/sex-worker/unhoused identities, attribute right-wing coded language rather than narrating it as neutral, name specific institutions instead of blaming whole identity groups, and limit absolute claims.
+- **Advocacy-forward writing:** This is an activism site, not neutral journalism. Articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them must reach a critical, evidence-backed conclusion, not a neutral "both sides" summary, and must fact-check claims from supporters and opponents alike so the criticism holds up, not just repeat whichever framing sounds most dramatic. The site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it, rather than retreating to the institution's name alone. News articles on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability) must follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) — avoid deficit framing ("nothing left to lose"), don't conflate trans/drag/sex-worker/unhoused identities, attribute right-wing coded language rather than narrating it as neutral, name specific institutions instead of blaming whole identity groups, and limit absolute claims.
+- **Background research files:** Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. [`docs/research/lets-go-washington.md`](docs/research/lets-go-washington.md)). Whenever an article names a subject with one of these files, check it and fold in relevant context so a reader unfamiliar with them isn't left with just a bare name. See [`docs/content-authoring.md`](docs/content-authoring.md#background-research-files-docsresearch) for the full convention.
+- **Verifying WA bill/initiative text:** `sos.wa.gov` ballot-initiative PDFs 403 `WebFetch`; `lawfilesext.leg.wa.gov` enacted-bill PDFs usually work. Once fetched/saved, use the `Read` tool's `pages` parameter directly on the PDF to see a bill's strikeout/underline markup — this is the only reliable way to confirm what an initiative actually changes versus current law, rather than trusting a secondary summary.
 
 #### Image generation prompt rules
 Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide.md`](docs/image-generation-guide.md). Use `/image-prompt` to generate prompts automatically. Key non-negotiables: explicit racial diversity language (not just "diverse"), at least one LGBTQ+ motif per image, no overcast lighting, no text in AI images, aspect ratio embedded inside the prompt text (e.g. `16:9 wide landscape, 1792x1024` for DALL-E; `--ar 16:9` appended for Midjourney). Note: DALL-E 3 has no true 4:3 fixed size — the events slot uses `1024x768` via `gpt-image-1`/`gpt-image-2` instead.
@@ -146,10 +148,17 @@ Skills, a subagent, and hooks are configured in `.claude/`. Always check whether
 | `/image-prompt` | Generate DALL-E 3 + Midjourney v7 prompts for all image slots per `docs/image-generation-guide.md` rules |
 | `/ics-event` | Generate iCal file + Google Calendar URL from an event frontmatter + body |
 | `/seo-check` | Audit a page's `useSeoMeta`, OG image IPX pattern, Schema.org, and no-manual-tags rule |
-| `/backlog` | Read `docs/improvement-tasks.md` and recommend highest-impact / lowest-effort items |
+| `/backlog` | Read `docs/improvement-tasks.md` (and `docs/lighthouse/audit-results.md` for open performance items) and recommend highest-impact / lowest-effort items |
+| `/merge-prs` | Merge multiple open PRs into one integration branch: resolves conflicts, runs lint and build |
+| `/research` | Investigate a subject against primary sources and save findings to `docs/research/` (see Background research files convention below) |
 
 ### Subagent
-`content-reviewer` — enforces content conventions (em dashes, racial diversity language, LGBTQ+ motifs, lighting, absolute URLs). Invoked automatically on content review or on demand.
+`content-reviewer` — enforces content conventions (em dashes, racial diversity language, LGBTQ+ motifs, lighting, absolute URLs) and the advocacy-forward editorial stance (critical conclusions, naming individuals with credible evidence, drawing on `docs/research/` files). Invoked automatically on content review or on demand.
+
+### Skill file conventions
+- Project skills live in **two places** that must stay in sync: `.claude/skills/<name>/SKILL.md` (Claude Code) and `.agents/skills/<name>/SKILL.md` (Codex mirror). Edit both, then `diff` them to confirm they still match.
+- Both paths are 3 directories deep from repo root, so links to `docs/*.md` need `../../../`, not `../../`.
+- Quote a frontmatter `description:` if it contains a colon followed by a space (e.g. `no manual og: tags`) — unquoted, it parses as a nested YAML mapping and breaks strict parsers like `npx skills list`.
 
 ### Hooks (automatic, configured in `.claude/settings.json`)
 - **Auto-lint** — runs `./node_modules/.bin/eslint --fix` on every edited `.vue`/`.ts`/`.js` file
@@ -164,6 +173,8 @@ Skills, a subagent, and hooks are configured in `.claude/`. Always check whether
 - [`docs/editorial-checklist.md`](docs/editorial-checklist.md) — 20-point advocacy-forward writing checklist for sensitive historical/political news articles
 - [`docs/image-generation-guide.md`](docs/image-generation-guide.md) — DALL-E 3 and Midjourney v7 parameters, lighting reference, prompt templates
 - [`docs/improvement-tasks.md`](docs/improvement-tasks.md) — open site improvement backlog (use `/backlog` to prioritize)
+- [`docs/lighthouse/`](docs/lighthouse/) — Lighthouse Core Web Vitals audit data; `audit-results.md` is the readable summary, the source `/backlog` reads for open performance items not yet copied into `improvement-tasks.md`
+- [`docs/research/`](docs/research/) — standing background dossiers on recurring subjects (organizations, political committees, individuals) named in articles; see `docs/content-authoring.md` for the convention
 
 <!-- skilld -->
 Before modifying code, evaluate each installed skill against the current task.

@@ -2,6 +2,20 @@
 
 Apply this checklist to any news article that covers sensitive historical, political, or advocacy-forward LGBTQ+ subject matter (movement history, government policy, corporate accountability, discrimination, etc.). It was written after a full editorial pass on [`content/news/20260601-01-true-history-of-pride-erasure.md`](../content/news/20260601-01-true-history-of-pride-erasure.md) surfaced the patterns below across multiple drafts. Use it alongside [`docs/content-authoring.md`](content-authoring.md).
 
+## Editorial stance: this is an advocacy site, not neutral journalism
+
+This site exists to advocate for the Newcastle, WA LGBTQ+ community. When a policy, initiative, bill, or public figure works against that community's interests, articles should say so plainly and support the conclusion with evidence, not present it as one equally weighted "side" of a debate. Treating a documented harm and a campaign's denial of that harm as symmetrical is a failure of this checklist, not neutrality.
+
+This does not license inaccuracy; it raises the bar for it. To be usefully critical:
+
+- **Verify before characterizing.** Read the actual bill, initiative, or policy text before describing its effect, and quote it directly where possible. A critique built on a claim that doesn't survive contact with the source text hands opponents an easy way to dismiss the whole article.
+- **Fact-check supporters with the same rigor as opponents.** If a policy's supporters make a specific, checkable claim (a statistic, a legal argument, a cited authority, a named expert), verify it. Report when it doesn't hold up and show the evidence, rather than only relaying the opposing campaign's rebuttal.
+- **Be precise about genuinely disputed mechanics.** When a specific detail is legitimately contested (for example, whether a bill's text requires a particular procedure or merely permits it), say so accurately rather than choosing whichever reading is more dramatic. Precision on one contested detail does not require softening a pattern of harm that is otherwise well documented elsewhere in the piece.
+- **Reach a conclusion.** An article should end with a synthesized, evidence-backed assessment of what the policy does and who it harms, not stop after listing "arguments for" and "arguments against" as if the piece had no point of view.
+- **Name the people responsible, not just the institution, when the evidence supports it.** This site is not afraid to name a donor, legislator, spokesperson, executive, or candidate by name when a source ties them directly to the statement, vote, donation, or decision in question. Don't retreat to "a spokesperson said" or "the campaign claimed" when the record names who actually said or did it. The evidentiary bar does not change: a quote needs a source, a donation needs a filing, a vote needs a roll call. Naming a specific person is not itself the risk; naming one without a credible source is.
+
+Apply this stance together with, not instead of, the precision rules in items 1 through 20 below: being critical of a policy and the people who advance it, by name, is fully compatible with never overstating what a bill's text actually requires, never fabricating a quote or statistic, and never assigning blame to an entire identity group instead of the specific organization, official, or donor responsible.
+
 ## 1. Center marginalized people as full human beings
 
 Do not define LGBTQ+ people primarily through homelessness, poverty, sex work, incarceration, trauma or confrontation.
@@ -93,7 +107,7 @@ Do not silently modernize the names of historical organizations, but do not adop
 
 Avoid blaming "the movement," "the community," "gay people," "lesbians" or "white gay men" as undifferentiated groups.
 
-Identify the organization, organizer, leadership body, event committee, government agency or political tendency responsible whenever the record permits.
+Identify the organization, organizer, leadership body, event committee, government agency or political tendency responsible whenever the record permits, and do not stop at the organization's name when a specific person within it is the one on record. When a filing lists a donor, a quote is attributed to a named spokesperson, or a vote is recorded under a specific legislator's name, use that name. This applies to current political actors as much as historical ones: a hedge fund manager bankrolling an initiative, a legislator explaining a vote, a candidate's undisclosed affiliation, all belong in the article by name, sourced the same way any other claim is.
 
 Instead of:
 

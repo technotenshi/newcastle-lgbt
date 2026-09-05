@@ -128,17 +128,23 @@ the article has deep nested structure.
 
 ### Advocacy-forward writing conventions (sensitive historical/political news)
 
-For articles covering movement history, government policy, discrimination, or corporate accountability, follow the full checklist at [`docs/editorial-checklist.md`](editorial-checklist.md). It was written after an editorial pass on a Pride-history investigation surfaced the same handful of problems repeatedly. Highest-signal rules:
+For articles covering movement history, government policy, discrimination, or corporate accountability, follow the full checklist at [`docs/editorial-checklist.md`](editorial-checklist.md). This is an advocacy site: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them should reach a critical, evidence-backed conclusion, not a neutral "both sides" summary, and should fact-check claims from supporters and opponents alike so the criticism holds up. It was written after an editorial pass on a Pride-history investigation surfaced the same handful of problems repeatedly. Highest-signal rules:
 
+- **Be critical, and back it with evidence.** State plainly who a policy harms, not just what it mechanically does, and cite the evidence for that conclusion: the bill's own text, named experts, official analyses.
+- **Fact-check supporters as rigorously as opponents.** Verify specific checkable claims from a policy's supporters (a statistic, a legal argument, a cited authority); report when one doesn't hold up and show the evidence, rather than only relaying the opposing campaign's rebuttal.
 - **No deficit framing.** Don't define marginalized people primarily through trauma, poverty, or "nothing left to lose" language. Describe the conditions they faced, but preserve their agency, relationships, and goals.
 - **Don't romanticize violence or deprivation as the measure of contribution.** Avoid "threw the first punch/brick" framing; prefer "resisted," "sustained," "organized," "built."
 - **Don't conflate overlapping identities.** Transgender people, drag performers, sex workers, and unhoused people are not interchangeable categories, list them as what they are, and never retroactively assign a modern identity label to a historical figure without direct support.
 - **Attribute hostile or coded language, never narrate it as neutral.** Quote terms like "gender ideology" or "biological truth" and name who used them.
 - **Contextualize outdated terminology.** Keep it when it's a real historical name, direct quote, or archival record; add a short note that it's outdated as a general modern label. Don't silently modernize proper nouns.
-- **Name institutions and decision-makers, not identity groups.** Avoid "the movement," "gay men," or "lesbians" as an undifferentiated actor; identify the specific organization, leader, or agency responsible.
+- **Name institutions and decision-makers, not identity groups, and don't stop at the institution.** Avoid "the movement," "gay men," or "lesbians" as an undifferentiated actor; identify the specific organization, leader, or agency responsible. This site is not afraid to name a donor, legislator, spokesperson, or executive by name when a source (a filing, a quote, a roll-call vote) ties them directly to it.
 - **Avoid stereotyped adjectives** ("loud," "outlandish," "militant") for marginalized people, describe conduct concretely instead.
 - **Limit absolute claims** ("every," "first," "only," "quietly," "deliberately") unless independently verifiable; prefer "among the earliest," "helped influence."
 - **Run the final 20-item language check** in `docs/editorial-checklist.md` before publishing any article in this category.
+
+### Background research files (`docs/research/`)
+
+Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/`, e.g. [`docs/research/lets-go-washington.md`](research/lets-go-washington.md). Whenever an article names a subject that has one of these files, check it and fold in relevant context for a reader who has never heard of them, don't just drop the name in bare. Useful context includes: what the organization/person is, their track record, their funding pattern, and any compliance or legal issues on record, always hedged to match the file's own confidence level (an open investigation is "unresolved," not a finding). If a subject is central enough to an article to warrant this treatment but has no research file yet, consider using the `research` skill to build one before publishing, and keep the file updated as new claims are verified, the way [`docs/research/lets-go-washington.md`](research/lets-go-washington.md) records corrections to its own earlier claims.
 
 ---
 
