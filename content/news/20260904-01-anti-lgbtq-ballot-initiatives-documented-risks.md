@@ -1,0 +1,78 @@
+---
+title: "Two Anti-LGBTQ+ Ballot Initiatives Carry Documented Risks for Abuse Survivors and Trans Athletes"
+date: "2026-09-04"
+order: 1
+slug: "anti-lgbtq-ballot-initiatives-documented-risks"
+image:
+  path: "assets/images/news/20260904-01-anti-lgbtq-ballot-campaign.png"
+  alt: "The Washington State Capitol dome in Olympia rises against a warm evening sky, with a small pride flag visible near the entrance steps."
+imageHeader:
+  path: "assets/images/news/20260904-01-anti-lgbtq-ballot-campaign-header.png"
+  alt: "One hedge fund manager's initiatives could open child-abuse investigation records to parents and require health providers to verify girls' sex before they play school sports, and Washington voters decide this November."
+---
+
+:Dateline Two ballot initiatives on Washington's November 3, 2026 ballot would strip a federal-style privacy protection for a student's private counseling notes and require a healthcare provider to verify a girl's sex before she can compete in school sports, according to a direct comparison of the initiatives' text against the state law they would repeal. Both measures, **IL26-001** and **IL26-638**, qualified for the ballot after signature drives funded almost entirely by **Let's Go Washington** (LGW), the political committee founded by hedge fund manager **Brian Heywood**.
+
+This is Let's Go Washington's fourth ballot cycle in three years. Heywood founded the Redmond-based committee in 2022 and has personally funded nearly all of its six 2024 initiatives, three of which passed the Legislature outright while a fourth, on natural gas access, won at the ballot after lawmakers let it go to voters rather than act on it themselves. The state's campaign-finance watchdog has already fined the committee once, and as of August 2026 has an unresolved investigation open into whether it hid as much as $1.25 million in political advertising.
+
+Lawmakers took the same path with IL26-001 and IL26-638: neither got a hearing. At a January 9, 2026 news conference, **Senate Majority Leader Jamie Pedersen** and **House Speaker Laurie Jinkins**, both Democrats, announced they would not schedule hearings on either measure. "I'm certain that we will not be passing either of those initiatives," Pedersen said. "They'll be up to the voters to decide." When House Republicans **Travis Couture** and **Skyler Rude** forced a floor motion on January 28 instructing the House Education Committee to hold hearings anyway, Democrats voted it down along party lines. Both initiatives were certified for the ballot when the Legislature adjourned in March without acting.
+
+Six months later, campaign finance filings show the "yes" side has outraised the combined opposition, which is anchored by the **ACLU of Washington**, the **Washington Education Association** (WEA), and **SEIU 775**, by roughly six to one.
+
+## IL26-001 Would Reopen Access to Students' Private Counseling Notes
+
+Supporters market IL26-001 as "Restoring Parents' Rights." Its official ballot summary is narrow and specific: it would re-enact **RCW 28A.605.005** exactly as it read when 2024's Parents' Bill of Rights initiative (I-2081) first passed, undoing every change the Legislature made through 2025's [House Bill 1296](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1296-S.E.pdf). HB 1296's own text, which shows exactly what it struck and what it added, makes the comparison possible line by line.
+
+The clearest change: HB 1296 added a standard, FERPA-style exemption that keeps a school employee's personal, unshared notes ("kept in the sole possession of the maker... not accessible or revealed to any other person") from counting as a disclosable "education record" at all. That's the provision that shields a counselor's private session notes from parents today. The original 2024 law had no such exemption, and went the opposite direction: it explicitly listed "records of any mental health counseling" and "records of any vocational counseling" among the records every enrolled student's parent has a statutory right to inspect. IL26-001 would restore both changes at once, removing the personal-notes exemption and reinstating the explicit right to inspect counseling records.
+
+A second, narrower change involves the specific shield for parents under active investigation. Both the original and current law bar releasing certain records to a parent who is a criminal defendant where their child is the named victim, or who is the target of a child-abuse or neglect investigation, without a court order. What differs is which records that shield covers: current law protects "health care, social work, counseling, or disciplinary" records, while the original law IL26-001 would restore protected only "medical or health records or mental health counseling." Restoring the original keeps counseling and medical records off-limits to a parent under investigation, but removes that same protection for the child's social work and disciplinary records.
+
+The original text also tightens the clock for schools to produce requested student records, from current law's "reasonable period of time, but not more than 45 days" (matching the federal FERPA ceiling) to a flat 10 business days. That's a state deadline set below the federal maximum, not a violation of it: FERPA's 45-day window is a ceiling, not a floor, and federal regulation explicitly permits a state to require faster turnaround without risking federal education funding.
+
+Let's Go Washington disputes that the measure meaningfully affects private counseling conversations, arguing it governs records the school itself creates and maintains rather than the substance of what a student tells a counselor. The statute's own text cuts against that framing: the original language, which IL26-001 would restore, names "mental health counseling" records specifically and drops the exemption that currently keeps a counselor's unshared notes out of a parent's reach.
+
+Separately, and on a different legal basis than the records dispute above, advocates including the ACLU of Washington and Gender Justice League, who raised the issue at the opposition coalition's public campaign launch, argue the broader restoration of parental-notification rights would also lead schools to use a transitioning student's legal name and pronouns when communicating with parents, effectively outing LGBTQ+ students to households that may not be supportive. That claim rests on the same broader parental-access framework rather than the counseling-records provision specifically, and neither campaign has pointed to statutory language naming pronouns or legal names directly. Research from the Williams Institute and the Trevor Project has repeatedly found that LGBTQ+ youth who are rejected or outed by their families face substantially elevated rates of homelessness and mental health crisis compared with their peers. The **Washington State PTA**'s opposition materials and the **Seattle Times** editorial board both note that more than 100 family doctors and other medical professionals have signed onto opposition to IL26-001, arguing that reopening access to counseling records will deter students from confiding in a school counselor or nurse about abuse, assault, or depression in the first place.
+
+## IL26-638 Would Create a Sex-Verification Requirement That Does Not Exist Today
+
+Supporters market IL26-638 as "Fairness in Girls' Athletics." It would bar students the measure defines as "biologically male" from girls' school sports and require a healthcare provider's statement verifying sex based on reproductive anatomy, genetic makeup, or testosterone levels before any girl may compete. A birth certificate alone would not satisfy the requirement.
+
+The **Washington State PTA**'s formal analysis of the measure makes a concrete point often missing from the political debate: Washington's standard sports-physical form has no field for "sex" at all, and none of the three verification methods the initiative lists is part of a normal physical exam. Compliance would require something genuinely new for every girl seeking to play a school sport, not a checkbox added to an existing form.
+
+The scale of that new requirement is disproportionate to the problem it claims to solve. The state superintendent's office and the **Washington Interscholastic Activities Association** (WIAA), which has allowed students to compete according to gender identity since 2007 and has stated no intent to change that policy absent a legal mandate, both put the number of transgender athletes competing statewide at five to ten, out of roughly 250,000 student-athletes and 110,000 girls playing WIAA-sanctioned sports. The measure applies only to girls; boys face no equivalent verification requirement, which opponents' legal analyses argue may conflict with the Washington State Constitution's Equal Rights Amendment.
+
+Whether the measure would, in practice, require a physical exam is genuinely disputed. LGW says providers would have discretion over verification method and that birth records or medical history could suffice for many students. The bill's text sets no floor requiring a physical exam, so "could require" is a more defensible characterization than "will require." But the clearest fact undercutting LGW's position comes independent of either campaign: the **American Academy of Pediatrics** asked to have its name removed from the "yes" campaign's official voters'-pamphlet statement, which had cited AAP guidelines as support for the measure.
+
+Family-medicine physician **Dr. Gina Martin**, writing in a HeraldNet op-ed, put it directly: the measure "was clearly not written by somebody who practices medicine," since standard sports physicals focus on musculoskeletal and cardiac screening, not sex verification.
+
+## A Six-to-One Money Gap
+
+Campaign finance disclosures show Let's Go Washington has raised roughly $4.45 million in support of IL26-638 alone, more than $1.86 million of it from Heywood personally. On the opposition side, **No Hate in WA State** has raised approximately $447,000 and **Defend Washington** roughly $286,000. No Hate in WA State discloses funding from the ACLU of Washington, WEA, SEIU 775, the National Education Association, and the Inatai Foundation.
+
+That funding gap comes on top of the more than 80 state organizations, including six Washington PFLAG chapters, that had already joined the opposition coalition by March. *(See our [earlier coverage](/news/2026/03/19/pflag-chapters-oppose-anti-lgbtq-initiatives) of that coalition's formation.)*
+
+## How to Get Involved
+
+No Hate in WA State is holding an in-person phonebank on **Thursday, September 10, 2026**, as part of its push to defeat both measures before ballots go out. Volunteers can find the event listing and additional canvassing, donation, and social media resources at [nohateinwastate.org](https://nohateinwastate.org/). Both measures are already certified for the ballot, so the campaign's remaining leverage now runs through voter turnout rather than legislative action.
+
+## Sources
+
+- **Washington State Public Disclosure Commission**: [PDC issues $20,000 fine to Let's Go Washington for campaign finance violations](https://www.pdc.wa.gov/news/2024/pdc-issues-20000-fines-lets-go-washington-campaign-finance-violations)
+- **KING 5**: [Watchdog complaint says Let's Go Washington failed to disclose Brandi Kruse political advertising](https://www.king5.com/article/news/local/watchdog-complaint-lets-go-washington-disclosure-brandi-kruse-political-advertising/281-c830ade5-cc2f-4019-a200-39d93748fe06)
+- **Washington State Legislature**: [Engrossed Substitute House Bill 1296 (2025), full text](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1296-S.E.pdf), showing the exact amendatory text added to and struck from RCW 28A.605.005 and RCW 28A.320.160
+- **Ballotpedia**: [Washington Parental Right to Review Education Materials, Receive Notifications, and Opt Out of Sexual-Health Education Initiative (2026)](https://ballotpedia.org/Washington_Parental_Right_to_Review_Education_Materials,_Receive_Notifications,_and_Opt_Out_of_Sexual-Health_Education_Initiative_(2026))
+- **KUOW** (republishing Washington State Standard): [WA Democrats won't hold hearings on parental rights, trans athlete initiatives](https://www.kuow.org/politics/2026-01-12/wa-democrats-won-t-hold-hearings-on-parental-rights-trans-athlete-initiatives)
+- **Rep. Travis Couture**: [House Democrats reject House Republicans' motion to ensure two initiatives receive prompt public hearings](https://traviscouture.houserepublicans.wa.gov/2026/01/28/house-democrats-reject-house-republicans-motion-to-ensure-two-initiatives-receive-prompt-public-hearings/)
+- **Washington State Standard**: [Signatures filed for WA initiative to block transgender athletes from girls' sports](https://washingtonstatestandard.com/2026/01/03/signatures-filed-for-initiatives-on-parental-rights-blocking-trans-athletes-from-girls-sports/)
+- **Axios Seattle**: [Ballot fight looms over trans sports and parental rights in Washington](https://www.axios.com/local/seattle/2026/01/26/ballot-fight-looms-over-trans-sports-and-parental-rights-in-washington)
+- **Ballotpedia**: [Washington Sex Verification Requirements for Female School Sports Initiative (2026)](https://ballotpedia.org/Washington_Sex_Verification_Requirements_for_Female_School_Sports_Initiative_(2026))
+- **Washington State PTA**: [Washington State PTA Opposes Initiative IL26-001](https://www.wastatepta.org/washington-state-pta-opposes-initiative-il26-001/)
+- **Washington State PTA**: [Washington State PTA Opposes Initiative IL26-638](https://www.wastatepta.org/washington-state-pta-opposes-initiative-il26-638/)
+- **Seattle Times Editorial Board**: [For the sake of student safety, turn down Initiative 001](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-for-the-sake-of-student-safety-turn-down-initiative-001-on-parents-rights/)
+- **ACLU of Washington**: [Two anti-LGBTQ initiatives are heading to your ballot this fall](https://www.aclu-wa.org/news/two-anti-lgbtq-initiatives-are-heading-to-your-ballot-this-fall/)
+- **Let's Go Washington**: [LGW Outlines Double-Standards with SOS and Addresses AAP](https://letsgowashington.com/lgw-outlines-double-standards-with-sos-and-addresses-aap/)
+- **LGBTQ Nation**: [GOP group falsely implies pediatricians support genital exams in anti-trans sports bans](https://www.lgbtqnation.com/2026/08/gop-group-falsely-implies-pediatricians-support-genital-exams-in-anti-trans-sports-bans/)
+- **HeraldNet**: [Forum: Initiative 638 threatens girls, distracts voters from real problems](https://www.heraldnet.com/2026/08/15/forum-initiative-638-threatens-girls-distracts-voters-from-real-problems/)
+- **The Urbanist**: [Democratic Leaders Launch 'No Hate in WA State' Campaign Opposing Anti-Trans Ballot Measures](https://www.theurbanist.org/democratic-leaders-launch-no-hate-in-wa-state-campaign-opposing-anti-trans-ballot-measures/)
+- **No Hate in WA State**: [Campaign resources and action tools](https://nohateinwastate.org/)
+- **Mobilize.us**: [NHWS In-Person Phonebank](https://www.mobilize.us/nohateinwastate/event/1013836/)
