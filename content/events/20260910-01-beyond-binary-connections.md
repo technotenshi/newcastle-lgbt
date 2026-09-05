@@ -5,7 +5,7 @@ order: 1
 slug: "beyond-binary-connections"
 image:
   path: "assets/images/events/20260910-01-beyond-binary-connections.png"
-  alt: "Four friends chat over mugs of tea around a small table with an open book, one wearing a rainbow pride pin on his sweater."
+  alt: "Four friends chat over mugs of tea around a small table with an open book, one wearing a rainbow pride pin on their sweater."
 link:
   text: "More Information"
   target: "https://prideacrossthebridge.org/beyond-binary-connections-description/"
