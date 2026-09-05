@@ -94,7 +94,7 @@ Web search of publicly available sources found **no evidence** that Let's Go Was
 Let's Go Washington filed six initiatives in 2023 for the 2024 ballot. Three passed the state legislature directly; four went to voters in November 2024.
 
 #### Legislative Victories (Did Not Go to Ballot)
-1. **I-2081: Parental Rights** — Passed Legislature unanimously (Senate), 82–15 (House). Codified parental rights to review school materials, receive medical records, opt out of sexual health education lessons.
+1. **I-2081: Parental Rights** — Passed the Legislature with bipartisan support: 49-0 in the Senate (unanimous) and 82-15 in the House. Codified parental rights to review school materials, receive medical records, opt out of sexual health education lessons.
 2. **I-2111: Income Tax Ban** — Apparently passed the legislature (referenced in OPB reporting as one of three that passed Legislature rather than going to ballot)
 3. **I-2113: Police Pursuits** — Rolled back 2021 law restricting police vehicle chases (passed Legislature)
 
