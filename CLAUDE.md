@@ -118,6 +118,8 @@ Do **not** add: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitte
 - `.github/dependabot.yml` — weekly automated PRs for npm dependency updates. **Renovate** also runs and may open duplicate/overlapping PRs; the later one is typically superseded and auto-closed.
 - **`yarn.lock` drift:** CI uses `--immutable`, so if a dependency merge introduces new transitive deps the lockfile breaks. Fix by running `docker compose run --rm app yarn install` locally and committing the updated `yarn.lock`.
 - There are **no automated tests** in this project.
+- **No direct commits to `main`:** a Husky `pre-commit` hook (`.husky/pre-commit`, wired via `package.json`'s `prepare` script) exits non-zero on any commit attempted while `HEAD` is `main`, with the message "Direct commits to 'main' are blocked." Always work on a feature branch (`git checkout -b ...`) before committing.
+- **Copilot PR review:** after pushing a fix for a Copilot-flagged issue, do not manually re-request the review (e.g. via `gh api .../requested_reviewers`) — Copilot automatically re-reviews on new pushes to the PR branch.
 
 ### Styling
 Bootstrap 5 + a Mobirise-derived custom theme in `assets/theme/css/style.css`. Use Bootstrap's responsive grid classes (`col-12`, `col-md-*`, `col-lg-*`).
