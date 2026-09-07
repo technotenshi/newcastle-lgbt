@@ -95,7 +95,7 @@ Body paragraphs expanding on the core fact. Use **bold** for key names, organiza
 and important terms. Use *italics* for publication titles and legislative bill names.
 
 > "Block-quote format for substantial direct quotes from individuals."
-> — Attribution name, Title
+> *Attribution name, Title*
 
 ### Subsection Heading
 
