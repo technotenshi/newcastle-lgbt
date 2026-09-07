@@ -106,8 +106,12 @@ the article has deep nested structure.
 
 ## Sources
 
-- **Outlet Name**: [Article Title](https://full-url-here.com)
-- [Another Source Title](https://full-url-here.com)
+[^1]: Centers for Medicare & Medicaid Services. (2026, August 13). *Medicaid
+program; prohibition on federal Medicaid and CHIP funding for sex-rejecting
+procedures furnished to children*. Federal Register. [https://full-url-here.com](https://full-url-here.com)
+[^2]: Washington State Attorney General's Office. (2026, March). *Ninth Circuit
+argument: Washington defends gender-affirming care against unconstitutional
+attacks*. [https://full-url-here.com](https://full-url-here.com)
 ```
 
 **Conventions:**
@@ -116,13 +120,54 @@ the article has deep nested structure.
 - **Opening:** Name the location (`Newcastle, WA`) and give the core fact in the first 2–3 sentences
 - **Bold** (`**text**`): key names, organizations, important terms
 - **Italics** (`*text*`): publication/document/bill titles
-- **Links:** `[Descriptive text](URL)` — always use descriptive link text, not bare URLs
+- **Links:** `[Descriptive text](URL)` — always use descriptive link text, not bare URLs, **except** in the `## Sources` list itself, which uses footnote-style bare URLs instead (see below)
 - **Block quotes:** `> "…"` for substantial quotes; inline quotes for short statements
 - **Horizontal rule** (`---`): optional section divider between major content blocks
-- **Sources section:** Required for articles citing external material; use H2 `## Sources`, list links as `**Outlet**: [Title](URL)` or plain `[Title](URL)`
+- **Sources section:** Required for articles citing external material. See "Citations and Sources (Wikipedia-style footnotes, APA7 entries)" below for the footnote-marker requirement and the reference-entry format.
 - **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation
 - **Dateline:** Open the article body with `:Dateline` (the MDC inline component) followed by the first sentence. Do not write `**Newcastle, WA** –` or `**Newcastle, WA**:` directly — the component renders the standardized format.
 - **Em dashes:** Do not use em dashes (`—`) anywhere in article text or frontmatter. Use a comma, colon, or rephrase the sentence instead. En-dashes (`–`) remain correct for numeric ranges (e.g. time ranges, page ranges).
+
+---
+
+### Citations and Sources (Wikipedia-style footnotes, APA7 entries)
+
+Every specific factual claim drawn from an external source gets a numbered footnote marker at the point the claim is made in the body, plus a matching numbered entry in the closing `## Sources` section, the same pattern Wikipedia uses (superscript `[1]`, `[2]` markers linking down to a numbered reference list, with a "↩" back-link from each entry). This site's Markdown pipeline (`@nuxtjs/mdc`, via `remark-gfm`) renders standard GFM footnote syntax (`[^1]` / `[^1]: ...`) natively into exactly that structure, no custom component needed. Confirmed working in this repo's dev server: [content/news/20260906-01-federal-assault-transgender-youth-healthcare.md](../content/news/20260906-01-federal-assault-transgender-youth-healthcare.md) is the reference example.
+
+**Inline markers:** the first time a specific claim appears in the body, put a footnote marker immediately after it, e.g. `finalized a rule titled *...*.[^1]`. Do **not** wrap the claim text in a hyperlink, the marker is the citation, the claim stays as plain prose:
+
+```markdown
+issued a formal declaration[^3] asserting that gender-affirming care for minors
+does not meet "professionally recognized standards of health care"
+```
+
+**Reusing a source:** if the same source is cited again later in the article, reuse its existing number (`[^3]` again) rather than creating a new footnote or a duplicate reference entry. GFM automatically numbers footnote markers by order of *first* appearance, a label referenced more than once keeps the number from its first use, and each repeat gets its own "back to reference" link in the rendered output pointing back to that specific spot. This applies inside tables as well as paragraphs. Facts with no traceable external source (background figures the article can't independently link, general framing) stay unmarked; don't invent a citation that doesn't have a real matching source.
+
+**Sources section (footnote definitions, APA7 content):** define each footnote directly under `## Sources`, one per line, in numeric order (`[^1]` first, `[^2]` second, and so on, matching first-appearance order in the body, not alphabetical, the numbering has to stay sequential for the auto-generated back-links to make sense). Each definition's *content* still follows APA 7th edition reference formatting:
+
+```markdown
+## Sources
+
+[^1]: Centers for Medicare & Medicaid Services. (2026, August 13). *Medicaid
+program; prohibition on federal Medicaid and CHIP funding for sex-rejecting
+procedures furnished to children*. Federal Register. [https://www.federalregister.gov/...](https://www.federalregister.gov/...)
+[^2]: Washington State Attorney General's Office. (2026a, March). *Ninth
+Circuit argument: Washington defends gender-affirming care against
+unconstitutional attacks*. [https://www.atg.wa.gov/...](https://www.atg.wa.gov/...)
+[^3]: Washington State Attorney General's Office. (2026b, September 2).
+*Washington joins coalition challenging federal attack on gender-affirming
+care*. [https://www.atg.wa.gov/...](https://www.atg.wa.gov/...)
+```
+
+Rules:
+
+- **Author or organization first**, written the way the source itself identifies it. Don't invent a personal author or a legal case caption the source doesn't state. If no author or organization is identifiable, start the entry with the *italicized title* instead.
+- **Date:** `(Year, Month Day)` when the source states a full date; fall back to `(Year, Month)` or `(Year)` rather than guessing a day the source doesn't confirm; use `(n.d.)` when no date is available at all.
+- **Title in sentence case, italicized**, followed by the publication/site name if it differs from the author.
+- **End with the bare URL as a working link** (`[URL](URL)`, i.e. the URL is both the link text and the target). This is the one place on the site where a bare URL is correct; it overrides the general "descriptive link text" rule used everywhere else in the body.
+- **Numeric order, not alphabetical.** The Sources list is ordered by footnote number (citation order), unlike a standalone APA7 reference list. Don't alphabetize it, that would desync the numbers from their in-body markers.
+- **Same author, multiple separate works:** disambiguate the year in the reference text itself (e.g. `2026a`, `2026b`, assigned in the order those works are first cited) since each gets its own footnote number regardless; the letter suffix is a readability aid in the printed date, not a footnote label.
+- **No blank line between footnote definitions**, and nothing after the last one, GFM treats an unindented line immediately following a footnote definition as part of that definition's content if there's no blank line separating them.
 
 ---
 
@@ -399,7 +444,8 @@ Always generate AI image prompts based on the article content and the style refe
    - Use H2/H3 sections for structure
    - Bold key names and orgs; italicize titles
    - Block-quote substantial quotes
-   - End with a `## Sources` section listing all cited links
+   - Add a `[^N]` footnote marker after each specific factual claim at first mention; reuse the number for a source cited again later
+   - End with a `## Sources` section: `[^N]: ...` footnote definitions in numeric order, each formatted as a full APA7 reference (see "Citations and Sources" above)
 
 ---
 

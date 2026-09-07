@@ -90,26 +90,26 @@ Special case: `pages/organizations/index.vue` is hardcoded in the component and 
 - This is an activism site, not neutral journalism: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them must reach a critical, evidence-backed conclusion rather than a neutral "both sides" summary, and must fact-check claims from supporters and opponents alike. The site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it, rather than retreating to the institution's name alone. Follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) for any article on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability)
 - Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. `docs/research/lets-go-washington.md`). When an article names a subject with one of these files, pull relevant context from it so unfamiliar readers get real background, not just a bare name. See `docs/content-authoring.md` for the full convention
 - When covering a Washington bill or initiative, verify its primary text rather than relying on a secondary summary. Ballot-initiative PDFs on `sos.wa.gov` may reject automated retrieval, while enacted-bill PDFs on `lawfilesext.leg.wa.gov` are usually accessible. Inspect the retrieved PDF's visual strikeout/underline markup to determine exactly what changes from current law.
+- Cite sources Wikipedia-style: a `[^N]` footnote marker after each specific factual claim at first mention, numbered by order of appearance (not alphabetical), reused for a source cited again later, never a hyperlink wrapped around the claim text itself. The closing `## Sources` section is `[^N]: ...` footnote definitions in that same numeric order, each formatted as a full APA 7th-edition reference (author/org, date, italicized title, bare `[URL](URL)`). This renders natively through this site's `remark-gfm` markdown pipeline as numbered superscripts with automatic back-links, no custom component needed. Full rules and a worked example: [`docs/content-authoring.md`](docs/content-authoring.md#citations-and-sources-wikipedia-style-footnotes-apa7-entries).
+- `federalregister.gov` runs aggressive, inconsistent bot detection and can serve a `unblock.federalregister.gov` reCAPTCHA wall to automated fetches (or even a real browser session) on some requests and not others from the same source. A single successful fetch showing the document's real title and text is enough to confirm a citation is correct; don't treat a later CAPTCHA redirect as proof the link is broken.
 
 ## Image generation workflow
 
 - Follow both [`docs/content-authoring.md`](docs/content-authoring.md) and [`docs/image-generation-guide.md`](docs/image-generation-guide.md) before writing prompts or saving generated assets
+- **Actual generation is delegated to the local Codex CLI** via `codex exec`, invoking its native image-generation tool, not a bespoke Python script. See `.agents/skills/generate-images/SKILL.md` for the exact invocation pattern, verification steps (dimension check + visual review against the rules below), and per-slot fallback to manual DALL-E/Midjourney prompts if generation fails twice. There is no repo-local `.venv` and no `OPENAI_API_KEY` requirement for this path, that describes an older workflow this repo no longer uses.
 - Generate news and event art as `.png` files in `assets/images/news/` or `assets/images/events/` using the `YYYYMMDD-##-descriptive-name.png` naming convention
 - Write alt text that describes what is actually visible in the image, not just the article topic; target 50 to 250 characters
 - Do not generate text or logos into AI images. If an event graphic needs typography, add it later in a design tool
 - Do not rely on AI to render Pride or transgender flags accurately. Use palette descriptions instead, or source a real photo when exact flag imagery matters
-- Make LGBTQ+ representation explicit and inclusive in prompts. Avoid stereotypes and do not reference named real people
+- Racial diversity must be explicit in every prompt: "racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented", not just "diverse". Include a subtle LGBTQ+ motif (pride pin, wristband, palette accent) in every image, and avoid stereotypes or named real people
+- Never write "overcast"/"cloudy"/"grey skies"/"diffused light" into a prompt; use golden-hour, bright midday, warm morning, or warm indoor lighting instead
 - When the user attaches a reference image, treat it as style, composition, or background guidance unless they explicitly ask for a true edit
 - If a reference image includes signage, logos, branded UI, or readable text, borrow only its visual characteristics and explicitly exclude readable text and logos in the prompt
 - Match the visual style to the content: documentary-style photorealistic images for civic/news coverage, graphic-design or poster-style images for social events
 - If a news article uses both `image` and `imageHeader`, keep them on the same story but make them clearly different in scene, subject, vantage point, or narrative angle
-- Match slot ratios: `16:9` for news feature images, news headers, and carousels; `4:3` for event images
-- Practical event-image workflow: generate at `1536x1024`, then crop to the site-ready `1365x1024` `4:3` deliverable
+- Match slot ratios and exact pixel sizes: `16:9` / `1792x1024` for news feature images, news headers, and carousels; `4:3` / `1024x768` for event images (via `gpt-image-1`/`gpt-image-2`, DALL-E 3 has no true 4:3 fixed size)
 - For phone, tablet, or computer scenes, explicitly prohibit readable screen text and branded UI in the prompt
-- For small LGBTQ+ visual cues in accessories or clothing, prefer a `rainbow-colored` pin or palette accent instead of requesting an exact flag reproduction
 - When editing an existing generated image, restate invariants aggressively, for example `change only the background` or `keep the foreground people and activity unchanged`
-- When using the image-generation CLI, do not install Python packages into the host environment. Create a repo-local `.venv`, install dependencies there, and run the generator from that virtual environment
-- The CLI requires `OPENAI_API_KEY` to already be available in the shell environment. Do not paste secrets into chat logs
 
 ## Coding style
 
@@ -195,15 +195,43 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 
 - Write clear, concise commit messages describing what changed and why
 
-## Project agent skills
+## Skills
 
-- Project skill files are mirrored in `.claude/skills/<name>/SKILL.md` and `.agents/skills/<name>/SKILL.md`. When changing one, update the other and confirm they match with `diff`.
+- Project skill files are mirrored in `.claude/skills/<name>/SKILL.md` (Claude Code) and `.agents/skills/<name>/SKILL.md` (Codex). When changing one, update the other and confirm they match with `diff`.
 - Those files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
 - Quote a skill frontmatter `description:` that contains a colon followed by a space; otherwise strict YAML parsers can interpret it as a nested mapping.
+
+Project-specific skills relevant to this repo (both a Claude Code slash command and an `.agents/skills/<name>/SKILL.md` file Codex can read directly):
+
+| Skill | What it does |
+|---|---|
+| `new-article` | Scaffold a news article or event: correct filename (`YYYYMMDD-##-slug.md`), frontmatter, body structure, date-past warning for events; invokes `generate-images` afterward |
+| `content-check` | Pre-publish validator: em dashes, absolute internal URLs, missing frontmatter fields, lingering `draft: true`, image alt text rules, citation/footnote formatting |
+| `image-prompt` | Generate DALL-E 3 + Midjourney v7 prompts for all image slots per `docs/image-generation-guide.md` rules |
+| `generate-images` | Delegate actual image file generation to the local Codex CLI (`codex exec`) for every image slot |
+| `ics-event` | Generate an iCal file and Google Calendar URL from an event's frontmatter and body |
+| `seo-check` | Audit a page's `useSeoMeta`, OG image IPX pattern, Schema.org, and the no-manual-tags rule |
+| `backlog` | Read `docs/improvement-tasks.md` and `docs/lighthouse/audit-results.md` and recommend the highest-impact, lowest-effort open items |
+| `merge-prs` | Merge multiple open PRs into one integration branch, resolving conflicts and running lint and build |
+| `research` | Investigate a subject against primary sources and save findings to `docs/research/` |
+
+Several other generic third-party skills (the mattpocock/skills pack, `code-review`, `tdd`, `resolving-merge-conflicts`, `diagnosing-bugs`, etc.) are also installed but are not project-specific, they apply generically across repos.
+
+## Cross-tool agent conventions
+
+Conventions shared with Claude Code (see `CLAUDE.md`) that apply the same way here:
+
+- **Issue tracker:** GitHub Issues via the `gh` CLI. See [`docs/agents/issue-tracker.md`](docs/agents/issue-tracker.md).
+- **Triage labels:** the default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), no repo-specific renames. See [`docs/agents/triage-labels.md`](docs/agents/triage-labels.md).
+- **Domain docs:** single-context repo, one `CONTEXT.md` plus `docs/adr/` at the root once created; neither exists yet, `docs/DECISIONS.md` is the decision log in the meantime. See [`docs/agents/domain.md`](docs/agents/domain.md).
+
+## Claude Code hooks (context, not enforced for Codex)
+
+Claude Code sessions in this repo run automatic hooks configured in `.claude/settings.json`, including a hard block (not just a warning) on any edit to `.env`, `.env.*`, or `yarn.lock`, plus lint-on-save and content-convention reminders (em dashes, absolute internal URLs, editorial-checklist phrases). Codex has no equivalent enforcement mechanism, so apply the same underlying rules manually: never edit `.env`/`yarn.lock` directly, run lint after edits, and self-check content against `docs/content-authoring.md` and `docs/editorial-checklist.md` before finishing.
 
 ## Cross-tool working agreements (added 2026-08-05)
 
 `~/HARNESS.md` is the canonical agreement for all AI tools (Hermes, Claude Code, ChatGPT/Codex).
-- `docs/DECISIONS.md` is this repo's decision log — read before planning, append when a decision is made or reversed.
+- `docs/DECISIONS.md` is this repo's decision log, read before planning, append when a decision is made or reversed.
 - Infra-mutating actions need explicit approval in the current session.
 - Never claim success without real verification.

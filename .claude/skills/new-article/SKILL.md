@@ -41,7 +41,8 @@ Body rules:
 - No `#` H1 heading — the frontmatter `title` renders as H1
 - Open with `:Dateline` MDC component, NOT `**Newcastle, WA** –` directly
 - Use H2 (`##`) for main sections, H3 (`###`) for subsections
-- End with `## Sources` section for any cited external links
+- Cite sources Wikipedia-style: a `[^N]` footnote marker right after each specific factual claim at first mention (numbered by order of first appearance, not alphabetical); reuse the same number if that source is cited again later. Do NOT wrap the claim text in a hyperlink, the marker is the citation.
+- End with `## Sources`: one `[^N]: ...` footnote definition per source, in numeric order, no blank lines between them. Each definition's content is a full APA 7th edition reference (author/org, date, italicized title, bare `[URL](URL)`) — not the old `**Outlet**: [Title](URL)` shorthand. This renders natively as numbered superscripts with back-links, confirmed working via this site's `remark-gfm` pipeline. See `docs/content-authoring.md` ("Citations and Sources") for the full format and examples.
 - Do NOT use em dashes (`—`). Use commas or colons instead. En-dashes (`–`) are OK for numeric ranges.
 
 Image paths: `assets/images/news/YYYYMMDD-##-descriptive-name.png`

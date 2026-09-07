@@ -21,7 +21,8 @@ Run through every rule below and report any violations with file path and line n
 - [ ] **No H1 in body:** flag any line starting with `# ` (single hash) — the frontmatter title renders as H1
 - [ ] **Dateline usage:** news article bodies should open with `:Dateline`, not `**Newcastle, WA** –` or `**Newcastle, WA**:` directly
 - [ ] **No bare absolute internal URLs:** flag `https://newcastle.lgbt/...` anywhere — should be relative paths
-- [ ] **Sources section:** news articles citing external material should end with a `## Sources` section
+- [ ] **Footnote-style citations:** specific factual claims drawn from an external source should carry a `[^N]` footnote marker at first mention (Wikipedia-style numbered superscripts, not a hyperlink wrapped around the claim text) — flag any claim still using the old wrapped-hyperlink style, and check this inside tables too, not just paragraphs. A source cited again later should reuse its existing number rather than getting a new one or a duplicate reference entry.
+- [ ] **Sources section (APA7 footnote definitions):** news articles citing external material should end with a `## Sources` section made of `[^N]: ...` footnote definitions in numeric order (matching first-appearance order in the body, not alphabetical), with no blank lines between them. Each definition's content should be a full APA 7th edition reference (author/org, date, italicized title, bare `[URL](URL)`) — flag any entry still using the old `**Outlet**: [Title](URL)` shorthand, non-footnote plain-paragraph format, or alphabetical (rather than numeric) ordering. See `docs/content-authoring.md` ("Citations and Sources") for the exact format.
 
 ### Images
 - [ ] **Alt text length:** `image.alt` and `imageHeader.alt` should be 50–250 characters; flag if shorter or longer
