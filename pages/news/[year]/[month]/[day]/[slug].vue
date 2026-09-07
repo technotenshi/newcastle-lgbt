@@ -415,4 +415,40 @@ const hasCarousel = computed(() => carouselImages.value.length > 0);
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+
+.news-article-section :deep(table) {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.news-article-section :deep(th),
+.news-article-section :deep(td) {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border: none;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.news-article-section :deep(thead th) {
+  background-color: #f4f4f4;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid #d0d0d0;
+}
+
+.news-article-section :deep(tbody tr:nth-child(even)) {
+  background-color: rgba(0, 0, 0, 0.025);
+}
+
+.news-article-section :deep(tbody tr:last-child td) {
+  border-bottom: none;
+}
 </style>

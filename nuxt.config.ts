@@ -151,6 +151,7 @@ export default defineNuxtConfig({
                 "collapsing",
                 "collapsed",
                 "visually-hidden",
+                "sr-only",
                 /^col-/,
                 /^offset-/,
                 /^order-/,

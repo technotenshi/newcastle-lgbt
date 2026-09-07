@@ -116,6 +116,8 @@ plugins/
 
 **Features** are defined in `content/features.json` as an array of objects consumed by `useFeatures`.
 
+For the full authoring guide (frontmatter fields, filename format, body structure, image and citation conventions), see [`docs/content-authoring.md`](docs/content-authoring.md). This is an advocacy site, not neutral journalism: articles on anti-LGBTQ+ policy or the people behind it follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md).
+
 **Images** should use `.png` format and always include descriptive alt text. Asset URLs are resolved through `useAsset` / `utils/assets.ts`, which handles `~/assets` paths, relative paths, and external URLs.
 
 ## Coding conventions
@@ -148,6 +150,15 @@ A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install
 | `nuxt-link-checker` | Checks for broken/malformed links during dev; warnings are treated as errors |
 | `nuxt-seo-utils` | Auto-generates OG, Twitter, canonical tags and appends site name to page titles |
 | `feed` | Generates the RSS 2.0 feed at `/feed.xml` via `server/routes/feed.xml.ts` (pre-rendered at build time) |
+
+## Further documentation
+
+- [`docs/content-authoring.md`](docs/content-authoring.md) — full authoring guide for news articles and events
+- [`docs/editorial-checklist.md`](docs/editorial-checklist.md) — advocacy-forward writing checklist for sensitive political/historical topics
+- [`docs/image-generation-guide.md`](docs/image-generation-guide.md) — AI image generation prompts, aspect ratios, and lighting rules
+- [`docs/research/`](docs/research/) — standing background dossiers on recurring subjects named in articles
+- [`docs/DECISIONS.md`](docs/DECISIONS.md) — dated decision log for this repo, read before proposing an architectural or workflow change
+- [`CLAUDE.md`](CLAUDE.md) / [`AGENTS.md`](AGENTS.md) — detailed guidance for AI coding agents working in this repo
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.

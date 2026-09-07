@@ -34,3 +34,4 @@ settings.local.json
 # Skilld references (recreated by `skilld install`)
 .skilld
 docs/superpowers/
+.playwright-cli/
