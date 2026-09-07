@@ -961,3 +961,19 @@ blockquote {
 	top: 0;
 	left: -2400px;
 }
+
+/* remark-gfm renders footnote sections with a "sr-only" label (e.g. the
+   "Footnotes" heading in article footnotes). Bootstrap 5 renamed this
+   utility to .visually-hidden and doesn't ship .sr-only, so without this
+   rule the label renders as visible text instead of screen-reader-only. */
+.sr-only {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
