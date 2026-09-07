@@ -157,6 +157,7 @@ Skills, a subagent, and hooks are configured in `.claude/`. Always check whether
 | `/backlog` | Read `docs/improvement-tasks.md` (and `docs/lighthouse/audit-results.md` for open performance items) and recommend highest-impact / lowest-effort items |
 | `/merge-prs` | Merge multiple open PRs into one integration branch: resolves conflicts, runs lint and build |
 | `/research` | Investigate a subject against primary sources and save findings to `docs/research/` (see Background research files convention below) |
+| `/fact-check` | Claim-by-claim citation audit of an article: verifies every cited source exists, resolves to what's claimed, and actually supports the specific statement; flags unsupported, outdated, or misleading claims by severity |
 
 ### Subagent
 `content-reviewer` — enforces content conventions (em dashes, racial diversity language, LGBTQ+ motifs, lighting, absolute URLs) and the advocacy-forward editorial stance (critical conclusions, naming individuals with credible evidence, drawing on `docs/research/` files). Invoked automatically on content review or on demand.
