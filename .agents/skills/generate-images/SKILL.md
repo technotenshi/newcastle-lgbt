@@ -47,10 +47,14 @@ For each slot, invoke `codex exec` non-interactively with a self-contained promp
 
 Example invocation:
 ```
-codex exec "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all. Write only that image file and never read or edit .env, .env.*, or yarn.lock."
+codex exec --approve-for-me "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all. Write only that image file and never read or edit .env, .env.*, or yarn.lock." < /dev/null > /tmp/<slot>.log 2>&1
 ```
 
-When there are multiple slots (or multiple events/articles at once), run each `codex exec` call as a separate background Bash command (`run_in_background: true`) so they generate in parallel, then wait for the task-completion notifications rather than polling.
+Two flags/redirects here are not cosmetic, and omitting either one produces a silent failure rather than a clear error:
+- **`< /dev/null` is required.** `codex exec` reads from stdin when it's a non-terminal pipe, which it always is under a background/tool-driven Bash invocation. Without closing stdin, the process hangs waiting for an EOF that never comes; the run eventually gets cut off with a truncated log (often ending right after Codex reads its own skill file), no image, and no obvious error.
+- **`--approve-for-me` is required.** Without it, the sandbox stops to ask for interactive approval before invoking the image-generation tool, which a non-interactive `codex exec` call has no way to answer.
+
+When there are multiple slots (or multiple events/articles at once), run each `codex exec` call as a separate background Bash command (`run_in_background: true`) so they generate in parallel, then wait for the task-completion notifications rather than polling. Note that `run_in_background: true` on the Bash tool already backgrounds the whole command for you — do not also append a trailing `&` inside the command string itself, that double-backgrounds it and causes the tool to report false-positive completion before Codex has actually finished.
 
 ## Verification (required — do not report success on Codex's word alone)
 
