@@ -1777,15 +1777,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/sitemap@npm:8.5.0":
-  version: 8.5.0
-  resolution: "@nuxtjs/sitemap@npm:8.5.0"
+"@nuxtjs/sitemap@npm:8.5.1":
+  version: 8.5.1
+  resolution: "@nuxtjs/sitemap@npm:8.5.1"
   dependencies:
     "@nuxt/kit": "npm:^4.5.2"
     consola: "npm:^3.4.2"
     defu: "npm:^6.1.7"
     nuxt-site-config: "npm:^4.2.3"
-    nuxtseo-shared: "npm:^5.3.14"
+    nuxtseo-shared: "npm:^5.3.16"
     ofetch: "npm:^1.5.1"
     pathe: "npm:^2.0.3"
     pkg-types: "npm:^2.3.1"
@@ -1798,7 +1798,7 @@ __metadata:
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/bacf4e5613866532acfa6650f550720f2fc522a7c0d6608fe749aac12e85babedc0ebc986cd2100d0faa093615bf6ba9c7a8df33b4ae29fa7942ff3d6254c6dc
+  checksum: 10c0/fca73cc73820c7ab2c7c8366e93da026d0cbf9a5af15756e4a94188d1c447721714cb215bdd8054667f0ca313bd47fc0bdf1becc65da6eb9fa01e37b513bdabb
   languageName: node
   linkType: hard
 
@@ -8097,7 +8097,7 @@ __metadata:
     "@nuxt/content": "npm:^3.15.2"
     "@nuxt/image": "npm:^2.0.0"
     "@nuxtjs/robots": "npm:6.2.0"
-    "@nuxtjs/sitemap": "npm:8.5.0"
+    "@nuxtjs/sitemap": "npm:8.5.1"
     "@unhead/vue": "npm:3.4.0"
     better-sqlite3: "npm:^12.5.0"
     bootstrap: "npm:^5.0.1"
@@ -8735,6 +8735,39 @@ __metadata:
     zod:
       optional: true
   checksum: 10c0/4149380884b378ef9d56cb20c96b23d4d6a13726a9938eabd27486937ea2551a2a56cc399fecfeea352ac839fcb3767c5a77a92c41e15207f8c3eac3b82691e2
+  languageName: node
+  linkType: hard
+
+"nuxtseo-shared@npm:^5.3.16":
+  version: 5.3.16
+  resolution: "nuxtseo-shared@npm:5.3.16"
+  dependencies:
+    "@clack/prompts": "npm:^1.7.0"
+    "@nuxt/devtools-kit": "npm:4.0.0-alpha.7"
+    "@nuxt/kit": "npm:^4.5.2"
+    birpc: "npm:^4.0.0"
+    consola: "npm:^3.4.2"
+    defu: "npm:^6.1.7"
+    nypm: "npm:^0.6.9"
+    ofetch: "npm:^1.5.1"
+    pathe: "npm:^2.0.3"
+    pkg-types: "npm:^2.3.1"
+    radix3: "npm:^1.1.2"
+    sirv: "npm:^3.0.2"
+    std-env: "npm:^4.2.0"
+    ufo: "npm:^1.6.4"
+  peerDependencies:
+    "@nuxt/schema": ^3.16.0 || ^4.0.0 || ^5.0.0
+    nuxt: ^3.16.0 || ^4.0.0 || ^5.0.0
+    nuxt-site-config: ^3.2.0 || ^4.0.0
+    vue: ^3.5.0
+    zod: ^3.23.0 || ^4.0.0
+  peerDependenciesMeta:
+    nuxt-site-config:
+      optional: true
+    zod:
+      optional: true
+  checksum: 10c0/9ac659e3fd92c978589bbf71cf768aa42386f6c2555999f577bd76a36da339ea6b78bbc12c80ec82a07e79f13e61a0a63e6c269068d4088663467337aeb264fd
   languageName: node
   linkType: hard
 
