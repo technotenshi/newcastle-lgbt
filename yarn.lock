@@ -8111,7 +8111,7 @@ __metadata:
     nuxt-link-checker: "npm:5.3.0"
     nuxt-og-image: "npm:6.7.8"
     nuxt-schema-org: "npm:^6.1.0"
-    nuxt-seo-utils: "npm:8.5.0"
+    nuxt-seo-utils: "npm:8.5.1"
     postcss: "npm:8.5.28"
     rolldown: "npm:~1.2.1"
     serve: "npm:^14.2.5"
@@ -8548,9 +8548,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-seo-utils@npm:8.5.0":
-  version: 8.5.0
-  resolution: "nuxt-seo-utils@npm:8.5.0"
+"nuxt-seo-utils@npm:8.5.1":
+  version: 8.5.1
+  resolution: "nuxt-seo-utils@npm:8.5.1"
   dependencies:
     "@nuxt/kit": "npm:^4.5.2"
     citty: "npm:^0.2.2"
@@ -8589,7 +8589,7 @@ __metadata:
       optional: true
   bin:
     nuxt-seo-utils: ./bin/nuxt-seo-utils.mjs
-  checksum: 10c0/6311054dc2d903e226deabe4cab01b9c430726d5c8461906676c62d3b32083ff8c56a6f33b48e3801b031605f93d79de75f16c426030707a976d0d3efc530d58
+  checksum: 10c0/1f492c1b9b8fdef7cc0a06f76bda2e94c194d048d1f80329549b830ade80635d226d2029b6cd5aac9edea36eceb6a2eea254f5c5b57d59e9da0edc41f6e5c59f
   languageName: node
   linkType: hard
 
