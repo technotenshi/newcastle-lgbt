@@ -1162,6 +1162,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jridgewell/sourcemap-codec@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@jridgewell/sourcemap-codec@npm:1.6.0"
+  checksum: 10c0/b5be700e45a775f218589c3466c4ffea630582b4988657652da464e5ab8a7d18bf928ee4fd2363fb346ede4bea9c6ff0bae05a538358c4565ece6199531b5f72
+  languageName: node
+  linkType: hard
+
 "@jridgewell/trace-mapping@npm:^0.3.24, @jridgewell/trace-mapping@npm:^0.3.25, @jridgewell/trace-mapping@npm:^0.3.28, @jridgewell/trace-mapping@npm:^0.3.31":
   version: 0.3.31
   resolution: "@jridgewell/trace-mapping@npm:0.3.31"
@@ -3032,7 +3039,66 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unhead/vue@npm:3.4.0, @unhead/vue@npm:^3.3.1":
+"@unhead/bundler@npm:3.4.1":
+  version: 3.4.1
+  resolution: "@unhead/bundler@npm:3.4.1"
+  dependencies:
+    magic-string: "npm:^1.3.1"
+    oxc-walker: "npm:^1.1.1"
+    unplugin: "npm:^3.3.0"
+  peerDependencies:
+    "@unhead/cli": ^3.4.1
+    "@vitejs/devtools-kit": ^0.4.1
+    esbuild: ">=0.17.0"
+    lightningcss: ">=1.20.0"
+    oxc-parser: ">=0.98.0"
+    rolldown: ">=1.0.0"
+    unhead: ^3.4.1
+    vite: ">=6.4.2"
+    webpack: ">=5.0.0"
+  peerDependenciesMeta:
+    "@unhead/cli":
+      optional: true
+    "@vitejs/devtools-kit":
+      optional: true
+    esbuild:
+      optional: true
+    lightningcss:
+      optional: true
+    oxc-parser:
+      optional: true
+    rolldown:
+      optional: true
+    vite:
+      optional: true
+    webpack:
+      optional: true
+  checksum: 10c0/aa9d078f870307b6e4861dc8027dfda96e8bea1a492be5e5f8d7b09e58f894285161156ddd1546c2986a47fbed39f2f253464f9639b24789f11026e2c98ad759
+  languageName: node
+  linkType: hard
+
+"@unhead/vue@npm:3.4.1":
+  version: 3.4.1
+  resolution: "@unhead/vue@npm:3.4.1"
+  dependencies:
+    "@unhead/bundler": "npm:3.4.1"
+    hookable: "npm:^6.1.1"
+    unhead: "npm:3.4.1"
+    unplugin: "npm:^3.3.0"
+  peerDependencies:
+    vite: ">=6.4.2"
+    vue: ">=3.5.18"
+    webpack: ">=5.0.0"
+  peerDependenciesMeta:
+    vite:
+      optional: true
+    webpack:
+      optional: true
+  checksum: 10c0/e5f76075bdeb64ed80f4f7589b0993923d300c2be32f4b1f427ce36e36169a88da5f841ff12419a761e8dbc0714030bfe8c25fa851ca7802a41bfd7bde57b388
+  languageName: node
+  linkType: hard
+
+"@unhead/vue@npm:^3.3.1":
   version: 3.4.0
   resolution: "@unhead/vue@npm:3.4.0"
   dependencies:
@@ -7205,6 +7271,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"magic-string@npm:^1.3.1":
+  version: 1.4.1
+  resolution: "magic-string@npm:1.4.1"
+  dependencies:
+    "@jridgewell/sourcemap-codec": "npm:^1.6.0"
+  checksum: 10c0/d5162ed2cef7ffa4ee5bcf44fbaba3a814f65b9919f0f3eba43076fda4223161b1064779da32901c3d1f157e7bbc0b6dd973e06c7856e550424f5e73e9217f0a
+  languageName: node
+  linkType: hard
+
 "magicast@npm:^0.5.2, magicast@npm:^0.5.4":
   version: 0.5.4
   resolution: "magicast@npm:0.5.4"
@@ -8098,7 +8173,7 @@ __metadata:
     "@nuxt/image": "npm:^2.0.0"
     "@nuxtjs/robots": "npm:6.2.0"
     "@nuxtjs/sitemap": "npm:8.5.0"
-    "@unhead/vue": "npm:3.4.0"
+    "@unhead/vue": "npm:3.4.1"
     better-sqlite3: "npm:^12.5.0"
     bootstrap: "npm:^5.0.1"
     eslint: "npm:^10.4.1"
@@ -11449,6 +11524,21 @@ __metadata:
     vite:
       optional: true
   checksum: 10c0/fbcabfb53f21097bdf54662e22d127608320b1c1f5ba0bcc11dff8a041dc3b6d3f86b0b97c15798de2d5ef9a627f3fd971883e074e7949d8fe9f33db1026acfc
+  languageName: node
+  linkType: hard
+
+"unhead@npm:3.4.1":
+  version: 3.4.1
+  resolution: "unhead@npm:3.4.1"
+  dependencies:
+    hookable: "npm:^6.1.1"
+    unplugin: "npm:^3.3.0"
+  peerDependencies:
+    vite: ">=6.4.2"
+  peerDependenciesMeta:
+    vite:
+      optional: true
+  checksum: 10c0/5385a540109943e508d9e92bdf54b8aca7f48af9e714c301fcf670db02dc92a1320f3f715a453f8f85298c5e105a47653f414835c135d4acaa95fc75e681acc7
   languageName: node
   linkType: hard
 
