@@ -266,3 +266,12 @@ by #401, #402 by #384, and #395 by #387. PR #388 was closed because
 The consolidated branch passed `yarn install --immutable`, `yarn lint`, and a
 full static `yarn build`. The static output contains 582 IPX assets, and a
 representative `/_ipx/` image returned HTTP 200 from a local static server.
+
+## 2026-09-23 Consolidated reviewed dependency updates
+
+PRs #404 (`@nuxt/content` 3.16.1), #405 (`brace-expansion` 5.0.12), #408
+(`eslint` 10.11.0), and #409 (`fast-uri` 4.2.1) were independently reviewed
+and verified before being consolidated into one branch. PR #407 is excluded
+because its lockfile leaves Nuxt and Nitro on Vue 3.5.42 while the root package
+uses Vue 3.5.43. PR #390 remains excluded because its `@babel/core` resolution
+change lacks the required lockfile update.
