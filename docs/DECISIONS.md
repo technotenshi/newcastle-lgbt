@@ -247,3 +247,22 @@ Added to the same set of files: `docs/content-authoring.md` (new
 `content/news/20260904-01-anti-lgbtq-ballot-initiatives-documented-risks.md`,
 which now gives readers Let's Go Washington's founding, funding pattern,
 2024 initiative track record, and PDC compliance history on first mention.
+
+## 2026-09-24 Consolidated routine dependency updates
+
+Nine green automated dependency PRs were consolidated into one branch rather
+than merged individually, preserving a single coherent `yarn.lock` update.
+The combined update includes `@nuxtjs/robots`, `@nuxtjs/sitemap`,
+`@unhead/vue`, `eslint-plugin-vue`, `js-yaml`, `nuxt-og-image`,
+`nuxt-schema-org`, `nuxt-seo-utils`, and `rolldown`.
+
+Four lower or duplicate updates were closed as superseded: #391 by #403, #399
+by #401, #402 by #384, and #395 by #387. PR #388 was closed because
+`better-sqlite3` 13.0.3 remains outside Nuxt Content 3.15.2's supported
+`^12.5.0` optional peer range. PR #390 remains open but excluded because its
+`@babel/core` resolution update lacks the required lockfile change and fails
+`yarn install --immutable`.
+
+The consolidated branch passed `yarn install --immutable`, `yarn lint`, and a
+full static `yarn build`. The static output contains 582 IPX assets, and a
+representative `/_ipx/` image returned HTTP 200 from a local static server.
