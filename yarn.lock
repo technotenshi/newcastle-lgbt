@@ -1783,9 +1783,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/robots@npm:6.2.3":
-  version: 6.2.3
-  resolution: "@nuxtjs/robots@npm:6.2.3"
+"@nuxtjs/robots@npm:6.2.4":
+  version: 6.2.4
+  resolution: "@nuxtjs/robots@npm:6.2.4"
   dependencies:
     "@fingerprintjs/botd": "npm:^2.0.0"
     "@nuxt/kit": "npm:^4.5.2"
@@ -1802,7 +1802,7 @@ __metadata:
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/5d2204db0d722a3d960601acb61b063fefb3351be8d98089fc7cebc10f3cfc1d5902a7279caa1cc3122cb544f65a7076aff229e79f8be4228807c08073d91427
+  checksum: 10c0/724b3db1c3b050f5c38a8a0130f144cde3d75d293720a60bada0b6b8fe9adc94af355c2eac0b2c342a17c71caaf4e25c657731e802f080cf5573297e873a1df8
   languageName: node
   linkType: hard
 
@@ -8319,7 +8319,7 @@ __metadata:
     "@fullhuman/postcss-purgecss": "npm:^8.0.0"
     "@nuxt/content": "npm:^3.15.2"
     "@nuxt/image": "npm:^2.0.0"
-    "@nuxtjs/robots": "npm:6.2.3"
+    "@nuxtjs/robots": "npm:6.2.4"
     "@nuxtjs/sitemap": "npm:8.5.1"
     "@unhead/vue": "npm:3.4.1"
     better-sqlite3: "npm:^12.5.0"
