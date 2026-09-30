@@ -8747,8 +8747,8 @@ __metadata:
   linkType: hard
 
 "nuxt-schema-org@npm:^6.1.0":
-  version: 6.3.2
-  resolution: "nuxt-schema-org@npm:6.3.2"
+  version: 6.4.3
+  resolution: "nuxt-schema-org@npm:6.4.3"
   dependencies:
     "@nuxt/kit": "npm:^4.5.2"
     defu: "npm:^6.1.7"
@@ -8767,7 +8767,7 @@ __metadata:
       optional: true
     zod:
       optional: true
-  checksum: 10c0/6abcaabb9fc3f8483392adccd875f2f16714e21a6a29c9bc7b3447587808d924bbcb8e7999d10cee2f64f327e42122ffd7e059134542cee603d7ee7ba9a7e9b0
+  checksum: 10c0/0d09a0cf181ddd722eb90e088234ef6943f4dffb20b50a89984500d5b20c1e26db4fc791feeb1d48c38bc00123055313d5fea5b9fba7596bbf56f711ab366348
   languageName: node
   linkType: hard
 
