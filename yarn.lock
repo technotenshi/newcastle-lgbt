@@ -8850,7 +8850,7 @@ __metadata:
     postcss: "npm:8.5.28"
     rolldown: "npm:~1.2.1"
     serve: "npm:^14.2.5"
-    sharp: "npm:^0.35.0"
+    sharp: "npm:^0.35.5"
     unstorage: "npm:^1.17.4"
     vue: "npm:3.5.43"
     vue-eslint-parser: "npm:^10.4.1"
@@ -11411,7 +11411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.35.0, sharp@npm:^0.35.4":
+"sharp@npm:^0.35.4":
   version: 0.35.4
   resolution: "sharp@npm:0.35.4"
   dependencies:
@@ -11501,7 +11501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:sharp@0.35.5":
+"sharp@npm:^0.35.5, sharp@npm:sharp@0.35.5":
   version: 0.35.5
   resolution: "sharp@npm:0.35.5"
   dependencies:
