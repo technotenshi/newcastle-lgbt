@@ -275,3 +275,17 @@ and verified before being consolidated into one branch. PR #407 is excluded
 because its lockfile leaves Nuxt and Nitro on Vue 3.5.42 while the root package
 uses Vue 3.5.43. PR #390 remains excluded because its `@babel/core` resolution
 change lacks the required lockfile update.
+
+## 2026-10-21 Consolidated dependency bot PRs (deploy/2026-10-21-batch)
+
+Merged #384 (rolldown 1.2.15), #390 (`@babel/core` 8.0.7), #397 (nuxt-og-image
+6.10.4), #398 (nuxt-schema-org 6.4.3), #411 (yarn 4.18.1), #412 (ws 8.22.0),
+#415 (sharp 0.35.5), #416 (nuxt-seo-utils 8.6.1), #417 (`@humanfs/node` 0.16.8),
+#418 (`@nuxtjs/robots` 6.2.4), #421 (`@nuxtjs/sitemap` 8.6.1). Skipped as
+superseded or duplicate: #413 and #419 (sharp 0.35.5 already via #415), #420
+(nuxt-og-image 6.10.1 < 6.10.4 in #397), #422 (rolldown 1.2.12 < 1.2.15 in #384).
+
+PR #390 was previously excluded for lacking a lockfile update; this batch
+regenerated `yarn.lock` with `yarn install`, so it is now included. Lockfile
+conflicts were resolved by accepting ours, then `yarn install` re-applied the
+dropped bumps (`@nuxtjs/sitemap` 8.6.1, `@babel/core` 8.0.7 tree).
