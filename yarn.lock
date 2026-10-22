@@ -6195,10 +6195,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-uri@npm:fast-uri@4.2.1":
-  version: 4.2.1
-  resolution: "fast-uri@npm:4.2.1"
-  checksum: 10c0/a6ecc2d8a2ed340e3e8895e8d201a54454bf29141539c784cbc2a9aa6be274e74eb032ab2f09c7136f096cacd5b7af601ef0c5fd86f2492faebb9b64502d9410
+"fast-uri@npm:fast-uri@4.2.3":
+  version: 4.2.3
+  resolution: "fast-uri@npm:4.2.3"
+  checksum: 10c0/de121e1d98e5cf75ad31971ac799d6fd12edff6c4c62c7ad0aa64d87d669e9b0418eb5880588dba7e6a991a686c1ec0f8e91654ad2f6440a1f4ad48b8657c3df
   languageName: node
   linkType: hard
 
