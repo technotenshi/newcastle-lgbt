@@ -2142,9 +2142,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/sitemap@npm:8.6.1":
-  version: 8.6.1
-  resolution: "@nuxtjs/sitemap@npm:8.6.1"
+"@nuxtjs/sitemap@npm:8.6.2":
+  version: 8.6.2
+  resolution: "@nuxtjs/sitemap@npm:8.6.2"
   dependencies:
     "@nuxt/kit": "npm:^4.5.2"
     consola: "npm:^3.4.2"
@@ -2152,6 +2152,7 @@ __metadata:
     nuxt-site-config: "npm:^4.2.3"
     nuxtseo-shared: "npm:^5.3.16"
     ofetch: "npm:^1.5.1"
+    ohash: "npm:^2.0.11"
     oxc-parser: "npm:^0.141.0"
     oxc-walker: "npm:^1.1.1"
     pathe: "npm:^2.0.3"
@@ -2165,7 +2166,7 @@ __metadata:
   peerDependenciesMeta:
     zod:
       optional: true
-  checksum: 10c0/be76111780fcab9bb14f40296c7a8d3481bec5bdde04011f3cdb8c812e71af677c8d06a3dcb7a599770ec3056537f608cd646d2b8ce28f3a368473238b064e73
+  checksum: 10c0/a1fe14bfb0d55e0b5b757f0132b82d354611c826ab12ea097932887aa4f25f2f71f2c4f6ae4d91218f82c69a40bb3da5a6275269e74ce87a0699100384b40204
   languageName: node
   linkType: hard
 
@@ -8832,7 +8833,7 @@ __metadata:
     "@nuxt/content": "npm:^3.15.2"
     "@nuxt/image": "npm:^2.0.0"
     "@nuxtjs/robots": "npm:6.2.4"
-    "@nuxtjs/sitemap": "npm:8.6.1"
+    "@nuxtjs/sitemap": "npm:8.6.2"
     "@unhead/vue": "npm:3.4.1"
     better-sqlite3: "npm:^12.5.0"
     bootstrap: "npm:^5.0.1"
