@@ -13,6 +13,7 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 ## SEO / Structured Data
 
+- **Fix missing social-image resources — high priority, [#437](https://github.com/technotenshi/newcastle-lgbt/issues/437)** — all 46 distinct OG/Twitter image URLs return 404 from static output. Register the exact emitted IPX paths with Nuxt's prerenderer and add a CI check that verifies every referenced social image exists and serves image bytes. Evidence, full URL inventory and acceptance criteria: [remediation record](maintenance/2026-10-23-social-images.md).
 - **Event JSON-LD schema** — the events page has no structured data. Add an `Event` schema block for each listing to make events eligible for Google's rich results. Extends the JSON-LD work already done for `NewsArticle` and `Organization`.
 - **Unique page descriptions** — `pages/news/index.vue`, `pages/events/index.vue`, `pages/council-members/index.vue`, and `pages/organizations/index.vue` all share the same generic `pageDescription` string. Each should have a distinct, descriptive meta description.
 
@@ -35,5 +36,6 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 ## Developer / Maintenance
 
+- **Remediate dependency audit findings — urgent, [#436](https://github.com/technotenshi/newcastle-lgbt/issues/436)** — 41 advisory reports plus three deprecation reports, including two critical Git-tooling findings. Prioritize supported Nuxt/devtools upgrades that patch or remove simple-git and its parser, then resolve or explicitly disposition every remaining report. Full inventory, package-specific proposals and acceptance criteria: [remediation record](maintenance/2026-10-23-dependency-audit.md).
 - **TypeScript prop and composable types** — `nuxt.config.ts` and `utils/` use TypeScript, but most pages and components use untyped `<script setup>`. Adding `defineProps<{...}>()` types and return types to composables would catch bugs earlier.
 
