@@ -374,3 +374,27 @@ Keep the dependency-only scope; social-image prerender registration needs a
 separate fix. Rendered page images pass the HTTP checks above. The batch is
 verified against baseline, but neither the dependency audit nor the social
 image resource check should be described as clean.
+
+## 2026-10-23 — Track every discovered defect with a proposed fix
+
+Whether a defect predates the current change establishes provenance, not a
+reason to leave it without an actionable record. Record discovered problems
+in the issue tracker and backlog with evidence, a proposed fix and acceptance
+criteria. Neither a passing baseline comparison nor a successful build
+resolves an outstanding defect.
+
+- [#436](https://github.com/technotenshi/newcastle-lgbt/issues/436) tracks all
+  44 dependency-audit reports, prioritizing the two critical Git-tooling
+  findings. The proposed remediation starts with supported Nuxt/devtools
+  upgrades that patch or remove simple-git and its parser, followed by
+  package-specific upgrades and explicit dispositions for remaining reports.
+  Full inventory and acceptance criteria are in
+  [the dependency remediation record](maintenance/2026-10-23-dependency-audit.md).
+- [#437](https://github.com/technotenshi/newcastle-lgbt/issues/437) tracks all
+  46 missing social-image URLs. Register the emitted IPX variants during
+  prerendering and add a static-output/HTTP verification check to CI. Full
+  inventory, affected pages and acceptance criteria are in
+  [the social-image remediation record](maintenance/2026-10-23-social-images.md).
+
+These records propose fixes; implementation and verification of those fixes
+are still open. Both are linked from `docs/improvement-tasks.md`.
