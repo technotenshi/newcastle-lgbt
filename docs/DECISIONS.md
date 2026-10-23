@@ -289,3 +289,50 @@ PR #390 was previously excluded for lacking a lockfile update; this batch
 regenerated `yarn.lock` with `yarn install`, so it is now included. Lockfile
 conflicts were resolved by accepting ours, then `yarn install` re-applied the
 dropped bumps (`@nuxtjs/sitemap` 8.6.1, `@babel/core` 8.0.7 tree).
+
+## 2026-10-23 — Consolidate compatible dependency PRs on Nuxt 4.5.2
+
+Create local branch `deploy/2026-10-23-batch` from `origin/main`
+(`a7b49332497bc9f8db92006dd4943768cc6ebb79`). Apply the selected PR intents
+as one manifest change, then selectively re-resolve their packages through
+Docker with Yarn 4.18.1 against the existing lockfile. Do not delete or hand
+edit `yarn.lock`. Both Sharp PRs are included: the manifest minimum and the
+transitive cleanup are complementary.
+
+All selected PRs were open and their exact fetched heads matched GitHub at
+intake. Provenance (PR head SHAs, not merge commits):
+
+| PR | Included target | Verified head |
+| --- | --- | --- |
+| #419 | Sharp 0.35.5 manifest minimum | `22442377b5299a36af86f7be786e490a0334db16` |
+| #424 | launch-editor 2.14.2 | `d6b78d28f8bdf587e8cdaee4940052c150b4697a` |
+| #425 | Sharp 0.35.5 transitive cleanup | `3295f9c853f78e5cc91c2915676342da180932c2` |
+| #426 | @nuxt/content 3.16.2 | `15ea08737f0bc48d00a4927c85fffadbe2810ab6` |
+| #427 | @nuxtjs/sitemap 8.6.2 | `d0588381f97930c81f3d6b16cf48bd5fafbd1348` |
+| #428 | @unhead/vue 3.4.3 | `2429993085fb66744f9f8be4e154c1b968eabd14` |
+| #429 | fast-uri 4.2.3 | `e813d3421612ff08ac24d9f8cb1295e57e043fda` |
+| #430 | PostCSS 8.5.31 | `ed167d3d4729b5b72615b1ab13c7e468d8217763` |
+| #431 | unstorage 1.17.6 | `6dceabba56be78439acfebf1a7a118bcab6c10c0` |
+| #432 | Vue 3.5.44 | `6473f0de1beb5d89049a345e71f2b3d46b3723fb` |
+| #433 | ESLint 10.13.0 | `94000a7469c1cd67ae88b9ce0cb27d9e306d7560` |
+| #434 | globals 17.13.0 | `e22d8b026f79efdc9d2234ada81173b2833d02e7` |
+| #435 | js-yaml 5.5.0 | `c81aa274847fd91895b1d2b6e69e3ea1785d0ce7` |
+
+Correct the launch-editor resolution selector from the unused `^2.13.1` to
+the installed request `^2.14.1`; generate the lockfile updates missing from
+#424 and #435. Refresh Vue's existing runtime, renderer, compiler and shared
+package descriptors together so the site, Nuxt and Nitro all use 3.5.44.
+The lockfile comparison confirms no surviving unrelated dependency descriptor
+changed its pinned resolution. Nuxt Content 3.16.2 introduces newer dependency
+ranges, including a separate `@nuxt/kit` 4.6.2; this does not upgrade the Nuxt
+framework, which stays at 4.5.2.
+
+Preserve `@nuxt/image` 2.0.0, `better-sqlite3` 12.11.1 (supported `^12.5.0`
+range), `nuxt-og-image` 6.10.4, and disabled OG image generation. No application
+source or public API changes.
+
+Defer #420 (`0b8b83920345f4bf8c50099b6cc7d2a6cf69caec`, OG Image 7.0.7
+needs Nuxt 4.6.1+) and #421 (`1c0362a8951b06f7be183a0f45265a666a144e63`,
+sitemap 9.1.0 needs Nuxt 4.6+ and has a robots-module CI incompatibility),
+per the approved plan. Publishing the branch, closing originals and
+deployment remain separate work.
