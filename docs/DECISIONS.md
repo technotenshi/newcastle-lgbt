@@ -336,3 +336,41 @@ needs Nuxt 4.6.1+) and #421 (`1c0362a8951b06f7be183a0f45265a666a144e63`,
 sitemap 9.1.0 needs Nuxt 4.6+ and has a robots-module CI incompatibility),
 per the approved plan. Publishing the branch, closing originals and
 deployment remain separate work.
+
+Validation on the consolidated dependency graph:
+
+- Docker reports Yarn 4.18.1. Immutable installation and lint pass. The full
+  static build passes, prerendering 687 routes; Nuxt Link Checker reports
+  zero errors and zero warnings across 51 pages.
+- Assertions against the lockfile confirm all selected versions and preserved
+  pins. Node resolution from both Nuxt and Nitro confirms Vue, server-renderer
+  and compiler-sfc 3.5.44. No older Sharp copies remain. The root `@unhead/vue`
+  is 3.4.3; its existing transitive 3.4.0 descriptor is preserved.
+- A localhost static server returns HTTP 200 for all 51 content pages, all
+  578 generated IPX files, and all 117 distinct rendered-page IPX image URLs.
+  Sitemap (51 entries), robots and RSS return HTTP 200, with valid XML for
+  sitemap and RSS. All content pages have title, description, canonical and
+  OG/Twitter metadata. Social-image resource results and the baseline
+  comparison are described below.
+- Standards and Spec code reviews each report zero findings. Gitleaks finds
+  no secrets in the changes or integration commit; Semgrep scans the three
+  changed files with metrics disabled and reports zero findings.
+- Full recursive Yarn audit is not clean: 41 advisory reports plus three
+  deprecation reports (combined: two critical, 18 high, 24 moderate). Every
+  reported package/version already exists in `origin/main`. The critical
+  findings concern `simple-git` 3.36.0 (GHSA-x6jw-m9v5-85vh) and
+  `@simple-git/argv-parser` 1.1.1 (GHSA-v5rq-49vh-5v5c), through Nuxt devtools.
+  Other findings include the retained Nuxt 4.5.2 and its existing transitive
+  dependencies. These require separate remediation; this batch does not
+  claim a clean dependency audit. Existing Yarn peer warnings remain.
+
+The social-image check uncovered an existing static-output defect: all 46
+distinct OG/Twitter image URLs return 404 because those IPX variants are not
+generated. An isolated immutable install and full static build of the exact
+`origin/main` baseline also passes with 687 routes and produces the identical
+578 IPX paths, identical metadata across all 51 content pages, and the same
+46 missing social-image URLs. This is not introduced by the dependency batch.
+Keep the dependency-only scope; social-image prerender registration needs a
+separate fix. Rendered page images pass the HTTP checks above. The batch is
+verified against baseline, but neither the dependency audit nor the social
+image resource check should be described as clean.
