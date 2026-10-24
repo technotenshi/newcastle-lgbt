@@ -507,3 +507,14 @@ return 200, 60 of 60 sampled `/_ipx` files return 200 (624 exist), and
 `scripts/verify-social-images.mjs` passes. The recursive audit went from 5
 reports to 4: glob and node-forge (recorded exceptions), serialize-javascript
 (#468) and zod (#462).
+
+## 2026-10-24 Retired the better-sqlite3 Renovate pin (#470)
+
+Removed the `better-sqlite3` `allowedVersions: "^12.5.0"` rule from
+`renovate.json`. It was added on 2026-08-21 to match Nuxt Content 3.15.2's optional
+peer range, and it is superseded: #460 (PR #469) moved the site to
+`better-sqlite3` `^13.0.0` (13.0.3), and the locked `@nuxt/content` 3.16.2 declares
+`^12.5.0 || ^13.0.0`. With the pin left in place Renovate would reject every 13.x
+release of the dependency the site now uses. Content's declared peer range is the
+compatibility guard from here on; if a future Content release narrows it, pin
+again in the ticket that bumps Content. The `@nuxt/image` rule is unchanged.
