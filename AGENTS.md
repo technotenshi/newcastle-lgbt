@@ -192,7 +192,8 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 ## CI/CD
 
 - `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable`, `yarn lint`, `yarn build`, and `node scripts/verify-social-images.mjs` on pushes and pull requests to `main`
-- There are no automated tests in this repository
+- `.github/workflows/dependency-audit.yml` runs `scripts/audit-gate.mjs` (a recursive Yarn audit) on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate files. It fails on critical or high findings without an entry in [`docs/maintenance/audit-exceptions.md`](docs/maintenance/audit-exceptions.md) and on entries past their review date. Its unit tests run with `node --test scripts/audit-gate.test.mjs`
+- There are no automated tests for the site; the only tests cover the audit gate (`node --test scripts/audit-gate.test.mjs`)
 - `.github/dependabot.yml` manages weekly npm dependency update PRs
 
 ## Commit messages

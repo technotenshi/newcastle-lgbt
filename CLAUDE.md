@@ -119,7 +119,8 @@ Do **not** add: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitte
 - `.github/workflows/yarn-nuxt.yml` — runs `yarn install --immutable`, `yarn lint`, `yarn build`, then `node scripts/verify-social-images.mjs` on every push / PR to `main`.
 - `.github/dependabot.yml` — weekly automated PRs for npm dependency updates. **Renovate** also runs and may open duplicate/overlapping PRs; the later one is typically superseded and auto-closed.
 - **`yarn.lock` drift:** CI uses `--immutable`, so if a dependency merge introduces new transitive deps the lockfile breaks. Fix by running `docker compose run --rm app yarn install` locally and committing the updated `yarn.lock`.
-- There are **no automated tests** in this project.
+- `.github/workflows/dependency-audit.yml` — runs `scripts/audit-gate.mjs` (a recursive Yarn audit) on pushes to `main`, weekly, and on PRs that change `package.json`, `yarn.lock` or the gate files. Fails on critical or high findings without an entry in [`docs/maintenance/audit-exceptions.md`](docs/maintenance/audit-exceptions.md) and on entries past their review date; moderate findings and deprecations are warnings.
+- There are **no automated tests for the site**. The only tests cover the audit gate: `node --test scripts/audit-gate.test.mjs`.
 - **No direct commits to `main`:** a Husky `pre-commit` hook (`.husky/pre-commit`, wired via `package.json`'s `prepare` script) exits non-zero on any commit attempted while `HEAD` is `main`, with the message "Direct commits to 'main' are blocked." Always work on a feature branch (`git checkout -b ...`) before committing.
 - **Copilot PR review:** after pushing a fix for a Copilot-flagged issue, do not manually re-request the review (e.g. via `gh api .../requested_reviewers`) — Copilot automatically re-reviews on new pushes to the PR branch.
 
