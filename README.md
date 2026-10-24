@@ -135,7 +135,7 @@ For the full authoring guide (frontmatter fields, filename format, body structur
 
 ## CI/CD
 
-A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install --immutable`, `yarn lint`, and `yarn build` on every push and pull request targeting `main`. Run the same checks locally before pushing. A second workflow (`.github/workflows/dependency-audit.yml`) runs a recursive dependency audit on pushes to `main`, weekly, and on pull requests that change `package.json` or `yarn.lock`; it fails on critical or high advisories that are not in the [audit exception register](docs/maintenance/audit-exceptions.md), which also explains how to run it locally and how to add or renew an exception. Dependabot (`.github/dependabot.yml`) and Renovate both open automated PRs for npm dependency updates; when both are active, the later PR is typically superseded and auto-closed.
+A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install --immutable`, `yarn lint`, and `yarn build` on every push and pull request targeting `main`. Run the same checks locally before pushing. A second workflow (`.github/workflows/dependency-audit.yml`) runs a recursive dependency audit on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate's own files; it fails on critical or high advisories that are not in the [audit exception register](docs/maintenance/audit-exceptions.md), which also explains how to run it locally and how to add or renew an exception. Dependabot (`.github/dependabot.yml`) and Renovate both open automated PRs for npm dependency updates; when both are active, the later PR is typically superseded and auto-closed.
 
 ## Modules
 

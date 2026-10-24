@@ -52,7 +52,14 @@ test('parseRegister rejects a missing table or a malformed row', () => {
   }
 });
 
-// Records shaped like `yarn npm audit --all --recursive --json` output.
+/**
+ * Builds a record shaped like `yarn npm audit --all --recursive --json`.
+ * @param {string} pkg The package name.
+ * @param {number|string} id The audit ID.
+ * @param {string} severity The reported severity.
+ * @param {object} extra Fields that override the defaults.
+ * @returns {object} The audit record.
+ */
 const finding = (pkg, id, severity, extra = {}) => ({
   value: pkg,
   children: {
@@ -62,7 +69,7 @@ const finding = (pkg, id, severity, extra = {}) => ({
     Severity: severity,
     'Vulnerable Versions': '<9.9.9',
     'Tree Versions': ['1.0.0'],
-    Dependents: [`parent@npm:1.0.0`],
+    Dependents: ['parent@npm:1.0.0'],
     ...extra,
   },
 });
@@ -86,6 +93,7 @@ test('evaluateAudit fails critical and high, warns on the rest', () => {
   assert.match(result.warnings[1], /low-pkg/);
 });
 
+/** Builds a parsed register entry (review date defaults to 2026-11-23). */
 const entry = (pkg, advisoryId, reviewDate = '2026-11-23') => ({
   package: pkg,
   advisoryId,
@@ -110,10 +118,11 @@ test('evaluateAudit passes a high finding that has a register entry', () => {
   }
 });
 
-test('evaluateAudit ignores register entries for another advisory or package', () => {
+test('evaluateAudit ignores entries for another advisory or package', () => {
   const reports = [finding('zod', 1243066, 'high')];
 
-  for (const other of [entry('zod', 'GHSA-other'), entry('not-zod', '1243066')]) {
+  const others = [entry('zod', 'GHSA-other'), entry('not-zod', '1243066')];
+  for (const other of others) {
     const result = evaluateAudit({
       reports,
       exceptions: [other],
@@ -124,7 +133,7 @@ test('evaluateAudit ignores register entries for another advisory or package', (
   }
 });
 
-test('evaluateAudit fails once a register entry is past its review date', () => {
+test('evaluateAudit fails once an entry is past its review date', () => {
   const reports = [finding('zod', 1243066, 'high')];
 
   // The day after the review date fails, even though the finding is covered.
@@ -162,7 +171,7 @@ test('evaluateAudit fails closed on a severity it does not know', () => {
   assert.equal(result.failures.length, 1);
 });
 
-test('evaluateAudit matches deprecation notices by the word deprecation', () => {
+test('evaluateAudit matches deprecation notices by "deprecation"', () => {
   const reports = [finding('glob', 'glob (deprecation)', 'high', {
     URL: undefined,
   })];

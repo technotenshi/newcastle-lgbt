@@ -14,6 +14,13 @@ import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
+/**
+ * @typedef {object} AuditRecord One line of `yarn npm audit --json` output.
+ * @property {string} value The package name.
+ * @property {object} children The report: ID, Issue, URL, Severity,
+ *   'Vulnerable Versions', 'Tree Versions' and Dependents.
+ */
+
 const REGISTER_HEADER = ['package', 'advisory id', 'rationale', 'review date'];
 
 /**
@@ -74,7 +81,10 @@ export function parseRegister(markdown) {
     const where = `Register line ${i + 1}`;
     const cells = splitRow(lines[i]).map((cell) => cell.replace(/`/g, ''));
     if (cells.length !== REGISTER_HEADER.length) {
-      throw new Error(`${where}: expected 4 cells, found ${cells.length}.`);
+      throw new Error(
+        `${where}: expected ${REGISTER_HEADER.length} cells, ` +
+          `found ${cells.length}.`,
+      );
     }
     if (cells.some((cell) => cell === '')) {
       throw new Error(`${where}: a cell is empty.`);
@@ -99,13 +109,14 @@ const WARN_ONLY = new Set(['info', 'low', 'moderate']);
 
 /**
  * Describes one audit record on a single log line.
- * @param {{value: string, children: object}} record One audit record.
+ * @param {AuditRecord} record One audit record.
  * @returns {string} The package, versions, severity, ID and issue text.
  */
 function describe(record) {
-  const c = record.children;
-  const versions = (c['Tree Versions'] ?? []).join(', ');
-  return `${record.value}@${versions} ${c.Severity} [${c.ID}]: ${c.Issue}`;
+  const report = record.children;
+  const versions = (report['Tree Versions'] ?? []).join(', ');
+  return `${record.value}@${versions} ${report.Severity} ` +
+    `[${report.ID}]: ${report.Issue}`;
 }
 
 /**
@@ -113,32 +124,32 @@ function describe(record) {
  * matches on package plus advisory: the numeric audit ID, the GHSA ID from the
  * advisory URL, or the word "deprecation" for npm deprecation notices (their
  * audit ID is text, not a number).
- * @param {{value: string, children: object}} record One audit record.
+ * @param {AuditRecord} record One audit record.
  * @param {object[]} exceptions Parsed register entries.
  * @returns {object|undefined} The matching entry.
  */
 function findException(record, exceptions) {
-  const c = record.children;
-  const ids = [String(c.ID)];
-  const ghsa = /GHSA-[\w-]+/i.exec(c.URL ?? '');
+  const report = record.children;
+  const ids = [String(report.ID)];
+  const ghsa = /GHSA-[\w-]+/i.exec(report.URL ?? '');
   if (ghsa) {
     ids.push(ghsa[0]);
   }
-  if (typeof c.ID === 'string' && c.ID.endsWith('(deprecation)')) {
+  if (typeof report.ID === 'string' && report.ID.endsWith('(deprecation)')) {
     ids.push('deprecation');
   }
   return exceptions.find(
-    (e) =>
-      e.package === record.value &&
-      ids.some((id) => id.toLowerCase() === e.advisoryId.toLowerCase()),
+    (entry) =>
+      entry.package === record.value &&
+      ids.some((id) => id.toLowerCase() === entry.advisoryId.toLowerCase()),
   );
 }
 
 /**
  * Applies the gate to audit records.
- * @param {{reports: {value: string, children: object}[], exceptions:
- *   object[], today: string}} input Audit records, parsed register entries,
- *   and today's date as YYYY-MM-DD.
+ * @param {{reports: AuditRecord[], exceptions: object[], today: string}}
+ *   input Audit records, parsed register entries, and today's date as
+ *   YYYY-MM-DD.
  * @returns {{failures: string[], warnings: string[], excepted: string[]}}
  *   Messages that fail the job, messages shown without failing it, and
  *   blocking findings covered by a register entry. Critical, high and any
@@ -161,11 +172,12 @@ export function evaluateAudit({ reports, exceptions, today }) {
   // A register entry is a temporary exception, so it fails once it is due
   // for review, whether or not its finding is still reported. ISO dates
   // compare correctly as strings.
-  for (const e of exceptions) {
-    if (today > e.reviewDate) {
+  for (const entry of exceptions) {
+    if (today > entry.reviewDate) {
       failures.push(
-        `Register entry ${e.package} [${e.advisoryId}] was due for review ` +
-          `on ${e.reviewDate}. Re-check it, then extend the date or remove ` +
+        `Register entry ${entry.package} [${entry.advisoryId}] was due for ` +
+          `review on ${entry.reviewDate}. Re-check it, then extend the date ` +
+          'or remove ' +
           'the entry.',
       );
     }
@@ -182,7 +194,7 @@ const AUDIT_ARGS = ['npm', 'audit', '--all', '--recursive', '--json'];
 /**
  * Parses `yarn npm audit --json` output: one JSON object per line.
  * @param {string} text The raw audit output.
- * @returns {{value: string, children: object}[]} The audit records.
+ * @returns {AuditRecord[]} The audit records.
  */
 function parseAuditOutput(text) {
   return text
@@ -205,7 +217,7 @@ function parseAuditOutput(text) {
 /**
  * Gets audit records from a saved file or by running Yarn.
  * @param {string|undefined} inputFile Saved audit output, if given.
- * @returns {{value: string, children: object}[]} The audit records.
+ * @returns {AuditRecord[]} The audit records.
  */
 function loadReports(inputFile) {
   if (inputFile) {
@@ -259,7 +271,8 @@ function main() {
 
   console.log(
     `Audit gate (${today}): ${reports.length} reports, ` +
-      `${result.failures.length} failing, ${result.excepted.length} excepted, ` +
+      `${result.failures.length} failing, ` +
+      `${result.excepted.length} excepted, ` +
       `${result.warnings.length} warnings.`,
   );
   result.warnings.forEach((m) => log('warning', 'WARN    ', m));
