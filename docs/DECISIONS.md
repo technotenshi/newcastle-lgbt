@@ -610,3 +610,24 @@ commands from the Makefile and take the Yarn version from `packageManager`. They
 run against #390 in a scratch clone: `--immutable` failed, `yarn install` changed
 `yarn.lock` only, and `--immutable`, lint and build then passed. Nothing was pushed
 to #390.
+
+## 2026-10-24 Audited the Dependabot and Renovate configuration
+
+Renovate owns routine version updates. `.github/dependabot.yml` now sets
+`open-pull-requests-limit: 0` for npm, which turns off Dependabot version updates
+(they duplicated Renovate and produced #420 and #421) and leaves Dependabot
+security updates, which come from the repository settings, untouched.
+
+`renovate.json` gained `minimumReleaseAge: "3 days"` and a `Nuxt SEO modules` group
+for `@nuxtjs/robots`, `@nuxtjs/sitemap`, `nuxt-link-checker`, `nuxt-og-image`,
+`nuxt-schema-org` and `nuxt-seo-utils`, so the modules that must share one
+`nuxt-site-config` major arrive in one PR (see the #463 and #464 entry). The age gate
+does not catch functional regressions such as `@nuxt/image` 2.1.0. The `@nuxt/image`
+rule is unchanged. `renovate-config-validator --strict` passes.
+
+The `Dockerfile` no longer runs `corepack prepare yarn@4.18.0`, which had drifted from
+`packageManager` (4.18.1) because Renovate does not update that line. Corepack now
+takes the version from `packageManager`; the first container run downloads Yarn.
+Unverified until Renovate's next run: that the group forms one PR, and that the age
+gate does not delay security PRs (Renovate documents vulnerability PRs as exempt from
+schedule; the age gate is not confirmed against the docs).
