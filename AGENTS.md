@@ -56,7 +56,8 @@ Composables filter by path prefixes such as `/news/%`, `/events/%`, and `/counci
 pages/                    # File-based routing; news uses /news/[year]/[month]/[day]/[slug].vue
 components/               # Shared Vue components and MDC prose overrides
 components/content/       # ProseA, Dateline, and other MDC renderer overrides
-composables/              # Data layer: useNews, useEvents, useCouncil, useFeatures, useAsset
+composables/              # Data layer: useNews, useEvents, useCouncil, useFeatures, useAsset; useSocialImage (OG image URL + prerender registration)
+scripts/                  # Build-output checks: verify-social-images.mjs (run in CI after the build)
 layouts/                  # default.vue global shell
 plugins/
   bootstrap.client.ts     # Imports Bootstrap collapse + carousel only
@@ -155,11 +156,12 @@ Examples:
 
 Every page must call `useSeoMeta({ title, description })` at minimum.
 
-OG image pattern:
+OG image pattern (use the helper, never build the `/_ipx/...` URL by hand):
 
 ```js
-const { url: siteUrl } = useSiteConfig();
-const ogImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/<filename>`;
+// Omit the argument for the default image. Call it synchronously in setup,
+// after any awaited content, so prerenderRoutes has a Nuxt context.
+const ogImage = useSocialImage("images/<filename>");
 useSeoMeta({
   title,
   description,
@@ -168,6 +170,8 @@ useSeoMeta({
   twitterImage: ogImage,
 });
 ```
+
+`useSocialImage` (`composables/useSocialImage.ts`) returns the absolute URL and registers the same local IPX path with `prerenderRoutes`. Nitro's crawler only follows `href` attributes, so a hand-built URL in `<meta content>` never gets generated and 404s in the static output. After a full build, run `node scripts/verify-social-images.mjs` (CI does this); it fails when any referenced local social image is missing, not an image, or not 1200x630.
 
 Schema.org pattern:
 
@@ -187,7 +191,7 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 
 ## CI/CD
 
-- `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable`, `yarn lint`, and `yarn build` on pushes and pull requests to `main`
+- `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable`, `yarn lint`, `yarn build`, and `node scripts/verify-social-images.mjs` on pushes and pull requests to `main`
 - There are no automated tests in this repository
 - `.github/dependabot.yml` manages weekly npm dependency update PRs
 

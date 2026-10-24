@@ -94,7 +94,8 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { useSeoMeta, useSiteConfig } from '#imports';
+import { useSeoMeta } from '#imports';
+import { useSocialImage } from '~/composables/useSocialImage';
 import CouncilMembersComponent from '~/components/CouncilMembersComponent.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useCouncil } from '~/composables/useCouncil';
@@ -113,8 +114,7 @@ definePageMeta({
   description: pageDescription,
 });
 
-const { url: siteUrl } = useSiteConfig();
-const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+const defaultOgImage = useSocialImage();
 
 useSeoMeta({
   title: pageTitle,

@@ -71,7 +71,8 @@
 
 <script setup>
 /* global definePageMeta */
-import { useSeoMeta, useSiteConfig } from '#imports';
+import { useSeoMeta } from '#imports';
+import { useSocialImage } from '~/composables/useSocialImage';
 import SectionHeader from '~/components/SectionHeader.vue';
 import pflagBellevueImage from '~/assets/images/GXwZyRMXemPZnNJrZZop2ev8g.webp';
 import eastsidePrideImage from '~/assets/images/mJ12ldj01ZjqVeqjm6Avnp2mX.webp';
@@ -92,8 +93,7 @@ definePageMeta({
   description: pageDescription,
 });
 
-const { url: siteUrl } = useSiteConfig();
-const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+const defaultOgImage = useSocialImage();
 
 useSeoMeta({
   title: pageTitle,

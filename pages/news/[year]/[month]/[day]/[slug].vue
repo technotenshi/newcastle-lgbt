@@ -33,11 +33,11 @@
 
 <script setup>
 import { computed } from 'vue';
-import { createError, defineArticle, queryCollection, useAsyncData, useRoute, useSeoMeta, useSiteConfig, useSchemaOrg } from '#imports';
+import { createError, defineArticle, queryCollection, useAsyncData, useRoute, useSeoMeta, useSchemaOrg } from '#imports';
 import NewsCommunityCarousel from '~/components/NewsCommunityCarousel.vue';
 import NewsHeaderImage from '~/components/NewsHeaderImage.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
-import { normalizeAssetPath } from '~/utils/assets';
+import { useSocialImage } from '~/composables/useSocialImage';
 
 defineOptions({
   name: 'NewsArticlePage',
@@ -280,30 +280,27 @@ const pageDescription = computed(() => {
 
 const pageTitle = computed(() => articleTitle.value);
 
-const { url: siteUrl } = useSiteConfig();
-
-const ogImageUrl = computed(() => {
-  const imagePath = normalizeAssetPath(articleData.value?.image?.path || '');
-  return imagePath
-    ? `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/${imagePath}`
-    : `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
-});
+// Runs after the awaited article query so the image path is resolved, and
+// synchronously in setup so prerenderRoutes has a Nuxt context. This is a plain
+// string on purpose: do not wrap it in a getter or computed, which would run
+// outside setup where prerenderRoutes cannot register the path.
+const ogImageUrl = useSocialImage(articleData.value?.image?.path);
 
 useSeoMeta({
   title: () => pageTitle.value,
   description: () => pageDescription.value,
   ogType: 'article',
   articlePublishedTime: () => articleData.value?.date ?? '',
-  ogImage: () => ogImageUrl.value,
+  ogImage: ogImageUrl,
   twitterCard: 'summary_large_image',
-  twitterImage: () => ogImageUrl.value,
+  twitterImage: ogImageUrl,
 });
 
 useSchemaOrg([
   defineArticle({
     headline: () => articleTitle.value,
     datePublished: () => articleData.value?.date ?? '',
-    image: () => ogImageUrl.value,
+    image: ogImageUrl,
     description: () => pageDescription.value,
   }),
 ]);

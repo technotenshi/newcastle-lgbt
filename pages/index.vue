@@ -84,7 +84,8 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { defineOrganization, useSeoMeta, useSiteConfig, useSchemaOrg } from '#imports';
+import { defineOrganization, useSeoMeta, useSchemaOrg } from '#imports';
+import { useSocialImage } from '~/composables/useSocialImage';
 import { useFeatures } from '~/composables/useFeatures';
 import { useNews } from '~/composables/useNews';
 
@@ -92,8 +93,7 @@ definePageMeta({
   title: 'Home',
 });
 
-const { url: siteUrl } = useSiteConfig();
-const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+const defaultOgImage = useSocialImage();
 
 useSeoMeta({
   title: 'Home',

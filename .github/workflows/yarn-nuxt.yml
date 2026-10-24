@@ -51,3 +51,6 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Verify social images
+        run: node scripts/verify-social-images.mjs
+

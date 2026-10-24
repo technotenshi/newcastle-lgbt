@@ -13,7 +13,7 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 ## SEO / Structured Data
 
-- **Fix missing social-image resources — high priority, [#437](https://github.com/technotenshi/newcastle-lgbt/issues/437)** — all 46 distinct OG/Twitter image URLs return 404 from static output. Register the exact emitted IPX paths with Nuxt's prerenderer and add a CI check that verifies every referenced social image exists and serves image bytes. Evidence, full URL inventory and acceptance criteria: [remediation record](maintenance/2026-10-23-social-images.md).
+- ~~**Fix missing social-image resources**~~ — ✅ Done 2026-10-23, [#437](https://github.com/technotenshi/newcastle-lgbt/issues/437). `useSocialImage` registers each IPX path for prerendering and uses a modifier that really yields 1200x630; `scripts/verify-social-images.mjs` checks the built output in CI. See `docs/maintenance/2026-10-23-social-images.md`.
 - **Event JSON-LD schema** — the events page has no structured data. Add an `Event` schema block for each listing to make events eligible for Google's rich results. Extends the JSON-LD work already done for `NewsArticle` and `Organization`.
 - **Unique page descriptions** — `pages/news/index.vue`, `pages/events/index.vue`, `pages/council-members/index.vue`, and `pages/organizations/index.vue` all share the same generic `pageDescription` string. Each should have a distinct, descriptive meta description.
 

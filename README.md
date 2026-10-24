@@ -128,7 +128,7 @@ For the full authoring guide (frontmatter fields, filename format, body structur
 - **Sorting:** News by date DESC then `order` field; events by date ASC; council by `position` number
 - **SEO:** Every page calls `useSeoMeta({ title, description })` — `nuxt-seo-utils` auto-generates OG, Twitter, and canonical tags from those two fields. Do not set `og:title`, `og:description`, `og:url`, `twitter:*`, or `<link rel="canonical">` manually. Page titles must be the short form only (e.g. `'News'`) — the site name suffix is appended automatically.
 - **RSS feed:** `/feed.xml` is pre-rendered at build time from `server/routes/feed.xml.ts`. It contains the 20 most recent non-draft news articles. RSS autodiscovery `<link>` is injected via `app.head` in `nuxt.config.ts`. A visible "RSS Feed" link appears in the footer.
-- **OG images:** Constructed via `useSiteConfig().url` + IPX URL pattern and passed to `useSeoMeta({ ogImage, twitterImage })`.
+- **OG images:** Built with the `useSocialImage()` composable, which returns the absolute IPX URL and queues the same path for prerendering. Pass the result to `useSeoMeta({ ogImage, twitterImage })`. `node scripts/verify-social-images.mjs` checks the built output.
 - **Schema.org:** Use `useSchemaOrg([defineOrganization(...)])` / `useSchemaOrg([defineArticle(...)])` — helpers must be wrapped in `useSchemaOrg([...])`.
 - **Links:** No trailing slashes on internal links; no absolute `https://newcastle.lgbt/...` URLs in content (use relative paths). `nuxt-link-checker` enforces this during `make develop` and warnings are treated as errors.
 - **Images:** Use `<NuxtImg>` for local images (served via IPX as WebP). Use `loading="lazy"` and `decoding="async"` on plain `<img>` tags.

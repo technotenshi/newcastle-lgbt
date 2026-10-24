@@ -1,6 +1,14 @@
 # Missing static social images — 2026-10-23
 
-Status: open, tracked in [GitHub issue #437](https://github.com/technotenshi/newcastle-lgbt/issues/437). Priority: high; broken public social-preview resources.
+Status: fixed in the working tree on 2026-10-23, pending commit and merge. Tracked in [GitHub issue #437](https://github.com/technotenshi/newcastle-lgbt/issues/437). Priority was high; broken public social-preview resources.
+
+## Resolution
+
+- `composables/useSocialImage.ts` builds the social image URL and registers the same IPX path with `prerenderRoutes`. All six pages use it.
+- Root causes: Nitro's crawler only follows `href` attributes, so URLs that appear only in `<meta content>` were never generated; and the modifier string `w_1200&h_630&fit_cover` never produced 1200x630, because IPX treats `w_` and `h_` as separate single-axis resizes and ignores `fit` for them. The emitted modifier is now `f_webp&s_1200x630&fit_cover&enlarge`.
+- `scripts/verify-social-images.mjs` runs in CI after the build and fails on a missing, empty, non-image or non-1200x630 social image, and when it finds no social image URLs at all.
+- Verified in Docker: the script exited 1 with 46 of 46 missing before the fix and exits 0 after it; the output has 624 IPX files (578 plus 46).
+- The inventory below is the historical record of the old URLs. Those exact paths are intentionally not generated any more, since the modifier changed. They never served an image (they returned 404), so no working link is lost. Compare against the URLs the script reports, not against this table.
 
 ## Evidence and impact
 
@@ -42,7 +50,7 @@ Use an exact path from the inventory if article naming changes.
 - [ ] No missing social image can pass the new CI check; demonstrate failure against the current output and success against the fixed output.
 - [ ] Docker immutable installation, lint and full static build pass. Content pages, sitemap, robots, RSS, canonical and social metadata remain valid.
 
-## Missing URL inventory
+## Missing URL inventory (historical, old modifier)
 
 The following 46 distinct URL paths were extracted from generated page metadata. Representative referring pages are included; shared fallback images can have multiple referrers.
 

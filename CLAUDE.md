@@ -50,7 +50,8 @@ This is a **Nuxt 4 static site** (SSG) for the Newcastle, WA LGBTQ+ community. T
 All content files are registered under a single `content` collection (`content.config.ts`). Composables filter by path: `.where("path", "LIKE", "/news/%")`. The organizations page (`pages/organizations/index.vue`) is an exception — its data is hardcoded directly in the component, not in `content/`.
 
 ### Key source directories
-- `composables/` — Data fetching layer (`useNews`, `useEvents`, `useCouncil`, `useFeatures`, `useAsset`)
+- `composables/` — Data fetching layer (`useNews`, `useEvents`, `useCouncil`, `useFeatures`, `useAsset`) plus `useSocialImage` (OG image URL and prerender registration)
+- `scripts/` — Build-output checks (`verify-social-images.mjs`, run in CI after the build)
 - `pages/` — File-based routing; news uses dynamic route `/news/[year]/[month]/[day]/[slug].vue`
 - `components/` — Shared Vue components
 - `layouts/default.vue` — Global header, nav, and footer rendered on every page
@@ -85,7 +86,7 @@ Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide
 - **`@nuxt/image`** — serves assets from `assets/` as WebP at quality 80 via the IPX endpoint (`/_ipx/...`). Use `<NuxtImg>` instead of plain `<img>` for all local images.
 - **`@nuxtjs/sitemap`** — auto-generates `/sitemap.xml` at build time by crawling prerendered routes. Reads the canonical URL from `site.url` in `nuxt.config.ts`. `zeroRuntime: true` is set because all content is static.
 - **`@nuxtjs/robots`** — generates `robots.txt` at build time. Do not create `public/robots.txt` manually.
-- **`nuxt-og-image`** — currently **disabled** (`ogImage: { enabled: false }`) because no Satori renderer is configured and its interactive prompt breaks non-TTY Docker. OG images are set via `useSeoMeta({ ogImage, twitterImage })` using IPX URLs constructed with `useSiteConfig().url`.
+- **`nuxt-og-image`** — currently **disabled** (`ogImage: { enabled: false }`) because no Satori renderer is configured and its interactive prompt breaks non-TTY Docker. OG images are set via `useSeoMeta({ ogImage, twitterImage })` using the `useSocialImage` helper (IPX URLs registered for prerendering).
 - **`nuxt-schema-org`** — provides `useSchemaOrg([...])` with factory helpers (`defineOrganization`, `defineArticle`). Always wrap helpers in `useSchemaOrg([...])` — they are not self-registering composables.
 - **`nuxt-link-checker`** — runs during `make develop` and warns about broken or malformed links. Warnings are treated as errors: fix them. Common rules: no trailing slashes on internal links, no absolute `https://newcastle.lgbt/...` URLs (use relative paths instead).
 - **`nuxt-seo-utils`** — auto-generates `og:title`, `og:description`, `og:url`, `og:site_name`, `twitter:*`, and `<link rel="canonical">` from `useSeoMeta({ title, description })`. Do **not** set these manually. Also appends ` | Newcastle LGBTQ Voice` to every page `<title>` — page titles must be the short form only (e.g. `'News'`, not `'News | Newcastle LGBTQ Voice'`).
@@ -97,12 +98,13 @@ Full rules, templates, and aspect ratio reference: [`docs/image-generation-guide
 ### SEO conventions
 Every page must call `useSeoMeta({ title, description })` at minimum — `nuxt-seo-utils` derives everything else automatically.
 
-OG image pattern (all pages):
+OG image pattern (all pages; never build the `/_ipx/...` URL by hand):
 ```js
-const { url: siteUrl } = useSiteConfig();
-const ogImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/<filename>`;
+// Omit the argument for the default image. Call synchronously in setup, after any awaited content.
+const ogImage = useSocialImage('images/<filename>');
 useSeoMeta({ title, description, ogImage, twitterCard: 'summary_large_image', twitterImage: ogImage });
 ```
+`useSocialImage` (`composables/useSocialImage.ts`) returns the absolute URL and registers the same IPX path with `prerenderRoutes`, because Nitro's crawler only follows `href` attributes and would otherwise never generate the file. CI runs `node scripts/verify-social-images.mjs` after the static build.
 
 Schema.org pattern:
 ```js
@@ -114,7 +116,7 @@ Do **not** add: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitte
 
 ### CI/CD
 - **GitHub repo:** `technotenshi/newcastle-lgbt`
-- `.github/workflows/yarn-nuxt.yml` — runs `yarn install --immutable`, `yarn lint`, then `yarn build` on every push / PR to `main`.
+- `.github/workflows/yarn-nuxt.yml` — runs `yarn install --immutable`, `yarn lint`, `yarn build`, then `node scripts/verify-social-images.mjs` on every push / PR to `main`.
 - `.github/dependabot.yml` — weekly automated PRs for npm dependency updates. **Renovate** also runs and may open duplicate/overlapping PRs; the later one is typically superseded and auto-closed.
 - **`yarn.lock` drift:** CI uses `--immutable`, so if a dependency merge introduces new transitive deps the lockfile breaks. Fix by running `docker compose run --rm app yarn install` locally and committing the updated `yarn.lock`.
 - There are **no automated tests** in this project.
