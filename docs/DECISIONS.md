@@ -451,3 +451,41 @@ brace-expansion (3), compression, glob, node-forge, prebuild-install,
 serialize-javascript, zod. Docker immutable install, lint and build pass; the
 static output served 200 for /, /feed.xml, /sitemap.xml and 60 sampled /_ipx
 files (624 exist). The audit still needs a re-run on main after merge.
+
+## 2026-10-24 Cleared three of the five remaining audit reports (#461)
+
+Recursive audit (`yarn npm audit --all --recursive`): 10 reports before, 5
+after. Docker immutable install, lint and a production build pass (733 routes,
+0 errors). Served statically, `/`, `/news/`, `/events/`, `/council-members/`,
+`/sitemap.xml`, `/robots.txt` and `/feed.xml` return 200 (gzip on all but
+robots.txt, which is 119 bytes), 60 of 60 sampled `/_ipx` files return 200 (624
+exist), and `scripts/verify-social-images.mjs` passes.
+
+Fixed:
+
+- @ungap/structured-clone 1.3.0 to 1.4.0 and brace-expansion 5.0.9 to 5.0.12:
+  `yarn up -R`, lockfile only. All four parents request `^1.0.0`, and
+  minimatch 10.2.6 (the latest 10.x) requests `^5.0.8`.
+- compression 1.8.1 to 1.8.2: `serve` 14.2.6 is the latest release and pins
+  compression exactly, so `package.json` gained one scoped resolution
+  (`compression@npm:1.8.1`). It is a patch release and only adds a `destroy`
+  dependency.
+
+Exceptions, review by 2026-11-23:
+
+- node-forge 1.4.0 (high, GHSA-86w9-cpqp-85rv): no patched release exists
+  (`first_patched_version` is null and 1.4.0 is the latest on npm). The fix is
+  digitalbazaar/forge PR 1152, still open. It arrives through listhen 1.10.0
+  (the latest listhen is 1.10.1, which still requests `^1.4.0`), a dev and image
+  server dependency; the deployed site is static. Revisit when forge releases a
+  fix.
+- glob 10.5.0 (deprecation notice, not an advisory): archiver-utils 5.0.2 is
+  the latest release and requests `^10.0.0`. The only consumer is archiver 7.0.1
+  through nitropack, which uses it for the Azure preset only. archiver 8 drops
+  glob, but nitropack (latest 2.13.5) requests `^7.0.1`. Forcing glob 13 would
+  cross a major version on a path this site never runs, so it was not done.
+  Revisit when nitropack moves to archiver 8.
+
+Not covered by #461: serialize-javascript 7.0.5 (low, from
+`@rollup/plugin-terser`) has no ticket yet. prebuild-install is #460 and zod is
+the #462 exception.
