@@ -13,7 +13,7 @@ Issues and specs for this repo live as GitHub issues. Use the `gh` CLI for all o
 
 Infer the repo from `git remote -v`; `gh` does this automatically when run inside a clone.
 
-Note: the `gh` CLI's currently configured token on this box (account `technotenshi`) can create issues but cannot edit/close/comment on them (`Resource not accessible by personal access token`). Confirmed empirically 2026-08-28 (issue #372 was created by mistake and could not be closed or edited). Skills that assume comment/close/edit access on this repo need a token with broader `issues` write scope, or a human to perform that step.
+Note: the `gh` CLI's configured token on this box (account `technotenshi`, OAuth with `repo` scope) can create, edit, label, and comment on issues here. Confirmed 2026-10-23 by editing issue #437, creating and deleting a label, and posting and deleting a comment. An earlier check on 2026-08-28 saw `Resource not accessible by personal access token` on edit, close, and comment; that no longer reproduces. Closing an issue has not been re-tested.
 
 ## Pull requests as a triage surface
 

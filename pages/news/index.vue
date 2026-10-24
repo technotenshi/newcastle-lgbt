@@ -45,7 +45,8 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { queryCollection, useAsyncData, useSeoMeta, useSiteConfig } from '#imports';
+import { queryCollection, useAsyncData, useSeoMeta } from '#imports';
+import { useSocialImage } from '~/composables/useSocialImage';
 import FeaturedNews from '~/components/FeaturedNews.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useNews } from '~/composables/useNews';
@@ -69,8 +70,7 @@ definePageMeta({
   title: 'News',
 });
 
-const { url: siteUrl } = useSiteConfig();
-const defaultOgImage = `${siteUrl}/_ipx/f_webp&w_1200&h_630&fit_cover/images/K59bqmorPm9qeV7qbg4Dozml.webp`;
+const defaultOgImage = useSocialImage();
 
 useSeoMeta({
   title: pageTitle,

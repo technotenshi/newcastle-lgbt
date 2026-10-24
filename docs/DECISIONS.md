@@ -398,3 +398,40 @@ resolves an outstanding defect.
 
 These records propose fixes; implementation and verification of those fixes
 are still open. Both are linked from `docs/improvement-tasks.md`.
+
+## 2026-10-23 - Social images come from one helper and are verified after the build
+
+Issue [#437](https://github.com/technotenshi/newcastle-lgbt/issues/437). All 46
+local `og:image` / `twitter:image` URLs 404ed in the static output. Two causes:
+
+1. Nitro's crawler only follows `href` attributes, so URLs that only appear in
+   `<meta content>` were never requested and never generated. `prerenderRoutes`
+   queues paths through the `x-nitro-prerender` header, and Nitro skips any URL
+   that has a protocol or host, so the helper registers the path, not the
+   absolute URL.
+2. The modifier string `w_1200&h_630&fit_cover` never produced 1200x630. In
+   IPX, `w_` and `h_` each resize one axis and ignore `fit`; only `s_WxH`
+   crops to an exact box. Generated heights ranged from 633 to 904, and
+   1024px wide sources were not enlarged. The string is now
+   `f_webp&s_1200x630&fit_cover&enlarge`. Sources narrower than 1200px are
+   upscaled, which softens them slightly; real 1200x630 artwork would avoid it.
+
+Decision: `composables/useSocialImage.ts` builds the URL and registers the
+path, and every page uses it. `scripts/verify-social-images.mjs` runs in CI
+after the build and fails on a missing, empty, non-image, or non-1200x630 social
+image, checked over a static-only HTTP server. Verified in Docker: 46 of 46
+failed before the fix (exit 1); after it, the build produces 624 IPX files (578
+plus 46) and the script passes. Link checker: 0 errors across 51 pages. The
+sitemap gained no social-image URLs (its existing `_ipx` entries are
+rendered-page images from `<img>` tags).
+
+The 46 URL strings recorded in the issue use the old modifier and are no
+longer generated. They returned 404 before, so nothing that worked is lost;
+the verification script, not that inventory, is the source of truth.
+
+The script also reads image URLs inside JSON-LD, decodes HTML entities, and
+fails when it finds no HTML files or no social image URLs, so a regression
+that drops the meta tags cannot pass CI. It sniffs the image format from the
+bytes. IPX keeps the source extension while converting to WebP, so a `.png`
+URL holds WebP bytes; static hosts send the extension's content type, which
+the script reports as a note and does not fail on.
