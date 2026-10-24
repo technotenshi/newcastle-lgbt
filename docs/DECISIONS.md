@@ -593,3 +593,20 @@ the build did not prompt for a renderer.
 
 Not verified: the post-merge audit on `main`, behaviour of the deployed Cloudflare
 Pages build, and individual article pages beyond the two sampled.
+
+## 2026-10-24 Moved the Renovate stale lockfile playbook into the maintenance docs (#316)
+
+The recovery steps for Renovate pull requests that change `package.json` but leave
+`yarn.lock` stale (Mend's hosted runtime fails with "global Yarn is 1.22.22" against
+the `packageManager` field) now live in
+`docs/maintenance/2026-10-24-renovate-stale-lockfile.md`, linked from `AGENTS.md` and
+`CLAUDE.md`. #316 is closed by that doc. The cause stays unfixed in this repo on
+purpose: the failure is in Mend's hosted runtime, the repo already runs
+`corepack enable` in the `Dockerfile` and both install workflows, and `binarySource`
+is a self hosted Renovate option that `renovate.json` on the hosted app cannot set.
+The only known lever is Mend support, which a human contacts if recurrence grows (3 of
+the last 40 Renovate PRs as of 2026-10-22). The doc's commands use the Docker
+commands from the Makefile and take the Yarn version from `packageManager`. They were
+run against #390 in a scratch clone: `--immutable` failed, `yarn install` changed
+`yarn.lock` only, and `--immutable`, lint and build then passed. Nothing was pushed
+to #390.
