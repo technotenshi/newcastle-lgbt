@@ -1,0 +1,37 @@
+# Config for actions/labeler (v5+ schema), read by .github/workflows/label.yml.
+# Each key is an existing repo label; it is applied when a PR changes any file
+# matching one of its globs. A PR touching several areas gets every match.
+# The `dot` input defaults to true in v5+, so dotfile paths such as .github/**
+# match without extra settings.
+
+news:
+  - changed-files:
+      - any-glob-to-any-file: content/news/**
+
+events:
+  - changed-files:
+      - any-glob-to-any-file: content/events/**
+
+council:
+  - changed-files:
+      - any-glob-to-any-file: content/council/**
+
+site:
+  - changed-files:
+      - any-glob-to-any-file:
+          - pages/**
+          - components/**
+          - layouts/**
+          - composables/**
+          - utils/**
+          - plugins/**
+          - server/**
+          - nuxt.config.ts
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file: docs/**
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: .github/**
