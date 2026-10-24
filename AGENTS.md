@@ -195,6 +195,7 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 - `.github/workflows/dependency-audit.yml` runs `scripts/audit-gate.mjs` (a recursive Yarn audit) on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate files. It fails on critical or high findings without an entry in [`docs/maintenance/audit-exceptions.md`](docs/maintenance/audit-exceptions.md) and on entries past their review date. Its unit tests run with `node --test scripts/audit-gate.test.mjs`
 - There are no automated tests for the site; the only tests cover the audit gate (`node --test scripts/audit-gate.test.mjs`)
 - `.github/dependabot.yml` manages weekly npm dependency update PRs
+- When a Renovate PR changes `package.json` but leaves `yarn.lock` stale ("Artifact update problem", Yarn 1.22.22 vs `packageManager`), follow [`docs/maintenance/2026-10-24-renovate-stale-lockfile.md`](docs/maintenance/2026-10-24-renovate-stale-lockfile.md)
 
 ## Commit messages
 
