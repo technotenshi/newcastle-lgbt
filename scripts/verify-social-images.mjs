@@ -19,6 +19,7 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 
 const outputDir = path.resolve(process.argv[2] ?? '.output/public');
+const outputPrefix = path.join(outputDir, path.sep);
 const siteOrigin = new URL(process.argv[3] ?? 'https://newcastle.lgbt').origin;
 const EXPECTED_WIDTH = 1200;
 const EXPECTED_HEIGHT = 630;
@@ -121,10 +122,13 @@ function safeDecode(text) {
   }
 }
 
+// Maps a URL path from the HTML to a file inside the output directory. Throws
+// if the decoded path would leave it (the output directory itself is not a
+// file, so it is rejected too).
 function toFilePath(urlPath) {
   const decoded = decodeURIComponent(urlPath.split('?')[0]);
   const resolved = path.resolve(outputDir, `.${decoded}`);
-  if (resolved !== outputDir && !resolved.startsWith(outputDir + path.sep)) {
+  if (!resolved.startsWith(outputPrefix)) {
     throw new Error(`path escapes output directory: ${urlPath}`);
   }
   return resolved;
@@ -175,10 +179,17 @@ function imageSize(buf, format) {
 // Static-only server standing in for the production static host (Cloudflare
 // Pages): serves exact files, no fallback to index/200.html, and picks the
 // content type from the file extension like a static host does.
+//
+// It serves only files already validated by toFilePath and registered in
+// `servable` (decoded URL path -> absolute file). The request URL is only a
+// lookup key; no file path is ever built from request data.
+const servable = new Map();
+
 function startStaticServer() {
   const server = createServer(async (req, res) => {
     try {
-      const file = toFilePath(req.url ?? '/');
+      const file = servable.get(safeDecode((req.url ?? '/').split('?')[0]));
+      if (!file) throw new Error('not served');
       const info = await stat(file);
       if (!info.isFile()) throw new Error('not a file');
       const body = await readFile(file);
@@ -226,7 +237,9 @@ for (const [urlPath, files] of referencedBy) {
   const label = `${safeDecode(urlPath)} (first seen in ${[...files][0]}, ${files.size} page(s))`;
   let bytes;
   try {
-    bytes = await readFile(toFilePath(urlPath));
+    const file = toFilePath(urlPath);
+    bytes = await readFile(file);
+    servable.set(safeDecode(urlPath.split('?')[0]), file);
   } catch (error) {
     const detail = error.code ? '' : `: ${error.message}`;
     problems.push(`MISSING FILE  ${label}${detail}`);
