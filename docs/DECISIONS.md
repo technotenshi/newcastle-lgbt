@@ -518,3 +518,38 @@ peer range, and it is superseded: #460 (PR #469) moved the site to
 release of the dependency the site now uses. Content's declared peer range is the
 compatibility guard from here on; if a future Content release narrows it, pin
 again in the ticket that bumps Content. The `@nuxt/image` rule is unchanged.
+
+## 2026-10-24 Added a recursive dependency audit gate with an exception register (#462)
+
+New workflow `.github/workflows/dependency-audit.yml` runs `scripts/audit-gate.mjs`
+(`yarn npm audit --all --recursive --json`). It fails on critical and high reports
+that have no row in `docs/maintenance/audit-exceptions.md`, on any register row
+past its review date, on an unrecognised severity, and when the audit itself
+cannot run. Moderate, low and info reports, including deprecation notices, are
+logged as warnings. It runs on pushes to `main`, weekly (Mondays 15:00 UTC), and
+on pull requests that change `package.json` or `yarn.lock`; it is not a required
+check on every pull request, because new advisories appear independently of a
+pull request's content. It does no `yarn install`: the audit needs only
+`package.json` and `yarn.lock` (checked on a copy with no `node_modules`), so
+no dependency install scripts run in this job.
+
+Two choices go beyond the ticket text. The pull request path filter also lists
+the gate's own files (script, test, register, workflow), so a change to the gate
+is exercised before it merges. The script's unit tests (`node:test`, no new
+dependency) run in the same workflow; they are the repository's first automated
+tests.
+
+The register is a Markdown table the script parses. Entries match on package plus
+advisory ID (GHSA or numeric audit ID, or the word `deprecation`), so a second
+advisory on an excepted package still fails. Seeded with zod, node-forge and glob
+(review 2026-11-23).
+
+zod rationale, checked against the installed `@nuxt/content` 3.16.2: advisory
+GHSA-mrhx-c7xc-m3w5 concerns the array parse logic in zod 4 core, which the
+3.25.76 package ships under `zod/v4`. Content imports `zod` and `zod/v4` only to
+declare schemas and convert them to JSON Schema; its `dist/module.mjs` and
+`dist/chunks/zod4.mjs` never call `parse` or `safeParse`, and `content.config.ts`
+declares no schema. So the ticket's wording (Content "validates repo-authored
+frontmatter at build time") is not what the code does; the register records the
+code path instead. serialize-javascript (low, #468) is a warning and has no
+register row.
