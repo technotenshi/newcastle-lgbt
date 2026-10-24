@@ -3,11 +3,24 @@
   "extends": [
     "config:recommended"
   ],
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchPackageNames": ["@nuxt/image"],
       "allowedVersions": "<2.1.0",
       "description": "2.1.0 broke static image generation (0 files in .output/public/_ipx); see docs/DECISIONS.md 2026-08-21. Re-enable only after a verified manual upgrade."
+    },
+    {
+      "matchPackageNames": [
+        "@nuxtjs/robots",
+        "@nuxtjs/sitemap",
+        "nuxt-link-checker",
+        "nuxt-og-image",
+        "nuxt-schema-org",
+        "nuxt-seo-utils"
+      ],
+      "groupName": "Nuxt SEO modules",
+      "description": "These move together: mixed nuxt-site-config 4 and 5 majors break the Nitro build; see docs/DECISIONS.md 2026-10-24 (#463, #464)."
     }
   ]
 }
