@@ -553,3 +553,43 @@ declares no schema. So the ticket's wording (Content "validates repo-authored
 frontmatter at build time") is not what the code does; the register records the
 code path instead. serialize-javascript (low, #468) is a warning and has no
 register row.
+
+## 2026-10-24 Landed the six Nuxt SEO module majors together (#463, #464)
+
+Bumped `@nuxtjs/sitemap` 8.6.2 to 9.1.0, `@nuxtjs/robots` 6.2.4 to 7.0.2,
+`nuxt-og-image` 6.10.4 to 7.0.7, `nuxt-link-checker` 5.3.0 to 6.0.1,
+`nuxt-schema-org` `^6.1.0` to `^7.0.1` and `nuxt-seo-utils` 8.6.1 to 9.0.1 in one
+change, and added a direct `zod` `^4.6.6` devDependency. This supersedes the
+Renovate PRs #449, #440, #452, #450, #453 and #454 and the Dependabot PRs #421
+and #420.
+
+Why one change instead of the two groups the tickets described: sitemap 9 and
+robots 7 depend on `nuxt-site-config` 5, while the other four modules at their old
+majors depend on 4.2.3. Both majors register the `#site-config` alias and the 4.x
+one wins, so a build with only group A fails in Nitro with `EISDIR` on
+`nuxt-site-config/dist/runtime/server` (imported by sitemap's `sitemap.xsl.js`).
+Reproduced with sitemap 9.1.0, robots 7.0.2 and zod only; install and lint passed,
+the build did not. Og-image 7.0.7, link-checker 6.0.1, schema-org 7.0.1 and
+seo-utils 9.0.1 all depend on site-config `^5.0.0`, so the six move together and
+the lockfile now holds one site-config major (5.0.3) and `nuxtseo-shared` 6.
+
+zod: the peer range of sitemap 9 and robots 7 is `^4.6.5`. The direct dependency
+uses `^4.6.6`, because GHSA-mrhx-c7xc-m3w5 lists everything below 4.6.6 as
+affected; it resolves to 4.6.7. `@nuxt/content` 3.16.2 still pins `^3.25.76`, so
+two copies exist: 3.25.76 under Content (the #462 register row) and 4.6.7 for the
+workspace. The audit gate reports the same four items as before, with no new
+finding from the direct zod.
+
+Verified in Docker and on a static serve of `.output/public`: immutable install and
+lint pass; the production build prerenders 733 routes (unchanged) and the link
+checker reports 0 warnings; `/`, `/news/`, `/events/`, `/council-members/`,
+`/sitemap.xml`, `/robots.txt` and `/feed.xml` return 200; the sitemap lists the
+same 51 URLs as the live site; `robots.txt` is generated and `public/` has no
+hand-written one; `.output/public/_ipx` holds 624 files and 60 of 60 sampled files
+return 200; `scripts/verify-social-images.mjs` passes. On sampled pages (home and
+two articles) `og:image`, `twitter:image`, canonical and `og:title` each appear once
+and the JSON-LD matches the live site. `ogImage.enabled: false` is unchanged and
+the build did not prompt for a renderer.
+
+Not verified: the post-merge audit on `main`, behaviour of the deployed Cloudflare
+Pages build, and individual article pages beyond the two sampled.
