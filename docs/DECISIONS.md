@@ -435,3 +435,19 @@ that drops the meta tags cannot pass CI. It sniffs the image format from the
 bytes. IPX keeps the source extension while converting to WebP, so a `.png`
 URL holds WebP bytes; static hosts send the extension's content type, which
 the script reports as a note and does not fail on.
+
+## 2026-10-24 — Applied the #442 transitive bumps directly (#459)
+Dependabot closed #442 ("updatable in another way") once #439 landed, so the
+rebase-and-merge step in #459 no longer existed. Instead of waiting for a new
+Dependabot PR, the same bumps were applied with `yarn up -R` on branch
+`fix/459-transitive-bumps`; only `yarn.lock` changed. vite 8.2.2 -> 8.3.5,
+ip-address 10.5.0 -> 10.7.4, http-cache-semantics 4.2.0 -> 4.3.0,
+postcss-selector-parser 7.1.4 -> 7.1.7, source-map-js 1.2.1 -> 1.2.2.
+devalue was already 6.0.3 on main.
+
+Recursive audit (`yarn npm audit --all --recursive`) on the branch: 24 reports
+before, 10 after, none of the five packages left. Remaining: @ungap/structured-clone,
+brace-expansion (3), compression, glob, node-forge, prebuild-install,
+serialize-javascript, zod. Docker immutable install, lint and build pass; the
+static output served 200 for /, /feed.xml, /sitemap.xml and 60 sampled /_ipx
+files (624 exist). The audit still needs a re-run on main after merge.
