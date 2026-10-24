@@ -489,3 +489,21 @@ Exceptions, review by 2026-11-23:
 Not covered by #461: serialize-javascript 7.0.5 (low, from
 `@rollup/plugin-terser`) has no ticket yet. prebuild-install is #460 and zod is
 the #462 exception.
+
+## 2026-10-24 Moved better-sqlite3 to 13 to drop prebuild-install (#460)
+
+better-sqlite3 `^12.5.0` to `^13.0.0` (12.11.1 to 13.0.3) with `yarn up`. 13.0.3
+has no `prebuild-install` dependency (it depends on `node-addon-api` only), and
+the installed `@nuxt/content` accepts `^12.5.0 || ^13.0.0`, so SQLite stays inside
+Content's supported range. The lockfile drops better-sqlite3's old installer
+chain (prebuild-install and its 20 or so transitive packages); no other package
+moved.
+
+Verified in Docker: `yarn why prebuild-install` finds nothing, immutable install
+and lint pass, 13.0.3 built from source in the image, and a production build
+prerendered 733 routes with 0 errors (same count as before). Served statically,
+`/`, `/news/`, `/events/`, `/council-members/`, `/sitemap.xml` and `/feed.xml`
+return 200, 60 of 60 sampled `/_ipx` files return 200 (624 exist), and
+`scripts/verify-social-images.mjs` passes. The recursive audit went from 5
+reports to 4: glob and node-forge (recorded exceptions), serialize-javascript
+(#468) and zod (#462).
