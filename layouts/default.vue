@@ -121,6 +121,9 @@
                 aria-hidden="true"
               /> RSS Feed</a>
             </p>
+            <p class="mbr-text mb-0 mbr-fonts-style display-7">
+              <SimpleAnalyticsBadge />
+            </p>
           </div>
         </div>
       </div>
