@@ -169,9 +169,9 @@ Details (Dependabot and Renovate overlap, `yarn.lock` drift, Copilot review): [`
 - Skill files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
 - Quote a skill frontmatter `description:` that contains a colon followed by a space; otherwise strict YAML parsers can interpret it as a nested mapping.
 
-Project-specific skills (each `SKILL.md` describes itself): `new-article`, `content-check`, `fact-check`, `image-prompt`, `generate-images`, `ics-event`, `seo-check`, `backlog`, `merge-prs`, `research`. Use `new-article` to scaffold content and `content-check` before publishing.
+Project-specific skills (each `SKILL.md` describes itself): `new-article`, `content-check`, `fact-check`, `image-prompt`, `generate-images`, `ics-event`, `seo-check`, `backlog`, `merge-prs`. Use `new-article` to scaffold content and `content-check` before publishing.
 
-Several other generic third-party skills (the mattpocock/skills pack, `code-review`, `tdd`, `resolving-merge-conflicts`, `diagnosing-bugs`, etc.) are also installed but are not project-specific, they apply generically across repos.
+The generic mattpocock/skills pack (`research`, `code-review`, `tdd`, `diagnosing-bugs`, `grill-me`, and the rest) is not stored in this repo. It comes from the global install at `~/.agents/skills`, which Claude Code and Hermes read through their own symlinks, so a fresh clone or a cloud agent needs that install to get those skills. Use `research` to build the `docs/research/` dossiers. Three skills the current pack no longer ships stay here: `implement-spec`, `resolving-merge-conflicts`, and `retro` (recorded in `skills-lock.json`).
 
 <!-- skilld -->
 Before modifying code, evaluate each installed skill against the current task.
@@ -182,7 +182,7 @@ For each skill, determine YES/NO relevance and invoke all YES skills before proc
 
 - **Issue tracker:** GitHub Issues via the `gh` CLI. See [`docs/agents/issue-tracker.md`](docs/agents/issue-tracker.md).
 - **Triage labels:** the default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), no repo-specific renames. See [`docs/agents/triage-labels.md`](docs/agents/triage-labels.md).
-- **Domain docs:** single-context repo, one `CONTEXT.md` plus `docs/adr/` at the root once created; neither exists yet, `docs/DECISIONS.md` is the decision log in the meantime. See [`docs/agents/domain.md`](docs/agents/domain.md).
+- **Domain docs:** single-context repo, one `GLOSSARY.md` plus `docs/adr/` at the root once created; neither exists yet, `docs/DECISIONS.md` is the decision log in the meantime. See [`docs/agents/domain.md`](docs/agents/domain.md).
 
 ## Hooks (Claude Code only)
 

@@ -709,3 +709,20 @@ tools no longer get the hard block on editing `.env`, `.env.*`, and `yarn.lock`;
 Git on some Windows checkouts turns symlinks into plain files. The site build and Cloudflare Pages do not read `.claude`,
 so the deployed site is unaffected. Earlier entries in this log that mention `CLAUDE.md`, `.codex`, or mirrored skill
 copies stay as accurate history.
+
+## 2026-10-28 Pack skills come from the global install, not this repo
+
+Decided by the site owner. Where a skill exists both in `.agents/skills` here and in the global `~/.agents/skills`
+(which `~/.claude/skills` and `~/.hermes/skills` link to), the global copy wins and the repo copy is removed.
+34 copies of the mattpocock/skills pack were removed. They had been installed by `npx skills` in this repo and again
+globally; 16 were identical and 18 had drifted, with the global copy always the newer pack. The 10 project skills stay,
+and so do three pack skills the current pack no longer ships (`implement-spec`, `resolving-merge-conflicts`, `retro`).
+`skills-lock.json` now lists only those three.
+
+The newer pack renamed the domain file from `CONTEXT.md` to `GLOSSARY.md` (and `CONTEXT-MAP.md` to
+`GLOSSARY-MAP.md`), so `docs/agents/domain.md` and `AGENTS.md` follow it. Neither file exists in this repo yet. The
+other `docs/agents/` files were generated from older setup templates and may be slightly stale; regenerating them is
+a separate task.
+
+Consequence: a fresh clone, CI, or a cloud agent without the global install does not get the pack skills. The removed
+copies are in git history (822a8bc and earlier).
