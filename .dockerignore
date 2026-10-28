@@ -34,7 +34,6 @@ renovate.json
 # Documentation
 docs/
 README.md
-CLAUDE.md
 AGENTS.md
 
 # Empty directory

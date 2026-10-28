@@ -10,7 +10,7 @@ How the engineering skills should consume this repo's domain documentation when 
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
 
-Note: as of 2026-08-28 this repo has neither `GLOSSARY.md` nor `docs/adr/` yet: it's a single-context static site with its own `docs/DECISIONS.md` decision log (append-only, dated entries) that predates these skills. Treat `docs/DECISIONS.md` as an additional decision-history source alongside (not a replacement for) `docs/adr/` if/when the latter gets created.
+Note: as of 2026-10-28 this repo has neither `GLOSSARY.md` nor `docs/adr/` yet: it's a single-context static site with its own `docs/DECISIONS.md` decision log (append-only, dated entries) that predates these skills. Treat `docs/DECISIONS.md` as an additional decision-history source alongside (not a replacement for) `docs/adr/` if/when the latter gets created.
 
 ## File structure
 

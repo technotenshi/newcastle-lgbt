@@ -158,7 +158,7 @@ A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install
 - [`docs/image-generation-guide.md`](docs/image-generation-guide.md) — AI image generation prompts, aspect ratios, and lighting rules
 - [`docs/research/`](docs/research/) — standing background dossiers on recurring subjects named in articles
 - [`docs/DECISIONS.md`](docs/DECISIONS.md) — dated decision log for this repo, read before proposing an architectural or workflow change
-- [`CLAUDE.md`](CLAUDE.md) / [`AGENTS.md`](AGENTS.md) — detailed guidance for AI coding agents working in this repo
+- [`AGENTS.md`](AGENTS.md) — detailed guidance for AI coding agents working in this repo
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.
