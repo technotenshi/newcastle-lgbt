@@ -750,3 +750,18 @@ it is flagged in the final report instead of skipping the PR.
 
 `skills-lock.json` listed only `resolving-merge-conflicts`, so it was deleted. The repo no longer tracks any
 pack skill. The removed skill is in git history.
+
+## 2026-10-28 Review follow-ups: safer merge-prs standalone mode, Codex pointers
+
+Decided by the site owner after the review of the agent files PR.
+
+`merge-prs` standalone mode now matches how a rebase works. In a rebase `--ours` and `--theirs` are swapped, so the
+skill says to pick the side by content, and to follow `AGENTS.md` for `yarn.lock` instead of the batch fixup
+(Step 6d is batch only). It stages only the unmerged paths by name instead of everything, and runs lint and build
+after the merge or rebase has finished. Because the skill never aborts, each flagged resolution is also written into
+the merge or rebase commit message body, and the skill forbids `git reset`, `git clean`, and `git restore`.
+
+Deleting `.codex/` left Codex without a reviewer pointer, so `AGENTS.md` now tells tools without subagent support to
+read `.agents/agents/content-reviewer.md` as a checklist. The `generate-images` skill runs `codex exec`, so its prompt
+now tells Codex to write only the image file and never touch `.env`, `.env.*`, or `yarn.lock`. This is text, not an
+enforced block like the old hook.

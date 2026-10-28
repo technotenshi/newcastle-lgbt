@@ -165,7 +165,7 @@ Details (Dependabot and Renovate overlap, `yarn.lock` drift, Copilot review): [`
 ## Skills and subagents
 
 - `.agents/skills/<name>/SKILL.md` is the only home for project skills. `.claude/skills` is a symlink to `.agents/skills`, so there is no second copy to keep in sync. Edit the `.agents` path.
-- `.agents/agents/` holds project subagents; `.claude/agents` is a symlink to it. `content-reviewer` enforces the content conventions above and the advocacy-forward stance (critical conclusions, naming individuals when a source ties them to the claim, drawing on `docs/research/`).
+- `.agents/agents/` holds project subagents; `.claude/agents` is a symlink to it. `content-reviewer` enforces the content conventions above and the advocacy-forward stance (critical conclusions, naming individuals when a source ties them to the claim, drawing on `docs/research/`). Tools without subagent support (Codex and others) should read `.agents/agents/content-reviewer.md` as a review checklist before finishing content work.
 - Skill files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
 - Quote a skill frontmatter `description:` that contains a colon followed by a space; otherwise strict YAML parsers can interpret it as a nested mapping.
 

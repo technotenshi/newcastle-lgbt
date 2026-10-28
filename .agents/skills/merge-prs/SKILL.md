@@ -18,9 +18,10 @@ and validates the result with lint + build.
 
 - **Batch mode** (default): merge the requested PRs into an integration branch. Follow Steps 1 to 9.
 - **Standalone mode**: a merge or rebase is already stopped on conflicts (`git status` shows unmerged
-  paths or a rebase in progress) and no PR numbers were given. Skip to the Conflict Rules below, then run
-  Steps 7 and 8 (lint and build), then finish: stage everything, commit, and continue the rebase until
-  every commit is applied.
+  paths or a rebase in progress) and no PR numbers were given. Skip to the Conflict Rules below. Record the
+  unmerged list first (`git diff --name-only --diff-filter=U`), resolve, stage only those paths by name,
+  commit or `--continue`, and repeat until the merge or rebase is complete. Only then run Steps 7 and 8
+  (lint and build). Never `git add -A` mid-rebase: it sweeps unrelated work into the resolution commit.
 
 ## Conflict Rules
 
@@ -34,8 +35,15 @@ Used by both modes (Step 6c in batch mode).
    note the trade-off. Do not invent new behaviour.
 4. **Flag risk, do not stop.** For every hunk where you chose a side, were unsure, or could not merge
    the content (binary or generated files), record the file, what you chose, and why. These notes go in
-   the final report.
+   the final report and in the body of the merge or rebase commit message, so they survive the session.
 5. Apply the file-type rules in Step 6c (lockfiles, whitespace-only, additive changes).
+6. **In a rebase, ours and theirs are swapped.** `--ours` is the branch being rebased onto and `--theirs`
+   is the commit being replayed. Before using the Step 6c "accept ours" rules, work out which side holds
+   the change you want to keep. For `yarn.lock`, follow `AGENTS.md` (resolve `package.json` first, restore
+   `yarn.lock` from the correct ref with `git checkout <ref> -- yarn.lock`, then run `yarn install`) and
+   skip Step 6d, which is batch mode only.
+7. **Git safety.** `git checkout --ours` and `--theirs` are allowed only on paths in the unmerged list.
+   No `git reset`, `git clean`, or `git restore`.
 
 ---
 
@@ -201,7 +209,7 @@ If a file cannot be merged semantically (binary file, structural corruption): pi
 purpose, stage it, and flag it as a risky resolution per the Conflict Rules. Do not abort. The PR is
 still recorded as merged, with the flag in the report.
 
-### 6d — Apply Bumps Left Stale by "Accept Ours" Lockfile Resolutions
+### 6d — Apply Bumps Left Stale by "Accept Ours" Lockfile Resolutions (batch mode only)
 
 After all PRs are merged, `yarn.lock` will be missing every version bump whose conflict was
 resolved by accepting ours (Step 6c), even though `package.json` shows the new version/range.
@@ -239,7 +247,7 @@ docker compose run --rm app yarn lint 2>&1
   ```bash
   docker compose run --rm app yarn lint --fix 2>&1
   ```
-  If lint-fix resolves all errors (exit 0 on re-run): stage fixed files and amend the last commit or create a fixup commit:
+  If lint-fix resolves all errors (exit 0 on re-run): stage fixed files and amend the last commit or create a fixup commit. In standalone mode, run this only after the merge or rebase has finished, and stage the files lint touched by explicit path instead of `git add -A`:
   ```bash
   git add -A
   git commit -m "chore: lint fixes on integration branch"
