@@ -92,5 +92,5 @@ Add to the event body after the CTA sentence:
 ## Notes for the user
 
 - The `.ics` file path `/events/[slug].ics` assumes the file is saved at `public/events/[slug].ics`
-- The user must save the file — Codex cannot write to `public/` without being asked to
+- The user must save the file — the agent cannot write to `public/` without being asked to
 - Verify the extracted time is correct before distributing the calendar link
