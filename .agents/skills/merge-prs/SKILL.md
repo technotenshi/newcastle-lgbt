@@ -1,6 +1,6 @@
 ---
 name: merge-prs
-description: Merge multiple open pull requests into a single integration branch for batch deployment. Resolves conflicts, runs lint and build checks.
+description: Merge multiple open pull requests into a single integration branch for batch deployment, or resolve an in-progress git merge or rebase conflict. Resolves conflicts (never aborts), runs lint and build checks.
 argument-hint: "[branch-name] [#pr1 #pr2 #pr3 ...]"
 allowed-tools: ["Bash", "Read", "Edit", "Glob", "Grep"]
 ---
@@ -11,6 +11,31 @@ Combine selected open pull requests into one deployment branch. Handles conflict
 and validates the result with lint + build.
 
 **Raw arguments:** "$ARGUMENTS"
+
+---
+
+## Modes
+
+- **Batch mode** (default): merge the requested PRs into an integration branch. Follow Steps 1 to 9.
+- **Standalone mode**: a merge or rebase is already stopped on conflicts (`git status` shows unmerged
+  paths or a rebase in progress) and no PR numbers were given. Skip to the Conflict Rules below, then run
+  Steps 7 and 8 (lint and build), then finish: stage everything, commit, and continue the rebase until
+  every commit is applied.
+
+## Conflict Rules
+
+Used by both modes (Step 6c in batch mode).
+
+1. **See the state.** Check git history and the conflicting files.
+2. **Find the primary sources** for each conflict. Understand why each change was made and what the
+   original intent was: read commit messages, PRs, and the original issues or tickets.
+3. **Resolve every hunk. Never run `git merge --abort` or `git rebase --abort`.** Preserve both intents
+   where possible. Where they are incompatible, pick the side that matches the merge's stated goal and
+   note the trade-off. Do not invent new behaviour.
+4. **Flag risk, do not stop.** For every hunk where you chose a side, were unsure, or could not merge
+   the content (binary or generated files), record the file, what you chose, and why. These notes go in
+   the final report.
+5. Apply the file-type rules in Step 6c (lockfiles, whitespace-only, additive changes).
 
 ---
 
@@ -151,7 +176,7 @@ Identify conflicted files:
 git diff --name-only --diff-filter=U
 ```
 
-For each conflicted file:
+Follow the Conflict Rules above. For each conflicted file:
 
 1. **Read the file** with the Read tool — identify all `<<<<<<`, `=======`, `>>>>>>>` markers.
 2. Attempt **semantic resolution**:
@@ -160,7 +185,7 @@ For each conflicted file:
    - If the file is a lockfile (`yarn.lock`, `package-lock.json`): accept **ours** (`git checkout --ours <file>`) to preserve every bump already merged from earlier PRs in this batch — **but this silently drops the current PR's own version bump**, since "ours" predates it. Note the package name in a running list and apply it for real afterward (see Step 6d) — do not skip this follow-up.
    - If the conflict is in `yarn.lock` or any other auto-generated file: same as above — accept ours, then track the package for the Step 6d fixup.
    - If the changes are in different sections/functions of a Vue/JS/TS/CSS file: merge both sides manually using the Edit tool, preserving the intent of both changes.
-   - If the conflict involves the same line changed differently by both sides: use judgment based on context (check what each PR's stated purpose is) to pick or blend the correct resolution; or if ambiguous, leave a `// CONFLICT: manual review needed` comment and accept current side.
+   - If the conflict involves the same line changed differently by both sides: use judgment based on context (check what each PR's stated purpose is) to pick or blend the correct resolution; or if ambiguous, leave a `// CONFLICT: manual review needed` comment, accept current side, and flag it in the report.
 3. After editing, stage the file:
    ```bash
    git add <file>
@@ -171,11 +196,10 @@ After all conflicted files are resolved:
 git merge --continue -m "Merge PR #<N>: <title> (conflicts resolved)"
 ```
 
-If resolution is not possible (e.g., binary file conflict, structural corruption):
-```bash
-git merge --abort
-```
-Record PR `#N` as ❌ skipped with reason. Delete temp branch. Continue to next PR.
+If a file cannot be merged semantically (binary file, structural corruption): pick a side with
+`git checkout --ours <file>` or `git checkout --theirs <file>`, whichever matches this PR's stated
+purpose, stage it, and flag it as a risky resolution per the Conflict Rules. Do not abort. The PR is
+still recorded as merged, with the flag in the report.
 
 ### 6d — Apply Bumps Left Stale by "Accept Ours" Lockfile Resolutions
 
@@ -250,7 +274,7 @@ Merged PRs:
   ✅ #201  Add holiday event listings
   ✅ #203  Update council page — new members
   ⚠️ #207  Fix hero image (conflicts resolved — 2 files)
-  ❌ #209  Refactor nav (aborted — unresolvable binary conflict)
+  ⚠️ #209  Refactor nav (binary conflict, took theirs; flagged for review)
   ⏭️ #205  skipped (superseded by #207 — same package, lower version)
 
 Quality Checks:
@@ -265,7 +289,7 @@ Conflict notes:
 Next steps:
   Push branch:     git push -u origin <branch-name>
   Open deploy PR:  gh pr create --base main --head <branch-name> --title "Deploy: <branch-name>"
-  Skipped PRs:     Review #209 separately — it needs manual resolution
+  Flagged:         Review #209 and the other flagged resolutions before merging the deploy PR
 ```
 
 If the build or lint **failed**, emphasize that the branch is not deploy-ready and list the

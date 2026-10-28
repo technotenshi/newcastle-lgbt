@@ -171,7 +171,7 @@ Details (Dependabot and Renovate overlap, `yarn.lock` drift, Copilot review): [`
 
 Project-specific skills (each `SKILL.md` describes itself): `new-article`, `content-check`, `fact-check`, `image-prompt`, `generate-images`, `ics-event`, `seo-check`, `backlog`, `merge-prs`. Use `new-article` to scaffold content and `content-check` before publishing.
 
-The generic mattpocock/skills pack (`research`, `code-review`, `tdd`, `diagnosing-bugs`, `grill-me`, and the rest) is not stored in this repo. It comes from the global install at `~/.agents/skills`, which Claude Code and Hermes read through their own symlinks, so a fresh clone or a cloud agent needs that install to get those skills. Use `research` to build the `docs/research/` dossiers. One skill the current pack no longer ships stays here: `resolving-merge-conflicts` (recorded in `skills-lock.json`).
+The generic mattpocock/skills pack (`research`, `code-review`, `tdd`, `diagnosing-bugs`, `grill-me`, and the rest) is not stored in this repo. It comes from the global install at `~/.agents/skills`, which Claude Code and Hermes read through their own symlinks, so a fresh clone or a cloud agent needs that install to get those skills. Use `research` to build the `docs/research/` dossiers.
 
 <!-- skilld -->
 Before modifying code, evaluate each installed skill against the current task.

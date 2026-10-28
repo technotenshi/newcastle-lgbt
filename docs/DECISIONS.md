@@ -735,3 +735,18 @@ Decided by the site owner. The mattpocock/skills pack was reinstalled globally a
 `resolving-merge-conflicts`, the one skill the current pack does not ship.
 
 This supersedes the three-skill exception in the entry above, which stays as accurate history.
+
+## 2026-10-28 One merge skill: resolving-merge-conflicts folded into merge-prs
+
+Decided by the site owner. `resolving-merge-conflicts` (a 14 line generic skill the current pack no longer ships)
+overlapped with the conflict step of `merge-prs` and disagreed with it on aborting. They are now one skill,
+`merge-prs`. It has a batch mode (the existing Renovate and PR workflow) and a standalone mode for a merge or
+rebase that is already stopped on conflicts, and both use the same Conflict Rules: find the intent first, keep
+both sides where possible, run the checks, and finish.
+
+The abort rule changed: the skill never runs `git merge --abort` or `git rebase --abort`. A conflict it cannot
+merge semantically (binary or generated files) is resolved by taking the side that matches the PR's purpose, and
+it is flagged in the final report instead of skipping the PR.
+
+`skills-lock.json` listed only `resolving-merge-conflicts`, so it was deleted. The repo no longer tracks any
+pack skill. The removed skill is in git history.
