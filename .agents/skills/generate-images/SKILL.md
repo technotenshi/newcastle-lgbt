@@ -43,10 +43,11 @@ For each slot, invoke `codex exec` non-interactively with a self-contained promp
 - Requires Codex to use "a native image-generation tool or capability" to produce a **real** file, not a placeholder or text file
 - Gives the exact save path (`assets/images/events/...` or `assets/images/news/...`, matching the filename convention `YYYYMMDD-##-descriptive-name.png`) and exact pixel dimensions (`1024x768` or `1792x1024`)
 - Instructs Codex to say so explicitly, and create nothing, if it has no real way to generate an image
+- Tells Codex to write only the requested image file and never read or edit `.env`, `.env.*`, or `yarn.lock`
 
 Example invocation:
 ```
-codex exec "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all."
+codex exec "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all. Write only that image file and never read or edit .env, .env.*, or yarn.lock."
 ```
 
 When there are multiple slots (or multiple events/articles at once), run each `codex exec` call as a separate background Bash command (`run_in_background: true`) so they generate in parallel, then wait for the task-completion notifications rather than polling.

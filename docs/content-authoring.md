@@ -122,7 +122,7 @@ attacks*. [https://full-url-here.com](https://full-url-here.com)
 - **Sources section:** Required for articles citing external material. See "Citations and Sources (Wikipedia-style footnotes, APA7 entries)" below for the footnote-marker requirement and the reference-entry format.
 - **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation
 - **Dateline:** Open the article body with `:Dateline` (the MDC inline component) followed by the first sentence. Do not write `**Newcastle, WA** –` or `**Newcastle, WA**:` directly — the component renders the standardized format.
-- **Em dashes:** Do not use em dashes (`—`) anywhere in article text or frontmatter. Use a comma, colon, or rephrase the sentence instead. En-dashes (`–`) remain correct for numeric ranges (e.g. time ranges, page ranges).
+- **Em dashes:** Do not use em dashes (`—`) anywhere in article text or frontmatter. Use a comma, colon, or rephrase the sentence instead. En-dashes (`–`) remain correct for numeric ranges (e.g. time ranges, page ranges). The ban includes blockquote attributions: a `> — Attribution` line is also banned, write `> *Attribution Name*` instead.
 
 ---
 
@@ -187,6 +187,21 @@ For articles covering movement history, government policy, discrimination, or co
 
 Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/`, e.g. [`docs/research/lets-go-washington.md`](research/lets-go-washington.md). Whenever an article names a subject that has one of these files, check it and fold in relevant context for a reader who has never heard of them, don't just drop the name in bare. Useful context includes: what the organization/person is, their track record, their funding pattern, and any compliance or legal issues on record, always hedged to match the file's own confidence level (an open investigation is "unresolved," not a finding). If a subject is central enough to an article to warrant this treatment but has no research file yet, consider using the `research` skill to build one before publishing, and keep the file updated as new claims are verified, the way [`docs/research/lets-go-washington.md`](research/lets-go-washington.md) records corrections to its own earlier claims.
 
+### Verifying sources and citation URLs
+
+- **Washington bills and initiatives:** `sos.wa.gov` ballot-initiative PDFs return 403 to automated fetches (`WebFetch`); `lawfilesext.leg.wa.gov` enacted-bill PDFs usually work. Once a PDF is fetched or saved, read its pages directly to see the strikeout and underline markup. That markup is the only reliable way to confirm what an initiative actually changes versus current law, so do not rely on a secondary summary.
+- **`federalregister.gov` blocks bots inconsistently, this is not a dead link:** the site runs aggressive scraping protection and can serve a `unblock.federalregister.gov` reCAPTCHA wall ("Request Access... your request has been flagged as potentially automated") to `WebFetch`, `curl`, and even a real Playwright browser session, sometimes on one request and not the next from the same source. A `200` with the document's real title and text on one attempt is enough to confirm the citation is correct. Do not treat a later CAPTCHA redirect (yours or the reader's) as evidence the URL is broken. If a reader reports a Federal Register link "doesn't work", suspect this wall first and verify the underlying document with a plain fetch before concluding the citation is wrong.
+- **Checking that a source link resolves:** the `playwright-cli` shell command (a real Chromium browser, not a plain HTTP fetch) is the most reliable check, because `curl` and `WebFetch` can get different results from a bot-defensive site than a real browser does (see the `federalregister.gov` note above). For sites without JS bot walls, NCBI's E-utilities API is a fast way to confirm a PubMed or PMC citation's real title and authors when the HTML page itself is behind a cookie wall: `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=<PMID>&retmode=json` (same pattern with `db=pmc`).
+
+---
+
+## Display order and special cases
+
+- **News** sort by date descending, then by `order`.
+- **Events** sort by date ascending, then by `order` **descending** within the same date: the highest `order` displays first. Use this to group related same-day events, for example a festival and its sub-event.
+- **Council members** are ordered by the `position-N` prefix in the filename.
+- **Council portraits** are real official photos sourced from `newcastlewa.gov`, not AI-generated (unlike news and event images).
+
 ---
 
 ## Events (`content/events/`)
@@ -248,6 +263,9 @@ To attend or for more information, [contact method matching the link.target fiel
 - **No sources section** for events
 - **Event length:** 2–4 short sentences total. State what the event is, date/time, location, cost, and how to register or get more info. Do not include bullet lists, sub-sections, or extended descriptions; keep it scannable.
 - **Em dashes:** Do not use em dashes (`—`). Use a comma or rephrase instead. En-dashes (`–`) are correct for numeric ranges.
+- **No registration or ticketing URL:** link to the primary organizer's website with `link.text: "More Information"`.
+- **CTA position:** the `link` button always renders after the body text (`pages/events/index.vue`), so event body copy should say "link below", never "link above".
+- **Photo credit:** the optional `image.credit` field (events only) renders as a small "Photo: {name}" line under the image (`composables/useEvents.ts`, `pages/events/index.vue`). Use a name only, never phone numbers or contact info.
 
 ---
 

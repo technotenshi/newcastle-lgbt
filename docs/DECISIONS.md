@@ -686,3 +686,82 @@ and "funded almost entirely by Let's Go Washington".
 Decided by the site owner. Leave `draft` out of new articles. Use `draft: true` only when the owner says an article
 is not meant to be published soon, or when a published article must be recalled. Reason: a draft is hidden from every
 listing and from the build, so the owner cannot review the rendered page. `docs/content-authoring.md` now says so.
+
+## 2026-10-28 AGENTS.md and .agents are the canonical agent files
+
+Decided by the site owner. `AGENTS.md` is the only agent instruction file, and `.agents/` holds the only copy of the
+project skills and subagents. Claude Code reads `AGENTS.md` natively when no `CLAUDE.md` exists in or above the working
+directory (confirmed in the Claude Code memory docs and against v2.1.309), so `CLAUDE.md` was merged into `AGENTS.md`
+and deleted. Do not add a `CLAUDE.md` back: it would hide `AGENTS.md` from Claude Code.
+
+What changed: the `CLAUDE.md` only rules moved into `AGENTS.md`, `docs/tooling-notes.md` (new),
+`docs/content-authoring.md`, and `docs/image-generation-guide.md`, which keeps `AGENTS.md` near 200 lines.
+`.claude/skills` and `.claude/agents` are now single directory symlinks to `.agents/skills` and `.agents/agents`.
+`skilld-lock.yaml` moved next to the skills. `.codex/` was deleted, including its `content-reviewer` copy, which lacked
+the editorial stance section and checks 5 and 11 that the `.claude` copy had; the `.claude` copy became the canonical
+`.agents/agents/content-reviewer.md`.
+
+Reason: the same skills, the reviewer, and the instructions existed in two or three hand synced places and had drifted
+(the `ics-event` skill named the wrong tool, and the Codex reviewer had fallen behind).
+
+Consequences: hooks stay in `.claude/settings.json` and run only in Claude Code. With `.codex/hooks.json` gone, other
+tools no longer get the hard block on editing `.env`, `.env.*`, and `yarn.lock`; `AGENTS.md` still forbids it as text.
+Git on some Windows checkouts turns symlinks into plain files. The site build and Cloudflare Pages do not read `.claude`,
+so the deployed site is unaffected. Earlier entries in this log that mention `CLAUDE.md`, `.codex`, or mirrored skill
+copies stay as accurate history.
+
+## 2026-10-28 Pack skills come from the global install, not this repo
+
+Decided by the site owner. Where a skill exists both in `.agents/skills` here and in the global `~/.agents/skills`
+(which `~/.claude/skills` and `~/.hermes/skills` link to), the global copy wins and the repo copy is removed.
+34 copies of the mattpocock/skills pack were removed. They had been installed by `npx skills` in this repo and again
+globally; 16 were identical and 18 had drifted, with the global copy always the newer pack. The 10 project skills stay,
+and so do three pack skills the current pack no longer ships (`implement-spec`, `resolving-merge-conflicts`, `retro`).
+`skills-lock.json` now lists only those three.
+
+The newer pack renamed the domain file from `CONTEXT.md` to `GLOSSARY.md` (and `CONTEXT-MAP.md` to
+`GLOSSARY-MAP.md`), so `docs/agents/domain.md` and `AGENTS.md` follow it. Neither file exists in this repo yet. The
+other `docs/agents/` files were generated from older setup templates and may be slightly stale; regenerating them is
+a separate task.
+
+Consequence: a fresh clone, CI, or a cloud agent without the global install does not get the pack skills. The removed
+copies are in git history (822a8bc and earlier).
+
+## 2026-10-28 Drop the repo copies of implement-spec and retro
+
+Decided by the site owner. The mattpocock/skills pack was reinstalled globally and now ships `implement-spec` and
+`retro` again, so the repo copies duplicated the global ones. The repo copies were the older pack versions from the
+2026-08-28 install and had no local edits, so they were removed. `skills-lock.json` now lists only
+`resolving-merge-conflicts`, the one skill the current pack does not ship.
+
+This supersedes the three-skill exception in the entry above, which stays as accurate history.
+
+## 2026-10-28 One merge skill: resolving-merge-conflicts folded into merge-prs
+
+Decided by the site owner. `resolving-merge-conflicts` (a 14 line generic skill the current pack no longer ships)
+overlapped with the conflict step of `merge-prs` and disagreed with it on aborting. They are now one skill,
+`merge-prs`. It has a batch mode (the existing Renovate and PR workflow) and a standalone mode for a merge or
+rebase that is already stopped on conflicts, and both use the same Conflict Rules: find the intent first, keep
+both sides where possible, run the checks, and finish.
+
+The abort rule changed: the skill never runs `git merge --abort` or `git rebase --abort`. A conflict it cannot
+merge semantically (binary or generated files) is resolved by taking the side that matches the PR's purpose, and
+it is flagged in the final report instead of skipping the PR.
+
+`skills-lock.json` listed only `resolving-merge-conflicts`, so it was deleted. The repo no longer tracks any
+pack skill. The removed skill is in git history.
+
+## 2026-10-28 Review follow-ups: safer merge-prs standalone mode, Codex pointers
+
+Decided by the site owner after the review of the agent files PR.
+
+`merge-prs` standalone mode now matches how a rebase works. In a rebase `--ours` and `--theirs` are swapped, so the
+skill says to pick the side by content, and to follow `AGENTS.md` for `yarn.lock` instead of the batch fixup
+(Step 6d is batch only). It stages only the unmerged paths by name instead of everything, and runs lint and build
+after the merge or rebase has finished. Because the skill never aborts, each flagged resolution is also written into
+the merge or rebase commit message body, and the skill forbids `git reset`, `git clean`, and `git restore`.
+
+Deleting `.codex/` left Codex without a reviewer pointer, so `AGENTS.md` now tells tools without subagent support to
+read `.agents/agents/content-reviewer.md` as a checklist. The `generate-images` skill runs `codex exec`, so its prompt
+now tells Codex to write only the image file and never touch `.env`, `.env.*`, or `yarn.lock`. This is text, not an
+enforced block like the old hook.
