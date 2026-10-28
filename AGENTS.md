@@ -1,6 +1,8 @@
-# Guidelines for Codex Agents
+# Agent Guidelines
 
 This project is a Nuxt 4 static site for the Newcastle, Washington LGBTQ+ community. The site is built with Vue 3, Yarn 4, and Nuxt Content. Most editorial work happens in `content/`, while most product work happens in `pages/`, `components/`, `composables/`, and `nuxt.config.ts`.
+
+This file is the single source of agent instructions for every tool (Claude Code, Codex, others). Do not add a `CLAUDE.md`: Claude Code reads `AGENTS.md` only when no `CLAUDE.md` exists in the working directory or above it. Skills and subagents live under `.agents/` (see [Skills and subagents](#skills-and-subagents)).
 
 ## Commands
 
@@ -24,11 +26,11 @@ The project runs in Docker via `make`. Prefer `make` targets over raw `yarn` com
 
 After making changes: run `make lint`, then `make build`.
 
-Non-TTY caveat: most `make` targets use `docker compose run -it`, which fails in CI or other non-interactive shells. In those cases, run the underlying command directly, for example `docker compose run --rm app yarn build`.
+Non-TTY caveat: most `make` targets use `docker compose run -it`, which fails in CI or other non-interactive shells. In those cases, run the underlying command directly, for example `docker compose run --rm app yarn build`. Other quirks (silent foreground stall, the harmless `NUXT_B2005` dev warning): [`docs/tooling-notes.md`](docs/tooling-notes.md#docker-and-make-quirks).
 
 **Dependency bumps touching `@nuxt/image`, IPX, or the static/prerender pipeline require verification with a real static build (`make build`/`make prod`, not `make develop`).** The dev server (`nuxt dev`) never exercises Nitro's prerender crawler, so image-generation regressions in the static output are invisible in dev and only surface after deploy. Verify by checking `.output/public/_ipx` is non-empty and serving it statically (`npx serve .output/public`) to confirm `/_ipx/...` URLs return 200, matching how Cloudflare Pages actually serves the site.
 
-**Never delete `yarn.lock`** to resolve a merge/rebase conflict or "start fresh" — deleting it removes yarn's pinned-resolution guardrail and lets it silently re-resolve any package to the newest version satisfying its `package.json` range, which can reintroduce an already-reverted broken version. To reconcile `yarn.lock` across branches: resolve `package.json` first, restore `yarn.lock` from the correct base ref with `git checkout <ref> -- yarn.lock`, then run `yarn install` to layer in only the new changes.
+**Never delete `yarn.lock`** to resolve a merge/rebase conflict or "start fresh". Deleting it removes yarn's pinned-resolution guardrail and lets it silently re-resolve any package to the newest version satisfying its `package.json` range, which can reintroduce an already-reverted broken version. To reconcile `yarn.lock` across branches: resolve `package.json` first, restore `yarn.lock` from the correct base ref with `git checkout <ref> -- yarn.lock`, then run `yarn install` to layer in only the new changes.
 
 ## Architecture
 
@@ -52,65 +54,37 @@ Composables filter by path prefixes such as `/news/%`, `/events/%`, and `/counci
 
 ## Project structure
 
-```text
-pages/                    # File-based routing; news uses /news/[year]/[month]/[day]/[slug].vue
-components/               # Shared Vue components and MDC prose overrides
-components/content/       # ProseA, Dateline, and other MDC renderer overrides
-composables/              # Data layer: useNews, useEvents, useCouncil, useFeatures, useAsset; useSocialImage (OG image URL + prerender registration)
-scripts/                  # Build-output checks: verify-social-images.mjs (run in CI after the build)
-layouts/                  # default.vue global shell
-plugins/
-  bootstrap.client.ts     # Imports Bootstrap collapse + carousel only
-server/
-  routes/
-    feed.xml.ts           # RSS 2.0 feed prerendered to /feed.xml
-content.config.ts         # Single Nuxt Content collection definition
-utils/
-  content.ts              # normaliseString, normaliseNumber, normaliseBody, parseMeta, toPlainText
-  assets.ts               # normalizeAssetPath helper for NuxtImg/IPX
-content/
-  news/                   # Markdown news articles
-  events/                 # Markdown event listings
-  council/                # Council member profiles; filename prefix controls order
-  features.json           # Homepage feature cards
-assets/                   # Bootstrap, Mobirise theme, and local images
-public/                   # Static passthrough files such as _headers
-```
-
-Special case: `pages/organizations/index.vue` is hardcoded in the component and does not read from `content/`.
+- `pages/`: file-based routing; news uses `/news/[year]/[month]/[day]/[slug].vue`. `pages/organizations/index.vue` is hardcoded in the component and does not read from `content/`
+- `components/` (shared Vue components) and `components/content/` (MDC prose renderer overrides such as `ProseA`, `Dateline`)
+- `composables/`: data layer (`useNews`, `useEvents`, `useCouncil`, `useFeatures`, `useAsset`) plus `useSocialImage` (OG image URL and prerender registration)
+- `utils/content.ts` (`normaliseString`, `normaliseNumber`, `normaliseBody`, `parseMeta`, `toPlainText`) and `utils/assets.ts` (`normalizeAssetPath` for NuxtImg/IPX)
+- `layouts/default.vue` (global header, nav, footer), `plugins/bootstrap.client.ts` (Bootstrap collapse and carousel only), `server/routes/feed.xml.ts` (RSS feed prerendered to `/feed.xml`)
+- `content/`: `news/`, `events/`, `council/` (filename prefix controls order), `features.json` (homepage cards); `content.config.ts` defines the single collection
+- `scripts/` (build-output checks), `assets/` (Bootstrap, Mobirise theme, local images), `public/` (static passthrough such as `_headers`), `docs/` (guides, decision log, research dossiers, maintenance playbooks)
 
 ## Content conventions
 
 - News routes are date-based: `/news/YYYY/MM/DD/slug`
 - News articles support `draft: true` and future-dated entries; published listings exclude drafts and dates later than the current Pacific date
-- Events are sorted ascending by date and exclude past events by default
-- Council member filenames must start with `position-N-` to control display order
+- Sorting: news by date descending, then `order`; events by date ascending (past events excluded by default), then `order` **descending** within a date; council members by the `position-N-` filename prefix, which every council filename must start with. Council portraits are real official photos from `newcastlewa.gov`, not AI-generated
 - Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, and `FeatureItem`
 - Use [`docs/content-authoring.md`](docs/content-authoring.md) for filename format, frontmatter fields, body structure, and authoring workflow
 - Use [`docs/image-generation-guide.md`](docs/image-generation-guide.md) alongside the authoring guide whenever generating raster assets
+- No em dashes (`—`) in content, including blockquote attributions: write `> *Attribution Name*`, not `> — Attribution Name`. En dashes are correct for numeric ranges
+- `imageHeader.alt` is not an image description: it is a one-line engagement teaser shown as a caption under the header image
+- Events: with no registration or ticketing URL, link the organizer's site with `link.text: "More Information"`; the `link` button renders after the body, so write "link below", never "link above"; optional `image.credit` shows "Photo: {name}" (name only, no contact info)
 - This is an activism site, not neutral journalism: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them must reach a critical, evidence-backed conclusion rather than a neutral "both sides" summary, and must fact-check claims from supporters and opponents alike. The site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it, rather than retreating to the institution's name alone. Follow [`docs/editorial-checklist.md`](docs/editorial-checklist.md) for any article on sensitive historical/political LGBTQ+ topics (movement history, government policy, discrimination, corporate accountability)
 - Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. `docs/research/lets-go-washington.md`). When an article names a subject with one of these files, pull relevant context from it so unfamiliar readers get real background, not just a bare name. See `docs/content-authoring.md` for the full convention
-- When covering a Washington bill or initiative, verify its primary text rather than relying on a secondary summary. Ballot-initiative PDFs on `sos.wa.gov` may reject automated retrieval, while enacted-bill PDFs on `lawfilesext.leg.wa.gov` are usually accessible. Inspect the retrieved PDF's visual strikeout/underline markup to determine exactly what changes from current law.
-- Cite sources Wikipedia-style: a `[^N]` footnote marker after each specific factual claim at first mention, numbered by order of appearance (not alphabetical), reused for a source cited again later, never a hyperlink wrapped around the claim text itself. The closing `## Sources` section is `[^N]: ...` footnote definitions in that same numeric order, each formatted as a full APA 7th-edition reference (author/org, date, italicized title, bare `[URL](URL)`). This renders natively through this site's `remark-gfm` markdown pipeline as numbered superscripts with automatic back-links, no custom component needed. Full rules and a worked example: [`docs/content-authoring.md`](docs/content-authoring.md#citations-and-sources-wikipedia-style-footnotes-apa7-entries).
-- `federalregister.gov` runs aggressive, inconsistent bot detection and can serve a `unblock.federalregister.gov` reCAPTCHA wall to automated fetches (or even a real browser session) on some requests and not others from the same source. A single successful fetch showing the document's real title and text is enough to confirm a citation is correct; don't treat a later CAPTCHA redirect as proof the link is broken.
+- When covering a Washington bill or initiative, verify its primary text rather than relying on a secondary summary, and inspect the PDF's strikeout/underline markup to see exactly what changes from current law. Retrieval quirks (`sos.wa.gov`, `federalregister.gov` CAPTCHA wall, checking that a link resolves): [`docs/content-authoring.md`](docs/content-authoring.md#verifying-sources-and-citation-urls)
+- Cite sources Wikipedia-style: a `[^N]` footnote marker after each specific factual claim at first mention, numbered by order of appearance (not alphabetical), reused for a source cited again later, never a hyperlink wrapped around the claim text itself. The closing `## Sources` section is `[^N]: ...` footnote definitions in that same numeric order, each formatted as a full APA 7th-edition reference (author/org, date, italicized title, bare `[URL](URL)`). This renders natively through this site's `remark-gfm` markdown pipeline as numbered superscripts with automatic back-links, no custom component needed. Full rules and a worked example: [`docs/content-authoring.md`](docs/content-authoring.md#citations-and-sources-wikipedia-style-footnotes-apa7-entries)
 
 ## Image generation workflow
 
-- Follow both [`docs/content-authoring.md`](docs/content-authoring.md) and [`docs/image-generation-guide.md`](docs/image-generation-guide.md) before writing prompts or saving generated assets
-- **Actual generation is delegated to the local Codex CLI** via `codex exec`, invoking its native image-generation tool, not a bespoke Python script. See `.agents/skills/generate-images/SKILL.md` for the exact invocation pattern, verification steps (dimension check + visual review against the rules below), and per-slot fallback to manual DALL-E/Midjourney prompts if generation fails twice. There is no repo-local `.venv` and no `OPENAI_API_KEY` requirement for this path, that describes an older workflow this repo no longer uses.
-- Generate news and event art as `.png` files in `assets/images/news/` or `assets/images/events/` using the `YYYYMMDD-##-descriptive-name.png` naming convention
-- Write alt text that describes what is actually visible in the image, not just the article topic; target 50 to 250 characters
-- Do not generate text or logos into AI images. If an event graphic needs typography, add it later in a design tool
-- Do not rely on AI to render Pride or transgender flags accurately. Use palette descriptions instead, or source a real photo when exact flag imagery matters
-- Racial diversity must be explicit in every prompt: "racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented", not just "diverse". Include a subtle LGBTQ+ motif (pride pin, wristband, palette accent) in every image, and avoid stereotypes or named real people
-- Never write "overcast"/"cloudy"/"grey skies"/"diffused light" into a prompt; use golden-hour, bright midday, warm morning, or warm indoor lighting instead
-- When the user attaches a reference image, treat it as style, composition, or background guidance unless they explicitly ask for a true edit
-- If a reference image includes signage, logos, branded UI, or readable text, borrow only its visual characteristics and explicitly exclude readable text and logos in the prompt
-- Match the visual style to the content: documentary-style photorealistic images for civic/news coverage, graphic-design or poster-style images for social events
-- If a news article uses both `image` and `imageHeader`, keep them on the same story but make them clearly different in scene, subject, vantage point, or narrative angle
-- Match slot ratios and exact pixel sizes: `16:9` / `1792x1024` for news feature images, news headers, and carousels; `4:3` / `1024x768` for event images (via `gpt-image-1`/`gpt-image-2`, DALL-E 3 has no true 4:3 fixed size)
-- For phone, tablet, or computer scenes, explicitly prohibit readable screen text and branded UI in the prompt
-- When editing an existing generated image, restate invariants aggressively, for example `change only the background` or `keep the foreground people and activity unchanged`
+Full agent rules: [`docs/image-generation-guide.md`](docs/image-generation-guide.md#agent-workflow-and-non-negotiables), alongside [`docs/content-authoring.md`](docs/content-authoring.md). Read both before writing prompts or saving generated assets.
+
+- **Generation is delegated to the local Codex CLI** via `codex exec` (native image tool, no Python script, no `OPENAI_API_KEY`). Invocation, verification, and fallback: `.agents/skills/generate-images/SKILL.md`
+- Save `.png` files as `assets/images/news/` or `assets/images/events/` `YYYYMMDD-##-descriptive-name.png`; sizes are `16:9` / `1792x1024` for news and `4:3` / `1024x768` for events
+- Alt text describes what is visible, 50 to 250 characters. No text, logos, or flag artwork in AI images. Every prompt names racial diversity explicitly and includes a subtle LGBTQ+ motif. Never write overcast/cloudy lighting
 
 ## Coding style
 
@@ -129,27 +103,19 @@ Special case: `pages/organizations/index.vue` is hardcoded in the component and 
 - `plugins/bootstrap.client.ts` imports only `bootstrap/js/dist/collapse.js` and `bootstrap/js/dist/carousel.js`
 - If you add another Bootstrap JS feature, import it in `plugins/bootstrap.client.ts` and add it to `vite.optimizeDeps.include` in `nuxt.config.ts`
 - PurgeCSS runs in production builds. Any class names generated dynamically may need to be added to the safelist in `nuxt.config.ts`
-
-## Prose component overrides
-
-Custom MDC prose components in `components/content/` override the default `@nuxtjs/mdc` renderers for all `<ContentRenderer>` output.
-
-Examples:
-- `components/content/ProseA.vue` overrides link rendering site-wide
-- `components/content/Dateline.vue` powers the `:Dateline` inline component used at the start of news article bodies
+- Custom MDC prose components in `components/content/` override the default `@nuxtjs/mdc` renderers for all `<ContentRenderer>` output (`ProseA.vue` for links, `Dateline.vue` for the `:Dateline` component that opens news article bodies)
 
 ## Modules and integrations
 
+Full notes for every module: [`docs/tooling-notes.md`](docs/tooling-notes.md#modules-and-integrations). The rules that change how you write code:
+
 - `@nuxt/content` stores content in a SQLite-backed data layer queried with `queryCollection("content")`
 - `@nuxt/image` serves local `assets/` images through IPX; use `<NuxtImg>` for local assets
-- `@nuxtjs/sitemap` generates `/sitemap.xml` from prerendered routes and reads `site.url` from `nuxt.config.ts`
 - `@nuxtjs/robots` generates `robots.txt` at build time; do not add `public/robots.txt`
 - `nuxt-og-image` is disabled with `ogImage: { enabled: false }`; OG images are set manually with `useSeoMeta`
 - `nuxt-schema-org` requires wrapping helpers inside `useSchemaOrg([...])`
-- `nuxt-link-checker` runs during development and warnings should be treated as errors
-- `nuxt-seo-utils` auto-generates canonical and social metadata from `useSeoMeta({ title, description })`
-- `seo.fallbackTitle` is disabled in `nuxt.config.ts` to avoid a `nuxt-seo-utils` fallback-title bug
-- Simple Analytics is injected in `nuxt.config.ts`
+- `nuxt-link-checker` runs during development and warnings should be treated as errors (no trailing slashes on internal links, no absolute `https://newcastle.lgbt/...` URLs)
+- `nuxt-seo-utils` auto-generates canonical and social metadata and appends ` | Newcastle LGBTQ Voice` to every `<title>`, so page titles use the short form only (`'News'`)
 - `server/routes/feed.xml.ts` generates the RSS feed at `/feed.xml`; in server routes, import `queryCollection` from `@nuxt/content/server`
 
 ## SEO conventions
@@ -173,15 +139,7 @@ useSeoMeta({
 
 `useSocialImage` (`composables/useSocialImage.ts`) returns the absolute URL and registers the same local IPX path with `prerenderRoutes`. Nitro's crawler only follows `href` attributes, so a hand-built URL in `<meta content>` never gets generated and 404s in the static output. After a full build, run `node scripts/verify-social-images.mjs` (CI does this); it fails when any referenced local social image is missing, not an image, or not 1200x630.
 
-Schema.org pattern:
-
-```js
-import { defineOrganization, useSchemaOrg } from "#imports";
-
-useSchemaOrg([
-  defineOrganization({ name: "...", url: "..." }),
-]);
-```
+Schema.org: wrap factory helpers in `useSchemaOrg([defineOrganization({ name: "...", url: "..." })])` (import both from `#imports`).
 
 Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description`, or `<link rel="canonical">`.
 
@@ -190,6 +148,8 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 `tsconfig.json` extends `.nuxt/tsconfig.json`, which is generated during `make develop` or `make build`. Run one of those commands before relying on IDE type support in a fresh checkout.
 
 ## CI/CD
+
+Details (Dependabot and Renovate overlap, `yarn.lock` drift, Copilot review): [`docs/tooling-notes.md`](docs/tooling-notes.md#cicd).
 
 - `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable`, `yarn lint`, `yarn build`, and `node scripts/verify-social-images.mjs` on pushes and pull requests to `main`
 - `.github/workflows/dependency-audit.yml` runs `scripts/audit-gate.mjs` (a recursive Yarn audit) on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate files. It fails on critical or high findings without an entry in [`docs/maintenance/audit-exceptions.md`](docs/maintenance/audit-exceptions.md) and on entries past their review date. Its unit tests run with `node --test scripts/audit-gate.test.mjs`
@@ -200,40 +160,37 @@ Do not add manually: `og:title`, `og:description`, `og:url`, `twitter:title`, `t
 ## Commit messages
 
 - Write clear, concise commit messages describing what changed and why
+- A Husky `pre-commit` hook blocks any commit while `HEAD` is `main`; work on a feature branch
 
-## Skills
+## Skills and subagents
 
-- Project skill files are mirrored in `.claude/skills/<name>/SKILL.md` (Claude Code) and `.agents/skills/<name>/SKILL.md` (Codex). When changing one, update the other and confirm they match with `diff`.
-- Those files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
+- `.agents/skills/<name>/SKILL.md` is the only home for project skills. `.claude/skills` is a symlink to `.agents/skills`, so there is no second copy to keep in sync. Edit the `.agents` path.
+- `.agents/agents/` holds project subagents; `.claude/agents` is a symlink to it. `content-reviewer` enforces the content conventions above and the advocacy-forward stance (critical conclusions, naming individuals when a source ties them to the claim, drawing on `docs/research/`).
+- Skill files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
 - Quote a skill frontmatter `description:` that contains a colon followed by a space; otherwise strict YAML parsers can interpret it as a nested mapping.
 
-Project-specific skills relevant to this repo (both a Claude Code slash command and an `.agents/skills/<name>/SKILL.md` file Codex can read directly):
-
-| Skill | What it does |
-|---|---|
-| `new-article` | Scaffold a news article or event: correct filename (`YYYYMMDD-##-slug.md`), frontmatter, body structure, date-past warning for events; invokes `generate-images` afterward |
-| `content-check` | Pre-publish validator: em dashes, absolute internal URLs, missing frontmatter fields, lingering `draft: true`, image alt text rules, citation/footnote formatting |
-| `image-prompt` | Generate DALL-E 3 + Midjourney v7 prompts for all image slots per `docs/image-generation-guide.md` rules |
-| `generate-images` | Delegate actual image file generation to the local Codex CLI (`codex exec`) for every image slot |
-| `ics-event` | Generate an iCal file and Google Calendar URL from an event's frontmatter and body |
-| `seo-check` | Audit a page's `useSeoMeta`, OG image IPX pattern, Schema.org, and the no-manual-tags rule |
-| `backlog` | Read `docs/improvement-tasks.md` and `docs/lighthouse/audit-results.md` and recommend the highest-impact, lowest-effort open items |
-| `merge-prs` | Merge multiple open PRs into one integration branch, resolving conflicts and running lint and build |
-| `research` | Investigate a subject against primary sources and save findings to `docs/research/` |
+Project-specific skills (each `SKILL.md` describes itself): `new-article`, `content-check`, `fact-check`, `image-prompt`, `generate-images`, `ics-event`, `seo-check`, `backlog`, `merge-prs`, `research`. Use `new-article` to scaffold content and `content-check` before publishing.
 
 Several other generic third-party skills (the mattpocock/skills pack, `code-review`, `tdd`, `resolving-merge-conflicts`, `diagnosing-bugs`, etc.) are also installed but are not project-specific, they apply generically across repos.
 
-## Cross-tool agent conventions
+<!-- skilld -->
+Before modifying code, evaluate each installed skill against the current task.
+For each skill, determine YES/NO relevance and invoke all YES skills before proceeding.
+<!-- /skilld -->
 
-Conventions shared with Claude Code (see `CLAUDE.md`) that apply the same way here:
+## Cross-tool agent conventions
 
 - **Issue tracker:** GitHub Issues via the `gh` CLI. See [`docs/agents/issue-tracker.md`](docs/agents/issue-tracker.md).
 - **Triage labels:** the default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), no repo-specific renames. See [`docs/agents/triage-labels.md`](docs/agents/triage-labels.md).
 - **Domain docs:** single-context repo, one `CONTEXT.md` plus `docs/adr/` at the root once created; neither exists yet, `docs/DECISIONS.md` is the decision log in the meantime. See [`docs/agents/domain.md`](docs/agents/domain.md).
 
-## Claude Code hooks (context, not enforced for Codex)
+## Hooks (Claude Code only)
 
-Claude Code sessions in this repo run automatic hooks configured in `.claude/settings.json`, including a hard block (not just a warning) on any edit to `.env`, `.env.*`, or `yarn.lock`, plus lint-on-save and content-convention reminders (em dashes, absolute internal URLs, editorial-checklist phrases). Codex has no equivalent enforcement mechanism, so apply the same underlying rules manually: never edit `.env`/`yarn.lock` directly, run lint after edits, and self-check content against `docs/content-authoring.md` and `docs/editorial-checklist.md` before finishing.
+Claude Code runs automatic hooks from `.claude/settings.json`: a hard block (not just a warning) on any edit to `.env`, `.env.*`, or `yarn.lock`, plus lint-on-save and content-convention reminders (em dashes, absolute internal URLs, editorial-checklist phrases); full list in [`docs/tooling-notes.md`](docs/tooling-notes.md#claude-code-hooks). Other tools have no equivalent enforcement, so apply the same rules manually: never edit `.env`/`yarn.lock` directly, run lint after edits, and self-check content against `docs/content-authoring.md` and `docs/editorial-checklist.md` before finishing.
+
+## Reference docs
+
+[`docs/tooling-notes.md`](docs/tooling-notes.md) (Docker quirks, module notes, CI details, hooks), [`docs/improvement-tasks.md`](docs/improvement-tasks.md) (open backlog, prioritize with `backlog`), [`docs/lighthouse/`](docs/lighthouse/) (audit data; `audit-results.md` is the summary).
 
 ## Cross-tool working agreements (added 2026-08-05)
 

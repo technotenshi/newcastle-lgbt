@@ -54,7 +54,7 @@ The article may be supplied as:
 
 ## Repo-specific verification tools
 
-When auditing a `content/news/*.md` article in this repo, use the tools already established here (see root `CLAUDE.md`) rather than defaulting to a plain fetch:
+When auditing a `content/news/*.md` article in this repo, use the tools already established here (see `docs/content-authoring.md#verifying-sources-and-citation-urls`) rather than defaulting to a plain fetch:
 
 * **`playwright-cli`** (real Chromium browser) — the most reliable way to confirm a source link resolves. `curl`/`WebFetch` and a real browser can return different results from the same bot-defensive site.
 * **`federalregister.gov`** — blocks bots inconsistently (reCAPTCHA wall to `WebFetch`, `curl`, and sometimes even Playwright). A single 200 with the correct title/text is sufficient confirmation; don't treat a later CAPTCHA redirect as proof the citation is broken.

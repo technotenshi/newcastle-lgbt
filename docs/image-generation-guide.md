@@ -187,3 +187,23 @@ Use specific lighting terms in both tools — lighting determines the emotional 
 | Photorealistic faces and anatomy | Midjourney v7 (40% fewer anatomical errors vs v6) |
 | Graphic design / promotional poster | Either |
 | Privacy — images must not be public | DALL-E 3 (private by default) |
+
+## Agent workflow and non-negotiables
+
+These are the rules agents follow when generating or saving raster assets for this repo. `AGENTS.md` links here.
+
+- Follow both [`docs/content-authoring.md`](content-authoring.md) and this guide before writing prompts or saving generated assets
+- **Actual generation is delegated to the local Codex CLI** via `codex exec`, invoking its native image-generation tool, not a bespoke Python script. See `.agents/skills/generate-images/SKILL.md` for the exact invocation pattern, verification steps (dimension check + visual review against the rules below), and per-slot fallback to manual DALL-E/Midjourney prompts if generation fails twice. There is no repo-local `.venv` and no `OPENAI_API_KEY` requirement for this path, that describes an older workflow this repo no longer uses.
+- Generate news and event art as `.png` files in `assets/images/news/` or `assets/images/events/` using the `YYYYMMDD-##-descriptive-name.png` naming convention
+- Write alt text that describes what is actually visible in the image, not just the article topic; target 50 to 250 characters
+- Do not generate text or logos into AI images. If an event graphic needs typography, add it later in a design tool
+- Do not rely on AI to render Pride or transgender flags accurately. Use palette descriptions instead, or source a real photo when exact flag imagery matters
+- Racial diversity must be explicit in every prompt: "racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented", not just "diverse". Include a subtle LGBTQ+ motif (pride pin, wristband, palette accent) in every image, and avoid stereotypes or named real people
+- Never write "overcast"/"cloudy"/"grey skies"/"diffused light" into a prompt; use golden-hour, bright midday, warm morning, or warm indoor lighting instead
+- When the user attaches a reference image, treat it as style, composition, or background guidance unless they explicitly ask for a true edit
+- If a reference image includes signage, logos, branded UI, or readable text, borrow only its visual characteristics and explicitly exclude readable text and logos in the prompt
+- Match the visual style to the content: documentary-style photorealistic images for civic/news coverage, graphic-design or poster-style images for social events
+- If a news article uses both `image` and `imageHeader`, keep them on the same story but make them clearly different in scene, subject, vantage point, or narrative angle
+- Match slot ratios and exact pixel sizes: `16:9` / `1792x1024` for news feature images, news headers, and carousels; `4:3` / `1024x768` for event images (via `gpt-image-1`/`gpt-image-2`, DALL-E 3 has no true 4:3 fixed size)
+- For phone, tablet, or computer scenes, explicitly prohibit readable screen text and branded UI in the prompt
+- When editing an existing generated image, restate invariants aggressively, for example `change only the background` or `keep the foreground people and activity unchanged`
