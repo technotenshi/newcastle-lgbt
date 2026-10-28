@@ -17,7 +17,7 @@ command -v codex && codex login status
 
 1. **Read the content file** — extract topic, date, location, key visual elements, emotional tone, same as `/image-prompt`.
 2. **Check for attached reference images** — if the user attached a flyer, photo, or reference image, study its visual style, color palette, composition, and mood, and describe what you observed before writing prompts. Per `docs/content-authoring.md`, never reference the attached image directly as an asset — it's style reference only.
-3. **Identify image slots** from frontmatter: `image` (always), `imageHeader` (news only), `carousel` (news only, multiple).
+3. **Identify image slots** from frontmatter: `image` (always), `imageHeader` (news, required), `carousel` (news only, multiple).
 4. **Determine style and aspect ratio per slot**, same rules as `/image-prompt`:
    - Civic/political/outdoor/commemorative → photorealistic documentary; social events/parties/workshops → graphic-design/poster
    - `image` (news), `imageHeader`, `carousel` → 16:9, exactly `1792x1024`

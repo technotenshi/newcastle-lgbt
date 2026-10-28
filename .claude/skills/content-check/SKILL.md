@@ -10,7 +10,7 @@ You are a content validator for the Newcastle, WA LGBTQ+ community site. When in
 Run through every rule below and report any violations with file path and line number.
 
 ### Structure & frontmatter
-- [ ] **Required fields present:** `title`, `date`, `order`, `slug`, `image.path`, `image.alt` — flag any missing
+- [ ] **Required fields present:** `title`, `date`, `order`, `slug`, `image.path`, `image.alt` — flag any missing. News articles also require `imageHeader.path` and `imageHeader.alt` (events do not use `imageHeader`); flag a news article with no `imageHeader`
 - [ ] **No forbidden fields:** no `author`, `tags`, `category`, `collection` in news/events
 - [ ] **draft flag:** if `draft: true` is present, warn the user — it hides the article from all listings
 - [ ] **date format:** must be `YYYY-MM-DD`; flag if 8-digit or other format used

@@ -33,7 +33,9 @@ YYYYMMDD-##-descriptive-slug.md
 
 ### News articles (content/news/)
 
-Required frontmatter fields: `title`, `date` (YYYY-MM-DD), `order` (integer), `slug`, `image.path`, `image.alt`
+Required frontmatter fields: `title`, `date` (YYYY-MM-DD), `order` (integer), `slug`, `image.path`, `image.alt`, `imageHeader.path`, `imageHeader.alt`
+
+`imageHeader` is required for every news article: a second image, clearly different in scene from `image`, shown at the top of the article. `imageHeader.alt` is a one-line article summary to promote engagement, not an image description.
 
 Do NOT include: `author`, `tags`, `category`, `collection`
 
