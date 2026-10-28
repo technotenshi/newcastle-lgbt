@@ -631,3 +631,58 @@ takes the version from `packageManager`; the first container run downloads Yarn.
 Unverified until Renovate's next run: that the group forms one PR, and that the age
 gate does not delay security PRs (Renovate documents vulnerability PRs as exempt from
 schedule; the age gate is not confirmed against the docs).
+
+## 2026-10-28 Made imageHeader required for news articles; corrected the IL26-001 research claim
+
+Every news article now needs both `image` and `imageHeader` (path and alt). `docs/content-authoring.md`,
+the `content-check`, `new-article`, `generate-images` and `image-prompt` skills (both the `.claude` and
+`.agents` mirrors) were updated to match. `imageHeader.alt` stays a one-line article summary, not an
+image description. Decided by the site owner after the October 28 election feature shipped with only one image.
+
+`docs/research/lets-go-washington.md` wrongly said IL26-001 does not remove the nondiscrimination clause
+(sexual orientation, gender expression, gender identity) from RCW 28A.605.005. The Attorney General's
+explanatory statement of July 21, 2026 and the initiative text say it is removed and replaced with an
+assurance against discrimination based on the family's sincerely held religious beliefs. The separate
+prohibitions in chapters 28A.640 and 28A.642 RCW are not repealed. The research file was corrected, and
+it no longer attributes I-2066 to Let's Go Washington without a source.
+
+Process rule: run the `content-check` skill, the editorial checklist final pass, and a source-by-source
+fact-check before calling a news article ready. Linting and a static build do not test a draft article,
+because drafts are excluded from the build.
+
+## 2026-10-28 Corrected factual errors in two earlier initiative articles
+
+Approved by the site owner after the October 28 election feature exposed them. Each was checked against the
+IL26-001 and IL26-638 texts, the Attorney General's explanatory statements, or the PDC.
+
+`content/news/20260904-01-anti-lgbtq-ballot-initiatives-documented-risks.md`: the records-shield paragraph said
+the original law also protects a parent who is a criminal defendant, but IL26-001's restored text covers only
+medical, health, or mental health counseling records of a parent who is the target of a pending investigation;
+the intro called natural gas initiative I-2066 Let's Go Washington's fourth 2024 measure, but a Building
+Industry Association of Washington led coalition placed it and the PDC counts LGW's six as three enacted and
+three on the ballot; and it now notes, per the Attorney General, that IL26-001 removes the nondiscrimination
+clause from the parents' rights statute.
+
+`content/news/20260319-03-pflag-chapters-oppose-anti-lgbtq-initiatives.md`: "out-of-state millionaire" now names
+the Redmond-based committee led by Brian Heywood; the claim that counselors would be legally required to disclose
+a student's LGBTQ+ identity is replaced with what the text does (broader records access, notice when a child goes
+to a youth shelter or host home); and "mandate invasive bodily examinations" is restated as a provider verification
+requirement that opponents warn could involve invasive examinations.
+
+The Sept 4 article was then converted to numbered `[^N]` footnotes with APA 7 entries. While mapping claims to
+sources, these were corrected or removed because the listed sources did not support them: "Skyler Rude" and "along
+party lines" (Rep. Couture's release names neither); "250,000 student-athletes" (sources say more than 200,000);
+the Dr. Gina Martin quote, which came from New York Magazine as quoted in a HeraldNet op-ed by Katie Johnson, not
+written by Martin; "more than $1.86 million" from Heywood (the figure is $1,857,918); opposition donors (NEA and
+Inatai Foundation replaced with the donors Ballotpedia lists); the attribution of a legal-name and pronoun argument
+to the ACLU of Washington and Gender Justice League at the campaign launch, which no listed source supports; and
+the attribution of "more than 100 doctors" to the PTA and the Seattle Times. Still unsourced and left unmarked:
+the FERPA 45-day ceiling and state-faster-turnaround claim, LGW's argument that IL26-001 governs only records the
+school creates, WIAA's reported "no intent to change" its policy (removed), "fourth ballot cycle in three years",
+and "funded almost entirely by Let's Go Washington".
+
+## 2026-10-28 The `draft` flag is not a default
+
+Decided by the site owner. Leave `draft` out of new articles. Use `draft: true` only when the owner says an article
+is not meant to be published soon, or when a published article must be recalled. Reason: a draft is hidden from every
+listing and from the build, so the owner cannot review the rendered page. `docs/content-authoring.md` now says so.

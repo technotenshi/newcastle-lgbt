@@ -40,19 +40,15 @@ slug: "url-safe-slug-here"
 image:
   path: "assets/images/news/YYYYMMDD-##-descriptive-name.png"
   alt: "Descriptive alt text describing the image content (50–250 characters)"
+imageHeader:
+  path: "assets/images/news/YYYYMMDD-##-header-name.png"
+  alt: "One engaging sentence summarizing the article and enticing the reader to continue."
 ---
 ```
 
 **Optional fields** — add only when the content warrants it:
 
 ```yaml
-# A second image displayed prominently at the top of the article body.
-# NOTE: imageHeader.alt is NOT an image description — it is a one-liner article
-# summary written to promote engagement, displayed as a caption beneath the image.
-imageHeader:
-  path: "assets/images/news/YYYYMMDD-##-header-name.png"
-  alt: "One engaging sentence summarizing the article and enticing the reader to continue."
-
 # A photo gallery (used for event-coverage articles with multiple photos):
 carousel:
   images:
@@ -72,10 +68,10 @@ carousel:
 | `slug` | string | Yes | URL-safe identifier matching the slug portion of the filename |
 | `image.path` | string | Yes | Path to the feature image |
 | `image.alt` | string | Yes | Accessible alt text (50–250 characters) |
-| `imageHeader.path` | string | No | Secondary image shown at the top of the article body |
-| `imageHeader.alt` | string | No | One-liner article summary to promote engagement — **not** an image description |
+| `imageHeader.path` | string | Yes | Secondary image shown at the top of the article body |
+| `imageHeader.alt` | string | Yes | One-line article summary to promote engagement, displayed as a caption; **not** an image description |
 | `carousel.images` | array | No | List of `{src, alt}` objects for a photo gallery (4–5 images typical) |
-| `draft` | boolean | No | Set `true` to hide the article from all listings |
+| `draft` | boolean | No | Omit by default. Set `true` only for an article the owner does not intend to publish soon, or to recall a published article. It hides the article from all listings |
 
 **What NOT to include:** `author`, `tags`, `category`, `collection` — these fields are not used. Articles are organization-wide and organized by date only.
 
@@ -436,7 +432,7 @@ Always generate AI image prompts based on the article content and the style refe
 3. **Derive the slug** from the headline: lowercase, hyphens only, 3–6 words (e.g. `"Newcastle Pride 2025"` → `newcastle-pride-2025`)
 4. **Set the filename:** `YYYYMMDD-##-slug.md`
 5. **Write frontmatter:** fill `title`, `date`, `order`, `slug`, and `image` (path + alt)
-6. **Add `imageHeader`** if a separate top-of-article image is provided
+6. **Add `imageHeader`** with a distinct image for the top of the article and a one-line engagement caption
 7. **Add `carousel`** if the article covers an event and multiple photos are provided
 8. **Write the body:**
    - No `#` heading

@@ -1,6 +1,7 @@
 # Let's Go Washington Research
 
-**Last Updated:** September 4, 2026  
+**Last Updated:** October 28, 2026
+
 **Sources:** Washington Public Disclosure Commission filings, Washington State Standard, Seattle Times, OPB, KUOW, Fox 13, King 5, ACLU of Washington
 
 ---
@@ -90,8 +91,8 @@ Web search of publicly available sources found **no evidence** that Let's Go Was
 
 ## 4. Track Record: Prior Washington Ballot Initiatives
 
-### 2024 Ballot Initiatives (Six Filed, Four on Ballot)
-Let's Go Washington filed six initiatives in 2023 for the 2024 ballot. Three passed the state legislature directly; four went to voters in November 2024.
+### 2024 Initiatives (Three Enacted by the Legislature, Three on the Ballot)
+Per the Public Disclosure Commission (October 9, 2024), Let's Go Washington formed in 2022 to back several initiatives to the Legislature; three were accepted by the Legislature and became law, and three went to the November 2024 ballot. An earlier version of this file listed four ballot measures, including I-2066; that does not match the PDC's count, and I-2066's sponsorship by LGW has not been verified. Do not attribute I-2066 to LGW without a source. OPB (May 2025) says four initiatives that year went to the ballot and only the natural gas measure passed, without tying all four to LGW.
 
 #### Legislative Victories (Did Not Go to Ballot)
 1. **I-2081: Parental Rights** — Passed the Legislature with bipartisan support: 49-0 in the Senate (unanimous) and 82-15 in the House. Codified parental rights to review school materials, receive medical records, opt out of sexual health education lessons.
@@ -99,7 +100,7 @@ Let's Go Washington filed six initiatives in 2023 for the 2024 ballot. Three pas
 3. **I-2113: Police Pursuits** — Rolled back 2021 law restricting police vehicle chases (passed Legislature)
 
 #### Ballot Measures (November 2024)
-1. **I-2066: Natural Gas Requirements** — **PASSED** (51.43% approval, 1,593,392 votes). Requires utilities to provide natural gas and prevents utility rate plans that restrict natural gas access or make it cost-prohibitive; erases state building codes requiring electrification instead of gas furnaces.
+1. **I-2066: Natural Gas Requirements (LGW sponsorship unverified)** — **PASSED** (51.43% approval, 1,593,392 votes). Requires utilities to provide natural gas and prevents utility rate plans that restrict natural gas access or make it cost-prohibitive; erases state building codes requiring electrification instead of gas furnaces.
 2. **I-2109: Capital Gains Tax Repeal** — **FAILED**. Would have repealed Washington's 7% excise tax on capital gains over $250,000 (affects only ~3,300 of state's wealthiest residents per Washington OFM). Estimated revenue loss: $2.2 billion over five fiscal years.
 3. **I-2117: Climate Commitment Act Repeal** — **FAILED**. Would have repealed Washington's cap-and-invest carbon pricing law. Estimated revenue loss: $3.8 billion; would have defunded public transit, clean energy, fire prevention, salmon habitat restoration.
 4. **I-2124: Long-Term Care Insurance Opt-Out** — **FAILED**. Would have made WA Cares (state long-term care insurance program) voluntary instead of mandatory.
@@ -119,7 +120,7 @@ Let's Go Washington filed six initiatives in 2023 for the 2024 ballot. Three pas
 2. **IL26-638: Sex Verification Requirement for Girls' Sports** — Bans transgender girls from female school athletic competitions; requires healthcare-verified sex determination for athletic eligibility. (See Section 5 for detailed impact)
 
 #### Proposed/Under Development
-- **IL26-645 (or similar):** Income tax repeal initiative (title/number confirmation needed)
+- **IP26-645:** Income tax repeal initiative, now confirmed on the November 3, 2026 ballot (Attorney General ballot title, July 23, 2026; see Section 10)
 - **School choice funding program** (in development per May 2025 OPB reporting)
 - **Property tax restrictions** (in development)
 
@@ -173,24 +174,31 @@ Let's Go Washington submitted 2.6 million signatures for its six 2024 initiative
 ### IL26-001: Repeal of 2025 Student Privacy Protections
 
 **Background:**
-IL26-001 seeks to repeal the 2025 "Safety Act" (formally Engrossed Substitute House Bill 1296) — legislation enacted by the Washington Legislature that amended student-privacy language in RCW 28A.605.005. It would reinstate that statute's 2024 text (from I-2081, which passed with strong bipartisan support) while removing the 2025 amendments. The initiative's official ballot summary confirms it re-enacts RCW 28A.605.005 only; it does not touch the separate nondiscrimination clause discussed below.
+IL26-001 seeks to repeal the 2025 "Safety Act" (formally Engrossed Substitute House Bill 1296) — legislation enacted by the Washington Legislature that amended student-privacy language in RCW 28A.605.005. It would reinstate that statute's 2024 text (from I-2081, which passed with strong bipartisan support) while removing the 2025 amendments. The initiative re-enacts RCW 28A.605.005 only, but it restates that whole section, and the Attorney General's explanatory statement (July 21, 2026) says the section's nondiscrimination clause would be removed (see the correction below).
 
 **What it does (verified directly against the ESHB 1296 bill text, not just secondary summaries):**
 - Removes a FERPA-style exemption, added by the 2025 law, that keeps a school employee's personal, unshared notes from counting as a disclosable "education record"
 - Reinstates an explicit statutory right for every parent to inspect "records of any mental health counseling" and "records of any vocational counseling," which the 2025 law had replaced with a generic FERPA-style definition
 - Narrows (does not eliminate) the existing shield against releasing certain records to a parent under active child-abuse investigation: both versions of the law protect that parent's child's records, but the original 2024 text protects only "medical or health records or mental health counseling," while removing the 2025 law's added protection for "social work" and "disciplinary" records
+- Drops the current shield for a parent who is the defendant in a criminal proceeding where the student is the named victim (verified in IL26-001's struck-out current text); the restated shield covers only medical, health, or mental health counseling records, only while an abuse or neglect investigation is pending, and unless the parent has a court order
+- Per the Attorney General: removes the right to immediate notification of alleged abuse, misconduct, or assault by a school employee or contractor, and the right to file a harassment, intimidation, or bullying complaint on a child's behalf
+- Text adds notification if a child is removed from campus, "including to stay at a youth shelter or 'host home'" and opt-outs for surveys and engagements asking about "the child's sexual experiences or attractions"
 - Reverts the school records-request deadline from the 2025 law's "reasonable period, not more than 45 days" back to a flat 10 business days
 
-**Correction to a claim found in initial secondary-source research:** Some advocacy summaries describe IL26-001 as repealing the "Safety Act's" nondiscrimination protections, including protections based on sexual orientation and gender identity. **This does not hold up against the primary bill text.** RCW 28A.605.005(2)(g), which prohibits discrimination "on the basis of sex, race, creed, religion, color, national origin, honorably discharged veteran or military status, sexual orientation, gender expression, gender identity..." appears completely unmarked (no strikethrough, no underline) in ESHB 1296's own amendatory text, meaning it is identical in both the 2024 original and the current 2025 law. IL26-001 restoring the original would not remove this clause, since it isn't something the 2025 law added or changed. Do not repeat the "repeals nondiscrimination protections" framing without further verification; the real, verified harms are the counseling-records and personal-notes changes described above.
+**Correction (October 28, 2026): the earlier correction in this file was wrong.** An earlier version of this file said the claim that IL26-001 removes the nondiscrimination clause for sexual orientation, gender expression, and gender identity "does not hold up," because RCW 28A.605.005(2)(g) appeared unmarked in ESHB 1296's markup. That reading missed that IL26-001 restates the whole section, and two primary sources contradict it:
+- The Attorney General's explanatory statement for IL26-001 (July 21, 2026) says, under "Non-Discrimination," that the provision giving parents a right to have their child "receive an education in a setting that prohibits discrimination on a number of bases would be removed," and that the measure "would instead state a right of parents and legal guardians to receive assurance that their child's public school will not discriminate against their child based upon the sincerely held religious beliefs of the child's family."
+- The IL26-001 text's restated section contains no such clause; the struck-out current text shows it as "(g) To have their child receive a public education in a setting in which discrimination on the basis of sex, race, creed, religion, color, national origin, ... sexual orientation, gender expression, gender identity ... is prohibited under chapters 28A.640 and 28A.642 RCW."
 
-**Source:** [ESHB 1296 full text](https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1296-S.E.pdf), p. 13, Sec. 301 (RCW 28A.605.005(2)(g), unmarked/unchanged)
+What does NOT follow: the underlying prohibitions in chapters 28A.640 and 28A.642 RCW and other state law are not repealed. Write "removes the explicit nondiscrimination clause from the parents' rights statute," not "repeals nondiscrimination protections." Note also that a January 2026 Washington State Standard story quoted Rep. Monica Stonier as saying her understanding was that IL26-001 would not affect nondiscrimination guarantees; the Attorney General's later statement is the controlling primary source.
+
+**Sources:** [AG explanatory statement, IL26-001](https://www.sos.wa.gov/sites/default/files/2026-07/ExStat_IL26-001.pdf); [IL26-001 full text](https://www.sos.wa.gov/sites/default/files/2026-03/INITIATIVE%20IL26-001%20fulltext.pdf)
 
 **Impact on LGBTQ+ youth and other marginalized students:**
 - **Family rejection risk:** LGBTQ+ students, particularly transgender youth, risk involuntary outing to parents who may respond with rejection, abuse, or homelessness. Per Washington State PTA and ACLU: 40% of youth experiencing homelessness identify as LGBTQIA2S+; 26% were forced out over sexual orientation or gender identity.
 - **Chilling effect on counselor relationships:** Students cannot trust school counselors' confidentiality, reducing their willingness to seek mental health support
 - **Mental health risk:** Disclosure without consent can worsen depression, anxiety, and suicide risk among LGBTQ+ youth
 
-(A "nondiscrimination rollback" bullet previously appeared here in early drafts of this file. It has been removed: as the correction above documents, RCW 28A.605.005(2)(g)'s nondiscrimination clause is unchanged between the 2024 and 2025 versions of the law, so IL26-001 does not roll it back. Do not re-add this claim without new primary-source evidence.)
+- **Nondiscrimination clause removed from this statute:** per the Attorney General's explanatory statement, IL26-001 removes the clause describing a right to an education free of discrimination on grounds including sexual orientation, gender expression, and gender identity, and substitutes an assurance against discrimination based on the family's sincerely held religious beliefs. The underlying prohibitions in other chapters are not repealed. (An earlier draft of this file wrongly deleted this bullet; see the correction above.)
 
 **Expert opposition:**
 - Washington State PTA opposes as violating student privacy and endangering LGBTQ+ youth
@@ -330,9 +338,8 @@ This is an **unresolved investigation**. The alleged amount ($345K–$1.25M) dwa
 **Confidence:** High.
 
 ### Claim 6: "IL26-001 repeals nondiscrimination protections covering sexual orientation and gender identity"
-**Verdict:** NOT SUBSTANTIATED. This claim appears in some advocacy summaries but does not survive a direct check against ESHB 1296's own text. RCW 28A.605.005(2)(g), the clause prohibiting discrimination "on the basis of ... sexual orientation, gender expression, gender identity...," is unmarked (unchanged) in the bill's strikeout/underline markup, meaning it is identical in the 2024 original and the current 2025 law. IL26-001 restoring the original would not affect it. Do not repeat this specific framing; use the verified counseling-records and personal-notes findings instead (Claim 5).
-**Confidence:** High that the "repeals nondiscrimination protections" framing is inaccurate, based on direct primary-source review.
-**Confidence:** High. Initiative text available; expert analysis consistent across sources.
+**Verdict:** PARTIALLY SUBSTANTIATED, with a precision requirement. The Attorney General's explanatory statement (July 21, 2026) and the IL26-001 text show the explicit nondiscrimination clause (including sexual orientation, gender expression, and gender identity) would be removed from the parents' rights statute RCW 28A.605.005 and replaced with an assurance against discrimination based on the family's sincerely held religious beliefs. It does not repeal the separate prohibitions in chapters 28A.640 and 28A.642 RCW. An earlier version of this file rated the claim "NOT SUBSTANTIATED"; that rating was wrong (see the correction in Section 5).
+**Confidence:** High for the removal from this statute (two primary sources); high that "repeals all nondiscrimination protections" would overstate it.
 
 ---
 
@@ -352,7 +359,7 @@ This is an **unresolved investigation**. The alleged amount ($345K–$1.25M) dwa
 2. **Any characterization of Heywood's wealth or investment details beyond Taiyo Pacific Partners** — Rely on Seattle Times/confirmed sources
 3. **Specific allegations about the Brandi Kruse investigation** — Describe as "investigation opened" / "alleged"; avoid stating LGW "violated" rules until PDC rules
 4. **Claims about LGW leadership beyond Heywood and Jim Walsh** — No board members found in web search; cite PDC filings if claiming specific titles
-5. **Do not describe IL26-001 as repealing nondiscrimination protections for sexual orientation/gender identity** — verified against the primary bill text (ESHB 1296) to be inaccurate; see Claim 6 above. Use the verified counseling-records and personal-notes findings instead.
+5. **Describe the nondiscrimination change precisely:** IL26-001 removes the explicit nondiscrimination clause (including sexual orientation, gender expression, gender identity) from the parents' rights statute RCW 28A.605.005, per the Attorney General's explanatory statement. It does not repeal the separate prohibitions in chapters 28A.640 and 28A.642 RCW. See Claim 6.
 
 ### Framing for Newcastle Site Standards (Editorial Checklist)
 Given the site's standard of advocacy-forward writing backed by evidence and fact-checking:
@@ -362,6 +369,30 @@ Given the site's standard of advocacy-forward writing backed by evidence and fac
 - **Do distinguish between LGW's framing and independent analysis** ("LGW calls this 'parental rights'; education experts and LGBTQ+ advocates characterize it as...")
 - **Do attribute characterizations** (e.g., "described as anti-LGBTQ+ by the ACLU, Washington State PTA, and..." not just "is anti-LGBTQ+")
 - **Do name specific institutions/people** (Heywood, Jim Walsh) rather than blaming broad groups
+
+---
+
+## 10. 2026 Update (October 28, 2026)
+
+Verified while preparing the October 28 election feature. Primary or direct sources first.
+
+- **Ballot status:** IP26-645 (income tax repeal, 9.9% on income over $1,000,000 from 2028), IL26-001, and IL26-638 are all on the November 3, 2026 ballot (Secretary of State general election fact sheet, October 1, 2026). LGW's own FAQ lists all three; its footer reads "Paid for by Let's Go Washington - Sponsored by Brian Heywood."
+- **Self-description vs. reporting:** LGW's FAQ calls itself a "non-partisan political action committee." Washington State Standard (May 8, 2026) calls it a "conservative political committee"; OPB (May 24, 2025) headlined Heywood a "GOP megadonor." The Washington State Republican Party, chaired by Rep. Jim Walsh, urges a yes vote on all three measures and endorsed Doug Basler (WA-9) (party release, September 4, 2026).
+- **Donors:** LGW's footer lists its top five donors as Brian Heywood, Steve Gordon, Washington Rising Inc., Kelley DevCom LLC, and Lawrence Hughes. Amounts have not been reviewed from PDC filings for this file. Washington State Standard reports Heywood expects the income tax repeal campaign to cost the committee more than $10 million.
+- **2026 PDC investigation:** a formal investigation opened in August 2026 on a complaint from Washingtonians for Ethical Government alleging undisclosed in-kind advertising by Brandi Kruse (valued by the complainant at $345,000 to $1.25 million). LGW's lawyer denies any payment; LGW calls it a "nothing burger." Unresolved; no finding (FOX 13 Seattle).
+- **GLAAD:** added LGW to its accountability profiles (updated October 2, 2026), saying LGW drafted and promoted initiatives "targeting LGBTQ people, youth, and families."
+- **Claims checked against primary text:** LGW's FAQ says a doctor can use "any other method" to verify sex under I-638; the text says "relying only on" reproductive anatomy, genetic makeup, or normal endogenously produced testosterone levels. LGW says abusive parents "will not be able to access information about their student records" under I-001; the text narrows the shield to medical, health, or mental health counseling records during a pending investigation (see Section 5). The American Academy of Pediatrics publicly rejected proponents' voter guide claim that it endorses sex verification (The Guardian, October 21, 2026).
+- **Newcastle:** in the 41st Legislative District (Issaquah Reporter, October 2, 2026) and the 9th Congressional District (Rep. Adam Smith's district page names Newcastle).
+
+**Sources:**
+- Secretary of State fact sheet: https://www.sos.wa.gov/sites/default/files/2026-10/GeneralElectionFacts2026.pdf
+- LGW FAQ: https://letsgowashington.com/faq/
+- Washington State Standard (May 8, 2026): https://washingtonstatestandard.com/2026/05/08/lets-go-washington-will-go-for-income-tax-repeal-on-this-years-ballot/
+- OPB (May 24, 2025): https://www.opb.org/article/2025/05/24/brian-heywood-megadonor-taxes-parents-rights/
+- WAGOP release: https://wagop.org/wagop-endorses-a-slate-of-ten-congressional-candidates-as-election-day-nears/
+- FOX 13 Seattle (PDC investigation): https://www.fox13seattle.com/news/wa-formal-investigation-lets-go-washington-pac
+- GLAAD profile: https://glaad.org/gap/lets-go-washington/
+- The Guardian: https://www.theguardian.com/us-news/2026/oct/21/washington-anti-trans-sports-genital-exams
 
 ---
 
@@ -392,6 +423,7 @@ Given the site's standard of advocacy-forward writing backed by evidence and fac
 
 ---
 
-**Last Verified:** September 4, 2026  
+**Last Verified:** October 28, 2026 (Sections 5, 8, and 10 corrected or added; Sections 1 to 4 and 6 to 7 last verified September 4, 2026)
+
 **Research conducted by:** Claude Code Agent (Anthropic)  
 **For:** Newcastle LGBTQ+ Community News Site (newcastle.lgbt)
