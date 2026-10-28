@@ -726,3 +726,12 @@ a separate task.
 
 Consequence: a fresh clone, CI, or a cloud agent without the global install does not get the pack skills. The removed
 copies are in git history (822a8bc and earlier).
+
+## 2026-10-28 Drop the repo copies of implement-spec and retro
+
+Decided by the site owner. The mattpocock/skills pack was reinstalled globally and now ships `implement-spec` and
+`retro` again, so the repo copies duplicated the global ones. The repo copies were the older pack versions from the
+2026-08-28 install and had no local edits, so they were removed. `skills-lock.json` now lists only
+`resolving-merge-conflicts`, the one skill the current pack does not ship.
+
+This supersedes the three-skill exception in the entry above, which stays as accurate history.
