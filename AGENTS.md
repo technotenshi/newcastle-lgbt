@@ -178,11 +178,19 @@ Before modifying code, evaluate each installed skill against the current task.
 For each skill, determine YES/NO relevance and invoke all YES skills before proceeding.
 <!-- /skilld -->
 
-## Cross-tool agent conventions
+## Agent skills
 
-- **Issue tracker:** GitHub Issues via the `gh` CLI. See [`docs/agents/issue-tracker.md`](docs/agents/issue-tracker.md).
-- **Triage labels:** the default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), no repo-specific renames. See [`docs/agents/triage-labels.md`](docs/agents/triage-labels.md).
-- **Domain docs:** single-context repo, one `GLOSSARY.md` plus `docs/adr/` at the root once created; neither exists yet, `docs/DECISIONS.md` is the decision log in the meantime. See [`docs/agents/domain.md`](docs/agents/domain.md).
+### Issue tracker
+
+GitHub Issues via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), no repo-specific renames. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `GLOSSARY.md` plus `docs/adr/` at the root once created; neither exists yet, and `docs/DECISIONS.md` is the decision log meanwhile. See `docs/agents/domain.md`.
 
 ## Hooks (Claude Code only)
 

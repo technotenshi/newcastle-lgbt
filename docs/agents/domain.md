@@ -10,11 +10,11 @@ How the engineering skills should consume this repo's domain documentation when 
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The `/domain-modeling` skill (reached via `/grill-with-docs` and `/improve-codebase-architecture`) creates them lazily when terms or decisions actually get resolved.
 
-Note: as of 2026-08-28 this repo has neither `GLOSSARY.md` nor `docs/adr/` yet — it's a single-context static site with its own `docs/DECISIONS.md` decision log (append-only, dated entries) that predates these skills. Treat `docs/DECISIONS.md` as an additional decision-history source alongside (not a replacement for) `docs/adr/` if/when the latter gets created.
+Note: as of 2026-08-28 this repo has neither `GLOSSARY.md` nor `docs/adr/` yet: it's a single-context static site with its own `docs/DECISIONS.md` decision log (append-only, dated entries) that predates these skills. Treat `docs/DECISIONS.md` as an additional decision-history source alongside (not a replacement for) `docs/adr/` if/when the latter gets created.
 
 ## File structure
 
-Single-context repo (this repo is single-context — no monorepo/workspace signals found):
+Single-context repo (this repo is single-context: no monorepo/workspace signals found):
 
 ```
 /
@@ -37,4 +37,4 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 
 > _Contradicts ADR-0007 (event-sourced orders), but worth reopening because…_
 
-For this repo specifically, also check `docs/DECISIONS.md` for prior decisions before proposing a change that touches dependency pinning, the image/IPX pipeline, or CI — several past decisions there (documented under dated entries) constrain what's safe to change.
+For this repo specifically, also check `docs/DECISIONS.md` for prior decisions before proposing a change that touches dependency pinning, the image/IPX pipeline, or CI: several past decisions there (documented under dated entries) constrain what's safe to change.
