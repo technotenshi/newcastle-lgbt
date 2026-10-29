@@ -25,22 +25,22 @@ In the table, Fuse, KCD, Stranger, and Times are the four endorsers above.
 
 | Race | Our recommendation | Also backed by |
 |---|---|---|
-| Initiative 645 | **No** | Fuse, Stranger, Times |
-| Initiative 001 | **No** | Fuse, KCD, Stranger, Times |
-| Initiative 638 | **No** | Fuse, KCD, Stranger, Times |
-| U.S. House, 9th District | **Adam Smith** (D) | Fuse, KCD, Stranger, Times |
-| State Representative, 41st District, Pos. 1 | **Janice Zahn** (D) | Fuse, KCD, Stranger, Times |
-| State Representative, 41st District, Pos. 2 | **My-Linh Thai** (D) | Fuse, KCD, Stranger |
-| Supreme Court, Pos. 1 | **Colleen Melody** | Fuse, KCD, Stranger, Times |
-| Supreme Court, Pos. 3 | **Jaime Hawk** | Fuse, KCD, Stranger, Times |
-| Supreme Court, Pos. 4 | **Ian Birk** | Fuse, KCD, Stranger |
-| Supreme Court, Pos. 5 | **Theo Angelis** | Fuse, KCD, Stranger, Times |
-| Supreme Court, Pos. 7 | **Debra Stephens** | Fuse, KCD, Stranger, Times |
-| King County Prosecuting Attorney | **Leesa Manion** (unopposed)[^11] | Fuse, KCD |
-| King County Assessor | **Rob Foxcurran** | Fuse, KCD, Stranger, Times |
-| King County Director of Elections | **Julie Wise** (unopposed) | Fuse, KCD |
-| Superior Court, Pos. 20, 32, and 45 | **Kent Liu, Daniel York, Tenaya Scheinman** (each unopposed)[^12] | KCD |
-| District Court, Northeast, Pos. 1 | **Jan Trasen**[^13] | KCD, Stranger |
+| Initiative 645 | **No** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| Initiative 001 | **No** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| Initiative 638 | **No** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| U.S. House, 9th District | **Adam Smith** (D) | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| State Representative, 41st District, Pos. 1 | **Janice Zahn** (D) | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| State Representative, 41st District, Pos. 2 | **My-Linh Thai** (D) | Fuse[^6], KCD[^7], Stranger[^8] |
+| Supreme Court, Pos. 1 | **Colleen Melody** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| Supreme Court, Pos. 3 | **Jaime Hawk** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| Supreme Court, Pos. 4 | **Ian Birk** | Fuse[^6], KCD[^7], Stranger[^8] |
+| Supreme Court, Pos. 5 | **Theo Angelis** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| Supreme Court, Pos. 7 | **Debra Stephens** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| King County Prosecuting Attorney | **Leesa Manion** (unopposed)[^11] | Fuse[^6], KCD[^7] |
+| King County Assessor | **Rob Foxcurran** | Fuse[^6], KCD[^7], Stranger[^8], Times[^9] |
+| King County Director of Elections | **Julie Wise** (unopposed) | Fuse[^6], KCD[^7] |
+| Superior Court, Pos. 20, 32, and 45 | **Kent Liu, Daniel York, Tenaya Scheinman** (each unopposed)[^12] | KCD[^7] |
+| District Court, Northeast, Pos. 1 | **Jan Trasen**[^13] | KCD[^7], Stranger[^8] |
 
 ## Statewide initiatives: vote no on all three
 
@@ -62,24 +62,24 @@ Basler's voters' pamphlet statement focuses on affordability, the Climate Commit
 
 ### Position 1: Janice Zahn
 
-Rep. **Janice Zahn** (D) faces **Elle Nguyen** (R). HB 1296 is the 2025 law whose amendments to the parents' rights statute I-001 would undo.[^18] The House's final vote shows all 59 Democrats voting yes and all 39 Republicans voting no, so Zahn, a Democrat, voted yes.[^26][^27] Her voters' pamphlet statement lists endorsements from Planned Parenthood, teachers, nurses, and Bellevue, Mercer Island, Issaquah, Sammamish, and Newcastle leaders.[^24]
+Rep. **Janice Zahn** (D) faces **Elle Nguyen** (R). HB 1296 is the 2025 law whose amendments to the parents' rights statute I-001 would undo.[^18] The House passed it on April 24, 2025, by 59 to 39, and the official roll call lists Zahn among the yeas.[^26] Her voters' pamphlet statement lists endorsements from Planned Parenthood, teachers, nurses, and Bellevue, Mercer Island, Issaquah, Sammamish, and Newcastle leaders.[^24]
 
 Nguyen's pamphlet statement promises "traditional values" and "protecting children," and the Issaquah Reporter lists "public safety, parental rights, protecting children and meaningful local control" among her priorities.[^24][^2] The Stranger says her platform shows "subtextual support" for Let's Go Washington's Parents' Bill of Rights.[^8] None of the sources we reviewed records a stated position from Nguyen on I-001 or I-638. We recommend **Zahn**.
 
 ### Position 2: My-Linh Thai
 
-Rep. **My-Linh Thai** (D), also a Democrat, voted yes on the same bill.[^26][^27] She sits on the House Civil Rights & Judiciary Committee, and her pamphlet statement commits her to "a more just, inclusive, and equitable society for all."[^24]
+Rep. **My-Linh Thai** (D) is also listed among the yeas on that final passage vote.[^26] She sits on the House Civil Rights & Judiciary Committee, and her pamphlet statement commits her to "a more just, inclusive, and equitable society for all."[^24]
 
-Her opponent, **Michael Rosen**, is an independent. His pamphlet statement and campaign website center on accountability, affordability, and health; neither states a position on LGBTQ+ rights or the initiatives.[^24][^28] Fuse says his platform "does not inspire confidence" that he would be a progressive advocate, and The Stranger says he did not respond to its questions.[^6][^8] The Seattle Times endorses Rosen on budget grounds and reports that he calls himself a "pretty reliable" Democratic voter with "progressive social values."[^29] Those are his words as reported by the Times; nothing in the sources we reviewed shows how he would vote on bills that affect LGBTQ+ residents. We recommend **Thai**, whose record is documented, over a candidate whose record on these questions is not.
+Her opponent, **Michael Rosen**, is an independent. His pamphlet statement and campaign website center on accountability, affordability, and health; neither states a position on LGBTQ+ rights or the initiatives.[^24][^27] Fuse says his platform "does not inspire confidence" that he would be a progressive advocate, and The Stranger says he did not respond to its questions.[^6][^8] The Seattle Times endorses Rosen on budget grounds and reports that he calls himself a "pretty reliable" Democratic voter with "progressive social values."[^28] Those are his words as reported by the Times; nothing in the sources we reviewed shows how he would vote on bills that affect LGBTQ+ residents. We recommend **Thai**, whose record is documented, over a candidate whose record on these questions is not.
 
 ## State Supreme Court
 
 Five seats are on the ballot, in nonpartisan races.[^24]
 
-- **Position 1: Colleen Melody.** Her voters' pamphlet statement says she led the attorney general's Civil Rights Division,[^24] and Fuse says her work there included protecting LGBTQ+ rights.[^30] Her opponent, tax attorney Scott Edwards, is described by The Stranger as backed by Full Court Press, which it calls former Attorney General Rob McKenna's effort to turn the court conservative.[^8]
-- **Position 3: Jaime Hawk.** The King County Superior Court judge and former ACLU attorney is backed by all four endorsers; the Times does so with reservations.[^31] Her opponent, **David Stevens**, insisted in a candidate pledge that marriage is between one man and one woman, according to Fuse,[^30] and told conservative radio host Jason Rantz that Clarence Thomas, Antonin Scalia, and Samuel Alito are his favorite justices, according to the Times.[^31]
-- **Position 4: Ian Birk.** Nothing in the sources we reviewed shows an anti-LGBTQ+ position by either Birk or his opponent, Sean O'Donnell, so this recommendation rests on the endorsers. Fuse and The Stranger back Birk and both point to support for O'Donnell from former Republican Attorney General Rob McKenna.[^6][^8] The Seattle Times calls both candidates excellent, endorses O'Donnell, and notes his endorsements span the political spectrum.[^32] This is one of two races where the Times disagrees with the other three endorsers.
-- **Position 5: Theo Angelis.** This is the race with the clearest LGBTQ+ stakes on the court ballot. Asked in an iVoterGuide questionnaire whether *Obergefell v. Hodges*, the same-sex marriage decision, was rightly decided, **Dave Larson** answered: "The U.S. Constitution does not regulate marriage."[^33] On *Bostock v. Clayton County*, a ruling on employment discrimination, he wrote that the Court "should not have extended the statute beyond its plain meaning."[^33] The Stranger reports that in its interview Larson said the Legislature, not the courts, should decide civil matters like gay marriage, and that Angelis answered that the Court should protect people's rights because legislators cannot always be trusted to.[^8] Fuse says Larson's campaign has drawn support from Family Policy Institute Washington Action, which it describes as opposing same-sex marriage.[^30] Angelis, appointed by Gov. Bob Ferguson, says in his pamphlet statement that he has fought for "the rights of all individuals."[^24]
+- **Position 1: Colleen Melody.** Her voters' pamphlet statement says she led the attorney general's Civil Rights Division,[^24] and Fuse says her work there included protecting LGBTQ+ rights.[^29] Her opponent, tax attorney Scott Edwards, is described by The Stranger as backed by Full Court Press, which it calls former Attorney General Rob McKenna's effort to turn the court conservative.[^8]
+- **Position 3: Jaime Hawk.** The King County Superior Court judge and former ACLU attorney is backed by all four endorsers; the Times does so with reservations.[^30] Her opponent, **David Stevens**, insisted in a candidate pledge that marriage is between one man and one woman, according to Fuse,[^29] and told conservative radio host Jason Rantz that Clarence Thomas, Antonin Scalia, and Samuel Alito are his favorite justices, according to the Times.[^30]
+- **Position 4: Ian Birk.** Nothing in the sources we reviewed shows an anti-LGBTQ+ position by either Birk or his opponent, Sean O'Donnell, so this recommendation rests on the endorsers. Fuse and The Stranger back Birk and both point to support for O'Donnell from former Republican Attorney General Rob McKenna.[^6][^8] The Seattle Times calls both candidates excellent, endorses O'Donnell, and notes his endorsements span the political spectrum.[^31] This is one of two races where the Times disagrees with the other three endorsers.
+- **Position 5: Theo Angelis.** This is the race with the clearest LGBTQ+ stakes on the court ballot. Asked in his 2024 iVoterGuide questionnaire, for his earlier run for Position 2, whether *Obergefell v. Hodges*, the same-sex marriage decision, was rightly decided, **Dave Larson** answered: "The U.S. Constitution does not regulate marriage."[^32] On *Bostock v. Clayton County*, a ruling on employment discrimination, he wrote that the Court "should not have extended the statute beyond its plain meaning."[^32] The Stranger reports that in its interview Larson said the Legislature, not the courts, should decide civil matters like gay marriage, and that Angelis answered that the Court should protect people's rights because legislators cannot always be trusted to.[^8] Fuse says Larson's campaign has drawn support from Family Policy Institute Washington Action, which it describes as opposing same-sex marriage.[^29] Angelis, appointed by Gov. Bob Ferguson, says in his pamphlet statement that he has fought for "the rights of all individuals."[^24]
 - **Position 7: Debra Stephens.** The chief justice faces Todd Bloom.[^24] She is backed by all four endorsers, and the sources we reviewed document no LGBTQ+-specific record in this race, so our recommendation follows the endorsers.[^6][^7][^8][^9]
 
 ## King County offices and local courts
@@ -125,11 +125,10 @@ The clearest lines on this ballot are the three initiatives, the Supreme Court r
 [^23]: The Seattle Times editorial board. (2026c). *Seattle Times endorsements, WA general election 2026: 9th Congressional District*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/times-editorial-board-recommends-adam-smith-for-9th-congressional-districts/](https://www.seattletimes.com/opinion/editorials/times-editorial-board-recommends-adam-smith-for-9th-congressional-districts/)
 [^24]: Washington Office of the Secretary of State. (2026b, October). *Voters' pamphlet: November 3, 2026 general election (Edition 5, King County North and Eastside)*. [https://www.sos.wa.gov/sites/default/files/2026-10/Voters%20Pamphlet%202026%20-%20Edition%2005%C2%A0-%20King%20-%20North%20and%20Eastside.pdf](https://www.sos.wa.gov/sites/default/files/2026-10/Voters%20Pamphlet%202026%20-%20Edition%2005%C2%A0-%20King%20-%20North%20and%20Eastside.pdf)
 [^25]: Washington State Republican Party. (2026, September 4). *WAGOP endorses a slate of ten congressional candidates as election day nears*. [https://wagop.org/wagop-endorses-a-slate-of-ten-congressional-candidates-as-election-day-nears/](https://wagop.org/wagop-endorses-a-slate-of-ten-congressional-candidates-as-election-day-nears/)
-[^26]: Washington State Legislature. (n.d.). *HB 1296 (2025–26): Promoting a safe and supportive public education system*. [https://app.leg.wa.gov/billsummary?BillNumber=1296&Year=2025](https://app.leg.wa.gov/billsummary?BillNumber=1296&Year=2025)
-[^27]: LegiScan. (2025). *Roll call: WA HB1296, House final passage as amended by the Senate*. [https://legiscan.com/WA/rollcall/HB1296/id/1557823](https://legiscan.com/WA/rollcall/HB1296/id/1557823)
-[^28]: Rosen for WA. (n.d.). *Michael Rosen for Washington State House of Representatives, 41st Legislative District*. [https://rosenforwa.com/](https://rosenforwa.com/)
-[^29]: The Seattle Times editorial board. (2026d). *Seattle Times endorsements, WA general election 2026: Legislative District 41, Position 2*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-legislative-district-41-position-2/](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-legislative-district-41-position-2/)
-[^30]: Fuse Washington. (2026b). *Fuse's 2026 general election endorsements*. [https://www.fusewashington.org/news/blog/fuses-2026-general-election-endorsements](https://www.fusewashington.org/news/blog/fuses-2026-general-election-endorsements)
-[^31]: The Seattle Times editorial board. (2026e, September 20). *Seattle Times endorsements, WA general election 2026: State Supreme Court, Position 3*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-state-supreme-court-position-3/](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-state-supreme-court-position-3/)
-[^32]: The Seattle Times editorial board. (2026f). *Seattle Times endorsements, WA 2026 election: State Supreme Court, Position 4*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-primary-2026-wa-state-supreme-court-position-4/](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-primary-2026-wa-state-supreme-court-position-4/)
-[^33]: iVoterGuide. (n.d.). *Dave Larson: Washington State Supreme Court candidate questionnaire*. [https://ivoterguide.com/candidate/31425/race/20764/election/1247](https://ivoterguide.com/candidate/31425/race/20764/election/1247)
+[^26]: Washington State Legislature. (2025, April 24). *Roll calls on a bill: ESHB 1296 (2025–26), final passage*. [https://app.leg.wa.gov/bi/RollCallsOnABill/RollCall?biennium=2025-26&billNumber=1296&initiative=False](https://app.leg.wa.gov/bi/RollCallsOnABill/RollCall?biennium=2025-26&billNumber=1296&initiative=False)
+[^27]: Rosen for WA. (n.d.). *Michael Rosen for Washington State House of Representatives, 41st Legislative District*. [https://rosenforwa.com/](https://rosenforwa.com/)
+[^28]: The Seattle Times editorial board. (2026d). *Seattle Times endorsements, WA general election 2026: Legislative District 41, Position 2*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-legislative-district-41-position-2/](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-legislative-district-41-position-2/)
+[^29]: Fuse Washington. (2026b). *Fuse's 2026 general election endorsements*. [https://www.fusewashington.org/news/blog/fuses-2026-general-election-endorsements](https://www.fusewashington.org/news/blog/fuses-2026-general-election-endorsements)
+[^30]: The Seattle Times editorial board. (2026e, September 20). *Seattle Times endorsements, WA general election 2026: State Supreme Court, Position 3*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-state-supreme-court-position-3/](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-general-election-2026-state-supreme-court-position-3/)
+[^31]: The Seattle Times editorial board. (2026f). *Seattle Times endorsements, WA 2026 election: State Supreme Court, Position 4*. The Seattle Times. [https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-primary-2026-wa-state-supreme-court-position-4/](https://www.seattletimes.com/opinion/editorials/seattle-times-endorsements-wa-primary-2026-wa-state-supreme-court-position-4/)
+[^32]: iVoterGuide. (n.d.). *Dave Larson: Supreme Court, Position 2, candidate profile and questionnaire (Washington general election, November 5, 2024)*. [https://ivoterguide.com/candidate/31425/race/20764/election/1247](https://ivoterguide.com/candidate/31425/race/20764/election/1247)

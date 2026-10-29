@@ -9,8 +9,8 @@ RUN apt-get -y update && apt-get install -y  \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Node 25+ no longer bundles corepack, so install it before enabling it.
-RUN npm install -g corepack && corepack enable
+# Node 25+ no longer bundles corepack, so install a pinned version before enabling it.
+RUN npm install -g corepack@0.36.0 && corepack enable
 
 WORKDIR /app
 
