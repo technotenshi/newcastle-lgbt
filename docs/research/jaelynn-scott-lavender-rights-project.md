@@ -26,8 +26,9 @@ This file holds facts re-checked against the cited pages on October 28, 2026. It
 | Candidate | Raised | Spent | Notes |
 |---|---|---|---|
 | Jaelynn Scott | $155,579.32 | $116,119.52 | Full reporting. $4,339.93 debt. $132.34 independent spending in her favor. No spending against. |
-| Evon McCorkle | $750.00 | $23.12 | Mini reporting. |
+| Evon McCorkle | $750.00 | $23.12 | **Mini reporting.** Amounts shown, not necessarily complete current totals. |
 
+- **Mini versus full reporting:** Scott's page says she opted for full reporting. McCorkle's says mini reporting. The PDC's rules say mini reporting is for campaigns that will raise and spend no more than $7,000 and that these campaigns do not file contribution and expenditure reports. So McCorkle's $750 and $23.12 are amounts shown on the PDC page, not necessarily complete current totals, and they are not directly comparable to Scott's full-reporting totals. This does not show unreported activity. It is a disclosure limit. Do not reuse the figures as complete totals in later articles. Source: https://www.pdc.wa.gov/registration-reporting/candidates-committees/registration-reporting-basics/choosing-mini-or-full-reporting
 - Scott's contributions by PDC category: individual $107,932.45, other $24,212.50, political action committee $7,500.00, business $7,385.15, miscellaneous $8,549.22.
 - The ChatGPT reports gave $154,352 raised and $108,041 spent (via a secondary site, Washington Independents). The PDC pages show higher figures, so use the PDC and date every figure.
 - The PDC page for Scott lists Chipalo Street among "candidates filed for this position" with $20,000 raised. That looks like leftover filing data for his Senate move, not a 2026 contest. Do not report it as a third candidate.
@@ -61,12 +62,12 @@ This file holds facts re-checked against the cited pages on October 28, 2026. It
 ## 3. Lavender Rights Project
 
 - **Form 990, fiscal year ending December 2024 (ProPublica Nonprofit Explorer):** revenue $3,967,987, expenses $3,156,302, net assets $4,989,414. Scott's reported compensation is $179,045, with $15,892 in other compensation. Fiscal year 2023: revenue $2,782,255, expenses $2,319,431.
-- **Housing:** with Chief Seattle Club, runs Sharyn Grayson House, a 35-unit Capitol Hill building in King County's Health Through Housing program for queer, transgender, two-spirit, Black, Indigenous, and other people of color experiencing chronic homelessness (Capitol Hill Seattle Blog, October 2025). The Standard credits LRP with helping lead the push to open it.
+- **Housing:** with Chief Seattle Club, runs Sharyn Grayson House, a 35-unit Capitol Hill building in King County's Health Through Housing program for queer, transgender, two-spirit, Black, Indigenous, and other people of color experiencing chronic homelessness (Carder, CHS Capitol Hill Seattle News, October 27, 2025). The Standard credits LRP with helping lead the push to open it.
 - The Standard calls LRP a Black trans advocacy organization. Claims in the ChatGPT reports about LRP hiding its staff and board listings for safety, and about its funders, were not re-checked.
 
 **Sources:**
 - ProPublica: https://projects.propublica.org/nonprofits/organizations/810969007
-- Capitol Hill Seattle Blog: https://www.capitolhillseattle.com/2025/10/sharyn-grayson-house-countys-health-through-housing-capitol-hill-apartment-building-ready-for-residents/
+- CHS Capitol Hill Seattle News (Justin Carder, 2025-10-27): https://www.capitolhillseattle.com/2025/10/sharyn-grayson-house-countys-health-through-housing-capitol-hill-apartment-building-ready-for-residents/
 
 ## 4. History claims: handle "first" with care
 
