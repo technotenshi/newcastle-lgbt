@@ -765,3 +765,18 @@ Deleting `.codex/` left Codex without a reviewer pointer, so `AGENTS.md` now tel
 read `.agents/agents/content-reviewer.md` as a checklist. The `generate-images` skill runs `codex exec`, so its prompt
 now tells Codex to write only the image file and never touch `.env`, `.env.*`, or `yarn.lock`. This is text, not an
 enforced block like the old hook.
+
+## 2026-10-28 Jaelynn Scott article claims only Washington's first, from re-fetched sources
+
+Decided by the site owner while planning the article on Jaelynn Scott's House race in the 37th Legislative District.
+
+The article says only that Scott would be Washington's first openly transgender legislator, attributed to the Washington
+State Standard and KNKX, and written in conditional tense until King County certifies the result on November 24. It leaves
+out the national claim that she would be the first Black trans person elected to a state legislature. The Standard prints
+that claim, but Erin in the Morning and The 19th describe Mauree Turner (Oklahoma, 2020), who is Black and nonbinary, as the
+first out Black trans person in a state legislature, and Wikipedia's "first to hold political office" line conflicts with
+Andrea Jenkins (Minneapolis City Council, 2017). The history notes are in `docs/research/jaelynn-scott-lavender-rights-project.md`.
+
+Citations come only from pages re-fetched on the day, not from the two ChatGPT research reports, whose references were
+placeholders and whose finance figures were older than the Public Disclosure Commission pages. Campaign finance figures
+carry an "as of" date, and the article uses McCorkle's name without pronouns because sources disagree.
