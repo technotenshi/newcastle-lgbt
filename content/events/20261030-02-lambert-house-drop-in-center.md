@@ -11,4 +11,4 @@ link:
   target: "https://www.lamberthouse.org/youth-programs/"
 ---
 
-Lambert House's Drop-In Center welcomes LGBTQ+ youth up to age 22 Monday through Friday, with board games, puzzles, video games, a lending library, pianos, guitars, art supplies, a clothing bank, and hygiene supplies. The next open hours are Friday, October 30, 2026, from 4:00–9:30 PM at the temporary location, 1229 10th Ave E in Seattle. Youth under 13 need a parent or guardian permission form, and a New Youth Orientation is required for first-time visitors, which you can complete in person during drop-in hours. See the link below for details.
+Lambert House's Drop-In Center welcomes LGBTQ+ youth ages 11–22 Monday through Friday, with board games, puzzles, video games, a lending library, pianos, guitars, art supplies, a clothing bank, and hygiene supplies. The next open hours are Friday, October 30, 2026, from 4:00–9:30 PM at the temporary location, 1229 10th Ave E in Seattle. Youth ages 11–12 need a parent or guardian permission form, and a New Youth Orientation is required for first-time visitors, which you can complete in person during drop-in hours. See the link below for details.
