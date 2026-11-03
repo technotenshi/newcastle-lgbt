@@ -800,3 +800,12 @@ finding, so the register row that said no patched release exists is removed.
 
 `.nvmrc` moves to 26 to match the `Dockerfile` and the audit workflow. The CI build matrix stays on 24.x because renaming
 it would rename the required check `build (24.x)`.
+
+## 2026-11-02 Reign protest article centers solidarity and separates evidence from estimates
+
+Approved by the site owner: create the Reign protest article with a November 2 Pacific date and a
+November 3 voting call, include the eyewitness's qualified "might be six" quotation, build a standing
+Keith Swank research file, and give Amendment 53 a short, non-endorsing explanation. Do not equate
+Swank's reported 87-person organizing group with attendance or claim he attended without evidence.
+Use the named SPD disciplinary report for his employment record and the county's primary ballot
+explanation for Amendment 53. The generated images are labeled as illustrations, not event photos.

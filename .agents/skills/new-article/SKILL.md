@@ -10,7 +10,7 @@ Create a new content file (news article or event) for the Newcastle LGBTQ+ site.
 The user invokes `/new-article` and provides raw source material — a news excerpt, press release, social post, or just a brief description. You will:
 
 1. Ask if this is a **news article** or an **event** (if not already clear from context)
-2. Gather any missing required fields by asking the user
+2. Gather any missing required fields by asking the user. Verify the publication date in `America/Los_Angeles`, not the host's UTC date, before choosing a filename or wording such as "today" or "tomorrow". Use the named time zone so daylight-saving transitions are handled automatically.
 3. Check `content/news/` or `content/events/` for existing files on the same date to pick the correct sequence number (`##`)
 4. Create the file with the correct name, frontmatter, and body
 5. Invoke the `generate-images` skill to produce the real image file(s) for every image slot, without waiting for the user to ask (see "Image generation" below)
