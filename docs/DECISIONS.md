@@ -780,3 +780,23 @@ Andrea Jenkins (Minneapolis City Council, 2017). The history notes are in `docs/
 Citations come only from pages re-fetched on the day, not from the two ChatGPT research reports, whose references were
 placeholders and whose finance figures were older than the Public Disclosure Commission pages. Campaign finance figures
 carry an "as of" date, and the article uses McCorkle's name without pronouns because sources disagree.
+
+## 2026-11-03 Batch the twelve open dependency PRs into one branch, retire the node-forge exception
+
+Decided by the site owner after the `Dependency audit` job started failing on `main` and eleven of twelve open bot PRs
+were failing one or more checks.
+
+The twelve PRs (#430, #486, #490 to #493, #495 to #500) bump different packages, so none duplicates or supersedes another.
+They are applied to one branch as separate commits and squash-merged as one PR, because `main` requires branches to be
+up to date and each merge otherwise forces a rebase of the rest. Renovate and Dependabot close their PRs once `main`
+contains the change. `yarn.lock` is regenerated once (`yarn install`, then `yarn up -R` for the lockfile-only bumps)
+instead of merging five PRs that edit the same file. Five of the PRs changed only `package.json` because Renovate
+could not regenerate the lockfile (issue #316); that is why their `build` and `renovate/artifacts` checks failed.
+
+Two other failures had one cause each. `claude-review` failed on every bot PR with "Workflow initiated by non-human
+actor", so `claude-code-review.yml` now sets `allowed_bots: 'renovate,dependabot'`. The audit job failed on `main`
+because node-forge 1.4.0 gained four high advisories; #497 moves it to 1.4.2, after which the gate reports no node-forge
+finding, so the register row that said no patched release exists is removed.
+
+`.nvmrc` moves to 26 to match the `Dockerfile` and the audit workflow. The CI build matrix stays on 24.x because renaming
+it would rename the required check `build (24.x)`.
