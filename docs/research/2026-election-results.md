@@ -14,6 +14,61 @@ Include local ballot races, all three statewide measures, state legislative bala
 
 Keep `draft: true`. Refresh numbers before publication only when requested. Any requested post-publication revision must note changes since the previous published snapshot. There is no previous published results edition to compare. Do not change older articles without separate approval. Existing MDC prose overrides are Dateline and ProseA only; use compact tables rather than introduce a chart subsystem for this story.
 
+## Turnout follow-up: November 4 afternoon verification
+
+This follow-up is separate from the article's 1:28 p.m. PST reporting cutoff above. It does not refresh the article or the companion results CSV.
+
+### Owner-approved scope
+
+The owner requested an investigation of turnout's relationship to results, then approved these boundaries in the interview:
+
+- Focus on the three statewide initiatives, not legislative races.
+- Use only a preliminary turnout note now. Defer substantive county-level turnout and initiative-result comparisons until certified data are available.
+- Use registered voters as the turnout denominator. Compare matching geographic units and describe associations, not causes or individual voter motivations.
+- Verify the figures and propose wording first. Article edits have not been approved or applied.
+
+### Verified preliminary statewide figures
+
+Source: Washington Office of the Secretary of State, official 2026 general election dashboard, Voter Turnout view:
+
+https://results.votewa.gov/results/public/washington/elections/20261103/voters
+
+Read directly from the rendered browser accessibility tree on November 4, 2026:
+
+| Dashboard label | Reported value |
+|---|---|
+| Registered Voters | 5,170,951 |
+| Ballots Cast | 2,026,373 |
+| Voter Turnout | 39.19% |
+| Last Updated | Wednesday, November 4, 2026 at 3:34:48 PM |
+| Results status | UNOFFICIAL RESULTS |
+
+Arithmetic independently checked: 2,026,373 / 5,170,951 × 100 rounds to 39.19%.
+
+The browser timezone was verified as `America/Los_Angeles`. The displayed timestamp itself contains no explicit timezone label. Preserve that distinction when citing the timestamp. The earlier extraction showed 6:34:48 p.m.; the browser displayed 3:34:48 p.m., consistent with the rendering pitfall documented below. Do not treat these as two different updates.
+
+These are the dashboard's reported figures, not final turnout. Preserve its label `Ballots Cast`; do not silently recast the figure as all ballots returned, accepted, or eventually counted. Contest vote totals are not a substitute for total ballots. The denominator is registered voters, not all voting-age or voting-eligible residents.
+
+### Proposed article wording, not yet applied
+
+“Washington's unofficial turnout dashboard reports 2,026,373 ballots cast among 5,170,951 registered voters, or 39.19%, in its November 4 afternoon update. This is an incomplete reporting snapshot, not final turnout. It does not establish whether turnout helped produce the initiative leads; that analysis should wait for certified county-level turnout and results.”
+
+If approved for the article, give this a separately labeled reporting timestamp because it is newer than the existing article cutoff. Cite the official turnout view using the article's footnote conventions. Do not silently update the initiative totals or other races alongside this addition.
+
+### Remaining work and limitations
+
+No county-level association has been calculated or verified. Different county counting speeds can make incomplete reported turnout look like differences in final participation. Even a verified county-level association would not establish causation, how LGBTQ+ voters voted, or what nonvoters preferred.
+
+After certification, obtain turnout and initiative results for matching counties and the same election. Verify each source's certification status and reporting definitions before comparing. No monitoring job or reminder has been scheduled; resume only when requested.
+
+Additional official source locations identified during the read-only research:
+
+- Ballot-return reports: https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics . These concern returns and must not be conflated with the results dashboard's ballots-cast figure.
+- Historical turnout: https://www.sos.wa.gov/elections/data-research/election-data-and-maps/reports-data-and-statistics/voter-turnout-election . At the initial check, its newest entry was August 4, 2026; it did not yet supply November 2026 turnout.
+- Participation denominators: https://www.sos.wa.gov/elections/data-research/reports-data-and-statistics/voter-participation-statistics . Registered-voter turnout and voting-age-population participation are different measures; voting-age population is not synonymous with voting-eligible population.
+
+The initial text extraction did not expose the current turnout figures. Opening the dashboard's Voter Turnout control in the browser did expose them. For a future refresh, read the rendered turnout view rather than assuming the figures are unavailable.
+
 ## Primary numerical evidence and coverage checks
 
 Official public media export, discovered through the dashboard's Media Export link:
