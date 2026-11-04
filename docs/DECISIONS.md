@@ -809,3 +809,22 @@ Keith Swank research file, and give Amendment 53 a short, non-endorsing explanat
 Swank's reported 87-person organizing group with attendance or claim he attended without evidence.
 Use the named SPD disciplinary report for his employment record and the county's primary ballot
 explanation for Amendment 53. The generated images are labeled as illustrations, not event photos.
+
+## 2026-11-04 Election results article is an unpublished reporting snapshot
+
+Approved by the site owner through the grill-with-docs interview: prepare a Washington and Newcastle first
+follow-up linking the voter's guide, Jaelynn Scott profile and Reign protest report. Include local contests,
+statewide measures, state legislative balance, Pierce Amendments 53 and 54, national congressional control,
+governor totals and selected representation milestones. Retain evidence-backed LGBTQ+ advocacy and keep
+`draft: true` until publication is requested. Refresh results only when asked; any requested revision after
+publication must identify changes since the previous published snapshot. Do not promise continuous updates.
+
+Attributed news-organization race calls may be reported before certification, with their uncertified status
+made explicit. This supersedes the October 28 decision to keep Scott's outcome conditional until certification;
+it does not authorize editing the earlier article. Keep current leads, attributed calls, certified results and
+if-leads-hold compositions distinct. `GLOSSARY.md` records these reporting terms. No architectural ADR is needed.
+
+Use compact tables rather than introduce new dashboard components for this article. Preserve a source snapshot
+and calculation notes in `docs/research/2026-election-results*`. Verify displayed times in a Pacific-time browser:
+text extraction rendered the official dashboards three hours later. Treat canceled Superior Court contests
+separately from November races with vote returns. Leave the prior voter's guide unchanged pending separate approval.
