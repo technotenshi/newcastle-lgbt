@@ -167,6 +167,10 @@ Rules:
 
 ---
 
+### Graphical election snapshots
+
+For authored graphical election snapshots, use the reusable `::election-results` MDC block. See [Election results authoring](election-results.md) for tested YAML syntax, candidate and measure encoding, source slots, status evidence and fixture verification.
+
 ### Advocacy-forward writing conventions (sensitive historical/political news)
 
 For articles covering movement history, government policy, discrimination, or corporate accountability, follow the full checklist at [`docs/editorial-checklist.md`](editorial-checklist.md). This is an advocacy site: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them should reach a critical, evidence-backed conclusion, not a neutral "both sides" summary, and should fact-check claims from supporters and opponents alike so the criticism holds up. It was written after an editorial pass on a Pride-history investigation surfaced the same handful of problems repeatedly. Highest-signal rules:

@@ -153,7 +153,7 @@ Details (Dependabot and Renovate overlap, `yarn.lock` drift, Copilot review): [`
 
 - `.github/workflows/yarn-nuxt.yml` runs `yarn install --immutable`, `yarn lint`, `yarn build`, and `node scripts/verify-social-images.mjs` on pushes and pull requests to `main`
 - `.github/workflows/dependency-audit.yml` runs `scripts/audit-gate.mjs` (a recursive Yarn audit) on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate files. It fails on critical or high findings without an entry in [`docs/maintenance/audit-exceptions.md`](docs/maintenance/audit-exceptions.md) and on entries past their review date. Its unit tests run with `node --test scripts/audit-gate.test.mjs`
-- There are no automated tests for the site; the only tests cover the audit gate (`node --test scripts/audit-gate.test.mjs`)
+- Node built-in tests cover the audit gate (`node --test scripts/audit-gate.test.mjs`) and election result formatting/MDC rendering (`node --test scripts/election-results.test.mjs scripts/election-results-render.test.mjs`). Run these in Docker; election fixture and browser-check instructions are in [`docs/election-results.md`](docs/election-results.md).
 - `.github/dependabot.yml` manages weekly npm dependency update PRs
 - When a Renovate PR changes `package.json` but leaves `yarn.lock` stale ("Artifact update problem", Yarn 1.22.22 vs `packageManager`), follow [`docs/maintenance/2026-10-24-renovate-stale-lockfile.md`](docs/maintenance/2026-10-24-renovate-stale-lockfile.md)
 

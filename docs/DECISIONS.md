@@ -809,3 +809,109 @@ Keith Swank research file, and give Amendment 53 a short, non-endorsing explanat
 Swank's reported 87-person organizing group with attendance or claim he attended without evidence.
 Use the named SPD disciplinary report for his employment record and the county's primary ballot
 explanation for Amendment 53. The generated images are labeled as illustrations, not event photos.
+
+## 2026-11-04 Election results article is an unpublished reporting snapshot
+
+Approved by the site owner through the grill-with-docs interview: prepare a Washington and Newcastle first
+follow-up linking the voter's guide, Jaelynn Scott profile and Reign protest report. Include local contests,
+statewide measures, state legislative balance, Pierce Amendments 53 and 54, national congressional control,
+governor totals and selected representation milestones. Retain evidence-backed LGBTQ+ advocacy and keep
+`draft: true` until publication is requested. Refresh results only when asked; any requested revision after
+publication must identify changes since the previous published snapshot. Do not promise continuous updates.
+
+Attributed news-organization race calls may be reported before certification, with their uncertified status
+made explicit. This supersedes the October 28 decision to keep Scott's outcome conditional until certification;
+it does not authorize editing the earlier article. Keep current leads, attributed calls, certified results and
+if-leads-hold compositions distinct. `GLOSSARY.md` records these reporting terms. No architectural ADR is needed.
+
+Use compact tables rather than introduce new dashboard components for this article. Preserve a source snapshot
+and calculation notes in `docs/research/2026-election-results*`. Verify displayed times in a Pacific-time browser:
+text extraction rendered the official dashboards three hours later. Treat canceled Superior Court contests
+separately from November races with vote returns. Leave the prior voter's guide unchanged pending separate approval.
+
+## 2026-11-04 Prepare the evening election snapshot for publication
+
+The owner requested current numbers for publication with an evening snapshot. Refresh the article to a
+6:05 p.m. PST cutoff, remove the draft flag, and preserve the afternoon CSV alongside a new evening CSV.
+Keep unofficial counts, attributed calls and conditional chamber scenarios distinct. This is the first
+publication edition, not a post-publication update. Do not add the deferred turnout or demographic analysis.
+
+The owner selected file refresh only when offered Docker lint and a static publication build. Do not run
+those checks, install dependencies, commit, push or deploy as part of this refresh. Mechanical content and
+arithmetic checks do not establish that the newly included article route renders or its social image exists.
+Leave prior published articles and the untracked `.codex/` directory untouched.
+
+## 2026-11-04 Add a sobering I-638 section grounded in organizational responses
+
+Approved through the owner's interview: add a standalone section after the initiative explanations,
+leading with harm and belonging, briefly mentioning passage as a serious prospect without printing market
+percentages. Market prices are context, not an election call or a reliable reversal forecast. Distinguish
+ACLU's pre-election commentary from the coalition's actual November 3 response, naming the speakers.
+
+Describe December 3 effectiveness if approved using the official fiscal analysis, separate anticipated
+guidance from instructions already issued, and do not promise a lawsuit, injunction or court rescue.
+Include existing school civil-rights and Education Ombuds assistance without guaranteeing eligibility.
+Timestamp supplemental context separately from the 6:05 p.m. vote snapshot. Update citations and the
+research record; run source and mechanical checks only. No Docker checks, commit, push or publication.
+
+## 2026-11-04 Remove three Nuxt startup warnings
+
+The owner approved declaring the root package as an ES module, removing the redundant
+`app.head.charset` default, and pre-bundling the Shiki dependencies reported by Vite.
+An identical config imported in a temporary package emitted Node's module-type warning
+without `type: module` and imported without that warning when the type was declared.
+Keep the existing Bootstrap and Schema.org pre-bundle entries. Network bindings remain
+unchanged and require separate approval. Verify lint and the static build in Docker;
+use an isolated source copy for the build to preserve the running dev server's output.
+
+## 2026-11-04 Update I-638 to AP projected passage
+
+The owner supplied an AP results screenshot and requested the article update. Report AP's
+Yes call at 6:14 p.m. November 4, with a display update at 6:21 p.m., separately from
+certification and the unchanged official numerical snapshot. The screenshot shows Yes
+1,252,863 (56.6%), No 961,810 (43.4%), and an estimated 66% counted. Cite the supplied
+screenshot transparently; its original page URL was not provided. Update the lead, summary
+and I-638 discussion consistently. Retain the existing file-only verification scope.
+
+## 2026-11-04 Reusable graphical election snapshots for measures and candidates
+
+Approved by the owner through the graphical-results implementation brief. This supersedes
+the earlier table-only choice and file-only verification scope for this graphical display
+task. Replace only the three statewide initiative rows and the introductory table reference;
+preserve the rest of the existing article and its publication frontmatter.
+
+Use an SSR/static-compatible MDC component with authored YAML props, no live feed, CSV/JSON
+data connection or new dependencies. Counts determine all shares and margins, including
+supplied write-in aggregates; preserve Yes/No and candidate ballot order. Measure stances
+are explicitly authored favorable/green, harmful/red or neutral/gray with visible LGBTQ+
+rights labels; candidate parties use blue, red, gold, green or gray with visible party text.
+Never infer calls from leads. Clearly mark ties, zero counts and incomplete data.
+
+Every block includes count source and snapshot time; calls and certified statuses require
+their own attributable evidence and timestamps, separate from the reporting cutoff and
+screenshot display update. Native Markdown slots preserve existing footnotes. All data
+remains accessible as semantic text without color, hover or scripts, with decorative tracks,
+phone stacking and a print fallback.
+
+The two approved public test seams are the result formatter and rendered MDC component
+fixtures, exercised through Node built-in tests in Docker using red/green slices. Docker
+tests and lint are approved here; the parent workflow owns the real static build and browser
+verification of the article route and external synthetic candidate fixture. No package
+installation, image build, server restart, network-binding change, staging, commit, push,
+PR or publication is authorized by this implementation task.
+
+## 2026-11-04 Extend graphical snapshots to the full requested results
+
+The owner approved replacing the six additional results tables with the same static
+component, superseding the three-initiative-only scope above. Preserve the snapshot
+counts, citations, write-ins and authored order; use nonpartisan labels for courts and
+county offices. Pierce's official Approved/Rejected labels remain unchanged and have
+no assigned advocacy stance. The prior neutral treatment of I-645 is superseded: the
+site's existing election article endorsed No, so Yes is harmful and No favorable.
+
+A separate whole-chamber seats mode distinguishes if-leads-hold scenarios from AP's
+called-seat and continuing-officeholder accounting, includes uncalled in denominators,
+and does not infer winners or vote margins. Record an observed call time separately
+when the actual call time is unknown. Keep the existing 6:14 I-638 call, 6:21 display
+update and earlier vote snapshots distinct. The parent workflow owns static build and
+browser verification; no restart, publication, staging, commit or push is authorized.
