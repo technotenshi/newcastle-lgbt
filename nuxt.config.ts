@@ -54,7 +54,6 @@ export default defineNuxtConfig({
   plugins: ["~/plugins/bootstrap.client"],
   app: {
     head: {
-      charset: "utf-8",
       viewport: "width=device-width, initial-scale=1, minimum-scale=1",
       meta: [
         {
@@ -121,6 +120,25 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       include: [
+        "@shikijs/core",
+        "@shikijs/engine-javascript",
+        "@shikijs/engine-oniguruma",
+        "@shikijs/langs/css",
+        "@shikijs/langs/html",
+        "@shikijs/langs/javascript",
+        "@shikijs/langs/json",
+        "@shikijs/langs/jsx",
+        "@shikijs/langs/markdown",
+        "@shikijs/langs/mdc",
+        "@shikijs/langs/shellscript",
+        "@shikijs/langs/tsx",
+        "@shikijs/langs/typescript",
+        "@shikijs/langs/vue",
+        "@shikijs/langs/yaml",
+        "@shikijs/themes/github-dark",
+        "@shikijs/themes/github-light",
+        "@shikijs/transformers",
+        "shiki/wasm",
         "@unhead/schema-org/vue",
         "bootstrap/js/dist/collapse.js",
         "bootstrap/js/dist/carousel.js",

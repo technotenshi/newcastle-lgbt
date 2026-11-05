@@ -35,3 +35,4 @@ settings.local.json
 .skilld
 docs/superpowers/
 .playwright-cli/
+.codex/

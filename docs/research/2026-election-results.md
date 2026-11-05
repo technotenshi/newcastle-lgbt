@@ -1,6 +1,63 @@
 # November 2026 election results reporting
 
-Research cutoff: November 4, 2026, 1:28 p.m. PST. This is an unpublished article's evidence record, not a continuously maintained dashboard.
+Current article cutoff: November 4, 2026, 6:05 p.m. PST. The evening refresh below supersedes the afternoon article figures. Earlier sections retain the unpublished afternoon evidence record and deferred research scope. This is not a continuously maintained dashboard.
+
+## I-638 AP call supplied by the owner, November 4
+
+AP results screenshot supplied by the owner: Yes wins, call at 6:14 p.m. November 4,
+display updated at 6:21 p.m. Yes 1,252,863 (56.6%); No 961,810 (43.4%); estimated
+66% counted. These counts match the preserved official evening snapshot. The call is
+reported from the supplied screenshot, not an independently fetched AP page. No original
+page URL or explicit timezone appears in the screenshot; do not invent either. The article
+now distinguishes projected passage from certification and effectiveness, with a separately
+timestamped update. Other races, vote totals and the CSV are unchanged.
+
+## November 4 evening publication refresh
+
+The owner requested current numbers for an evening publication snapshot, then selected file refresh only instead of Docker publication checks. The article's `draft: true` flag is removed for publication preparation. No build, dependency installation, commit, push or deployment is authorized by this refresh.
+
+Official source: https://results.votewa.gov/cdn/results/washington/export-20261103.json . The ordinary URL initially returned `createdAt` 2026-11-04T23:34:28.0810725Z, older than the live page. A cache-busting query returned the export generated at `2026-11-05T01:52:13.8292467Z`, November 4 at 5:52:13 p.m. PST. Its three statewide initiative counts match the rendered dashboard. Retrieval time is not count time.
+
+The browser timezone was America/Los_Angeles. Rendered dashboard publication times were November 4 at 5:52:06 p.m. for Washington, 4:34:31 p.m. for King County, and 5:01:07 p.m. for Pierce County. Both counties list November 5 at 4 p.m. as the next expected update. Results remain unofficial.
+
+Preserved numerical evidence: `2026-election-results-snapshot-evening.csv`, with source URL and export generation time on every row. Code matched all 146 prior-snapshot contests by jurisdiction and exact contest name, retaining 412 options including write-ins. The original `2026-election-results-snapshot.csv` is unchanged. Percentages and margins were recalculated from all valid contest-option votes.
+
+| Measure | Yes | No | Lead |
+|---|---|---|---|
+| IL26-638 | 1,252,863 (56.57%) | 961,810 (43.43%) | Yes by 291,053 |
+| IL26-001 | 1,027,479 (47.38%) | 1,141,234 (52.62%) | No by 113,755 |
+| IP26-645 | 936,309 (42.07%) | 1,289,553 (57.93%) | No by 353,244 |
+
+Scott has 32,069 votes (87.32%), McCorkle 4,344 (11.83%), and write-ins 311. King County's rendered count corroborates these figures and its I-638 county totals: No 336,255 (57.25%), Yes 251,111 (42.75%). The refreshed export still gives 68 D / 30 R House leaders, 18 D / six R leaders in the 24 Senate contests, and eight D / two R U.S. House leaders. The Bellevue Chamber's whole-Senate 31 D / 18 R scenario remains explicitly attributed and conditional, not a new inventory of called seats.
+
+AP's rendered office pages were checked between 6:01 and 6:04 p.m. Pacific. House: 239 D, 147 R, 49 uncalled, summing to 435. Senate: 54 Democratic aligned, 44 R, two uncalled, including continuing seats. Governors: 28 D, 20 R, two uncalled, including continuing officeholders. The House and governor pages displayed an update at 6:01 p.m.; the Senate top summary displayed 6:01 p.m. while its map displayed 5:50 p.m. Do not assign one widget's timestamp to all underlying calls. AP's map marks eight Washington Democratic wins, including WA-9, and Republican leads without calls in WA-4 and WA-5. Alaska and Mississippi Senate, and Alaska and Kansas governor, remain uncalled on the respective maps.
+
+Re-fetched LGBTQ Nation's Scott report, AP's congressional-control and outstanding-races reports, the Bellevue Chamber scenario, CNN and AP/NBC historical milestones, NCSL's governor context, and King County's schedule. Their relevant outcome descriptions remain consistent with the article. The standing legal-text and historical source verification below remains from the afternoon research; this refresh is not a new full audit of every unchanged citation. No turnout, county association or demographic analysis was added. Prior articles and `.codex/` remain untouched.
+
+Source/content verification: the mechanical article checker passed with 31 footnote references and 31 definitions, first-use ordering was checked, and `git diff --check` passed. Publication render, lint, static build and social-image verification remain pending because the owner selected file refresh only. A prior passing build excluded this previously hidden article and does not verify the evening publication page.
+
+## I-638 organizational response and next steps, November 4 evening
+
+The owner approved a fuller standalone section after the initiative explanations. Lead with harm to students and belonging, briefly describe the substantial Yes lead and market direction qualitatively, distinguish pre-election opposition from actual election-night response, explain conditional implementation and legal uncertainty, and end with existing assistance routes. No new vote-count refresh, numerical reversal forecast, Docker checks, commit, push or publication was requested. Supplemental context was checked through 6:22 p.m. Pacific, separately from the article's 6:05 p.m. numerical snapshot.
+
+### Verified sources used in the new section
+
+- Public: https://public.com/prediction-markets/which-ballot-measures-will-pass-in-washington-li6innl . Retrieved display: I-638 Yes 93%, No 7%; the Yes contract table displayed 97 cents rather than the headline's 93 cents. The page describes market-implied probabilities from recent trading and warns that data may be delayed or incorrect. Do not conflate an offered contract price, a displayed probability, and an election call. No numerical probability is printed in the article.
+- Nijinn: https://midterms.nijinn.io/ballot-measures/washington-initiative-il26-638-transgender-school-sports-access/ . Displayed update November 4 at 9:06 p.m. Eastern, 6:06 p.m. Pacific: TruthIndex 95.0% Yes, Polymarket 96.4%, Kalshi 95.0%. Polymarket depth within five points was only $7; Kalshi $4.3K. The qualitative article mention does not endorse calibration of these prices or treat this tracker as independent evidence of voter choices.
+- ACLU of Washington, LaVendrick Smith, October 2: https://www.aclu-wa.org/news/banning-trans-girls-from-school-sports-is-discrimination/ . Verified belonging quotation and author's communications role. This is pre-election opposition, not a post-election ACLU response. Its annual-verification and Supreme Court characterizations are not imported into the article; the initiative text does not specify an annual interval.
+- No Hate in WA State, Sloane Shearer, November 3: https://nohateinwastate.org/internal-news/election-results . Explicitly responds to the first reported counts. Verified Watson's hope for subsequent I-638 rejection and Suluai's role and exact support quotation. The release is not a concession, a call, a lawsuit announcement or a separate UTOPIA release. Do not import its I-001 outcome assertion as an independently verified result or repeat its broad examination language without the primary-text qualification.
+- Washington Office of Financial Management: https://www.sos.wa.gov/sites/default/files/2026-07/Initiative%20Measure%20NoIL26-638_FIS_FINAL.pdf . Official analysis says effective December 3, 2026, prospective application, OSPI guidance updates and local policy revisions. No publication day is stated in the extracted PDF, so the article uses n.d. The document's inconsistent fiscal-year expenditure detail is omitted. It is not implementation instructions already issued.
+- Washington State LGBTQ Commission: https://lgbtq.wa.gov/sports . Verified links to school civil-rights coordinators, OSPI discrimination complaints and the Education Ombuds. Existing assistance routes, not a new I-638-specific remedy or assurance of continued eligibility.
+
+Research found no verified announced I-638 lawsuit, injunction or post-election WIAA/OSPI implementation instructions in the materials reviewed. This is a bounded verification statement, not proof none exists. The coalition's February legal briefing characterizes a possible state constitutional challenge, not a filed case: https://nohateinwastate.org/internal-news/legal-medical-experts-provide-factual-information-onnbspheywood-initiatives-il26-001-il26-638 . Do not promise a judicial delay or rescue.
+
+The researcher corroborated the December 3 date with Washington Constitution Article II, section 1(d), the thirtieth day after approval at the election: https://leg.wa.gov/media/wydnzzoe/waconstitution.pdf . The article directly cites the initiative-specific official fiscal analysis and retains the existing certification calendar; effectiveness and certification remain distinct concepts.
+
+### Supplied material not used as a fresh forecast
+
+The supplied On Point Politics page, https://www.onpointpolitics.us/forecast/measures/wa/initiative-measure-no-il26-638 , was read. It is dated November 3 and projects Yes 53.4%, with a 68.4% chance of passage, using one listed poll and model assumptions. It is not updated to the November 4 count, so it is not used as a current probability in the article. The owner's pasted earlier-count scenario table is also not used: its Yes/No figures differ from the preserved evening snapshot, and no reliable statewide outstanding-vote estimate was established. No fresh reversal probability was calculated or inferred.
+
+Six sources were added and all 37 footnote definitions renumbered by first appearance. The section's factual claims and quotations were checked against fetched first-party pages, including an independent parent check of the coalition release, ACLU commentary, fiscal analysis and Commission resources. No older article, image, numerical CSV, package manifest or lockfile changed for this addition. Rendered verification remains outstanding under the owner's file-only scope.
 
 ## Approved scope and publication workflow
 
