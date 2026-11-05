@@ -16,6 +16,19 @@ test('rendered seat summaries show units, comparison and uncalled without vote l
   assert.match(html, /election-results-gray/);
 });
 
+test('a sourced call without a confirmed timestamp renders its attribution without a status slot', async () => {
+  const contest = { id: 'fixture', title: 'Untimed call', type: 'candidate',
+    source: 'Official returns', snapshot: '2026-11-04T17:52:00-08:00',
+    status: { kind: 'called', resultId: 'a', source: 'AP via The Seattle Times' },
+    results: [{ id: 'a', label: 'Candidate A', party: 'Independent', votes: 2 },
+      { id: 'b', label: 'Candidate B', party: 'Nonpartisan', votes: 1 }] };
+  const { html } = await renderElectionMarkdown(`::election-results\n---\ncontest: ${JSON.stringify(contest)}\n---\n::`);
+  assert.match(html, /Attributed call: Candidate A\. Uncertified\./);
+  assert.match(html, /AP via The Seattle Times/);
+  assert.doesNotMatch(html, /Called at|Call verified as of|Invalid Date/);
+  assert.equal((html.match(/<time\b/g) || []).length, 1, 'only the count snapshot has a confirmed timestamp');
+});
+
 test('MDC structured props render readable counts, decorative tracks and native source footnotes', async () => {
   const { html } = await renderElectionMarkdown(`
 ::election-results
@@ -62,7 +75,9 @@ test('the real article embeds exactly the three official initiative snapshots an
     assert.ok(html.includes(value), value);
   }
   assert.match(html, /Attributed call: Yes\. Uncertified\.<\/strong><div[^>]*>Associated Press/);
-  assert.match(html, /6:14 PM PST/);
+  assert.match(html, /6:14 p\.m\./);
+  assert.match(html, /Displayed timezone unconfirmed/);
+  assert.doesNotMatch(html, /6:14 PM PST|6:21 p\.m\. November 4, 2026, PST/);
   assert.match(html, /6:21 p\.m\./);
   assert.equal((html.match(/5:52 PM PST/g) || []).length, 3);
   assert.equal((html.match(/Harms LGBTQ\+ rights/g) || []).length, 3);

@@ -38,6 +38,17 @@ test('a call can be verified by a cutoff without inventing its call time', () =>
   assert.equal(result.statusTime, 'Nov 4, 2026, 6:05 PM PST');
 });
 
+test('a sourced call can omit an unconfirmed absolute time without weakening certification', () => {
+  const input = { ...measure(), status: { kind: 'called', resultId: 'yes', source: 'AP via The Seattle Times' } };
+  const result = formatElectionResults(input);
+  assert.equal(result.statusText, 'Attributed call: Yes. Uncertified.');
+  assert.equal(result.status.source, 'AP via The Seattle Times');
+  assert.equal(result.statusTime, null);
+  assert.equal(result.snapshotTime, 'Nov 4, 2026, 5:52 PM PST');
+  input.status.kind = 'certified';
+  assert.throws(() => formatElectionResults(input), /status.at.*timestamp/);
+});
+
 const measure = (yes = 1252863, no = 961810) => ({
   id: 'IL26-638', title: 'Restrict girls’ school sports participation', type: 'measure',
   source: 'Washington Secretary of State official media export',

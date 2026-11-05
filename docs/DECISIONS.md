@@ -915,3 +915,32 @@ and does not infer winners or vote margins. Record an observed call time separat
 when the actual call time is unknown. Keep the existing 6:14 I-638 call, 6:21 display
 update and earlier vote snapshots distinct. The parent workflow owns static build and
 browser verification; no restart, publication, staging, commit or push is authorized.
+
+## 2026-11-05 Correct the published election article without refreshing results
+
+The owner requested an implementation agent on a feature branch, followed by independent parent review,
+verification and validation. Commits and pushes to main are forbidden. Keep the November 4 vote/seat
+snapshot, source CSVs, frontmatter, images and prior articles unchanged; identify editorial corrections
+in a dated note for readers.
+
+Cite the owner's subsequently supplied Seattle Times URL for the AP results screenshot. The owner considers
+PST likely but has not confirmed it, so preserve the 6:14 call and 6:21 display times as displayed times
+with an explicit timezone limitation. This supersedes the chart's UTC-08:00 assumption. Allow a sourced
+media call without an absolute call or observation timestamp rather than inventing one; retain visible
+source attribution and strict timestamp requirements for certification. Document and test that narrow case.
+
+Clarify I-645's 2028 start and shared deduction using the AG explanation, correct the Scott report's
+byline/date, add sourced Let's Go Washington/Brian Heywood context, and shorten repetitive status prose.
+Run Docker tests, lint and a static build for validation. No package/lockfile change, commit, push,
+merge or deployment is included in this correction task.
+
+## 2026-11-05 Plan image emotion alongside story coverage
+
+Use an emotional brief to represent central achievements, threats and community response in image planning. Celebrate meaningful victories visibly when central, while treating urgent harm honestly; give paired images distinct emotional and narrative angles and make the feature engaging at thumbnail size. Review generated images against that intent without implying fictional scenes depict actual events or outcomes. This task updates guidance only; it does not regenerate the election article images.
+
+
+## 2026-11-05 Regenerate election illustrations with a blue-wave allegory
+
+The owner requested both election article images regenerated using the revised engagement guidance, with blue predominant where appropriate and visual allusions to a blue wave. Use a celebratory feature for representation gains and an active community-belonging header, rather than the prior subdued listening circle and walk. Blue fabric and a blue wave mural express the metaphor in distinct fictional scenes. Preserve the concerning I-638 outcome in the reporting; the images do not imply its defeat or school sports eligibility.
+
+Generation uses separate `gpt-6.1-terra` agents at medium effort and the repository's local Codex native image workflow. The parent reviews actual images, updates article image metadata/disclosure and the dated correction note, and verifies lint, static output and social images. Preserve prior article corrections, all numerical snapshots and the old assets. No commit, push, merge or deployment is part of this task.

@@ -18,9 +18,11 @@ const results = computed(() => formatElectionResults(props.contest));
     </h3>
     <div class="election-results-status">
       <strong>{{ results.statusText }}</strong>
-      <div v-if="results.statusTime">
-        {{ results.status.source }}; {{ results.statusTimeLabel }}
-        <time :datetime="results.status.at || results.status.observedAt">{{ results.statusTime }}</time>.
+      <div v-if="results.status.source">
+        {{ results.status.source }}<template v-if="results.statusTime">
+          ; {{ results.statusTimeLabel }}
+          <time :datetime="results.status.at || results.status.observedAt">{{ results.statusTime }}</time>
+        </template>.
       </div>
       <div
         v-if="$slots.status"

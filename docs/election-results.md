@@ -18,14 +18,13 @@ contest:
   status:
     kind: called
     resultId: yes
-    source: Associated Press
-    at: "2026-11-04T18:14:00-08:00"
+    source: Associated Press via The Seattle Times
   results:
     - { id: yes, label: "Yes", votes: 1252863, stance: harmful }
     - { id: no, label: "No", votes: 961810, stance: favorable }
 ---
 #status
-AP display updated at 6:21 p.m. November 4, 2026, PST.[^1]
+AP results displayed by The Seattle Times: Yes call shown at 6:14 p.m.; display updated at 6:21 p.m. November 4, 2026. Displayed timezone unconfirmed.[^1]
 
 #source
 Official statewide vote totals.[^5]
@@ -66,7 +65,7 @@ contest:
     - { id: r, label: Republican, party: Republican, seats: 30, before: 39 }
 ```
 
-`scenario` means if current leads hold, not called or certified; include continuing officeholders when reporting a whole chamber. `accounting` means AP called seats and continuing officeholders, with uncalled separately, not a call for each summary row or certification. Seat summaries have no current leader or vote margin. Their `snapshot` is displayed as “Verified as of,” not a claimed source update. For this article the national dashboards were checked between 6:01 and 6:04 p.m. PST, before the 6:05 reporting cutoff; the Senate scenario was verified by the same cutoff. Statewide vote counts are from 5:52, King County from 4:34, and Pierce from 5:01. The I-638 exact AP call at 6:14 and display update at 6:21 are separate.
+`scenario` means if current leads hold, not called or certified; include continuing officeholders when reporting a whole chamber. `accounting` means AP called seats and continuing officeholders, with uncalled separately, not a call for each summary row or certification. Seat summaries have no current leader or vote margin. Their `snapshot` is displayed as “Verified as of,” not a claimed source update. For this article the national dashboards were checked between 6:01 and 6:04 p.m. PST, before the 6:05 reporting cutoff; the Senate scenario was verified by the same cutoff. Statewide vote counts are from 5:52, King County from 4:34, and Pierce from 5:01. The I-638 displayed AP call time of 6:14 and display update at 6:21 are separate; their timezone has not been confirmed, so neither is encoded as an absolute timestamp.
 
 ## Status and timestamps
 
@@ -82,10 +81,10 @@ status:
   kind: called # or certified, only with election-authority evidence
   resultId: yes # an id from results, or a candidate's id
   source: Named organization and evidence description
-  at: "2026-11-04T18:14:00-08:00"
+  at: "2026-11-24T12:00:00-08:00" # synthetic example; replace with a verified timestamp
 ```
 
-`leading` cannot carry call/certification metadata. `called` says “Attributed call” and “Uncertified”; `certified` says “Certified result.” Both require a source and reliable time. Use `at` for an actual call or certification time. When a call's actual time is unknown, use `observedAt` instead of `at`; it displays “Call verified as of,” not “Called at.” Do not supply both. Certification requires a complete, nonzero count with the certified entry as sole leader and an actual `at`. A media call can refer to a different moment than the count snapshot and does not change its numbers. Provide source citations through `#status`; preserve any separate screenshot display time there too.
+`leading` cannot carry call/certification metadata. `called` says “Attributed call” and “Uncertified”; `certified` says “Certified result.” Both require an attributable source. Use `at` for a confirmed absolute call or certification time. When a call's actual time is unknown but a reliable observation time is available, use `observedAt` instead of `at`; it displays “Call verified as of,” not “Called at.” Do not supply both. If neither absolute time is confirmed, a `called` status may omit both fields: the source and attributed outcome remain visible, with no generated call time. Explain the limitation and any unconfirmed displayed times in the `#status` slot, with a citation. Do not assign a timezone or invent an observation time merely to fill a field. Certification requires a complete, nonzero count with the certified entry as sole leader and an actual `at`. A media call can refer to a different moment than the count snapshot and does not change its numbers. Provide source citations through `#status`; preserve any separate screenshot display time there too.
 
 Quote timestamps as ISO strings with seconds and an explicit offset or `Z`. They are validated for real calendar dates and displayed in Pacific time with PST/PDT explicitly. The count snapshot is required on every block. Keep article reporting cutoffs separate. Invalid inputs fail with `ElectionResults [contest id]` and an author-facing explanation, including malformed counts, unsafe totals, duplicate result IDs, missing stance/party, contradictory status metadata, invalid timestamps and unknown fields. Percentages are calculated; supplying a `percent` field is an error.
 
