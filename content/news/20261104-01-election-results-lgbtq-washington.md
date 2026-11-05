@@ -17,18 +17,18 @@ imageHeader:
 
 ## What matters now
 
-| Development | Status on November 4 |
+| Issue | Where it stands on November 4 |
 |---|---|
-| Trans students' access to sports | **Projected to pass** with 56.57% Yes.[^1][^5] |
-| Student records and privacy | I-001 **No** leads with 52.62%.[^5] |
-| High-income tax repeal | I-645 **No** leads with 57.93%.[^5] |
-| Jaelynn Scott | **Won** with 87.32%.[^3][^2] |
+| I-638: ban on trans girls in girls' sports | **Projected to pass** with 56.57% Yes. Trans girls lose their place on girls' teams.[^1][^5] |
+| I-001: rollback of student privacy | **Being rejected**, 52.62% No.[^5] |
+| I-645: repeal of the tax on income over $1 million | **Being rejected**, 57.93% No.[^5] |
+| Jaelynn Scott | **Won** with 87.32%, becoming Washington's first trans legislator.[^3][^2] |
 | Congress | Democrats **won control of both chambers**.[^4] |
-| Pierce sheriff accountability | Amendment 53, which would end Sheriff Swank's elected term, trails with 32.65% **Approved**.[^6] |
+| Anti-trans Pierce County sheriff | Voters are **rejecting** both accountability measures: his early removal (67.35% Rejected) and independent oversight of his office (52.31% Rejected).[^6] |
 
 This follows our [Newcastle Voter's Guide: Progressive and LGBTQ+ Friendly Candidates for the November 3 Election](/news/2026/10/28/newcastle-voters-guide), [Jaelynn Scott Is Poised to Become Washington's First Openly Trans Legislator](/news/2026/10/28/jaelynn-scott-first-openly-trans-legislator), and [Reign Fans Answer Sheriff's Anti-Trans Protest With Trans Pride Flags](/news/2026/11/02/sheriff-anti-trans-protest-reign-match). Those stories provide the context. The numbers here come from fresh election records, not their pre-election reporting.
 
-## Washington initiatives: an anti-trans ban projected to pass, two attacks trailing
+## Washington initiatives: an anti-trans ban projected to pass, two attacks being rejected
 
 Statewide totals.[^5]
 
@@ -105,19 +105,19 @@ In King County, home to Newcastle, voters are rejecting it: **No** has 336,255 v
 
 The solidarity Reign supporters showed when they answered Sheriff Keith Swank's anti-trans protest with trans pride flags, described in [our earlier report](/news/2026/11/02/sheriff-anti-trans-protest-reign-match), matters more now, not less. A statewide vote does not change who belongs on the team. Trans girls are girls, and this site will keep opposing I-638 and standing with the students it targets.
 
-### I-001: No leads against the rollback of student privacy
+### I-001: voters are rejecting the rollback of student privacy
 
 I-001 would undo every 2025 amendment to the parents' rights statute and restore the version enacted through Initiative 2081.[^12] The attorney general's explanation lists what students would lose. The exception for a staff member's private notes would be eliminated and records would be due within 10 business days. The statute's right to immediate notice when a child is allegedly abused by a school employee or contractor would be removed, and so would the right to file a harassment, intimidation or bullying complaint on a child's behalf.[^12]
 
 The initiative's strikeout text deletes the statute's express guarantee of an education free from discrimination on grounds including sexual orientation, gender expression and gender identity.[^13] In its place, the attorney general says, parents would receive an assurance that schools will not discriminate based on the family's "sincerely held religious beliefs."[^12] Separate prohibitions elsewhere in state law remain, but this statute would stop naming LGBTQ+ students as protected while naming religious belief. Paired with wider, faster parental access to school-held records, including "records of any mental health counseling," that is a direct risk to a student who confides in a counselor before they are safe to come out at home.[^13]
 
-If No holds, voters will have rejected this attack on student privacy. On November 5, the **No Hate in WA State** campaign said Washington "made history" by rejecting I-001; the November 4 count showed a lead.[^14][^5] I-001 was itself an attempt to reinstate a 2024 initiative after the Legislature amended it: a defeat at the ballot is one round, not the end of the campaign against LGBTQ+ students' privacy.
+If the result holds, voters will have stopped this attack on student privacy. On November 5, the **No Hate in WA State** campaign said Washington "made history" by rejecting I-001; the November 4 count showed No ahead with 52.62%.[^14][^5] I-001 was itself an attempt to reinstate a 2024 initiative after the Legislature amended it: a defeat at the ballot is one round, not the end of the campaign against LGBTQ+ students' privacy.
 
-### I-645: No leads on the repeal of the tax on income over $1 million
+### I-645: voters are rejecting the repeal of the tax on income over $1 million
 
 I-645 would repeal the 9.9% tax on annual individual income over $1 million and prohibit specified state and local income taxes. The tax applies beginning with **2028 income**; married couples and registered domestic partners share a single **$1 million standard deduction**. Repeal would eliminate future revenue for public education, health care and other human services, as well as child care and early learning.[^15] A measure written to protect income above $1 million would take that money from the public services LGBTQ+ people and their families rely on.
 
-Let's Go Washington warned that lawmakers could lower the threshold to reach everyone.[^8] That is a prediction about future legislatures, not what the law says.[^15] Heywood told the Washington State Standard he expected the campaign to cost his committee more than $10 million.[^7] Our [earlier election article](/news/2026/10/28/washington-election-transgender-rights) urged a No vote. The **No** lead is larger than I-001's; if it holds, voters will have refused to trade public services for a tax break at the very top.
+Let's Go Washington warned that lawmakers could lower the threshold to reach everyone.[^8] That is a prediction about future legislatures, not what the law says.[^15] Heywood told the Washington State Standard he expected the campaign to cost his committee more than $10 million.[^7] Our [earlier election article](/news/2026/10/28/washington-election-transgender-rights) urged a No vote. Voters are rejecting it by a wider margin than I-001, 57.93% No; if that holds, voters will have refused to trade public services for a tax break at the very top.
 
 ## I-638: the threat to students and the work ahead
 
