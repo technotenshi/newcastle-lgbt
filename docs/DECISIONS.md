@@ -915,3 +915,57 @@ and does not infer winners or vote margins. Record an observed call time separat
 when the actual call time is unknown. Keep the existing 6:14 I-638 call, 6:21 display
 update and earlier vote snapshots distinct. The parent workflow owns static build and
 browser verification; no restart, publication, staging, commit or push is authorized.
+
+## 2026-11-05 Correct the published election article without refreshing results
+
+The owner requested an implementation agent on a feature branch, followed by independent parent review,
+verification and validation. Commits and pushes to main are forbidden. Keep the November 4 vote/seat
+snapshot, source CSVs, frontmatter, images and prior articles unchanged; identify editorial corrections
+in a dated note for readers.
+
+Cite the owner's subsequently supplied Seattle Times URL for the AP results screenshot. The owner considers
+PST likely but has not confirmed it, so preserve the 6:14 call and 6:21 display times as displayed times
+with an explicit timezone limitation. This supersedes the chart's UTC-08:00 assumption. Allow a sourced
+media call without an absolute call or observation timestamp rather than inventing one; retain visible
+source attribution and strict timestamp requirements for certification. Document and test that narrow case.
+
+Clarify I-645's 2028 start and shared deduction using the AG explanation, correct the Scott report's
+byline/date, add sourced Let's Go Washington/Brian Heywood context, and shorten repetitive status prose.
+Run Docker tests, lint and a static build for validation. No package/lockfile change, commit, push,
+merge or deployment is included in this correction task.
+
+## 2026-11-05 Plan image emotion alongside story coverage
+
+Use an emotional brief to represent central achievements, threats and community response in image planning. Celebrate meaningful victories visibly when central, while treating urgent harm honestly; give paired images distinct emotional and narrative angles and make the feature engaging at thumbnail size. Review generated images against that intent without implying fictional scenes depict actual events or outcomes. This task updates guidance only; it does not regenerate the election article images.
+
+
+## 2026-11-05 Regenerate election illustrations with a blue-wave allegory
+
+The owner requested both election article images regenerated using the revised engagement guidance, with blue predominant where appropriate and visual allusions to a blue wave. Use a celebratory feature for representation gains and an active community-belonging header, rather than the prior subdued listening circle and walk. Blue fabric and a blue wave mural express the metaphor in distinct fictional scenes. Preserve the concerning I-638 outcome in the reporting; the images do not imply its defeat or school sports eligibility.
+
+Generation uses separate `gpt-6.1-terra` agents at medium effort and the repository's local Codex native image workflow. The parent reviews actual images, updates article image metadata/disclosure and the dated correction note, and verifies lint, static output and social images. Preserve prior article corrections, all numerical snapshots and the old assets. No commit, push, merge or deployment is part of this task.
+
+
+## 2026-11-05 Correct sports framing and remove production notes from the article
+
+The owner rejected the celebratory sports header and its caption as tone deaf in reporting a projected sports ban. Replace it with civic-representation imagery and a caption about new LGBTQ+ voices in public life; retain the outdoor representation-celebration feature. This supersedes the earlier choice of a community-sports header. Match each image's emotion to its pictured subject in the shared guide.
+
+The owner also requested removal of third-person site-owner references, the unconfirmed-timezone caveat and the entire editorial-corrections note. Remove unsupported AP clock times from public copy rather than presenting uncertain precision. Keep the attributed AP result and Seattle Times citation, and retain provenance/change history in the research record and PR. This supersedes the earlier requirement for a reader-facing correction note for this revision. Preserve numerical results and official snapshot timestamps. Apply this correction to the existing feature branch and PR.
+
+The owner further directed that the I-638 discussion explicitly criticize its harm to both cisgender and transgender girls. Replace the reassuring genital-exam caveat and the suggestion that exclusion can be separated from harm to girls' sports with the medical-verification barrier, unequal scrutiny and exclusion. Ground the critique in the primary text/AG explanation and attribute the warning about genital examinations to a named opposing medical professional.
+
+## 2026-11-05 Advocacy-forward framing for the election results article
+
+The owner judged the measure coverage too neutral for an advocacy site that opposes these measures before and after the vote. Rewrite the I-638, I-001 and I-645 sections as evidence-backed criticism: fact-check Let's Go Washington's FAQ claims against the initiative texts, state what students lose under I-001 from the AG explanation, and tie I-645 to the public services it would defund. Remove hedges that add no reader value (court-rescue and "assistance routes" caveats, "neither tally establishes why" voter-motive caveats). Retitle the Scott section to say why her win matters to trans people. Link the Reign report wherever it is referenced.
+
+Pierce Charter Amendments 53 and 54 are now marked with stances (Approved favorable, Rejected harmful) instead of neutral, and the section states the site's support for both, grounded in Sheriff Keith Swank's organizing of the Reign protest and his sustained SPD discipline record. No earlier article published a recommendation on these amendments, so the copy states the position now rather than claiming a prior endorsement.
+
+Add Article II, section 41 of the state constitution: for two years after enactment, an approved initiative can be amended only by two-thirds of each chamber. This links I-638 to the legislative seat counts. "Founded by" Heywood was changed to "led by," which is what the cited Standard article supports.
+
+The owner restated the standing position: this is an LGBTQ+ advocacy site, not a neutral news site, and it always criticizes actions, laws and policies that harm LGBTQ+ people. The lessons from this revision are codified as "The stance applies to every format" in `docs/editorial-checklist.md`. Pointers were added to `docs/content-authoring.md`, `docs/election-results.md` (election stance rule: `neutral` only when a measure has no LGBTQ+ stake), `AGENTS.md`, the `content-reviewer` agent, and the `content-check` and `new-article` skills.
+
+## 2026-11-05 Results coverage must report our earlier picks and winners' records
+
+Context: A content-review pass on the November 4 election-results article found sections that stayed neutral where the site had already taken a side. The Supreme Court section ignored the voter's guide picks. LD41 did not connect Zahn and Thai to the law I-001 targeted. A Republican governor-elect's "first" was celebrated without his record. The Congress paragraph had no concrete ask. The title still said "threat" after I-638 was projected to pass.
+
+Decision: Results coverage reports how our recommended candidates fared and restates opponents' documented records. It ties legislators to the roll calls behind the measures and checks every celebrated winner's LGBTQ+ record in primary sources. Neutral paragraphs end with a concrete, sourced ask, and titles name the harm when a harmful measure passes. The rules live in `docs/editorial-checklist.md` under "The stance applies to every format." Process caveats that give readers no information are cut, and so are repeated "uncertified" notes and hedges like "Neither establishes a secured supermajority."

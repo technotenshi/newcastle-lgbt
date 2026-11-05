@@ -92,8 +92,10 @@ function validateContest(contest) {
   } else {
     if (!ids.has(contest.status.resultId)) fail('status.resultId must match a supplied result id');
     text(contest.status.source, 'status.source');
-    if (contest.status.kind === 'called' && contest.status.observedAt !== undefined && contest.status.at === undefined) {
-      timestamp(contest.status.observedAt, 'status.observedAt');
+    if (contest.status.kind === 'called') {
+      if (contest.status.at !== undefined && contest.status.observedAt !== undefined) fail('observedAt is only for a call without an exact at time');
+      if (contest.status.at !== undefined) timestamp(contest.status.at, 'status.at');
+      if (contest.status.observedAt !== undefined) timestamp(contest.status.observedAt, 'status.observedAt');
     } else {
       if (contest.status.observedAt !== undefined) fail('observedAt is only for a call without an exact at time');
       timestamp(contest.status.at, 'status.at');

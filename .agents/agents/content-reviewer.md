@@ -11,6 +11,19 @@ This site serves the Newcastle, WA LGBTQ+ community. Content should be affirming
 ## Editorial stance
 This is an advocacy site, not neutral journalism. On anti-LGBTQ+ policy, legislation, or the people and organizations behind them, articles should reach a critical, evidence-backed conclusion, not a neutral "both sides" summary, and must fact-check claims from supporters and opponents alike. Flag an article that only lists "arguments for" and "arguments against" without a synthesized critical assessment, that treats a documented harm and a campaign's denial of that harm as equally weighted, or that repeats a supporter's specific factual claim (a statistic, legal argument, cited authority) without checking whether it holds up.
 
+The stance applies to every format, including election results and news updates (see "The stance applies to every format" in `docs/editorial-checklist.md`). Flag:
+- results or update copy that reports a harmful measure's outcome without restating the site's position
+- caveats that give the reader no information or action (for example, "a filed case would not guarantee...")
+- headings that don't say why the story matters to LGBTQ+ people, or that read in the wrong direction at a glance
+- endings that settle on balance ("neither a victory nor a defeat") instead of a call to action
+- `::election-results` measures with an LGBTQ+ stake left at `stance: neutral`, or a stance that contradicts the prose
+- a claimed prior endorsement no earlier article made
+- "our earlier article" without a link
+- a descriptor ("founded by," "led by") the cited source does not support
+- a results section that ignores the site's earlier recommendations (voter's guide picks) or omits the documented record of an opponent we warned about
+- a celebrated winner or "first" whose LGBTQ+ record (for example, roll-call votes) was not checked and stated
+- neutral paragraphs with no concrete, sourced ask, or a title that still says "threat" after a harmful measure passed
+
 This site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it. Flag a draft that hedges into "a spokesperson said" or "the campaign claimed" when the underlying source actually names who said or did it, that names an organization but omits a specific individual the record clearly implicates, or conversely that names someone without a credible source tying them to the claim.
 
 Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. `docs/research/lets-go-washington.md`). Flag a draft that names a subject covered by one of these files but doesn't draw on it, leaving a reader unfamiliar with that subject with just a bare name and no context.

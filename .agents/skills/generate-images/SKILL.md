@@ -15,7 +15,7 @@ command -v codex && codex login status
 
 ## Step-by-step
 
-1. **Read the content file** — extract topic, date, location, key visual elements, emotional tone, same as `/image-prompt`.
+1. **Read the content file** — extract topic, date, location, and key visual elements; prepare the [emotional brief](../../../docs/image-generation-guide.md#emotional-brief-and-image-review) before writing prompts.
 2. **Check for attached reference images** — if the user attached a flyer, photo, or reference image, study its visual style, color palette, composition, and mood, and describe what you observed before writing prompts. Per `docs/content-authoring.md`, never reference the attached image directly as an asset — it's style reference only.
 3. **Identify image slots** from frontmatter: `image` (always), `imageHeader` (news, required), `carousel` (news only, multiple).
 4. **Determine style and aspect ratio per slot**, same rules as `/image-prompt`:
@@ -34,7 +34,7 @@ command -v codex && codex login status
 - **No text or logos in the image** — end the prompt with `no text or logos`.
 - **No accurate flag rendering** — describe pride colors as a palette (`rainbow color palette`, or `light blue, pink, and white` for trans-specific content), not "a pride flag."
 - **No named real people.**
-- **Avoid near-duplicate images across slots** (or across two instances of a recurring event) — change scene type, subject, or vantage point, not just the crop.
+- **Plan distinct images across slots** using the [emotional brief](../../../docs/image-generation-guide.md#emotional-brief-and-image-review); also avoid near-duplicates across two instances of a recurring event.
 
 ## Running Codex
 
@@ -60,8 +60,8 @@ When there are multiple slots (or multiple events/articles at once), run each `c
 
 For every slot Codex claims to have completed:
 1. Confirm the file exists and check its pixel dimensions with `node -e "require('sharp')('<path>').metadata().then(m=>console.log(m.width+'x'+m.height))"` (uses the `sharp` package already in `package.json`, works in CI/Docker unlike macOS-only `sips`) — must match the slot's required size exactly.
-2. **View the image with the Read tool** and check it against the rules above: diverse cast, warm/golden lighting (not overcast), a visible LGBTQ+ motif, no rendered text, no duplicate composition versus any sibling slot.
-3. If dimensions are wrong, the file is missing, or the content clearly fails a rule (overcast lighting, no visible motif, rendered text): retry once with a corrected prompt; if it fails again, treat that slot as a fallback case.
+2. **View the image with the Read tool** and check it against the rules above and the [emotional brief and image review](../../../docs/image-generation-guide.md#emotional-brief-and-image-review), including the intended emotion, feature thumbnail engagement, and coverage of central achievements across sibling slots.
+3. If dimensions are wrong, the file is missing, or the content clearly fails a rule or misses the intended emotion (for example, overcast lighting, no visible motif, rendered text): retry once with a corrected prompt; if it fails again, treat that slot as a fallback case.
 4. Write the final `image.alt` (and any other alt fields) to describe what is **actually** in the generated image — not the aspirational prompt — since generation is stochastic and may differ from what was requested.
 
 ## Fallback (per slot)

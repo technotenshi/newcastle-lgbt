@@ -176,6 +176,7 @@ For authored graphical election snapshots, use the reusable `::election-results`
 For articles covering movement history, government policy, discrimination, or corporate accountability, follow the full checklist at [`docs/editorial-checklist.md`](editorial-checklist.md). This is an advocacy site: articles on anti-LGBTQ+ policy, legislation, or the people and organizations behind them should reach a critical, evidence-backed conclusion, not a neutral "both sides" summary, and should fact-check claims from supporters and opponents alike so the criticism holds up. It was written after an editorial pass on a Pride-history investigation surfaced the same handful of problems repeatedly. Highest-signal rules:
 
 - **Be critical, and back it with evidence.** State plainly who a policy harms, not just what it mechanically does, and cite the evidence for that conclusion: the bill's own text, named experts, official analyses.
+- **No neutral formats.** Election results, news updates and briefs carry the same critical stance as analysis pieces. Restate the site's position after a vote, cut caveats that give the reader no information or action, write headings that say why the story matters to LGBTQ+ people and read in the right direction at a glance, and end with a call to action rather than "both sides" balance. See "The stance applies to every format" in [`docs/editorial-checklist.md`](editorial-checklist.md).
 - **Fact-check supporters as rigorously as opponents.** Verify specific checkable claims from a policy's supporters (a statistic, a legal argument, a cited authority); report when one doesn't hold up and show the evidence, rather than only relaying the opposing campaign's rebuttal.
 - **No deficit framing.** Don't define marginalized people primarily through trauma, poverty, or "nothing left to lose" language. Describe the conditions they faced, but preserve their agency, relationships, and goals.
 - **Don't romanticize violence or deprivation as the measure of contribution.** Avoid "threw the first punch/brick" framing; prefer "resisted," "sustained," "organized," "built."
@@ -305,7 +306,7 @@ Use these guidelines to produce DALL-E or Midjourney prompts for every image slo
 - **Inclusive representation** — depict LGBTQ+ community members with diversity in age, race, body type, and gender expression. Avoid stereotypes.
 - **Match the content style** — civic/political articles call for photorealistic documentary photography; social/party events call for graphic-design promotional artwork (see style guide below).
 - **No real people** — do not reference specific named individuals or public figures.
-- **Avoid near-duplicate article images** — if a news article uses both `image` and `imageHeader`, they should support the same story from clearly different visual angles. Do not use the same scene with only a tighter crop. Change at least one of: scene type, primary subject, vantage point, or narrative angle. A good default is one institutional or contextual image and one operational or street-level image.
+- **Plan and review emotional coverage** — follow the [emotional brief and image review](image-generation-guide.md#emotional-brief-and-image-review) for each slot, including the feature thumbnail and the relationship between paired images.
 
 ### Aspect ratio reference
 
@@ -332,12 +333,7 @@ Each image slot renders at a specific size on the site. Use the matching aspect 
 
 Use for news articles and events that depict real-world scenes.
 
-When writing both `image` and `imageHeader` prompts for the same article, separate them intentionally:
-
-- `image` usually works best as the broader contextual or institutional view
-- `imageHeader` usually works best as the more immediate, specific, or visually striking angle
-- If the first prompt is outdoors, consider making the second indoors or document-focused when the article supports it
-- If both must stay outdoors, change the main subject and vantage point, not just the crop
+Plan the emotional and narrative purpose of each slot using the [emotional brief](image-generation-guide.md#emotional-brief-and-image-review), then check generated images against it before acceptance.
 
 **DALL-E formula:**
 ```
@@ -355,7 +351,7 @@ and gender expressions, photorealistic, no text or logos.
 **DALL-E example — council meeting news:**
 ```
 A city council chamber with community members attending a public meeting,
-fluorescent lighting, diverse audience seated in rows, serious and engaged
+warm indoor lighting, diverse audience seated in rows, serious and engaged
 expressions, photorealistic documentary photography, no text or logos.
 ```
 
@@ -422,9 +418,9 @@ playful geometric shapes, energetic mood, flat graphic design, no text
 
 1. **Identify the image slot** — `image` (feature/event), `imageHeader`, or `carousel`
 2. **Look up the aspect ratio** from the table above and note the Midjourney flag or DALL-E size
-3. **Read the article/event body** — extract: location, main topic, key visual elements (people, objects, setting), and emotional tone
+3. **Read the article/event body** — extract location, topic, and visual elements; prepare the [emotional brief](image-generation-guide.md#emotional-brief-and-image-review) before writing prompts
 4. **Choose photo vs. graphic-design style** using the style guide table above
-5. **Plan distinct coverage across slots** — if both `image` and `imageHeader` are present, decide how they differ before writing prompts. Do this by changing scene type, primary subject, vantage point, or narrative angle, not just image distance
+5. **Plan each slot** — use the emotional brief to assign distinct narrative angles, choose each slot's emotional role, and make the feature readable at thumbnail size
 6. **Fill in the template** — replace bracketed placeholders with content-specific details
 7. **Append the required suffix:**
    - DALL-E photo: end with `photorealistic, no text or logos`

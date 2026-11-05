@@ -13,7 +13,21 @@ Reference for generating images with **Midjourney v7** and **DALL-E 3** for use 
 - **Specificity beats vagueness** — concrete scene details produce better results than generic adjectives.
 - **Always name a lighting condition** — lighting determines mood (see Lighting Reference below).
 - **No named real people** — do not reference specific individuals or public figures by name.
-- **Paired article images should be related, not redundant** — when an article uses both `image` and `imageHeader`, keep them on the same topic but make them meaningfully different. Do not rely on minor crop or distance changes alone. Change at least one of: scene type, primary subject, vantage point, or narrative angle. A strong default is to pair an institutional or contextual scene with an operational or street-level scene, or to pair a wide establishing view with a clearly different close subject.
+- **Plan and review emotional coverage** using the [emotional brief](#emotional-brief-and-image-review) before writing prompts and when accepting generated images.
+
+---
+
+## Emotional brief and image review
+
+Before writing prompts, identify the story's meaningful achievements, threats, and community response, then assign each image an intended emotion and narrative angle. If meaningful victories are central, at least one image must visibly celebrate them, even when the story also reports harm. For memorials or coverage centered on tragedy or urgent harm, choose remembrance, care or resolve as appropriate; celebration is not required. Photorealistic civic imagery can convey joy as well as gravity.
+
+For people-focused scenes, describe observable expressions and actions that convey each intended emotion, such as beaming faces, applause, an embrace, a welcoming gesture, or a high-five; mood words such as hopeful, solidarity, or reflective alone are insufficient. For graphic illustrations, describe the shapes, composition and color relationships that convey the intended emotion. Give a news feature `image` a strong focal subject and color separation that remain clear at thumbnail size; make expressions or gestures readable when people appear. An institutional or contextual view is an option when it serves the story, not the default.
+
+When an article has both `image` and `imageHeader`, give them distinct narrative angles and choose their emotional roles deliberately, rather than changing only locations or crops. For mixed election coverage, one can celebrate representation while the other shows active belonging or community agency. Both images may be celebratory when the reporting supports it. Keep illustrations factually honest: a fictional celebration must not imply it depicts an actual event, a named candidate's likeness, or an outcome contradicted by the reporting. For example, celebration of representation gains must not suggest a harmful initiative was defeated when the article reports its passage. A caption may connect celebration to documented representation gains without claiming the scene is a photograph of an actual event.
+
+Match the emotion to the specific subject pictured, not just the article's overall mix of news. In a story reporting a sports exclusion and representation gains, celebrate the civic gains through civic imagery; sports imagery calls for gravity or resolve. A caption should identify the subject of a celebration without folding a reported loss into celebratory language.
+
+Review each generated image against its intended emotion and, for the feature, thumbnail engagement; review the set for distinct angles and representation of central achievements. If emotional intent is clearly missed, correct the prompt and retry within the existing retry limit. Describe what is actually visible in alt text and keep captions consistent with the facts.
 
 ---
 
@@ -122,9 +136,9 @@ IMG_4358.CR2, [your prompt here] --style raw --s 150 --v 7
 ### Photorealism tips
 
 - Start with `"Photo of a..."`
-- Name the lighting: `"soft golden-hour sunlight"`, `"fluorescent overhead light"`, `"soft studio lighting"`
+- Name the lighting: `"golden-hour afternoon sunlight"`, `"bright midday sunlight"`, `"warm morning light"`, or `"warm indoor lighting"`
 - Specify composition: `"wide-angle shot, shallow depth of field, bokeh background"`
-- Add mood adjectives: serene, solemn, celebratory, energetic, contemplative
+- Describe expressions and actions that make the intended emotion visible
 
 ### Graphic design tips
 
@@ -161,18 +175,7 @@ DALL-E has built-in diversity directives but defaults to heterosexual/cisgender 
 
 ## Lighting reference
 
-Use specific lighting terms in both tools — lighting determines the emotional tone of an image.
-
-| Lighting | Effect | Best for |
-|---|---|---|
-| Golden hour | Warm, directional, long shadows | Outdoor community events, celebrations |
-| Soft ambient | Even, flattering, minimal shadows | Portraits, indoor scenes |
-| Dramatic rim lighting | Subject outlined by light from behind | Powerful solo portraits, rally scenes |
-| High-key | Bright, well-lit, minimal shadow | Positive, uplifting, energetic mood |
-| Low-key | Dark with selective light | Serious, solemn, investigative topics |
-| Fluorescent overhead | Cool, flat, institutional | Council meetings, indoor civic events |
-| Backlighting | Silhouette / halo effect | Rallies, marches, protest scenes |
-| Diffuse natural | Overcast, soft, no harsh shadows | Candid street scenes, documentary style |
+Use one of the site-approved lighting conditions in both tools: `golden-hour afternoon sunlight`, `bright midday sunlight`, `warm morning light`, or `warm indoor lighting`. Choose the condition to suit the setting; serious coverage can still use warm light. Express emotion through the subject's actions and expressions as described in the [emotional brief](#emotional-brief-and-image-review).
 
 ---
 
@@ -203,7 +206,7 @@ These are the rules agents follow when generating or saving raster assets for th
 - When the user attaches a reference image, treat it as style, composition, or background guidance unless they explicitly ask for a true edit
 - If a reference image includes signage, logos, branded UI, or readable text, borrow only its visual characteristics and explicitly exclude readable text and logos in the prompt
 - Match the visual style to the content: documentary-style photorealistic images for civic/news coverage, graphic-design or poster-style images for social events
-- If a news article uses both `image` and `imageHeader`, keep them on the same story but make them clearly different in scene, subject, vantage point, or narrative angle
+- Plan and verify each image against the [emotional brief and image review](#emotional-brief-and-image-review)
 - Match slot ratios and exact pixel sizes: `16:9` / `1792x1024` for news feature images, news headers, and carousels; `4:3` / `1024x768` for event images (via `gpt-image-1`/`gpt-image-2`, DALL-E 3 has no true 4:3 fixed size)
 - For phone, tablet, or computer scenes, explicitly prohibit readable screen text and branded UI in the prompt
 - When editing an existing generated image, restate invariants aggressively, for example `change only the background` or `keep the foreground people and activity unchanged`

@@ -2,13 +2,44 @@
 
 Current article cutoff: November 4, 2026, 6:05 p.m. PST. The evening refresh below supersedes the afternoon article figures. Earlier sections retain the unpublished afternoon evidence record and deferred research scope. This is not a continuously maintained dashboard.
 
+## November 5 editorial corrections, with the published counts preserved
+
+The owner requested implementation of the article review on a feature branch, followed by parent-agent review and validation. This is an editorial correction to the published November 4 snapshot, not a count refresh. The article now carries a dated reader-facing note identifying these changes. Both numerical CSVs, chart votes/seats, count-snapshot timestamps, frontmatter and images remain unchanged.
+
+- **AP screenshot provenance:** the owner identified the source as The Seattle Times' results page: https://www.seattletimes.com/seattle-news/politics/washington-state-election-results-2026/#Key-results&651_filter=0 . Footnote 1 now identifies AP results displayed by that publication and links the page. The review's attempts to retrieve it were blocked; the screenshot's historical contents were not independently reverified. The original screenshot remains owner-supplied evidence.
+- **Timezone correction:** the owner assumes the displayed 6:14 p.m. call and 6:21 p.m. update used PST, but has not confirmed it. The article preserves those displayed times with an explicit timezone qualification and removes the previously encoded `2026-11-04T18:14:00-08:00`. It does not substitute a fabricated observation time. This supersedes the original chart's assumption, not the independently recorded Pacific count snapshots.
+- **Chart behavior:** a sourced `called` status can omit `at` and `observedAt` when neither is reliable. Attribution stays visible even without a status slot; certification still requires an actual timezone-qualified timestamp. Focused formatter/render regressions cover this distinction.
+- **I-645 legal precision:** directly cite the Attorney General's July 23 explanation, https://www.sos.wa.gov/sites/default/files/2026-07/ExStmt_IP26-645.pdf . The review downloaded and read pages 1–2; they establish the 2028 start and the shared $1 million deduction for spouses/registered domestic partners. Enacted ESSB 6346 sections 201 and 314 independently confirm both: https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/Senate/6346-S.SL.htm . The individual-income ballot shorthand was not fabricated; the correction supplies omitted qualifications.
+- **Scott source metadata:** the source's indexed article text identifies Molly Sprayregen and November 4, 2026, 11:08 a.m. EST. The entry now uses that author/date rather than “LGBTQ Nation, n.d.” The direct page remains bot-blocked: https://www.lgbtqnation.com/2026/11/jaelynn-scott-will-be-nations-first-out-black-trans-state-lawmaker-after-winning-washington-race/ .
+- **Sponsorship context:** add Let's Go Washington and founder Brian Heywood, drawing on the standing dossier and re-fetched sources: the committee's FAQ, https://letsgowashington.com/faq/ , promotes all three measures; Jake Goldstein-Street's May 8 Standard report identifies the conservative committee and its founder, https://washingtonstatestandard.com/2026/05/08/lets-go-washington-will-go-for-income-tax-repeal-on-this-years-ballot/ . No old fundraising figures or unresolved allegations were imported.
+- **Prose and citations:** shorten repeated call/certification explanations while retaining individual chart statuses and the article's advocacy. Add three sources and renumber all footnotes by first appearance. No new election outcome, vote estimate, turnout analysis, or litigation claim is introduced. The legal-help section's absence-of-verified-guidance statement is explicitly tied to the November 4 reporting.
+
+The parent workflow owns Docker tests, lint, static build, social-image verification and independent review. These implementation notes do not claim those checks have passed. No staging, commit, push or publication is part of this implementation.
+
+### November 5 parent review and validation
+
+Independent parent review and separate standards/spec reviews found no remaining actionable issue in the correction diff. The parent fixed two Vue template formatting warnings before final checks. Re-fetched primary law sections 201 and 314 confirm the tax clarification; the committee FAQ and Standard report support the added sponsorship context. The AP source's historical screenshot and timezone remain qualified, not independently reverified.
+
+Validated in an isolated source copy using the project's Docker image and existing dependencies:
+
+- ESLint passed with no errors or warnings.
+- Both election formatter/render test files passed: 20 tests, zero failures.
+- Static build passed, prerendering 899 routes with zero prerender errors. The build emitted plugin-timing warnings and a duplicate `provider` key warning in generated NuxtImg code; these did not prevent generation.
+- Social-image verification scanned 59 HTML files and 52 distinct local social-image URLs; all images exist at 1200×630. The verifier notes the existing IPX extension/encoded-format distinction.
+- Direct comparison to `a5b9e68` confirms all 57 authored result rows, 22 count-snapshot inputs and frontmatter are unchanged. Only the I-638 call's provenance and unsupported absolute time changed within chart metadata. All 39 footnotes are ordered and complete.
+- The generated article, payload, scripts, stylesheet and header image returned HTTP 200 from a temporary loopback static server. The installed minimal Chromium headless browser captured the page; its DOM retains all 22 charts, the correction note, qualified call times, tax clarification and sponsorship context, without a fabricated AP call-time element. Full Chromium's initial capture stalled, so it was replaced by the bounded minimal-browser capture.
+
+Validation logs and screenshot are in `/tmp/a5b9e68-*`; generated output is in `/tmp/a5b9e68-validation/.output/public`. These are temporary local artifacts. No result refresh, staging, commit, push, merge or deployment was performed.
+
 ## I-638 AP call supplied by the owner, November 4
 
 AP results screenshot supplied by the owner: Yes wins, call at 6:14 p.m. November 4,
 display updated at 6:21 p.m. Yes 1,252,863 (56.6%); No 961,810 (43.4%); estimated
 66% counted. These counts match the preserved official evening snapshot. The call is
-reported from the supplied screenshot, not an independently fetched AP page. No original
-page URL or explicit timezone appears in the screenshot; do not invent either. The article
+reported from the supplied screenshot, not an independently fetched AP page. At initial
+publication no original page URL had been supplied, and no explicit timezone appeared in
+the screenshot. The November 5 correction above records the subsequently supplied URL;
+the timezone remains unconfirmed. The article
 now distinguishes projected passage from certification and effectiveness, with a separately
 timestamped update. Other races, vote totals and the CSV are unchanged.
 
@@ -279,3 +310,67 @@ Label these as canceled contests, with no November vote total, attributed to Bal
 - Recomputed percentages for all 146 preserved contests, checked national and state seat arithmetic, and confirmed 31 ordered source definitions match the article's first-use footnote order.
 - Both generated PNGs are 1792x1024. No em dashes or CR line endings in the article. The mechanical article checker flags `draft: true`, which is intentional and owner-approved.
 - No results refresh was performed after the 1:28 p.m. snapshot. No commit, push, deployment or older-article edit was made.
+
+## November 5 blue-wave illustration refresh
+
+The owner requested regeneration of both article images under the revised engagement guidance, with a blue-wave allegory and predominant blue. Two `gpt-6.1-terra` medium-effort agents generated new PNGs through the local Codex native image capability; each succeeded on its first generation after a sandbox initialization retry. The parent independently viewed both final 1792×1024 files and the feature thumbnail.
+
+The feature shows a joyful crowd applauding and embracing beneath sweeping blue fabric. The header shows a high-five on an inclusive community recreation court with a blue wave mural. Blue clothing, visible pride-color accessories, expressive faces and sunny lighting carry the intended celebration and belonging. These are distinct fictional scenes, not photographs of election events or school competitions. Full prompts and asset paths are preserved in [the image prompt record](2026-election-results-image-prompts.md).
+
+The article now uses the new paths, a descriptive feature alt, an engagement caption and an updated AI-illustration disclosure. Its dated correction note identifies the visual update. All vote/seat figures, reporting snapshots, outcome statuses and source footnotes remain unchanged from the reviewed article. Old images are retained. Parent lint, static build and social-image checks follow this visual review; no staging, commit, push or deployment is authorized by this image refresh.
+
+### Parent validation of the blue-wave assets
+
+Both PNGs are 1792×1024, and both alt/caption fields are within 50–250 characters. Parent checks confirm all 22 chart objects, source definitions and publication title/date/order/slug match the pre-image-refresh article. Earlier code and guideline edits remain byte-for-byte intact.
+
+Docker lint passed without warnings. The static build passed with 899 prerendered routes and zero prerender errors. Social-image verification checked 52 distinct local URLs across 59 HTML files; all exist at 1200×630. The generated article and browser DOM use the new header and feature social image. Parent visual review also checked the actual 1200×630 social crop and a headless browser screenshot of the article. Temporary logs/screenshots are `/tmp/blue-wave-*`; the temporary loopback server was stopped. No result refresh, commit or push was performed.
+
+## November 5 editorial correction after owner review of PR 507
+
+The owner rejected the upbeat community-sports header because it trivialized the reported exclusion, and rejected the caption joining celebration to trans students' rights. The replacement is a fictional civic hall scene about LGBTQ+ voice and representation, generated by a `gpt-6.1-terra` medium-effort agent through local Codex native image generation. The parent reviewed the actual PNG: a confident speaker, welcoming older adult and applauding audience, blue clothing/fabric, rainbow wristbands and warm indoor light; no sports scene. Exact final prompts are in the image prompt record. The rejected sports asset is removed from the final PR; the representation-celebration feature remains.
+
+The owner separately requested removing site-owner/screenshot production wording, the unconfirmed-timezone caveat and the complete dated editorial-corrections note from article copy. Public text now attributes the AP projection directly to its Seattle Times results display. The displayed 6:14/6:21 times are omitted from public prose and footnote 1; they remain preserved in the earlier research sections, without assigning a verified timezone. No unsupported precise timestamp is restored. The owner-supplied provenance and independent-verification limitation remain in this editorial record. All numerical results, snapshot timestamps and calls are preserved.
+
+The replacement header's caption concerns historic LGBTQ+ representation only. The article's AI illustration disclosure remains. Updated authoring guidance keeps unverified clock times/provenance in research rather than prescribing them in public status slots. Render regression expectations now check the published call and source without requiring production notes.
+
+### Explicit criticism of I-638's harm to girls' sports
+
+The owner rejected the reassurance about the absence of a universal genital-exam mandate and the framing that distinguished exclusion from support for women's sports. The paragraph now states that I-638 harms cisgender and transgender girls: the covered girls' competitions require medical sex verification with reproductive anatomy among its permitted bases, without the equivalent gate for boys; trans girls face exclusion. The statement of discriminatory harm and bodily privacy is the article's evidence-based advocacy conclusion.
+
+Re-fetched the primary initiative, section 3(1)–(2), and the AG explanation on November 5. The latter states that students would undergo some type of medical evaluation of their sex for the covered girls' competitions. A newly cited first-party medical-provider opposition statement names family physician Dr. Madie Gore, who warns of unnecessary genital exams and stress and harm for girls: https://nohateinwastate.org/news/100-doctors-and-other-medical-providers-issue-statement-opposing-il26-001-and-il26-638 . Its displayed August 24 date does not expose a year in the retrieved text, so the reference uses n.d. rather than guessing. The article attributes that warning to Gore and does not invent a statutory mandate for a single examination method. Added that source as footnote 14 and renumbered later references; vote snapshots are unchanged.
+
+## November 5 advocacy revision after owner review
+
+Owner feedback: measure coverage read as neutral; the "After AP's call" section carried caveats without reader value; the Scott heading did not say why the win matters to trans people; the Reign reference lacked a link; Pierce amendments showed "No stance assigned."
+
+Verified on November 5 against primary sources before use:
+- I-638 full text, section 3: bars "biologically male students" from the covered female competitions; provider verification "relying only on" reproductive anatomy, genetic makeup or normal endogenously produced testosterone levels. Let's Go Washington FAQ (re-fetched) says I-638 has "no bans" and that a doctor can use "any other method."
+- I-001 full text: restated section includes "Records of any mental health counseling" and the "sincerely held religious beliefs" assurance; strikeout shows the nondiscrimination clause naming sexual orientation, gender expression and gender identity. AG explanation (July 21) confirms removal of the private-notes exception, the 10-business-day deadline, removal of immediate notice of alleged abuse by school employees or contractors, and removal of the HIB complaint right.
+- Washington State Standard (May 8): calls LGW a "conservative political committee," names Heywood its leader, and reports he expected the income tax campaign to cost the committee more than $10 million. It does not say Heywood founded LGW, so the article now says "led by."
+- Washington Constitution, Art. II, section 41 (Legislature PDF): no act approved by voters may be amended or repealed by the Legislature within two years except amendment by two-thirds of all members elected to each house; voters may amend or repeal at any election.
+- Swank facts reuse the Reign article's sources: The News Tribune (October 30) emails and quote; SPD disciplinary action report (January 30, 2025) for OPA 23-0194. Conduct dates to his time as a Seattle police captain. The DAR postdates his November 2024 election.
+
+New footnotes (constitution, News Tribune, SPD report) were inserted and all 43 references renumbered by first appearance. Vote totals and snapshot timestamps are unchanged. The render test's Pierce heading expectation was updated; election-results tests pass in Docker (20/20). Lint and build have not been run yet.
+
+### No Hate in WA State post-call statement (November 5)
+
+Added Libby Watson's November 5 statement (https://nohateinwastate.org/internal-news/statement-from-libby-watson-no-hate-wa-state-campaign-manager, posted by Sloane Shearer), verified by fetch on November 5. It replaces the November 3 "hope later ballots reject I-638" line, which AP's projection superseded. The article quotes the statement's "you belong: on the field, on the court, on the team" message, its point that the invasive exam requirement can harm any girl, the campaign's claim that voters rejected I-001 (attributed, and paired with the uncertified count), its report that legal groups are considering litigation (no filed case is claimed), and its list of trans-led organizations. All seven organization URLs were checked; TRACTION returns 403 to curl but loads in a fetch.
+
+Deliberately not adopted: the unverified "multi-billion dollar" figure, and the claim that this is "one of the first times voters have stopped an anti-trans initiative." Both need independent verification before use. The November 3 and November 5 Shearer posts are 2026a and 2026b in APA style. References were renumbered (44 total).
+
+### Simplified sourcing language (November 5, owner review)
+
+The owner said the article over-mentioned AP and read like a minute-by-minute log, even though it is a same-day November 4 article; a separate November 5 update is planned. The opening's two timestamp paragraphs (AP display capture, dashboard update times, export time, AP check window) were replaced with one dated note: results as of the evening of November 4, unofficial until certification. Prose now reports outcomes directly ("projected to pass," "won," "leads") and leaves the outlet to the footnotes. AP stays cited as a reference: footnotes, block `source` fields, the Hinojosa Latina/Hispanic distinction, and the CNN/AP milestone line. Block timestamps in the `::election-results` YAML are unchanged. References were renumbered by first appearance. The render-test expectations were updated for the new status text and national heading. The rule is now in `docs/editorial-checklist.md`.
+
+### Content-review pass (November 5)
+
+A review against the editorial checklist found the remaining sections neutral where the site had taken a side. Changes:
+
+- Supreme Court: the section now leads with the voter's guide picks (four of five lead; Birk trails O'Donnell in Position 4) and restates the LGBTQ+ stakes in Positions 5 and 3. The Larson quote and the Stevens marriage pledge are re-cited to the guide's primary sources (iVoterGuide, Fuse Washington). The results component does not support stances on candidate rows, so the position is in prose only.
+- LD41: Zahn and Thai's yes votes on ESHB 1296 (final passage roll call, April 24, 2025) are linked to the I-001 result.
+- Byron Donalds: verified on clerk.house.gov that he voted Nay on H.R. 8404, Respect for Marriage Act (roll call 373, July 19, 2022), and Yea on H.R. 734, Protection of Women and Girls in Sports Act (roll call 192, April 20, 2023). Both were added to the milestones section.
+- Congress: the neutral closing paragraph now calls for the Equality Act, citing the Congressional Equality Caucus's April 29, 2025 reintroduction release, which lists Chris Pappas as a co-chair.
+- Cut caveats that gave readers nothing (fresh-records note, party-preference disclaimer, Chamber race-call disclaimer, Ballotpedia certification disclaimer, recount paragraph), repeated "uncertified" notes already covered by the dated note, and the precinct-data release schedule. The King County results-page source that only supported that schedule was dropped.
+- Title changed from "a Threat to Trans Students" to "a Ban on Trans Girls in Girls' Sports" because I-638 is projected to pass. The slug is unchanged.
+
+Footnotes were renumbered by first appearance (49 sources).
