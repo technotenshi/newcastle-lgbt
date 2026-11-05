@@ -1,5 +1,5 @@
 ---
-title: "Election Returns Bring Historic Representation and a Threat to Trans Students"
+title: "Election Returns Bring Historic Representation and a Ban on Trans Girls in Girls' Sports"
 date: "2026-11-04"
 order: 1
 slug: "election-results-lgbtq-washington"
@@ -26,7 +26,7 @@ imageHeader:
 | Congress | Democrats **won control of both chambers**.[^4] |
 | Anti-trans Pierce County sheriff | Voters are **rejecting** both accountability measures: his early removal (67.35% Rejected) and independent oversight of his office (52.31% Rejected).[^6] |
 
-This follows our [Newcastle Voter's Guide: Progressive and LGBTQ+ Friendly Candidates for the November 3 Election](/news/2026/10/28/newcastle-voters-guide), [Jaelynn Scott Is Poised to Become Washington's First Openly Trans Legislator](/news/2026/10/28/jaelynn-scott-first-openly-trans-legislator), and [Reign Fans Answer Sheriff's Anti-Trans Protest With Trans Pride Flags](/news/2026/11/02/sheriff-anti-trans-protest-reign-match). Those stories provide the context. The numbers here come from fresh election records, not their pre-election reporting.
+This follows our [Newcastle Voter's Guide: Progressive and LGBTQ+ Friendly Candidates for the November 3 Election](/news/2026/10/28/newcastle-voters-guide), [Jaelynn Scott Is Poised to Become Washington's First Openly Trans Legislator](/news/2026/10/28/jaelynn-scott-first-openly-trans-legislator), and [Reign Fans Answer Sheriff's Anti-Trans Protest With Trans Pride Flags](/news/2026/11/02/sheriff-anti-trans-protest-reign-match). Those stories provide the context.
 
 ## Washington initiatives: an anti-trans ban projected to pass, two attacks being rejected
 
@@ -149,7 +149,7 @@ Families facing exclusion or harassment can contact their school's civil-rights 
 
 ## Jaelynn Scott: a trans woman in the Legislature as trans students are targeted
 
-The official November count gives **Jaelynn Scott** 32,069 votes, or 87.32%, against **Evon McCorkle's** 4,344, or 11.83%, with 311 write-ins. Her lead is 27,725 votes.[^2] LGBTQ Nation reports that she has won and describes her as Washington's first trans legislator and the first out Black trans woman elected to serve in a U.S. state legislature.[^3] King County has not yet certified the result.
+The official November count gives **Jaelynn Scott** 32,069 votes, or 87.32%, against **Evon McCorkle's** 4,344, or 11.83%, with 311 write-ins. Her lead is 27,725 votes.[^2] LGBTQ Nation reports that she has won and describes her as Washington's first trans legislator and the first out Black trans woman elected to serve in a U.S. state legislature.[^3]
 
 The timing matters. In the same election that is projected to ban trans girls from girls' sports, 37th District voters gave a trans woman 87% of the vote. As the Legislature, school districts and OSPI respond to I-638, trans Washingtonians will have one of their own in the room, not just allies speaking about them.
 
@@ -161,7 +161,7 @@ Her LD37 race was not on Newcastle ballots. The local races covered in our guide
 
 ## Newcastle's legislative and congressional races
 
-**Adam Smith** won re-election in WA-9.[^24] In LD41, Democrats **Janice Zahn** and **My-Linh Thai** lead comfortably. Districtwide totals, including write-ins.[^5]
+**Adam Smith** won re-election in WA-9.[^24] In LD41, Democrats **Janice Zahn** and **My-Linh Thai** lead comfortably. Both voted for HB 1296, the 2025 law I-001 tried to undo.[^25] Voters are backing the law and two of the legislators who passed it. Districtwide totals, including write-ins.[^5]
 
 ::election-results
 ---
@@ -224,11 +224,11 @@ contest:
 Official districtwide vote totals.[^5]
 ::
 
-Smith and Zahn list Democratic party preference; Nguyen and Basler list Republican preference. Thai lists Democratic preference and Rosen Independent preference.[^2] Those are ballot party preferences, not a claim that every vote or policy position follows party lines.
+Smith and Zahn list Democratic party preference; Nguyen and Basler list Republican preference. Thai lists Democratic preference and Rosen Independent preference.[^2]
 
 ## Olympia: larger Democratic majorities if leads hold
 
-Before the election, Democrats held 59 of 98 House seats and 30 of 49 Senate seats. All House seats and 24 Senate seats were contested.[^25] Aggregating the official House returns gives 68 Democratic leaders and 30 Republican leaders. This is an **if-leads-hold calculation**, not 68 declared Democratic winners.[^26]
+Before the election, Democrats held 59 of 98 House seats and 30 of 49 Senate seats. All House seats and 24 Senate seats were contested.[^26] Aggregating the official House returns gives 68 Democratic leaders and 30 Republican leaders. This is an **if-leads-hold calculation**, not 68 declared Democratic winners.[^27]
 
 ::election-results
 ---
@@ -246,7 +246,7 @@ contest:
     - { id: r, label: Republican, party: Republican, seats: 30, before: 39 }
 ---
 #source
-Pre-election composition and current leads.[^25][^26]
+Pre-election composition and current leads.[^26][^27]
 ::
 
 ::election-results
@@ -265,18 +265,18 @@ contest:
     - { id: r, label: Republican, party: Republican, seats: 18, before: 19 }
 ---
 #source
-Pre-election composition and Chamber scenario verified by the reporting cutoff.[^25][^27]
+Pre-election composition and Chamber scenario verified by the reporting cutoff.[^26][^28]
 ::
 
-The whole-Senate scenario is the Bellevue Chamber's published accounting, including seats not up for election; it is not a sum of only the 24 contests. The Chamber is a business advocacy organization, and its scenario is attributed here rather than adopted as a race call.[^27] We have not verified a complete inventory of **secured** post-election state legislative seats yet.
+The whole-Senate scenario is the Bellevue Chamber's published accounting, including seats not up for election, not a sum of only the 24 contests.[^28]
 
-A simple majority requires 50 House seats or 25 Senate seats. Two-thirds requires 66 or 33. Two-thirds of each chamber is also what it takes to amend I-638 during its first two years.[^19] The House scenario clears the two-thirds mark; the Senate scenario does not. Neither establishes a secured supermajority. The Standard identifies the 12th, 14th, 17th, 18th, 25th and 26th districts as places to watch for potential House pickups, and the 35th for a potential Senate pickup.[^25]
+A simple majority requires 50 House seats or 25 Senate seats. Two-thirds requires 66 or 33. Two-thirds of each chamber is also what it takes to amend I-638 during its first two years.[^19] The House scenario clears the two-thirds mark; the Senate scenario does not. The Standard identifies the 12th, 14th, 17th, 18th, 25th and 26th districts as places to watch for potential House pickups, and the 35th for a potential Senate pickup.[^26]
 
-Across Washington's ten U.S. House contests, Democrats lead eight and Republicans two in the official export.[^26] WA-5 merits attention: Michael Baumgartner has 104,196 votes and Carmela Conroy 101,555, a 2,641-vote gap.[^5] Democrats are projected to hold all eight of their seats, including WA-9; WA-4 and WA-5 were still too close to call.[^24] Washington's U.S. Senate seats and statewide partisan executive offices were not on the 2026 ballot.[^28]
+Across Washington's ten U.S. House contests, Democrats lead eight and Republicans two in the official export.[^27] WA-5 merits attention: Michael Baumgartner has 104,196 votes and Carmela Conroy 101,555, a 2,641-vote gap.[^5] Democrats are projected to hold all eight of their seats, including WA-9; WA-4 and WA-5 were still too close to call.[^24] Washington's U.S. Senate seats and statewide partisan executive offices were not on the 2026 ballot.[^29]
 
-## Washington Supreme Court
+## Washington Supreme Court: four of our five picks lead
 
-These are **statewide**, officially nonpartisan contests. All statuses here are **leading, uncertified**, not party wins.[^5]
+Our [voter's guide](/news/2026/10/28/newcastle-voters-guide) recommended **Colleen Melody**, **Jaime Hawk**, **Ian Birk**, **Theo Angelis** and **Debra Stephens**. Melody, Hawk, Angelis and Stephens lead; Birk trails.[^5]
 
 ::election-results
 ---
@@ -368,11 +368,13 @@ contest:
 Official statewide vote totals.[^5]
 ::
 
-Position 4 has the smallest gap of these five races: Sean O'Donnell leads Ian Birk by 43,867 votes, about 2.15 percentage points.[^5] That is the contest to watch most closely in this group. Endorsements described in the voter guide do not convert judicial candidates into Democratic or Republican officeholders.
+The two races with the clearest LGBTQ+ stakes are going our way. In Position 5, Angelis leads **Dave Larson**, who, asked in a 2024 questionnaire whether the same-sex marriage decision was rightly decided, answered: "The U.S. Constitution does not regulate marriage."[^30] In Position 3, Hawk leads **David Stevens**, who pledged that marriage is between one man and one woman, according to Fuse Washington.[^31] A court that hears challenges to laws like I-638 should not include justices who doubt that LGBTQ+ people's marriages deserve constitutional protection.
+
+Position 4 is the closest of the five: Sean O'Donnell leads our pick, Ian Birk, by 43,867 votes, about 2.15 percentage points.[^5] We found no anti-LGBTQ+ record for either candidate in that race.
 
 ## King County offices and courts
 
-The following four contests are also **current leads, uncertified**. Manion and Wise have no named opponent, and the reported write-ins mean neither has 100% of the vote.[^2]
+Manion and Wise ran without a named opponent.[^2]
 
 ::election-results
 ---
@@ -444,7 +446,7 @@ contest:
 King County returns.[^2]
 ::
 
-**A correction to the pre-election checklist:** Superior Court Positions 20, 32 and 45 do not have November vote totals in the county's results. Ballotpedia records the elections as canceled, with **Kent Liu**, **Daniel York** and **Tenaya Scheinman**, respectively, elected without appearing on the ballot.[^29][^30][^31] They should not be displayed as three November races still awaiting returns. This is Ballotpedia's account of the canceled contests, not a claim that we obtained certification documents for them.
+**A correction to the pre-election checklist:** Superior Court Positions 20, 32 and 45 do not have November vote totals in the county's results. Ballotpedia records the elections as canceled, with **Kent Liu**, **Daniel York** and **Tenaya Scheinman**, respectively, elected without appearing on the ballot.[^32][^33][^34] They should not be displayed as three November races still awaiting returns.
 
 ## Pierce County: anti-trans sheriff on track to survive both accountability measures
 
@@ -484,11 +486,11 @@ contest:
 Pierce County returns.[^6]
 ::
 
-**Sheriff Keith Swank** organized the anti-trans demonstration at the November 1 Reign match. *The News Tribune* reported emails in which he told a group of 87 people to buy tickets and reveal XX-XY Athletics shirts at halftime, and quoted him: "I posted that we should do this, and I organized it, just like I said I would."[^32] Over social-media posts disparaging transgender people that he made as a Seattle police captain, a Seattle Police Department disciplinary report sustained findings against him for bias-free policing, professionalism and social-media violations, and concluded: "If you were still a Department employee, I would have terminated your employment."[^33] [Our Reign report](/news/2026/11/02/sheriff-anti-trans-protest-reign-match) has the full record.
+**Sheriff Keith Swank** organized the anti-trans demonstration at the November 1 Reign match. *The News Tribune* reported emails in which he told a group of 87 people to buy tickets and reveal XX-XY Athletics shirts at halftime, and quoted him: "I posted that we should do this, and I organized it, just like I said I would."[^35] Over social-media posts disparaging transgender people that he made as a Seattle police captain, a Seattle Police Department disciplinary report sustained findings against him for bias-free policing, professionalism and social-media violations, and concluded: "If you were still a Department employee, I would have terminated your employment."[^36] [Our Reign report](/news/2026/11/02/sheriff-anti-trans-protest-reign-match) has the full record.
 
-**Amendment 53** would make the sheriff appointed by the county executive and confirmed by a Council majority, ending Swank's elected term on January 1, 2027.[^34] It is the one measure on the ballot that would have removed him early, and it is losing by roughly two to one. If rejection holds, Swank serves out his term.
+**Amendment 53** would make the sheriff appointed by the county executive and confirmed by a Council majority, ending Swank's elected term on January 1, 2027.[^37] It is the one measure on the ballot that would have removed him early, and it is losing by roughly two to one. If rejection holds, Swank serves out his term.
 
-**Amendment 54** would create a Public Safety Ombuds department for independent oversight of the sheriff and his employees, subject to legal limits. It would publish findings and recommendations, refer complaints to appropriate authorities and establish a community advisory committee.[^35] It is closer, but also trailing. If rejection holds, Pierce County keeps a sheriff with a documented anti-trans record and no new independent office to watch his department.
+**Amendment 54** would create a Public Safety Ombuds department for independent oversight of the sheriff and his employees, subject to legal limits. It would publish findings and recommendations, refer complaints to appropriate authorities and establish a community advisory committee.[^38] Voters are rejecting it too, 52.31% to 47.69%.[^6] If rejection holds, Pierce County keeps a sheriff with a documented anti-trans record and no new independent office to watch his department.
 
 Trans residents of Pierce County, and the trans fans and players who travel to Lumen Field, deserve policing that treats them as people to protect, not targets to organize against. If these results hold, that work continues through complaints, public records and the next sheriff election.
 
@@ -533,7 +535,7 @@ contest:
     - { id: uncalled, label: Uncalled, uncalled: true, seats: 2 }
 ---
 #source
-Associated Press seat count, November 4.[^36]
+Associated Press seat count, November 4.[^39]
 ::
 
 ::election-results
@@ -553,38 +555,36 @@ contest:
     - { id: uncalled, label: Uncalled, uncalled: true, seats: 2 }
 ---
 #source
-Associated Press seat count, November 4.[^37]
+Associated Press seat count, November 4.[^40]
 ::
 
-The Senate's Democratic-aligned total includes the two continuing independents, **Angus King and Bernie Sanders**, who caucus with Democrats: 52 Democrats plus two independents, not 54 Democrats.[^38] Its starting balance was 53 Republicans to 47 Democratic-aligned members.[^36] The House threshold is 218; Democrats need 51 for Senate control with a Republican vice president.[^24][^36]
+The Senate's Democratic-aligned total includes the two continuing independents, **Angus King and Bernie Sanders**, who caucus with Democrats: 52 Democrats plus two independents, not 54 Democrats.[^41] Its starting balance was 53 Republicans to 47 Democratic-aligned members.[^39] The House threshold is 218; Democrats need 51 for Senate control with a Republican vice president.[^24][^39]
 
-The governorship baseline was 24 Democratic and 26 Republican. NCSL reports Republican-to-Democratic flips in **Georgia, Iowa, Nevada, Ohio and Texas**.[^39] A final net change should wait for unresolved contests rather than treating a 28-seat secured tally as a complete 50-state result. The Alaska and Mississippi Senate contests and the Alaska and Kansas governor contests were still uncalled.[^36][^37][^40]
+The governorship baseline was 24 Democratic and 26 Republican. NCSL reports Republican-to-Democratic flips in **Georgia, Iowa, Nevada, Ohio and Texas**.[^42] The Alaska and Mississippi Senate contests and the Alaska and Kansas governor contests were still uncalled.[^39][^40][^43]
 
-A change in Congress can change oversight and what legislation advances. It does not, by itself, repeal restrictions already in force or guarantee that trans people will be protected. The measure of the incoming majorities will be what they do with power, including whether they defend people targeted during the campaign.
+Control of Congress is a means, not the goal. The new majorities should pass the **Equality Act**, which would add explicit protections against discrimination based on sexual orientation and gender identity to federal civil rights law. It was reintroduced in April 2025 by the Congressional Equality Caucus, whose co-chairs include Chris Pappas, now elected to the Senate.[^44] We will judge the incoming majorities by whether they pass it, and by whether they defend the trans people targeted during this campaign.
 
 ## Representation milestones beyond Washington
 
-This is a selected national overview, not an exhaustive list. These candidates won, according to CNN, with AP reporting confirming the distinctions for Pappas, Flanagan, Bottoms, Haaland and Donalds.[^41][^42]
+This is a selected national overview, not an exhaustive list. These candidates won, according to CNN, with AP reporting confirming the distinctions for Pappas, Flanagan, Bottoms, Haaland and Donalds.[^45][^46]
 
 | Candidate and party | New office | Precisely stated distinction |
 |---|---|---|
-| Chris Pappas (D) | New Hampshire, U.S. Senate | First openly gay man elected to the U.S. Senate.[^41][^42] |
-| Peggy Flanagan (D) | Minnesota, U.S. Senate | First Native American woman elected to the U.S. Senate.[^41][^42] |
-| Abdul El-Sayed (D) | Michigan, U.S. Senate | First Muslim elected to the U.S. Senate.[^41] |
-| Keisha Lance Bottoms (D) | Georgia governor | First Black woman elected governor of a U.S. state.[^41][^42] |
-| Deb Haaland (D) | New Mexico governor | First Native American woman elected governor of a U.S. state.[^41][^42] |
-| Gina Hinojosa (D) | Texas governor | Texas' first Latina governor, according to AP; CNN describes the state's first Hispanic governor.[^43][^41] |
-| Byron Donalds (R) | Florida governor | Florida's first Black governor and the nation's first Black Republican elected governor.[^41][^42] |
+| Chris Pappas (D) | New Hampshire, U.S. Senate | First openly gay man elected to the U.S. Senate.[^45][^46] |
+| Peggy Flanagan (D) | Minnesota, U.S. Senate | First Native American woman elected to the U.S. Senate.[^45][^46] |
+| Abdul El-Sayed (D) | Michigan, U.S. Senate | First Muslim elected to the U.S. Senate.[^45] |
+| Keisha Lance Bottoms (D) | Georgia governor | First Black woman elected governor of a U.S. state.[^45][^46] |
+| Deb Haaland (D) | New Mexico governor | First Native American woman elected governor of a U.S. state.[^45][^46] |
+| Gina Hinojosa (D) | Texas governor | Texas' first Latina governor, according to AP; CNN describes the state's first Hispanic governor.[^47][^45] |
+| Byron Donalds (R) | Florida governor | Florida's first Black governor and the nation's first Black Republican elected governor.[^45][^46] |
 
-**Juliana Stratton's** Illinois Senate victory will pair her with **Tammy Duckworth**, making Illinois the first state represented by two women of color in the Senate. Duckworth is of Thai heritage.[^42] That is a milestone in the state's delegation, not a new 2026 election victory for Duckworth.
+**Juliana Stratton's** Illinois Senate victory will pair her with **Tammy Duckworth**, making Illinois the first state represented by two women of color in the Senate. Duckworth is of Thai heritage.[^46] That is a milestone in the state's delegation, not a new 2026 election victory for Duckworth.
 
-Historic representation deserves recognition across party lines. Identity is not a substitute for examining an official's record or holding them accountable to LGBTQ+ residents.
+Historic representation deserves recognition, and it does not erase a record. As a U.S. representative, **Byron Donalds** voted against the Respect for Marriage Act in 2022 and for the Protection of Women and Girls in Sports Act in 2023, a federal bill to bar transgender girls and women from girls' and women's school sports.[^48][^49] Florida's first Black governor has voted against LGBTQ+ people, and we will hold him to that record.
 
 ## What happens next
 
-The official King and Pierce dashboards both list **November 5 at 4 p.m. Pacific** as their next expected update.[^2][^6] Washington's statewide page aggregates county reports; we have not verified a separate fixed time for its next statewide refresh.[^5] County canvassing boards certify on **November 24**, and the secretary of state's certification deadline is **December 3**.[^28] King County's results page separately schedules election-night precinct data for November 6, mid-election precinct data for November 12, and final precinct data for November 25, each by 4 p.m.[^44] Those data releases are not substitutes for the next count update.
-
-No recount or runoff has been established for the local contests in this article. A narrow early margin is a reason to watch, not proof that a recount has been ordered. The next meaningful update is a newer official count or an attributable call, not speculation about how uncounted ballots must break.
+The King and Pierce county dashboards list **November 5 at 4 p.m.** as their next count update.[^2][^6] County canvassing boards certify on **November 24**, and the secretary of state's deadline to certify is **December 3**.[^29]
 
 Follow the [Washington statewide results](https://results.votewa.gov/results/public/washington/elections/20261103), [King County results](https://results.votewa.gov/results/public/king-county-wa/elections/20261103), and [Pierce County results](https://results.votewa.gov/results/public/pierce-county-wa/elections/20261103).
 
@@ -618,23 +618,28 @@ For Newcastle's LGBTQ+ community, the work after this election is clear: defend 
 [^22]: Rummler, O. (2026, June 10). *Politics almost broke them. Instead, they found power in community*. The 19th. [https://19thnews.org/2026/06/revolutionary-america-250-mo-turner-oklahoma-politics/](https://19thnews.org/2026/06/revolutionary-america-250-mo-turner-oklahoma-politics/)
 [^23]: National Women's History Museum. (n.d.). *Andrea Jenkins*. [https://www.womenshistory.org/education-resources/biographies/andrea-jenkins](https://www.womenshistory.org/education-resources/biographies/andrea-jenkins)
 [^24]: Associated Press. (2026b). *2026 U.S. House election results*. [https://apnews.com/projects/elections-2026/us-house-results/](https://apnews.com/projects/elections-2026/us-house-results/)
-[^25]: Goldstein-Street, J., & Cornfield, J. (2026, November 3). *Rough election night for Republicans in WA Legislature*. Washington State Standard. [https://washingtonstatestandard.com/2026/11/03/rough-election-night-for-republicans-in-wa-legislature/](https://washingtonstatestandard.com/2026/11/03/rough-election-night-for-republicans-in-wa-legislature/)
-[^26]: Washington Office of the Secretary of State. (2026d, November 4). *2026 general election: Public media results export*. [https://results.votewa.gov/cdn/results/washington/export-20261103.json](https://results.votewa.gov/cdn/results/washington/export-20261103.json)
-[^27]: Fain, J. (2026, November 4). *What just happened: Washington election night 2026*. Bellevue Chamber. [https://www.bellevuechamber.org/news/what-just-happened-washington-election-night-2026-recap-and-late-ballots](https://www.bellevuechamber.org/news/what-just-happened-washington-election-night-2026-recap-and-late-ballots)
-[^28]: Washington Office of the Secretary of State. (2026e, October 1). *Washington state general election fact sheet: November 3, 2026*. [https://www.sos.wa.gov/sites/default/files/2026-10/GeneralElectionFacts2026.pdf](https://www.sos.wa.gov/sites/default/files/2026-10/GeneralElectionFacts2026.pdf)
-[^29]: Ballotpedia. (n.d.-a). *Kent Liu*. [https://ballotpedia.org/Kent_Liu](https://ballotpedia.org/Kent_Liu)
-[^30]: Ballotpedia. (n.d.-b). *Daniel York*. [https://ballotpedia.org/Daniel_York](https://ballotpedia.org/Daniel_York)
-[^31]: Ballotpedia. (n.d.-c). *Tenaya Scheinman*. [https://ballotpedia.org/Tenaya_Scheinman](https://ballotpedia.org/Tenaya_Scheinman)
-[^32]: Talbot, P. (2026, October 30). *Group says Sheriff Keith Swank plans anti-trans protest at Seattle Reign match*. The News Tribune. [https://www.thenewstribune.com/news/local/article317852433.html](https://www.thenewstribune.com/news/local/article317852433.html)
-[^33]: Seattle Police Department. (2025, January 30). *Disciplinary action report: Keith Swank, OPA 23-0194*. DocumentCloud. [https://s3.documentcloud.org/documents/25510760/swank-23-0194-final-dar.pdf](https://s3.documentcloud.org/documents/25510760/swank-23-0194-final-dar.pdf)
-[^34]: Pierce County. (n.d.-a). *Charter amendment no. 53: Appointed sheriff and termination of elected sheriff*. [https://www.piercecountywa.gov/DocumentCenter/View/159853/Charter-53---Explanatory-and-Ballot-Title](https://www.piercecountywa.gov/DocumentCenter/View/159853/Charter-53---Explanatory-and-Ballot-Title)
-[^35]: Pierce County. (n.d.-b). *Charter amendment no. 54: Public Safety Ombuds*. [https://www.piercecountywa.gov/DocumentCenter/View/159854/Charter-54---Explanatory-and-Ballot-Title](https://www.piercecountywa.gov/DocumentCenter/View/159854/Charter-54---Explanatory-and-Ballot-Title)
-[^36]: Associated Press. (2026c). *2026 U.S. Senate election results*. [https://apnews.com/projects/elections-2026/us-senate-results/](https://apnews.com/projects/elections-2026/us-senate-results/)
-[^37]: Associated Press. (2026d). *2026 governor election results*. [https://apnews.com/projects/elections-2026/governor-results/](https://apnews.com/projects/elections-2026/governor-results/)
-[^38]: U.S. Senate Daily Press Gallery. (2026, July 14). *Senate facts: 119th Congress party lineup*. [https://www.dailypress.senate.gov/on-the-floor/senate-facts/](https://www.dailypress.senate.gov/on-the-floor/senate-facts/)
-[^39]: Owens Hubler, K. (2026). *2026 state legislative elections: The results and what they mean*. National Conference of State Legislatures. [https://www.ncsl.org/state-legislatures-news/details/2026-state-legislative-elections-the-results-and-what-they-mean](https://www.ncsl.org/state-legislatures-news/details/2026-state-legislative-elections-the-results-and-what-they-mean)
-[^40]: Catalini, M. (2026, November 4). *Senate, governor races not yet called by The Associated Press*. Associated Press. [https://apnews.com/article/midterm-election-uncalled-races-b20c577aaffced99155af448bd182fa5](https://apnews.com/article/midterm-election-uncalled-races-b20c577aaffced99155af448bd182fa5)
-[^41]: Fayaz, A. (2026, November 4). *The historic firsts of the 2026 election*. CNN. [https://www.cnn.com/2026/11/04/politics/historic-firsts-2026-election](https://www.cnn.com/2026/11/04/politics/historic-firsts-2026-election)
-[^42]: Tang, T. (2026, November 4). *Numerous firsts: The candidates that made history in the 2026 midterm elections*. Associated Press. NBC4 Washington. [https://www.nbcwashington.com/elections/2026-midterms-historic-firsts/4177472/](https://www.nbcwashington.com/elections/2026-midterms-historic-firsts/4177472/)
-[^43]: Bedayn, J., & Wilder, A. (2026, November 3). *Democrat Gina Hinojosa elected Texas' first Latina governor, ousts Republican incumbent Greg Abbott*. Associated Press. [https://apnews.com/article/texas-governor-election-hinojosa-abbott-c9a0ffa1ec3cd599f9bc304ae26268a2](https://apnews.com/article/texas-governor-election-hinojosa-abbott-c9a0ffa1ec3cd599f9bc304ae26268a2)
-[^44]: King County Elections. (2026b). *November 2026 general election results*. [https://kingcounty.gov/en/dept/elections/results/2026/november-general](https://kingcounty.gov/en/dept/elections/results/2026/november-general)
+[^25]: Washington State Legislature. (2025, April 24). *Roll calls on a bill: ESHB 1296 (2025–26), final passage*. [https://app.leg.wa.gov/bi/RollCallsOnABill/RollCall?biennium=2025-26&billNumber=1296&initiative=False](https://app.leg.wa.gov/bi/RollCallsOnABill/RollCall?biennium=2025-26&billNumber=1296&initiative=False)
+[^26]: Goldstein-Street, J., & Cornfield, J. (2026, November 3). *Rough election night for Republicans in WA Legislature*. Washington State Standard. [https://washingtonstatestandard.com/2026/11/03/rough-election-night-for-republicans-in-wa-legislature/](https://washingtonstatestandard.com/2026/11/03/rough-election-night-for-republicans-in-wa-legislature/)
+[^27]: Washington Office of the Secretary of State. (2026d, November 4). *2026 general election: Public media results export*. [https://results.votewa.gov/cdn/results/washington/export-20261103.json](https://results.votewa.gov/cdn/results/washington/export-20261103.json)
+[^28]: Fain, J. (2026, November 4). *What just happened: Washington election night 2026*. Bellevue Chamber. [https://www.bellevuechamber.org/news/what-just-happened-washington-election-night-2026-recap-and-late-ballots](https://www.bellevuechamber.org/news/what-just-happened-washington-election-night-2026-recap-and-late-ballots)
+[^29]: Washington Office of the Secretary of State. (2026e, October 1). *Washington state general election fact sheet: November 3, 2026*. [https://www.sos.wa.gov/sites/default/files/2026-10/GeneralElectionFacts2026.pdf](https://www.sos.wa.gov/sites/default/files/2026-10/GeneralElectionFacts2026.pdf)
+[^30]: iVoterGuide. (n.d.). *Dave Larson: Supreme Court, Position 2, candidate profile and questionnaire (Washington general election, November 5, 2024)*. [https://ivoterguide.com/candidate/31425/race/20764/election/1247](https://ivoterguide.com/candidate/31425/race/20764/election/1247)
+[^31]: Fuse Washington. (2026). *Fuse's 2026 general election endorsements*. [https://www.fusewashington.org/news/blog/fuses-2026-general-election-endorsements](https://www.fusewashington.org/news/blog/fuses-2026-general-election-endorsements)
+[^32]: Ballotpedia. (n.d.-a). *Kent Liu*. [https://ballotpedia.org/Kent_Liu](https://ballotpedia.org/Kent_Liu)
+[^33]: Ballotpedia. (n.d.-b). *Daniel York*. [https://ballotpedia.org/Daniel_York](https://ballotpedia.org/Daniel_York)
+[^34]: Ballotpedia. (n.d.-c). *Tenaya Scheinman*. [https://ballotpedia.org/Tenaya_Scheinman](https://ballotpedia.org/Tenaya_Scheinman)
+[^35]: Talbot, P. (2026, October 30). *Group says Sheriff Keith Swank plans anti-trans protest at Seattle Reign match*. The News Tribune. [https://www.thenewstribune.com/news/local/article317852433.html](https://www.thenewstribune.com/news/local/article317852433.html)
+[^36]: Seattle Police Department. (2025, January 30). *Disciplinary action report: Keith Swank, OPA 23-0194*. DocumentCloud. [https://s3.documentcloud.org/documents/25510760/swank-23-0194-final-dar.pdf](https://s3.documentcloud.org/documents/25510760/swank-23-0194-final-dar.pdf)
+[^37]: Pierce County. (n.d.-a). *Charter amendment no. 53: Appointed sheriff and termination of elected sheriff*. [https://www.piercecountywa.gov/DocumentCenter/View/159853/Charter-53---Explanatory-and-Ballot-Title](https://www.piercecountywa.gov/DocumentCenter/View/159853/Charter-53---Explanatory-and-Ballot-Title)
+[^38]: Pierce County. (n.d.-b). *Charter amendment no. 54: Public Safety Ombuds*. [https://www.piercecountywa.gov/DocumentCenter/View/159854/Charter-54---Explanatory-and-Ballot-Title](https://www.piercecountywa.gov/DocumentCenter/View/159854/Charter-54---Explanatory-and-Ballot-Title)
+[^39]: Associated Press. (2026c). *2026 U.S. Senate election results*. [https://apnews.com/projects/elections-2026/us-senate-results/](https://apnews.com/projects/elections-2026/us-senate-results/)
+[^40]: Associated Press. (2026d). *2026 governor election results*. [https://apnews.com/projects/elections-2026/governor-results/](https://apnews.com/projects/elections-2026/governor-results/)
+[^41]: U.S. Senate Daily Press Gallery. (2026, July 14). *Senate facts: 119th Congress party lineup*. [https://www.dailypress.senate.gov/on-the-floor/senate-facts/](https://www.dailypress.senate.gov/on-the-floor/senate-facts/)
+[^42]: Owens Hubler, K. (2026). *2026 state legislative elections: The results and what they mean*. National Conference of State Legislatures. [https://www.ncsl.org/state-legislatures-news/details/2026-state-legislative-elections-the-results-and-what-they-mean](https://www.ncsl.org/state-legislatures-news/details/2026-state-legislative-elections-the-results-and-what-they-mean)
+[^43]: Catalini, M. (2026, November 4). *Senate, governor races not yet called by The Associated Press*. Associated Press. [https://apnews.com/article/midterm-election-uncalled-races-b20c577aaffced99155af448bd182fa5](https://apnews.com/article/midterm-election-uncalled-races-b20c577aaffced99155af448bd182fa5)
+[^44]: Congressional Equality Caucus. (2025, April 29). *Equality Act reintroduced in 119th Congress*. [https://equality.house.gov/equality-act-introduced-119](https://equality.house.gov/equality-act-introduced-119)
+[^45]: Fayaz, A. (2026, November 4). *The historic firsts of the 2026 election*. CNN. [https://www.cnn.com/2026/11/04/politics/historic-firsts-2026-election](https://www.cnn.com/2026/11/04/politics/historic-firsts-2026-election)
+[^46]: Tang, T. (2026, November 4). *Numerous firsts: The candidates that made history in the 2026 midterm elections*. Associated Press. NBC4 Washington. [https://www.nbcwashington.com/elections/2026-midterms-historic-firsts/4177472/](https://www.nbcwashington.com/elections/2026-midterms-historic-firsts/4177472/)
+[^47]: Bedayn, J., & Wilder, A. (2026, November 3). *Democrat Gina Hinojosa elected Texas' first Latina governor, ousts Republican incumbent Greg Abbott*. Associated Press. [https://apnews.com/article/texas-governor-election-hinojosa-abbott-c9a0ffa1ec3cd599f9bc304ae26268a2](https://apnews.com/article/texas-governor-election-hinojosa-abbott-c9a0ffa1ec3cd599f9bc304ae26268a2)
+[^48]: Office of the Clerk, U.S. House of Representatives. (2022, July 19). *Roll call 373: H.R. 8404, Respect for Marriage Act, on passage*. [https://clerk.house.gov/Votes/2022373](https://clerk.house.gov/Votes/2022373)
+[^49]: Office of the Clerk, U.S. House of Representatives. (2023, April 20). *Roll call 192: H.R. 734, Protection of Women and Girls in Sports Act, on passage*. [https://clerk.house.gov/Votes/2023192](https://clerk.house.gov/Votes/2023192)

@@ -49,6 +49,8 @@ For articles covering movement history, government policy, discrimination, or co
   - headings that don't say why the story matters to LGBTQ+ people, or that read in the wrong direction at a glance
   - an ending that settles on balance instead of a call to action
   - a claimed prior endorsement no earlier article made
+  - a results section that ignores the site's earlier recommendations, or a celebrated winner whose LGBTQ+ record was not checked
+  - a neutral paragraph with no concrete, sourced ask, or a title that lags the outcome
 - [ ] **Election stance mismatch:** an `::election-results` measure with an LGBTQ+ stake (including indirect stakes like police accountability or public-service funding) left at `stance: neutral`, or a stance that contradicts the prose
 - [ ] **Unlinked internal reference:** "our earlier article/report" with no relative link
 - [ ] **Descriptor not supported by its citation:** e.g. "founded by" when the cited source only says "led by"

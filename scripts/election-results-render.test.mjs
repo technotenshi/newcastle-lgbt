@@ -87,7 +87,7 @@ test('the real article embeds exactly the three official initiative snapshots an
 
 test('the six expanded sections render all 19 additional snapshots without tables', async () => {
   const article = await readFile(new URL('../content/news/20261104-01-election-results-lgbtq-washington.md', import.meta.url), 'utf8');
-  const headings = ['Newcastle\'s legislative and congressional races', 'Olympia: larger Democratic majorities if leads hold', 'Washington Supreme Court', 'King County offices and courts', 'Pierce County: anti-trans sheriff on track to survive both accountability measures', 'Nationally: Democrats win both chambers of Congress'];
+  const headings = ['Newcastle\'s legislative and congressional races', 'Olympia: larger Democratic majorities if leads hold', 'Washington Supreme Court: four of our five picks lead', 'King County offices and courts', 'Pierce County: anti-trans sheriff on track to survive both accountability measures', 'Nationally: Democrats win both chambers of Congress'];
   const expected = [3, 2, 5, 4, 2, 3];
   let total = 0;
   for (const [index, heading] of headings.entries()) {

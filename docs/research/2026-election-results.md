@@ -361,3 +361,16 @@ Deliberately not adopted: the unverified "multi-billion dollar" figure, and the 
 ### Simplified sourcing language (November 5, owner review)
 
 The owner said the article over-mentioned AP and read like a minute-by-minute log, even though it is a same-day November 4 article; a separate November 5 update is planned. The opening's two timestamp paragraphs (AP display capture, dashboard update times, export time, AP check window) were replaced with one dated note: results as of the evening of November 4, unofficial until certification. Prose now reports outcomes directly ("projected to pass," "won," "leads") and leaves the outlet to the footnotes. AP stays cited as a reference: footnotes, block `source` fields, the Hinojosa Latina/Hispanic distinction, and the CNN/AP milestone line. Block timestamps in the `::election-results` YAML are unchanged. References were renumbered by first appearance. The render-test expectations were updated for the new status text and national heading. The rule is now in `docs/editorial-checklist.md`.
+
+### Content-review pass (November 5)
+
+A review against the editorial checklist found the remaining sections neutral where the site had taken a side. Changes:
+
+- Supreme Court: the section now leads with the voter's guide picks (four of five lead; Birk trails O'Donnell in Position 4) and restates the LGBTQ+ stakes in Positions 5 and 3. The Larson quote and the Stevens marriage pledge are re-cited to the guide's primary sources (iVoterGuide, Fuse Washington). The results component does not support stances on candidate rows, so the position is in prose only.
+- LD41: Zahn and Thai's yes votes on ESHB 1296 (final passage roll call, April 24, 2025) are linked to the I-001 result.
+- Byron Donalds: verified on clerk.house.gov that he voted Nay on H.R. 8404, Respect for Marriage Act (roll call 373, July 19, 2022), and Yea on H.R. 734, Protection of Women and Girls in Sports Act (roll call 192, April 20, 2023). Both were added to the milestones section.
+- Congress: the neutral closing paragraph now calls for the Equality Act, citing the Congressional Equality Caucus's April 29, 2025 reintroduction release, which lists Chris Pappas as a co-chair.
+- Cut caveats that gave readers nothing (fresh-records note, party-preference disclaimer, Chamber race-call disclaimer, Ballotpedia certification disclaimer, recount paragraph), repeated "uncertified" notes already covered by the dated note, and the precinct-data release schedule. The King County results-page source that only supported that schedule was dropped.
+- Title changed from "a Threat to Trans Students" to "a Ban on Trans Girls in Girls' Sports" because I-638 is projected to pass. The slug is unchanged.
+
+Footnotes were renumbered by first appearance (49 sources).

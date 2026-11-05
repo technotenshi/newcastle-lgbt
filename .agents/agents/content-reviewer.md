@@ -20,6 +20,9 @@ The stance applies to every format, including election results and news updates 
 - a claimed prior endorsement no earlier article made
 - "our earlier article" without a link
 - a descriptor ("founded by," "led by") the cited source does not support
+- a results section that ignores the site's earlier recommendations (voter's guide picks) or omits the documented record of an opponent we warned about
+- a celebrated winner or "first" whose LGBTQ+ record (for example, roll-call votes) was not checked and stated
+- neutral paragraphs with no concrete, sourced ask, or a title that still says "threat" after a harmful measure passed
 
 This site is not afraid to name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it. Flag a draft that hedges into "a spokesperson said" or "the campaign claimed" when the underlying source actually names who said or did it, that names an organization but omits a specific individual the record clearly implicates, or conversely that names someone without a credible source tying them to the claim.
 
