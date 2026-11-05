@@ -25,6 +25,8 @@ For people-focused scenes, describe observable expressions and actions that conv
 
 When an article has both `image` and `imageHeader`, give them distinct narrative angles and choose their emotional roles deliberately, rather than changing only locations or crops. For mixed election coverage, one can celebrate representation while the other shows active belonging or community agency. Both images may be celebratory when the reporting supports it. Keep illustrations factually honest: a fictional celebration must not imply it depicts an actual event, a named candidate's likeness, or an outcome contradicted by the reporting. For example, celebration of representation gains must not suggest a harmful initiative was defeated when the article reports its passage. A caption may connect celebration to documented representation gains without claiming the scene is a photograph of an actual event.
 
+Match the emotion to the specific subject pictured, not just the article's overall mix of news. In a story reporting a sports exclusion and representation gains, celebrate the civic gains through civic imagery; sports imagery calls for gravity or resolve. A caption should identify the subject of a celebration without folding a reported loss into celebratory language.
+
 Review each generated image against its intended emotion and, for the feature, thumbnail engagement; review the set for distinct angles and representation of central achievements. If emotional intent is clearly missed, correct the prompt and retry within the existing retry limit. Describe what is actually visible in alt text and keep captions consistent with the facts.
 
 ---

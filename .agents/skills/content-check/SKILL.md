@@ -43,6 +43,15 @@ For articles covering movement history, government policy, discrimination, or co
 - [ ] **Uncontextualized outdated terminology:** keeps a real historical name/quote using dated language without a brief note that it's outdated as a general label today
 - [ ] **Neutral "both sides" framing without a conclusion:** this is an advocacy site, not neutral journalism. Flag an article on anti-LGBTQ+ policy/legislation/its supporters that never reaches a critical, evidence-backed assessment, that treats a documented harm and a campaign's denial of that harm as equally weighted, or that repeats a supporter's specific factual claim (a statistic, legal argument, cited authority) without checking whether it holds up
 - [ ] **Hedging around a named individual the source already identifies:** flag "a spokesperson said" or "the campaign claimed" when the cited source actually names who said or did it, or when an organization is named but a source clearly implicates a specific donor, legislator, executive, or candidate within it. This site names people by name when the evidence supports it; also flag the opposite failure, naming someone without a credible source tying them to the claim
+- [ ] **Neutral results or news-update copy:** the stance applies to every format (see "The stance applies to every format" in [`docs/editorial-checklist.md`](../../../docs/editorial-checklist.md)). Flag:
+  - a harmful measure's outcome reported without restating the site's position
+  - caveats that give the reader no information or action
+  - headings that don't say why the story matters to LGBTQ+ people, or that read in the wrong direction at a glance
+  - an ending that settles on balance instead of a call to action
+  - a claimed prior endorsement no earlier article made
+- [ ] **Election stance mismatch:** an `::election-results` measure with an LGBTQ+ stake (including indirect stakes like police accountability or public-service funding) left at `stance: neutral`, or a stance that contradicts the prose
+- [ ] **Unlinked internal reference:** "our earlier article/report" with no relative link
+- [ ] **Descriptor not supported by its citation:** e.g. "founded by" when the cited source only says "led by"
 - [ ] **Missing background context for a researched subject:** check `docs/research/` for a background file matching any organization, political committee, or individual named in the article (e.g. `docs/research/lets-go-washington.md`). Flag if a matching file exists but the article doesn't draw on it, leaving an unfamiliar reader with just a bare name
 
 ### Image generation prompts (if present in the message or a companion prompt file)
