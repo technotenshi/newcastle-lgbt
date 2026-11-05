@@ -23,7 +23,7 @@ This follow-up is separate from the article's 1:28 p.m. PST reporting cutoff abo
 The owner requested an investigation of turnout's relationship to results, then approved these boundaries in the interview:
 
 - Focus on the three statewide initiatives, not legislative races.
-- Use only a preliminary turnout note now. Defer substantive county-level turnout and initiative-result comparisons until certified data are available.
+- Scope revised by the owner on November 4, 2026: conduct preliminary county-level turnout and initiative-result analysis before certification. This replaces the earlier decision to wait for certified data. Label the analysis unofficial and timestamp its inputs; do not present reported turnout as final participation.
 - Use registered voters as the turnout denominator. Compare matching geographic units and describe associations, not causes or individual voter motivations.
 - Verify the figures and propose wording first. Article edits have not been approved or applied.
 
@@ -51,7 +51,7 @@ These are the dashboard's reported figures, not final turnout. Preserve its labe
 
 ### Proposed article wording, not yet applied
 
-“Washington's unofficial turnout dashboard reports 2,026,373 ballots cast among 5,170,951 registered voters, or 39.19%, in its November 4 afternoon update. This is an incomplete reporting snapshot, not final turnout. It does not establish whether turnout helped produce the initiative leads; that analysis should wait for certified county-level turnout and results.”
+“Washington's unofficial turnout dashboard reports 2,026,373 ballots cast among 5,170,951 registered voters, or 39.19%, in its November 4 afternoon update. This is an incomplete reporting snapshot, not final turnout. These incomplete statewide totals alone do not establish whether turnout helped produce the initiative leads. Any county-level comparison at this stage is preliminary and must account for differences in reporting progress.”
 
 If approved for the article, give this a separately labeled reporting timestamp because it is newer than the existing article cutoff. Cite the official turnout view using the article's footnote conventions. Do not silently update the initiative totals or other races alongside this addition.
 
@@ -59,7 +59,7 @@ If approved for the article, give this a separately labeled reporting timestamp 
 
 No county-level association has been calculated or verified. Different county counting speeds can make incomplete reported turnout look like differences in final participation. Even a verified county-level association would not establish causation, how LGBTQ+ voters voted, or what nonvoters preferred.
 
-After certification, obtain turnout and initiative results for matching counties and the same election. Verify each source's certification status and reporting definitions before comparing. No monitoring job or reminder has been scheduled; resume only when requested.
+Proceed before certification: obtain official preliminary turnout and initiative results for matching counties and the same election. Record source timestamps and reporting definitions, distinguish ballots returned from ballots cast, and assess differences in counting progress before interpreting geographic associations. Certification is not a prerequisite under the revised scope. No monitoring job or reminder has been scheduled. Article edits and a further commit still require separate approval.
 
 Additional official source locations identified during the read-only research:
 
@@ -68,6 +68,47 @@ Additional official source locations identified during the read-only research:
 - Participation denominators: https://www.sos.wa.gov/elections/data-research/reports-data-and-statistics/voter-participation-statistics . Registered-voter turnout and voting-age-population participation are different measures; voting-age population is not synonymous with voting-eligible population.
 
 The initial text extraction did not expose the current turnout figures. Opening the dashboard's Voter Turnout control in the browser did expose them. For a future refresh, read the rendered turnout view rather than assuming the figures are unavailable.
+
+## Demographic data feasibility: November 4 follow-up
+
+The owner asked whether demographics can be obtained. The source check supports county population context, not a demographic breakdown of initiative vote choices. Inclusion and selection of demographic variables remain to be approved. No demographic analysis or county dataset has yet been produced.
+
+### Sources and verified availability
+
+Use 2020–2024 ACS five-year estimates consistently across Washington counties if this approach is approved. These describe residents over a five-year period, not the November 2026 electorate. Preserve each variable's population universe, estimate year and margin of error.
+
+- Census DP05: age, median age, sex, race and Hispanic/Latino ethnicity. https://api.census.gov/data/2024/acs/acs5/profile/groups/DP05.html . Hispanic ethnicity overlaps race; do not add overlapping categories as if mutually exclusive.
+- Census DP03: household income, including median household income in 2024 inflation-adjusted dollars. https://api.census.gov/data/2024/acs/acs5/profile/groups/DP03.html .
+- Census DP02: educational attainment, including bachelor's degree or higher among residents age 25+. https://api.census.gov/data/2024/acs/acs5/profile/groups/DP02.html .
+- ACS five-year documentation: https://www.census.gov/data/developers/data-sets/acs-5year/2024.html . Table metadata was accessible; actual county data retrieval remains outstanding. The delegated check encountered API queries requesting a key, not proof that every Census retrieval route requires one.
+- Newer ACS one-year estimates have population thresholds and do not provide equivalent coverage of every Washington county. Do not mix one-year and five-year estimates county by county. Release information: https://www.census.gov/programs-surveys/acs/news/updates/2026.html and https://www.census.gov/programs-surveys/acs/news/data-releases/2025/release-schedule.html .
+
+The delegated researcher downloaded and inspected the official participation workbook: https://www.sos.wa.gov/sites/default/files/2022-05/VoterParticipation.xlsx . It contains county/election age groups 18–24, 25–34, 35–44, 45–54, 55–64 and 65+, plus female/male/unknown administrative participation fields. Its 2026 General rows had blank voter/ballot counts at the check; they are placeholders, not usable November turnout figures. Its README warns that registration totals are estimates for the election period. Recheck the workbook before assuming those blanks persist.
+
+Current return dashboard sources:
+
+- State: https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-return-statistics .
+- King County: https://kingcounty.gov/en/dept/elections/results/ballot-return-statistics/2026/november-general .
+
+Current age-specific return categories were not verified because embedded dashboard content did not render in the source check. Do not report age-specific November turnout as established. A ballot-return rate by age needs the corresponding registered-voter age denominator, not that age group's share of county residents.
+
+The registered-voter demographics directory is https://www.sos.wa.gov/elections/data-research/election-data-and-maps/reports-data-and-statistics/voter-demographics . Registered-voter composition is not actual-voter composition. An advertised August workbook returned district/precinct mapping columns in the delegated check, so its demographic contents were not verified.
+
+Ballot-status reports are another possible participation source: https://www.sos.wa.gov/elections/data-research/election-data-and-maps/ballot-status-reports . File schema and compatible registration identifiers were not verified because a security gate prevented access. No individual-level voter data were collected or joined.
+
+### Interpretation boundaries and next decision
+
+No official November 2026 initiative-choice cross-tab by age, race, income, education, gender identity or sexual orientation was verified. Clark County explains voter identity is separated from ballot choices: https://clark.wa.gov/elections/frequently-asked-questions-0 .
+
+Administrative female/male/unknown labels do not establish transgender or nonbinary turnout. ACS sex and same-sex-couple household categories are not comprehensive LGBTQ+ population or voter counts. No verified official sexual-orientation turnout breakdown was found.
+
+A defensible county comparison would say that counties with a larger share of a demographic population showed a particular pattern. It cannot conclude that members of that group voted that way. Counting progress, population-versus-electorate differences, small-county uncertainty and correlated demographic variables must be addressed. Demographic variables should be selected before looking for favorable correlations; unexpected or null findings must not be omitted.
+
+Owner decision on November 4: focus on actual-voter data instead of county population demographics. Census resident profiles are not approved for the current analysis. Next, verify whether current official aggregate participation or ballot-return reports provide demographic breakdowns, starting with age and checking the corresponding registered-voter denominators. Distinguish received, accepted and tabulated ballots. If current breakdowns remain unavailable, report that limitation rather than substituting population demographics or historical turnout. No individual-level voter-file collection or linkage has been approved. No demographic article wording has been approved.
+
+### Actual-voter dashboard follow-up result
+
+The subsequent rendered-dashboard investigation retrieved current King County age-specific return percentages, plus administrative language and gender chart values. Evidence, exact labels, update time, county totals and limitations are saved in [2026-election-turnout-demographics.md](2026-election-turnout-demographics.md). This supersedes the earlier inability to verify the current King County age chart, not the statewide limitation. Age-specific ballot counts and matching registration counts remain unretrieved. No statewide age figures or demographic initiative-vote choices have been verified. The county data are ballot returns, not necessarily accepted or counted ballots. No article edits have been applied.
 
 ## Primary numerical evidence and coverage checks
 
