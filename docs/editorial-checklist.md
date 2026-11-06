@@ -119,6 +119,8 @@ Explain the function of the language when relevant. For example:
 
 Do not repeat coded language in headlines, captions or promotional copy without context.
 
+**"Biological female," "biological male," "biological women" and "biological sex" are dog whistles. In our own voice they are forbidden.** Use them only inside a direct quotation (a statute, an initiative, a court opinion, a named speaker) or a proper title, with the speaker or document named, and never in a headline, caption or teaser. Describe the people and the rule in plain words instead: "trans girls" and "girls" for people, "the sex a provider records" or "the sex the initiative requires a provider to verify" for the rule, and the document's own phrase in quotation marks when the wording matters (the initiative says "biological sex" and "biologically male students"). When a source's paraphrase uses the term, quote the source's exact words or rewrite without it. Never put the term in an unquoted paraphrase of a court holding: quote the holding.
+
 ## 6. Contextualize outdated historical terminology
 
 Retain outdated words when they are part of an organization's official historical name, a direct quotation or an archival record.

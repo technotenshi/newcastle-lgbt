@@ -37,6 +37,7 @@ For articles covering movement history, government policy, discrimination, or co
 - [ ] **Identity conflation:** lists transgender people, drag performers, sex workers, and unhoused people as interchangeable rather than distinct, overlapping categories
 - [ ] **Unverified absolutes:** uses "every," "first," "only," "all," "quietly," or "deliberately" without independently verifiable support
 - [ ] **Collective blame:** blames "the movement," "gay men," or "lesbians" as an undifferentiated group instead of naming the specific organization or leader
+- [ ] **"Biological female/male/sex/women" outside a direct quote or proper title:** forbidden in our own voice (dog whistle). Flag every unquoted use, including paraphrases of statutes and court holdings; the fix is a direct quote with the speaker named, or plain wording ("trans girls," "the sex a provider records")
 - [ ] **Unattributed coded language:** narrates right-wing terms ("gender ideology," "cross-dressing," "gender-appropriate") as neutral description instead of a quoted, attributed term
 - [ ] **Stereotyped adjectives:** uses "loud," "outlandish," "militant," etc. for marginalized people instead of describing conduct
 - [ ] **Passive-voice accountability gap:** conceals who was responsible for an action (e.g. "were made to feel unwelcome" with no actor named)
