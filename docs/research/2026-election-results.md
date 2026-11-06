@@ -1,6 +1,19 @@
 # November 2026 election results reporting
 
-Current article cutoff: November 4, 2026, 6:05 p.m. PST. The evening refresh below supersedes the afternoon article figures. Earlier sections retain the unpublished afternoon evidence record and deferred research scope. This is not a continuously maintained dashboard.
+Current article counts: November 5, 2026, 4:41 p.m. PST (see the next section). The November 4 evening snapshot and earlier sections are kept as the evidence record. This is not a continuously maintained dashboard.
+
+## November 5 evening count refresh
+
+The owner requested a November 5 evening update with a dated note and a summary of changes since November 4.
+
+- Statewide export: https://results.votewa.gov/cdn/results/washington/export-20261103.json with a cache-busting query. `createdAt` 2026-11-06T00:41:19.7965788Z, November 5 at 4:41:19 p.m. PST, matching the state dashboard's displayed update (12:41:17 a.m. UTC in a UTC browser).
+- County dashboards (browser in UTC, converted): King last updated November 5 at 3:38:27 p.m. PST, next expected November 6 at 4 p.m. PST; Pierce last updated 4:29:18 p.m. PST, next expected November 10 at 4 p.m. PST. The King I-638 county totals (No 376,800, 57.30%; Yes 280,751, 42.70%) and Pierce Amendments 53/54 on the rendered dashboards match the export.
+- Preserved evidence: `2026-election-results-snapshot-nov5.csv`. Code matched all 146 contests and 412 options of the evening snapshot by jurisdiction and exact contest/option name; no contest or option was missing. Percentages recomputed from all options including write-ins. The two earlier CSVs are unchanged.
+- Leader changes: one. LD12 State Representative Pos. 1: Brian Burnett (R) 30,982, 50.05%; Stacy Willoughby (D) 30,872, 49.87%. House leaders are now 67 D / 31 R, still above the 66-seat two-thirds mark. State Senate contest leaders (18 D / 6 R) and U.S. House leaders (8 D / 2 R) are unchanged, so the Bellevue Chamber whole-Senate scenario block was left as published.
+- Measures: I-638 Yes 1,400,925 (56.66%), lead 329,425; I-001 No 1,265,082 (52.25%), lead 109,132; I-645 No 1,432,066 (57.66%), lead 380,400.
+- AP, read in the browser at 4:42 p.m. PST: House 253 D, 155 R, 27 to be called; Senate 54 Democratic-aligned, 44 R, two uncalled; governors 28 D, 20 R, two uncalled. AP's Washington page shows eight Democratic wins and two remaining (WA-4 McKinney +9.3, WA-5 Baumgartner +2.2). AP's state pages show the Alaska and Mississippi Senate and Alaska and Kansas governor contests with close or partial counts, but their call status was not read from the rendered text, so the article keeps the November 4 attribution for which contests were uncalled.
+- Article: one dated update note plus a short changes-since-November-4 list (owner-approved), refreshed chart votes and snapshots, prose figures, next county update dates and the export footnote date. The "As of November 4" litigation sentence was not re-researched and stays dated. Footnotes renumbered by first appearance (49). The render test's real-article expectations were updated to the new counts; election tests pass in Docker (20/20). Lint and build not yet run.
+
 
 ## November 5 editorial corrections, with the published counts preserved
 

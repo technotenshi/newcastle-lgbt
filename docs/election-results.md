@@ -33,7 +33,7 @@ Official statewide vote totals.[^5]
 
 Define `[^1]` and `[^5]` once in the article's normal Sources section, using its existing reference numbers. The slots are Markdown, so the article's native footnote pipeline generates references and back-links. Do not put footnote markers in YAML strings or handcraft HTML footnote IDs. Repeated references remain native footnotes. Both slots are optional; `source` and `snapshot` are required even when no source slot is supplied.
 
-The actual article is `content/news/20261104-01-election-results-lgbtq-washington.md`. Its 6:05 p.m. reporting cutoff remains separate from the counts' 5:52 p.m. snapshot and AP's later call/display times.
+The actual article is `content/news/20261104-01-election-results-lgbtq-washington.md`. Its counts were last refreshed to the November 5, 4:41 p.m. PST statewide export (King 3:38 p.m., Pierce 4:29 p.m., AP seat counts 4:42 p.m.); the refresh record is in `docs/research/2026-election-results.md`. On a later refresh, update the render test's real-article expectations along with the chart votes.
 
 ## Data and encoding
 
