@@ -33,7 +33,7 @@ More than 140 health care providers signed a statement opposing the measure. Ped
 
 ## The number behind the ban is small
 
-State officials estimated five to 10 transgender athletes among more than 200,000 student-athletes statewide, though no official data exists.[^6] WIAA says it is aware of about 10 transgender middle and high school athletes, and that schools are not required to tell it.[^8] That is an estimate, not a census: WIAA says it keeps no definitive count because "transgender students are not identified by state law."[^10]
+State officials estimated five to 10 transgender athletes among more than 200,000 student-athletes statewide, though no official data exists.[^6] WIAA says it is aware of about 10 transgender middle and high school athletes.[^8] KUOW reports there may be more, since WIAA does not require schools to disclose that information.[^5] That is an estimate, not a census: WIAA says it keeps no definitive count because "transgender students are not identified by state law."[^10]
 
 Let's Go Washington's answer to that number is that it does not matter. Spokesperson **Hallie Herzberg** said one girl losing a podium spot "is enough for us to take action."[^6] The cost of that action lands on every girl who joins a team, and on the trans girls among those athletes, who lose their place on girls' teams. The existence of other teams does not make that exclusion disappear.
 
