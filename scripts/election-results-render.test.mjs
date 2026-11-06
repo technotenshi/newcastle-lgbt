@@ -71,14 +71,14 @@ test('the real article embeds exactly the three official initiative snapshots an
   // Include the article's actual source definitions so repeat citations use MDC's footnote handling.
   const sources = article.slice(article.indexOf('## Sources'));
   const { html } = await renderElectionMarkdown(`${blocks.join('\n\n')}\n\n${sources}`);
-  for (const value of ['1,252,863', '961,810', '1,027,479', '1,141,234', '936,309', '1,289,553', '56.57%', '52.62%', '57.93%']) {
+  for (const value of ['1,400,925', '1,071,500', '1,155,950', '1,265,082', '1,051,666', '1,432,066', '56.66%', '52.25%', '57.66%']) {
     assert.ok(html.includes(value), value);
   }
   assert.match(html, /Attributed call: Yes\. Uncertified\.<\/strong><div[^>]*>Associated Press/);
   assert.match(html, /Projected to pass\./);
   assert.match(html, /https:\/\/www\.seattletimes\.com\/seattle-news\/politics\/washington-state-election-results-2026\//);
   assert.doesNotMatch(html, /6:14|6:21|timezone unconfirmed|site.owner/i);
-  assert.equal((html.match(/5:52 PM PST/g) || []).length, 3);
+  assert.equal((html.match(/4:41 PM PST/g) || []).length, 3);
   assert.equal((html.match(/Harms LGBTQ\+ rights/g) || []).length, 3);
   assert.equal((html.match(/Supports LGBTQ\+ rights/g) || []).length, 3);
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
@@ -103,13 +103,13 @@ test('the six expanded sections render all 19 additional snapshots without table
   assert.equal(total + 3, 22);
   const local = article.slice(article.indexOf('## Newcastle\'s legislative and congressional races'), article.indexOf('## Olympia:'));
   assert.equal((local.match(/source: Washington Secretary of State official media export/g) || []).length, 3);
-  assert.equal((local.match(/2026-11-04T17:52:00-08:00/g) || []).length, 3);
+  assert.equal((local.match(/2026-11-05T16:41:00-08:00/g) || []).length, 3);
   assert.equal((local.match(/Official districtwide vote totals\.\[\^5\]/g) || []).length, 3);
   const { html } = await renderElectionMarkdown(article.slice(article.indexOf('## Washington initiatives:')));
   for (const position of [1, 3, 4, 5, 7]) {
     assert.match(html, new RegExp(`<h3[^>]*>Supreme Court Position ${position}: Washington Supreme Court</h3>`));
   }
-  for (const value of ['119,272 votes', '38,173 votes', '1,066 votes', '31,634 votes', '12,858 votes', '81 votes', '26,484 votes', '17,542 votes', '67 votes', '1,241,215 votes', '826,778 votes', '5,041 votes', '1,190,393 votes', '867,692 votes', '6,302 votes', '1,038,900 votes', '995,033 votes', '7,278 votes', '1,139,333 votes', '909,946 votes', '5,822 votes', '1,306,519 votes', '742,457 votes', '5,718 votes', '411,465 votes', '9,712 votes', '378,350 votes', '142,002 votes', '2,339 votes', '415,775 votes', '7,198 votes', '92,379 votes', '50,411 votes', '998 votes', '90,716 votes', '187,095 votes', '131,400 votes', '144,144 votes', '68 seats', '30 seats', '31 seats', '18 seats', '239 seats', '147 seats', '49 seats', '54 seats', '44 seats', '28 governorships', '20 governorships', '2 governorships', 'Call verified as of', 'Before: 59; change: +9', 'Before: 39; change: -9', 'Before: 30; change: +1', 'Before: 19; change: -1', 'Uncalled', '52 Democrats plus two independents']) assert.ok(html.includes(value), value);
+  for (const value of ['133,870 votes', '43,322 votes', '1,205 votes', '33,757 votes', '13,922 votes', '94 votes', '28,220 votes', '18,941 votes', '79 votes', '1,375,605 votes', '926,791 votes', '5,447 votes', '1,319,055 votes', '972,113 votes', '6,852 votes', '1,159,173 votes', '1,104,752 votes', '8,137 votes', '1,262,970 votes', '1,017,911 votes', '6,435 votes', '1,446,259 votes', '833,868 votes', '6,292 votes', '457,995 votes', '11,108 votes', '419,978 votes', '160,180 votes', '2,596 votes', '462,436 votes', '8,262 votes', '98,286 votes', '54,407 votes', '1,104 votes', '104,657 votes', '221,840 votes', '155,928 votes', '167,977 votes', '67 seats', '31 seats', '18 seats', '253 seats', '155 seats', '27 seats', '54 seats', '44 seats', '28 governorships', '20 governorships', '2 governorships', 'Call verified as of', 'Before: 59; change: +8', 'Before: 39; change: -8', 'Before: 30; change: +1', 'Before: 19; change: -1', 'Uncalled', '52 Democrats plus two independents']) assert.ok(html.includes(value), value);
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(new Set(ids).size, ids.length);
   for (const [, target] of html.matchAll(/href="#(user-content-fn-[^"]+)"/g)) assert.ok(ids.includes(target), `missing footnote ${target}`);
