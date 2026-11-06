@@ -60,7 +60,7 @@ When there are multiple slots (or multiple events/articles at once), run each `c
 
 For every slot Codex claims to have completed:
 1. Confirm the file exists and check its pixel dimensions with `node -e "require('sharp')('<path>').metadata().then(m=>console.log(m.width+'x'+m.height))"` (uses the `sharp` package already in `package.json`, works in CI/Docker unlike macOS-only `sips`) — must match the slot's required size exactly.
-2. **View the image with the Read tool** and check it against the rules above and the [emotional brief and image review](../../../docs/image-generation-guide.md#emotional-brief-and-image-review), including the intended emotion, feature thumbnail engagement, and coverage of central achievements across sibling slots.
+2. **View the image with the Read tool** (if the tool returns no description, the image is unverified: say so, use another check, and do not write alt text or report success from the prompt alone) and check it against the rules above and the [emotional brief and image review](../../../docs/image-generation-guide.md#emotional-brief-and-image-review), including the intended emotion, feature thumbnail engagement, and coverage of central achievements across sibling slots.
 3. If dimensions are wrong, the file is missing, or the content clearly fails a rule or misses the intended emotion (for example, overcast lighting, no visible motif, rendered text): retry once with a corrected prompt; if it fails again, treat that slot as a fallback case.
 4. Write the final `image.alt` (and any other alt fields) to describe what is **actually** in the generated image — not the aspirational prompt — since generation is stochastic and may differ from what was requested.
 

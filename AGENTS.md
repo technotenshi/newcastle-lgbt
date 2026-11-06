@@ -64,6 +64,22 @@ Composables filter by path prefixes such as `/news/%`, `/events/%`, and `/counci
 
 ## Content conventions
 
+### Required gate for news articles and content updates
+
+Every rule below already lives in `docs/content-authoring.md` and `docs/editorial-checklist.md`; an article drafted without opening them comes back with dozens of review comments (see `docs/DECISIONS.md`, 2026-11-06). Do these steps in order. They are a gate, not suggestions, for every tool (Hermes, Codex, Claude Code):
+
+1. **Read first.** Read `docs/editorial-checklist.md` and the "Citations", "Advocacy-forward" and "Verifying sources" sections of `docs/content-authoring.md` in full, then the matching `docs/research/` dossiers. Grepping is not reading.
+2. **Open every source you cite, and read the part you cite.** A search snippet, a wire summary or another outlet's description is a lead, not a source. If a URL will not open, try encoded variants (`%20` for spaces) and a browser; if it still fails, say so in the PR and do not cite it as read. Primary text first: initiative or bill text, the court opinion, the statement itself.
+3. **Copy quotes from the fetched text.** Quote whole sentences or cut at an ellipsis. Quote only the speaker's own words and paraphrase the reporter's. Put each footnote on the source that contains the claim, not the outlet that handled the topic.
+4. **Do not import a descriptor you did not check.** Biographical facts, counts ("27 states"), roles and dates copied from one article are checked against a second source.
+5. **Draft to the stance, then limit the claim.** Critical and named, but no absolutes ("every", "never", "will not make a single"), no motives ("backers know it"), no promised lawsuits (`docs/DECISIONS.md`), no blame before checking the legal process that produced the outcome.
+6. **Review before the PR.** Run `fact-check`, then `content-check`, then the `content-reviewer` checklist (`.agents/agents/content-reviewer.md`). Fix every Critical and Major finding. `yarn lint` and `yarn build` do not check facts, so a green build says nothing about accuracy.
+7. **Verify images by looking.** If the image tool returns no description, you have not verified it. Say so and use another check.
+8. **Write the PR body with the `pr` skill** (Summary, Evidence, Merge Danger), not a prose list.
+9. **On review comments, fix, then reply to each one** with the fix and the source you re-read. Never answer "confirmed" for text you did not open.
+
+### Conventions
+
 - News routes are date-based: `/news/YYYY/MM/DD/slug`
 - News articles support `draft: true` and future-dated entries; published listings exclude drafts and dates later than the current Pacific date
 - Sorting: news by date descending, then `order`; events by date ascending (past events excluded by default), then `order` **descending** within a date; council members by the `position-N-` filename prefix, which every council filename must start with. Council portraits are real official photos from `newcastlewa.gov`, not AI-generated
@@ -169,7 +185,7 @@ Details (Dependabot and Renovate overlap, `yarn.lock` drift, Copilot review): [`
 - Skill files are three directories below the repository root, so their links to `docs/*.md` use `../../../`.
 - Quote a skill frontmatter `description:` that contains a colon followed by a space; otherwise strict YAML parsers can interpret it as a nested mapping.
 
-Project-specific skills (each `SKILL.md` describes itself): `new-article`, `content-check`, `fact-check`, `image-prompt`, `generate-images`, `ics-event`, `seo-check`, `backlog`, `merge-prs`. Use `new-article` to scaffold content and `content-check` before publishing.
+Project-specific skills (each `SKILL.md` describes itself): `new-article`, `content-check`, `fact-check`, `image-prompt`, `generate-images`, `ics-event`, `seo-check`, `backlog`, `merge-prs`. Use `new-article` to scaffold content; `fact-check` and `content-check` are required steps of the content gate above, not optional extras. PR bodies use the global `pr` skill.
 
 The generic mattpocock/skills pack (`research`, `code-review`, `tdd`, `diagnosing-bugs`, `grill-me`, and the rest) is not stored in this repo. It comes from the global install at `~/.agents/skills`, which Claude Code and Hermes read through their own symlinks, so a fresh clone or a cloud agent needs that install to get those skills. Use `research` to build the `docs/research/` dossiers.
 
@@ -192,9 +208,9 @@ Default five-role vocabulary (`needs-triage`, `needs-info`, `ready-for-agent`, `
 
 Single-context: one `GLOSSARY.md` plus `docs/adr/` at the root once created; neither exists yet, and `docs/DECISIONS.md` is the decision log meanwhile. See `docs/agents/domain.md`.
 
-## Hooks (Claude Code only)
+## Hooks and enforcement (Claude Code hooks; manual for every other tool)
 
-Claude Code runs automatic hooks from `.claude/settings.json`: a hard block (not just a warning) on any edit to `.env`, `.env.*`, or `yarn.lock`, plus lint-on-save and content-convention reminders (em dashes, absolute internal URLs, editorial-checklist phrases); full list in [`docs/tooling-notes.md`](docs/tooling-notes.md#claude-code-hooks). Other tools have no equivalent enforcement, so apply the same rules manually: never edit `.env`/`yarn.lock` directly, run lint after edits, and self-check content against `docs/content-authoring.md` and `docs/editorial-checklist.md` before finishing.
+Claude Code runs automatic hooks from `.claude/settings.json`: a hard block (not just a warning) on any edit to `.env`, `.env.*`, or `yarn.lock`, plus lint-on-save and content-convention reminders (em dashes, absolute internal URLs, editorial-checklist phrases); full list in [`docs/tooling-notes.md`](docs/tooling-notes.md#claude-code-hooks). Other tools have no equivalent enforcement, so apply the same rules manually: never edit `.env`/`yarn.lock` directly, run lint after edits, and run the [required content gate](#required-gate-for-news-articles-and-content-updates) before finishing. Hooks only catch phrases; none of them checks a quote, a footnote or a claim against its source.
 
 ## Reference docs
 
