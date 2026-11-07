@@ -56,7 +56,7 @@ For news articles covering movement history, government policy, discrimination, 
 3. Confuses transgender identity with drag, sex work, or housing status by listing them as interchangeable
 4. Makes an absolute claim ("every," "first," "only," "all," "quietly," "deliberately") without clear evidentiary support
 5. Assigns blame to an entire identity group ("the movement," "gay men," "lesbians") instead of a named organization or leader, or names only the organization when a source clearly implicates a specific individual within it
-6. Adopts police or right-wing coded terminology ("gender ideology," "cross-dressing," "gender-appropriate") as neutral narration instead of a quoted, attributed term
+6. Uses "biological female/male/sex/women" outside a direct quotation or proper title (forbidden in our own voice), or adopts police or right-wing coded terminology ("gender ideology," "cross-dressing," "gender-appropriate") as neutral narration instead of a quoted, attributed term
 7. Uses a stereotyped adjective for a marginalized person or group ("loud," "outlandish," "militant") instead of describing conduct concretely
 8. Conceals the responsible institution through passive voice ("were made to feel unwelcome" instead of naming who)
 9. Retains outdated historical terminology (e.g. an organization's real period name) without a brief contextualizing note
