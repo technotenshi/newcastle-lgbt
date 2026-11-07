@@ -14,11 +14,11 @@ The user invokes `/new-article` and provides raw source material — a news exce
 3. Check `content/news/` or `content/events/` for existing files on the same date to pick the correct sequence number (`##`)
 4. Create the file with the correct name, frontmatter, and body
 5. Invoke the `generate-images` skill to produce the real image file(s) for every image slot, without waiting for the user to ask (see "Image generation" below)
-6. **Run the review gate before opening a PR** (the "Required gate" in `AGENTS.md`): `fact-check` the draft claim by claim against sources you opened, `content-check` it, then apply `.agents/agents/content-reviewer.md`. Fix every Critical and Major finding. Lint and build do not check facts. Write the PR body with the `pr` skill.
+6. **Run the review gate before opening a PR** (the "Required content gate" in `AGENTS.md`): for news, `fact-check` the draft claim by claim against sources you opened, `content-check` it, then apply `.agents/agents/content-reviewer.md`. For events, verify the organizer details and apply `content-check` and applicable reviewer checks. Fix every Critical and Major finding. Lint and build do not check facts. Write the PR body with the `pr` skill.
 
 ## Before drafting
 
-Read `docs/editorial-checklist.md` and the citation, advocacy and source-verification sections of `docs/content-authoring.md` in full, and any matching `docs/research/` dossier. The checklist already holds the rules that draw the most review comments: attribute quotes exactly (16), limit absolutes (12), no mind-reading (11), proportionate conclusions (17), descriptors match their citation. Open every source you cite and copy quotes from the fetched text, never from memory or a search snippet.
+For news, read `docs/editorial-checklist.md` in full. Search the authoring guide's headings, then read the complete citation, advocacy, background research and source-verification sections plus applicable frontmatter/body rules with bounded line ranges. Never read `docs/content-authoring.md` whole. For events, read its filename and event sections and verify organizer details. Read matching `docs/research/` dossiers for subjects named in news. The checklist already holds the rules that draw the most review comments: attribute quotes exactly (16), limit absolutes (12), no mind-reading (11), proportionate conclusions (17), descriptors match their citation. Open every source you cite and copy quotes from the fetched text, never from memory or a search snippet.
 
 ## Editorial stance
 
@@ -85,6 +85,6 @@ After creating the file, **always** invoke the `generate-images` skill to produc
 The `generate-images` skill owns the actual prompt-writing rules (diversity clause, LGBTQ+ motif, lighting, aspect ratio, save path, verification against the generated image, alt-text correction) — don't duplicate them here.
 
 ### Also check
-- Alt text: 50–250 characters; describe what's in the image, not the article topic
+- `image.alt`: 50–250 characters describing the visible image; `imageHeader.alt` is a one-sentence engagement teaser instead
 - No absolute URLs to newcastle.lgbt — use relative paths for internal links
 - No `draft: true` unless explicitly requested

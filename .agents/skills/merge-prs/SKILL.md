@@ -53,7 +53,7 @@ Tokenize `$ARGUMENTS`:
 
 - Tokens that are purely numeric or match `#\d+` → PR numbers (collect all of them, strip `#`)
 - First token that is non-numeric and doesn't start with `#` → use as the integration branch name
-- If no branch name is given → default to `deploy/YYYY-MM-DD-batch` using today's date (`date +%Y-%m-%d`)
+- If no branch name is given → default to `deploy/YYYY-MM-DD-batch` using the current Pacific date (`TZ=America/Los_Angeles date +%Y-%m-%d`)
 
 After parsing, state:
 - **Branch name:** (resolved or default)
@@ -100,20 +100,16 @@ Build a validation table:
 
 ### 3a — Detect Superseded PRs
 
-Dependency-bot PRs frequently target the same package at different versions (e.g. a routine
-lockfile bump to `12.11.1` alongside a major bump to `13.0.0` for the same library, opened days
-apart). Before merging, scan the requested PR titles/branches for repeated package names:
+Use titles only to find potentially overlapping PRs, then read each actual diff and intended
+change before deciding supersession. A manifest minimum, a transitive cleanup and a scoped
+resolution can be complementary even when all name the same package.
 
-- If two or more PRs bump the **same package**, only the PR requesting the **highest version**
-  has any effect once all are merged in ascending-number order — the lower one's change gets
-  silently overwritten.
-- **Skip the superseded (lower-version) PR entirely** — do not fetch or merge it. Note it in the
-  report as `⏭️ skipped (superseded by #N)`, not as a merge result.
-- This is a title/version comparison, not a mergeability check — do it before Step 6, using the
-  PR titles already gathered in Step 2/3 (renovate/dependabot titles state old→new version).
-- If it's ambiguous whether two PRs target the same package (e.g. one bumps a range, another
-  bumps a resolution/override for the same package), treat the more specific/higher one as
-  authoritative and skip the other.
+- Skip a lower-version PR only when the chosen PR demonstrably includes its whole intent and
+  supports all requested parent ranges. Record the diff evidence and the superseding PR.
+- Preserve complementary changes; compare the final manifest and generated lockfile with every
+  requested intent. Multiple incompatible majors can be intentional.
+- If overlap is ambiguous, keep it under review rather than silently dropping a requested PR.
+  Do not infer compatibility or complete supersession from title/version order.
 
 ---
 
@@ -139,13 +135,12 @@ git fetch origin --prune
 git checkout -b <branch-name> origin/main
 ```
 
-If the branch already exists locally:
-```bash
-git branch -D <branch-name>
-git checkout -b <branch-name> origin/main
-```
+If that branch already exists, stop and inspect its commits/upstream before changing it.
+A clean working tree does not mean it has no unpushed commits. Ask to reuse it or choose a
+new unused name; never delete/replace it automatically. Any approved deletion needs its own
+explicit go and a backup first.
 
-Confirm current HEAD after checkout.
+Confirm the new branch's actual HEAD and base after checkout.
 
 ---
 
@@ -170,10 +165,10 @@ the contributor's fork to be a named remote.
 git merge --no-ff "pr-<N>-tmp" -m "Merge PR #<N>: <title>"
 ```
 
-**On clean merge (exit 0):** record as ✅ success and delete the temp branch:
-```bash
-git branch -D "pr-<N>-tmp"
-```
+**On clean merge (exit 0):** record success and retain the temporary ref until final
+verification. Before creating any temporary branch, ensure its name is unused; do not overwrite
+a pre-existing ref. Cleanup is optional and needs explicit deletion approval; use non-forced
+`git branch -d` only after confirming the ref's commits are reachable from the integration branch.
 
 **On conflict (exit non-zero):** proceed to Step 6c.
 
@@ -201,7 +196,7 @@ Follow the Conflict Rules above. For each conflicted file:
 
 After all conflicted files are resolved:
 ```bash
-git merge --continue -m "Merge PR #<N>: <title> (conflicts resolved)"
+git commit -m "Merge PR #<N>: <title> (conflicts resolved)" -m "<per-file conflict choices and risks>"
 ```
 
 If a file cannot be merged semantically (binary file, structural corruption): pick a side with
@@ -223,11 +218,11 @@ Check the `Resolution step` output for `+ <pkg>@npm:<new>` / `- <pkg>@npm:<old>`
 confirms which packages actually moved. If a package that should have bumped (per your tracked
 list from Step 6c) does **not** appear in that diff, its `package.json` range didn't force a new
 resolution on its own (common for `^`/`~` ranges that the old resolution already satisfied);
-force it explicitly:
+apply only the exact PR-requested version/range with the operation appropriate to its scope:
 
-```bash
-docker compose run --rm app yarn up <pkg1> <pkg2> ...
-```
+- For a direct dependency, preserve/apply the PR's exact manifest descriptor and run Yarn install; if an explicit upgrade is necessary, pass the exact intended package version/range to `yarn up`, never an unversioned package name.
+- For a transitive/lockfile-only change, inspect the parents' actual requests and select a supported recursive-resolution operation or the PR's scoped resolution. A recursive re-resolution can select newer releases than the PR intended, so compare every resulting version with the captured PR intent and reject unexpected movement. Do not turn a transitive fix into a new direct dependency.
+- Verify the final manifest and generated lockfile against every requested PR, preserving unrelated pins. If Yarn cannot produce the intended graph through a supported operation, stop and report it rather than silently broadening the requested bump.
 
 Then re-run `yarn install` once more to confirm `yarn.lock` is stable (no further changes), and
 commit the result as its own fixup commit — don't fold it silently into an unrelated merge commit.
@@ -262,12 +257,20 @@ docker compose run --rm app yarn lint 2>&1
 docker compose run --rm app yarn build 2>&1
 ```
 
-This runs Nuxt SSG and generates `.output/public/`. It may take 1–3 minutes.
+This runs Nuxt SSG and generates `.output/public/`. Use a tracked background job with
+completion notification. Preserve any running development server's output by building in an
+isolated source copy. Do not rebuild images or install packages without current approval.
 
 - If exit 0: record as ✅ build passed.
 - If non-zero: record as ❌ build failed, display the relevant error lines (skip verbose webpack output — focus on the actual error).
 
 ---
+
+Before declaring verification complete, apply AGENTS.md's task-triggered checks: relevant
+Node regression tests, `verify-agent-docs.mjs` for guidance changes, social-image verification
+after every static build, the recursive audit gate for dependency changes, and static-only
+HTTP image checks for image/IPX/prerender changes. Content merges require the editorial gate;
+a successful merge or build does not validate article facts. Report every unrun check.
 
 ## Step 9 — Final Report
 
@@ -292,7 +295,7 @@ Quality Checks:
 Conflict notes:
   #207 — resolved src/components/Hero.vue (kept both sides)
         — resolved assets/theme/css/style.css (kept ours)
-        — yarn.lock → accepted ours, then applied via `yarn up <pkg>` (Step 6d) so the bump actually landed
+        — yarn.lock → preserved baseline, then generated the exact requested version/range (Step 6d) and verified the resulting graph
 
 Next steps:
   Push branch:     git push -u origin <branch-name>
@@ -308,18 +311,17 @@ specific errors the user must fix before pushing.
 ## Notes & Conventions for This Project
 
 - **Non-TTY Docker:** All `make` targets that run `docker compose run -it` will fail without a TTY.
-  Always use `docker compose run --rm app yarn <cmd>` instead.
+  Use `docker compose run --rm --no-deps -T --pull never app yarn <cmd>` instead, with the existing image.
 - **Lockfile conflicts:** `yarn.lock` conflicts → accept `ours`, but that alone does **not**
   regenerate the resolution — track every package whose conflict was resolved this way and
-  force it via `yarn up <pkg>` after all merges (Step 6d). A plain `yarn install` only re-resolves
+  apply the captured exact version/range through the appropriate direct/transitive operation after all merges (Step 6d). A plain `yarn install` only re-resolves
   packages whose `package.json` range no longer matches the locked version; many bumps (e.g. a
   dependent range like `^4.0.0` that already covers both the old and new patch) need the explicit
   `yarn up` push. Verified in practice: skipping this step left `@nuxt/content`, `nuxt-seo-utils`,
   `picomatch`, `@nuxtjs/sitemap`, and `nuxt-link-checker` bumps silently unapplied despite their
   PRs showing as merged.
-- **Superseded PRs:** always run Step 3a before merging. Merging a lower-version bump followed
-  later by a higher-version bump for the same package is harmless but wasteful (extra commit,
-  extra conflict to resolve for no lasting effect) — skip the lower one up front instead.
+- **Superseded PRs:** Step 3a compares actual diffs and intended outcomes. A higher version
+  does not supersede complementary manifest/resolution changes by itself.
 - **PurgeCSS:** If any PR adds new Bootstrap class names via `:class` bindings, remind the user
   to add them to the `safelist` in `nuxt.config.ts`.
 - **Content conflicts:** If two PRs both added files under `content/`, they almost never conflict —

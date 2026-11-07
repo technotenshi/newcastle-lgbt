@@ -1,96 +1,60 @@
 ---
 name: ics-event
-description: Generate an iCal (.ics) file content and Google Calendar URL for an event from content/events/
+description: Generate verified iCal and Google Calendar event links.
 ---
 
-Generate calendar integration for a Newcastle LGBTQ+ site event. Read the specified event file (or the most recently created/edited event file) and output:
+# Calendar integration for site events
 
-1. A complete `.ics` file (iCal format) the user can save and link as a download
-2. A Google Calendar "Add to Calendar" URL
-3. The HTML snippet to embed both options in the event page body or in the component
+Use for a specified `content/events/` file, or the latest edited event when no path is given. Read its title/date/slug, organizer URL, location and prose times. Do not modify the event page or add public files unless requested.
 
-## How to use
+## Verify inputs first
 
-The user invokes `/ics-event [optional: path to event file]`. If no path is given, use the most recently edited file in `content/events/`.
+1. Check the organizer's actual date and start/end times. Interpret local event times with `America/Los_Angeles`, using a timezone-aware tool so DST is handled. Do not derive the offset from the host clock or guess placeholder hours.
+2. If start/end time is missing, ask for it. An all-day event is acceptable only when the source/user establishes that; use DATE values with an exclusive next-day DTEND. Ambiguous/nonexistent DST local times need source clarification.
+3. Convert verified timed events to UTC using a tool. Use the same UTC interval for both calendar formats; confirm end is after start, including overnight events.
 
-## Step-by-step
+## iCalendar contract
 
-1. **Read the event file** — extract from frontmatter and body:
-   - `title` — event name
-   - `date` — YYYY-MM-DD format
-   - Start time and end time — parse from prose in the body (e.g. "from 7:00–8:30 PM")
-   - Location — parse from prose in the body
-   - Description — the event body text (strip markdown formatting)
-   - URL — the `link.target` field from frontmatter
+Produce `public/events/<slug>.ics` when writing is requested; otherwise state that proposed path and return the content. Timed events use this shape, replacing every bracketed placeholder with verified values:
 
-2. **Handle missing time** — if start/end time is not found in the body, use placeholder times (6:00 PM – 8:00 PM) and note the assumption so the user can correct it.
-
-3. **Generate the iCal content** — format:
-
-```
+```text
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Newcastle LGBTQ Voice//EN
 CALSCALE:GREGORIAN
-METHOD:PUBLISH
 BEGIN:VEVENT
-UID:[slug]@newcastle.lgbt
-DTSTART;TZID=America/Los_Angeles:[YYYYMMDDTHHMMSS]
-DTEND;TZID=America/Los_Angeles:[YYYYMMDDTHHMMSS]
-SUMMARY:[title]
-DESCRIPTION:[description — wrap at 75 chars, escape commas and semicolons with backslash]
-LOCATION:[location]
-URL:[link.target]
+UID:[stable unique event identifier]@newcastle.lgbt
+DTSTAMP:[generation time YYYYMMDDTHHMMSSZ]
+DTSTART:[verified UTC YYYYMMDDTHHMMSSZ]
+DTEND:[verified UTC YYYYMMDDTHHMMSSZ]
+SUMMARY:[escaped title]
+DESCRIPTION:[escaped plain-text event description]
+LOCATION:[escaped location]
+URL:[organizer or registration URL]
 END:VEVENT
 END:VCALENDAR
 ```
 
-   - Timezone: always `America/Los_Angeles` (Newcastle, WA)
-   - Line folding: iCal spec requires lines >75 chars to be folded with CRLF + single space
-   - Escape `,` and `;` in DESCRIPTION and LOCATION with `\`
+- Use CRLF line endings, including after END:VCALENDAR.
+- DTSTAMP is required; obtain the actual generation time with a tool. Preserve UID across revisions of the same event.
+- UTC `Z` values avoid incomplete TZID/VTIMEZONE definitions. Do not mix floating local times with UTC. For an authorized all-day event, use `DTSTART;VALUE=DATE` and exclusive `DTEND;VALUE=DATE`, without `Z`.
+- Escape backslashes, newlines, commas and semicolons in TEXT fields (`SUMMARY`, `DESCRIPTION`, `LOCATION`). URL is a URI, not a TEXT field; encode it appropriately rather than applying TEXT escaping.
+- Fold content lines at no more than 75 UTF-8 octets, without splitting a code point, using CRLF plus one leading space on continuation lines. The continuation space counts toward its line's octet budget.
 
-4. **Generate the Google Calendar URL**:
+Reference: [RFC 5545](https://www.rfc-editor.org/rfc/rfc5545.html), sections 3.1, 3.3.11 and 3.6.1.
 
-```
-https://calendar.google.com/calendar/render?action=TEMPLATE&text=[URL-encoded title]&dates=[YYYYMMDDTHHMMSS]/[YYYYMMDDTHHMMSS]&details=[URL-encoded description]&location=[URL-encoded location]
-```
+## Google Calendar URL
 
-   - Dates format for Google: `YYYYMMDDTHHMMSS` (no timezone suffix — Google infers from user's calendar)
-   - URL-encode all parameter values
+Build with a URL encoder, not manual string replacement:
 
-5. **Output the suggested file path**: `public/events/[slug].ics`
-   Note: files in `public/` are served as-is by Nuxt static build. The user should save the `.ics` there.
-
-## Output format
-
-````
-### iCal file
-**Save as:** `public/events/[slug].ics`
-
-```
-[complete .ics content]
+```text
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=<title>&dates=<UTC-start>/<UTC-end>&details=<description>&location=<location>&ctz=America%2FLos_Angeles
 ```
 
----
+Timed `dates` values are `YYYYMMDDTHHMMSSZ`; all-day values are dates with exclusive end. Encode every query value. Never rely on the recipient's default calendar timezone to interpret floating Newcastle times.
 
-### Google Calendar URL
-```
-[full URL]
-```
+## Verification and report
 
----
+Before distributing, parse the generated ICS with an available calendar parser, verify required properties/CRLF/UTF-8 folding and round-trip its interval to Pacific time. Decode the Google URL and compare its interval/title/location against the same source inputs. Do not install a parser without permission. If a real parser/import check cannot run, label that gap; string formatting alone is not a successful calendar import.
 
-### HTML snippet (add to event body in content/events/[filename].md)
-
-Add to the event body after the CTA sentence:
-
-```markdown
-[Add to Google Calendar](https://calendar.google.com/...) | [Download .ics](/events/[slug].ics)
-```
-````
-
-## Notes for the user
-
-- The `.ics` file path `/events/[slug].ics` assumes the file is saved at `public/events/[slug].ics`
-- The user must save the file — the agent cannot write to `public/` without being asked to
-- Verify the extracted time is correct before distributing the calendar link
+Report the verified Pacific interval, actual artifact path (or content-only status), Google URL and checks performed. Offer relative Markdown links only if page integration was requested; keep the normal event body concise. This skill's guidance edit does not itself prove calendar-client import compatibility.
