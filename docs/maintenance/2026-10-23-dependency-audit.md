@@ -1,6 +1,6 @@
 # Dependency audit remediation — 2026-10-23
 
-Status: open, tracked in [GitHub issue #436](https://github.com/technotenshi/newcastle-lgbt/issues/436). Priority: urgent for the two critical findings; triage and remediate all remaining reports.
+Status: the umbrella [GitHub issue #436](https://github.com/technotenshi/newcastle-lgbt/issues/436) is closed. This file preserves the October 23 audit and its original proposed remediation, not a current vulnerability inventory. Use the recursive audit gate and [exception register](audit-exceptions.md) for current findings; do not reopen historical work from this snapshot alone.
 
 ## Evidence and impact
 

@@ -1,6 +1,6 @@
 # Content Authoring Guide
 
-This guide documents every convention needed to produce a correctly structured Markdown file for news articles and events. An agent (or human author) can follow these rules to create new content without reading existing files.
+This guide documents conventions for news articles and events. Agents search its headings and read complete task-relevant sections with bounded line ranges, not the entire guide. For news, Citations and Sources, Advocacy-forward writing conventions, Background research files, and Verifying sources and citation URLs are required in full alongside the editorial checklist and applicable structure sections. See `AGENTS.md` for the ordered content gate.
 
 ---
 
@@ -186,7 +186,7 @@ For articles covering movement history, government policy, discrimination, or co
 - **Name institutions and decision-makers, not identity groups, and don't stop at the institution.** Avoid "the movement," "gay men," or "lesbians" as an undifferentiated actor; identify the specific organization, leader, or agency responsible. This site is not afraid to name a donor, legislator, spokesperson, or executive by name when a source (a filing, a quote, a roll-call vote) ties them directly to it.
 - **Avoid stereotyped adjectives** ("loud," "outlandish," "militant") for marginalized people, describe conduct concretely instead.
 - **Limit absolute claims** ("every," "first," "only," "quietly," "deliberately") unless independently verifiable; prefer "among the earliest," "helped influence."
-- **Run the final 20-item language check** in `docs/editorial-checklist.md` before publishing any article in this category.
+- **Run section 20's final paragraph-level language check** in `docs/editorial-checklist.md` before publishing any article in this category.
 
 ### Background research files (`docs/research/`)
 
@@ -252,7 +252,7 @@ link:
 ### Body structure
 
 ```markdown
-**Opening sentence highlighting the event** — what it is and why to attend.
+**Opening sentence highlighting the event**, stating what it is and why to attend.
 
 Join us on **Saturday, March 8, 2025, from 7:00–8:30 PM** at [Venue Name], [City].
 
@@ -287,7 +287,7 @@ To attend or for more information, [contact method matching the link.target fiel
 | Council members | `assets/images/council-members/` | `YYYYMMDD-##-name-descriptor.jpeg` | `.jpeg` |
 
 **Alt text rules:**
-- 50–250 characters
+- `image.alt`: 50–250 characters describing the visible image. News `imageHeader.alt` is a one-sentence engagement teaser, not image alt text
 - Describe what is actually in the image, not the article topic
 - Do not repeat the article title verbatim
 - Include scene context for photos (people, setting, objects, mood)
@@ -314,14 +314,14 @@ Use these guidelines to produce DALL-E or Midjourney prompts for every image slo
 
 ### Aspect ratio reference
 
-Each image slot renders at a specific size on the site. Use the matching aspect ratio so the image is never distorted or awkwardly cropped.
+News source files use 1792x1024 (7:4), composed with safe margins for 16:9 landscape display crops. Source pixels are not an exact 16:9 ratio. Events use 1024x768 (4:3). Verify exact source dimensions separately from composition/display cropping.
 
-| Image slot | Where it renders | Recommended AR | DALL-E size | Midjourney flag |
+| Image slot | Where it renders | Display composition | Required source pixels | Midjourney flag |
 |---|---|---|---|---|
 | `image` (news feature) | 180px-tall thumbnail in 3-col grid | 16:9 | `1792x1024` | `--ar 16:9` |
 | `imageHeader` (news) | 511px wide, centered column, cropped to landscape | 16:9 | `1792x1024` | `--ar 16:9` |
 | `carousel` images | Full-width responsive carousel | 16:9 | `1792x1024` | `--ar 16:9` |
-| `image` (events) | `img-fluid` in 2-col layout | 4:3 | `1792x1024` | `--ar 4:3` |
+| `image` (events) | `img-fluid` in 2-col layout | 4:3 | `1024x768` (compatible generator; not DALL-E 3) | `--ar 4:3` |
 
 ### Choosing photo-style vs. graphic-design style
 
@@ -333,105 +333,11 @@ Each image slot renders at a specific size on the site. Use the matching aspect 
 
 ---
 
-### Photo-style prompts
+### Prompt templates and generation
 
-Use for news articles and events that depict real-world scenes.
+Use `.agents/skills/image-prompt/SKILL.md` for canonical manual photo/graphic templates; use `.agents/skills/generate-images/SKILL.md` for actual Codex generation, save instructions, retries and visual verification. Do not maintain parallel scene examples here: templates must carry the exact racial-diversity clause, a subtle LGBTQ+ accessory motif, approved lighting, and no generated text/logos/flag artwork.
 
-Plan the emotional and narrative purpose of each slot using the [emotional brief](image-generation-guide.md#emotional-brief-and-image-review), then check generated images against it before acceptance.
-
-**DALL-E formula:**
-```
-[Scene description, specific to the article topic], [mood and lighting], candid documentary photography style, [diversity/inclusivity cues], photorealistic, no text or logos.
-```
-
-**DALL-E example — Pride event article:**
-```
-A diverse crowd of LGBTQ+ community members celebrating at an outdoor park,
-rainbow flags waving, golden-hour afternoon sunlight, wide-angle shot,
-candid documentary photography style, inclusive representation of ages, races,
-and gender expressions, photorealistic, no text or logos.
-```
-
-**DALL-E example — council meeting news:**
-```
-A city council chamber with community members attending a public meeting,
-warm indoor lighting, diverse audience seated in rows, serious and engaged
-expressions, photorealistic documentary photography, no text or logos.
-```
-
-**Midjourney formula:**
-```
-[scene], [mood and lighting], candid photojournalism, wide angle, diverse LGBTQ+ community members --ar [ratio] --style raw --v 7
-```
-
-**Midjourney example — Pride event:**
-```
-diverse LGBTQ+ community celebrating at outdoor park, rainbow flags, golden hour,
-wide angle, candid photojournalism, inclusive ages and ethnicities
---ar 16:9 --style raw --v 7
-```
-
-**Midjourney example — news header (landscape crop):**
-```
-community members at LGBTQ+ pride rally, rainbow flags in background, wide
-framing, shallow depth of field, warm sunlight, photojournalism style
---ar 16:9 --style raw --v 7
-```
-
----
-
-### Graphic-design style prompts
-
-Use for event promotional images and articles that benefit from a designed look.
-
-**DALL-E formula:**
-```
-A vibrant promotional graphic for an LGBTQ+ [event type] event. Bold [color palette], clean geometric shapes, [mood descriptor] design aesthetic, flat design with subtle gradients, no text.
-```
-
-**DALL-E example — game night event:**
-```
-A vibrant promotional graphic for an LGBTQ+ game night event.
-Bold rainbow palette on a dark navy background, playful geometric shapes,
-controller and game piece silhouettes, energetic and fun design aesthetic,
-flat design with subtle gradients, no text.
-```
-
-**DALL-E example — workshop event:**
-```
-A modern promotional graphic for an LGBTQ+ youth self-defense workshop.
-Bold purple and gold palette, dynamic abstract shapes suggesting movement,
-empowering and energetic design aesthetic, clean flat graphic design, no text.
-```
-
-**Midjourney formula:**
-```
-LGBTQ+ [event type] promotional poster, [color palette], geometric shapes, [mood], flat graphic design, no text --ar [ratio] --v 7
-```
-
-**Midjourney example — social event:**
-```
-LGBTQ+ game night event promotional poster, bold rainbow palette, dark background,
-playful geometric shapes, energetic mood, flat graphic design, no text
---ar 4:3 --v 7
-```
-
----
-
-### How to generate prompts from article or event content
-
-1. **Identify the image slot** — `image` (feature/event), `imageHeader`, or `carousel`
-2. **Look up the aspect ratio** from the table above and note the Midjourney flag or DALL-E size
-3. **Read the article/event body** — extract location, topic, and visual elements; prepare the [emotional brief](image-generation-guide.md#emotional-brief-and-image-review) before writing prompts
-4. **Choose photo vs. graphic-design style** using the style guide table above
-5. **Plan each slot** — use the emotional brief to assign distinct narrative angles, choose each slot's emotional role, and make the feature readable at thumbnail size
-6. **Fill in the template** — replace bracketed placeholders with content-specific details
-7. **Append the required suffix:**
-   - DALL-E photo: end with `photorealistic, no text or logos`
-   - DALL-E graphic: end with `no text`
-   - Midjourney photo: append `--ar [ratio] --style raw --v 7`
-   - Midjourney graphic: append `--ar [ratio] --v 7`
-8. **Save the image** using the filename convention: `YYYYMMDD-##-descriptive-name.png` in the appropriate subfolder (`assets/images/news/` or `assets/images/events/`)
+Keep each manual generator's visual prompt separate from output path/pixel metadata. Compose for the slot's emotional brief and display crop, then verify the real file and dimensions before writing `image.alt`; the news `imageHeader.alt` remains an engagement teaser. Supplied real photos and explicit edits follow the next section, not an automatic generation rule.
 
 ---
 
@@ -439,17 +345,19 @@ playful geometric shapes, energetic mood, flat graphic design, no text
 
 When the user provides an image alongside article or event text:
 
-- **Do NOT use it directly as an article asset.** It is never meant to be referenced in the frontmatter as-is.
-- **Treat it as a style reference** for writing image generation prompts — extract color palette, mood, composition style, and visual tone.
-- **Extract additional information** — promotional flyers, screenshots, and graphics often contain dates, eligibility details, CTAs, or other facts not present in the accompanying text. Read all visible text in the image as supplementary source material.
+- **Identify the image's purpose.** A flyer, screenshot or design reference guides style and can supply visible event details; do not automatically use it as the article asset. Extract its palette, mood, composition and any visible factual information, verifying organizer details before publication.
+- **Honor a supplied real photo or requested edit.** If the user explicitly provides a photo for use or asks for an edit, use that input rather than silently replacing it with generated art. Check photo credit metadata; events support optional `image.credit` (name only).
+- **Generate only unfilled slots.** The `generate-images` skill owns actual local Codex generation and dimension/visual verification. User-supplied real photos and explicitly declined AI generation skip that slot. Prompts-only output is a per-slot fallback after the skill's documented failure limit, not the default.
 
-Always generate AI image prompts based on the article content and the style reference. The user will generate and save the actual image files.
+Read the complete applicable image guide sections before writing prompts; never infer visible content from a prompt alone.
 
 ---
 
 ## Step-by-step: Creating a news article from raw text
 
-1. **Determine the date** from the source text → derive the `YYYYMMDD` prefix
+This structure recipe is not a complete publishing workflow. Apply AGENTS.md's content gate before drafting and after writing: source reads, exact quotations, fact-check, content-check, reviewer, actual image generation/inspection, and static verification.
+
+1. **Verify the publication date** in `America/Los_Angeles` → derive the `YYYYMMDD` prefix. A source's event/reporting date is not automatically the publication date
 2. **Check `content/news/`** for files with that date prefix → pick the next `##` sequence number
 3. **Derive the slug** from the headline: lowercase, hyphens only, 3–6 words (e.g. `"Newcastle Pride 2025"` → `newcastle-pride-2025`)
 4. **Set the filename:** `YYYYMMDD-##-slug.md`
@@ -458,7 +366,7 @@ Always generate AI image prompts based on the article content and the style refe
 7. **Add `carousel`** if the article covers an event and multiple photos are provided
 8. **Write the body:**
    - No `#` heading
-   - Open with location (`Newcastle, WA`) and core fact (2–3 sentences)
+   - Open with `:Dateline` and the core fact (2–3 sentences); the component supplies the location
    - Use H2/H3 sections for structure
    - Bold key names and orgs; italicize titles
    - Block-quote substantial quotes
@@ -471,7 +379,7 @@ Always generate AI image prompts based on the article content and the style refe
 
 > **⚠ Date check first:** If the event date is today or in the past, **stop and warn the user** before creating anything. Do not create events for dates that have already occurred.
 
-1. **Determine the event date** → derive the `YYYYMMDD` prefix
+1. **Verify the event date** and compare it with today in `America/Los_Angeles` → derive the `YYYYMMDD` prefix
 2. **Check `content/events/`** for files with that date prefix → pick the next `##` sequence number
 3. **Derive the slug** from the event name (lowercase, hyphens, 3–6 words)
 4. **Set the filename:** `YYYYMMDD-##-slug.md`

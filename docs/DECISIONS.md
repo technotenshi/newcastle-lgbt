@@ -1,7 +1,7 @@
 # Decision log
 
 Source of truth for this repo's decisions. Append dated entries; newest last.
-Chat output from any AI tool is a draft until recorded here. See ~/HARNESS.md.
+Chat output from any AI tool is a draft until recorded here. Current cross-tool working rules live in `AGENTS.md`; historical entries below retain references to the former `~/HARNESS.md` agreement.
 
 ## 2026-08-05 — Adopted cross-tool working agreements
 Harness Phase 1: this file becomes the repo's decision log; working agreements in ~/HARNESS.md apply.
@@ -975,3 +975,28 @@ Decision: Results coverage reports how our recommended candidates fared and rest
 Context: The I-638 aftermath article (PR #510) was drafted without opening `docs/editorial-checklist.md` or `docs/content-authoring.md` and without running `fact-check`, `content-check` or `content-reviewer`. An automated review then found five required fixes and 19 inline comments: a copied biographical error, an unsupported "floor", blame contradicted by Article II, section 1(a), misplaced footnotes, cut quotes and absolute conclusions. Nearly every one was already a checklist rule. `AGENTS.md` pointed to the docs in permissive terms, put its manual self-check under a heading labelled "Claude Code only", and the `new-article` skill ended at image generation with no review step. The primary initiative text was cited from another article's source list after a `+`-encoded URL returned a 404, and the image check reported success when the image tool had returned no description.
 
 Decision: `AGENTS.md` carries a numbered, tool-neutral gate for content (read, open sources, quote from fetched text, check descriptors, limit claims, run the review skills, verify images by looking, `pr` skill body, reply to every review comment). `new-article` gains a "Before drafting" section and a review step. `generate-images` states that an image tool without a description is not a verification. New patterns are in `docs/editorial-checklist.md` ("Lessons from the I-638 aftermath article") and `docs/content-authoring.md` ("Verifying sources"). A green lint and build are not evidence of accuracy.
+
+## 2026-11-06 Keep startup instructions bounded and retire broken repository hooks
+
+The owner requested an instruction/documentation audit, section-based authoring-guide reads,
+cheaper web-fetch delegation and evidence-based unused-skill visibility cleanup. The owner
+also approved removing repository Claude hooks and replacing their security block with native
+file-deny rules, plus real scratch permission/model probes and a documentation regression check.
+
+The old AGENTS file exceeded Hermes's supported 20,000-character floor; the real truncation
+function reproduced the loss. Keep the canonical AGENTS entry under 12,000 characters / 180
+lines, routing to complete task-relevant sections instead of eagerly loading whole manuals.
+The required editorial/source/image gates remain binding. Do not restore CLAUDE.md.
+
+All repository Claude hooks are removed: their old input-variable wiring failed a real
+lockfile-block fixture, and lint/Stop used a Mac-only path. Native permissions protect env
+file reads/writes and lockfile writes in Claude file tools; they are not a shell sandbox or
+cross-tool enforcement. Lint/build and editorial checks are explicit requirements.
+
+The project web-fetch override uses Haiku without changing the main/reviewer models; a real
+child fetched example.com on claude-haiku-5-5. Personal Claude visibility settings preserve
+required/recent shared workflows instead of treating absent Skill invocations as non-use.
+Current guidance, test boundaries and the audit scope are recorded in
+[agent configuration](agents/agent-configuration.md) and the
+[documentation audit](agents/documentation-audit.md). Historical decision entries retain
+old file names and scoped approvals; they do not authorize a new session's actions.

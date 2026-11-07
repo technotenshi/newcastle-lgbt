@@ -33,7 +33,7 @@ Official statewide vote totals.[^5]
 
 Define `[^1]` and `[^5]` once in the article's normal Sources section, using its existing reference numbers. The slots are Markdown, so the article's native footnote pipeline generates references and back-links. Do not put footnote markers in YAML strings or handcraft HTML footnote IDs. Repeated references remain native footnotes. Both slots are optional; `source` and `snapshot` are required even when no source slot is supplied.
 
-The actual article is `content/news/20261104-01-election-results-lgbtq-washington.md`. Its counts were last refreshed to the November 5, 4:41 p.m. PST statewide export (King 3:38 p.m., Pierce 4:29 p.m., AP seat counts 4:42 p.m.); the refresh record is in `docs/research/2026-election-results.md`. On a later refresh, update the render test's real-article expectations along with the chart votes.
+The reference article is `content/news/20261104-01-election-results-lgbtq-washington.md`. Source snapshots and refresh provenance live in `docs/research/2026-election-results.md`; this authoring guide does not cache current counts/cutoffs. When asked to refresh the article, update the render test's real-article expectations alongside chart votes; do not refresh numbers as part of a guide edit.
 
 ## Data and encoding
 
@@ -65,7 +65,7 @@ contest:
     - { id: r, label: Republican, party: Republican, seats: 30, before: 39 }
 ```
 
-`scenario` means if current leads hold, not called or certified; include continuing officeholders when reporting a whole chamber. `accounting` means AP called seats and continuing officeholders, with uncalled separately, not a call for each summary row or certification. Seat summaries have no current leader or vote margin. Their `snapshot` is displayed as “Verified as of,” not a claimed source update. For this article the national dashboards were checked between 6:01 and 6:04 p.m. PST, before the 6:05 reporting cutoff; the Senate scenario was verified by the same cutoff. Statewide vote counts are from 5:52, King County from 4:34, and Pierce from 5:01. The I-638 displayed AP call time of 6:14 and display update at 6:21 are separate; their timezone has not been confirmed, so neither is encoded as an absolute timestamp.
+`scenario` means if current leads hold, not called or certified; include continuing officeholders when reporting a whole chamber. `accounting` means AP called seats and continuing officeholders, with uncalled separately, not a call for each summary row or certification. Seat summaries have no current leader or vote margin. Their `snapshot` is displayed as “Verified as of,” not a claimed source update. Historical dashboard windows and screenshot clock limitations belong in the research record. Do not copy them into new articles or encode them as absolute timestamps without verified timezone evidence.
 
 ## Status and timestamps
 

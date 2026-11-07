@@ -11,11 +11,11 @@ Generate AI image prompts for a news article or event on the Newcastle LGBTQ+ si
 2. **Check for attached images** — if the user has attached a flyer, photo, or any reference image, study its visual style, color palette, composition, and mood. Use that vibe as the primary creative direction for the prompts. Describe what you observed (e.g. "flat illustration style, bold rainbow flowers, cream textured background") before writing the prompts.
 3. **Identify image slots** present in frontmatter: `image`, `imageHeader` (news, required), `carousel` (news only)
 4. **Determine style** — if an attached image provides a style reference, use it. Otherwise: civic/political/outdoor/commemorative → photorealistic; social events/parties/workshops → graphic-design/poster
-4. **Check aspect ratio** per slot:
-   - `image` (news), `imageHeader`, `carousel` → 16:9 (`1792x1024` for DALL-E, `--ar 16:9` for MJ)
+5. **Check source size and display composition** per slot:
+   - `image` (news), `imageHeader`, `carousel` → `1792x1024` (7:4 landscape source), safe for 16:9 display crops; `--ar 16:9` for manual MJ composition
    - `image` (events) → 4:3 landscape (`1024x768` for DALL-E, gpt-image-1/2 only, since dall-e-3 has no true 4:3 fixed size; `--ar 4:3` for MJ)
-5. **Write distinct prompts** for each slot using the emotional brief, and check the prompts against its image review criteria before output.
-6. **Output both DALL-E and Midjourney versions** for each slot.
+6. **Write distinct prompts** for each slot using the emotional brief, and check the prompts against its image review criteria before output.
+7. **Output both DALL-E and Midjourney versions** for each slot.
 
 ## Non-negotiable rules (apply to every prompt)
 
@@ -29,14 +29,14 @@ Include at least one subtle visual cue regardless of event type:
 - `a rainbow pride wristband on one wrist`
 - `pride-color accessories (red, orange, yellow, green, blue, violet)`
 - `light blue, pink, and white accessories` (for trans-specific content)
-Keep it personal and natural — accessories on people, not large flags or banners (unless the article is specifically about a rally/march).
+Keep it personal and natural — accessories on people, not generated flag artwork or large banners, including rallies/marches.
 
 ### Lighting (REQUIRED)
-Always specify: `golden-hour afternoon sunlight`, `bright midday sunlight`, `warm morning light`, or `indoor warm lighting`.
+Always specify: `golden-hour afternoon sunlight`, `bright midday sunlight`, `warm morning light`, or `warm indoor lighting`.
 NEVER use: `overcast`, `cloudy`, `grey skies`, `diffused light`, `soft light`. Overcast makes the site feel gloomy.
 
 ### No text or logos
-End every DALL-E prompt with: `photorealistic, no text or logos` (photo) or `no text` (graphic design).
+End every DALL-E prompt with: `photorealistic, no text or logos` (photo) or `no text or logos` (graphic design).
 Append to every MJ prompt: `--no text --no logos`
 
 ### No accurate flag rendering
@@ -50,26 +50,26 @@ Do not reference specific individuals or public figures by name.
 
 ## Prompt templates
 
-Every prompt (both DALL-E and Midjourney, every slot) must end with the save path for that slot's image, taken directly from the frontmatter `path` field: `assets/images/news/YYYYMMDD-##-descriptive-name.png` (news) or `assets/images/events/YYYYMMDD-##-descriptive-name.png` (events). This goes inside the prompt string itself, not just in surrounding commentary.
+For each slot, state its exact output path and required pixel size separately from the visual prompt. Manual generators do not save repository files; filenames inside a scene prompt can be rendered as unwanted text. Only the local Codex generation workflow receives filesystem save instructions.
 
 ### Photorealistic (DALL-E)
 ```
-[Scene description specific to article topic], [mood], [lighting condition], candid documentary photography style, racially diverse group including people of various ethnicities and skin tones with people of color prominently represented, [LGBTQ+ motif], photorealistic, no text or logos. Save as: [image path from frontmatter]
+[Scene description specific to article topic], [mood], [lighting condition], candid documentary photography style, racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented, [LGBTQ+ motif], photorealistic, no text or logos.
 ```
 
 ### Photorealistic (Midjourney)
 ```
-IMG_4358.CR2, [scene], [lighting], candid photojournalism, [diversity cue], [LGBTQ+ motif] --style raw --s 150 --q 2 --ar [ratio] --v 7 --no text --no logos // Save as: [image path from frontmatter]
+IMG_4358.CR2, [scene], [lighting], candid photojournalism, racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented, [LGBTQ+ motif] --style raw --s 150 --q 2 --ar [ratio] --v 7 --no text --no logos
 ```
 
 ### Graphic design / poster (DALL-E)
 ```
-A vibrant promotional graphic for an LGBTQ+ [event type]. [Color palette], [mood] design aesthetic, clean geometric shapes, [LGBTQ+ motif as design element], flat design with subtle gradients, no text. Save as: [image path from frontmatter]
+A promotional illustration for an LGBTQ+ [event type], racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented, [observable activity], [approved lighting], [color palette], [mood] design aesthetic, clean geometric shapes, [LGBTQ+ accessory motif], flat design, no text or logos.
 ```
 
 ### Graphic design / poster (Midjourney)
 ```
-LGBTQ+ [event type] promotional poster, [color palette], [mood], geometric shapes, [LGBTQ+ motif], flat graphic design --s 250 --q 2 --ar [ratio] --v 7 --no text // Save as: [image path from frontmatter]
+LGBTQ+ [event type] promotional illustration, racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented, [activity], [approved lighting], [color palette], [mood], geometric shapes, [LGBTQ+ accessory motif], flat graphic design --s 250 --q 2 --ar [ratio] --v 7 --no text --no logos
 ```
 
 ## Output format
@@ -77,14 +77,16 @@ LGBTQ+ [event type] promotional poster, [color palette], [mood], geometric shape
 For each slot, output:
 
 ```
-### image (16:9)
-**DALL-E 3:**
-[prompt, including the "Save as:" path at the end]
+### image
+**Save path:** [frontmatter path]
+**Required source pixels:** [width x height]
+**DALL-E / compatible generator:**
+[visual prompt only]
 
 **Midjourney v7:**
-[prompt, including the "// Save as:" path at the end]
+[visual prompt only]
 ```
 
 After all prompts, remind the user:
-- Generate images and save to the path already embedded in each prompt
+- Generate images, verify/resize to the required source pixels, and save to the separately stated path
 - Update the `image.path` (and `imageHeader.path` / `carousel` srcs) in the frontmatter only if the saved filename ends up differing from what was prompted

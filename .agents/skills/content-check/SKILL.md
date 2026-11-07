@@ -11,6 +11,7 @@ Run through every rule below and report any violations with file path and line n
 
 ### Structure & frontmatter
 - [ ] **Required fields present:** `title`, `date`, `order`, `slug`, `image.path`, `image.alt` — flag any missing. News articles also require `imageHeader.path` and `imageHeader.alt` (events do not use `imageHeader`); flag a news article with no `imageHeader`
+- [ ] **Event links:** events require `link.text` and `link.target`; with no registration/ticket URL, use the organizer's site and `More Information`
 - [ ] **No forbidden fields:** no `author`, `tags`, `category`, `collection` in news/events
 - [ ] **draft flag:** if `draft: true` is present, warn the user — it hides the article from all listings
 - [ ] **date format:** must be `YYYY-MM-DD`; flag if 8-digit or other format used
@@ -21,12 +22,14 @@ Run through every rule below and report any violations with file path and line n
 - [ ] **No H1 in body:** flag any line starting with `# ` (single hash) — the frontmatter title renders as H1
 - [ ] **Dateline usage:** news article bodies should open with `:Dateline`, not `**Newcastle, WA** –` or `**Newcastle, WA**:` directly
 - [ ] **No bare absolute internal URLs:** flag `https://newcastle.lgbt/...` anywhere — should be relative paths
-- [ ] **Footnote-style citations:** specific factual claims drawn from an external source should carry a `[^N]` footnote marker at first mention (Wikipedia-style numbered superscripts, not a hyperlink wrapped around the claim text) — flag any claim still using the old wrapped-hyperlink style, and check this inside tables too, not just paragraphs. A source cited again later should reuse its existing number rather than getting a new one or a duplicate reference entry.
+- [ ] **News footnote-style citations:** in news articles, specific factual claims drawn from an external source should carry a `[^N]` footnote marker at first mention (Wikipedia-style numbered superscripts, not a hyperlink wrapped around the claim text) — flag any claim still using the old wrapped-hyperlink style, and check this inside tables too, not just paragraphs. A source cited again later should reuse its existing number rather than getting a new one or a duplicate reference entry.
 - [ ] **Sources section (APA7 footnote definitions):** news articles citing external material should end with a `## Sources` section made of `[^N]: ...` footnote definitions in numeric order (matching first-appearance order in the body, not alphabetical), with no blank lines between them. Each definition's content should be a full APA 7th edition reference (author/org, date, italicized title, bare `[URL](URL)`) — flag any entry still using the old `**Outlet**: [Title](URL)` shorthand, non-footnote plain-paragraph format, or alphabetical (rather than numeric) ordering. See `docs/content-authoring.md` ("Citations and Sources") for the exact format.
 
+Events instead require checking date/time, venue and CTA against the organizer's source; do not add news footnotes or a Sources section to event copy.
+
 ### Images
-- [ ] **Alt text length:** `image.alt` and `imageHeader.alt` should be 50–250 characters; flag if shorter or longer
-- [ ] **Alt text is descriptive:** the alt text should describe what's in the image, not repeat the article title verbatim
+- [ ] **Alt text length:** `image.alt` should be 50–250 characters; flag if shorter or longer. News `imageHeader.alt` is a one-sentence teaser, not image alt text
+- [ ] **Alt text is descriptive:** `image.alt` should describe what is visible, not repeat the article title verbatim
 - [ ] **imageHeader.alt:** for news articles, this field is an engagement teaser sentence, NOT an image description — flag if it reads like a description ("A photo of...", "Image showing...")
 - [ ] **Image paths:** should be `assets/images/news/...` or `assets/images/events/...` (not `public/`, not absolute)
 

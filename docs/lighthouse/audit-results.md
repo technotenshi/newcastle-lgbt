@@ -19,6 +19,14 @@ All pages pass Core Web Vitals thresholds (LCP < 2.5 s, CLS < 0.1, INP/TBT near 
 
 ---
 
+## Current disposition of the historical findings
+
+The measurements below are the March 23 snapshot, not current scores or payload estimates.
+Production PurgeCSS is already configured in `nuxt.config.ts`; do not recommend installing it
+again. The current Google Fonts URLs request five Jost weights (300–700), not all nine.
+Further pruning needs a new CSS-use/payload measurement. Keep the original measurements as
+historical evidence and confirm present config before creating backlog work.
+
 ## Findings and Prioritized Fixes
 
 ### 1. Unused CSS — 37 KiB savings (all pages)
@@ -80,7 +88,7 @@ The site is in excellent shape. No Core Web Vitals failures. The two actionable 
 
 | Priority | Task | Effort | Impact | Status |
 |---|---|---|---|---|
-| High | Prune Jost font weights | Low | -50–60% font payload | Open |
+| High | Audit remaining Jost weights | Needs current measurement | No current saving established | Recheck current CSS usage |
 | Medium | Add `width`/`height` to hero `<NuxtImg>` | Very low | CLS hardening | ✅ Done 2026-03-23 |
 | Low | Bootstrap JS lazy-load | Medium | -49 KiB JS | ✅ Done 2026-03-23 |
-| Low | PurgeCSS for Bootstrap | Medium | -37 KiB CSS | Open |
+| Low | PurgeCSS for Bootstrap | Implemented in production config | Historical estimate only | Done; measure current output for further work |

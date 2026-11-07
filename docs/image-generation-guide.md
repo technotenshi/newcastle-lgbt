@@ -1,6 +1,6 @@
 # Image Generation Guide
 
-Reference for generating images with **Midjourney v7** and **DALL-E 3** for use on this site. Read this before writing any image prompt.
+Agents generate actual assets through local Codex using the [agent workflow](#agent-workflow-and-non-negotiables). Read this guide before image prompts; the Midjourney/DALL-E sections are manual fallback references, not the default production route.
 
 ---
 
@@ -33,7 +33,9 @@ Review each generated image against its intended emotion and, for the feature, t
 
 ## Aspect ratio reference (site-specific)
 
-| Image slot | Recommended AR | DALL-E size | Midjourney |
+News source files are exactly 1792x1024 (7:4), not mathematically 16:9; compose them with safe margins for the site's landscape display crops. 16:9 remains the manual Midjourney composition target. Event sources are exactly 1024x768 (4:3). Exact file dimensions and display composition are separate checks.
+
+| Image slot | Display composition | Required source pixels | Midjourney |
 |---|---|---|---|
 | `image` (news feature) | 16:9 | `1792x1024` | `--ar 16:9` |
 | `imageHeader` (news) | 16:9 | `1792x1024` | `--ar 16:9` |
@@ -159,7 +161,7 @@ DALL-E tends to generate the excluded element anyway when you say "no X." Refram
 
 ### Consistency across generations
 
-- Save the **seed number** from a successful generation and reuse it with the same prompt for slight variations
+- Save the **prompt and source image** for a revision. Do not promise a reusable DALL-E seed: its documented generation parameters do not expose one
 - Save the **exact prompt text** — small wording changes produce noticeably different outputs
 - For true character or style consistency across multiple images, Midjourney with `--sref` is more reliable
 
@@ -195,10 +197,10 @@ Use one of the site-approved lighting conditions in both tools: `golden-hour aft
 
 These are the rules agents follow when generating or saving raster assets for this repo. `AGENTS.md` links here.
 
-- Follow both [`docs/content-authoring.md`](content-authoring.md) and this guide before writing prompts or saving generated assets
+- Read this guide and the complete Image asset conventions and Working with provided images sections of [`docs/content-authoring.md`](content-authoring.md) before writing prompts or saving generated assets. Search headings and use bounded section reads; do not read the authoring guide whole
 - **Actual generation is delegated to the local Codex CLI** via `codex exec`, invoking its native image-generation tool, not a bespoke Python script. See `.agents/skills/generate-images/SKILL.md` for the exact invocation pattern, verification steps (dimension check + visual review against the rules below), and per-slot fallback to manual DALL-E/Midjourney prompts if generation fails twice. There is no repo-local `.venv` and no `OPENAI_API_KEY` requirement for this path, that describes an older workflow this repo no longer uses.
 - Generate news and event art as `.png` files in `assets/images/news/` or `assets/images/events/` using the `YYYYMMDD-##-descriptive-name.png` naming convention
-- Write alt text that describes what is actually visible in the image, not just the article topic; target 50 to 250 characters
+- Write `image.alt` and carousel alt text from visible image contents, 50–250 characters. News `imageHeader.alt` is a one-sentence engagement teaser about the article, not image alt text
 - Do not generate text or logos into AI images. If an event graphic needs typography, add it later in a design tool
 - Do not rely on AI to render Pride or transgender flags accurately. Use palette descriptions instead, or source a real photo when exact flag imagery matters
 - Racial diversity must be explicit in every prompt: "racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented", not just "diverse". Include a subtle LGBTQ+ motif (pride pin, wristband, palette accent) in every image, and avoid stereotypes or named real people
@@ -207,6 +209,6 @@ These are the rules agents follow when generating or saving raster assets for th
 - If a reference image includes signage, logos, branded UI, or readable text, borrow only its visual characteristics and explicitly exclude readable text and logos in the prompt
 - Match the visual style to the content: documentary-style photorealistic images for civic/news coverage, graphic-design or poster-style images for social events
 - Plan and verify each image against the [emotional brief and image review](#emotional-brief-and-image-review)
-- Match slot ratios and exact pixel sizes: `16:9` / `1792x1024` for news feature images, news headers, and carousels; `4:3` / `1024x768` for event images (via `gpt-image-1`/`gpt-image-2`, DALL-E 3 has no true 4:3 fixed size)
+- Match exact source pixels: `1792x1024` (7:4 landscape) for news feature/header/carousel, composed for 16:9 crops; `1024x768` (4:3) for events. DALL-E 3 has no true 4:3 fixed size; use a generator that supports the event dimensions
 - For phone, tablet, or computer scenes, explicitly prohibit readable screen text and branded UI in the prompt
 - When editing an existing generated image, restate invariants aggressively, for example `change only the background` or `keep the foreground people and activity unchanged`
