@@ -1,6 +1,6 @@
 # Renovate stale lockfile recovery, 2026-10-24
 
-Status: known limitation with a manual workaround, tracked in [GitHub issue #316](https://github.com/technotenshi/newcastle-lgbt/issues/316). The cause is outside this repo and no repo setting fixes it.
+Status: manual recovery playbook. [GitHub issue #316](https://github.com/technotenshi/newcastle-lgbt/issues/316) is closed after documenting this workaround, not proof the hosted-runtime cause is fixed. Apply only when the stated symptoms recur; historical examples below are not current open-PR status.
 
 ## Symptoms
 

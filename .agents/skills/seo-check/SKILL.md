@@ -7,7 +7,7 @@ You are an SEO validator for the Newcastle LGBTQ+ Nuxt 4 site. When invoked, rea
 
 ## SEO conventions for this site
 
-The site uses `nuxt-seo-utils` (v8), `nuxt-og-image` (disabled), and `nuxt-schema-org`. These modules auto-generate many tags — manually setting them is wrong and creates duplicates.
+The site uses `nuxt-seo-utils` (see `package.json` for the installed range), `nuxt-og-image` (disabled), and `nuxt-schema-org`. These modules auto-generate many tags — manually setting them is wrong and creates duplicates.
 
 ### Required on every page
 - `useSeoMeta({ title, description })` — both fields required

@@ -6,7 +6,7 @@ This repository contains the source for the **Newcastle LGBT** site. It is built
 
 ## Requirements
 - Docker + Docker Compose (primary workflow — all `make` targets run inside the container)
-- Node.js 24 + Yarn 4 (for local, non-Docker development only; Yarn managed via Corepack)
+- Node.js matching `.nvmrc` / `Dockerfile` + Yarn from `package.json#packageManager` for local development. CI separately exercises Node 24; Yarn is managed via Corepack
 
 Install dependencies with:
 
@@ -47,7 +47,7 @@ yarn build
 rsync -avz .output/public/ user@server:/var/www/newcastle-lgbt
 ```
 
-`yarn preview` runs the same Nitro server used in production so you can verify the build before publishing.
+Production is a static Cloudflare Pages deployment. Preview is useful locally, but validate `.output/public` with a static-only server when checking production image paths; a development or Nitro server is not equivalent to static hosting.
 
 ## Validation
 Run linting and a production build before committing changes:
@@ -126,7 +126,7 @@ For the full authoring guide (frontmatter fields, filename format, body structur
 - **Style:** Semicolons required; no unused variables or components (enforced by ESLint in `eslint.config.mjs`)
 - **Types:** Use the typed interfaces `NewsItem`, `EventItem`, `CouncilMember`, `FeatureItem` from their respective composables
 - **Sorting:** News by date DESC then `order` field; events by date ASC; council by `position` number
-- **SEO:** Every page calls `useSeoMeta({ title, description })` — `nuxt-seo-utils` auto-generates OG, Twitter, and canonical tags from those two fields. Do not set `og:title`, `og:description`, `og:url`, `twitter:*`, or `<link rel="canonical">` manually. Page titles must be the short form only (e.g. `'News'`) — the site name suffix is appended automatically.
+- **SEO:** Every page calls `useSeoMeta({ title, description })` — `nuxt-seo-utils` auto-generates OG, Twitter, and canonical tags from those two fields. Do not set `og:title`, `og:description`, `og:url`, `twitter:title`, `twitter:description`, or `<link rel="canonical">` manually. Set image/card fields through `useSocialImage()` as described below. Page titles must be the short form only (e.g. `'News'`) — the site name suffix is appended automatically.
 - **RSS feed:** `/feed.xml` is pre-rendered at build time from `server/routes/feed.xml.ts`. It contains the 20 most recent non-draft news articles. RSS autodiscovery `<link>` is injected via `app.head` in `nuxt.config.ts`. A visible "RSS Feed" link appears in the footer.
 - **OG images:** Built with the `useSocialImage()` composable, which returns the absolute IPX URL and queues the same path for prerendering. Pass the result to `useSeoMeta({ ogImage, twitterImage })`. `node scripts/verify-social-images.mjs` checks the built output.
 - **Schema.org:** Use `useSchemaOrg([defineOrganization(...)])` / `useSchemaOrg([defineArticle(...)])` — helpers must be wrapped in `useSchemaOrg([...])`.
@@ -135,7 +135,7 @@ For the full authoring guide (frontmatter fields, filename format, body structur
 
 ## CI/CD
 
-A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install --immutable`, `yarn lint`, and `yarn build` on every push and pull request targeting `main`. Run the same checks locally before pushing. A second workflow (`.github/workflows/dependency-audit.yml`) runs a recursive dependency audit on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate's own files; it fails on critical or high advisories that are not in the [audit exception register](docs/maintenance/audit-exceptions.md), which also explains how to run it locally and how to add or renew an exception. Dependabot (`.github/dependabot.yml`) and Renovate both open automated PRs for npm dependency updates; when both are active, the later PR is typically superseded and auto-closed.
+A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install --immutable`, `yarn lint`, and `yarn build` on every push and pull request targeting `main`. Run the same checks locally before pushing. A second workflow (`.github/workflows/dependency-audit.yml`) runs a recursive dependency audit on pushes to `main`, weekly, and on pull requests that change `package.json`, `yarn.lock` or the gate's own files; it fails on critical or high advisories that are not in the [audit exception register](docs/maintenance/audit-exceptions.md), which also explains how to run it locally and how to add or renew an exception. Renovate owns routine version-update PRs; `.github/dependabot.yml` disables npm version-update PRs with a zero limit while repository-configured Dependabot security updates remain separate.
 
 ## Modules
 
@@ -145,7 +145,7 @@ A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install
 | `@nuxt/image` | Serves `assets/` images as WebP via IPX (`/_ipx/...`). Use `<NuxtImg>` for local images. |
 | `@nuxtjs/sitemap` | Generates `/sitemap.xml` at build time (`zeroRuntime: true`) |
 | `@nuxtjs/robots` | Generates `robots.txt` at build time — do not create `public/robots.txt` manually |
-| `nuxt-og-image` | Disabled (`enabled: false`) — no Satori renderer configured; OG images set via `useSeoMeta` |
+| `nuxt-og-image` | Disabled (`enabled: false`) — renderer setup deferred; OG images set via `useSocialImage` and `useSeoMeta` |
 | `nuxt-schema-org` | Schema.org JSON-LD via `useSchemaOrg([defineOrganization(...)])` etc. |
 | `nuxt-link-checker` | Checks for broken/malformed links during dev; warnings are treated as errors |
 | `nuxt-seo-utils` | Auto-generates OG, Twitter, canonical tags and appends site name to page titles |
@@ -158,7 +158,8 @@ A GitHub Actions workflow (`.github/workflows/yarn-nuxt.yml`) runs `yarn install
 - [`docs/image-generation-guide.md`](docs/image-generation-guide.md) — AI image generation prompts, aspect ratios, and lighting rules
 - [`docs/research/`](docs/research/) — standing background dossiers on recurring subjects named in articles
 - [`docs/DECISIONS.md`](docs/DECISIONS.md) — dated decision log for this repo, read before proposing an architectural or workflow change
-- [`AGENTS.md`](AGENTS.md) — detailed guidance for AI coding agents working in this repo
+- [`AGENTS.md`](AGENTS.md) — concise cross-tool rules and task-specific documentation routing
+- [`docs/agents/agent-configuration.md`](docs/agents/agent-configuration.md) — instruction loading, model routing, skill visibility and native file protections
 
 ## License
 This project is released under the MIT License. See [LICENSE](LICENSE) for details.

@@ -59,7 +59,7 @@ When auditing a `content/news/*.md` article in this repo, use the tools already 
 * **`playwright-cli`** (real Chromium browser) — the most reliable way to confirm a source link resolves. `curl`/`WebFetch` and a real browser can return different results from the same bot-defensive site.
 * **`federalregister.gov`** — blocks bots inconsistently (reCAPTCHA wall to `WebFetch`, `curl`, and sometimes even Playwright). A single 200 with the correct title/text is sufficient confirmation; don't treat a later CAPTCHA redirect as proof the citation is broken.
 * **NCBI E-utilities** — `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=<PMID>&retmode=json` (or `db=pmc`) to confirm a PubMed/PMC citation's real title and authors when the HTML page is behind a cookie wall.
-* **WA bill/initiative text** — `sos.wa.gov` ballot-initiative PDFs 403 `WebFetch`; `lawfilesext.leg.wa.gov` enacted-bill PDFs usually work. Use the `Read` tool's `pages` parameter directly on a fetched/saved bill PDF to see strikeout/underline markup rather than trusting a secondary summary.
+* **WA bill/initiative text** — `sos.wa.gov` ballot-initiative PDFs 403 `WebFetch`; `lawfilesext.leg.wa.gov` enacted-bill PDFs usually work. Inspect rendered pages of the fetched/saved bill PDF to see strikeout/underline markup, not just extracted text. Use Claude's PDF Read/pages support or render pages and inspect images with the active client's visual tool (Hermes `vision_analyze`, Codex image viewer). A text-only read does not verify markup.
 * Existing `docs/research/*.md` background dossiers on recurring subjects (organizations, committees, individuals) are a starting point, not a substitute for re-verifying the specific claim against its cited primary source.
 
 ---

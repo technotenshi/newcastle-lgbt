@@ -30,6 +30,8 @@ Recurring subjects (an organization, a political committee, a specific individua
 
 ## Hard rules (always flag)
 
+Read the complete applicable authoring sections and editorial checklist required by `AGENTS.md` before reviewing news; search headings and read bounded sections, never the whole authoring guide. Apply news/event/council rules only to the matching type. Verify claims against opened sources, not this checklist's summary.
+
 ### Punctuation
 - **Em dashes (`—`) are banned.** Flag every occurrence. Suggest replacing with a comma, colon, or rephrased sentence. En-dashes (`–`) are correct for numeric and time ranges.
 - No smart-quote inconsistencies — apostrophes and quotes should be consistent.
@@ -40,13 +42,15 @@ Recurring subjects (an organization, a political committee, a specific individua
 
 ### Frontmatter
 - `draft: true` present on a finished article — warn before it goes unnoticed.
-- Missing required fields: `title`, `date`, `order`, `slug`, `image.path`, `image.alt`.
+- Missing required fields: `title`, `date`, `order`, `slug`, `image.path`, `image.alt`. News also requires `imageHeader.path` and `imageHeader.alt`; events require `link.text` and `link.target`, not `imageHeader`.
+- `image.alt` must describe the visible image (50–250 characters). For news, `imageHeader.alt` is a one-sentence engagement teaser, not an image description.
+- Events use 2–4 sentences and no Sources section; without registration/tickets, use the organizer's site with `More Information` and refer to the button as below the body.
 - Forbidden fields in news/events: `author`, `tags`, `category`, `collection`.
 
 ### Body structure
 - No `# H1` heading in body — frontmatter title renders as H1.
 - News articles must open with `:Dateline`, not `**Newcastle, WA** –` written directly.
-- External citations need a `## Sources` section.
+- News citing external material needs a `## Sources` section with ordered `[^N]` definitions and APA7 entries. Events do not use a Sources section.
 
 ## Advocacy-forward language (news articles on sensitive historical/political topics)
 For news articles covering movement history, government policy, discrimination, or corporate accountability, also check against [`docs/editorial-checklist.md`](../../docs/editorial-checklist.md). For each paragraph, flag if it:
@@ -71,7 +75,7 @@ When reviewing AI image prompts (DALL-E or Midjourney), enforce:
 3. **No overcast lighting:** Flag "overcast", "cloudy", "grey skies", "diffused light", "soft light", "overcast sky." Suggest "bright sunlight" or "golden-hour afternoon sunlight" instead.
 4. **No text in AI images:** Flag any prompt that asks for text, labels, logos, or signage to be rendered by the AI.
 5. **No reliance on accurate flag rendering:** Flag prompts that ask for pride flags or transgender flags to be shown accurately — AI misrenders them. Suggest describing color palettes instead (e.g. "light blue, pink, and white color palette").
-6. **Aspect ratios:** News images (feature/header) = 16:9. Event images = 4:3. Flag mismatches.
+6. **Source dimensions versus display composition:** News feature/header/carousel sources are exactly 1792x1024 (7:4), composed with safe margins for 16:9 display crops. Events are exactly 1024x768 (4:3). Check exact source pixels and composition separately; do not reject a compliant 7:4 news source as a ratio mismatch.
 
 ## Output format
 

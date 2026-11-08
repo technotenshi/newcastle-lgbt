@@ -48,6 +48,11 @@ jobs:
       - name: Lint
         run: yarn lint
 
+      - name: Verify agent documentation
+        run: |
+          node --test scripts/verify-agent-docs.test.mjs
+          node scripts/verify-agent-docs.mjs
+
       - name: Build
         run: yarn build
 

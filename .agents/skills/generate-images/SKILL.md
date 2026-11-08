@@ -11,16 +11,16 @@ Before doing anything else, confirm Codex is usable:
 ```
 command -v codex && codex login status
 ```
-- If `codex` isn't installed, or `codex login status` doesn't show a logged-in session: stop and tell the user this skill needs it, then offer to fall back to `/image-prompt` (prompts only, for manual generation) instead.
+- If Codex is unavailable or not logged in, report that prerequisite failure and emit the per-slot manual fallback prompts below. Do not install software or generate placeholder files.
 
 ## Step-by-step
 
 1. **Read the content file** — extract topic, date, location, and key visual elements; prepare the [emotional brief](../../../docs/image-generation-guide.md#emotional-brief-and-image-review) before writing prompts.
-2. **Check for attached reference images** — if the user attached a flyer, photo, or reference image, study its visual style, color palette, composition, and mood, and describe what you observed before writing prompts. Per `docs/content-authoring.md`, never reference the attached image directly as an asset — it's style reference only.
+2. **Classify supplied images**: inspect their visible contents. Treat flyers/design references as source/style guidance; honor an explicitly supplied real photo or requested edit instead of replacing it with generated art. Preserve credits and skip generation for filled real-photo slots; follow the authoring guide's Working with provided images section.
 3. **Identify image slots** from frontmatter: `image` (always), `imageHeader` (news, required), `carousel` (news only, multiple).
 4. **Determine style and aspect ratio per slot**, same rules as `/image-prompt`:
    - Civic/political/outdoor/commemorative → photorealistic documentary; social events/parties/workshops → graphic-design/poster
-   - `image` (news), `imageHeader`, `carousel` → 16:9, exactly `1792x1024`
+   - `image` (news), `imageHeader`, `carousel` → exactly `1792x1024` landscape source (7:4), composed safely for 16:9 display crops
    - `image` (events) → 4:3 landscape, exactly `1024x768`
 5. **Build one fully-specified generation prompt per slot**, applying every rule below, then run it through Codex.
 6. **Verify and review every result** before reporting success (see Verification below).
@@ -29,7 +29,7 @@ command -v codex && codex login status
 ## Non-negotiable prompt rules (same as `/image-prompt` — do not relax these when delegating to Codex)
 
 - **Racial diversity (exact wording):** `"racially diverse group including people of various ethnicities and skin tones, with people of color prominently represented"` — never just "diverse."
-- **LGBTQ+ motif in every image:** a subtle personal cue regardless of event type — a rainbow pride pin, a rainbow wristband, pride-color accessories. Not large flags/banners unless the content is specifically about a rally/march.
+- **LGBTQ+ motif in every image:** a subtle personal cue regardless of event type — a rainbow pride pin, a rainbow wristband, pride-color accessories. Use palette/accessory cues rather than generated flag artwork, including rallies/marches.
 - **Lighting:** always specify `golden-hour afternoon sunlight`, `bright midday sunlight`, `warm morning light`, or `warm indoor lighting`. Never `overcast`/`cloudy`/`grey skies`/`diffused light`.
 - **No text or logos in the image** — end the prompt with `no text or logos`.
 - **No accurate flag rendering** — describe pride colors as a palette (`rainbow color palette`, or `light blue, pink, and white` for trans-specific content), not "a pride flag."
@@ -47,22 +47,22 @@ For each slot, invoke `codex exec` non-interactively with a self-contained promp
 
 Example invocation:
 ```
-codex exec --approve-for-me "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all. Write only that image file and never read or edit .env, .env.*, or yarn.lock." < /dev/null > /tmp/<slot>.log 2>&1
+codex exec --approve-for-me "Generate a real image file using your native image-generation tool with this prompt: '<full scene prompt with diversity clause, LGBTQ+ motif, lighting, style, no text or logos>'. Save it at exactly <WxH> pixels to $(pwd)/<path-from-frontmatter>. If you do NOT have any real way to generate an image file, say so explicitly and do not create any file at all. Write only that image file and never read or edit .env, .env.*, or yarn.lock." < /dev/null > "<client-scratch-dir>/<slot>.log" 2>&1
 ```
 
 Two flags/redirects here are not cosmetic, and omitting either one produces a silent failure rather than a clear error:
 - **`< /dev/null` is required.** `codex exec` reads from stdin when it's a non-terminal pipe, which it always is under a background/tool-driven Bash invocation. Without closing stdin, the process hangs waiting for an EOF that never comes; the run eventually gets cut off with a truncated log (often ending right after Codex reads its own skill file), no image, and no obvious error.
 - **`--approve-for-me` is required.** Without it, the sandbox stops to ask for interactive approval before invoking the image-generation tool, which a non-interactive `codex exec` call has no way to answer.
 
-When there are multiple slots (or multiple events/articles at once), run each `codex exec` call as a separate background Bash command (`run_in_background: true`) so they generate in parallel, then wait for the task-completion notifications rather than polling. Note that `run_in_background: true` on the Bash tool already backgrounds the whole command for you — do not also append a trailing `&` inside the command string itself, that double-backgrounds it and causes the tool to report false-positive completion before Codex has actually finished.
+Use the active client's scratch directory for logs, never a hardcoded system temporary path. For multiple slots, use separate tracked background calls and completion notifications: Claude Bash `run_in_background: true`, Hermes terminal `background: true, notify: true`, or the client's equivalent. Do not add a shell `&` inside an already-backgrounded tool call. Parent verification remains required after completion.
 
 ## Verification (required — do not report success on Codex's word alone)
 
 For every slot Codex claims to have completed:
 1. Confirm the file exists and check its pixel dimensions with `node -e "require('sharp')('<path>').metadata().then(m=>console.log(m.width+'x'+m.height))"` (uses the `sharp` package already in `package.json`, works in CI/Docker unlike macOS-only `sips`) — must match the slot's required size exactly.
-2. **View the image with the Read tool** (if the tool returns no description, the image is unverified: say so, use another check, and do not write alt text or report success from the prompt alone) and check it against the rules above and the [emotional brief and image review](../../../docs/image-generation-guide.md#emotional-brief-and-image-review), including the intended emotion, feature thumbnail engagement, and coverage of central achievements across sibling slots.
+2. **Inspect the actual image with a visual-capable tool** (Claude image Read, Hermes `vision_analyze`, Codex image viewer, or direct browser screenshot inspection). If the tool returns no image/description, say the image is unverified, use another check, and do not infer success or alt text from the prompt alone. Once viewed, check the rules above and the [emotional brief and image review](../../../docs/image-generation-guide.md#emotional-brief-and-image-review), including intended emotion, feature thumbnail engagement and coverage across sibling slots.
 3. If dimensions are wrong, the file is missing, or the content clearly fails a rule or misses the intended emotion (for example, overcast lighting, no visible motif, rendered text): retry once with a corrected prompt; if it fails again, treat that slot as a fallback case.
-4. Write the final `image.alt` (and any other alt fields) to describe what is **actually** in the generated image — not the aspirational prompt — since generation is stochastic and may differ from what was requested.
+4. Write `image.alt` and carousel alt text from the visible image (50–250 characters), not the aspirational prompt. News `imageHeader.alt` is the exception: write a one-sentence, factually supported engagement teaser about the article, not a scene description.
 
 ## Fallback (per slot)
 

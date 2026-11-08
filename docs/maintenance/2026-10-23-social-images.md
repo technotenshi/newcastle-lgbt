@@ -1,6 +1,6 @@
 # Missing static social images — 2026-10-23
 
-Status: fixed in the working tree on 2026-10-23, pending commit and merge. Tracked in [GitHub issue #437](https://github.com/technotenshi/newcastle-lgbt/issues/437). Priority was high; broken public social-preview resources.
+Status: resolved and merged in commit `7163c90` (PR #448); [GitHub issue #437](https://github.com/technotenshi/newcastle-lgbt/issues/437) is closed. The evidence, reproduction, proposal and URL inventory below describe the October 23 failure, not current build output. Current verification is `node scripts/verify-social-images.mjs` after the static build.
 
 ## Resolution
 
@@ -41,10 +41,12 @@ Serve `.output/public` with the installed `serve` package, then request any inve
 
 Use an exact path from the inventory if article naming changes.
 
-## Acceptance criteria
+## Original acceptance criteria (historical)
+
+Current acceptance checks the URLs emitted by the current build via `verify-social-images.mjs`, not the obsolete modifier paths below. The unchecked list preserves the original pre-fix plan.
 
 - [ ] The production build generates all social-image variants referenced by every published page, including default/fallback images.
-- [ ] Every distinct local OG/Twitter image URL returns HTTP 200 with image content from a static-only server. At this snapshot, all 46 inventory URLs must pass.
+- [ ] Every distinct local OG/Twitter image URL returns HTTP 200 with image content from a static-only server. Use the current build's emitted social URLs; old-modifier inventory paths are intentionally retired.
 - [ ] Generated social images have the intended 1200×630 dimensions, verified from image bytes.
 - [ ] Existing 578 generated IPX paths and rendered-page images remain functional; additional generated variants are expected.
 - [ ] No missing social image can pass the new CI check; demonstrate failure against the current output and success against the fixed output.

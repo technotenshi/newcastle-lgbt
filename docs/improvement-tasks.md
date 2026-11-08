@@ -6,7 +6,7 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 ## Performance
 
-- **Prune Jost font weights** — all 9 weights (100–900) are loaded but only 3–4 are used in CSS. Remove unused weights from the `nuxt.config.ts` preload list to cut ~50–60% of the font payload.
+- **Audit remaining Jost font weights**: `nuxt.config.ts` requests five weights (300–700), not the nine in the original Lighthouse snapshot. Measure current CSS usage and payload before proposing further pruning; no present saving estimate is established.
 - ~~**Core Web Vitals audit**~~ — ✅ Done 2026-03-23. See `docs/lighthouse/audit-results.md`. All pages score 98–100; remaining open items tracked there.
 
 ---
@@ -15,7 +15,7 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 - ~~**Fix missing social-image resources**~~ — ✅ Done 2026-10-23, [#437](https://github.com/technotenshi/newcastle-lgbt/issues/437). `useSocialImage` registers each IPX path for prerendering and uses a modifier that really yields 1200x630; `scripts/verify-social-images.mjs` checks the built output in CI. See `docs/maintenance/2026-10-23-social-images.md`.
 - **Event JSON-LD schema** — the events page has no structured data. Add an `Event` schema block for each listing to make events eligible for Google's rich results. Extends the JSON-LD work already done for `NewsArticle` and `Organization`.
-- **Unique page descriptions** — `pages/news/index.vue`, `pages/events/index.vue`, `pages/council-members/index.vue`, and `pages/organizations/index.vue` all share the same generic `pageDescription` string. Each should have a distinct, descriptive meta description.
+- **Unique page descriptions** — `pages/news/index.vue` and `pages/events/index.vue` still share the same generic `pageDescription`; council and organizations already have distinct descriptions. Each should have a distinct, descriptive meta description.
 
 ---
 
@@ -36,6 +36,6 @@ Backlog of identified improvements, grouped by area. Items within each section a
 
 ## Developer / Maintenance
 
-- **Remediate dependency audit findings — urgent, [#436](https://github.com/technotenshi/newcastle-lgbt/issues/436)** — 41 advisory reports plus three deprecation reports, including two critical Git-tooling findings. Prioritize supported Nuxt/devtools upgrades that patch or remove simple-git and its parser, then resolve or explicitly disposition every remaining report. Full inventory, package-specific proposals and acceptance criteria: [remediation record](maintenance/2026-10-23-dependency-audit.md).
+- **Dependency audit maintenance**: run the recursive audit gate and maintain [time-bounded exceptions](maintenance/audit-exceptions.md). The former umbrella [#436](https://github.com/technotenshi/newcastle-lgbt/issues/436) is closed; its [October 23 inventory](maintenance/2026-10-23-dependency-audit.md) is historical, not the current finding count.
 - **TypeScript prop and composable types** — `nuxt.config.ts` and `utils/` use TypeScript, but most pages and components use untyped `<script setup>`. Adding `defineProps<{...}>()` types and return types to composables would catch bugs earlier.
 

@@ -13,7 +13,7 @@ Invoke `/backlog` to get a prioritized recommendation. Optionally specify a focu
 
 1. Read `docs/improvement-tasks.md` in full
 2. For the Performance section specifically: `docs/improvement-tasks.md` defers to `docs/lighthouse/audit-results.md` ("remaining open items tracked there") rather than duplicating every finding. Also read `docs/lighthouse/audit-results.md` and pull in any item marked "Open" there that isn't already a line item in `improvement-tasks.md` (e.g. the PurgeCSS/unused-CSS finding), so a `/backlog performance` run doesn't miss it.
-3. Filter out any items already marked ✅ Done
+3. Filter out Done/resolved items and verify remaining claims against current config/source and issue status. Historical Open labels are leads, not current state: PurgeCSS is already configured, and fonts no longer load nine weights. Recheck before recommending work or estimating savings
 4. Score remaining items on two axes:
    - **Impact** (High/Med/Low): how much does this improve the site for users or search?
    - **Effort** (Low/Med/High): roughly how many files need changing?

@@ -1,27 +1,14 @@
 ---
 name: nuxtjs-seo-skilld
-description: "Fully equipped Technical SEO for busy Nuxters. ALWAYS use when writing code importing \"@nuxtjs/seo\". Consult for debugging, best practices, or modifying @nuxtjs/seo, nuxtjs/seo, nuxtjs seo, nuxt-seo, nuxt seo."
+description: "Consult current Nuxt SEO module docs for code changes."
 metadata:
-  version: 4.0.2
   generated_at: 2026-03-22
 ---
 
-# harlan-zw/nuxt-seo `@nuxtjs/seo`
+# Nuxt SEO module reference
 
-> Fully equipped Technical SEO for busy Nuxters.
+Use this when changing the individually installed Nuxt SEO modules. Check `package.json` for their actual versions; this repository does not install the `@nuxtjs/seo` umbrella package. Apply the repository's `seo-check` skill and the Social metadata section of `docs/tooling-notes.md` for site-specific conventions.
 
-**Version:** 4.0.2
-**Deps:** @nuxt/kit@^4.4.2, @nuxtjs/robots@^5.7.1, @nuxtjs/sitemap@^7.6.0, nuxt-link-checker@^4.3.9, nuxt-og-image@^6.0.5, nuxt-schema-org@^5.0.10, nuxt-seo-utils@^7.0.19, nuxt-site-config@^3.2.21
-**Tags:** latest: 4.0.2
+The generated `.skilld` package/docs cache is not present in this checkout. Do not follow stale cache links, assume its old dependency list is current, or install tooling to reconstruct it without approval. Use Context7 for current module APIs, resolving each relevant library before querying, and consult the [official Nuxt SEO docs](https://nuxtseo.com/docs) as needed.
 
-**References:** [package.json](./.skilld/pkg/package.json) — exports, entry points • [README](./.skilld/pkg/README.md) — setup, basic usage • [Docs](./.skilld/docs/_INDEX.md) — API reference, guides
-
-## Search
-
-Use `skilld search` instead of grepping `.skilld/` directories — hybrid semantic + keyword search across all indexed docs, issues, and releases. If `skilld` is unavailable, use `npx -y skilld search`.
-
-```bash
-skilld search "query" -p @nuxtjs/seo
-```
-
-Filters: `docs:`, `issues:`, `releases:` prefix narrows by source type.
+Verify with the existing Docker lint/static build and social-image script; a metadata snippet or dev-only check does not prove local social images were prerendered.
