@@ -45,3 +45,12 @@ test("heading links use rendered text and GitHub duplicate collision anchors", (
   const result = verify("# A [guide](../README.md)\n\n[jump](#a-guide)\n\n# Same\n# Same\n# Same-1\n# Same\n\n[collision](#same-1-1)\n[last](#same-2)\n");
   assert.equal(result.status, 0, result.stderr);
 });
+
+test("heading anchors omit HTML nodes without stripping tag-like inline code", () => {
+  const valid = verify("# A <em>guide</em>\n\n[html](#a-guide)\n\n# `<em>guide</em>`\n\n[code](#emguideem)\n");
+  assert.equal(valid.status, 0, valid.stderr);
+
+  const broken = verify("# `<em>guide</em>`\n\n[wrong](#guide)\n");
+  assert.notEqual(broken.status, 0, "an anchor derived by stripping inline-code text must fail");
+  assert.match(broken.stderr, /Missing heading: docs\/fixture\.md:3: #guide/);
+});

@@ -44,7 +44,7 @@ function markdown(file) {
   const links = [];
   const references = [];
   function visit(node) {
-    if (node.type === "heading") ids.add(slugger.slug(toString(node).replace(/<[^>]*>/g, "")));
+    if (node.type === "heading") ids.add(slugger.slug(toString(node, { includeHtml: false })));
     if (node.type === "definition") definitions.set(node.identifier, node.url);
     if (node.type === "link" || node.type === "image") links.push({ url: node.url, line: node.position.start.line });
     if (node.type === "linkReference" || node.type === "imageReference") references.push(node);
