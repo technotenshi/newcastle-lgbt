@@ -51,7 +51,7 @@ import FeaturedNews from '~/components/FeaturedNews.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useNews } from '~/composables/useNews';
 import { normalizeAssetPath } from '~/utils/assets';
-import { normaliseString } from '~/utils/content';
+import { normaliseString } from '~/utils/content.mjs';
 
 defineOptions({
   name: 'NewsIndexPage',

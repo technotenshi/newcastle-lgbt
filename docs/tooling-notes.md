@@ -15,7 +15,7 @@ Build, CI, module, and styling details that do not need to load into every agent
 
 - `plugins/bootstrap.client.ts`: Bootstrap JS (client only). Imports only `collapse.js` (navbar hamburger) and `carousel.js` (news article image slideshow) from the npm `bootstrap` package. Popper.js and all other Bootstrap components (Modal, Dropdown, Tooltip, and so on) are excluded. Add an import here if a page ever needs one.
 - `layouts/default.vue`: global header, nav, and footer rendered on every page.
-- `utils/content.ts`: re-exports the normalization helpers in `utils/content.mjs` (`normaliseString`, `normaliseNumber`, `normaliseBody`, `parseMeta`, `toPlainText`, `truncateSummary`).
+- `utils/content.mjs`: the normalization helpers (`normaliseString`, `normaliseNumber`, `normaliseBody`, `parseMeta`, `toPlainText`, `truncateSummary`). Import it as `~/utils/content.mjs`; do not add a `.ts` twin, because Nuxt auto-imports both files and warns about duplicated imports.
 - `utils/news.mjs`: the publication rule for news (`listPublishedNews`, `findPublishedArticle`, `listFeedItems`, `pacificToday`), used by `useNews`, the article page and `server/routes/feed.xml.ts`. Plain `.mjs` so `scripts/news.test.mjs` runs under `node --test`; `nuxt.config.ts` inlines `utils/` for Nitro so the feed route bundles it. Do not re-implement the draft or future-date check elsewhere.
 - `utils/assets.ts`: asset URL resolution (handles `~/assets`, relative paths, external URLs).
 - `components/content/Dateline.vue`: inline MDC component rendering `**Newcastle, WA** –`. Used at the start of every news article body as `:Dateline [first sentence]`.

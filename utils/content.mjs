@@ -1,5 +1,5 @@
 // Plain JavaScript so Node tests and server routes can import it without Nuxt.
-// utils/content.ts re-exports everything here for the TypeScript callers.
+// Import as ~/utils/content.mjs. Do not add a content.ts twin: Nuxt auto-imports both.
 
 /** @param {unknown} value @returns {string | undefined} */
 export const normaliseString = (value) => {
