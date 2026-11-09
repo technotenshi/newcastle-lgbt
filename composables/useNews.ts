@@ -1,4 +1,5 @@
 import { queryCollection } from "#imports";
+import { listPublishedNews, pacificToday } from "~/utils/news.mjs";
 
 /**
  * Represents a single news article pulled from the `content/news` directory.
@@ -47,6 +48,10 @@ export interface NewsItem {
     alt?: string;
   };
   /**
+   * Plain-text card summary: excerpt, description, or the start of the body. Empty when the article has no text.
+   */
+  summary?: string;
+  /**
    * Arbitrary Markdown or HTML body content rendered by Nuxt Content.
    */
   body?: unknown;
@@ -55,32 +60,6 @@ export interface NewsItem {
    */
   draft?: boolean;
   _draft?: boolean;
-}
-
-/**
- * Builds the canonical route path for a news article using the date segments and slug.
- */
-function buildArticlePath(date?: string, slug?: string): string | undefined {
-  if (typeof date !== "string" || typeof slug !== "string") {
-    return undefined;
-  }
-
-  const [year, month, day] = date.split("-");
-
-  if (!year || year.length !== 4 || !month || !day) {
-    return undefined;
-  }
-
-  const trimmedSlug = slug.trim();
-
-  if (!trimmedSlug) {
-    return undefined;
-  }
-
-  const normalizedMonth = month.padStart(2, "0").slice(-2);
-  const normalizedDay = day.padStart(2, "0").slice(-2);
-
-  return `/news/${year}/${normalizedMonth}/${normalizedDay}/${trimmedSlug}`;
 }
 
 /**
@@ -110,77 +89,10 @@ export function useNews(options: UseNewsOptions = {}) {
 
   return useAsyncData(key, async () => {
     const rows = (await queryCollection("content")
-      .select("id", "path", "title", "meta")
+      .select("id", "path", "title", "description", "meta", "body")
       .where("path", "LIKE", "/news/%")
       .all()) as Array<Record<string, unknown>>;
 
-    const parseDate = (value?: string) => {
-      if (!value) {
-        return 0;
-      }
-
-      const timestamp = Date.parse(value);
-      return Number.isNaN(timestamp) ? 0 : timestamp;
-    };
-
-    const normalized = rows.map((row) => {
-      const rawMeta = row.meta;
-      const meta = typeof rawMeta === "string"
-        ? (() => {
-          try {
-            return JSON.parse(rawMeta) as Record<string, unknown>;
-          } catch {
-            return {} as Record<string, unknown>;
-          }
-        })()
-        : (rawMeta as Record<string, unknown> | undefined) ?? {};
-
-      const defaultPath = typeof row.path === "string" ? row.path : String(row.path ?? "");
-      const dateValue = typeof meta.date === "string" ? meta.date : undefined;
-      const slugValue = typeof meta.slug === "string" ? meta.slug : undefined;
-      const canonicalPath = buildArticlePath(dateValue, slugValue) ?? (defaultPath || "/");
-
-      return {
-        _id: typeof row.id === "string" ? row.id : String(row.id ?? ""),
-        _path: canonicalPath,
-        sourcePath: defaultPath || undefined,
-        title: typeof row.title === "string" ? row.title : (meta.title as string | undefined),
-        date: dateValue,
-        order: typeof meta.order === "number" ? meta.order : typeof meta.order === "string" ? Number(meta.order) : undefined,
-        slug: slugValue,
-        image: typeof meta.image === "object" ? (meta.image as NewsItem["image"]) : undefined,
-        imageHeader: typeof meta.imageHeader === "object" ? (meta.imageHeader as NewsItem["imageHeader"]) : undefined,
-        body: undefined,
-        draft: meta.draft === true,
-        _draft: meta._draft === true,
-      } as NewsItem;
-    });
-
-    const sorted = normalized.sort((first, second) => {
-      const dateDifference = parseDate(second.date) - parseDate(first.date);
-
-      if (dateDifference !== 0) {
-        return dateDifference;
-      }
-
-      const firstOrder = typeof first.order === "number" ? first.order : 0;
-      const secondOrder = typeof second.order === "number" ? second.order : 0;
-
-      return secondOrder - firstOrder;
-    });
-
-    const todayPacific = new Intl.DateTimeFormat("en-CA", {
-      timeZone: "America/Los_Angeles",
-    }).format(new Date());
-
-    const published = includeDrafts
-      ? sorted
-      : sorted.filter((entry) => {
-        if (entry.draft === true || entry._draft === true) return false;
-        if (typeof entry.date === "string" && entry.date > todayPacific) return false;
-        return true;
-      });
-
-    return typeof limit === "number" ? published.slice(0, limit) : published;
+    return listPublishedNews(rows, pacificToday(), { limit, includeDrafts }) as NewsItem[];
   });
 }

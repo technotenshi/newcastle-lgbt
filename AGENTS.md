@@ -67,7 +67,7 @@ Prefer `make` targets interactively. In a non-TTY use the underlying commands wi
 ```sh
 docker compose run --rm --no-deps -T --pull never app yarn lint
 docker compose run --rm --no-deps -T --pull never app node scripts/verify-agent-docs.mjs
-docker compose run --rm --no-deps -T --pull never app node --test scripts/audit-gate.test.mjs scripts/election-results.test.mjs scripts/election-results-render.test.mjs
+docker compose run --rm --no-deps -T --pull never app node --test scripts/audit-gate.test.mjs scripts/election-results.test.mjs scripts/election-results-render.test.mjs scripts/news.test.mjs
 docker compose run --rm --no-deps -T --pull never app yarn build
 docker compose run --rm --no-deps -T --pull never app node scripts/verify-social-images.mjs
 ```

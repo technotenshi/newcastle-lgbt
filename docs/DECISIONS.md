@@ -1000,3 +1000,28 @@ Current guidance, test boundaries and the audit scope are recorded in
 [agent configuration](agents/agent-configuration.md) and the
 [documentation audit](agents/documentation-audit.md). Historical decision entries retain
 old file names and scoped approvals; they do not authorize a new session's actions.
+
+## 2026-11-07 One publication rule for news
+
+The owner approved an architecture review of the news code. The rule for which news is
+published lived in four places (`useNews`, `server/routes/feed.xml.ts`, the article page and
+the news index) and had drifted: the article page checked only the date, the feed ignored
+`_draft`, and the article page carried its own copies of the helpers in `utils/content.ts`.
+
+`utils/news.mjs` now holds the rule as pure functions over content rows. A published article
+has neither `draft` nor `_draft` set and a date on or before today in Pacific time (see
+GLOSSARY.md). The app composable and the RSS route each run their own `queryCollection` and
+pass the rows in. The article page returns 404 for a draft article; before, a past-dated
+draft was reachable by direct URL. `pacificToday()` is the one Pacific-date helper, and
+`useEvents` calls it in place of its own `currentDateIso`. News listings carry a plain-text `summary`,
+so the news index no longer runs a second query for article bodies. The text helpers moved to
+`utils/content.mjs`, re-exported by `utils/content.ts`, and `truncateSummary` takes an
+`ellipsis` option so the article meta description keeps its trailing ellipsis.
+
+The module is plain `.mjs` so `scripts/news.test.mjs` runs under `node --test` without Nuxt.
+Nitro treats a plain `.mjs` outside `server/` as an external Node module and left an
+unresolvable import in the `/feed.xml` route bundle, so
+`nuxt.config.ts` lists `utils/` under `nitro.externals.inline`. Verified with a static build
+before and after: `feed.xml` differs only in `lastBuildDate`, and all 55 prerendered news
+pages have identical markup and meta (scripts, styles and preload links excluded, since their
+hashes change per build).
