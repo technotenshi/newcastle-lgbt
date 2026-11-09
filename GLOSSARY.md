@@ -4,6 +4,12 @@ Editorial language for reporting on the Newcastle LGBTQ+ community.
 
 ## Language
 
+### News publishing
+
+**Published article**:
+A news article with no draft flag whose publication date is on or before today in Pacific time.
+_Avoid_: Live, visible or public article, when the date or draft state is unspecified
+
 ### Election reporting
 
 **Reporting snapshot**:

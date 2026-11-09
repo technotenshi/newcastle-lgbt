@@ -1,5 +1,6 @@
 import { queryCollection } from "#imports";
 import { normaliseBody, normaliseNumber, normaliseString, parseMeta } from "~/utils/content";
+import { pacificToday } from "~/utils/news.mjs";
 
 /**
  * Representation of an event sourced from Markdown files in `content/events`.
@@ -104,7 +105,7 @@ const compareDates = (first?: string, second?: string): number => {
 
 export function useEvents(options: UseEventsOptions = {}) {
   const { limit, includePast = false } = options;
-  const baselineDate = options.startDate ?? currentDateIso();
+  const baselineDate = options.startDate ?? pacificToday();
   const key = `events-${includePast ? "all" : "upcoming"}-${baselineDate}-${limit ?? "all"}`;
 
   return useAsyncData(key, async () => {
@@ -183,12 +184,4 @@ export function useEvents(options: UseEventsOptions = {}) {
 
     return typeof limit === "number" ? sorted.slice(0, limit) : sorted;
   });
-}
-
-/**
- * Normalises the current local date into an ISO 8601 formatted `YYYY-MM-DD` string. The adjustment for the
- * timezone offset ensures comparisons against date strings stored in content files behave as expected.
- */
-export function currentDateIso(reference: Date = new Date()): string {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(reference);
 }

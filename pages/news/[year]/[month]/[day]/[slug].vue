@@ -38,6 +38,8 @@ import NewsCommunityCarousel from '~/components/NewsCommunityCarousel.vue';
 import NewsHeaderImage from '~/components/NewsHeaderImage.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useSocialImage } from '~/composables/useSocialImage';
+import { toPlainText, truncateSummary } from '~/utils/content';
+import { findPublishedArticle, pacificToday } from '~/utils/news.mjs';
 
 defineOptions({
   name: 'NewsArticlePage',
@@ -81,61 +83,7 @@ if (!year || year.length !== 4 || !month || !day || !slug) {
 }
 
 const date = `${year}-${month}-${day}`;
-const canonicalPath = `/news/${year}/${month}/${day}/${slug}`;
 const asyncKey = `news-article-${date}-${slug}`;
-
-const parseMeta = (input) => {
-  if (!input) {
-    return {};
-  }
-
-  if (typeof input === 'string') {
-    try {
-      return JSON.parse(input);
-    } catch {
-      return {};
-    }
-  }
-
-  if (typeof input === 'object') {
-    return input;
-  }
-
-  return {};
-};
-
-const coerceNumber = (value) => {
-  if (typeof value === 'number') {
-    return Number.isNaN(value) ? undefined : value;
-  }
-
-  if (typeof value === 'string' && value.trim()) {
-    const parsed = Number(value);
-    return Number.isNaN(parsed) ? undefined : parsed;
-  }
-
-  return undefined;
-};
-
-const parseBody = (input) => {
-  if (!input) {
-    return undefined;
-  }
-
-  if (typeof input === 'string') {
-    try {
-      return JSON.parse(input);
-    } catch {
-      return undefined;
-    }
-  }
-
-  if (typeof input === 'object') {
-    return input;
-  }
-
-  return undefined;
-};
 
 const { data: article } = await useAsyncData(asyncKey, async () => {
   const rows = await queryCollection('content')
@@ -143,65 +91,16 @@ const { data: article } = await useAsyncData(asyncKey, async () => {
     .where('path', 'LIKE', '/news/%')
     .all();
 
-  const entries = Array.isArray(rows) ? rows : [];
+  const document = findPublishedArticle(Array.isArray(rows) ? rows : [], { date, slug }, pacificToday());
 
-  for (const row of entries) {
-    const meta = parseMeta(row.meta);
-    const metaSlug = typeof meta.slug === 'string' ? meta.slug : undefined;
-    const metaDate = typeof meta.date === 'string' ? meta.date : undefined;
-
-    if (metaSlug !== slug || metaDate !== date) {
-      continue;
-    }
-
-    const todayPacific = new Intl.DateTimeFormat('en-CA', {
-      timeZone: 'America/Los_Angeles',
-    }).format(new Date());
-    if (typeof metaDate === 'string' && metaDate > todayPacific) {
-      throw createError({ statusCode: 404, statusMessage: 'Article not found' });
-    }
-
-    const defaultPath = typeof row.path === 'string' ? row.path : '';
-    const titleFromRow = typeof row.title === 'string' ? row.title : undefined;
-    const descriptionFromRow = typeof row.description === 'string' ? row.description : undefined;
-    const titleFromMeta = typeof meta.title === 'string' ? meta.title : undefined;
-    const descriptionFromMeta = typeof meta.description === 'string' ? meta.description : undefined;
-
-    const document = {
-      _id: typeof row.id === 'string' ? row.id : String(row.id ?? ''),
-      _path: canonicalPath,
-      sourcePath: defaultPath || undefined,
-      title: titleFromRow?.trim() ? titleFromRow : titleFromMeta,
-      description: descriptionFromRow?.trim() ? descriptionFromRow : descriptionFromMeta,
-      date: metaDate,
-      slug: metaSlug,
-      order: coerceNumber(meta.order),
-      image: typeof meta.image === 'object' && meta.image !== null ? meta.image : undefined,
-      imageHeader: typeof meta.imageHeader === 'object' && meta.imageHeader !== null ? meta.imageHeader : undefined,
-      carousel: typeof meta.carousel === 'object' && meta.carousel !== null ? meta.carousel : undefined,
-      draft: meta.draft === true,
-      _draft: meta._draft === true,
-      body: parseBody(row.body),
-      meta,
-    };
-
-    if (typeof meta.seo === 'object' && meta.seo !== null) {
-      document.seo = meta.seo;
-    }
-
-    if (typeof meta.excerpt === 'object' && meta.excerpt !== null) {
-      document.excerpt = meta.excerpt;
-    } else if (typeof meta.excerpt === 'string') {
-      document.excerpt = meta.excerpt;
-    }
-
-    return document;
+  if (!document) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Article not found',
+    });
   }
 
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Article not found',
-  });
+  return document;
 });
 
 const articleData = computed(() => article.value ?? null);
@@ -212,47 +111,6 @@ const articleTitle = computed(() => {
 });
 
 const fallbackDescription = 'Stay informed with the latest updates from Newcastle LGBTQ Voice.';
-
-const toPlainText = (node) => {
-  if (!node) {
-    return '';
-  }
-
-  if (typeof node === 'string') {
-    return node;
-  }
-
-  if (Array.isArray(node)) {
-    return node.map(toPlainText).join(' ');
-  }
-
-  if (typeof node === 'object') {
-    if (typeof node.value === 'string') {
-      return node.value;
-    }
-
-    if (Array.isArray(node.children)) {
-      return node.children.map(toPlainText).join(' ');
-    }
-  }
-
-  return '';
-};
-
-const truncateSnippet = (input, length) => {
-  if (input.length <= length) {
-    return input;
-  }
-
-  const truncated = input.slice(0, length);
-  const lastSpace = truncated.lastIndexOf(' ');
-
-  if (lastSpace > 0) {
-    return `${truncated.slice(0, lastSpace).trim()}…`;
-  }
-
-  return `${truncated.trim()}…`;
-};
 
 const pageDescription = computed(() => {
   const doc = articleData.value;
@@ -272,7 +130,7 @@ const pageDescription = computed(() => {
   const plainText = toPlainText(doc.body).replace(/\s+/g, ' ').trim();
 
   if (plainText) {
-    return truncateSnippet(plainText, 160);
+    return truncateSummary(plainText, 160, { ellipsis: true });
   }
 
   return fallbackDescription;

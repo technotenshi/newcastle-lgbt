@@ -45,19 +45,13 @@
 <script setup>
 /* global definePageMeta */
 import { computed } from 'vue';
-import { queryCollection, useAsyncData, useSeoMeta } from '#imports';
+import { useSeoMeta } from '#imports';
 import { useSocialImage } from '~/composables/useSocialImage';
 import FeaturedNews from '~/components/FeaturedNews.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useNews } from '~/composables/useNews';
 import { normalizeAssetPath } from '~/utils/assets';
-import {
-  normaliseBody,
-  normaliseString,
-  parseMeta,
-  toPlainText,
-  truncateSummary,
-} from '~/utils/content';
+import { normaliseString } from '~/utils/content';
 
 defineOptions({
   name: 'NewsIndexPage',
@@ -81,67 +75,6 @@ useSeoMeta({
 });
 
 const { data: newsData } = await useNews();
-const { data: documentsData } = await useAsyncData('news-index-documents', async () => {
-  const rows = await queryCollection('content')
-    .select('id', 'meta', 'description', 'body')
-    .where('path', 'LIKE', '/news/%')
-    .all();
-
-  const safeRows = Array.isArray(rows) ? rows : [];
-
-  return safeRows.map((row) => {
-    const record = row && typeof row === 'object' ? row : {};
-    const idValue = record.id;
-
-    return {
-      _id: typeof idValue === 'string' ? idValue : String(idValue ?? ''),
-      meta: parseMeta(record.meta),
-      description: normaliseString(record.description),
-      body: normaliseBody(record.body),
-    };
-  });
-});
-
-const documentsById = computed(() => {
-  const entries = documentsData.value;
-  const map = new Map();
-
-  if (Array.isArray(entries)) {
-    for (const entry of entries) {
-      if (entry && typeof entry === 'object' && typeof entry._id === 'string') {
-        map.set(entry._id, entry);
-      }
-    }
-  }
-
-  return map;
-});
-
-/**
- * Derives the summary text for a news article by preferring curated metadata fields
- * and falling back to a truncated excerpt of the document body when necessary.
- */
-const extractSummary = (document) => {
-  if (!document || typeof document !== 'object') {
-    return '';
-  }
-
-  const meta = parseMeta(document.meta);
-  const excerptText = toPlainText(meta.excerpt);
-  const metaDescription = toPlainText(meta.description);
-  const documentDescription = normaliseString(document.description) ?? '';
-  const bodyText = toPlainText(document.body);
-
-  const cleanedSource = [excerptText, metaDescription, documentDescription, bodyText]
-    .map((value) => (typeof value === 'string' ? value.replace(/\s+/g, ' ').trim() : ''))
-    .find((value) => value.length > 0);
-
-  if (!cleanedSource) {
-    return '';
-  }
-
-  return truncateSummary(cleanedSource);
-};
 
 const formatPublishDate = (value) => {
   if (typeof value !== 'string') {
@@ -171,12 +104,10 @@ const formatPublishDate = (value) => {
  */
 const articles = computed(() => {
   const entries = Array.isArray(newsData.value) ? newsData.value : [];
-  const documentMap = documentsById.value;
 
   return entries.map((entry) => {
-    const document = documentMap.get(entry._id) ?? null;
     const title = normaliseString(entry.title) ?? 'Untitled Article';
-    const summary = extractSummary(document) || 'Read the full story';
+    const summary = entry.summary || 'Read the full story';
     const formattedDate = formatPublishDate(entry.date) || '';
     const imageObj = entry.image && typeof entry.image === 'object' ? entry.image : null;
     const imagePath = imageObj?.path;

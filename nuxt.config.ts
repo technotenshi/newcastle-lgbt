@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
@@ -9,6 +10,12 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-09-18",
   nitro: {
     preset: "static",
+    // Nitro treats a plain .mjs outside server/ as an external Node module and
+    // leaves an unresolvable relative import in the route bundle. Inline utils/
+    // so shared .mjs modules (utils/news.mjs, used by /feed.xml) are bundled.
+    externals: {
+      inline: [fileURLToPath(new URL("./utils/", import.meta.url))],
+    },
     prerender: {
       crawlLinks: true,
       routes: ["/", "/feed.xml"],
