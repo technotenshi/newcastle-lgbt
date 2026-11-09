@@ -1035,3 +1035,15 @@ six `Duplicated imports` warnings. The `.ts` file was the only twin; `news.mjs` 
 callers import `~/utils/content.mjs`. Verified with `nuxt prepare` in an isolated copy: the
 warning count went from 12 lines to 0. The helpers lose no type information the callers
 used; `yarn lint` is the check for that.
+
+## 2026-11-09 One Vue runtime in yarn.lock
+
+#518 pinned `vue` at 3.5.45 in `package.json`, but `nuxt` and `@nuxt/nitro-server` request
+`vue@^3.5.44` and the lockfile still resolved that range to 3.5.44. The tree held two copies of
+`@vue/runtime-core` and `@vue/server-renderer`, and four tests in
+`scripts/election-results-render.test.mjs` failed with `Cannot read properties of null (reading
+'ce')` because the SSR renderer and the component runtime came from different versions.
+`yarn dedupe vue '@vue/*'` moved the range to 3.5.45 (lockfile only, `package.json` unchanged).
+Verified: `yarn install --immutable`, the four test files (41 of 41), lint, the static build
+(0 link errors) and social-image verification pass. After a Vue bump, run `yarn why
+@vue/runtime-core` and expect one version.
