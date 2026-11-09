@@ -1,5 +1,5 @@
 import { queryCollection } from "#imports";
-import { normaliseBody, normaliseNumber, normaliseString, parseMeta } from "~/utils/content";
+import { normaliseBody, normaliseNumber, normaliseString, parseMeta } from "~/utils/content.mjs";
 import { pacificToday } from "~/utils/news.mjs";
 
 /**

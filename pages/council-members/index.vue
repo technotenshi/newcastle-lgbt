@@ -100,7 +100,7 @@ import CouncilMembersComponent from '~/components/CouncilMembersComponent.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useCouncil } from '~/composables/useCouncil';
 import councilPhoto from '~/assets/images/council-members/20260831-council-members.jpg';
-import { normaliseString } from '~/utils/content';
+import { normaliseString } from '~/utils/content.mjs';
 
 defineOptions({
   name: 'CouncilMembersIndexPage',

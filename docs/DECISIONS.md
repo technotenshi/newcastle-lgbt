@@ -1025,3 +1025,13 @@ unresolvable import in the `/feed.xml` route bundle, so
 before and after: `feed.xml` differs only in `lastBuildDate`, and all 55 prerendered news
 pages have identical markup and meta (scripts, styles and preload links excluded, since their
 hashes change per build).
+
+## 2026-11-09 Drop the content.ts re-export shim
+
+`utils/content.ts` re-exported the six helpers in `utils/content.mjs`. Nuxt auto-imports every
+top-level file in `utils/`, so both files exported the same names and `make develop` printed
+six `Duplicated imports` warnings. The `.ts` file was the only twin; `news.mjs` and
+`election-results.mjs` are imported by their `.mjs` path. The shim is deleted and the six
+callers import `~/utils/content.mjs`. Verified with `nuxt prepare` in an isolated copy: the
+warning count went from 12 lines to 0. The helpers lose no type information the callers
+used; `yarn lint` is the check for that.

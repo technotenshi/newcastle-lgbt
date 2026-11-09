@@ -94,7 +94,7 @@ import { useSocialImage } from '~/composables/useSocialImage';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useEvents } from '~/composables/useEvents';
 import { normalizeAssetPath } from '~/utils/assets';
-import { normaliseString } from '~/utils/content';
+import { normaliseString } from '~/utils/content.mjs';
 
 defineOptions({
   name: 'EventsIndexPage',

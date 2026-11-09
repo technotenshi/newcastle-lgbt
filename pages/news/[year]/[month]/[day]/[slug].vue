@@ -38,7 +38,7 @@ import NewsCommunityCarousel from '~/components/NewsCommunityCarousel.vue';
 import NewsHeaderImage from '~/components/NewsHeaderImage.vue';
 import SectionHeader from '~/components/SectionHeader.vue';
 import { useSocialImage } from '~/composables/useSocialImage';
-import { toPlainText, truncateSummary } from '~/utils/content';
+import { toPlainText, truncateSummary } from '~/utils/content.mjs';
 import { findPublishedArticle, pacificToday } from '~/utils/news.mjs';
 
 defineOptions({
