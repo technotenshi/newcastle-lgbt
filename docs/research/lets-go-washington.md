@@ -1,6 +1,6 @@
 # Let's Go Washington Research
 
-**Last Updated:** October 28, 2026
+**Last Updated:** November 10, 2026
 
 **Sources:** Washington Public Disclosure Commission filings, Washington State Standard, Seattle Times, OPB, KUOW, Fox 13, King 5, ACLU of Washington
 
@@ -396,6 +396,30 @@ Verified while preparing the October 28 election feature. Primary or direct sour
 
 ---
 
+## 11. Update (November 10, 2026): lawsuit against I-638
+
+Read in full for the November 10 lawsuit article: the complaint (King County Superior Court, dated November 9, with Exhibit A), the Washington State Standard story (November 10), the ACLU of Washington press release (November 10), KUOW's Seattle school board story (November 9) and the Guardian story (November 10). Opened I-638's full text and WIAA's model medical eligibility form (viewed rendered).
+
+- **Descriptor:** the Standard calls LGW "the conservative political organization led by hedge fund manager Brian Heywood." Use "led by" for that citation.
+- **Statements by named LGW staff:** executive director Darren Littell (Standard, November 10) said plaintiffs and others "want boys in girls' sports at all costs" and "are willing to undermine democracy to get them there," and that "the vast majority of Washington State voters agree that girls should have their sports and spaces protected." Spokesperson Hallie Herzberg texted KUOW (November 9) that the measure takes effect December 3, whether SPS "wants it to or not," in KUOW's wording. Littell's statement names the Seattle School Board, which voted November 9 to authorize legal action; the Seattle board is not a plaintiff in the complaint.
+- **Checked against primary text:** I-638 Sec. 1(1) says existing physicals include "documentation of the student's sex assigned at birth." WIAA's model medical eligibility form has no sex field. The separate history and exam forms were not opened.
+- **Littell's full sentence (Standard):** "The ACLU, the Seattle School Board, Hate in Washington State and anyone else can raise lawsuits about protecting girls' sports all day, but their true colors are showing. They want boys in girls' sports at all costs, and they are willing to undermine democracy to get them there." He added that LGW expects "the OSPI and WIAA to ensure that all school districts protect fairness for girls' starting on December 3rd." Checked against I-638 text: Sec. 3 puts the duty on "a school district board of directors or a voluntary nonprofit entity"; Sec. 2 (RCW 28A.600.200) lets a board delegate to WIAA; Sec. 4 (RCW 28A.640.020) keeps the superintendent of public instruction's duty to develop regulations to eliminate sex discrimination in athletics and adds "except as provided in section 3 of this act." Sec. 3 names neither WIAA nor OSPI.
+- **Vote share:** the Standard reports about 56% on the morning of November 10 with ballots left; two other LGW initiatives failed. KUOW (November 9) also reports 56%. The November 6 article said about 57%; counts were still moving.
+- **Not verified:** the complaint (para. 5.27) cites Department of Children, Youth, and Families figures of 45% (King County) and 28% (Clallam County) for 2024 well-care visits among Medicaid children ages 3 to 11. The DCYF page now shows State Fiscal Year 2025 figures (King County 58%). The article does not use the complaint's figures.
+
+**Sources:**
+- Complaint: https://legalvoice.org/wp-content/uploads/2026/11/IL-26-638-Complaint-w-Ex-A.pdf
+- Washington State Standard: https://washingtonstatestandard.com/2026/11/10/parents-groups-sue-over-transgender-student-athletes-initiative/
+- ACLU of Washington press release: https://www.aclu-wa.org/press-releases/nonprofits-and-families-sue-state-over-transgender-sports-ban-initiative/
+- KUOW: https://www.kuow.org/education/2026-11-09/seattle-schools-poised-to-sue-over-trans-ban-initiative
+- The Guardian: https://www.theguardian.com/us-news/2026/nov/10/washington-trans-sports-ban-lawsuit
+- WIAA model medical eligibility form: https://wiaa-dna4aga5arc0gyeb.westus2-01.azurewebsites.net/results/Forms/PPE-Medical-Eligibility-Form.pdf
+- DCYF well-child visits: https://dcyf.wa.gov/node/3260
+- ACLU of Washington case page (opened, supports that it lists the complaint and press release): https://www.aclu-wa.org/cases/j-doe-a-v-washington-initiative-638-challenge/
+- Washington State Attorney General contact page (opened, supports that correspondence to the office is subject to public disclosure): https://www.atg.wa.gov/contactus.aspx
+
+---
+
 ## Sources Summary
 
 ### Primary Sources
@@ -423,7 +447,7 @@ Verified while preparing the October 28 election feature. Primary or direct sour
 
 ---
 
-**Last Verified:** October 28, 2026 (Sections 5, 8, and 10 corrected or added; Sections 1 to 4 and 6 to 7 last verified September 4, 2026)
+**Last Verified:** November 10, 2026 (Section 11 added; Sections 5, 8, and 10 corrected or added October 28, 2026; Sections 1 to 4 and 6 to 7 last verified September 4, 2026)
 
 **Research conducted by:** Claude Code Agent (Anthropic)  
 **For:** Newcastle LGBTQ+ Community News Site (newcastle.lgbt)
