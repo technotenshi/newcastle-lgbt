@@ -46,7 +46,7 @@
   "packageManager": "yarn@4.18.1",
   "devDependencies": {
     "@eslint/js": "^10.0.0",
-    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "@fullhuman/postcss-purgecss": "^9.0.0",
     "@nuxtjs/robots": "7.0.2",
     "@nuxtjs/sitemap": "9.1.0",
     "@unhead/vue": "3.4.3",

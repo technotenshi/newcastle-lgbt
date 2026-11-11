@@ -882,14 +882,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fullhuman/postcss-purgecss@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@fullhuman/postcss-purgecss@npm:8.0.0"
+"@fullhuman/postcss-purgecss@npm:^9.0.0":
+  version: 9.1.0
+  resolution: "@fullhuman/postcss-purgecss@npm:9.1.0"
   dependencies:
-    purgecss: "npm:^8.0.0"
+    fast-glob: "npm:^3.3.3"
+    purgecss: "npm:^9.1.0"
   peerDependencies:
     postcss: ^8.0.0
-  checksum: 10c0/b690ae00b909440e9db644e73b6dcc870e30bfdb2b9911c5e2e7e4e1070f6a4b5e124a91e32f27e20aeea6246b027b5ba40a0cacc4f011212f1cc7c3c9a2524f
+  checksum: 10c0/fdcd6fb25049ca378a04caaef25f3af824bc9b3cc160811ed9a698ac52e6ca5c7ba5746f50e5bc988f42366403e49304e283b22591c85aed2b3ef95a0caeba12
   languageName: node
   linkType: hard
 
@@ -4622,10 +4623,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^12.1.0":
-  version: 12.1.0
-  resolution: "commander@npm:12.1.0"
-  checksum: 10c0/6e1996680c083b3b897bfc1cfe1c58dfbcd9842fd43e1aaf8a795fbc237f65efcc860a3ef457b318e73f29a4f4a28f6403c3d653d021d960e4632dd45bde54a9
+"commander@npm:^15.0.0":
+  version: 15.1.0
+  resolution: "commander@npm:15.1.0"
+  checksum: 10c0/dd1013291d3e8779c726313616fa23174abc962182d0894ac73017c55d8b1ffe4a72401d91a1173974050536576896dc5279db07d37f929dbad469a16a12c54e
   languageName: node
   linkType: hard
 
@@ -5783,7 +5784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.2, fast-glob@npm:^3.3.3":
+"fast-glob@npm:^3.3.3":
   version: 3.3.3
   resolution: "fast-glob@npm:3.3.3"
   dependencies:
@@ -8506,7 +8507,7 @@ __metadata:
   resolution: "newcastle-lgbt-site@workspace:."
   dependencies:
     "@eslint/js": "npm:^10.0.0"
-    "@fullhuman/postcss-purgecss": "npm:^8.0.0"
+    "@fullhuman/postcss-purgecss": "npm:^9.0.0"
     "@nuxt/content": "npm:^3.15.2"
     "@nuxt/image": "npm:^2.0.0"
     "@nuxtjs/robots": "npm:7.0.2"
@@ -9754,13 +9755,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^7.0.0, postcss-selector-parser@npm:^7.1.4":
+"postcss-selector-parser@npm:^7.1.4":
   version: 7.1.7
   resolution: "postcss-selector-parser@npm:7.1.7"
   dependencies:
     cssesc: "npm:^3.0.0"
     util-deprecate: "npm:^1.0.2"
   checksum: 10c0/94db1cfb838957729dd632a229f86cc631cee98f0418026a8460ba3d24feb47da0a28f295a2ae4be37b548ffa6e61eff0f74fbc2ae309c48a6dd3fe1cb25e396
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^7.1.7":
+  version: 7.2.0
+  resolution: "postcss-selector-parser@npm:7.2.0"
+  dependencies:
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10c0/327f32901e952d015f7d1f12c8632700220588959877d9ea5280238ac6153cc7d5d349da0171932cfc417c35fb6108948eef622895db4df73af94d8163421203
   languageName: node
   linkType: hard
 
@@ -9771,7 +9781,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.5.32, postcss@npm:^8.5.32, postcss@npm:postcss@8.5.32":
+"postcss@npm:8.5.32, postcss@npm:^8.5.29, postcss@npm:^8.5.32":
   version: 8.5.32
   resolution: "postcss@npm:8.5.32"
   dependencies:
@@ -9867,17 +9877,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"purgecss@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "purgecss@npm:8.0.0"
+"purgecss@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "purgecss@npm:9.1.0"
   dependencies:
-    commander: "npm:^12.1.0"
-    fast-glob: "npm:^3.3.2"
-    postcss: "npm:^8.4.47"
-    postcss-selector-parser: "npm:^7.0.0"
+    commander: "npm:^15.0.0"
+    fast-glob: "npm:^3.3.3"
+    postcss: "npm:^8.5.29"
+    postcss-selector-parser: "npm:^7.1.7"
   bin:
     purgecss: bin/purgecss.js
-  checksum: 10c0/b1f720462da416ee22fe4899d28944eb9e8660a50c8d1e6881ddd762e3c376a5b7e1fb07501528e48964e7fb478c4345db58fe48f7e934eadd9acde233de9bad
+  checksum: 10c0/59b4ab819cf0854a614c7e5148aa97fa7796bcec616f9ecf4ae00a6dd28f8b63e6d5d64080986f1f558e9a4447aa464521fd1d5beee965b8fc6244c1b9a8181c
   languageName: node
   linkType: hard
 
