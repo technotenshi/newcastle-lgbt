@@ -295,6 +295,8 @@ To attend or for more information, [contact method matching the link.target fiel
 **Example alt text:**
 > `"A diverse crowd celebrates at Lake Boren Park with rainbow flags and banners on a sunny afternoon."`
 
+**Credit line for openly licensed photos (news):** when a news image is an openly licensed photo (for example from Wikimedia Commons) instead of a generated or supplied one, end the body with an italic `*Image credits: ...*` line just before `## Sources`. For each image give the title, the author, the license as a link, the changes made (for example "cropped and resized") and a link to the source page. For a ShareAlike license such as CC BY-SA, add that the adaptation is shared under the same license. Events use the optional `image.credit` field (a name only) instead. See [`content/news/20261110-01-i638-lawsuit-filed-king-county.md`](../content/news/20261110-01-i638-lawsuit-filed-king-county.md) for an example.
+
 ---
 
 ## Image generation prompts
