@@ -326,8 +326,22 @@ Before publication, review every paragraph for these questions:
 * Does it describe marginalized people as agents, organizers and community members?
 * Is every charged claim attributed and sourced?
 * Could hostile readers reasonably distort this wording because it is vague or overstated?
+* Would a high school reader follow this sentence on the first read, with each legal or policy term explained where it first appears?
 
 The goal is not to soften the article's politics. The goal is to make its criticism more precise, defensible and difficult to dismiss.
+
+## 21. Run a legal-risk check
+
+Naming a person is expected when a source ties them to the record (see "Name the people responsible" in the editorial stance above). Before publishing, check each statement about a named person, official, donor or organization:
+
+* **Allegation versus finding.** A complaint, charge, lawsuit, tip or open investigation is "alleged" or "under investigation" until a court, agency or official record establishes it. State what the document says, who filed it and its date. "Reportedly" does not repair an unverified claim: confirm it from a primary record, or cut it.
+* **A footnote for every fact about a named person.** Conduct, donations, votes, quotes and affiliations each cite a document opened and read. A search snippet, an anonymous post or a screenshot with no traceable origin is a lead, not a source.
+* **Findings use the finding's words.** Write "the PDC fined", "OPA sustained" or "the complaint alleges", not "broke the law" or "committed misconduct", unless a finding says so.
+* **Judgment follows the facts it rests on.** A moral or political conclusion about a named person comes after the documented facts and reads as a conclusion (item 19), not as a further factual claim.
+* **Motive and intent need a document** (item 11).
+* **Private individuals.** Name a private person only when the story needs the name and a public record or their own public statement ties them to it.
+
+Record each unresolved item in the reporting notes (see `new-article`) and in the PR body. Do not publish a claim that stays unresolved.
 
 ## Lessons from the I-638 aftermath article (November 2026)
 

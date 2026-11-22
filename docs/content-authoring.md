@@ -121,6 +121,8 @@ attacks*. [https://full-url-here.com](https://full-url-here.com)
 - **Horizontal rule** (`---`): optional section divider between major content blocks
 - **Sources section:** Required for articles citing external material. See "Citations and Sources (Wikipedia-style footnotes, APA7 entries)" below for the footnote-marker requirement and the reference-entry format.
 - **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation
+- **Reading level:** Write for a high school reader: short paragraphs, plain words, one idea per sentence, each legal or policy term explained where it first appears. Aim for Flesch-Kincaid grade 10 or lower in body prose, excluding quotations, bill titles and citations. This is a guideline for the writer, not a build gate.
+- **Lead angle:** Choose one lead angle before drafting: accountability (who decided, voted or funded), community impact (who is affected and how), policy mechanics and budget (what the text or appropriation does), or history and systems (the pattern it continues). Other angles become sections, not a second lede.
 - **Dateline:** Open the article body with `:Dateline` (the MDC inline component) followed by the first sentence. Do not write `**Newcastle, WA** –` or `**Newcastle, WA**:` directly — the component renders the standardized format.
 - **Em dashes:** Do not use em dashes (`—`) anywhere in article text or frontmatter. Use a comma, colon, or rephrase the sentence instead. En-dashes (`–`) remain correct for numeric ranges (e.g. time ranges, page ranges). The ban includes blockquote attributions: a `> — Attribution` line is also banned, write `> *Attribution Name*` instead.
 
@@ -191,6 +193,8 @@ For articles covering movement history, government policy, discrimination, or co
 ### Background research files (`docs/research/`)
 
 Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/`, e.g. [`docs/research/lets-go-washington.md`](research/lets-go-washington.md). Whenever an article names a subject that has one of these files, check it and fold in relevant context for a reader who has never heard of them, don't just drop the name in bare. Useful context includes: what the organization/person is, their track record, their funding pattern, and any compliance or legal issues on record, always hedged to match the file's own confidence level (an open investigation is "unresolved," not a finding). If a subject is central enough to an article to warrant this treatment but has no research file yet, consider using the `research` skill to build one before publishing, and keep the file updated as new claims are verified, the way [`docs/research/lets-go-washington.md`](research/lets-go-washington.md) records corrections to its own earlier claims.
+
+For a subject in a developing or multi-part story, keep a dated `## Timeline` section in its file: one line per verified event with the date (America/Los_Angeles), what happened, and the source number. Add each new verified event when it is learned, and link the article that covered it so later articles stay consistent with earlier ones. Mark an event the file has not yet verified as unverified rather than leaving it out.
 
 ### Verifying sources and citation URLs
 

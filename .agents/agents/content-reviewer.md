@@ -66,6 +66,8 @@ For news articles covering movement history, government policy, discrimination, 
 9. Retains outdated historical terminology (e.g. an organization's real period name) without a brief contextualizing note
 10. States a disputed historical claim as settled fact instead of flagging "accounts differ"
 11. Ends after listing "arguments for" and "arguments against" without reaching a critical, evidence-backed conclusion, or leaves a supporter's specific factual claim unchecked (this is an advocacy site, not neutral journalism)
+12. Fails the legal-risk check (checklist item 21): states an allegation, complaint, open investigation or "reportedly" claim as established fact, makes a factual claim about a named person with no footnote to a source that was opened, or says "broke the law" or "committed misconduct" where the finding says something narrower
+13. Loses a high school reader: dense paragraphs, stacked clauses, or a legal or policy term left unexplained at first use (guideline grade 10 or lower; see "Reading level" in the authoring guide)
 
 ## Image generation prompts
 When reviewing AI image prompts (DALL-E or Midjourney), enforce:

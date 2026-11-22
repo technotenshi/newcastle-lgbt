@@ -15,16 +15,29 @@ The user invokes `/new-article` and provides raw source material — a news exce
 4. Create the file with the correct name, frontmatter, and body
 5. Invoke the `generate-images` skill to produce the real image file(s) for every image slot, without waiting for the user to ask (see "Image generation" below)
 6. **Run the review gate before opening a PR** (the "Required content gate" in `AGENTS.md`): for news, `fact-check` the draft claim by claim against sources you opened, `content-check` it, then apply `.agents/agents/content-reviewer.md`. For events, verify the organizer details and apply `content-check` and applicable reviewer checks. Fix every Critical and Major finding. Lint and build do not check facts. Write the PR body with the `pr` skill.
+7. **End the reply with reporting notes** (news only; see "Reporting notes" below).
 
 ## Before drafting
 
-For news, read `docs/editorial-checklist.md` in full. Search the authoring guide's headings, then read the complete citation, advocacy, background research and source-verification sections plus applicable frontmatter/body rules with bounded line ranges. Never read `docs/content-authoring.md` whole. For events, read its filename and event sections and verify organizer details. Read matching `docs/research/` dossiers for subjects named in news. The checklist already holds the rules that draw the most review comments: attribute quotes exactly (16), limit absolutes (12), no mind-reading (11), proportionate conclusions (17), descriptors match their citation. Open every source you cite and copy quotes from the fetched text, never from memory or a search snippet.
+For news, read `docs/editorial-checklist.md` in full. Search the authoring guide's headings, then read the complete citation, advocacy, background research and source-verification sections plus applicable frontmatter/body rules with bounded line ranges. Never read `docs/content-authoring.md` whole. For events, read its filename and event sections and verify organizer details. Read matching `docs/research/` dossiers for subjects named in news. The checklist already holds the rules that draw the most review comments: attribute quotes exactly (16), limit absolutes (12), no mind-reading (11), proportionate conclusions (17), descriptors match their citation. Open every source you cite and copy quotes from the fetched text, never from memory or a search snippet. Choose the lead angle (see "Lead angle" in the authoring guide's body conventions) and tell the user which one in a single line before drafting.
 
 ## Editorial stance
 
 This is an activism site, not neutral journalism. This applies to every format, including election results, news updates and briefs: restate the site's position after a vote, write headings that say why the story matters to LGBTQ+ people, cut caveats that give the reader no information or action, and end with a call to action. For any article touching anti-LGBTQ+ policy, legislation, ballot initiatives, or the people and organizations behind them: verify the actual bill/policy text before characterizing its effect, fact-check specific claims from supporters with the same rigor as claims from opponents, and end with a critical, evidence-backed assessment rather than a neutral "arguments for / arguments against" list. Name a specific donor, legislator, spokesperson, executive, or candidate by name when a source (a filing, a quote, a roll-call vote) ties them directly to it, rather than retreating to the institution's name alone. See [`docs/editorial-checklist.md`](../../../docs/editorial-checklist.md) for the full standard, required for movement history, government policy, discrimination, or corporate accountability topics.
 
 Recurring subjects (an organization, a political committee, a specific individual) get a standing background file in `docs/research/` (e.g. `docs/research/lets-go-washington.md`). Before naming such a subject in a new article, check for a matching file and fold in relevant context so a reader unfamiliar with them isn't left with just a bare name. See [`docs/content-authoring.md`](../../../docs/content-authoring.md) ("Background research files").
+
+## Reporting notes
+
+After the review gate on a news article, finish the chat reply with these notes. They are for the owner's follow-up, not part of the article or the PR body, except that unverified items and source limits also go in the PR body as `pr` requires. Name each item concretely and write "none" for an empty one:
+
+- **Follow-up questions:** the person or office to ask (official, agency, organizer, school board) and the question.
+- **Documents to pull:** records, filings, roll calls or datasets that exist but were not opened.
+- **Unverified:** claims cut or left unconfirmed, and what real source would settle each.
+- **Legal-risk flags:** open items from checklist item 21.
+- **Alternate angles:** angles not used as the lead.
+- **Stakeholders:** unions, advocacy groups, city departments, school boards or legislators with a stake.
+- **Timeline:** dated events to add to the matching `docs/research/` dossier, or a new dossier if the subject recurs.
 
 ## Rules (from docs/content-authoring.md)
 
