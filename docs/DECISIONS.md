@@ -1047,3 +1047,16 @@ used; `yarn lint` is the check for that.
 Verified: `yarn install --immutable`, the four test files (41 of 41), lint, the static build
 (0 link errors) and social-image verification pass. After a Vue bump, run `yarn why
 @vue/runtime-core` and expect one version.
+
+## 2026-11-21 Fold four reporting practices from the earlier GPT prompt into the editorial docs
+
+The prompt the owner used before this repo carried four practices the docs lacked: legal-risk flags,
+a reading-level target, a story-angle step and end-of-article reporting notes, plus dated timelines
+for developing stories. They are added as editorial-checklist item 21 (legal-risk check), a
+"Reading level" and "Lead angle" convention in the authoring guide, content-reviewer items 12 and 13,
+a "Reporting notes" chat handoff in `new-article`, and a `## Timeline` convention for
+`docs/research/` dossiers. Not adopted because they conflict with current policy: the prompt's
+"no first person" (the checklist uses "we"), "prefer left-leaning or centrist sources" (primary
+sources come first), "captions only on request" (alt text is required) and "avoid radical postures"
+(the stance rules govern). The grade-10 reading level is a writer guideline, not a gate. No dossier
+has a `## Timeline` section yet; add one when a developing story next updates its subject's file.
