@@ -113,14 +113,15 @@ attacks*. [https://full-url-here.com](https://full-url-here.com)
 **Conventions:**
 
 - **Headings:** H2 (`##`) for main sections, H3 (`###`) for subsections; no H1 in body
-- **Opening:** Name the location (`Newcastle, WA`) and give the core fact in the first 2–3 sentences
+- **Opening:** Name the location (`Newcastle, WA`) and give the core fact in the first 2–3 sentences. Those sentences also say who is affected, why it matters to them, and the one action a reader can take. The full call to action stays at the end. Write for readers who may not be affected: the opening lets each reader see in seconds whether the piece concerns them, and why a reader not affected may still want to act.
 - **Bold** (`**text**`): key names, organizations, important terms
 - **Italics** (`*text*`): publication/document/bill titles
 - **Links:** `[Descriptive text](URL)` — always use descriptive link text, not bare URLs, **except** in the `## Sources` list itself, which uses footnote-style bare URLs instead (see below)
 - **Block quotes:** `> "…"` for substantial quotes; inline quotes for short statements
 - **Horizontal rule** (`---`): optional section divider between major content blocks
 - **Sources section:** Required for articles citing external material. See "Citations and Sources (Wikipedia-style footnotes, APA7 entries)" below for the footnote-marker requirement and the reference-entry format.
-- **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation
+- **Article length:** ~500 words for announcements; 1,500–2,500 words for news; 2,000–3,500 words for analysis/investigation. These are ceilings. Cut to the shortest version that still carries the evidence: each extra paragraph spends the time of readers the topic may not concern.
+- **Skim path:** In a news article over about 1,000 words, the opening plus the H2 headings alone give the point and the action. The body holds the evidence for readers who want it.
 - **Reading level:** Write for a high school reader: short paragraphs, plain words, one idea per sentence, each legal or policy term explained where it first appears. Aim for Flesch-Kincaid grade 10 or lower in body prose, excluding quotations, bill titles and citations. This is a guideline for the writer, not a build gate.
 - **Lead angle:** Choose one lead angle before drafting: accountability (who decided, voted or funded), community impact (who is affected and how), policy mechanics and budget (what the text or appropriation does), or history and systems (the pattern it continues). Other angles become sections, not a second lede.
 - **Dateline:** Open the article body with `:Dateline` (the MDC inline component) followed by the first sentence. Do not write `**Newcastle, WA** –` or `**Newcastle, WA**:` directly — the component renders the standardized format.

@@ -1060,3 +1060,17 @@ a "Reporting notes" chat handoff in `new-article`, and a `## Timeline` conventio
 sources come first), "captions only on request" (alt text is required) and "avoid radical postures"
 (the stance rules govern). The grade-10 reading level is a writer guideline, not a gate. No dossier
 has a `## Timeline` section yet; add one when a developing story next updates its subject's file.
+
+## 2026-11-23 Audience-first openings and shorter articles (from "Assume people are not interested in your blog post")
+
+Daniel Sada's post (danielsada.tech) argues that writers owe their audience brevity: open with who the
+piece is for, put a short summary first and the detail after it, and assume most readers have no
+interest. Four additions follow from it. The authoring guide's "Opening" convention now requires the
+first 2–3 sentences to say who is affected, why it matters to them and the one action a reader can
+take, with the full call to action still at the end. The "Article length" ranges are now ceilings with
+a cut-to-the-shortest-version rule, and a new "Skim path" convention requires that the opening plus
+H2 headings give the point and the action in a news article over about 1,000 words. `content-check`
+gains an audience-first opening checkbox, `content-reviewer` gains item 14 and `new-article` points
+to both conventions. Not adopted: the post's "you can stop reading" opening line, since this site
+wants unaffected readers to stay and act too. The length ranges were not lowered; revisit with real
+reader data. The rules are writer guidelines, not build gates.
