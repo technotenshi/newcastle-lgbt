@@ -1,20 +1,29 @@
 # Config for actions/labeler (v5+ schema), read by .github/workflows/label.yml.
 # Each key is an existing repo label; it is applied when a PR changes any file
-# matching one of its globs. A PR touching several areas gets every match.
+# matching one of its rules. A PR touching several areas gets every match.
 # The `dot` input defaults to true in v5+, so dotfile paths such as .github/**
 # match without extra settings.
+#
+# Under pull_request_target the workflow and this file come from the base
+# branch, so an edit here takes effect only after it merges to main.
 
 news:
   - changed-files:
-      - any-glob-to-any-file: content/news/**
+      - any-glob-to-any-file:
+          - content/news/**
+          - assets/images/news/**
 
 events:
   - changed-files:
-      - any-glob-to-any-file: content/events/**
+      - any-glob-to-any-file:
+          - content/events/**
+          - assets/images/events/**
 
 council:
   - changed-files:
-      - any-glob-to-any-file: content/council/**
+      - any-glob-to-any-file:
+          - content/council/**
+          - assets/images/council-members/**
 
 site:
   - changed-files:
@@ -26,12 +35,46 @@ site:
           - utils/**
           - plugins/**
           - server/**
+          - public/**
+          - app.vue
+          - content.config.ts
           - nuxt.config.ts
+      # Theme and vendor assets; images that belong to news, events or council
+      # carry those labels instead. Keep both options inside this one
+      # changed-files block: options in a block are OR-ed, but separate list
+      # items under a label are AND-ed.
+      - all-globs-to-any-file:
+          - assets/**
+          - "!assets/images/news/**"
+          - "!assets/images/events/**"
+          - "!assets/images/council-members/**"
 
 docs:
   - changed-files:
-      - any-glob-to-any-file: docs/**
+      - any-glob-to-any-file:
+          - docs/**
+          - .agents/**
+          - .claude/**
+          - AGENTS.md
+          - GLOSSARY.md
+          - README.md
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - package.json
+          - yarn.lock
 
 ci:
   - changed-files:
-      - any-glob-to-any-file: .github/**
+      - any-glob-to-any-file:
+          - .github/**
+          - .husky/**
+          - scripts/**
+          - Dockerfile
+          - docker-compose.yml
+          - Makefile
+          - renovate.json
+          - .nvmrc
+          - eslint.config.mjs
+          - tsconfig.json
