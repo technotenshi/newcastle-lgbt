@@ -306,6 +306,12 @@ Next steps:
 If the build or lint **failed**, emphasize that the branch is not deploy-ready and list the
 specific errors the user must fix before pushing.
 
+**After the deploy PR merges**, read the Dependency Dashboard (`gh issue view 132`) for Renovate's
+status on the batched PRs. It trails a merge by about 5 minutes; Dependabot's PRs trail longer.
+Until the bots catch up, merged PRs still show as open with stale heads, and `mergeStateStatus`
+reads `DIRTY` or `UNKNOWN`. Leave closing and rebasing to the bots and report the dashboard's
+last-known state instead of polling.
+
 ---
 
 ## Notes & Conventions for This Project
