@@ -1650,7 +1650,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:4.6.4":
+"@nuxt/kit@npm:4.6.4, @nuxt/kit@npm:^4.6.2":
   version: 4.6.4
   resolution: "@nuxt/kit@npm:4.6.4"
   dependencies:
@@ -8524,7 +8524,7 @@ __metadata:
     nuxt-link-checker: "npm:6.0.1"
     nuxt-og-image: "npm:7.0.7"
     nuxt-schema-org: "npm:^7.0.1"
-    nuxt-seo-utils: "npm:9.0.1"
+    nuxt-seo-utils: "npm:9.0.2"
     postcss: "npm:8.5.32"
     rolldown: "npm:~1.3.0"
     serve: "npm:^14.2.5"
@@ -8981,11 +8981,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt-seo-utils@npm:9.0.1":
-  version: 9.0.1
-  resolution: "nuxt-seo-utils@npm:9.0.1"
+"nuxt-seo-utils@npm:9.0.2":
+  version: 9.0.2
+  resolution: "nuxt-seo-utils@npm:9.0.2"
   dependencies:
-    "@nuxt/kit": "npm:^4.6.0"
+    "@nuxt/kit": "npm:^4.6.2"
     citty: "npm:^0.2.2"
     consola: "npm:^3.4.2"
     defu: "npm:^6.1.7"
@@ -9020,7 +9020,7 @@ __metadata:
       optional: true
   bin:
     nuxt-seo-utils: ./bin/nuxt-seo-utils.mjs
-  checksum: 10c0/271771d01fda4889414ae374c814cb848b7e490c7ccd1132fc3a505fed6cdd0045e5f675caa235756df3690b4365a0f334cb58de904f1133735d8a26567acfc8
+  checksum: 10c0/bfdb83e43d4780814b4da17c248c4707869411737306b64a4d9e0712597aba5d561f30c66dccbefb4cb87abfcad916fdad58c6e862bfbb75a7b7b5f40f44dcb5
   languageName: node
   linkType: hard
 
