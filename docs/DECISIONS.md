@@ -1074,3 +1074,14 @@ gains an audience-first opening checkbox, `content-reviewer` gains item 14 and `
 to both conventions. Not adopted: the post's "you can stop reading" opening line, since this site
 wants unaffected readers to stay and act too. The length ranges were not lowered; revisit with real
 reader data. The rules are writer guidelines, not build gates.
+
+## 2026-11-23 Renew the zod audit exception, retire the glob deprecation exception
+
+Both register rows in `docs/maintenance/audit-exceptions.md` reached their 2026-11-23 review date, after which the
+`Dependency audit` job fails. Each finding was re-checked rather than the date moved. The zod row (GHSA-mrhx-c7xc-m3w5)
+is renewed to 2026-12-23: the installed `@nuxt/content` 3.16.2 still declares schemas only, with no zod `parse` call in
+`dist/module.mjs` or `dist/chunks/zod4.mjs`, and Content 3.17.0 still requests zod ^3.25.76, so there is no fixed
+version to move to. The glob deprecation row is removed: `yarn.lock` now resolves archiver 8.0.0 (requested by nitropack
+2.13.6), which no longer depends on glob, and the audit reports no glob deprecation. The audit still warns about a
+moderate glob advisory (GHSA-3g3m-2fjr-6pw4, glob 13.0.7 through cacache), about minimatch 10.2.6, and about four
+node-forge 1.4.2 advisories that PR #540 resolves by moving to 1.4.4. Warnings need no register row.
