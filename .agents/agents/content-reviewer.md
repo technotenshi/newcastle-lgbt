@@ -68,6 +68,7 @@ For news articles covering movement history, government policy, discrimination, 
 11. Ends after listing "arguments for" and "arguments against" without reaching a critical, evidence-backed conclusion, or leaves a supporter's specific factual claim unchecked (this is an advocacy site, not neutral journalism)
 12. Fails the legal-risk check (checklist item 21): states an allegation, complaint, open investigation or "reportedly" claim as established fact, makes a factual claim about a named person with no footnote to a source that was opened, or says "broke the law" or "committed misconduct" where the finding says something narrower
 13. Loses a high school reader: dense paragraphs, stacked clauses, or a legal or policy term left unexplained at first use (guideline grade 10 or lower; see "Reading level" in the authoring guide)
+14. Spends reader time without need: an opening that omits who is affected, why it matters to them or the one action a reader can take; a news article over about 1,000 words where the opening plus H2 headings alone do not give the point and the action; or length past what the evidence needs (see "Opening", "Article length" and "Skim path" in the authoring guide)
 
 ## Image generation prompts
 When reviewing AI image prompts (DALL-E or Midjourney), enforce:
